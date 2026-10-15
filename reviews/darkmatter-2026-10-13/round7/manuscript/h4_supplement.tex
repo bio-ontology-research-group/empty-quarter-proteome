@@ -1,0 +1,41 @@
+
+\subsection*{Paired structural searches and retrieval sensitivity}
+The region census contains 5{,}851 models and 7{,}773 crops, with 161 models lacking an eligible
+region. In the initial group of 1{,}031 dark models below the dual-reference query threshold,
+984 had an eligible region. Under the paired CPU PDB search, 67 whole chains were matched and
+964 unmatched; 714 of the latter acquired a crop match. The complete transition table retains
+whole-chain matches lost after cropping, zero retrievals, retrieved low scores, post-exclusion
+empty hit sets and models without a confident region. These outcomes identify distinct
+limits of the search and region-selection procedures. The group is pooled across all historical
+alignment-normalised subdivisions, so its membership depends only on the initial query scores.
+
+Positive controls retained 2{,}889 of 3{,}013 crop matches after removing their source PDB entry,
+and 2{,}842, 2{,}823 and 2{,}796 after additionally excluding alignments with sequence identity
+at or above 30\%, 25\% and 20\%, respectively. The CPU adaptive searches expanded the hit cap
+for 39 whole chains and 55 crops, all controls. Three whole-chain queries and one crop remained
+cap-saturated and unmatched under at least one tier; those absences are search-depth limited.
+The census describes the qualified models under the stated procedures. Reference-based
+controls, different confidence distributions and post-retrieval identity filtering delimit
+its interpretation as a remote-homology calibration.
+
+The ORIX GPU search returned 2{,}853{,}102 whole-chain and 3{,}228{,}450 crop alignment rows.
+Independent worker-side validation checked query identities, lengths, alignment coordinates,
+CIGAR closure, finite score ranges and output hashes. Under the source-entry exclusion tier,
+the initially low-query-score dark group had 961 GPU whole-chain absences, of which 731
+recovered a crop match; 794 of all 1{,}031 models had a matched crop. Its whole-chain and crop
+binary classifications differed between CPU and GPU for 41 and 43 models, respectively.
+No dark query was cap-saturated while remaining unmatched. The GPU control crop count was
+2{,}896 of 3{,}013. Two control whole chains remained cap-saturated and unmatched at this tier;
+with stricter identity exclusions, cap-limited GPU control results represent the specified
+1{,}000-hit retrieval depth. CPU and GPU comparisons are reported separately because their
+prefilters retrieve different alignments.
+
+Across the four CPU raw-hit files, 2{,}194 of 6{,}845{,}932 rows had alignment-normalised
+TM-score greater than one, all involving controls. The two GPU tables contained 1{,}708 such
+rows. Query- and target-normalised scores passed the unit-interval check. The source audit
+identified a missing inclusive endpoint in the alignment-span normalisation. Values below one
+can also be affected by this implementation, so alignment-normalised threshold groups are
+retained only in the diagnostic archive. Removing CPU rows with out-of-range alignment scores
+left the primary whole-chain and crop match classifications unchanged; stricter exclusion tiers
+changed crop classifications for nine distinct control models. The original raw tables and
+software source remain pinned for subsequent coordinate-level rescoring.

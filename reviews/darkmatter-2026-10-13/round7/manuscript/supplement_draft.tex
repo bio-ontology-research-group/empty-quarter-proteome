@@ -1,0 +1,84 @@
+\section*{Supplementary Note S3: reference proximity, genomic context and matched reference searches}
+
+\subsection*{Phylogeny-conditioned associations within Thermoplasmatota}
+The within-lineage analysis enumerated all 237 Thermoplasmatota species representatives.
+The 237 genome--reference pairs used 32 distinct external accessions: 229 pairs selected a GTDB
+reference and eight selected an MGnify reference. Environmental labels were available for 145
+pairs (142 soil and three marine sediment); 92 pairs had unknown environmental metadata.
+These counts describe pairs, including reuse of external references. The phylogeny contained
+1{,}914 taxa: the 237 desert representatives, 1{,}647 GTDB Thermoplasmatota references and 30
+archaeal outgroups. The primary covariance matrix normalised shared branch lengths to unit
+diagonal. Pagel's $\lambda$ was 0.9158, with profile-likelihood interval 0.8463--0.9578;
+this parameter describes residual phylogenetic covariance under the specified model.
+The whitened generalised-least-squares $R^2$ was 0.4691.
+
+Amino-acid identity and reciprocal-hit coverage describe overlapping gene sets, with the
+coverage denominator taken from single-genome gene prediction and the response denominator
+from the catalogue calls. The primary amino-acid-identity coefficient was 0.001704
+(standard error 0.000407; two-sided $p=4.07\times10^{-5}$), and the shared-coverage coefficient
+was $-0.137484$ (standard error 0.019456; $p=1.88\times10^{-11}$).
+The direction of each conditional association persisted with an unnormalised Brownian
+covariance matrix, a catalogue protein-count denominator, restriction to class SW-10-69-26,
+omission of the dominant family JAJPHT01, restriction to comparators in the same class,
+and adjustment for a complete-gene-call proxy. The last specification retained 232 genomes;
+five lacked archived CheckM2 protein calls. Coefficient uncertainty conditions on the selected
+tree and fitted covariance. Ancestral reconstruction and additional reference sampling would
+address gene-content history and uncertainty in reference representation.
+
+\subsection*{Flanking-orthologue recurrence and its ascertainment}
+Of the 2{,}838 qualified dark structural families, 2{,}426 had a member on a refined-bin contig,
+2{,}378 had a member in a recognised 95\%-ANI species group, and 1{,}461 occurred in at least
+two species (570 low-query-score and 891 reference-matched families).
+Exact-coordinate complete windows admitted 353 families, comprising 173 and 180 from the two
+structural groups. Their 877 selected loci occupied 869 bin--contig pairs, 617 bins and 568
+species groups. Eight contigs, 145 bins and 153 species groups contributed to multiple families.
+The complete-window gate retained 30.35\% of the low-query-score group and 20.20\% of the
+reference-matched group. Missing or incomplete windows remained missing in the analysis.
+
+The background-adjusted recurrence contrasts were 31.75 percentage points within the
+low-query-score group and 25.67 points within the reference-matched group, each relative to
+its same-contig positional reference (5{,}000 draws; plus-one tail proportion 0.0002).
+The primary between-group comparison stratified families by species breadth, four coarse
+phylum groups and annotation opportunity; all 353 families belonged to the 16 strata with
+both groups represented. Its Mantel--Haenszel-weighted difference in excess recurrence was
+0.035358 (10{,}000 label permutations, $p=0.406859$). A stricter comparison of 96 exact-phylum,
+length-matched pairs had recurrence of 31.25\% in each group and an excess-recurrence difference
+of $-0.005440$ ($p=0.922608$). These tests condition on exchangeability within the observed
+strata or pairs.
+
+Allowing a unique same-strand 3$'$-stop match expanded the evaluable set to 637 families
+(260 low-query-score and 377 reference-matched); the adjusted excess-recurrence difference
+was 0.018391 ($p=0.561844$). A species-disjoint sensitivity retained 112 families
+(51 and 61), with mean excess recurrence 0.261855 and 0.198430. This smaller comparison is
+descriptive. A partial-window analysis retained 1{,}320 families but had unequal flank
+completeness and species breadth. The complete-window comparison estimates a difference among
+callable families; broader annotation and additional independent species would extend its scope.
+The sequence-hash and Bakta-log join verified 2{,}041 of 2{,}126 bins containing candidate loci;
+85 bins lacked the required annotations. Flanking KEGG orthologues identify recurring annotated
+contexts and provide targets for subsequent functional tests.
+
+\subsection*{Equal-depth soil and global reference comparisons}
+The primary matched pair recovered 30{,}064 of 106{,}042 dark queries from SMAG and 10{,}399
+from GEM. The paired contingency was 8{,}015 hits in both references, 22{,}049 in SMAG only,
+2{,}384 in GEM only and 73{,}594 in neither. For controls, these counts were 94{,}277,
+5{,}396, 2{,}108 and 4{,}261. The SMAG sample represents 1{,}500 of 40{,}039 genomes;
+the three GEM draws each represent 2{,}055 of 52{,}515 genomes. Their harmonised dark-query
+rate differences were 18.54, 16.83 and 16.91 percentage points. The corresponding differences
+using published GEM calls and rematched quotas were 18.46, 16.87 and 16.91 points.
+This caller sensitivity includes the change in common length support and reference membership.
+
+The primary pair retained 22{,}310 exact sequences in both arms. Removing all shared sequences
+before matching left 4{,}185{,}525 proteins and 1{,}289{,}129{,}312 residues per arm, with no
+cross-arm overlap, and a dark-query difference of 18.62 points. Requiring at least 30\%
+sequence identity during search gave 18.14 points. Dark-query differences were positive in
+all five query-length strata under all eight search configurations. The full 16-row paired
+summary, 80-row length-stratified summary and seven-pair length-quota audit accompany the
+reproducibility package. Effect sizes describe this finite query census; inferential
+resampling would additionally need to account for shared query and reference ancestry.
+
+All 373 SMAG archive parts from Zenodo deposit 8223844 were retained and checked against the
+upstream MD5 manifest. GEM genome downloads passed gzip integrity checks and were pinned by
+post-download SHA-256 hashes; the source provided no equivalent checksum manifest.
+Input genomes, calls, sampled identifiers, sequence maps, matched FASTAs, DIAMOND databases,
+raw hits, command signatures and output hashes are retained on IBEX. The machine-readable
+manifests link these artifacts to the compact tables.

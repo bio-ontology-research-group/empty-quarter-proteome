@@ -1,0 +1,60 @@
+# Point-by-Point Response to Review 1 (h3_review1) and Root Audit Notes — Hypothesis 3 (v3 Repair)
+
+**Date:** 2026-10-13  
+**Executed Slurm Job:** `53707059` (`logs/pilot_v3_53707059.out`, `logs/pilot_v3_53707059.err`; 0 errors)  
+**Local Package:** `reproducibility/darkmatter/round6_hypotheses/h3_references/`  
+**Remote Package:** `/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p6_hypotheses_clean/h3_references/`  
+**Superseded v2 Files Preserved:** `DESIGN_v2_superseded.md`, `DOSSIER_v2_superseded.md`, `INPUTS_v2_superseded.tsv`, `scripts/01`–`07`, and all v2 `results/` and `logs/` (including failed job `53701077` logs).
+
+---
+
+## 1. Response to Critical Finding 1: Reference Length-Distribution Matching and Sequence Deduplication
+
+- **Review 1 Criticism:** `scripts/06_match_gem_and_search.py:68-98` only sampled whole GEM proteomes until raw protein count reached `>= 693,227`, without deduplication or reference length matching. Consequently, GEM had +9.28% more characters, longer proteins (mean `319.20` vs `292.68` aa), 15.1x higher duplicate rate (`2.26%` vs `0.15%`, leaving `678,867` canonical unique GEM proteins vs `692,194` in SMAG), and major length-stratum imbalances (+16.8% more `<100` aa and +12.3% more `100–149` aa targets in SMAG).
+- **Exact Code Fix (`scripts/09_v3_match_gem_and_search.py`):**
+  1. **Within-Pool Canonical Deduplication (`08_v3_extract_and_call_smag.py:293-312`, `09_v3_match_gem_and_search.py:114-184`):** Both the SMAG pool (`693,227` canonical proteins -> `692,194` unique canonical proteins; `1,033` duplicates recorded in `results/v3_smag_duplicate_map.tsv`) and each seed's GEM candidate pool are deduplicated by exact canonical full-sequence SHA-256 digest before matching.
+  2. **Three Deterministic GEM Candidate-Pool Draws (`09_v3_match_gem_and_search.py:114-215`):** Across seeds `20261013` (299 GEM MAGs; `709,463` raw -> `693,721` unique canonical proteins, `2.22%` internal redundancy), `20261014` (308 GEM MAGs; `716,158` raw -> `696,211` unique, `2.79%` redundancy), and `20261015` (312 GEM MAGs; `711,230` raw -> `693,028` unique, `2.56%` redundancy), whole GEM `.faa.gz` files are sampled until the deduplicated GEM pool reaches `>= 692,194` unique canonical proteins.
+  3. **Exact Integer-Length (`1 aa`) Common-Support Quota Matching (`09_v3_match_gem_and_search.py:218-334`):** For every exact integer amino-acid length $L \ge 1$, the quota $q_s(L) = \min(N_{\text{SMAG, uniq}}(L), N_{\text{GEM, uniq}, s}(L))$ is computed, and $q_s(L)$ unique canonical proteins of length $L$ are deterministically sampled from each arm. Fail-closed assertions (`lines 293-301`) verify that the written matched FASTA files have **0% internal duplicates, identical protein counts, identical total amino-acid residues, and identical exact integer-length histograms**.
+- **Executed Verification Evidence (`results/v3_matching_closure_audit.tsv`):**
+  - `seed20261013`: **657,779 == 657,779** unique proteins, **197,005,061 == 197,005,061** residues, mean `299.50` aa, SD `204.21` aa, median `260.00` aa, and identical 5-bin counts (`80,327`, `76,523`, `154,335`, `190,364`, `156,230`) in both arms.
+  - `seed20261013_no_overlap`: **657,529 == 657,529** unique proteins, **196,961,439 == 196,961,439** residues, `0` post-match shared sequences.
+  - `seed20261014`: **660,049 == 660,049** unique proteins, **197,201,755 == 197,201,755** residues, identical 5-bin counts (`81,304`, `77,118`, `155,348`, `190,076`, `156,203`).
+  - `seed20261015`: **660,421 == 660,421** unique proteins, **196,954,586 == 196,954,586** residues, identical 5-bin counts (`81,315`, `77,853`, `155,509`, `189,820`, `155,924`).
+
+---
+
+## 2. Response to Critical Finding 2: Stop-Codon (`*`) Canonicalization and Cross-Catalogue Overlap Audit
+
+- **Review 1 Criticism:** `05_extract_and_genecall_smag.py:31` used `--no-stop-codon` (`0` trailing `*`), whereas `06_match_gem_and_search.py` kept trailing `*` on `95.56%` of GEM proteins without stripping `*` before measuring length or hashing, inflating GEM residue counts and producing a false `0` (`0.00%`) cross-catalogue overlap; `DOSSIER.md:69,127` also mislabeled MD5 digests as "32-mer MD5".
+- **Exact Code Fix (`08_v3_extract_and_call_smag.py:106-141`, `09_v3_match_gem_and_search.py:55-184`):**
+  1. Every protein sequence in SMAG, GEM, and the query files is explicitly audited for trailing `*`, internal `*`, lowercase characters, and invalid amino-acid characters before canonicalizing via `seq.strip().rstrip("*").upper()`.
+  2. Full-sequence SHA-256 digests of canonical sequences are used for deduplication and cross-release overlap auditing (`DOSSIER.md` terminology corrected).
+  3. Cross-release shared sequences are saved with their exact SMAG and GEM representative IDs in `results/v3_cross_release_shared_sequences.tsv`, and both `overlap_retained` (primary) and `overlap_excluded` (`seed20261013_no_overlap` sensitivity) policies are executed.
+- **Executed Verification Evidence (`results/v3_matching_closure_audit.tsv`, `results/v3_cross_release_shared_sequences.tsv`):**
+  - SMAG pool (`693,227` proteins): `0` trailing `*`, `0` internal `*`.
+  - GEM pools: `678,136 / 709,463` (`95.58%`, seed `20261013`), `685,307 / 716,158` (`95.69%`, seed `20261014`), and `673,565 / 711,230` (`94.70%`, seed `20261015`) trailing `*` stripped; `0` internal `*` across all genomes.
+  - Exact canonical cross-release shared sequences: **250** (seed `20261013`), **34** (seed `20261014`), and **85** (seed `20261015`). Excluding all 250 shared sequences in `seed20261013_no_overlap` leaves the dark population-weighted difference virtually unchanged (`+10.11%` vs `+10.30%`; `results/v3_matched_cohort_summary.tsv:2,4`).
+
+---
+
+## 3. Response to Critical Finding 3: Safe Streaming Tar Extraction, Retained Genomes, and Deterministic FASTA Order
+
+- **Review 1 Criticism:** `05_extract_and_genecall_smag.py` did not use `tarfile` or check `member.size`, ran `tar -xz ... || true`, checked only leading `>` and trailing `\n`, skipped extraction in Job `53704317`, wrote `smag_pilot_recalled.faa` in non-deterministic `as_completed` order, and deleted all 212 extracted nucleotide FASTAs without SHA-256 hashes.
+- **Exact Code Fix (`scripts/08_v3_extract_and_call_smag.py`):**
+  1. Verified both MD5 and SHA-256 checksums of `mag.tar.gz.aa` and `mag.tar.gz.ab` (`results/v3_smag_zenodo_parts_manifest.tsv`).
+  2. Streamed concatenated parts via `tarfile.open(fileobj=..., mode="r|gz")` (`lines 189-269`), checking path safety (`is_safe_tar_path`), reading member bytes, and enforcing `observed_bytes == m.size` plus full FASTA nucleotide validation (`validate_fasta_bytes`).
+  3. Explicitly retained complete tar stream members 1–212 (`MAG/SRR5579859rbin.24.fa` [member 1] through `MAG/SRR5437667rbin.15.fa` [member 212] in `results/v3_smag_tar_extraction_audit.tsv:2-213`; sorted alphabetically starting at `MAG/D3rbin.13.fa` [member 92] in `results/v3_smag_genome_manifest.tsv:2`) and rejected/logged the truncated 213th member `MAG/SRR5855438rbin.1.fa` (`declared_bytes = 12,783,848`, `observed_bytes = 6,946,816`, partial SHA-256 `ce0de439fa2a20809c53c895940a1a593145ca3dda4cd5dcc79c99b6fe289663`, `status = REJECTED_TRUNCATED_STREAM_END`, `detail = ReadError: unexpected end of data`) in `results/v3_smag_tar_extraction_audit.tsv:214`.
+  4. Permanently retained all 212 complete extracted `.fa` files in `/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p6_hypotheses_clean/h3_references/genomes/smag_extracted/` (0 deleted), recording their `member_order_idx`, `declared_bytes`, `observed_bytes`, `contig_count`, `total_bp`, `nucleotide_sha256`, and `raw_faa_sha256` in `results/v3_smag_genome_manifest.tsv`.
+  5. Sorted all Pyrodigal outputs deterministically by `(mag_id, gene_idx)` (`lines 326,359-375`) before writing `v3_smag_pool_canonical.faa` and `v3_smag_pool_unique.faa`.
+
+---
+
+## 4. Response to Critical Finding 4 & Root Audit Notes: GEM Manifests/Checksums, Hit-Rule Consistency, Stratified Population Weighting, and Bounded Scope
+
+- **Review 1 & Root Audit Criticisms:** Missing GEM genome manifests and `uncomputed_large` FASTA hashes in `INPUTS.tsv`; mismatch between `DOSSIER.md:39` (`>=30%` identity) and code (`E <= 1e-3` only); unweighted equal-quota query sums, pooled `dark + ctrl` row, and `inf` for `0/0`; overstated causal biome/caller claims in `DOSSIER.md` §8; and unseparated top-1 masking vs database-size E-value rescaling in the `03_pilot_subsample_search.py` benchmark.
+- **Exact Code & Dossier Fixes:**
+  1. **Complete GEM Manifests & Checksums:** Wrote `results/v3_gem_genome_manifest_seed{20261013,20261014,20261015}.tsv` with per-file byte sizes and SHA-256 hashes for all sampled GEM `.faa.gz` files (299, 308, and 312 files), and populated verified 64-hex SHA-256 digests for all files in `INPUTS.tsv` and `results/v3_artifact_checksums.tsv` (zero `uncomputed_large` entries).
+  2. **Consistent Hit Rule + Search-Time `--id 30` Sensitivity:** Declared `E <= 1e-3` (`diamond blastp --sensitive --evalue 1e-3 -k 1`) as the primary hit rule across `DESIGN.md` and `DOSSIER.md` for compatibility with upstream `specificity_clean`, and executed a separate physical DIAMOND search passing `--id 30` (`seed20261013_id30`) as a pre-declared sensitivity check (`results/v3_matched_cohort_summary.tsv:6-7`).
+  3. **Cohort Separation, Population Weighting ($W_h = N_h/N$, $\pi_h = n_h/N_h$), and `undefined` for `0/0` (`09_v3_match_gem_and_search.py:408-598`):** Analyzed `dark` ($N=106,042$, $n=1,000$) and `ctrl` ($N=106,042$, $n=1,000$) strictly separately (no pooled `all` row), reported per-stratum inclusion probabilities $\pi_h$ and population weights $W_h$ with finite-population-corrected SEs in `results/v3_matched_length_stratified_results.tsv` and `results/v3_matched_cohort_summary.tsv`, and formatted `0/0` or `b/0` ratios as `undefined`.
+  4. **Rough Heuristic Threshold Diagnostic for Top-1 vs. Database-Size E-Value Rescaling (`09_v3_match_gem_and_search.py:601-650`, `results/v3_top1_vs_dbsize_decomposition.tsv`):** Evaluated the nominal protein-count-rescaled cutoff $E_{\text{sub}} \le 10^{-3} / 21.15 = 4.73 \times 10^{-5}$ (`79/110` [`71.82%`] dark and `885/895` [`98.88%`] control discrepancies $\le 4.73 \times 10^{-5}$, vs `31/110` [`28.18%`, including 5 queries with no full-GEM hit] and `10/895` [`1.12%`] in $4.73 \times 10^{-5} < E_{\text{sub}} \le 10^{-3}$) as an ancillary **rough heuristic threshold diagnostic** rather than an exact per-query attribution to `-k 1` masking vs. database size (since DIAMOND E-values depend on effective searched amino-acid residue space, composition masking, and block/seed search heuristics, and the TSV column names `strict_top1_masked_*` / `borderline_dbsize_rescaled_*` are retained historical diagnostic labels rather than validated mechanism classifications).
+  5. **Bounded Interpretation (`DESIGN.md` §1, `DOSSIER.md` §1 & §5):** Removed all causal soil-biome and caller-independence claims, explicitly conditioning conclusions on the 212-MAG SMAG archive-order pool and published GEM Prodigal proteomes.

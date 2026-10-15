@@ -1,0 +1,36 @@
+========================================================================================
+V3 COMPARATOR METADATA, CALLER RECONCILIATION, AND MATCHED-DENOMINATOR COUPLING AUDIT
+========================================================================================
+
+1. EXTERNAL COMPARATOR PROVENANCE AND EMPIRICAL AAI RANGES (C5 REPAIR)
+  Comparator pool: 218 GTDB r232 species representatives + 29 non-duplicate MGnify genomes in c__SW-10-69-26 and c__E2
+  Nearest comparator source across 237 desert reps: 229 GTDB_r232_rep, 8 MGnify (32 unique accessions)
+  Nearest comparator biome metadata: 142 Environmental:Terrestrial:Soil, 3 Environmental:Aquatic:Marine:Sediment, 92 unannotated GTDB-only
+  Terminology rule: External GTDB r232 and MGnify reference genomes (predominantly uncultured environmental MAGs; not assumed isolates)
+  Empirical AAI range (All 237 reps): min = 48.678%, q25 = 58.763%, median = 64.774%, q75 = 66.392%, max = 80.041%
+  Empirical AAI range (SW-10-69-26 + E2, n=236): min = 50.389%, median = 64.781%, max = 80.041%
+  Empirical AAI range (c__SW-10-69-26, n=185): min = 50.389%, median = 64.794%, max = 80.041%
+  Empirical AAI range (c__E2, n=51): min = 58.763%, median = 64.185%, max = 76.964%
+  Single c__Thermoplasmata rep (n=1, between-class comparator): AAI = 48.678%
+
+2. GENE-CALLER RECONCILIATION AND NON-DISJOINTNESS OF N_dark AND N_RBH (C4 REPAIR)
+  Catalogue n_proteins_cat (n=237): median = 3302.0, range = [1481, 5388]
+  Single-genome Pyrodigal n_prot_aai (n=237): median = 3312.0, range = [1485, 5469]
+  Difference (n_prot_aai - n_proteins_cat): mean = +19.52, median = +18.0, range = [-13, +93], Pearson r = 0.999752
+  CheckM2 .faa protein files: 232 / 237 present (on present 232, max |n_prot_aai - n_proteins_checkm2| = 0.0); 5 missing: 48PRr1__SemiBin_112, 48PRr1__SemiBin_141, 48PRr1__SemiBin_510, 48PRr1__SemiBin_539, 48PRr1__SemiBin_849
+  Non-disjointness note: N_dark (catalogue calls lacking UniRef50 2026_01/annotation hits on 90/80 cluster reps) and N_RBH (single-genome
+  Pyrodigal calls with DIAMOND RBH to external GTDB r232/MGnify MAGs) come from different callers and non-mutually-exclusive criteria.
+  No disjoint partition (N_dark + N_RBH <= N_prot) is assumed or claimed.
+
+3. MATCHED-DENOMINATOR ALGEBRAIC PERMUTATION ILLUSTRATION & DESCRIPTIVE SCALING (c__SW-10-69-26, n=185)
+  Shared catalogue denominator (n_proteins_cat): observed rho = -0.395303 (p = 2.565575e-08) vs algebraic permutation mean rho = 0.301737 (95% perm interval: [0.1789, 0.4194]; plus-one emp p=9.9990e-05)
+  Shared Pyrodigal denominator (n_prot_aai): observed rho = -0.381418 (p = 8.481197e-08) vs algebraic permutation mean rho = 0.302959 (95% perm interval: [0.1807, 0.4199]; plus-one emp p=9.9990e-05)
+  Scope note: Independent-numerator permutation is strictly an algebraic illustration of common-denominator division, not a biological null.
+  Descriptive count associations in c__SW-10-69-26: rho(n_dark, aai_n_rbh) = +0.241890 (p = 9.0942e-04);
+  rho(n_dark, n_proteins_cat) = +0.945740 (p = 2.8196e-91); rho(aai_n_rbh, n_proteins_cat) = +0.329413 (p = 4.6809e-06).
+
+4. DESCRIPTIVE ACCESSORY DARK FAMILY OCCUPANCY (237 REPRESENTATIVES, 14,645 ADMITTED FAMILIES)
+  c__SW-10-69-26 (n=185) distinct dark families per genome: median = 244.0 (IQR 153.0-363.0)
+  c__E2 (n=51) distinct dark families per genome: median = 77.0 (IQR 53.0-115.0)
+  Two-sided Mann-Whitney U test: U = 8292.5, p = 1.224554e-16 (strictly descriptive; no evolutionary gain/loss polarity claimed)
+========================================================================================

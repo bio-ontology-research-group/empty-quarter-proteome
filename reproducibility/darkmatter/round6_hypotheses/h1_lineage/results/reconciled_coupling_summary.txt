@@ -1,0 +1,31 @@
+================================================================================
+RECONCILED RATIO COUPLING AND ACCESSORY CONTENT AUDIT
+================================================================================
+
+1. AUDITED RATIO AND COUNT CORRELATIONS IN c__SW-10-69-26 (n=185)
+  Observed Argon ratio correlation (dark_fraction vs aai_frac_rbh): rho = -0.30102 (p = 3.1340e-05)
+  Observed Corrected ratio correlation (dark_fraction vs frac_rbh_desert): rho = -0.39418 (p = 2.8331e-08)
+  Observed Raw count correlation (n_dark vs aai_n_rbh): rho = +0.24189 (p = 9.0942e-04)
+  Scaling of dark count with total proteins: rho = +0.94574 (p = 2.8196e-91)
+  Scaling of RBH count with total proteins: rho = +0.32941 (p = 4.6809e-06)
+
+2. INTERPRETATION OF COMMON DENOMINATOR ALGEBRA
+  Independent count permutation with common denominator yields POSITIVE null correlation:
+    Null mean rho = +0.3017 (95% CI: [+0.1789, +0.4194])
+    Explanation: If two independent positive numerators are divided by a variable common denominator (n_proteins),
+    both ratios decrease as total proteins increases, inducing an algebraic POSITIVE correlation.
+    The observed NEGATIVE correlation (rho = -0.3942) deviates strongly from this positive null (p = 9.9990e-05).
+    This negative association is not a simple artifact of common-denominator division; rather, it reflects that within
+    a genome, dark genes and RBH genes are mutually exclusive subsets constrained by the total proteome (n_dark + n_rbh <= n_prot),
+    and total gene expansion scales dark genes far more rapidly (rho = 0.95) than external RBH genes (rho = 0.33).
+
+3. ACCESSORY DARK FAMILY RETENTION (DESCRIPTIVE)
+  Distinct dark families per representative:
+    c__SW-10-69-26: median = 244.0 (IQR 153.0-363.0)
+    c__E2: median = 77.0 (IQR 53.0-115.0)
+    Mann-Whitney test: p = 1.2246e-16
+  Single-genome families: 3,594 / 14,645 (24.5%); rare accessory (2-11 genomes): 10,312 (70.4%).
+  Scientific Scope: Larger genomes carry more distinct dark families as well as solitary families. These descriptive
+  patterns document accessory diversity within the sampled cohort, but do not establish the evolutionary direction of gene gain
+  in SW-10-69-26 versus gene reduction in E2 without outgroup-rooted ancestral reconstruction.
+================================================================================

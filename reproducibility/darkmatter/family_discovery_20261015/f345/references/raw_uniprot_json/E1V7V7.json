@@ -1,0 +1,764 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "E1V7V7",
+  "uniProtkbId": "DOED_HALED",
+  "entryAudit": {
+    "firstPublicDate": "2014-04-16",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2010-11-30",
+    "entryVersion": 70,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Halomonas elongata (strain ATCC 33173 / DSM 2581 / NBRC 15536 / NCIMB 2198 / 1H9)",
+    "taxonId": 768066,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Oceanospirillales",
+      "Halomonadaceae",
+      "Halomonas"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Diaminobutyrate--2-oxoglutarate transaminase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "20849449"
+            }
+          ],
+          "value": "2.6.1.76"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "20849449"
+            }
+          ],
+          "value": "Diaminobutyric acid transaminase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "20849449"
+          }
+        ],
+        "value": "doeD"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "HELO_3661"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20849449"
+            }
+          ],
+          "value": "Involved in the degradation of ectoine, which allows H.elongata to utilize ectoine as both a carbon and a nitrogen source for growth. Probably catalyzes the conversion of L-2,4-diaminobutyrate (DABA) to L-aspartate beta-semialdehyde (ASA) by transamination with 2-oxoglutarate"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "L-2,4-diaminobutanoate + 2-oxoglutarate = L-aspartate 4-semialdehyde + L-glutamate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:11160"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16810"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29985"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58761"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:537519"
+          }
+        ],
+        "ecNumber": "2.6.1.76",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305",
+            "source": "PubMed",
+            "id": "20849449"
+          }
+        ]
+      },
+      "physiologicalReactions": [
+        {
+          "directionType": "left-to-right",
+          "reactionCrossReference": {
+            "database": "Rhea",
+            "id": "RHEA:11161"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "20849449"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "pyridoxal 5'-phosphate",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:597326"
+          }
+        }
+      ]
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250"
+              }
+            ],
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20849449"
+            }
+          ],
+          "value": "Deletion mutant is impaired in growth on ectoine as a sole carbon source"
+        }
+      ],
+      "commentType": "DISRUPTION PHENOTYPE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "20849449"
+            }
+          ],
+          "value": "DoeD and EctB both catalyze the same transamination reaction between L-aspartate 4-semialdehyde and L-2,4-diaminobutanoate coupled to the 2-oxoglutarate/L-glutamate pair. This reversible reaction is part of both, ectoine biosynthesis and ectoine degradation"
+        }
+      ],
+      "commentType": "MISCELLANEOUS"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the class-III pyridoxal-phosphate-dependent aminotransferase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 469,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Diaminobutyrate--2-oxoglutarate transaminase",
+      "featureId": "PRO_0000428759"
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 290,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 290,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "N6-(pyridoxal phosphate)lysine",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0032",
+      "category": "Molecular function",
+      "name": "Aminotransferase"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0663",
+      "category": "Ligand",
+      "name": "Pyridoxal phosphate"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0808",
+      "category": "Molecular function",
+      "name": "Transferase"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "20849449",
+        "citationType": "journal article",
+        "authors": [
+          "Schwibbert K.",
+          "Marin-Sanguino A.",
+          "Bagyan I.",
+          "Heidrich G.",
+          "Lentzen G.",
+          "Seitz H.",
+          "Rampp M.",
+          "Schuster S.C.",
+          "Klenk H.P.",
+          "Pfeiffer F.",
+          "Oesterhelt D.",
+          "Kunte H.J."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "20849449"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/j.1462-2920.2010.02336.x"
+          }
+        ],
+        "title": "A blueprint of ectoine metabolism from the genome of the industrial producer Halomonas elongata DSM 2581(T).",
+        "publicationDate": "2011",
+        "journal": "Environ. Microbiol.",
+        "firstPage": "1973",
+        "lastPage": "1994",
+        "volume": "13"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]",
+        "FUNCTION",
+        "DISRUPTION PHENOTYPE"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 33173 / DSM 2581 / NBRC 15536 / NCIMB 2198 / 1H9",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "FN869568",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CBV43545.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_013333417.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_014532.2"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "E1V7V7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "E1V7V7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "768066.HELO_3661",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "91011059",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "hel:HELO_3661",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0161",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_016922_4_1_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "7052035at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:MONOMER-20120",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000008707",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0045303",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:L-2,4-diaminobutyrate:2-oxoglutarate transaminase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "20849449"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0030170",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:pyridoxal phosphate binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0042400",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:ectoine catabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "20849449"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00610",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "OAT_like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.640.10:FF:000014",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Adenosylmethionine-8-amino-7-oxononanoate aminotransferase, probable"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.90.1150.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aspartate Aminotransferase, domain 1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.640.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Type I PLP-dependent aspartate aminotransferase-like (Major domain)"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005814",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aminotrans_3"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR049704",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aminotrans_3_PPA_site"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015424",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PyrdxlP-dep_Trfase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015421",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PyrdxlP-dep_Trfase_major"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015422",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PyrdxlP-dep_Trfase_small"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF004767",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK06105.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF005684",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK07482.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43094",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "AMINOTRANSFERASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43094:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "AMINOTRANSFERASE CLASS-III"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00202",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aminotran_3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53383",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PLP-dependent transferases"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00600",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "AA_TRANSFER_CLASS_3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MTTHKDLIDRDRKVTFHASTHLRDFAHGDAPGRVITGGKGIKIVDKDGREFIDGFAGLYCVNIGYGRSEVAEAIYQQALEMSYYHTYVGHSNEPQIALSEKILELAGPGMSKVYYGMSGSDANETQLKIVRYYNNVLGRPQKKKVISRMRGYHGSGIASGSLTGLKAFHDHFDLPIETIRHTEAPYYYHRAAEQEGMTEREFSKHCAAKLEEMILAEGPDTVAAFIGEPVLGTGGIVPPPEGYWDEIQAVLTKYDVLLIADEVVCGFGRTGSDFGSHHYGIKPDLITIAKGLTSAYQPLSGVIVGDRVWEVLEQGTGEYGPIGHGWTYSGHALGCAAGLANLAIIEREGLTANAAETGAYLQERMKAAFADHPVVGQVRGVGMMAALEFSVDPAARRHFDPSLKVGPRMSAAALEEDLIARAMPQGDILGFAPPLTTTREEVDEIVARTERAVNKVTDALTREGAIQAA",
+    "length": 469,
+    "molWeight": 50881,
+    "crc64": "16186F4252909700",
+    "md5": "40E06C010D1BA7BE0234B5258A9C1601"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "DISRUPTION PHENOTYPE": 1,
+      "MISCELLANEOUS": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Modified residue": 1
+    },
+    "uniParcId": "UPI0001E3A974"
+  }
+}

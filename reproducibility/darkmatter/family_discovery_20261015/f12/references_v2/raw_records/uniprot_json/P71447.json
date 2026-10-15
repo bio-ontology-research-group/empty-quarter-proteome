@@ -1,0 +1,5066 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P71447",
+  "uniProtkbId": "PGMB_LACLA",
+  "entryAudit": {
+    "firstPublicDate": "1998-07-15",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2001-04-27",
+    "entryVersion": 166,
+    "sequenceVersion": 2
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Lactococcus lactis subsp. lactis (strain IL1403)",
+    "commonName": "Streptococcus lactis",
+    "taxonId": 272623,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Bacillota",
+      "Bacilli",
+      "Lactobacillales",
+      "Streptococcaceae",
+      "Lactococcus"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "9084169"
+          }
+        ],
+        "value": "Beta-phosphoglucomutase"
+      },
+      "shortNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "9084169"
+            }
+          ],
+          "value": "Beta-PGM"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15005616"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15996095"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9084169"
+            }
+          ],
+          "value": "5.4.2.6"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "9084169"
+          }
+        ],
+        "value": "pgmB"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "LL0429"
+        }
+      ],
+      "orfNames": [
+        {
+          "value": "L0001"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15005616"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9084169"
+            }
+          ],
+          "value": "Catalyzes the interconversion of D-glucose 1-phosphate (G1P) and D-glucose 6-phosphate (G6P), forming beta-D-glucose 1,6-(bis)phosphate (beta-G16P) as an intermediate. The beta-phosphoglucomutase (Beta-PGM) acts on the beta-C(1) anomer of G1P. Glucose or lactose are used in preference to maltose, which is only utilized after glucose or lactose has been exhausted. It plays a key role in the regulation of the flow of carbohydrate intermediates in glycolysis and the formation of the sugar nucleotide UDP-glucose"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "beta-D-glucose 1-phosphate = beta-D-glucose 6-phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:20113"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57684"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58247"
+          }
+        ],
+        "ecNumber": "5.4.2.6",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "15005616"
+          },
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "15996095"
+          },
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "9084169"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "12081483"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "12637673"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15826149"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15996095"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19154134"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20164409"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "8071206"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "12081483"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "12637673"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "15826149"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "15996095"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "20164409"
+              }
+            ],
+            "value": "Binds 1 magnesium ion per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15826149"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15996095"
+            }
+          ],
+          "value": "Activated by phosphorylation (PubMed:15996095). Competitively inhibited by alpha-D-galactose-1-phosphate"
+        }
+      ],
+      "commentType": "ACTIVITY REGULATION"
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "michaelisConstants": [
+          {
+            "constant": 14.6,
+            "unit": "uM",
+            "substrate": "beta-glucose 1-phosphate (at pH 7 and 25 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "15996095"
+              }
+            ]
+          },
+          {
+            "constant": 20.0,
+            "unit": "uM",
+            "substrate": "alpha-D-glucose 1,6-bisphosphate (at pH 7 and 25 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "15996095"
+              }
+            ]
+          },
+          {
+            "constant": 100.0,
+            "unit": "uM",
+            "substrate": "alpha-D-fructose 1,6-bisphosphate (at pH 7 and 25 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "15996095"
+              }
+            ]
+          },
+          {
+            "constant": 270.0,
+            "unit": "uM",
+            "substrate": "magnesium (at pH 7 and 25 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "15996095"
+              }
+            ]
+          },
+          {
+            "constant": 800.0,
+            "unit": "uM",
+            "substrate": "acetyl-phosphate (at pH 7 and 25 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "15996095"
+              }
+            ]
+          }
+        ]
+      },
+      "phDependence": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "15996095"
+              }
+            ],
+            "value": "Optimum pH is around 7. Relatively stable in solution within the pH range of 5-9.5."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "12081483"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "12637673"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15826149"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15996095"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19154134"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20164409"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "8071206"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "Reference",
+              "id": "Ref.10"
+            }
+          ],
+          "value": "Monomer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000305"
+              }
+            ],
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15005616"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "8071206"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9084169"
+            }
+          ],
+          "value": "By maltose, trehalose and sucrose and repressed by glucose and lactose"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "15996095"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19154134"
+            }
+          ],
+          "value": "Autophosphorylated"
+        }
+      ],
+      "commentType": "PTM"
+    },
+    {
+      "texts": [
+        {
+          "value": "The catalysis proceeds via a phosphoenzyme formed by reaction of an active-site nucleophile with the cofactor glucose 1,6-diphosphate (G1,6-diP). The phosphorylated mutase binds either G1P or G6P and transfers the phosphoryl group to the C(6)OH or C(1)OH, respectively"
+        }
+      ],
+      "commentType": "MISCELLANEOUS"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the HAD-like hydrolase superfamily. CbbY/CbbZ/Gph/YieH family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 221,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Beta-phosphoglucomutase",
+      "featureId": "PRO_0000108053"
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 8,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 8,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Nucleophile",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "15996095"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "19154134"
+        }
+      ]
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 10,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 10,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Proton donor/acceptor",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "15996095"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "19154134"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 8,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 8,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "12081483"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "12637673"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15826149"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15996095"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1LVH"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4N"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4O"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1ZOL"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WHE"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 10,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 10,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 10,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 10,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "12081483"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "12637673"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15826149"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15996095"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1LVH"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4N"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4O"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1ZOL"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WHE"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 46,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 46,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "12637673"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 47,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 47,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "12637673"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 49,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 49,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "12637673"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "15826149"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4N"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4O"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 116,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 116,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "12637673"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "15826149"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4N"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4O"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 117,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 117,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "12637673"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "15826149"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4N"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4O"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 118,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 118,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "12637673"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "15826149"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4N"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4O"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 170,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 170,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "12081483"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "12637673"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15826149"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15996095"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20164409"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1LVH"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4N"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4O"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1ZOL"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WHE"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 114,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 114,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Important for catalytic activity and assists the phosphoryl transfer reaction to Asp8 by balancing charge and orienting the reacting groups"
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 145,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 145,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Important for catalytic activity and assists the phosphoryl transfer reaction to Asp8 by balancing charge and orienting the reacting groups"
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 8,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 8,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "4-aspartylphosphate",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15996095"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19154134"
+        }
+      ]
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 8,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 8,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Inactive.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15996095"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "D",
+        "alternativeSequences": [
+          "A",
+          "E"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 10,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 10,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Inactive.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19154134"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "D",
+        "alternativeSequences": [
+          "A",
+          "E",
+          "N",
+          "S"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 16,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 16,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "500-fold reduction in the rate constant for Asp-8 phosphorylation by beta-G1,6bisP. 6,700-fold reduction in the apparent rate constant for cycling of the phosphorylated enzyme to convert beta-G1P to G6P. 13-fold increase in the estimated rate constant for phosphoryl transfer from the phospho-Asp8 to water.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19154134"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "T",
+        "alternativeSequences": [
+          "P"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 20,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 20,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Impairs Asp-8 phosphorylation by beta-G1,6bisP and phosphoryl transfer from the phospho-Asp8 to the substrate beta-G1P.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19154134"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "H",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 20,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 20,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "300-fold reduction in the conversion of beta-G1P to G6P in the presence of beta-G1,6bisP.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19154134"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "H",
+        "alternativeSequences": [
+          "N"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 20,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 20,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "8-fold reduction in the conversion of beta-G1P to G6P in the presence of beta-G1,6bisP.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19154134"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "H",
+        "alternativeSequences": [
+          "Q"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 45,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 45,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "20'000-fold decrease in catalytic efficiency.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15005616"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "K",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 46,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 46,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "1'000'000-fold decrease in catalytic efficiency.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15005616"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "G",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 46,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 46,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "100'000-fold decrease in catalytic efficiency.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15005616"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "G",
+        "alternativeSequences": [
+          "P"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 46,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 46,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "10'000-fold decrease in catalytic efficiency.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15005616"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "G",
+        "alternativeSequences": [
+          "V"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 49,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 49,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "1'000'000-fold decrease in catalytic efficiency.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15005616"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "R",
+        "alternativeSequences": [
+          "K"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 52,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 52,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Wild-type activity.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15005616"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "S",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 76,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 76,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "100-fold reduction in the conversion of beta-G1P to G6P in the presence of beta-G1,6bisP.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19154134"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "K",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 170,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 170,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Impaired, but active with an increase in the affinity for G1P.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "15996095"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "D",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 125,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 125,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAA94734",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "K",
+        "alternativeSequences": [
+          "R"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 206,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 206,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAA94734",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "Y",
+        "alternativeSequences": [
+          "H"
+        ]
+      }
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 4,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 7,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 11,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 13,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 17,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 30,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 38,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 41,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 42,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 46,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 49,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 59,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 60,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 62,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6HDG"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 63,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 65,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6HDG"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 66,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 83,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 84,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 86,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 89,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 91,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 96,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 105,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 109,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 112,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 119,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 125,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 129,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 131,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 133,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 135,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 138,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 140,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 141,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 143,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6YDJ"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 149,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 157,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 162,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 164,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 165,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 171,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 172,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 181,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 184,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 189,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 191,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 194,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 196,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 203,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 204,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 206,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 209,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 219,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "8Q1F"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-0119",
+      "category": "Biological process",
+      "name": "Carbohydrate metabolism"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0903",
+      "category": "Technical term",
+      "name": "Direct protein sequencing"
+    },
+    {
+      "id": "KW-0413",
+      "category": "Molecular function",
+      "name": "Isomerase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0597",
+      "category": "PTM",
+      "name": "Phosphoprotein"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "9084169",
+        "citationType": "journal article",
+        "authors": [
+          "Qian N.",
+          "Stanley G.A.",
+          "Bunte A.",
+          "Raadstroem P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9084169"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1099/00221287-143-3-855"
+          }
+        ],
+        "title": "Product formation and phosphoglucomutase activities in Lactococcus lactis: cloning and characterization of a novel phosphoglucomutase gene.",
+        "publicationDate": "1997",
+        "journal": "Microbiology",
+        "firstPage": "855",
+        "lastPage": "865",
+        "volume": "143"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]",
+        "PROTEIN SEQUENCE OF 1-15",
+        "FUNCTION AS A PHOSPHOGLUCOMUTASE AND IN THE CARBOHYDRATE METABOLISM",
+        "CATALYTIC ACTIVITY",
+        "INDUCTION",
+        "SUBSTRATE SPECIFICITY",
+        "NOMENCLATURE"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 19435 / DSM 20481 / NCDO 604 / NCIB 6681 / NCTC 6681",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "11337471",
+        "citationType": "journal article",
+        "authors": [
+          "Bolotin A.",
+          "Wincker P.",
+          "Mauger S.",
+          "Jaillon O.",
+          "Malarme K.",
+          "Weissenbach J.",
+          "Ehrlich S.D.",
+          "Sorokin A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11337471"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1101/gr.gr-1697r"
+          }
+        ],
+        "title": "The complete genome sequence of the lactic acid bacterium Lactococcus lactis ssp. lactis IL1403.",
+        "publicationDate": "2001",
+        "journal": "Genome Res.",
+        "firstPage": "731",
+        "lastPage": "753",
+        "volume": "11"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "IL1403",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "8071206",
+        "citationType": "journal article",
+        "authors": [
+          "Qian N.",
+          "Stanley G.A.",
+          "Hahn-Hagerdal B.",
+          "Radstrom P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8071206"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.176.17.5304-5311.1994"
+          }
+        ],
+        "title": "Purification and characterization of two phosphoglucomutases from Lactococcus lactis subsp. lactis and their regulation in maltose- and glucose-utilizing cells.",
+        "publicationDate": "1994",
+        "journal": "J. Bacteriol.",
+        "firstPage": "5304",
+        "lastPage": "5311",
+        "volume": "176"
+      },
+      "referencePositions": [
+        "INDUCTION",
+        "SUBSTRATE SPECIFICITY",
+        "COFACTOR",
+        "SUBUNIT"
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "15005616",
+        "citationType": "journal article",
+        "authors": [
+          "Lahiri S.D.",
+          "Zhang G.",
+          "Dai J.",
+          "Dunaway-Mariano D.",
+          "Allen K.N."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15005616"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/bi0356810"
+          }
+        ],
+        "title": "Analysis of the substrate specificity loop of the HAD superfamily cap domain.",
+        "publicationDate": "2004",
+        "journal": "Biochemistry",
+        "firstPage": "2812",
+        "lastPage": "2820",
+        "volume": "43"
+      },
+      "referencePositions": [
+        "FUNCTION AS A BETA-PHOSPHOGLUCOMUTASE",
+        "CATALYTIC ACTIVITY",
+        "INDUCTION",
+        "MUTAGENESIS OF LYS-45; GLY-46; ARG-49 AND SER-52"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 19435 / DSM 20481 / NCDO 604 / NCIB 6681 / NCTC 6681",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "12081483",
+        "citationType": "journal article",
+        "authors": [
+          "Lahiri S.D.",
+          "Zhang G.",
+          "Dunaway-Mariano D.",
+          "Allen K.N."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12081483"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/bi0202373"
+          }
+        ],
+        "title": "Caught in the act: the structure of phosphorylated beta-phosphoglucomutase from Lactococcus lactis.",
+        "publicationDate": "2002",
+        "journal": "Biochemistry",
+        "firstPage": "8351",
+        "lastPage": "8359",
+        "volume": "41"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (2.30 ANGSTROMS) IN COMPLEX WITH MAGNESIUM IONS",
+        "REACTION MECHANISM",
+        "COFACTOR",
+        "SUBUNIT"
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1LVH"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "12637673",
+        "citationType": "journal article",
+        "authors": [
+          "Lahiri S.D.",
+          "Zhang G.",
+          "Dunaway-Mariano D.",
+          "Allen K.N."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12637673"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.1082710"
+          }
+        ],
+        "title": "The pentacovalent phosphorus intermediate of a phosphoryl transfer reaction.",
+        "publicationDate": "2003",
+        "journal": "Science",
+        "firstPage": "2067",
+        "lastPage": "2071",
+        "volume": "299"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.20 ANGSTROMS) IN COMPLEX WITH SUBSTRATE ANALOGS AND MAGNESIUM IONS",
+        "COFACTOR",
+        "SUBUNIT"
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O03"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1O08"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 7,
+      "citation": {
+        "id": "15996095",
+        "citationType": "journal article",
+        "authors": [
+          "Zhang G.",
+          "Dai J.",
+          "Wang L.",
+          "Dunaway-Mariano D.",
+          "Tremblay L.W.",
+          "Allen K.N."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15996095"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/bi050558p"
+          }
+        ],
+        "title": "Catalytic cycling in beta-phosphoglucomutase: a kinetic and structural analysis.",
+        "publicationDate": "2005",
+        "journal": "Biochemistry",
+        "firstPage": "9404",
+        "lastPage": "9416",
+        "volume": "44"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.90 ANGSTROMS) IN COMPLEX WITH MAGNESIUM IONS",
+        "CATALYTIC ACTIVITY",
+        "COFACTOR",
+        "ACTIVITY REGULATION",
+        "PHOSPHORYLATION AT ASP-8",
+        "MUTAGENESIS OF ASP-8 AND ASP-170",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "REACTION MECHANISM",
+        "SUBUNIT",
+        "ACTIVE SITE"
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1ZOL"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 8,
+      "citation": {
+        "id": "15826149",
+        "citationType": "journal article",
+        "authors": [
+          "Tremblay L.W.",
+          "Zhang G.",
+          "Dai J.",
+          "Dunaway-Mariano D.",
+          "Allen K.N."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15826149"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/ja0509073"
+          }
+        ],
+        "title": "Chemical confirmation of a pentavalent phosphorane in complex with beta-phosphoglucomutase.",
+        "publicationDate": "2005",
+        "journal": "J. Am. Chem. Soc.",
+        "firstPage": "5298",
+        "lastPage": "5299",
+        "volume": "127"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.90 ANGSTROMS) IN COMPLEX WITH SUBSTRATE ANALOGS AND MAGNESIUM IONS",
+        "ACTIVITY REGULATION",
+        "SUBUNIT",
+        "COFACTOR"
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4N"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "1Z4O"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 9,
+      "citation": {
+        "id": "19154134",
+        "citationType": "journal article",
+        "authors": [
+          "Dai J.",
+          "Finci L.",
+          "Zhang C.",
+          "Lahiri S.",
+          "Zhang G.",
+          "Peisach E.",
+          "Allen K.N.",
+          "Dunaway-Mariano D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19154134"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/bi801653r"
+          }
+        ],
+        "title": "Analysis of the structural determinants underlying discrimination between substrate and solvent in beta-phosphoglucomutase catalysis.",
+        "publicationDate": "2009",
+        "journal": "Biochemistry",
+        "firstPage": "1984",
+        "lastPage": "1995",
+        "volume": "48"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (2.70 ANGSTROMS) IN COMPLEX WITH MAGNESIUM IONS",
+        "REACTION MECHANISM",
+        "COFACTOR",
+        "SUBUNIT",
+        "PHOSPHORYLATION AT ASP-8",
+        "ACTIVE SITE",
+        "MUTAGENESIS OF ASP-10; THR-16; HIS-20 AND LYS-76"
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3FM9"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 10,
+      "citation": {
+        "id": "CI-2IJD5I4GRM8JI",
+        "citationType": "submission",
+        "authors": [
+          "Bowler M.W.",
+          "Baxter N.J.",
+          "Webster C.E.",
+          "Pollard S.",
+          "Alizadeh T.",
+          "Hounslow A.M.",
+          "Cliff M.J.",
+          "Bermel W.",
+          "Williams N.H.",
+          "Hollfelder F.",
+          "Blackburn G.M.",
+          "Waltho J.P."
+        ],
+        "title": "The role of strain in enzyme catalysed phosphate transfer.",
+        "publicationDate": "APR-2009",
+        "submissionDatabase": "PDB data bank"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.05 ANGSTROMS) IN COMPLEX WITH SUBSTRATE ANALOGS AND MAGNESIUM IONS"
+      ]
+    },
+    {
+      "referenceNumber": 11,
+      "citation": {
+        "id": "20164409",
+        "citationType": "journal article",
+        "authors": [
+          "Baxter N.J.",
+          "Bowler M.W.",
+          "Alizadeh T.",
+          "Cliff M.J.",
+          "Hounslow A.M.",
+          "Wu B.",
+          "Berkowitz D.B.",
+          "Williams N.H.",
+          "Blackburn G.M.",
+          "Waltho J.P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "20164409"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.0910333106"
+          }
+        ],
+        "title": "Atomic details of near-transition state conformers for enzyme phosphoryl transfer revealed by MgF-3 rather than by phosphoranes.",
+        "publicationDate": "2010",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "4555",
+        "lastPage": "4560",
+        "volume": "107"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.30 ANGSTROMS) IN COMPLEX WITH BETA-D-GLUCOSE 6-PHOSPHATE AND MAGNESIUM IONS",
+        "COFACTOR",
+        "SUBUNIT"
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF5"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WF6"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "2WHE"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "Z70730",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA94734.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AE005176",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAK04527.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "E86678",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "E86678"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_010905331.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_002662.1"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1LVH",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.30 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1O03",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.40 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1O08",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.20 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1Z4N",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.97 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1Z4O",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.90 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1ZOL",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.90 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2WF5",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.30 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2WF6",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.40 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2WF7",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.05 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2WF8",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.20 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2WF9",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.40 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2WFA",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.65 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2WHE",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.55 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3FM9",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.70 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3ZI4",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.33 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "4C4R",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.10 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "4C4S",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.50 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "4C4T",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.50 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5O6P",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.20 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5O6R",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.36 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5OJZ",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.30 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-220"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5OK0",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.15 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-218"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5OK1",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.86 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-218"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5OK2",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.10 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-218"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5OLW",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.28 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5OLX",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.38 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5OLY",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.00 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/G=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H8U",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.90 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H8V",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.84 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H8W",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.98 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H8X",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.83 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H8Y",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.89 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H8Z",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.60 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H90",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.31 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H91",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.38 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H92",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.60 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H93",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.77 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6H94",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.49 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6HDF",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.40 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6HDG",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.15 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6HDH",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.62 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6HDI",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.03 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6HDJ",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.16 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6HDK",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.24 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6HDL",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.16 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6HDM",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.30 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6I03",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.02 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6QZG",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.47 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6YDJ",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.04 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6YDK",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.02 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6YDL",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.52 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6YDM",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.10 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "8Q1C",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.68 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "8Q1D",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.75 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "8Q1E",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.23 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "8Q1F",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.01 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-221"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1LVH",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1O03",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1O08",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1Z4N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1Z4O",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1ZOL",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2WF5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2WF6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2WF7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2WF8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2WF9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2WFA",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2WHE",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3FM9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3ZI4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "4C4R",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "4C4S",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "4C4T",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5O6P",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5O6R",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5OJZ",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5OK0",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5OK1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5OK2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5OLW",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5OLX",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5OLY",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H8U",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H8V",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H8W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H8X",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H8Y",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H8Z",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H90",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H91",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H92",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H93",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6H94",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6HDF",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6HDG",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6HDH",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6HDI",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6HDJ",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6HDK",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6HDL",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6HDM",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6I03",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6QZG",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6YDJ",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6YDK",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6YDL",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6YDM",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "8Q1C",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "8Q1D",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "8Q1E",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "8Q1F",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P71447",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BMRB",
+      "id": "P71447",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "MDposit",
+      "id": "P71447",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P71447",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DrugBank",
+      "id": "DB02317",
+      "properties": [
+        {
+          "key": "GenericName",
+          "value": "Alpha-D-Galactose-1-Phosphate"
+        }
+      ]
+    },
+    {
+      "database": "DrugBank",
+      "id": "DB02835",
+      "properties": [
+        {
+          "key": "GenericName",
+          "value": "Alpha-D-Glucose 1,6-Bisphosphate"
+        }
+      ]
+    },
+    {
+      "database": "DrugBank",
+      "id": "DB01857",
+      "properties": [
+        {
+          "key": "GenericName",
+          "value": "Phosphoaspartate"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "AAK04527",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAK04527"
+        },
+        {
+          "key": "GeneId",
+          "value": "L0001"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "lla:L0001",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|272623.7.peg.467",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0637",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_045011_13_3_9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9797743at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:MONOMER-5821",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "5.4.2.6",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "2864"
+        }
+      ]
+    },
+    {
+      "database": "SABIO-RK",
+      "id": "P71447",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "P71447",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000002196",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005737",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008801",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:beta-phosphoglucomutase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "15005616"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000287",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:magnesium ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "8071206"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005975",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:carbohydrate metabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "9084169"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd02598",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_BPGM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.150.240:FF:000010",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Beta-phosphoglucomutase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.150.240",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Putative phosphatase, domain 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR010976",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "B-phosphoglucomutase_hydrolase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR010972",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Beta-PGM"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR051600",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Beta-PGM-like"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006439",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023198",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGP-like_dom2"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01990",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "bPGM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01509",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IA-v3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR02009",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGMB-YQAB-SF"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR46193",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "6-PHOSPHOGLUCONATE PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR46193:SF18",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HEXITOL PHOSPHATASE B"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00702",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hydrolase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00413",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HADHALOGNASE"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDF00046",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta-phosphoglucomutase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01135",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C1.5.6:_HAD__Beta-PGM__Phospha"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01129",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C1.5:_HAD__Beta-PGM__Phosphata"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDS00003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Haloacid_Dehalogenase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MFKAVLFDLDGVITDTAEYHFRAWKALAEEIGINGVDRQFNEQLKGVSREDSLQKILDLADKKVSAEEFKELAKRKNDNYVKMIQDVSPADVYPGILQLLKDLRSNKIKIALASASKNGPFLLEKMNLTGYFDAIADPAEVAASKPAPDIFIAAAHAVGVAPSESIGLEDSQAGIQAIKDSGALPIGVGRPEDLGDDIVIVPDTSYYTLEFLKEVWLQKQK",
+    "length": 221,
+    "molWeight": 24209,
+    "crc64": "53AC0BF0FA249EFC",
+    "md5": "0945A49DAFFC63811B57E672971ABDC4"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "ACTIVITY REGULATION": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "INDUCTION": 1,
+      "PTM": 1,
+      "MISCELLANEOUS": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Active site": 2,
+      "Binding site": 10,
+      "Site": 2,
+      "Modified residue": 1,
+      "Mutagenesis": 14,
+      "Sequence conflict": 2,
+      "Beta strand": 8,
+      "Turn": 3,
+      "Helix": 16
+    },
+    "uniParcId": "UPI0000131857"
+  }
+}

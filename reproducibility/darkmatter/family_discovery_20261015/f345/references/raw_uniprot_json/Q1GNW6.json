@@ -1,0 +1,993 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q1GNW6",
+  "uniProtkbId": "ECTC_SPHAL",
+  "entryAudit": {
+    "firstPublicDate": "2008-02-05",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2006-06-27",
+    "entryVersion": 94,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Sphingopyxis alaskensis (strain DSM 13593 / LMG 18877 / RB2256)",
+    "commonName": "Sphingomonas alaskensis",
+    "taxonId": 317655,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Alphaproteobacteria",
+      "Sphingomonadales",
+      "Sphingopyxidaceae",
+      "Sphingopyxis"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01255"
+          }
+        ],
+        "value": "L-ectoine synthase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "4.2.1.108"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "N-acetyldiaminobutyrate dehydratase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01255"
+          }
+        ],
+        "value": "ectC"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "Sala_2951"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "Catalyzes the circularization of gamma-N-acetyl-alpha,gamma-diaminobutyric acid (ADABA) to ectoine (1,4,5,6-tetrahydro-2-methyl-4-pyrimidine carboxylic acid), which is an excellent osmoprotectant"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "(2S)-4-acetamido-2-aminobutanoate = L-ectoine + H2O",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:17281"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58515"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58929"
+          }
+        ],
+        "ecNumber": "4.2.1.108",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01255"
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "Amine and polyamine biosynthesis; ectoine biosynthesis; L-ectoine from L-aspartate 4-semialdehyde: step 3/3"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "Belongs to the ectoine synthase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 137,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "L-ectoine synthase",
+      "featureId": "PRO_1000067239"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 115,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 137,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 2,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 5,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BXX"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 6,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 9,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 15,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 18,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 21,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 27,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 29,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 31,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 33,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 42,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 48,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 51,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BXX"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 56,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 63,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 66,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 70,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 71,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 74,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 75,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 79,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 84,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 87,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 93,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 99,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 101,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 109,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BY5"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 113,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 115,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BXX"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 116,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 119,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5BXX"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "19805210",
+        "citationType": "journal article",
+        "authors": [
+          "Lauro F.M.",
+          "McDougald D.",
+          "Thomas T.",
+          "Williams T.J.",
+          "Egan S.",
+          "Rice S.",
+          "DeMaere M.Z.",
+          "Ting L.",
+          "Ertan H.",
+          "Johnson J.",
+          "Ferriera S.",
+          "Lapidus A.",
+          "Anderson I.",
+          "Kyrpides N.",
+          "Munk A.C.",
+          "Detter C.",
+          "Han C.S.",
+          "Brown M.V.",
+          "Robb F.T.",
+          "Kjelleberg S.",
+          "Cavicchioli R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19805210"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.0903507106"
+          }
+        ],
+        "title": "The genomic basis of trophic strategy in marine bacteria.",
+        "publicationDate": "2009",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "15527",
+        "lastPage": "15533",
+        "volume": "106"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "DSM 13593 / LMG 18877 / RB2256",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "CP000356",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ABF54656.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_011543220.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_008048.1"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5BXX",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.00 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B/C/D=1-137"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5BY5",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.20 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-137"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5BXX",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5BY5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q1GNW6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q1GNW6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "317655.Sala_2951",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sal:Sala_2951",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG1917",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_154525_0_0_5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9801830at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "4.2.1.108",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "12995"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00067",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00123"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000006578",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0033990",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:ectoine synthase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0019491",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:ectoine biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd06978",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "cupin_EctC"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.60.120.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Jelly Rolls"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "HAMAP",
+      "id": "MF_01255",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine_synth"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR010462",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine_synth"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014710",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC-like_jellyroll"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011051",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC_Cupin_sf"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF009806",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK13290.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR39289",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR39289:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "L-ECTOINE SYNTHASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF06339",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine_synth"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51182",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC-like cupins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MIVRNLGDIRKTDRNVRSDGWASARMLLKDDGMGFSFHVTTLFAGSELRMHYQNHLEAVLVLKGTGTIEDLATGEVHALRPGVMYALDDHDRHIVRPETDILTACVFNPPVTGREVHDESGAYPADPELAREPVAAD",
+    "length": 137,
+    "molWeight": 15150,
+    "crc64": "F71B7E7050F34351",
+    "md5": "2EFE80A0ED76C5C8F5720D7DF5AA23E1"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Region": 1,
+      "Beta strand": 12,
+      "Helix": 2,
+      "Turn": 2
+    },
+    "uniParcId": "UPI0000D7C457"
+  }
+}

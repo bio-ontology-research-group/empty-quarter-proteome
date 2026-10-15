@@ -1,0 +1,74 @@
+{
+  "catalogue_total": 40039,
+  "catalogue_is_species_representative": {
+    "yes": 21076,
+    "no": 18963
+  },
+  "catalogue_novelty_info": {
+    "unknown": 27323,
+    "known": 12716
+  },
+  "catalogue_uSGB_representatives_both_yes_and_unknown": 16529,
+  "sampled_cohort_total": 1500,
+  "sampled_is_species_representative": {
+    "yes": 847,
+    "no": 653
+  },
+  "sampled_novelty_info": {
+    "unknown": 1032,
+    "known": 468
+  },
+  "sampled_uSGB_theoretical_max_overlap_with_ncbi_prjna983538": 667,
+  "sampled_uSGB_overlap_percentage": 44.47,
+  "sampled_missing_from_ncbi_count": 833,
+  "sampled_missing_from_ncbi_percentage": 55.53,
+  "candidate_sources_audit": {
+    "Zenodo_8223844": {
+      "url": "https://zenodo.org/records/8223844",
+      "api_files_url": "https://zenodo.org/api/records/8223844/files",
+      "format": "373 multipart tar.gz chunks (mag.tar.gz.aa to mag.tar.gz.oh)",
+      "total_bytes": 39021060793,
+      "total_gib": 36.34,
+      "individual_genome_download": false,
+      "catalogue_coverage": "40,039 / 40,039 (100.0%)",
+      "sampled_1500_coverage": "1,500 / 1,500 (100.0%)",
+      "operational_status": "ONLINE / AUTHORITATIVE"
+    },
+    "NCBI_BioProject_PRJNA983538": {
+      "url": "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA983538",
+      "format": "GenBank contig assemblies (GCA_*)",
+      "assemblies_available": 16531,
+      "individual_genome_download": true,
+      "catalogue_coverage": "16,530 / 40,039 (41.28% - uSGB representatives only)",
+      "sampled_1500_coverage": "667 / 1,500 (44.47%)",
+      "missing_from_sampled_1500": "833 / 1,500 (55.53%)",
+      "operational_status": "INCOMPLETE / NON-VIABLE (missing 55.53% of sampled cohort; no official user_genome ID mapping)"
+    },
+    "CyVerse_Data_Store": {
+      "url": "https://data.cyverse.org/dav-anon/iplant/home/lucyzju/Caiyu_SMAG_catalog_2023/MAG.tar.gz",
+      "format": "Monolithic tar.gz (~36-39 GB)",
+      "individual_genome_download": false,
+      "operational_status": "BLOCKED (HTTP 307 redirect to https://unblockme.cyverse.org/ anti-bot challenge)"
+    },
+    "Author_Web_Portal": {
+      "url": "https://smag.microbmalab.cn",
+      "format": "Web portal",
+      "operational_status": "OFFLINE / DECOMMISSIONED (DNS failure; authors retired domain due to maintenance costs)"
+    },
+    "AWS_China_S3_Mirror": {
+      "url": "https://bma-smag.s3.cn-northwest-1.amazonaws.com.cn/SMAG/MAG40039.tar.gz",
+      "format": "Monolithic tar.gz",
+      "operational_status": "OFFLINE (HTTP 404 Not Found)"
+    },
+    "ENA": {
+      "url": "https://www.ebi.ac.uk/ena/browser/view/PRJNA983538",
+      "format": "SRA raw read runs only",
+      "operational_status": "NO INDEPENDENT ASSEMBLY CATALOGUE (mirrors PRJNA983538 raw reads)"
+    },
+    "NGDC_CNCB": {
+      "url": "https://ngdc.cncb.ac.cn",
+      "format": "Community index via Awesome MAG",
+      "operational_status": "NO INDEPENDENT HOSTING (points to Zenodo 8223844)"
+    }
+  }
+}

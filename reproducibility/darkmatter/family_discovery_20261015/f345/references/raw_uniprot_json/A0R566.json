@@ -1,0 +1,890 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "A0R566",
+  "secondaryAccessions": [
+    "I7FM58"
+  ],
+  "uniProtkbId": "CYNT_MYCS2",
+  "entryAudit": {
+    "firstPublicDate": "2010-08-10",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2007-01-09",
+    "entryVersion": 106,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Mycolicibacterium smegmatis (strain ATCC 700084 / mc(2)155)",
+    "commonName": "Mycobacterium smegmatis",
+    "taxonId": 246196,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Actinomycetota",
+      "Actinomycetes",
+      "Mycobacteriales",
+      "Mycobacteriaceae",
+      "Mycolicibacterium"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Carbonic anhydrase"
+      },
+      "ecNumbers": [
+        {
+          "value": "4.2.1.1"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Carbonate dehydratase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "cynT"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "MSMEG_6082"
+        },
+        {
+          "value": "MSMEI_5922"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Catalyzes the reversible hydration of carbon dioxide to form bicarbonate"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "hydrogencarbonate + H(+) = CO2 + H2O",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:10748"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16526"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:17544"
+          }
+        ],
+        "ecNumber": "4.2.1.1"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Zn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29105"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250"
+              }
+            ],
+            "value": "Binds 1 zinc ion per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Homotetramer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the beta-class carbonic anhydrase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 206,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Carbonic anhydrase",
+      "featureId": "PRO_0000396116"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 51,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 51,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 53,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 53,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 104,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 104,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 107,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 107,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Cross-link",
+      "location": {
+        "start": {
+          "value": 11,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 11,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Isoglutamyl lysine isopeptide (Lys-Gln) (interchain with Q-Cter in protein Pup)",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20094657"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-1017",
+      "category": "PTM",
+      "name": "Isopeptide bond"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0832",
+      "category": "PTM",
+      "name": "Ubl conjugation"
+    },
+    {
+      "id": "KW-0862",
+      "category": "Ligand",
+      "name": "Zinc"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "CI-ET8TSAB7T4FCA",
+        "citationType": "submission",
+        "authors": [
+          "Fleischmann R.D.",
+          "Dodson R.J.",
+          "Haft D.H.",
+          "Merkel J.S.",
+          "Nelson W.C.",
+          "Fraser C.M."
+        ],
+        "publicationDate": "OCT-2006",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 700084 / mc(2)155",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "17295914",
+        "citationType": "journal article",
+        "authors": [
+          "Deshayes C.",
+          "Perrodou E.",
+          "Gallien S.",
+          "Euphrasie D.",
+          "Schaeffer C.",
+          "Van-Dorsselaer A.",
+          "Poch O.",
+          "Lecompte O.",
+          "Reyrat J.-M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17295914"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1186/gb-2007-8-2-r20"
+          }
+        ],
+        "title": "Interrupted coding sequences in Mycobacterium smegmatis: authentic mutations or sequencing errors?",
+        "publicationDate": "2007",
+        "journal": "Genome Biol.",
+        "firstPage": "R20.1",
+        "lastPage": "R20.9",
+        "volume": "8"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 700084 / mc(2)155",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "18955433",
+        "citationType": "journal article",
+        "authors": [
+          "Gallien S.",
+          "Perrodou E.",
+          "Carapito C.",
+          "Deshayes C.",
+          "Reyrat J.-M.",
+          "Van Dorsselaer A.",
+          "Poch O.",
+          "Schaeffer C.",
+          "Lecompte O."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18955433"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1101/gr.081901.108"
+          }
+        ],
+        "title": "Ortho-proteogenomics: multiple proteomes investigation through orthology and a new MS-based protocol.",
+        "publicationDate": "2009",
+        "journal": "Genome Res.",
+        "firstPage": "128",
+        "lastPage": "135",
+        "volume": "19"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 700084 / mc(2)155",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "20094657",
+        "citationType": "journal article",
+        "authors": [
+          "Watrous J.",
+          "Burns K.",
+          "Liu W.T.",
+          "Patel A.",
+          "Hook V.",
+          "Bafna V.",
+          "Barry C.E. III",
+          "Bark S.",
+          "Dorrestein P.C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "20094657"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1039/b916104j"
+          }
+        ],
+        "title": "Expansion of the mycobacterial 'PUPylome'.",
+        "publicationDate": "2010",
+        "journal": "Mol. Biosyst.",
+        "firstPage": "376",
+        "lastPage": "385",
+        "volume": "6"
+      },
+      "referencePositions": [
+        "PUPYLATION AT LYS-11",
+        "IDENTIFICATION BY MASS SPECTROMETRY"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "CP000480",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ABK70331.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CP001663",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AFP42355.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_011731025.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_008596.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "A0R566",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "A0R566",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "246196.MSMEG_6082",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "246196-MSMEG_6082",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "93460714",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "msb:LJ00_30075",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "msg:MSMEI_5922",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "msm:MSMEG_6082",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|246196.19.peg.5920",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0288",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9797527at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000757",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004089",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:carbonate dehydratase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008270",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:zinc ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0015976",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:carbon utilization"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd03378",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta_CA_cladeC"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.1050.10:FF:000006",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic anhydrase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.1050.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic anhydrase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001765",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015892",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036874",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase_sf"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11002",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBONIC ANHYDRASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11002:SF79",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBONIC ANHYDRASE 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pro_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00947",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pro_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53056",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta-carbonic anhydrase, cab"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00705",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PROK_CO2_ANHYDRASE_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MPNSNPVAAWKALKDGNARFVAGQPLHPSQGIERRASLTQAQRPTAVVFGCGDSRVAAEILFDQGLGDMFVVRTAGHVIDNAVLGSIEYAVTVLKVPLIVVLGHDSCGAVKATLSALDEGEVPSGFVRDIVERVTPSILLGRKAGLSRVDEFEAQHVNETVAQLQMRSTAIAQGLAAGTQAIVGTTYHLADGRVELRSHLGDIGEV",
+    "length": 206,
+    "molWeight": 21715,
+    "crc64": "E4D52596D2F492B7",
+    "md5": "8EECB9727C559F5BD23C7E39354ED011"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SUBUNIT": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 4,
+      "Cross-link": 1
+    },
+    "uniParcId": "UPI0000E8600B"
+  }
+}

@@ -1,0 +1,774 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q28811",
+  "uniProtkbId": "PHR_POTTR",
+  "entryAudit": {
+    "firstPublicDate": "2000-05-30",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1996-11-01",
+    "entryVersion": 98,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Potorous tridactylus",
+    "commonName": "Potoroo",
+    "taxonId": 9310,
+    "lineage": [
+      "Eukaryota",
+      "Metazoa",
+      "Chordata",
+      "Craniata",
+      "Vertebrata",
+      "Euteleostomi",
+      "Mammalia",
+      "Metatheria",
+      "Diprotodontia",
+      "Potoroidae",
+      "Potorous"
+    ]
+  },
+  "proteinExistence": "2: Evidence at transcript level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Deoxyribodipyrimidine photo-lyase"
+      },
+      "ecNumbers": [
+        {
+          "value": "4.1.99.3"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "DNA photolyase"
+        }
+      },
+      {
+        "fullName": {
+          "value": "Photoreactivating enzyme"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "PHR"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "value": "Involved in repair of UV radiation-induced DNA damage. Catalyzes the light-dependent monomerization (300-600 nm) of cyclobutyl pyrimidine dimers (in cis-syn configuration), which are formed between adjacent bases on the same DNA strand upon exposure to ultraviolet radiation"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "cyclobutadipyrimidine (in DNA) = 2 pyrimidine residues (in DNA).",
+        "ecNumber": "4.1.99.3"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "FAD",
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:57692"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the DNA photolyase class-2 family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 532,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Deoxyribodipyrimidine photo-lyase",
+      "featureId": "PRO_0000085120"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 97,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 229,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Photolyase/cryptochrome alpha/beta"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 57,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 368,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 376,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Interaction with DNA",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 442,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 443,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Interaction with DNA",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 24,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 34,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 41,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 55,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic and acidic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 322,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 322,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:16991"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "DNA",
+        "id": "ChEBI:CHEBI:16991"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 468,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 470,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0157",
+      "category": "Ligand",
+      "name": "Chromophore"
+    },
+    {
+      "id": "KW-0227",
+      "category": "Biological process",
+      "name": "DNA damage"
+    },
+    {
+      "id": "KW-0234",
+      "category": "Biological process",
+      "name": "DNA repair"
+    },
+    {
+      "id": "KW-0238",
+      "category": "Molecular function",
+      "name": "DNA-binding"
+    },
+    {
+      "id": "KW-0274",
+      "category": "Ligand",
+      "name": "FAD"
+    },
+    {
+      "id": "KW-0285",
+      "category": "Ligand",
+      "name": "Flavoprotein"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "7813451",
+        "citationType": "journal article",
+        "authors": [
+          "Yasui A.",
+          "Eker A.P.",
+          "Yasuhira S.",
+          "Yajima H.",
+          "Kobayashi T.",
+          "Takao M.",
+          "Oikawa A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "7813451"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1002/j.1460-2075.1994.tb06961.x"
+          }
+        ],
+        "title": "A new class of DNA photolyases present in various organisms including aplacental mammals.",
+        "publicationDate": "1994",
+        "journal": "EMBO J.",
+        "firstPage": "6143",
+        "lastPage": "6151",
+        "volume": "13"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [MRNA]"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "D26020",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA05041.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "S52046",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S52046"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q28811",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q28811",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "4.1.99.3",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "5008"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003904",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:deoxyribodipyrimidine photo-lyase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000719",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:photoreactive repair"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009650",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:UV protection"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-ARBA"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.579.10:FF:000002",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Deoxyribodipyrimidine photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.25.40.80:FF:000004",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Deoxyribodipyrimidine photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.620:FF:000110",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Deoxyribodipyrimidine photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.25.40.80",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.579.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA Cyclobutane Dipyrimidine Photolyase, subunit A, domain 3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.620",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HUPs"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036134",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_FAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036155",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR008148",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_2"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR032673",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_2_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006050",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR052219",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Photolyase_Class-2"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014729",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rossmann-like_a/b/a_fold"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR00591",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "phr2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10211:SF0",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DEOXYRIBODIPYRIMIDINE PHOTO-LYASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10211",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DEOXYRIBODIPYRIMIDINE PHOTOLYASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00875",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF48173",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase FAD-binding domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF52425",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS01083",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_PHOTOLYASES_2_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS01084",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_PHOTOLYASES_2_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51645",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHR_CRY_ALPHA_BETA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MDSKKRSHSTGGEAENMESQESKAKRKPLQKHQFSKSNVVQKEEKDKTEGEEKGAEGLQEVVRQSRLRTAPSVLEFRFNKQRVRLISQDCHLQDQSQAFVYWMSRDQRVQDNWAFLYAQRLALKQKLPLHVCFCLAPCFLGATIRHYDFMLRGLEEVAEECEKLCIPFHLLLGLPKDVLPAFVQTHGIGGIVTDFSPLLHHTQWVKDVQDALPRQVPFVQVDAHNIVPCWVASDKQEYGARTIRHKIHDRLPHFLTEFPPVICHPYTSNVQAEPVDWNGCRAGLQVDRSVKEVSWAKPGTASGLTMLQSFIAERLPYFGSDRNNPNKDALSNLSPWFHFGQVSVQRAILEVQKHRSRYPDSVTNFVEEAVVRRELADNFCFYNKNYDKLEGAYDWAQTTLRLHAKDKRPHLYSLEQLESGKTHDPLWNAAQMQTVKEGKMHGFLRMYWAKKILEWTRSPEEALEFAIYLNDRFQLDGWDPNGYVGCMWSICGIHDQGWAEREIFGKIRYMNYAGCKRKFDVAEFERKISPAD",
+    "length": 532,
+    "molWeight": 61631,
+    "crc64": "0865B1BFDE7BB25B",
+    "md5": "F4AD56EBE8D77F2DF571DE26A5B16934"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 1,
+      "Region": 3,
+      "Compositional bias": 2,
+      "Binding site": 2
+    },
+    "uniParcId": "UPI00001319F8"
+  }
+}

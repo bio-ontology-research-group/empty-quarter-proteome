@@ -1,0 +1,55 @@
+==================================================================
+Running Synthetic H3 Repair Verifications
+==================================================================
+Test 1: Python compilation of candidate scripts...
+  [PASS] Compiled 02_extract_and_call_smag.py
+  [PASS] Compiled 03_fetch_and_call_gem.py
+  [PASS] Compiled 03_retain_gem_genecalls.py
+  [PASS] Compiled 05_diamond_search_full_census.py
+
+Test 2: Query census validation fail-closed logic...
+  [PASS] Duplicate dark ID detected.
+  [PASS] Disjointness validation caught overlap.
+  [PASS] FASTA union mismatch correctly detected.
+
+Test 3: DIAMOND hit ID and threshold validation...
+  [PASS] Valid hits successfully loaded.
+  [PASS] Rejected hit ID outside query census: Line 1 in '/tmp/tmpwwh0s30a/bad_census.m8': hit query ID 'UNKNOWN_QUERY' is NOT in the declared query census!
+  [PASS] Rejected hit violating evalue <= 1e-3: Line 1 in '/tmp/tmpwwh0s30a/bad_evalue.m8': evalue 0.05 violates declared threshold <= 1e-3.
+  [PASS] Rejected hit violating id_cutoff >= 30: Line 1 in '/tmp/tmpwwh0s30a/bad_id.m8': pident 28.5 violates declared threshold >= 30.
+
+Test 4: Search cache signature and fail-closed semantics...
+  Building DIAMOND DB: /tmp/tmpbc2zk059/target_db...
+  DB built and verified in 0.0s (DB SHA256: e3b0c44298fc...).
+  Running DIAMOND search: /tmp/tmpbc2zk059/hits.m8 (id_cutoff=0)...
+  Search completed and verified in 0.0s (0.0 MB).
+  [PASS] Initial run built DB and search with completion signatures.
+  [CACHE HIT] Verified DIAMOND DB: '/tmp/tmpbc2zk059/target_db.dmnd' (SHA256: e3b0c44298fc...).
+  [CACHE HIT] Verified search results: '/tmp/tmpbc2zk059/hits.m8' (1 hits, SHA256: 5962e3300623...).
+  [PASS] Verified cache hit succeeded.
+  [CACHE HIT] Verified DIAMOND DB: '/tmp/tmpbc2zk059/target_db.dmnd' (SHA256: e3b0c44298fc...).
+  Running DIAMOND search: /tmp/tmpbc2zk059/hits_id30.m8 (id_cutoff=30)...
+  Search completed and verified in 0.0s (0.0 MB).
+  [PASS] Reused primary DB for id30 search without rebuild.
+  [CACHE HIT] Verified DIAMOND DB: '/tmp/tmpbc2zk059/target_db.dmnd' (SHA256: e3b0c44298fc...).
+  [PASS] Failed closed on missing search signature: [SEARCH CACHE INTEGRITY ERROR] DIAMOND search hits file '/tmp/tmpbc2zk059/hits.m8' exists on disk, but completion signature file '/tmp/tmpbc2zk059/hits.m8.sig.json' is missing! Refusing to reuse unverified hits or blindly overwrite. Repair action: inspect or remove '/tmp/tmpbc2zk059/hits.m8' before retrying.
+  [CACHE HIT] Verified DIAMOND DB: '/tmp/tmpbc2zk059/target_db.dmnd' (SHA256: e3b0c44298fc...).
+  [PASS] Failed closed on signature checksum mismatch: [SEARCH CACHE INTEGRITY ERROR] DIAMOND search hits file '/tmp/tmpbc2zk059/hits.m8' signature mismatch:
+  db_sha256 (sig: None vs cur: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855)
+  target_faa_sha256 (sig: None vs cur: 27075a8154923e7358199d9aa71e7e3af1b9fff44441f546f03a896be025dc0f)
+  diamond_version (sig: None vs cur: diamond version 2.0.15)
+  id_cutoff (sig: None vs cur: 0)
+  output_sha256 (sig: wrong_hash vs cur: 2b049b3b38f3b62ae68471e6f7d2b192a67b2bbcbf530842693a5d4aedf56c38)
+Failing closed. Repair action: verify or remove '/tmp/tmpbc2zk059/hits.m8' and '/tmp/tmpbc2zk059/hits.m8.sig.json'.
+  [CACHE HIT] Verified DIAMOND DB: '/tmp/tmpbc2zk059/target_db.dmnd' (SHA256: e3b0c44298fc...).
+  [CACHE HIT] Verified search results: '/tmp/tmpbc2zk059/zero.m8' (0 hits, SHA256: e3b0c44298fc...).
+  [PASS] Valid zero-hit result accepted with exit 0 signature.
+
+Test 5: Extraction cache semantics & Prodigal coordinate parsing...
+  [PASS] Prodigal header coordinate parsing verified.
+  [PASS] Reverse strand Prodigal header parsed.
+  [PASS] Unmanifested FASTA on disk marked for extraction.
+  [PASS] Pinned extraction manifest entry validated.
+  [PASS] Truncated/corrupted cached assembly rejected.
+
+ALL REPAIR TESTS PASSED SUCCESSFULLY.

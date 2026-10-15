@@ -1,0 +1,49 @@
+BLOCKING CODE AUDIT — 2026-10-15
+Do not run downstream biological screening from current 01/02 scripts until fixed.
+
+1. 01_fetch_references.py embeds five long literal SPL sequences without a
+   retained source file. These are UNVERIFIED and must be excluded, not relabelled
+   as Xu2021. Download supplementary FASTA/accession data and parse exact sequences;
+   no model-generated protein sequence may ever enter the evidence pipeline.
+2. Several fetched UniProt accessions contradict the manually assigned labels:
+   Q9M3C5 = Arabidopsis beta-hexosaminidase 1, 541 aa (not photolyase).
+   Q8TIR0 = Methanosarcina acetivorans cation-transporting ATPase, 909 aa.
+   Q9A9F0 = Caulobacter DUF4139 domain-containing protein, 456 aa.
+   Q9V827 does not return a current valid protein record in root's query.
+   Root verified via https://rest.uniprot.org/uniprotkb/ACCESSION.json.
+   Retain original JSON and FASTA and derive organism/name/EC/evidence from JSON.
+   Resolve/validate EVERY accession. Prefer reproducible UniProt queries for
+   reviewed target EC/functions and competing families, with pagination and raw
+   metadata, over invented handwritten reference dictionaries. Generic reviewed
+   status is not necessarily experimental evidence; preserve evidence codes.
+3. 02_f1_screen.py sends --tblout /dev/stdout while normal HMMER output also
+   goes to stdout, then parses both as hit rows. Use a dedicated --domtblout or
+   --tblout file, and -o separate report. Never silently convert failed searches
+   to empty results. HMMER --cpu must match process worker allocation (e.g.1
+   per process) to avoid oversubscription. Archive raw rows/logs per run.
+4. The test 'CPD_I' in ID also matches CPD_II and CPD_III. Use exact reference
+   metadata join, not substring heuristics. A one-way top-hit search is not
+   'reciprocal'. Multiple proteins may have ambiguous subfamily assignment.
+5. Arbitrary FAD regex and whole-protein W/C counts do not validate active-site
+   residues. Either align to annotated sites correctly or report descriptive
+   composition only; do not use invented regex as functional evidence.
+6. Verify actual representative proteome paths/headers/ID namespace before
+   full scans; do not assume folder name or Prodigal partial fields. Include
+   explicit unknown completeness if absent, not complete by default.
+
+Correct prospectively, preserve old scripts as rejected_v1, verify references
+before downstream execution. Stop conflicting pending jobs if needed. Report
+truthful limited pilot if full reference classes cannot be obtained promptly.
+
+Follow-up root audit:
+03 uses primary_cluster: WRONG for ANI95. Existing audited h2_context/scripts/01_select_cohort.py uses Cdb secondary_cluster -> Wdb cluster; use exact join, one winner per cluster, assert closures.
+03 contig_to_bin parts[1] is WRONG. Existing audited code uses parts[2] as refined bin. Inspect actual header/rows in Slurm. This invalidates previous remapping results.
+03 HMMER domtbl fields: p[3]=query NAME, p[4]=query ACCESSION; currently inverted. Use p[4] accession and domain score/evalue explicitly.
+01 rebuilt output schema incompatible with 02/03; cannot silently fall back to empty mappings.
+Reference queries must retain pagination/total-count; capped reference convenience sample only supports comparison to that sample, not reference novelty.
+Xu primary fulltext confirms MK474076 but does not itself mention QCI56913.1. Save nucleotide GenBank linked /protein_id to verify linkage, derive protein taxonomy/name from raw records.
+V2 reference audit while code being written: EXPERIMENTAL_ECO_CODES incorrectly includes author statements ECO:0000303/304 and expression/mutant/interaction evidence as though substrate assays. Keep exact evidence text and codes; direct biochemical evidence tier needs actual catalytic/function assertion plus source. Restrict direct-assay flag to explicit direct experiment evidence and separately retain other evidence, not blanket inference. Taxonomy-based pathogen blacklist is not required for this benign family census; if retained, its exclusions preclude claiming whole-query coverage and bias comparisons. Preserve and report any exclusion rather than silently presenting complete reference set.
+ROOT actual independent worker inventory succeeded job53815631 (first attempt53815584 failed system Python3 too old). See reviews/darkmatter-family-analysis-20261015/root_inventory_v2.out. EXACT closure5438FAA=5438Wdb winners, no missing/extra. FAA headers MAG::raw_pid # coords # strand # ID...partial=00 verified. contig_to_bin first field is SAMPLE::CONTIG, third field refinedbin, second field literal refined; so raw c_id alone key FAILS. Normalize deliberately sample::contig; assert unique. Wdb uses cluster; Cdb secondary_cluster confirmed. Sample metadata compartment Surface/Deep etc actual header captured. Use these facts, no guessed joins.
+ARGON preflight now available reviews/darkmatter-family-analysis-20261015/argon_preflight.txt. Additional VALID source issues: gene:stpA matches unrelated nucleoid/ATPase/effector proteins -> do NOT label GgpP; require exact source EC3.1.3.69. cryptochrome protein_name query matches bHLH cryptochrome-interacting transcriptionfactors Q9C670/Q8GY61 -> exclude by actual CPF domain support, not name. Querymembership is not familymembership. commentType actual UniProt 'CATALYTIC ACTIVITY' with space, also EC evidence direct. Profile control nearestnonself accuracy not empirical validation of biochemical assignments.
+Argon GPU hardware/numerical paragraph is factually wrong (L40S vs actualH200); root will correct adjudication. Other code bugs verified independently.
+Root cancelled 53815918 because it still ran full5438census script, not frozen256pilot_v3 specified in releaseprompt. Job53815914 may finish but must be treated as old prerelease output until actualreference-label andmapping audit. Latest releaseprompt requires pilot_v3 separately and sourcefamilyfilter fixes including Argon section3.

@@ -1,0 +1,79 @@
+{
+  "script": {
+    "name": "family_embedding_analysis.py",
+    "sha256": "089b217f92a55828e93d4d8b4afe56350fc84d4d78610d4a2fc42a14e2abf59c"
+  },
+  "execution": {
+    "timestamp_utc": "2026-10-15T07:59:46.673869+00:00",
+    "elapsed_seconds": 102.027,
+    "hostname": "cn509-04-l",
+    "platform": "Linux-5.14.0-427.20.1.el9_4.0.1.x86_64-x86_64-with-glibc2.34",
+    "python_version": "3.11.5 (main, Sep 11 2023, 13:23:44) [GCC 11.2.0]",
+    "library_versions": {
+      "numpy": "2.4.3",
+      "scipy": "1.17.1",
+      "sklearn": "1.8.0",
+      "matplotlib": "3.10.9"
+    }
+  },
+  "inputs": {
+    "embeddings": {
+      "path": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f345_plots/EctC/plot_embeddings.npz",
+      "sha256": "efdc259b301b529c931628238500da6c15433e1e8c6af9d623d1ef64d6d64ee1",
+      "n_samples": 438,
+      "dimensions": 1024
+    },
+    "metadata": {
+      "path": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f345_plots/EctC/plot_metadata.tsv",
+      "sha256": "51e93707b07d9159b513831e322c8bf4629165063ff8a131df450ee3157706a2",
+      "n_records": 438
+    }
+  },
+  "parameters": {
+    "seeds": [
+      42,
+      123,
+      20261015
+    ],
+    "candidate_perplexities": [
+      5.0,
+      30.0,
+      50.0
+    ],
+    "tsne_max_iter": 1000,
+    "tsne_init": "pca",
+    "distance_metric": "cosine"
+  },
+  "scientific_caveats": [
+    "Quantitative high-dimensional cosine distances are descriptive metrics and do NOT prove functional novelty or classification.",
+    "Distance distributions are strictly bounded by reference database density, sequence length disparities, and taxonomic sampling.",
+    "t-SNE coordinates are descriptive manifold visualizations; do NOT use 2D cluster area or spacing to quantify biological novelty.",
+    "Unrelated protein folds/classes must not be pooled together to avoid manufactured separation artifacts."
+  ],
+  "families": {
+    "EctC": {
+      "n_samples": 438,
+      "n_curated_references": 30,
+      "n_queries": 408,
+      "n_duplicate_instances": 6,
+      "perplexities_run": [
+        5.0,
+        30.0,
+        50.0
+      ],
+      "trustworthiness": {
+        "perp_5.0_seed_42": 0.9501465434851863,
+        "perp_5.0_seed_123": 0.9514845492194967,
+        "perp_5.0_seed_20261015": 0.9504205160879261,
+        "perp_30.0_seed_42": 0.9529637888924286,
+        "perp_30.0_seed_123": 0.9534607624508867,
+        "perp_30.0_seed_20261015": 0.9569969204629925,
+        "perp_50.0_seed_42": 0.9593394924073484,
+        "perp_50.0_seed_123": 0.9552957417436551,
+        "perp_50.0_seed_20261015": 0.9442242752468939
+      },
+      "mean_reference_leave_one_out_cosine_distance": 0.010315614938735961,
+      "mean_query_nearest_reference_cosine_distance": 0.018866512267028585
+    }
+  }
+}

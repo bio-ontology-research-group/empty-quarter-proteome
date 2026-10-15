@@ -1,0 +1,815 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q829L6",
+  "uniProtkbId": "ECTD_STRAW",
+  "entryAudit": {
+    "firstPublicDate": "2005-02-01",
+    "lastAnnotationUpdateDate": "2026-01-28",
+    "lastSequenceUpdateDate": "2005-02-01",
+    "entryVersion": 105,
+    "sequenceVersion": 2
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Streptomyces avermitilis (strain ATCC 31267 / DSM 46492 / JCM 5070 / NBRC 14893 / NCIMB 12804 / NRRL 8165 / MA-4680)",
+    "taxonId": 227882,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Actinomycetota",
+      "Actinomycetes",
+      "Kitasatosporales",
+      "Streptomycetaceae",
+      "Streptomyces"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q93RV9"
+          }
+        ],
+        "value": "Ectoine dioxygenase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q93RV9"
+            }
+          ],
+          "value": "1.14.11.55"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q93RV9"
+            }
+          ],
+          "value": "Ectoine hydroxylase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q93RV9"
+          }
+        ],
+        "value": "ectD"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "SAV_6395"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q93RV9"
+            }
+          ],
+          "value": "Involved in the biosynthesis of 5-hydroxyectoine, called compatible solute, which helps organisms to survive extreme osmotic stress by acting as a highly soluble organic osmolyte. Catalyzes the 2-oxoglutarate-dependent selective hydroxylation of L-ectoine to yield (4S,5S)-5-hydroxyectoine"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "L-ectoine + 2-oxoglutarate + O2 = 5-hydroxyectoine + succinate + CO2",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:45740"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15379"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16526"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16810"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30031"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58515"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:85413"
+          }
+        ],
+        "ecNumber": "1.14.11.55",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q93RV9"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Fe(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q2TDY4"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29033"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "Q2TDY4"
+              }
+            ],
+            "value": "Binds 1 Fe(2+) ion."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q2TDY4"
+            }
+          ],
+          "value": "Homodimer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q93RV9"
+            }
+          ],
+          "value": "Belongs to the PhyH family. EctD subfamily"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 295,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Ectoine dioxygenase",
+      "featureId": "PRO_0000215241"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 129,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 129,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58515"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q1GNW5"
+        }
+      ],
+      "ligand": {
+        "name": "L-ectoine",
+        "id": "ChEBI:CHEBI:58515"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 135,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 135,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:16810"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q1GNW5"
+        }
+      ],
+      "ligand": {
+        "name": "2-oxoglutarate",
+        "id": "ChEBI:CHEBI:16810"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 146,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 146,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:24875"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q2TDY4"
+        }
+      ],
+      "ligand": {
+        "name": "Fe cation",
+        "id": "ChEBI:CHEBI:24875"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 148,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 148,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:24875"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q2TDY4"
+        }
+      ],
+      "ligand": {
+        "name": "Fe cation",
+        "id": "ChEBI:CHEBI:24875"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 247,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 247,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:24875"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q2TDY4"
+        }
+      ],
+      "ligand": {
+        "name": "Fe cation",
+        "id": "ChEBI:CHEBI:24875"
+      }
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 152,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 152,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Important for ectoine stabilization",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q1GNW5"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0223",
+      "category": "Molecular function",
+      "name": "Dioxygenase"
+    },
+    {
+      "id": "KW-0408",
+      "category": "Ligand",
+      "name": "Iron"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0560",
+      "category": "Molecular function",
+      "name": "Oxidoreductase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "11572948",
+        "citationType": "journal article",
+        "authors": [
+          "Omura S.",
+          "Ikeda H.",
+          "Ishikawa J.",
+          "Hanamoto A.",
+          "Takahashi C.",
+          "Shinose M.",
+          "Takahashi Y.",
+          "Horikawa H.",
+          "Nakazawa H.",
+          "Osonoe T.",
+          "Kikuchi H.",
+          "Shiba T.",
+          "Sakaki Y.",
+          "Hattori M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11572948"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.211433198"
+          }
+        ],
+        "title": "Genome sequence of an industrial microorganism Streptomyces avermitilis: deducing the ability of producing secondary metabolites.",
+        "publicationDate": "2001",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "12215",
+        "lastPage": "12220",
+        "volume": "98"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 31267 / DSM 46492 / JCM 5070 / NBRC 14893 / NCIMB 12804 / NRRL 8165 / MA-4680",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "12692562",
+        "citationType": "journal article",
+        "authors": [
+          "Ikeda H.",
+          "Ishikawa J.",
+          "Hanamoto A.",
+          "Shinose M.",
+          "Kikuchi H.",
+          "Shiba T.",
+          "Sakaki Y.",
+          "Hattori M.",
+          "Omura S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12692562"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nbt820"
+          }
+        ],
+        "title": "Complete genome sequence and comparative analysis of the industrial microorganism Streptomyces avermitilis.",
+        "publicationDate": "2003",
+        "journal": "Nat. Biotechnol.",
+        "firstPage": "526",
+        "lastPage": "531",
+        "volume": "21"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 31267 / DSM 46492 / JCM 5070 / NBRC 14893 / NCIMB 12804 / NRRL 8165 / MA-4680",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "BA000030",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAC74106.2"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_037646868.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_003155.5"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q829L6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q829L6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "41543469",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sma:SAVERM_6395",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG5285",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_048953_5_0_11",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "2573519at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000428",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016706",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:2-oxoglutarate-dependent dioxygenase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005506",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:iron ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0042400",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:ectoine catabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "2.60.120.620:FF:000016",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine hydroxylase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.60.120.620",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "q2cbj1_9rhob like domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR012774",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EctD"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR008775",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phytyl_CoA_dOase-like"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR02408",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ectoine_ThpD"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR20883:SF48",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ECTOINE DIOXYGENASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR20883",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHYTANOYL-COA DIOXYGENASE DOMAIN CONTAINING 1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF05721",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PhyH"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51197",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Clavaminate synthase-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MTTITDLYPSRGAAEVSVPRQDPVLWGTPDTPGPITAADLQSYEHDGFLAVPQLIGDDEVALYHAELERLIHDPAVRADERSIVEPQSQEIRSVFEVHKISEIFAQLVRDERVVGRARQILGSDVYVHQSRINVKPGFGASGFYWHSDFETWHAEDGLPNMRTVSVSIALTENYDTNGGLMIMPGSHKTFLGCAGATPKDNYKKSLQMQDAGTPSDEALTKFADRHGIRLFTGRAGSATWFDCNCLHGSGDNITPFPRSNVFIVFNSVENTAVEPFSAPVRRPEFIGARDFTPVR",
+    "length": 295,
+    "molWeight": 32618,
+    "crc64": "7788167998D2F407",
+    "md5": "AC7713CDC404F5F437112BF16BB5026C"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SUBUNIT": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 5,
+      "Site": 1
+    },
+    "uniParcId": "UPI00004C2CB8"
+  }
+}

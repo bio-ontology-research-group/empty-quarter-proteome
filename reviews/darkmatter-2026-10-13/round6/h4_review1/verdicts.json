@@ -1,0 +1,91 @@
+{
+  "id": "H4",
+  "status": "REVISE",
+  "bounded_hypothesis": "Among confidence-qualified sequence-dark representative protein models (length >= 100 aa, mean pLDDT >= 0.70; 1 model per fold cluster) whose whole-chain Foldseek search against PDB yields low query-normalized structural similarity (qTM_wc < 0.5), physical cropping and de novo Foldseek alignment of outcome-independent confident structural regions (>= 50 aa, 15-aa rolling-window smoothed pLDDT >= 0.70, bridging <= 5-aa dips with mean pLDDT >= 0.55) recovers reference-conditional structural matches (qTM_crop >= 0.5) at a higher model-level rate in candidates with whole-chain local hits (K_local) than in candidates without local hits (K_dual_none), when evaluated against internal fold-matched dark comparators (Q \\ K) and homology-filtered PDB positive controls.",
+  "critical_issues": [
+    {
+      "id": "C1",
+      "title": "Post-hoc sequence-identity filtering of --max-seqs 50 output conflates hit-list saturation with structural match failure in controls (Tiers 2-4)",
+      "evidence": [
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/scripts/v2_crop_and_search_regions.py:L371,L437-L446,L472-L480",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_region_evaluations.tsv:L2-L415",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/DOSSIER.md:L36-L39,L136-L144,L198,L202"
+      ],
+      "impact": "At Tier 2 (fident < 0.30) and Tier 3 (fident < 0.25), 17/17 and 22/22 of the control regions that lose their Tier 1 match (100/103 -> 83/103 -> 78/103) have zero remaining hits after post-hoc filtering rather than low-scoring alignments (0 < qTM < 0.5 remains 2/103), with 17/17 (Tier 2) and 21/22 (Tier 3) having total_hits_raw == 50 (hitting the --max-seqs 50 cap). Conditional match rates among control regions with >=1 remaining hit are 98.04% (100/102, Tier 1), 97.65% (83/85, Tier 2), 97.50% (78/80, Tier 3), and 93.33% (70/75, Tier 4), confounding the reported control sensitivity drop and Go Criterion 2.",
+      "repair": "Separate POST_EXCLUSION_NO_REMAINING_HIT from PERSISTENT_LOW_SCORE by recording t{k}_remaining_hits in region and model tables, report conditional match rates among regions/models with remaining hits, and increase Foldseek --max-seqs (e.g., --max-seqs 1000 or 2000) so close homologs do not saturate the top-50 list before <25% identity hits are reached."
+    },
+    {
+      "id": "C2",
+      "title": "Models with zero eligible confident regions (n_confident_regions == 0) are misclassified as Foldseek ZERO_RETRIEVAL",
+      "evidence": [
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/scripts/v2_crop_and_search_regions.py:L314-L329,L497-L521",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_cropped_regions_manifest.tsv:L1-L425",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_model_summaries.tsv:L46",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/DOSSIER.md:L62,L120-L121,L159"
+      ],
+      "impact": "Eleven pilot models (3 K_local, 4 K_dual_none, 4 Q_not_K) have 0 confident regions (>=50 aa, smoothed pLDDT >= 0.70) and were never searched by Foldseek (cropped_pdb = NONE), yet lines 503-518 classify them as ZERO_RETRIEVAL (3/5 of K_local and 4/15 of K_dual_none zero-retrieval counts in Table 3.2A). DOSSIER.md line 159 further misstates these model rates (30.0% and 5.0%) as region rates and attributes them to Foldseek 3Di/AA k-mer prefilter truncation.",
+      "repair": "Define a distinct NO_CONFIDENT_REGION category (n_confident_regions == 0) separate from ZERO_RETRIEVAL (n_confident_regions >= 1 and total_hits_raw == 0), report both unconditional and region-eligible conditional recovery rates (70/97 = 72.16% in K_local vs 15/46 = 32.61% in K_dual_none), and fix DOSSIER.md line 159."
+    },
+    {
+      "id": "C3",
+      "title": "Exclusion-tier and reference-database asymmetry between whole-chain baseline and cropped evaluation",
+      "evidence": [
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/scripts/v2_crop_and_search_regions.py:L229-L235,L244-L246,L491-L524",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_model_summaries.tsv:L1-L301",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/control_leakage_audit.tsv:L1-L3014",
+        "/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/00_structure_clean/scripts/05c_screen.sh:L26,L53-L59"
+      ],
+      "impact": "While 05c_screen.sh used the identical Foldseek version (10-941cd33), PDB database, and search flags (-e 10 -s 9.5 --max-seqs 50) as V2 crops, (1) wc_qtm uses Tier 0 unfiltered whole-chain scores while crops use Tier 1 (source-PDB excluded) and Tiers 2-4 (fident filtered; fident was omitted from 05c_screen.sh), which in --mode full misclassifies 42 self-hit-dependent controls as WHOLE_CHAIN_MATCHED; (2) strata are defined on PDB+AFDB while crops are searched against PDB only, so 10/100 pilot K_local models (87/936 full) have whole_chain_pdb_alntm < 0.5 and 20/75 pilot Q_not_K models (700/1,807 full) have whole_chain_pdb_qtm < 0.5; and (3) the else branch at line 523 labels all wc_qtm >= 0.5 models WHOLE_CHAIN_MATCHED without recording that 5/55 Q_not_K models lost their PDB match after cropping.",
+      "repair": "Pin 05c_screen.sh provenance; apply matched exclusion tiers to whole-chain and cropped metrics (using top_non_self_qtm for Tier 1 whole-chain controls, or re-running whole-chain PDB search with fident output); stratify or restrict K_local and Q_not_K by PDB-specific baseline status (best_pdb_alntm >= 0.5 and best_pdb_qtm >= 0.5); and record crop match retention vs loss for whole-chain-matched models."
+    },
+    {
+      "id": "C4",
+      "title": "Unweighted length-stratified pilot estimator for K_local vs unstratified comparators",
+      "evidence": [
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/scripts/v2_crop_and_search_regions.py:L254-L263,L565",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/DESIGN.md:L82",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/DOSSIER.md:L33,L120,L197"
+      ],
+      "impact": "K_local pilot sampling uses equal allocation (25 models/bin) across fixed length bins [100,200), [200,300), [300,400), [400,10000) whose population shares in N=936 are 13.68%, 46.47%, 24.68%, and 15.17%, and whose pilot recovery rates are 48.0%, 60.0%, 80.0%, and 92.0%, whereas other strata use simple random sampling. DOSSIER.md reports only the unweighted mean (70.0%) rather than the Horvitz-Thompson design-weighted estimate (68.15%).",
+      "repair": "Disclose the length-bin stratified sampling in DESIGN.md and report the Horvitz-Thompson weighted estimator (68.15% recovery, 27.36% persistent low score, 2.95% no confident region, 1.53% zero retrieval) alongside unweighted counts, or execute the full census (--mode full, N=5,851)."
+    },
+    {
+      "id": "C5",
+      "title": "Mislabeling of query span as aligned residue count and factual/statistical reporting errors in DOSSIER.md",
+      "evidence": [
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/scripts/v2_crop_and_search_regions.py:L408,L462-L463,L470",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/scripts/01_audit_exact_hits_and_leakage.py:L8",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_crop_pdb_hits.tsv:L1-L11247",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_region_evaluations.tsv:L34",
+        "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/DOSSIER.md:L40,L108,L131-L136,L145,L198"
+      ],
+      "impact": "(1) Line 408 sets qalnlen = qend - qstart + 1 (query span), whereas 9,516/11,247 crop hits (84.61%) have alnlen > tspan (query insertions opposite target gaps; true aligned pairs = qspan + tspan - alnlen). (2) DOSSIER.md line 108 reports p = 0.010 as 'McNemar's test on paired exclusions' for 117/3,013 vs 159/3,013, which is actually an unpaired chi-square test (p = 0.00965); exact paired McNemar on discordant counts b=0, c=42 is p = 4.55e-13. (3) DOSSIER.md line 198 tests region-level counts (78/103 vs 19/60) instead of model-level units (56/75 vs 15/50, p = 1.10e-6), and v2_model_summaries.tsv omits Tiers 3-4. (4) DOSSIER.md lines 40 and 145 falsely state all candidate hits have fident < 0.20 (3 candidate region top hits and 97 raw hit rows have fident >= 0.20), and Table 3.2B averages fident across zero-retrieval regions coded as 0.0.",
+      "repair": "Compute aligned residue pairs (qspan + tspan - alnlen) or explicitly label qcov as span coverage; report exact paired discordant counts (b=0, c=42) and McNemar p-value; aggregate Tiers 3-4 to the model level in v2_model_summaries.tsv and test Go Criterion 2 on models; and correct the sequence-identity claims and retrieved-only mean fident in DOSSIER.md."
+    }
+  ],
+  "evidence_paths": [
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/DESIGN.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/DOSSIER.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/INPUTS.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/scripts/v2_crop_and_search_regions.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/scripts/01_audit_exact_hits_and_leakage.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/scripts/v2_pilot.sbatch",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_cropped_regions_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_region_evaluations.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_model_summaries.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_crop_pdb_hits.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/v2_recovery_summary.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/control_leakage_audit.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/results/exact_hit_vs_maxima.tsv",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/00_structure_clean/scripts/05c_screen.sh"
+  ],
+  "optional_improvements": [
+    "Evaluate sensitivity of region recovery to modest perturbations of the pLDDT segmentation parameters (e.g., smoothed pLDDT threshold 0.65 vs 0.75, minimum region length 40 vs 60 aa) or compare against Pfam envelope coordinates where available.",
+    "Annotate remaining <25% sequence-identity control hits with CATH/ECOD superfamily identifiers where available in PDB metadata to descriptively characterize remote structural homology."
+  ],
+  "scope_changes_from_original": [
+    "Narrowed from round5/EXTENSIONS.md H4 ('well-supported domains, uncertain extensions, or failures of reference retrieval') and superseded V1 ('bona fide novel structural domains', intrinsic disorder, and linker-reorientation mechanisms) to outcome-independent confident structural regions (>=50 aa, 15-aa smoothed pLDDT >= 0.70) evaluated under physical PDB cropping and de novo Foldseek search.",
+    "Replaced whole-chain coordinate-overlap heuristics (V1) with physical PDB cropping and de novo Foldseek easy-search of cropped regions against PDB, explicitly restricting interpretation of persistent low scores (qTM_crop < 0.5) to reference-conditional structural divergence rather than novel folds."
+  ],
+  "reason": "The physical PDB cropping and de novo Foldseek search pipeline is computationally fast (12 s for 300 models), input-verified, and appropriately narrowed to a modest reference-conditional recovery estimand without unsupported novel-fold or disorder claims. However, V2 requires revision before VIABLE status because (1) post-hoc sequence-identity filtering of Foldseek's --max-seqs 50 output conflates hit-list saturation by close homologs (17/17 at Tier 2, 21/22 at Tier 3 with total_hits_raw == 50) with structural match failure in controls; (2) models with 0 confident regions (11/300) are misclassified as Foldseek ZERO_RETRIEVAL; (3) whole-chain vs cropped evaluations have exclusion-tier (Tier 0 vs Tier 1-4) and database (PDB+AFDB vs PDB-only) asymmetries; (4) the K_local pilot recovery rate is reported only as an unweighted mean (70.0%) across equal-allocation length bins rather than the Horvitz-Thompson design-weighted estimate (68.15%); and (5) DOSSIER.md mislabels query span as aligned residue count, misreports an unpaired chi-square test (p=0.010) as McNemar's test (p=4.55e-13), tests region-level counts in Go Criterion 2 instead of models, and falsely states all candidate hits have <20% sequence identity."
+}

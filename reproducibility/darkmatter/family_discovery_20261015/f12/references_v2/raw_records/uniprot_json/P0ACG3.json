@@ -1,0 +1,911 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P0ACG3",
+  "secondaryAccessions": [
+    "P30017"
+  ],
+  "uniProtkbId": "STPA_SHIFL",
+  "entryAudit": {
+    "firstPublicDate": "2005-11-22",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2005-11-22",
+    "entryVersion": 118,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Shigella flexneri",
+    "taxonId": 623,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Shigella"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "DNA-binding protein StpA"
+      }
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "H-NS homolog StpA"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "stpA"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "SF2697"
+        },
+        {
+          "value": "S2883"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P0ACG1"
+            }
+          ],
+          "value": "A DNA-binding protein that acts in a fashion similar to H-NS, repressing gene transcription. A subset of H-NS/StpA-regulated genes require auxillary proteins for repression; these auxillary proteins (Hha and other similar proteins) may also modulate oligomerization of the H-NS/StpA complex (By similarity)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P0ACG1"
+            }
+          ],
+          "value": "Forms homodimers, can interact with H-NS. May interact with Hha and/or Cnu"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "INTERACTION",
+      "interactions": [
+        {
+          "interactantOne": {
+            "uniProtKBAccession": "P0ACG3",
+            "intActId": "EBI-2011670"
+          },
+          "interactantTwo": {
+            "uniProtKBAccession": "P0ACG3",
+            "geneName": "stpA",
+            "intActId": "EBI-2011670"
+          },
+          "numberOfExperiments": 2,
+          "organismDiffer": false
+        }
+      ]
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "P0ACG1"
+              }
+            ],
+            "value": "Cytoplasm, nucleoid",
+            "id": "SL-0187"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the histone-like protein H-NS family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 134,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "DNA-binding protein StpA",
+      "featureId": "PRO_0000168517"
+    },
+    {
+      "type": "DNA binding",
+      "location": {
+        "start": {
+          "value": 112,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 117,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P0A1S2"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 73,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 94,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0238",
+      "category": "Molecular function",
+      "name": "DNA-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "12384590",
+        "citationType": "journal article",
+        "authors": [
+          "Jin Q.",
+          "Yuan Z.",
+          "Xu J.",
+          "Wang Y.",
+          "Shen Y.",
+          "Lu W.",
+          "Wang J.",
+          "Liu H.",
+          "Yang J.",
+          "Yang F.",
+          "Zhang X.",
+          "Zhang J.",
+          "Yang G.",
+          "Wu H.",
+          "Qu D.",
+          "Dong J.",
+          "Sun L.",
+          "Xue Y.",
+          "Zhao A.",
+          "Gao Y.",
+          "Zhu J.",
+          "Kan B.",
+          "Ding K.",
+          "Chen S.",
+          "Cheng H.",
+          "Yao Z.",
+          "He B.",
+          "Chen R.",
+          "Ma D.",
+          "Qiang B.",
+          "Wen Y.",
+          "Hou Y.",
+          "Yu J."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12384590"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/nar/gkf566"
+          }
+        ],
+        "title": "Genome sequence of Shigella flexneri 2a: insights into pathogenicity through comparison with genomes of Escherichia coli K12 and O157.",
+        "publicationDate": "2002",
+        "journal": "Nucleic Acids Res.",
+        "firstPage": "4432",
+        "lastPage": "4441",
+        "volume": "30"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "301 / Serotype 2a",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "12704152",
+        "citationType": "journal article",
+        "authors": [
+          "Wei J.",
+          "Goldberg M.B.",
+          "Burland V.",
+          "Venkatesan M.M.",
+          "Deng W.",
+          "Fournier G.",
+          "Mayhew G.F.",
+          "Plunkett G. III",
+          "Rose D.J.",
+          "Darling A.",
+          "Mau B.",
+          "Perna N.T.",
+          "Payne S.M.",
+          "Runyen-Janecky L.J.",
+          "Zhou S.",
+          "Schwartz D.C.",
+          "Blattner F.R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12704152"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/iai.71.5.2775-2786.2003"
+          }
+        ],
+        "title": "Complete genome sequence and comparative genomics of Shigella flexneri serotype 2a strain 2457T.",
+        "publicationDate": "2003",
+        "journal": "Infect. Immun.",
+        "firstPage": "2775",
+        "lastPage": "2786",
+        "volume": "71"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 700930 / 2457T / Serotype 2a",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AE005674",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAN44190.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AE014073",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAP18018.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_708483.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_004337.2"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_000115383.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NZ_AP040250.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P0ACG3",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BMRB",
+      "id": "P0ACG3",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P0ACG3",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "P0ACG3",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "198214.SF2697",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "198214-SF2697",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "1027464",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "93779342",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sfl:SF2697",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sfx:S2883",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|198214.7.peg.3212",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_117503_0_0_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001006",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009295",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleoid"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0032993",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:protein-DNA complex"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003681",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:bent DNA binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0001217",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:DNA-binding transcription repressor activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0042802",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:identical protein binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IPI:IntAct"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000353",
+          "source": "PubMed",
+          "id": "12787365"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003680",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:minor groove of adenine-thymine-rich DNA binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0046983",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:protein dimerization activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0030527",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:structural constituent of chromatin"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000976",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:transcription cis-regulatory region binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.287.1050:FF:000001",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA-binding protein"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "4.10.430.10:FF:000001",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA-binding protein"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.287.1050",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS histone-like proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "4.10.430.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone-like protein H-NS, C-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR054180",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS-like_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR027444",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS_C_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR037150",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS_C_dom_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001801",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone_HNS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR027454",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone_HNS_N"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF007656",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK10328.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR38097",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR38097:SF2",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA-BINDING PROTEIN STPA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00816",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone_HNS"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF22470",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone_HNS_N"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF002096",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HnS"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00528",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HNS"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF81273",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS histone-like proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MSVMLQSLNNIRTLRAMAREFSIDVLEEMLEKFRVVTKERREEEEQQQRELAERQEKISTWLELMKADGINPEELLGNSSAAAPRAGKKRQPRPAKYKFTDVNGETKTWTGQGRTPKPIAQALAEGKSLDDFLI",
+    "length": 134,
+    "molWeight": 15348,
+    "crc64": "5870BD95F144CE6A",
+    "md5": "A8CAA264B5687BAD9E7A13FB2C1EB459"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "SUBUNIT": 1,
+      "INTERACTION": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "DNA binding": 1,
+      "Region": 1
+    },
+    "uniParcId": "UPI0000136130"
+  }
+}

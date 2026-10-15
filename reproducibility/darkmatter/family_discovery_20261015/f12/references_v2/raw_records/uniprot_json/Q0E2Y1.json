@@ -1,0 +1,1531 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q0E2Y1",
+  "secondaryAccessions": [
+    "A0A0P0VG67",
+    "B9F3X5",
+    "Q6Z6D9"
+  ],
+  "uniProtkbId": "UVR3_ORYSJ",
+  "entryAudit": {
+    "firstPublicDate": "2010-10-05",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2009-10-13",
+    "entryVersion": 84,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Oryza sativa subsp. japonica",
+    "commonName": "Rice",
+    "taxonId": 39947,
+    "lineage": [
+      "Eukaryota",
+      "Viridiplantae",
+      "Streptophyta",
+      "Embryophyta",
+      "Tracheophyta",
+      "Spermatophyta",
+      "Magnoliopsida",
+      "Liliopsida",
+      "Poales",
+      "Poaceae",
+      "BOP clade",
+      "Oryzoideae",
+      "Oryzeae",
+      "Oryzinae",
+      "Oryza",
+      "Oryza sativa"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "(6-4)DNA photolyase"
+      },
+      "ecNumbers": [
+        {
+          "value": "4.1.99.13"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "UVR3"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "Os02g0204400"
+        },
+        {
+          "value": "LOC_Os02g10990"
+        }
+      ],
+      "orfNames": [
+        {
+          "value": "OSJNBb0056C19.3"
+        },
+        {
+          "value": "P0544H11.19"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Involved in repair of UV radiation-induced DNA damage. Catalyzes the photoreactivation of pyrimidine [6-4] pyrimidone photoproduct (6-4 products) (By similarity)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "(6-4) photoproduct (in DNA) = 2 pyrimidine residues (in DNA).",
+        "ecNumber": "4.1.99.13"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "FAD",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:57692"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250"
+              }
+            ],
+            "value": "Binds 1 FAD per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the DNA photolyase class-1 family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Erroneous gene model prediction",
+      "sequence": "BAD16007.1",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Erroneous gene model prediction",
+      "sequence": "BAD38427.1",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 551,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "(6-4)DNA photolyase",
+      "featureId": "PRO_0000397887"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 13,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 157,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Photolyase/cryptochrome alpha/beta"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 374,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 379,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Interaction with DNA",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 508,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 551,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 512,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 522,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic and acidic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 533,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 544,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Polar residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 254,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 254,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:43474"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "phosphate",
+        "id": "ChEBI:CHEBI:43474"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 255,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 255,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 268,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 272,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 309,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 313,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 312,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 312,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:16991"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "DNA",
+        "id": "ChEBI:CHEBI:16991"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 372,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 375,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 378,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 378,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 407,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 409,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 413,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 413,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 419,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 419,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:16991"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "DNA",
+        "id": "ChEBI:CHEBI:16991"
+      }
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 340,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 340,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 394,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 394,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 417,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 417,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 40,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 40,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 4; EEE56527",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "A",
+        "alternativeSequences": [
+          "V"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0227",
+      "category": "Biological process",
+      "name": "DNA damage"
+    },
+    {
+      "id": "KW-0234",
+      "category": "Biological process",
+      "name": "DNA repair"
+    },
+    {
+      "id": "KW-0238",
+      "category": "Molecular function",
+      "name": "DNA-binding"
+    },
+    {
+      "id": "KW-0274",
+      "category": "Ligand",
+      "name": "FAD"
+    },
+    {
+      "id": "KW-0285",
+      "category": "Ligand",
+      "name": "Flavoprotein"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0547",
+      "category": "Ligand",
+      "name": "Nucleotide-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "16100779",
+        "citationType": "journal article",
+        "authoringGroup": [
+          "International rice genome sequencing project (IRGSP)"
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16100779"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nature03895"
+          }
+        ],
+        "title": "The map-based sequence of the rice genome.",
+        "publicationDate": "2005",
+        "journal": "Nature",
+        "firstPage": "793",
+        "lastPage": "800",
+        "volume": "436"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Nipponbare",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "18089549",
+        "citationType": "journal article",
+        "authoringGroup": [
+          "The rice annotation project (RAP)"
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18089549"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/nar/gkm978"
+          }
+        ],
+        "title": "The rice annotation project database (RAP-DB): 2008 update.",
+        "publicationDate": "2008",
+        "journal": "Nucleic Acids Res.",
+        "firstPage": "D1028",
+        "lastPage": "D1033",
+        "volume": "36"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Nipponbare",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "24280374",
+        "citationType": "journal article",
+        "authors": [
+          "Kawahara Y.",
+          "de la Bastide M.",
+          "Hamilton J.P.",
+          "Kanamori H.",
+          "McCombie W.R.",
+          "Ouyang S.",
+          "Schwartz D.C.",
+          "Tanaka T.",
+          "Wu J.",
+          "Zhou S.",
+          "Childs K.L.",
+          "Davidson R.M.",
+          "Lin H.",
+          "Quesada-Ocampo L.",
+          "Vaillancourt B.",
+          "Sakai H.",
+          "Lee S.S.",
+          "Kim J.",
+          "Numa H.",
+          "Itoh T.",
+          "Buell C.R.",
+          "Matsumoto T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "24280374"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1186/1939-8433-6-4"
+          }
+        ],
+        "title": "Improvement of the Oryza sativa Nipponbare reference genome using next generation sequence and optical map data.",
+        "publicationDate": "2013",
+        "journal": "Rice",
+        "firstPage": "4",
+        "lastPage": "4",
+        "volume": "6"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Nipponbare",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "15685292",
+        "citationType": "journal article",
+        "authors": [
+          "Yu J.",
+          "Wang J.",
+          "Lin W.",
+          "Li S.",
+          "Li H.",
+          "Zhou J.",
+          "Ni P.",
+          "Dong W.",
+          "Hu S.",
+          "Zeng C.",
+          "Zhang J.",
+          "Zhang Y.",
+          "Li R.",
+          "Xu Z.",
+          "Li S.",
+          "Li X.",
+          "Zheng H.",
+          "Cong L.",
+          "Lin L.",
+          "Yin J.",
+          "Geng J.",
+          "Li G.",
+          "Shi J.",
+          "Liu J.",
+          "Lv H.",
+          "Li J.",
+          "Wang J.",
+          "Deng Y.",
+          "Ran L.",
+          "Shi X.",
+          "Wang X.",
+          "Wu Q.",
+          "Li C.",
+          "Ren X.",
+          "Wang J.",
+          "Wang X.",
+          "Li D.",
+          "Liu D.",
+          "Zhang X.",
+          "Ji Z.",
+          "Zhao W.",
+          "Sun Y.",
+          "Zhang Z.",
+          "Bao J.",
+          "Han Y.",
+          "Dong L.",
+          "Ji J.",
+          "Chen P.",
+          "Wu S.",
+          "Liu J.",
+          "Xiao Y.",
+          "Bu D.",
+          "Tan J.",
+          "Yang L.",
+          "Ye C.",
+          "Zhang J.",
+          "Xu J.",
+          "Zhou Y.",
+          "Yu Y.",
+          "Zhang B.",
+          "Zhuang S.",
+          "Wei H.",
+          "Liu B.",
+          "Lei M.",
+          "Yu H.",
+          "Li Y.",
+          "Xu H.",
+          "Wei S.",
+          "He X.",
+          "Fang L.",
+          "Zhang Z.",
+          "Zhang Y.",
+          "Huang X.",
+          "Su Z.",
+          "Tong W.",
+          "Li J.",
+          "Tong Z.",
+          "Li S.",
+          "Ye J.",
+          "Wang L.",
+          "Fang L.",
+          "Lei T.",
+          "Chen C.-S.",
+          "Chen H.-C.",
+          "Xu Z.",
+          "Li H.",
+          "Huang H.",
+          "Zhang F.",
+          "Xu H.",
+          "Li N.",
+          "Zhao C.",
+          "Li S.",
+          "Dong L.",
+          "Huang Y.",
+          "Li L.",
+          "Xi Y.",
+          "Qi Q.",
+          "Li W.",
+          "Zhang B.",
+          "Hu W.",
+          "Zhang Y.",
+          "Tian X.",
+          "Jiao Y.",
+          "Liang X.",
+          "Jin J.",
+          "Gao L.",
+          "Zheng W.",
+          "Hao B.",
+          "Liu S.-M.",
+          "Wang W.",
+          "Yuan L.",
+          "Cao M.",
+          "McDermott J.",
+          "Samudrala R.",
+          "Wang J.",
+          "Wong G.K.-S.",
+          "Yang H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15685292"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1371/journal.pbio.0030038"
+          }
+        ],
+        "title": "The genomes of Oryza sativa: a history of duplications.",
+        "publicationDate": "2005",
+        "journal": "PLoS Biol.",
+        "firstPage": "266",
+        "lastPage": "281",
+        "volume": "3"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Nipponbare",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AP005008",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAD16007.1"
+        },
+        {
+          "key": "Status",
+          "value": "ALT_SEQ"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AP005915",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAD38427.1"
+        },
+        {
+          "key": "Status",
+          "value": "ALT_SEQ"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AP008208",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAF08157.2"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AP014958",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAS77547.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CM000139",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "EEE56527.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q0E2Y1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q0E2Y1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "Q0E2Y1",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "1004"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "39947.Q0E2Y1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "39947-Q0E2Y1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblPlants",
+      "id": "Os02t0204400-00",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Os02t0204400-00"
+        },
+        {
+          "key": "GeneId",
+          "value": "Os02g0204400"
+        }
+      ]
+    },
+    {
+      "database": "Gramene",
+      "id": "Os02t0204400-00",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Os02t0204400-00"
+        },
+        {
+          "key": "GeneId",
+          "value": "Os02g0204400"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "dosa:Os02g0204400",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG0133",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_010348_3_4_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q0E2Y1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "YTVFTPY",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "435881at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000059680",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome 2"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005737",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-ARBA"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005634",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleus"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-ARBA"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003904",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:deoxyribodipyrimidine photo-lyase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003914",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:DNA (6-4) photolyase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0032922",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:circadian regulation of gene expression"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0043153",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:entrainment of circadian clock by photoperiod"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.579.10:FF:000004",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome-1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.25.40.80",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.579.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA Cyclobutane Dipyrimidine Photolyase, subunit A, domain 3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.620",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HUPs"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036134",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_FAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036155",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005101",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochr/Photolyase_FAD-bd"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR002081",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/DNA_photolyase_1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006050",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014729",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rossmann-like_a/b/a_fold"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CRYPTOCHROME"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455:SF9",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CRYPTOCHROME CIRCADIAN CLOCK 5 ISOFORM X1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00875",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF03441",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "FAD_binding_7"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF48173",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase FAD-binding domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF52425",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51645",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHR_CRY_ALPHA_BETA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MDAAATAATATAAAAMVWFRKGLRVHDNPALDAARRGGAAARLYPVFVLDPRYLRPDQAAPSPGSARAGVARVRFLLESLSDLDARLRRLGSRLLLLRARDDGDVAGTVCAALKDWNIGKLCFESDTEPYALARDKKVMDFAAASGIDVFSPVSHTLFDPAEIIEKNGGRPPMTYQSFVAIAGEPPEPIMEEYSELPPVGDTGEYELLPVPRVEELGYGDISQEDLSLFRGGETEALKRMRESLHDKEWVAKFEKPKGDPSAFLKPATTVLSPYLKFGCLSSRYFYHCIQDIYRSTKKHTNPPVSLTGQLLWRDFFYTVAFGTPNFDQMKGNKICKQIPWTENEELFPAWRDGRTGYPWIDAIMIQLRKWGWMHHLARHSVACFLTRGDLFIHWEKGRDVFERLLIDSDWAINNGNWMWLSCSSFFYQYHRIYSPTSFGKKYDPNGNYIRHFIPVLKDMPKEYIYEPWTAPLSIQKKANCIIGKDYPKPVVDHAIASKECKKMMGEAYASNRLDDDKPDKGKSSNSSRRKLSAGSQVTPNSSKTKQLKRSS",
+    "length": 551,
+    "molWeight": 62264,
+    "crc64": "37C2FE84F92C34C8",
+    "md5": "42385EDC6B7042360E0B25F9130359DB"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SIMILARITY": 1,
+      "SEQUENCE CAUTION": 2
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 1,
+      "Region": 2,
+      "Compositional bias": 2,
+      "Binding site": 10,
+      "Site": 3,
+      "Sequence conflict": 1
+    },
+    "uniParcId": "UPI0001B65F6E"
+  }
+}

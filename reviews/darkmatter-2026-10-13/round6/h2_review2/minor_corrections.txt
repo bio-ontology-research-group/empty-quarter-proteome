@@ -1,0 +1,155 @@
+================================================================================
+SUPPLEMENTAL DOCUMENTATION CORRECTIONS RECORD (H2 v3 -> Post-Review Alignment)
+================================================================================
+
+Reviewer: Independent Fresh-Session Audit (Gemini 4 Argon High)
+Date: 2026-10-13
+Initial Review Artifacts (Preserved Unchanged):
+  - reviews/darkmatter-2026-10-13/round6/h2_review2/review.txt
+  - reviews/darkmatter-2026-10-13/round6/h2_review2/verdicts.json
+Immutable Snapshot (Preserved Unchanged):
+  - reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/ (all 65 files verified)
+Final Status: VIABLE (O1-O4 documentation caveats closed in live working documents)
+
+--------------------------------------------------------------------------------
+1. SUMMARY OF CLOSED DOCUMENTATION CAVEATS (O1-O4)
+--------------------------------------------------------------------------------
+
+All four non-blocking documentation caveats (O1-O4) identified in
+`reviews/darkmatter-2026-10-13/round6/h2_review2/review.txt` have been resolved
+uniformly across the three live H2 working documents without modifying any
+scientific scripts, numerical result tables, checksum manifests, old reviews,
+or immutable snapshots:
+
+* O1 (Taxonomic conditioning, conditional exchangeability, and fixed-outcome
+  species-reweighting sensitivity):
+  - Updated `reproducibility/darkmatter/round6_hypotheses/h2_context/DESIGN.md`
+    (Section 4.3), `DOSSIER.md` (Sections 3.2, 5.1, and 6.1 item 3), and
+    `response.txt` (Section C3 and Final Verification Summary item 5).
+  - Conditional exchangeability within covariate strata and cross-family
+    independence are now explicitly stated as identifying assumptions rather
+    than empirically verified facts.
+  - The 4-bin GTDB-Tk R232 `phylum_group` stratification (`Actinomycetota`,
+    `Chloroflexota`, `Pseudomonadota`, `Other_Bac_Arc`) and exact `phylum_group`
+    caliper matching (`9` strict-caliper pairs; `41` soft-caliper pairs) are
+    explicitly described as coarse taxonomic conditioning rather than a formal
+    phylogenetic generalized least squares (PGLS) or continuous patristic-
+    distance covariance model.
+  - The species-cluster block bootstrap (`scripts/03_analyse_conservation.py:859-883`,
+    `B = 2,000`, resampling the `144` unique dRep species clusters with
+    replacement and weighting each family by its resampled species multiplicity
+     while holding `C_fam^obs` fixed; `SE = 0.0730`, 95% CI `[-0.0445, +0.2443]`)
+    and the 40-family zero-shared-species subset comparison (`+0.1091` vs.
+    `+0.0909`, Mann-Whitney `p = 0.5452`) are explicitly labeled as fixed-
+    family-outcome sensitivity checks on the unstratified arm difference
+    (`+0.0989` baseline) that do not recompute multi-species KO recurrence from
+    resampled species pools or re-estimate the primary stratified Mantel-Haenszel
+    estimator `Delta_MH(E_fam) = -0.0648`, and therefore cannot prove absence
+    of phylogenetic masking or cross-family dependence.
+  - Retained the empirical shared-species (`21 / 144` species shared across
+    `>= 2` Tier 1 families; `8` across both arms), shared-genus (`13 / 57`
+    genera across `>= 2` families; `9` across both arms), and shared-GTDB-family
+    (`19 / 56` families across `>= 2` structural families; `15` across both
+    arms) overlap audit figures.
+
+* O2 (Removal of uncomputed >=80% post-hoc power assertion):
+  - Updated `reproducibility/darkmatter/round6_hypotheses/h2_context/DOSSIER.md`
+    (Section 6.2).
+  - Removed the uncomputed assertion that the full 1,461-family Gate 3 run
+    provides `>= 80% power to detect stratified between-arm differences of
+    |Delta_MH(E_fam)| >= 0.12-0.15 at alpha = 0.05`.
+  - Retained the pilot-extrapolated evaluable family counts (`~336-351` Tier 1
+    families and `~648` Tier 2 families across all `1,461` Gate 3 multi-species
+    families) strictly as a pilot-based sample-size planning estimate, alongside
+    the runnable full-scale Slurm execution recipe (`--mode full`, ~25-35 wall-
+    clock minutes on a 16-core IBEX compute node).
+
+* O3 (Strict scoping of the `0 / 30` `best_ko_mobilome_flag` keyword check and
+  preservation of hypothetical/DUF context):
+  - Updated `reproducibility/darkmatter/round6_hypotheses/h2_context/DOSSIER.md`
+    (Section 4, Section 5.2, and Section 6.1 item 4) and `response.txt`
+    (Section C5).
+  - Limited the `0 / 30` (`best_ko_mobilome_flag == 0`) result strictly to its
+    implemented scope (`scripts/03_analyse_conservation.py:99-116,189-197`):
+    none of the 30 selected `best_recurrent_ko` strings or their immediate
+    Bakta/eggNOG description strings matched the 11-keyword substring list
+    (`transposase`, `integrase`, `phage`, `plasmid`, `conjugat`, `insertion`,
+    `recombinase`, `mobilis`, `mobiliz`, `isla`, `prophage`).
+  - Explicitly stated that this keyword screen on `best_recurrent_ko` does not
+    establish the absence of mobile genetic elements across the 30 loci, does
+    not prove chromosomal rather than plasmid/ICE/prophage residence, and does
+    not demonstrate that all 30 recurrent neighbourhoods represent core
+    housekeeping or metabolic loci.
+  - Preserved the exact empirical annotation breakdown: `47.6%` (`141 / 296`)
+    of exact-mapped flanks in Tier 1 `C_fam^obs = 1` primary loci have no KO
+    assignment (`mapped_noKO`) and `58.1%` (`172 / 296`) have Bakta product
+    `"hypothetical protein"`; among the 30 `C_fam^obs = 1` families, `8 / 30`
+    (`5 / 21` in `K`, `3 / 9` in `Q \ K`) have Bakta product `"hypothetical
+    protein"` on the focal `best_recurrent_ko` gene, `6 / 30` have eggNOG COG
+    category `S` (function unknown) plus uncharacterized conserved domains
+    (`K06888` `DUF255` and `K02221` `YggT`), `1 / 30` (`K00590` in
+    `F38Sr1::F38Sr1_139954_5`) is a `DNA methylase`, and an adjacent
+    `mapped_noKO` flank (`j = +2`) in `F38Sr1::F38Sr1_386592_2` encodes a
+    `COG2931 RTX toxin and related Ca2+-binding protein` domain. Reconfirmed
+    that no functional mechanism claims are made.
+
+* O4 (Exact 8-tuple specification of the outcome-independent primary-locus
+  tie-breaker):
+  - Updated `reproducibility/darkmatter/round6_hypotheses/h2_context/DESIGN.md`
+    (Section 3.1), `DOSSIER.md` (Section 2.3 and Section 5.1), and
+    `response.txt` (Section C1 and Section C2).
+  - Replaced all 6-tuple and 7-tuple prose shorthand summaries of `rank_key`
+    with the exact 8-element tuple implemented in
+    `scripts/02_extract_neighbourhoods.py:838-847`:
+    `(-eligible_locus_primary, -eligible_locus_stop3_sens, -n_exact_mapped_flanks, -n_stop3_or_exact_mapped_flanks, -n_present_flanks, -contig_len_bp, -total_genes_on_contig, member)`.
+
+--------------------------------------------------------------------------------
+2. EXACT SHA-256 HASHES & BYTE SIZES OF MODIFIED LIVE DOCUMENTS
+--------------------------------------------------------------------------------
+
+1. `reproducibility/darkmatter/round6_hypotheses/h2_context/DESIGN.md`
+   - Pre-edit (`snapshots/h2_v3/DESIGN.md`):
+     * Size:   17,985 bytes
+     * SHA256: 73ee38f1fc1099dd62f24824e98923ad434c0eeff40d4b0efaf6e8723a901719
+   - Post-edit (live working copy):
+     * Size:   18,401 bytes
+     * SHA256: 4ecb4c00613f1534dc1d9af716a4e4026627c613cc8906b5a6c4e6add2bc6acb
+
+2. `reproducibility/darkmatter/round6_hypotheses/h2_context/DOSSIER.md`
+   - Pre-edit (`snapshots/h2_v3/DOSSIER.md`):
+     * Size:   37,869 bytes
+     * SHA256: 5a6fa7d7f4132f2f2446af015b62afa4395582226dfe72b6470637eedb56f50f
+   - Post-edit (live working copy):
+     * Size:   41,290 bytes
+     * SHA256: 4e3854eebacd0d0b4c96ce8c69106b78ceaa1f415f7563fe0da1285d50497d33
+
+3. `reproducibility/darkmatter/round6_hypotheses/h2_context/response.txt`
+   - Pre-edit (`snapshots/h2_v3/response.txt`):
+     * Size:   19,406 bytes
+     * SHA256: aa2301ae0be4f27d5d94246c84b2872e2cb69ba929484b3f0295cf2923205d17
+   - Post-edit (live working copy):
+     * Size:   20,256 bytes
+     * SHA256: 29b0b7fe3bfad2fb762611b0144a8273d5fad02e254c8a9312e9f3c0a423f93e
+
+--------------------------------------------------------------------------------
+3. INVARIANCE VERIFICATION OF CODE, DATA, SNAPSHOTS, AND INITIAL REVIEW FILES
+--------------------------------------------------------------------------------
+
+* All 62 non-document files in `reproducibility/darkmatter/round6_hypotheses/h2_context/`
+  (including `INPUTS.tsv`, all scripts in `scripts/`, all 13 primary output
+  tables in `results/`, all Slurm logs in `logs/`, and superseded archives in
+  `v1_superseded/` and `v2_superseded/`) were verified byte-for-byte identical
+  to `reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/SNAPSHOT_MANIFEST.json`.
+* All 65 files in `reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/` remain
+  100% untouched.
+* Initial review outputs remain untouched:
+  - `reviews/darkmatter-2026-10-13/round6/h2_review2/review.txt`
+    (17,992 bytes, sha256=80d5dc6140d2cb537e73d3397661dac1ab7d83379f39aae4200ed49bfcbc272d)
+  - `reviews/darkmatter-2026-10-13/round6/h2_review2/verdicts.json`
+    (9,379 bytes, sha256=0a1e7f89b80baaa1d9261a680914ec10adcc1ebd6e5ca9d86122b184effc14d0)
+
+--------------------------------------------------------------------------------
+4. FINAL VERDICT CONFIRMATION
+--------------------------------------------------------------------------------
+
+Verdict: VIABLE (reconfirmed, with all O1-O4 documentation caveats resolved).

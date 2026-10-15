@@ -1,0 +1,105 @@
+{
+  "total_qualified_dark_models": 2838,
+  "dark_retrieved_models": 2816,
+  "dark_retrieval_failures_no_rows": 22,
+  "dark_qtm_below_05": {
+    "count": 1009,
+    "alntm_ge_05_count": 936,
+    "alntm_ge_05_pct": 92.76511397423192,
+    "alntm_below_05_count": 73,
+    "alntm_below_05_pct": 7.234886025768088,
+    "alntm_median": 0.7604,
+    "alntm_iqr": [
+      0.6611,
+      0.8342
+    ],
+    "cov_ratio_median": 0.5397519196692262,
+    "cov_ratio_iqr": [
+      0.45403488028377176,
+      0.6125035201351732
+    ]
+  },
+  "dark_length_contrast": {
+    "qtm_below_median_length": 267.0,
+    "qtm_below_iqr_length": [
+      217.0,
+      349.0
+    ],
+    "qtm_above_median_length": 193.0,
+    "qtm_above_iqr_length": [
+      152.0,
+      241.5
+    ],
+    "mann_whitney_u": 1401199.0,
+    "mann_whitney_pvalue": 8.458219986885715e-124
+  },
+  "correlation_spearman": {
+    "length_vs_cov_ratio_rho": -0.4623245580394448,
+    "length_vs_cov_ratio_pvalue": 3.7173959221370916e-149,
+    "plddt_vs_cov_ratio_rho": 0.1763910162776951,
+    "plddt_vs_cov_ratio_pvalue": 4.091475855665963e-21
+  },
+  "strata_by_query_length": [
+    {
+      "len_bin": "100-149",
+      "n_models": 445,
+      "qtm_below_05": 18,
+      "pct_qtm_below": 4.044943820224719,
+      "qtm_below_with_alntm_ge_05": 18,
+      "pct_aln_high_of_q_below": 100.0,
+      "median_cov_ratio": 0.8618266978922716,
+      "median_qtm": 0.7237,
+      "median_alntm": 0.8531
+    },
+    {
+      "len_bin": "150-199",
+      "n_models": 667,
+      "qtm_below_05": 113,
+      "pct_qtm_below": 16.94152923538231,
+      "qtm_below_with_alntm_ge_05": 110,
+      "pct_aln_high_of_q_below": 97.34513274336283,
+      "median_cov_ratio": 0.7885560496138545,
+      "median_qtm": 0.6304,
+      "median_alntm": 0.8179
+    },
+    {
+      "len_bin": "200-299",
+      "n_models": 1071,
+      "qtm_below_05": 473,
+      "pct_qtm_below": 44.16433239962652,
+      "qtm_below_with_alntm_ge_05": 435,
+      "pct_aln_high_of_q_below": 91.9661733615222,
+      "median_cov_ratio": 0.6844501351543606,
+      "median_qtm": 0.5268,
+      "median_alntm": 0.8014
+    },
+    {
+      "len_bin": "300-499",
+      "n_models": 541,
+      "qtm_below_05": 348,
+      "pct_qtm_below": 64.32532347504622,
+      "qtm_below_with_alntm_ge_05": 323,
+      "pct_aln_high_of_q_below": 92.81609195402298,
+      "median_cov_ratio": 0.5931427295063659,
+      "median_qtm": 0.4354,
+      "median_alntm": 0.783
+    },
+    {
+      "len_bin": "500+",
+      "n_models": 92,
+      "qtm_below_05": 57,
+      "pct_qtm_below": 61.95652173913043,
+      "qtm_below_with_alntm_ge_05": 50,
+      "pct_aln_high_of_q_below": 87.71929824561403,
+      "median_cov_ratio": 0.5962922312044451,
+      "median_qtm": 0.43325,
+      "median_alntm": 0.7968
+    }
+  ],
+  "true_novel_fold_candidates": {
+    "retrieval_failure_count": 22,
+    "alntm_below_05_count": 73,
+    "total_conservative_fold_novelty_upper_bound": 95,
+    "pct_of_all_qualified_dark_models": 3.347427766032417
+  }
+}

@@ -1,0 +1,47 @@
+FAMILY ANALYSIS RESULTS — BEFORE MANUSCRIPT INCLUSION
+15 October 2026
+
+Completed the pilots in the requested order, then full runs for F1, F3, F4 and F5. F2 failed its assignment gate and was stopped. Flash performed the delegated searches/context analyses through agy; root independently checked and corrected the analysis code, executed the additional comparisons and sensitivity tests, and audited source data. Argon reviewed the results and reproducibility evidence, then reassessed the final quality-filtered results. This is additional to H1-H4. No manuscript changes were made.
+
+F1 — Photolyase/cryptochrome family
+914 complete predicted proteins in 775 of 5,438 MAGs. The complete-family carrier fraction is higher at the surface than in paired deep samples: median difference +8.47 percentage points, 95% site-bootstrap interval +2.30 to +13.55, Holm p=0.00196 across 37 sites/69 matched visits. The added signal outside the previous K01669 annotation is inconclusive. Equal-sized comparisons do not establish exceptional EQ diversity; the screen also has a documented short-photolyase sensitivity limitation.
+Root: useful supporting ecology, not a new-family discovery.
+Argon: partial support; include only as observational supporting biology.
+
+F2 — Compatible-solute phosphatase leads
+Both historical sequences map exactly to current proteins, but the 93-aa and 148-aa leads have no supporting hits in the tested HAD profiles or curated phosphatase/competitor sequence panel. Their biological functions remain unknown.
+Root: stop after the pilot; assignment unsupported.
+Argon: agrees; omit as a positive discovery.
+
+F3 — Rhodopsins and heliorhodopsins
+205 complete profile-supported candidates: 140 Type-1 and 65 heliorhodopsins. Reference-aligned retinal-site conservation supports 100 and 45, respectively. A Type-1 signalling-neighbour association is present in the broader profile set, but becomes inconclusive after the retinal-site filter and multiple-testing correction: 13/33 matched loci versus 6/33 controls, Holm p=0.0781. Heliorhodopsin context is also inconclusive.
+A narrower diversity lead survives: equal-sized additions of 35 site-conserving heliorhodopsins add a mean 13.98 reference-unrepresented clusters at 50% identity, versus 5.00 for SMAG and 4.79 for GEM, using the frozen joint clustering. The original embedding-distance contrast shrinks substantially after quality filtering. Host taxonomy remains a major unresolved explanation.
+Root: exploratory reference-diversity lead; not a confirmed new sensory mechanism.
+Argon: agrees; resource/supplement or follow-up hypothesis, not headline biology.
+
+F4 — Ectoine synthase and pathway context
+940 complete EctC-profile candidates in 865 MAGs. Of these, 666 have predicted EctA and EctB neighbours within 5 kb; 664 are on the same strand. 822 retain all four tested reference-aligned EctC residues; 623 satisfy both the residue pattern and same-strand A+B context. Five candidate proteins contain nonoverlapping EctC/EctD domains. These are predicted gene neighbourhoods/domain architectures, not proven operons or enzyme activity. Sequence comparisons do not establish exceptional EQ breadth.
+Root: the clearest supporting pathway-context result.
+Argon: agrees; useful for the osmoprotection section, without a novel-family or validated-activity claim.
+
+F5 — Carbonic anhydrases
+4,081 complete beta-CA and 4,212 gamma-CA profile candidates; 34 CsoSCA candidates kept separate. Reference-site patterns support 4,016 beta and 3,481 gamma candidates. Approximately 99% have coverage-qualified homologues in the environmental panels. Neither the sequence comparisons nor the balanced cluster results establish a compelling new family-level discovery. Activity, salt tolerance and thermostability were not measured.
+Root: retain the audited catalogue; do not expand the main story around it.
+Argon: agrees; archive/supplement rather than a new main-text discovery claim.
+
+Recommendation
+F1 and F4 can strengthen biological support in the current paper. F3 heliorhodopsin diversity is the most interesting remaining exploratory lead, but needs a taxonomy-matched external comparison and functional evidence before it becomes a strong mechanistic story. These analyses do not by themselves supply the major novelty increase sought for Nature Communications.
+
+Reproducibility and retained figures
+All heavy CPU analyses ran under IBEX Slurm; ProstT5 ran on an ORIX H200. Independent audits reconstructed the family gates from raw domain searches, checked candidate sequences and coordinates against original files, and checked neighbourhoods and source-specific completeness. Final closure job53822727 checksummed2,310retainedfiles(9.64GB); the complete GPU numerical bundle copied to IBEX passes its checksums. Full source inventories, sample-profile hashes, code snapshots, model provenance, raw outputs and job receipts are retained. No family-specific raw-read remapping or wet-lab validation was performed.
+
+Reproduction guide: reproducibility/darkmatter/family_discovery_20261015/REPRODUCIBILITY.txt
+Final closure: reproducibility/darkmatter/family_discovery_20261015/root_audit/final_bundle/closure.json
+Artifact inventory: reproducibility/darkmatter/family_discovery_20261015/root_audit/final_bundle/artifact_manifest.tsv
+F1 figure: root_audit/f1_plots_complete/tsne_multiseed_CPF_profile_supported_perp30.0.pdf
+F3 quality-sensitive figures: root_audit/f3_site_conserving/{Type1,Helio}/plots/tsne_multiseed_{Type1,Helio}_perp30.0.pdf
+F4/F5 figures: root_audit/f345_plots/{EctC,BetaCA,GammaCA}/tsne_multiseed_{EctC,BetaCA,GammaCA}_perp30.0.pdf
+Figure paths are relative to the analysis directory; all seeds/perplexities and numerical coordinates are retained. t-SNE plots illustrate representation structure and are not novelty tests.
+
+Review trail
+ROOT_F12_JUDGEMENT.txt and ROOT_F345_JUDGEMENT.txt contain root's detailed assessment and dispositions of erroneous generated interpretations. argon_f12_final.txt and argon_final_addendum.txt contain Argon's accepted final scientific judgements. Earlier reports are retained for transparency, with their errors explicitly corrected in the root dispositions.

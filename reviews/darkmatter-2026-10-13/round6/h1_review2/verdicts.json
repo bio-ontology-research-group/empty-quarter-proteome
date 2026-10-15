@@ -1,0 +1,42 @@
+{
+  "id": "H1",
+  "status": "VIABLE",
+  "bounded_hypothesis": "Across the n = 237 Rub' al-Khali desert Thermoplasmatota species-representative MAGs conditioned on continuous branch-length phylogenetic covariance from the 1,914-taxon GTDB-Tk r232 ar53 reference tree (Pagel's lambda PGLS) and genome assembly quality covariates (CheckM2 completeness, contamination, log10 assembly length, and log10 contig N50), how does the per-genome catalogue dark proteome fraction (N_dark / N_proteins_cat) vary in two-sided tests with amino acid identity (aai, spanning 48.678-80.041% across all 237 representatives and 50.389-80.041% across the 236 c__SW-10-69-26 and c__E2 representatives) to the nearest external GTDB r232 or MGnify reference genome and with desert-normalized shared reciprocal-best-hit gene coverage (frac_rbh_desert = N_RBH / N_prot_aai), alongside matched-denominator correlation and count-scaling audits and descriptive dark-family occupancy summaries without causal expansion, isolate-cultivation, or disjoint proteome-partition assumptions?",
+  "critical_issues": [],
+  "evidence_paths": [
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/SNAPSHOT_MANIFEST.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/DESIGN.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/DOSSIER.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/response.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/INPUTS.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/scripts/01_v3_input_manifest_and_phylo_audit.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/scripts/02_v3_pgls_ancestry_models.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/scripts/03_v3_coupling_and_comparator_audit.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/scripts/run_h1_v3_pipeline.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/scripts/run_h1_v3_pipeline.sbatch",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/logs/h1_v3_53704703.out",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_input_file_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_phylo_vcv_validation.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_phylo_vcv_validation.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_pgls_model_summary.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_pgls_lambda_profile.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_pgls_sensitivity.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_pgls_statsmodels_verification.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_pgls_ancestry_summary.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_comparator_metadata_summary.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_coupling_and_comparator_audit.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_coupling_and_comparator_summary.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_closure_verification.json",
+    "reviews/darkmatter-2026-10-13/round6/root_checks/h1_v2_gls_audit.json"
+  ],
+  "optional_improvements": [
+    "In DOSSIER.md Table 4.1 and results/v3_pgls_lambda_profile.tsv, explicitly label AIC (-1265.87) and BIC (-1238.12) as fixed-lambda criteria counting k = p + 1 = 8 parameters (7 regression coefficients plus sigma^2), or add 1 degree of freedom (k = p + 2 = 9, yielding AIC = -1263.87 and BIC = -1232.65) when counting the profiled Pagel's lambda_ML parameter in full-ML comparisons against fixed-lambda OLS.",
+    "In DOSSIER.md Section 3 (line 39) and Section 6.2 (line 131), align the parenthetical root-to-tip range and minimum eigenvalues with the crown-zeroed 237-tip values reported in DESIGN.md (line 80) and results/v3_phylo_vcv_validation.json ([0.258680, 0.528319]; min eigenvalues 2.351e-3 for V and 4.944e-3 for C), and change the prose text 'pyrodigal.OrfFinder(meta=True)' to 'meta=False' to match DESIGN.md (line 96) and the single-genome Pyrodigal AAI pipeline."
+  ],
+  "scope_changes_from_original": [
+    "Narrows H1 from macroevolutionary claims of 'accessory proteome expansion' vs 'core dilution' between two classes (c__SW-10-69-26 vs c__E2) to a finite-cohort, two-sided continuous branch-length PGLS association study across the 237 desert Thermoplasmatota species representatives.",
+    "Replaces invalid few-cluster taxonomic sandwich standard errors (7 named families; f__JAJPHT01 holds 140/237 genomes) with Pagel's lambda PGLS on the 1,914-taxon ar53 FastTree, accompanied by 95% profile-likelihood bounds on lambda and seven pre-specified covariance, denominator, and cohort sensitivity models (S1-S7).",
+    "Reconciles the RBH denominator from min(N_A, N_B) to the desert genome's own protein count (tested under both single-genome Pyrodigal N_prot_aai and catalogue N_proteins_cat), documents the dual gene-caller basis and non-disjointness of N_dark and N_RBH, and places directional ancestral gene-gain/loss reconstructions outside the bounded scope as optional future work."
+  ],
+  "reason": "All five critical issues (C1-C5) and optional audit items from h1_review1 and round6/root_checks are resolved and verified in snapshots/h1_v3/ (Slurm Job 53704703): (1) the 1D-to-2D NumPy broadcasting bug in whitened GLS R-squared is fixed and verified against statsmodels.GLS to within 4.44e-15 (primary PGLS R^2_GLS = 0.469051 at lambda_ML = 0.915784; OLS R^2 = 0.495786), (2) concentrated ML variance (RSS/n) is separated from unbiased residual variance RSS/(n-p) for finite-sample Student-t standard errors, scientific-notation p-values, and conditional 95% Student-t intervals alongside the 95% profile-likelihood CI for Pagel's lambda ([0.846303, 0.957823]), (3) all hypothesis tests are formulated and evaluated as two-sided exploratory tests, (4) unverified disjoint proteome-partition claims are removed and the algebraic permutation illustration is executed on strictly matched denominators (both N_proteins_cat and N_prot_aai), and (5) external comparators are accurately characterized as GTDB r232 and MGnify reference genomes (predominantly uncultured environmental MAGs) with exact source-verified empirical AAI ranges (48.678-80.041% across all 237 representatives; 50.389-80.041% across the 236 c__SW-10-69-26 and c__E2 representatives)."
+}

@@ -1,0 +1,27 @@
+{
+  "job": "53826077",
+  "samtools_version": "samtools 1.23.1",
+  "mapping_quality": 20,
+  "base_quality": 20,
+  "excluded_flags": 3844,
+  "overlapping_mates": "samtools depth -s",
+  "gate": "median depth >=5 and breadth at depth>=1 >=0.95",
+  "junction": "at least20reference bases on each side of domain-gap midpoint in one contiguous M/= /X CIGAR block; distinct query names",
+  "tracks": {
+    "F3_Helio": {
+      "loci": 45,
+      "coverage_gate_pass": 43,
+      "median_locus_depth": 12.0
+    },
+    "F4_EctCD": {
+      "loci": 5,
+      "coverage_gate_pass": 5,
+      "median_locus_depth": 13.0
+    }
+  },
+  "limits": [
+    "Support in original assembly mappings, not an independent assembly or functional assay",
+    "BAMs identified by exact path, size, mtime, header and index hashes; full BAM hashes are not recomputed here",
+    "One source sample per locus; mapping specificity conditional on original assembly and MAPQ"
+  ]
+}

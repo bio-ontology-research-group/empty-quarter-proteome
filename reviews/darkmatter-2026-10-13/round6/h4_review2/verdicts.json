@@ -1,0 +1,41 @@
+{
+  "id": "H4",
+  "status": "VIABLE",
+  "bounded_hypothesis": "Among confidence-qualified sequence-dark representative protein models (length >= 100 aa, mean pLDDT >= 0.70; 1 model per fold cluster) with low whole-chain PDB structural similarity (qTM_wc < 0.5), physical cropping and de novo Foldseek alignment (--alignment-type 1 -e 10 -s 9.5 --max-seqs 1000) of outcome-independent confident structural regions (>= 50 aa, 15-aa rolling-window smoothed pLDDT >= 0.70, bridging <= 5-aa dips with mean pLDDT >= 0.55) recovers reference-conditional PDB matches (qTM_crop >= 0.5) at a higher parent-model rate in candidates with baseline local hits (K_local_pdb, and combined K_local_all) than in candidates lacking local hits (K_dual_none), when evaluated symmetrically across sequence-identity exclusion tiers (Tiers 0-4) under Horvitz-Thompson finite-population weighting against internal fold-matched dark comparators (Q \\ K) and homology-filtered PDB positive controls.",
+  "critical_issues": [],
+  "evidence_paths": [
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/SNAPSHOT_MANIFEST.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/DESIGN.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/DOSSIER.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/response.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/INPUTS.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/scripts/v3_crop_and_search_regions.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/scripts/v3_verify_closure.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/scripts/v3_full.sbatch",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/scripts/v3_pilot.sbatch",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/logs/h4_v3_53704591.out",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/logs/h4_v3_53706771.out",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/results/v3_full5851_cropped_regions_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/results/v3_cropped_regions_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/results/v3_region_evaluations.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/results/v3_model_summaries.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/results/v3_recovery_summary.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/results/v3_audited_example_hits.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/results/v3_results.sha256.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/results/control_leakage_audit.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/results/exact_hit_vs_maxima.tsv",
+    "reviews/darkmatter-2026-10-13/round6/root_checks/pdb_reference_verification.json",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p6_hypotheses_clean/h4_structure/results/v3_wc_pdb_hits.raw.tsv",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p6_hypotheses_clean/h4_structure/results/v3_crop_pdb_hits.raw.tsv"
+  ],
+  "optional_improvements": [
+    "In scripts/v3_crop_and_search_regions.py, return null/None instead of [0.0, 0.0] when w_den == 0 in ht_domain_estimate() or n == 0 in wilson_ci(), use Korn-Graubard or exact binomial intervals when sample proportions hit 0% or 100%, and sync the two minor prose transcription numbers in DOSSIER.md (line 85 K_local_all H-T non-match sub-categories typed as 13.36% and 1.53% instead of v3_recovery_summary.json's exact 13.91% and 0.99%; lines 169-176 pre-reuse byte sizes for local TSVs whose SHA-256 digests already match).",
+    "When generating final manuscript tables, execute scripts/v3_full.sbatch in the IBEX batch partition (e.g., 64 CPUs, ~45-60 min walltime based on the Job 53704591 scaling benchmark) to replace stratified pilot Horvitz-Thompson estimates with the full N=5,851 alignment census."
+  ],
+  "scope_changes_from_original": [
+    "Narrowed from round5/EXTENSIONS.md H4 ('well-supported domains, uncertain extensions, or failures of reference retrieval') and superseded V1 ('bona fide novel structural domains', intrinsic disorder, and linker-reorientation mechanisms) to outcome-independent confident structural regions (>= 50 aa, 15-aa smoothed pLDDT >= 0.70, bridging <= 5-aa dips with mean pLDDT >= 0.55) evaluated under physical PDB coordinate cropping and symmetric whole-chain vs cropped Foldseek search (--max-seqs 1000).",
+    "Explicitly restricted interpretation of cropped recovery (qTM_crop >= 0.5) to the combined algorithmic effect of segment-length normalization (L_crop <= L_wc) and isolated-segment 3Di/TM-align search, and restricted persistent low scores (qTM_crop < 0.5) and non-retrieval to reference-conditional divergence against PDB rather than novel folds.",
+    "Completed full-cohort physical region cropping across all N=5,851 models (7,773 regions + 161 NO_CONFIDENT_REGION models) and empirical 16-CPU runtime scaling (Job 53704591), and scoped the executed --max-seqs 1000 search comparison to a 7-stratum pilot (n=300 models, 413 regions, Job 53706771) with Horvitz-Thompson finite-population estimators and explicit PDB vs AFDB-only baseline sub-strata."
+  ],
+  "reason": "H4 V3 resolves all five critical issues (C1-C5) from h4_review1 and satisfies all REVIEW_CONTRACT viability criteria. Specifically: (1) increasing Foldseek --max-seqs from 50 to 1000 and separating POST_EXCLUSION_EMPTY from PERSISTENT_LOW_SCORE eliminated control post-exclusion empty hit lists across all Tiers 0-4 (0/103 regions, rescuing 19, 23, and 31 control regions at Tiers 2, 3, and 4 to achieve 98.67%-97.33% parent-model match rates) while explicitly tracking residual 1,000-hit cap saturation (8/103 control regions); (2) full-cohort physical cropping of all N=5,851 models (7,773 regions + 161 zero-region models in v3_full5851_cropped_regions_manifest.tsv) and strict separation of NO_CONFIDENT_REGION from RAW_ZERO_RETRIEVAL resolve the zero-region misclassification; (3) executing paired whole-chain and cropped-region searches in the same run (Slurm Job 53706771) with symmetric Tiers 0-4, explicit PDB vs AFDB-only baseline sub-strata (K_local_pdb, K_local_afdb_only, K_dual_none, Q_not_K_pdb, Q_not_K_afdb_only, Controls), and a 10-state transition matrix resolves baseline/crop asymmetry and tracks both recovery (67/81 = 82.72% unweighted / 83.04% H-T in K_local_pdb whole-chain-unmatched models vs 18/50 = 36.00% in K_dual_none, p = 8.53e-13) and retention (51/51 = 100.0% of region-eligible Q_not_K_pdb models); (4) Horvitz-Thompson ratio estimators with Taylor-linearized FPC standard errors across the 7 sampling design strata (sum of weights = 5,851.00) and the empirical 16-CPU scaling benchmark (Job 53704591) establish both valid finite-population inference from the n=300 pilot and a concrete full-cohort execution recipe; and (5) exact CIGAR M aligned-pair coverage, exact paired McNemar control self-exclusion testing (b=0, c=42, p=4.55e-13), parent-model-level inference across all tiers, and retrieved-only fident summaries are verified against retained outputs. Independent audit of empty-domain and boundary CI behavior in ht_domain_estimate() and wilson_ci() confirms no false zero or absence inferences are made."
+}

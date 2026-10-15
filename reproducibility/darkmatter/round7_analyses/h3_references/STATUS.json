@@ -1,0 +1,81 @@
+{
+  "hypothesis": "H3",
+  "stage": "concurrent_smag_download_and_gem_harmonized_calling",
+  "status": "RUNNING",
+  "updated_at": "2026-10-14T08:40:45+03:00",
+  "slurm_jobs": [
+    {
+      "job_id": "53738740",
+      "name": "h3_smag_dl",
+      "stage": "smag_zenodo_download",
+      "status": "RUNNING",
+      "submitted_at": "2026-10-14T07:46:32+03:00",
+      "started_at": "2026-10-14T07:48:41+03:00",
+      "node": "cn605-04-r",
+      "log_out": "logs/download_smag_53738740.out",
+      "log_err": "logs/download_smag_53738740.err",
+      "description": "Download and MD5/SHA-256 verify all 373 Zenodo 8223844 archive parts (~39GB). Currently 50 completed/verified on disk."
+    },
+    {
+      "job_id": "53741379",
+      "name": "h3_smag_aux",
+      "stage": "smag_zenodo_download_auxiliary",
+      "status": "PENDING",
+      "submitted_at": "2026-10-14T08:40:38+03:00",
+      "log_out": "logs/download_aux_53741379.out",
+      "log_err": "logs/download_aux_53741379.err",
+      "description": "Auxiliary download worker streaming the latter 173 parts (ic onwards) with atomic MD5 verification."
+    },
+    {
+      "job_id": "53738968",
+      "name": "h3_gem_prep",
+      "stage": "gem_fetch_and_pyrodigal_call",
+      "status": "COMPLETED",
+      "submitted_at": "2026-10-14T07:50:05+03:00",
+      "started_at": "2026-10-14T07:53:27+03:00",
+      "completed_at": "2026-10-14T08:11:30+03:00",
+      "node": "cn509-20-r",
+      "exit_code": "0:0",
+      "log_out": "logs/gem_prep_53738968.out",
+      "log_err": "logs/gem_prep_53738968.err",
+      "description": "Download GEM nucleotide assemblies from NERSC (all 2,055 in 436s); Pyrodigal v3.7.1 calling completed on 32 cores (4,306,926 unique proteins, 1,376,624,176 aa); Published Prodigal proteomes parsed for 3 draws (seeds 20261014: 4,311,443 uniq; 20261015: 4,230,132 uniq; 20261016: 4,340,688 uniq)."
+    },
+    {
+      "job_id": "53738996",
+      "name": "h3_smag_ext",
+      "stage": "smag_extraction_and_pyrodigal_call",
+      "status": "PENDING_DEPENDENCY",
+      "dependency": "afterok:53738740",
+      "submitted_at": "2026-10-14T07:51:48+03:00",
+      "log_out": "logs/extract_smag_53738996.out",
+      "log_err": "logs/extract_smag_53738996.err",
+      "description": "Extract 1,500 pre-declared random SMAG genomes from multi-part archive and call Pyrodigal v3.7.1 (32 cores)"
+    },
+    {
+      "job_id": "53738997",
+      "name": "h3_search",
+      "stage": "exact_length_matching_and_full_census_search",
+      "status": "PENDING_DEPENDENCY",
+      "dependency": "afterok:53738996:53738968",
+      "submitted_at": "2026-10-14T07:51:52+03:00",
+      "log_out": "logs/search_53738997.out",
+      "log_err": "logs/search_53738997.err",
+      "description": "Exact 1-aa quota matching and paired DIAMOND searches across ALL 212,084 queries (32 cores)"
+    }
+  ],
+  "current_tasks": [
+    "Job 53738740 downloading SMAG archive parts 0-199 on cn605-04-r (active streaming: bm, bn, bo, bp)",
+    "Job 53741379 queued for auxiliary download (parts 200-372, ic onwards)",
+    "Combined archive progress: 50/373 parts verified on disk",
+    "Job 53738968 COMPLETED: 4 GEM reference pools built and verified (Pyrodigal & Prodigal)",
+    "Job 53738996 queued in Slurm (waiting for SMAG archive download completion)",
+    "Job 53738997 queued in Slurm (dependency on 53738968 satisfied, waiting for 53738996)"
+  ],
+  "completed_stages": [
+    "upstream_gem_audit_and_nersc_location",
+    "sampling_frame_extraction",
+    "predeclared_design",
+    "pipeline_scripts_and_dag_submission",
+    "gem_fetch_and_harmonized_calling"
+  ]
+}

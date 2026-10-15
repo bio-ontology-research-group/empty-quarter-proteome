@@ -1,0 +1,110 @@
+{
+  "job_id": "53818551",
+  "full_output_checksums_verified": [
+    "candidates.faa",
+    "candidates.tsv",
+    "cohort.faa",
+    "cohort.tsv",
+    "cpf.hmm",
+    "domains.tsv",
+    "hmm_report.txt",
+    "summary.json"
+  ],
+  "independent_domain_gate_count": 1154,
+  "complete_count": 914,
+  "carrier_genomes": 935,
+  "ecology_independent_audit": [
+    {
+      "trait": "cpf_complete",
+      "sites": 37,
+      "visits": 69,
+      "paired_median_difference": 8.47261013847909,
+      "p_wilcoxon_recomputed_from_rounded_sample_table": 0.00023364258231595159
+    },
+    {
+      "trait": "cpf_complete_exclusive",
+      "sites": 37,
+      "visits": 69,
+      "paired_median_difference": 0.004475174348247096,
+      "p_wilcoxon_recomputed_from_rounded_sample_table": 0.5326126103631739
+    }
+  ],
+  "complete_gene_tree_sensitivity": {
+    "PF00875": {
+      "source_counts": {
+        "EQ": 753,
+        "SMAG": 339,
+        "GEM": 736,
+        "curated_reference": 57
+      },
+      "equal_addition_n": 200,
+      "reference_tips": 57,
+      "mean_added_length": {
+        "EQ": 113.26004516766986,
+        "SMAG": 114.62144525002003,
+        "GEM": 138.0049230625299
+      },
+      "descriptive_draw_2.5_97.5_percentiles": {
+        "EQ": [
+          107.13083750619995,
+          118.56171400702473
+        ],
+        "SMAG": [
+          109.23512823800013,
+          118.75199225915004
+        ],
+        "GEM": [
+          131.19671700919997,
+          145.13455717152485
+        ]
+      }
+    },
+    "PF03441": {
+      "source_counts": {
+        "EQ": 725,
+        "SMAG": 293,
+        "GEM": 681,
+        "curated_reference": 52
+      },
+      "equal_addition_n": 200,
+      "reference_tips": 52,
+      "mean_added_length": {
+        "EQ": 80.30863960503994,
+        "SMAG": 83.09189655651001,
+        "GEM": 98.65022803987978
+      },
+      "descriptive_draw_2.5_97.5_percentiles": {
+        "EQ": [
+          75.53801093669995,
+          85.10155173319997
+        ],
+        "SMAG": [
+          77.87714968165,
+          87.333217767725
+        ],
+        "GEM": [
+          91.37745600177477,
+          106.64009324099973
+        ]
+      }
+    },
+    "PF04244": {
+      "source_counts": {
+        "EQ": 123,
+        "SMAG": 44,
+        "GEM": 262,
+        "curated_reference": 1
+      },
+      "equal_addition_n": 44,
+      "reference_tips": 1
+    }
+  },
+  "limitations": [
+    "Tree topology fitted jointly before fragment exclusion; exploratory short-domain branch lengths, not new functional clades.",
+    "Ecology association not causal selection; within-phylum stratification does not remove species turnover.",
+    "551 metadata profiles checked; one zero-mapped sample excluded, 550 contribute ratios, 37 strictly paired sites/69 visits.",
+    "SPL positive-control failure means core-profile screen is not exhaustive CPF discovery.",
+    "Reference-only tSNE separation is not biological novelty.",
+    "Ecology provenance v3 phrase indicates ecological selection is rejected; association only."
+  ]
+}

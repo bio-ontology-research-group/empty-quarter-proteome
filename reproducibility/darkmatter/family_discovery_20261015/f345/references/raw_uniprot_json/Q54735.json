@@ -1,0 +1,1974 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q54735",
+  "secondaryAccessions": [
+    "P74088"
+  ],
+  "uniProtkbId": "CYNT_SYNY3",
+  "entryAudit": {
+    "firstPublicDate": "1997-11-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1996-11-01",
+    "entryVersion": 144,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Synechocystis sp. (strain ATCC 27184 / PCC 6803 / Kazusa)",
+    "taxonId": 1111708,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Cyanobacteriota",
+      "Cyanophyceae",
+      "Synechococcales",
+      "Merismopediaceae",
+      "Synechocystis"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Carbonic anhydrase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9617794"
+            }
+          ],
+          "value": "4.2.1.1"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Carbonate dehydratase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "9617794"
+          }
+        ],
+        "value": "ccaA"
+      },
+      "synonyms": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "9617794"
+            }
+          ],
+          "value": "icfA"
+        }
+      ],
+      "orderedLocusNames": [
+        {
+          "value": "slr1347"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "11859847"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17993516"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9617794"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "Reference",
+              "id": "Ref.4"
+            }
+          ],
+          "value": "Reversible hydration of carbon dioxide. Essential to photosynthetic carbon dioxide fixation, supplies CO(2) to RuBisCO (ribulose bisphosphate carboxylase, rbcL-rbcS) in the carboxysome"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "hydrogencarbonate + H(+) = CO2 + H2O",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:10748"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16526"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:17544"
+          }
+        ],
+        "ecNumber": "4.2.1.1",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "17993516"
+          },
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "9617794"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Zn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "27729545"
+            },
+            {
+              "evidenceCode": "ECO:0007744",
+              "source": "PDB",
+              "id": "5SWC"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29105"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "27729545"
+              }
+            ],
+            "value": "Binds 1 zinc ion per monomer, a water molecule forms the fourth ligand."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9617794"
+            }
+          ],
+          "value": "Inhibited by ethoxyzolamide"
+        }
+      ],
+      "commentType": "ACTIVITY REGULATION"
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "note": {
+          "texts": [
+            {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000269",
+                  "source": "PubMed",
+                  "id": "27729545"
+                }
+              ],
+              "value": "kcat is 3340 sec(-1) for full length enzyme at pH 7.5."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17993516"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "27729545"
+            }
+          ],
+          "value": "A hexamer formed by a trimer of dimers. Interacts with the first 260 residues of CcmM; both the N-terminal 206 residues and the C-terminal tail contribute to CcmM binding (PubMed:27729545). Interacts with full-length and the N-terminal 249 residues of CcmM. A probable CcmM-CcaA-CcmN complex as well as a CcaA-RuBisCO-CcmM complex can also be isolated (PubMed:17993516)"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "INTERACTION",
+      "interactions": [
+        {
+          "interactantOne": {
+            "uniProtKBAccession": "Q54735",
+            "intActId": "EBI-1622341"
+          },
+          "interactantTwo": {
+            "uniProtKBAccession": "Q54735",
+            "geneName": "ccaA",
+            "intActId": "EBI-1622341"
+          },
+          "numberOfExperiments": 2,
+          "organismDiffer": false
+        },
+        {
+          "interactantOne": {
+            "uniProtKBAccession": "Q54735",
+            "intActId": "EBI-1622341"
+          },
+          "interactantTwo": {
+            "uniProtKBAccession": "P72758",
+            "geneName": "ccmM",
+            "intActId": "EBI-862848"
+          },
+          "numberOfExperiments": 6,
+          "organismDiffer": false
+        }
+      ]
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "17993516"
+              }
+            ],
+            "value": "This cyanobacterium makes beta-type carboxysomes. Associates with the shell portion of carboxysomes"
+          }
+        ]
+      },
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "11859847"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "17993516"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "9617794"
+              }
+            ],
+            "value": "Carboxysome",
+            "id": "SL-0034"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17993516"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "27729545"
+            }
+          ],
+          "value": "Dimerization, activity and interactions with CcmM requires all but the last 60 amino acids of the protein (PubMed:17993516). The C-terminal tail (about 55 residues) inhibits CA activity about 10-fold; it might attenuate activity before encapsulation in the carboxysome (PubMed:27729545)"
+        }
+      ],
+      "commentType": "DOMAIN"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "11859847"
+            }
+          ],
+          "value": "Cells do not grow in normal air but do grow on 5% CO(2), called a high-CO(2) requiring phenotype, HCR; even at high CO(2) levels photosynthesis is less effective. Carboxyomes appear wild-type and contain RuBisCO but no longer have a HCO(3)- to CO(2) interconversion activity. Light-dependent CO(2) transport into the cell is unchanged"
+        }
+      ],
+      "commentType": "DISRUPTION PHENOTYPE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "9617794"
+            }
+          ],
+          "value": "Belongs to the beta-class carbonic anhydrase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Erroneous initiation",
+      "sequence": "BAA18166.1",
+      "note": "Truncated N-terminus.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 274,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Carbonic anhydrase",
+      "featureId": "PRO_0000077464"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 214,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 274,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 234,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 245,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic and acidic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 261,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 274,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic and acidic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 39,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 39,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "27729545"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 98,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 98,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "27729545"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 101,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 101,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "27729545"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 205,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 274,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Protein has no CA activity, does not dimerize, does not interact with CcmM.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "17993516"
+        }
+      ],
+      "alternativeSequence": {}
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 215,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 274,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Protein has CA activity, dimerizes and interacts with CcmM.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "17993516"
+        }
+      ],
+      "alternativeSequence": {}
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 221,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 274,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "10-fold increase in kcat, enzyme loses activity over 20 minutes.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "27729545"
+        }
+      ],
+      "alternativeSequence": {}
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 219,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 219,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 2; BAA18166",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "P",
+        "alternativeSequences": [
+          "L"
+        ]
+      }
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 13,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 15,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 18,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 20,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 26,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 34,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 39,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 46,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 50,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 56,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 62,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 76,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 82,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 83,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 87,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 92,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 98,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 102,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 107,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 110,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 113,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 114,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 116,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 118,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 124,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 125,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 127,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 128,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 137,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 143,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 162,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 166,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 174,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 178,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 185,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 186,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 189,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 190,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 195,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 196,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 199,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 200,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 203,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 213,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 215,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-1283",
+      "category": "Cellular component",
+      "name": "Bacterial microcompartment"
+    },
+    {
+      "id": "KW-0120",
+      "category": "Biological process",
+      "name": "Carbon dioxide fixation"
+    },
+    {
+      "id": "KW-1282",
+      "category": "Cellular component",
+      "name": "Carboxysome"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0602",
+      "category": "Biological process",
+      "name": "Photosynthesis"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0862",
+      "category": "Ligand",
+      "name": "Zinc"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "9617794",
+        "citationType": "journal article",
+        "authors": [
+          "So A.K.C.",
+          "Espie G.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9617794"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1023/a:1005959200390"
+          }
+        ],
+        "title": "Cloning, characterization and expression of carbonic anhydrase from the cyanobacterium Synechocystis PCC6803.",
+        "publicationDate": "1998",
+        "journal": "Plant Mol. Biol.",
+        "firstPage": "205",
+        "lastPage": "215",
+        "volume": "37"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]",
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "ACTIVITY REGULATION",
+        "SUBCELLULAR LOCATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 27184 / PCC 6803 / Kazusa",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "8905231",
+        "citationType": "journal article",
+        "authors": [
+          "Kaneko T.",
+          "Sato S.",
+          "Kotani H.",
+          "Tanaka A.",
+          "Asamizu E.",
+          "Nakamura Y.",
+          "Miyajima N.",
+          "Hirosawa M.",
+          "Sugiura M.",
+          "Sasamoto S.",
+          "Kimura T.",
+          "Hosouchi T.",
+          "Matsuno A.",
+          "Muraki A.",
+          "Nakazaki N.",
+          "Naruo K.",
+          "Okumura S.",
+          "Shimpo S.",
+          "Takeuchi C.",
+          "Wada T.",
+          "Watanabe A.",
+          "Yamada M.",
+          "Yasuda M.",
+          "Tabata S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8905231"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/3.3.109"
+          }
+        ],
+        "title": "Sequence analysis of the genome of the unicellular cyanobacterium Synechocystis sp. strain PCC6803. II. Sequence determination of the entire genome and assignment of potential protein-coding regions.",
+        "publicationDate": "1996",
+        "journal": "DNA Res.",
+        "firstPage": "109",
+        "lastPage": "136",
+        "volume": "3"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 27184 / PCC 6803 / Kazusa",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "11859847",
+        "citationType": "journal article",
+        "authors": [
+          "So A.K.",
+          "John-McKay M.",
+          "Espie G.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11859847"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1007/s004250100638"
+          }
+        ],
+        "title": "Characterization of a mutant lacking carboxysomal carbonic anhydrase from the cyanobacterium Synechocystis PCC6803.",
+        "publicationDate": "2002",
+        "journal": "Planta",
+        "firstPage": "456",
+        "lastPage": "467",
+        "volume": "214"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "SUBCELLULAR LOCATION",
+        "DISRUPTION PHENOTYPE"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 27184 / PCC 6803 / Kazusa",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "CI-DR62VMH57F57A",
+        "citationType": "journal article",
+        "authors": [
+          "So A.K.",
+          "Espie G.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "DOI",
+            "id": "10.1139/b05-057"
+          }
+        ],
+        "title": "Cyanobacterial carbonic anhydrases.",
+        "publicationDate": "2005",
+        "journal": "Can. J. Bot.",
+        "firstPage": "721",
+        "lastPage": "734",
+        "volume": "83"
+      },
+      "referencePositions": [
+        "FUNCTION"
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "17993516",
+        "citationType": "journal article",
+        "authors": [
+          "Cot S.S.",
+          "So A.K.",
+          "Espie G.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17993516"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.01283-07"
+          }
+        ],
+        "title": "A multiprotein bicarbonate dehydration complex essential to carboxysome function in cyanobacteria.",
+        "publicationDate": "2008",
+        "journal": "J. Bacteriol.",
+        "firstPage": "936",
+        "lastPage": "945",
+        "volume": "190"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "INTERACTION WITH CCMM",
+        "SUBCELLULAR LOCATION",
+        "DOMAIN",
+        "MUTAGENESIS OF 215-GLN--ARG-274 AND 215-ASP--ARG-274"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 27184 / PCC 6803 / Kazusa",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "27729545",
+        "citationType": "journal article",
+        "authors": [
+          "McGurn L.D.",
+          "Moazami-Goudarzi M.",
+          "White S.A.",
+          "Suwal T.",
+          "Brar B.",
+          "Tang J.Q.",
+          "Espie G.S.",
+          "Kimber M.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "27729545"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1042/bcj20160773"
+          }
+        ],
+        "title": "The structure, kinetics and interactions of the beta-carboxysomal beta-carbonic anhydrase, CcaA.",
+        "publicationDate": "2016",
+        "journal": "Biochem. J.",
+        "firstPage": "4559",
+        "lastPage": "4572",
+        "volume": "473"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.45 ANGSTROMS) OF 1-220 IN COMPLEX WITH ZINC",
+        "FUNCTION",
+        "COFACTOR",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "SUBUNIT",
+        "INTERACTION WITH CCMM",
+        "DOMAIN",
+        "MUTAGENESIS OF 221-PRO--ARG-274"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 27184 / PCC 6803 / Kazusa",
+          "type": "STRAIN"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "5SWC"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "U45962",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC46375.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "BA000022",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA18166.1"
+        },
+        {
+          "key": "Status",
+          "value": "ALT_INIT"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "S75605",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S75605"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5SWC",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.45 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B/C/D/E/F=1-220"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5SWC",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q54735",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q54735",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-40255N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "Q54735",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "1148.gene:10499039",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "1148-gene:10499039",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "BAA18166",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA18166"
+        },
+        {
+          "key": "GeneId",
+          "value": "BAA18166"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "syn:slr1347",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0288",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q54735",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "Q54735",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "4.2.1.1",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "16015"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001425",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0031470",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:carboxysome"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "11859847"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004089",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:carbonate dehydratase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "9617794"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0042802",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:identical protein binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IPI:IntAct"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000353",
+          "source": "PubMed",
+          "id": "17993516"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008270",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:zinc ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0015976",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:carbon utilization"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00884",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta_CA_cladeB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.1050.10:FF:000003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic anhydrase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.1050.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic anhydrase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR045066",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Beta_CA_cladeB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001765",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015892",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036874",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase_sf"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11002",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBONIC ANHYDRASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11002:SF76",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBONIC ANHYDRASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pro_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00947",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pro_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53056",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta-carbonic anhydrase, cab"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00704",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PROK_CO2_ANHYDRASE_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00705",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PROK_CO2_ANHYDRASE_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MQRLIEGLQKFREGYFSSHRDLFEQLSHGQHPRILFICCSDSRVDPNLITQSEVGDLFVIRNAGNIIPPYGAANGGEGAAMEYALVALEINQIIVCGHSHCGAMKGLLKLNSLQEKLPLVYDWLKHTEATRRLVLDNYSHLEGEDLIEVAVAENILTQLKNLQTYPAIHSRLHRGDLSLHGWIYRIEEGEVLAYDGVLHDFVAPQSRINALEPEDEYAPHPNSPLISYDAFKVPGKERPGREKATESPAPQLSPLPGFGHLPREQAERIYRGSR",
+    "length": 274,
+    "molWeight": 30761,
+    "crc64": "2F4F634246C0D5A9",
+    "md5": "F97D6B04772E20F50A4CCFADA2A3B659"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "ACTIVITY REGULATION": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "SUBUNIT": 1,
+      "INTERACTION": 2,
+      "SUBCELLULAR LOCATION": 1,
+      "DOMAIN": 1,
+      "DISRUPTION PHENOTYPE": 1,
+      "SIMILARITY": 1,
+      "SEQUENCE CAUTION": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Region": 1,
+      "Compositional bias": 2,
+      "Binding site": 3,
+      "Mutagenesis": 3,
+      "Sequence conflict": 1,
+      "Helix": 14,
+      "Beta strand": 6,
+      "Turn": 3
+    },
+    "uniParcId": "UPI0000128C48"
+  }
+}

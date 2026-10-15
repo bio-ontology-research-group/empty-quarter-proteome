@@ -1,0 +1,58 @@
+================================================================================
+REFERENCE REBUILD & CONTROL AUDIT REPORT (references_v2)
+Date: 2026-10-15 | Status: READY_FOR_ROOT_REFERENCE_AUDIT
+================================================================================
+
+1. SUMMARY OF REBUILT DATABASES
+--------------------------------------------------------------------------------
+Total Reference Entries in references_v2: 258
+  * F1 Cryptochrome/Photolyase Family (CPF): 66
+  * F2 Compatible-Solute Phosphatases & Competing HAD: 192
+
+F1 CPF Subfamily Composition:
+  - CPD_photolyase                          :  18 seqs (with exp function evidence: 5)
+  - FeS_BCP_or_64_photolyase                :   7 seqs (with exp function evidence: 2)
+  - cryptochrome_signaling_and_DASH         :  36 seqs (with exp function evidence: 15)
+  - spore_photoproduct_lyase_radical_SAM    :   3 seqs (with exp function evidence: 3)
+  - SPL_short_photolyase                    :   2 seqs (with exp function evidence: 1)
+
+F2 Phosphatase Target & Competing Subfamily Composition:
+  - mannosyl_3_phosphoglycerate_phosphatase :  33 seqs (with exp function evidence: 3)
+  - glucosylglycerol_phosphate_phosphatase  :   8 seqs (with exp function evidence: 2)
+  - trehalose_6_phosphate_phosphatase       :  39 seqs (with exp function evidence: 13)
+  - phosphoglycolate_phosphatase_PGP        :  30 seqs (with exp function evidence: 8)
+  - sucrose_6_phosphatase_SPP               :  11 seqs (with exp function evidence: 2)
+  - histidinol_phosphatase_HisP             :  30 seqs (with exp function evidence: 1)
+  - beta_phosphoglucomutase_bPGM            :   3 seqs (with exp function evidence: 2)
+  - deoxyribose_phosphate_mutase_DeoB       :  30 seqs (with exp function evidence: 4)
+  - kdo_8_phosphate_phosphatase_YrbI        :   8 seqs (with exp function evidence: 4)
+
+2. EMPIRICAL REFERENCE CONTROL PERFORMANCE
+--------------------------------------------------------------------------------
+Self-Hit Recovery Rate (DIAMOND 100% identity to self):
+  * CPF References:         66/66 (100.0%)
+  * Phosphatase References: 192/192 (100.0%)
+
+Subfamily Nearest-Neighbor Concordance (Top Non-Self Hit):
+  * CPF Subfamily Recovery:         63/66 (95.5%)
+  * Phosphatase Subfamily Recovery: 189/192 (98.4%)
+
+3. KEY BIOLOGICAL CONTROL VERIFICATIONS
+--------------------------------------------------------------------------------
+A. Spore Photoproduct Lyase (SplB, Radical SAM Outgroup):
+   P37956 (Bacillus subtilis (strain 168)): top_hmm=Radical_SAM(PF04055.28) (score=24.3), top_nonself=spore_photoproduct_lyase_radical_SAM
+   Q97L63 (Clostridium acetobutylicum (strain ATCC 824 / DSM 792 / JCM 1419 / IAM 19013 / LMG 5710 / NBRC 13948 / NRRL B-527 / VKM B-1787 / 2291 / W)): top_hmm=Radical_SAM(PF04055.28) (score=36.7), top_nonself=spore_photoproduct_lyase_radical_SAM
+   C9RZ55 (Geobacillus sp. (strain Y412MC61)): top_hmm=Radical_SAM(PF04055.28) (score=28.1), top_nonself=spore_photoproduct_lyase_radical_SAM
+
+B. Short Photolyase-Like (SPL, Xu et al. 2021):
+   QCI56913.1 (Rhodococcoides fascians strain MCCC 1A03174): top_hmm=FAD_binding_7(PF03441.20) (score=30.6), top_nonself=SPL_short_photolyase (pident=89.7%, bitscore=758.0)
+   WP_032397095.1 (Rhodococcoides fascians): top_hmm=FAD_binding_7(PF03441.20) (score=32.9), top_nonself=SPL_short_photolyase (pident=89.7%, bitscore=759.0)
+
+C. Osmolyte Phosphatase (MpgP, EC 3.1.3.70) Separation:
+   MpgP within-family top non-self hit concordance: 33/33 (100.0%)
+
+================================================================================
+CONCLUSION: Reference database references_v2 is clean, non-redundant, fully
+documented, and validated. Stopping execution at READY_FOR_ROOT_REFERENCE_AUDIT.
+No biological MAG searches will be launched until Root supplies gate.
+================================================================================

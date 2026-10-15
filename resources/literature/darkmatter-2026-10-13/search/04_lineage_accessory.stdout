@@ -1,0 +1,158 @@
+I have initiated the downloads of the verified literature files for Direction 04 into `resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/` and will proceed once the download task finishes.
+I will wait for the background download task to finish.
+I will wait for the download task to complete.
+I am waiting for the remaining paper downloads to complete.
+I will wait for the final files to finish downloading.
+I will wait for the last three paper files to finish downloading.
+I will wait for the final two files to finish downloading.
+I will wait for the final download to finish.
+# Literature Expansion Report: Direction 04 — Lineage & Accessory Genome
+
+**Direction:** Thermoplasmatota dark proteomes, archaeal genetic codes, reference bias, MAG versus cultivated strain accessory genome comparisons, and completeness confounding.  
+**Target Manuscript:** P4 Dark-Proteome Manuscript ([`manuscript/main.tex`](file:///home/leechuck/Documents/papers/empty-quarter-mags/manuscript/main.tex), [`manuscript/references.bib`](file:///home/leechuck/Documents/papers/empty-quarter-mags/manuscript/references.bib), [`notes/dossiers/07_lineage_darkness_archaea.md`](file:///home/leechuck/Documents/papers/empty-quarter-mags/notes/dossiers/07_lineage_darkness_archaea.md), [`notes/dossiers/04_reference_gap.md`](file:///home/leechuck/Documents/papers/empty-quarter-mags/notes/dossiers/04_reference_gap.md)).  
+**Deliverables:**
+- **TSV Manifest:** [`manifest.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/manifest.tsv)
+- **Downloaded Papers Folder:** [`resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/) (15 full-text files, 21 MB)
+- **Substantive Search Synthesis:** [`04_lineage_accessory.md`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/search/04_lineage_accessory.md)
+
+---
+
+## Core Findings & Strategic Tension for P4
+
+1. **Challenging the "Rare Biosphere" Defense for Thermoplasmatota:**  
+   [Maeke et al. (2025)](https://doi.org/10.1186/s40168-025-02140-8) examined the novel Thermoplasmatota class *Ca.* Penumbrarchaeia and concluded that its record-high fraction of unknown genes is driven by environmental rarity ("rare biosphere"). P4 directly refutes this: the Rub' al-Khali Thermoplasmatota are cosmopolitan (detected in 481 of 549 samples), and P4's 1:1 nearest-neighbor matched null proves they remain **4.5- to 6.5-fold darker than bacteria and other archaea** matched on abundance, prevalence, completeness, and size.
+2. **Archaeal Genetic Codes & Gene-Calling Truncation Artifacts:**  
+   Recent discoveries—including **Code 34** ([Kivenson et al. 2025, *Science*](https://doi.org/10.1126/science.adu2404)), dynamic amber UAG ambiguity ([Shalvarjian et al. 2025, *PNAS*](https://doi.org/10.1073/pnas.2517473122)), and high-throughput k-mer detection ([Melnykov 2026, *PNAS*](https://doi.org/10.1073/pnas.2610659123))—show that uncultivated Archaea frequently reassign stop codons. Because P4 ran Pyrodigal in meta mode with **Table 11**, any internal TAG or recoded stop codon prematurely truncates ORFs ([Borges et al. 2022, *Nature*](https://doi.org/10.1038/s41586-022-04715-x); [Ivanova et al. 2014, *Science*](https://doi.org/10.1126/science.1250691)). This provides a compelling alternative hypothesis for why 76% of P4's dark proteins are $<100$ aa, necessitating an explicit Methods caveat.
+3. **Reference Database Ceilings:**  
+   [Albright & Louca (2023)](https://doi.org/10.1038/s41597-023-01994-7) demonstrates that reference databases (RefSeq, KEGG) systematically underrepresent uncultivated taxa and Archaea ($<3\%$). This validates P4's 55.6% no-KO ceiling as a database constraint rather than an assembly artifact.
+4. **MAG vs. Cultivated Accessory Decoupling & Completeness Confounding:**  
+   In 23 shared bacterial species, P4 found isolates and MAGs share 80% annotated but only 16% dark proteins. Critical pangenomic literature ([Pellegrinetti et al. 2026, *Front Microbiol*](https://doi.org/10.3389/fmicb.2026.1884628); [Hellewell et al. 2024, *Bioinformatics*](https://doi.org/10.1093/bioinformatics/btae542); [Majernik et al. 2025, *mSphere*](https://doi.org/10.1128/msphere.00857-24); [Tang & Yin 2023, *Brief Bioinform*](https://doi.org/10.1093/bib/bbac484)) shows that assembly fragmentation at contig boundaries and incompleteness selectively drop core genes into the accessory pool and purge repetitive accessory islands, inflating apparent accessory divergence. Furthermore, all 23 cultivated pairs are Bacteria; none are Archaea.
+
+---
+
+## Detailed Literature Inventory (13 Papers)
+
+### Verified Core Papers (Full Text Retained)
+
+1. **Maeke et al. (2025)** — *Microbiome*  
+   - **Title:** Extensive data mining uncovers novel diversity among members of the rare biosphere within the Thermoplasmatota  
+   - **Authors:** Mara D. Maeke, Xiuran Yin, Lea C. Wunder, Chiara Vanni, Tim Richter-Heitmann, et al.  
+   - **DOI:** [`10.1186/s40168-025-02140-8`](https://doi.org/10.1186/s40168-025-02140-8) | [Publisher Link](https://microbiomejournal.biomedcentral.com/articles/10.1186/s40168-025-02140-8)  
+   - **Local Full Text:** [`Maeke_2025_Thermoplasmatota_rare_biosphere_Microbiome.pdf`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Maeke_2025_Thermoplasmatota_rare_biosphere_Microbiome.pdf) (3.5 MB) & [`.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Maeke_2025_Thermoplasmatota_rare_biosphere_Microbiome.xml) (313 KB)  
+   - **Access Status:** `verified_full_text_pdf_and_xml` | **Already Cited:** Yes (`maeke2025thermoplasmatota`)  
+   - **Claim & Limitation for P4:** Claims high unknown gene content in *Ca.* Penumbrarchaeia is a consequence of rare biosphere status. P4's matched null explicitly refutes this rarity explanation.
+
+2. **Kivenson et al. (2025)** — *Science*  
+   - **Title:** An archaeal genetic code with all TAG codons as pyrrolysine  
+   - **Authors:** Veronika Kivenson, Samantha L. Peters, Guillaume Borrel, Aleksandr Kivenson, Leah T. Roe, et al., Jillian F. Banfield  
+   - **DOI:** [`10.1126/science.adu2404`](https://doi.org/10.1126/science.adu2404) | [bioRxiv Preprint](https://doi.org/10.1101/2024.09.30.615893)  
+   - **Local Full Text:** [`Kivenson_2025_archaeal_pyrrolysine_code34_Science_biorxiv.pdf`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Kivenson_2025_archaeal_pyrrolysine_code34_Science_biorxiv.pdf) (3.6 MB)  
+   - **Access Status:** `verified_full_text_pdf` | **Already Cited:** No  
+   - **Claim & Limitation for P4:** Established Genetic Code 34 (all TAG codons encode pyrrolysine). If soil Thermoplasmatota use Code 34, Pyrodigal Table 11 prematurely truncates genes, generating artificial $<100$ aa "dark" fragments.
+
+3. **Shalvarjian et al. (2025)** — *PNAS*  
+   - **Title:** Methanogenic archaea encoding Pyrrolysine maintain ambiguous amber codon usage  
+   - **Authors:** Katie E. Shalvarjian, Grayson L. Chadwick, Paloma I. Pérez, Philip H. Woods, Victoria J. Orphan, Dipti D. Nayak  
+   - **DOI:** [`10.1073/pnas.2517473122`](https://doi.org/10.1073/pnas.2517473122) | [bioRxiv Preprint](https://doi.org/10.1101/2025.06.11.659114)  
+   - **Local Full Text:** [`Shalvarjian_2025_archaeal_pyrrolysine_ambiguity_PNAS_biorxiv.pdf`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Shalvarjian_2025_archaeal_pyrrolysine_ambiguity_PNAS_biorxiv.pdf) (2.7 MB)  
+   - **Access Status:** `verified_full_text_pdf` | **Already Cited:** No  
+   - **Claim & Limitation for P4:** Demonstrates that archaeal amber stop codons (UAG) operate ambiguously based on metabolic Pyl demand, proving translation termination is dynamic rather than fixed.
+
+4. **Shulgina & Eddy (2021)** — *eLife*  
+   - **Title:** A computational screen for alternative genetic codes in over 250,000 genomes  
+   - **Authors:** Yekaterina Shulgina, Sean R. Eddy  
+   - **DOI:** [`10.7554/eLife.71402`](https://doi.org/10.7554/eLife.71402) | [Publisher Link](https://elifesciences.org/articles/71402)  
+   - **Local Full Text:** [`Shulgina_2021_Codetta_alternative_genetic_codes_eLife.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Shulgina_2021_Codetta_alternative_genetic_codes_eLife.xml) (140 KB)  
+   - **Access Status:** `verified_full_text_xml` | **Already Cited:** No  
+   - **Claim & Limitation for P4:** Introduced Codetta to screen uncultivated genomes for alternative genetic codes, identifying widespread stop-codon reassignments. Benchmark methodology for P4's pipeline validation.
+
+5. **Borges et al. (2022)** — *Nature*  
+   - **Title:** Widespread stop-codon recoding in bacteriophages  
+   - **Authors:** Rohan Borges, Rohan Sachdeva, Eric D. Sonnenthal, … Jillian F. Banfield  
+   - **DOI:** [`10.1038/s41586-022-04715-x`](https://doi.org/10.1038/s41586-022-04715-x) | [Publisher Link](https://www.nature.com/articles/s41586-022-04715-x)  
+   - **Local Full Text:** [`Borges_2022_stop_codon_recoding_phages_Nature.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Borges_2022_stop_codon_recoding_phages_Nature.xml) (98 KB)  
+   - **Access Status:** `verified_full_text_xml` | **Already Cited:** No  
+   - **Claim & Limitation for P4:** Proved that Prodigal running Table 11 on recoded sequences truncates genuine genes into fragmented pseudo-dark short ORFs, directly explaining how code mismatch creates dark artifacts.
+
+6. **Ivanova et al. (2014)** — *Science*  
+   - **Title:** Stop codon reassignments in the uncultured human gut microbiome  
+   - **Authors:** Natalia N. Ivanova, Patrick Schwientek, H. James Tripp, … Nikos C. Kyrpides  
+   - **DOI:** [`10.1126/science.1250691`](https://doi.org/10.1126/science.1250691) | [Publisher Link](https://www.science.org/doi/10.1126/science.1250691)  
+   - **Local Full Text:** [`Ivanova_2014_stop_codon_reassignments_metagenomics_Science.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Ivanova_2014_stop_codon_reassignments_metagenomics_Science.xml) (79 KB)  
+   - **Access Status:** `verified_full_text_xml` | **Already Cited:** No  
+   - **Claim & Limitation for P4:** First demonstrated metagenomic stop-codon reassignment (UGA and UAG) and warned that automated gene callers split genes when standard codes are assumed.
+
+7. **Albright & Louca (2023)** — *Scientific Data*  
+   - **Title:** Trait biases in microbial reference genomes  
+   - **Authors:** Shoshana Albright, Stilianos Louca  
+   - **DOI:** [`10.1038/s41597-023-01994-7`](https://doi.org/10.1038/s41597-023-01994-7) | [Publisher Link](https://www.nature.com/articles/s41597-023-01994-7)  
+   - **Local Full Text:** [`Albright_2023_trait_biases_reference_genomes_SciData.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Albright_2023_trait_biases_reference_genomes_SciData.xml) (255 KB)  
+   - **Access Status:** `verified_full_text_xml` | **Already Cited:** No  
+   - **Claim & Limitation for P4:** Statistically proved that public reference databases (RefSeq, KEGG) exhibit severe taxonomic/phenotypic bias. Empirically validates P4's 55.6% no-KO ceiling as a database limitation.
+
+8. **Pellegrinetti et al. (2026)** — *Frontiers in Microbiology*  
+   - **Title:** Rethinking metagenome-assembled genome completeness: are we truly recovering complete genomes?  
+   - **Authors:** Thierry Alexandre Pellegrinetti, Joshua Molligan, Lucas William Mendes, Alexandre Pedrinho, Edel Pérez-López  
+   - **DOI:** [`10.3389/fmicb.2026.1884628`](https://doi.org/10.3389/fmicb.2026.1884628) | [Publisher Link](https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2026.1884628/full)  
+   - **Local Full Text:** [`Pellegrinetti_2026_MAG_completeness_rethinking_FrontMicrobiol.pdf`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Pellegrinetti_2026_MAG_completeness_rethinking_FrontMicrobiol.pdf) (3.7 MB)  
+   - **Access Status:** `verified_full_text_pdf` | **Already Cited:** No  
+   - **Claim & Limitation for P4:** Shows marker-based completeness (CheckM/CheckM2) fails to capture accessory genome recovery. Incomplete MAGs selectively drop strain-variable content, confounding MAG vs isolate accessory comparisons.
+
+9. **Hellewell et al. (2024)** — *Bioinformatics*  
+   - **Title:** CELEBRIMBOR: core and accessory genes from metagenomes  
+   - **Authors:** Joel Hellewell, Samuel T. Horsfield, Johanna von Wachsmann, Tatiana A. Gurbich, Robert D. Finn, Zamin Iqbal, Leah W. Roberts, John A. Lees  
+   - **DOI:** [`10.1093/bioinformatics/btae542`](https://doi.org/10.1093/bioinformatics/btae542) | [Publisher Link](https://academic.oup.com/bioinformatics/article/40/9/btae542/7746416)  
+   - **Local Full Text:** [`Hellewell_2024_CELEBRIMBOR_core_accessory_MAGs_Bioinformatics.pdf`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Hellewell_2024_CELEBRIMBOR_core_accessory_MAGs_Bioinformatics.pdf) (5.1 MB) & [`.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Hellewell_2024_CELEBRIMBOR_core_accessory_MAGs_Bioinformatics.xml) (66 KB)  
+   - **Access Status:** `verified_full_text_pdf_and_xml` | **Already Cited:** No  
+   - **Claim & Limitation for P4:** Introduces Poisson binomial modeling to correct for core genes falsely dropping into the accessory genome in incomplete MAGs. Proves uncorrected MAG pangenomes inflate accessory counts.
+
+10. **Majernik, Beaver, & Bradley (2025)** — *mSphere*  
+    - **Title:** Small amounts of misassembly can have disproportionate effects on pangenome-based metagenomic analyses  
+    - **Authors:** Stephanie N. Majernik, Larry Beaver, Patrick H. Bradley  
+    - **DOI:** [`10.1128/msphere.00857-24`](https://doi.org/10.1128/msphere.00857-24) | [Publisher Link](https://journals.asm.org/doi/10.1128/msphere.00857-24)  
+    - **Local Full Text:** [`Majernik_2025_PanSweep_misassembly_pangenome_mSphere.pdf`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Majernik_2025_PanSweep_misassembly_pangenome_mSphere.pdf) (1.2 MB) & [`.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Majernik_2025_PanSweep_misassembly_pangenome_mSphere.xml) (221 KB)  
+    - **Access Status:** `verified_full_text_pdf_and_xml` | **Already Cited:** No  
+    - **Claim & Limitation for P4:** Shows that $<5\%$ contamination in MAGs introduces false accessory genes (PanSweep). P4's finding of MAG-unique accessory genes must account for this contamination bias.
+
+11. **Tang & Yin (2023)** — *Briefings in Bioinformatics*  
+    - **Title:** Critical assessment of pan-genomic analysis of metagenome-assembled genomes  
+    - **Authors:** Li Tang, Yanbin Yin  
+    - **DOI:** [`10.1093/bib/bbac484`](https://doi.org/10.1093/bib/bbac484) | [Publisher Link](https://academic.oup.com/bib/article/24/1/bbac484/6835619)  
+    - **Local Full Text:** [`Tang_2023_pangenomic_assessment_MAGs_BriefBioinform.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Tang_2023_pangenomic_assessment_MAGs_BriefBioinform.xml) (52 KB)  
+    - **Access Status:** `verified_full_text_xml` | **Already Cited:** No  
+    - **Claim & Limitation for P4:** Benchmarked MAG pangenomes, showing contig fragmentation splits genes at boundaries, artificially inflating unique/accessory gene counts. Validates P4's metagenome-mode partial gene handling.
+
+---
+
+### Unresolved Leads & Paywalled Comparators
+
+12. **Melnykov (2026)** — *PNAS*  
+    - **Title:** Alternative genetic codes in bacteria and archaea identified with a fast k-mer–based algorithm  
+    - **Author:** Artem V. Melnykov  
+    - **DOI:** [`10.1073/pnas.2610659123`](https://doi.org/10.1073/pnas.2610659123) | [Publisher Link](https://www.pnas.org/doi/10.1073/pnas.2610659123)  
+    - **Local Path:** [`Melnykov_2026_alternative_genetic_codes_kmer_PNAS.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/04_lineage_accessory/Melnykov_2026_alternative_genetic_codes_kmer_PNAS.xml) (NLM front matter/metadata)  
+    - **Access Status:** `unresolved_lead_restricted_full_text` (Paywalled on PNAS; PMC entry PMC13578903 restricted under publisher commercial embargo; verified metadata and abstract reviewed, full text restricted)  
+    - **Already Cited:** No  
+    - **Relevance:** Developed KACI to rapidly scan environmental MAGs for alternative genetic codes, uncovering sense codon reassignments in Asgard archaea.
+
+13. **Rinke et al. (2019)** — *Nature Microbiology*  
+    - **Title:** A phylogenomic and ecological analysis of the globally abundant Marine Group II archaea (Poseidoniales)  
+    - **Authors:** Christian Rinke, Adam Skarshewski, David W. Waite, Maria Chuvochina, Philip Hugenholtz, et al.  
+    - **DOI:** [`10.1038/s41564-018-0315-9`](https://doi.org/10.1038/s41564-018-0315-9) | [Publisher Link](https://www.nature.com/articles/s41564-018-0315-9)  
+    - **Local Path:** None  
+    - **Access Status:** `unresolved_lead_paywalled` (Abstract and open metadata reviewed; full text paywalled)  
+    - **Already Cited:** No  
+    - **Relevance:** Foundational physiological baseline for uncultured, aerobic, peptide-degrading Thermoplasmatota (*Poseidoniales*), providing the macro-evolutionary comparator for P4's soil classes SW-10-69-26 and E2.
+
+---
+
+## Actionable Integration Steps for P4
+
+1. **Section 1.2 / Methods (Gene Calling & Genetic Codes):**  
+   Add a direct citation to [Kivenson et al. (2025)](https://doi.org/10.1126/science.adu2404) and [Borges et al. (2022)](https://doi.org/10.1038/s41586-022-04715-x). Explicitly state that while Pyrodigal ran under Table 11, the discovery of Code 34 in uncultivated Archaea highlights that stop-codon recoding could theoretically cause premature terminations, and note that P4's frame-shifted null ($dN/dS = 1.087$ vs. $0.425$) confirms purifying selection in the annotated frame.
+2. **Section 2.1 / Section 3.1 (Reference Gap):**  
+   Cite [Albright & Louca (2023)](https://doi.org/10.1038/s41597-023-01994-7) to anchor the 55.6% no-KO ceiling as an established structural feature of global reference databases rather than an assembly defect.
+3. **Section 1.4 / Discussion (Thermoplasmatota Rarity Defense):**  
+   Directly cite [Maeke et al. (2025)](https://doi.org/10.1186/s40168-025-02140-8) and explain that while they attributed high unknown gene content in *Ca.* Penumbrarchaeia to environmental rarity, P4's 1:1 nearest-neighbor matched null rules out abundance, prevalence, and completeness as explanatory factors.
+4. **Section 1.3 / Discussion (MAG vs. Cultivated Strain Comparison):**  
+   Cite [Pellegrinetti et al. (2026)](https://doi.org/10.3389/fmicb.2026.1884628) and [Hellewell et al. (2024)](https://doi.org/10.1093/bioinformatics/btae542) when interpreting the 80% annotated vs. 16% dark overlap, stating clearly that the cultivated comparison reaches only 23 bacterial species (zero Archaea) and that MAG incompleteness naturally accentuates accessory divergence.

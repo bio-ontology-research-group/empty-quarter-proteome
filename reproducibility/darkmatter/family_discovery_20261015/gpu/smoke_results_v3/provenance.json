@@ -1,0 +1,121 @@
+{
+  "runner": "prostt5_embed.py",
+  "runner_code_sha256": "d5e019d7e1fc2a22ce55668b8c36f73932607082f6fa53b2cb385f9c29729a81",
+  "run_signature": "d1bfe7b6b3306af619664566a6c66fc37013903bd7df7dde30c52973096f3398",
+  "signature_components": {
+    "runner_code_sha256": "d5e019d7e1fc2a22ce55668b8c36f73932607082f6fa53b2cb385f9c29729a81",
+    "input_fasta": {
+      "sha256": "689f001fc021fba6e2b742295b092e58489df219bc8e42250eac9dd8fb37351d",
+      "num_sequences": 7
+    },
+    "model_and_tokenizer": {
+      "weights_sha256": "e067227fca56e6e60423dabeb5d911de2161d5c078afeb2bce563d9a53a18dde",
+      "config_sha256": "69c1915585d20b1d3c1d44a566968a27c7d9cf784f223569ffc5dc2a9e0f892c",
+      "tokenizer_hashes": {
+        "tokenizer_config.json": "2f9e8c3dee1e7b921165c972566f35203a5bfcefca370d588c739ed71a52b067",
+        "special_tokens_map.json": "5c87151ef0f72a99d1f766a4c418bd2a1f90aaa30a8e22fe5eca9641daebb64f",
+        "spiece.model": "74da7b4afcde53faa570114b530c726135bdfcdb813dec3abfb27f9d44db7324",
+        "added_tokens.json": "22ab72a011f00dd24e3574fc4e7ca30793ed048dbc1c2f42162684619c0bb201"
+      }
+    },
+    "library_versions": {
+      "python": "3.10.20",
+      "torch": "2.10.0",
+      "transformers": "4.57.6",
+      "sentencepiece": "0.2.1",
+      "safetensors": "0.7.0",
+      "numpy": "1.26.4"
+    },
+    "parameters": {
+      "precision": "half",
+      "max_seq_len": 2048,
+      "batch_tokens": 4096,
+      "legacy_tokenizer": true
+    }
+  },
+  "timestamp_utc": "2026-10-15T05:48:05Z",
+  "input_fasta": {
+    "path": "/mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/smoke_references.fasta",
+    "sha256": "689f001fc021fba6e2b742295b092e58489df219bc8e42250eac9dd8fb37351d",
+    "num_sequences": 7
+  },
+  "model": {
+    "dir": "/mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/model",
+    "weights_filename": "model.safetensors",
+    "weights_sha256": "e067227fca56e6e60423dabeb5d911de2161d5c078afeb2bce563d9a53a18dde",
+    "config_sha256": "69c1915585d20b1d3c1d44a566968a27c7d9cf784f223569ffc5dc2a9e0f892c",
+    "tokenizer_hashes": {
+      "tokenizer_config.json": "2f9e8c3dee1e7b921165c972566f35203a5bfcefca370d588c739ed71a52b067",
+      "special_tokens_map.json": "5c87151ef0f72a99d1f766a4c418bd2a1f90aaa30a8e22fe5eca9641daebb64f",
+      "spiece.model": "74da7b4afcde53faa570114b530c726135bdfcdb813dec3abfb27f9d44db7324",
+      "added_tokens.json": "22ab72a011f00dd24e3574fc4e7ca30793ed048dbc1c2f42162684619c0bb201"
+    },
+    "tokenizer_legacy": true,
+    "architecture": "T5EncoderModel",
+    "pooling": "mean_excluding_special_tokens",
+    "prefix": "<AA2fold>",
+    "token_alignment_guarantee": "prefix+residues+eos_verified"
+  },
+  "parameters": {
+    "precision": "half",
+    "batch_tokens": 4096,
+    "max_seq_len": 2048,
+    "num_batches": 1
+  },
+  "software_environment": {
+    "python_version": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+    "library_versions": {
+      "python": "3.10.20",
+      "torch": "2.10.0",
+      "transformers": "4.57.6",
+      "sentencepiece": "0.2.1",
+      "safetensors": "0.7.0",
+      "numpy": "1.26.4"
+    },
+    "cuda_runtime_version": "12.9",
+    "cudnn_version": 91400
+  },
+  "hardware": {
+    "device_name": "NVIDIA H200",
+    "total_vram_gb": 139.8109,
+    "peak_vram_used_gb": 3.2556,
+    "peak_vram_used_bytes": 3495690240
+  },
+  "performance": {
+    "embedding_duration_seconds": 0.4321,
+    "total_duration_seconds": 13.7491,
+    "sequences_per_second": 16.2
+  },
+  "validation": {
+    "dimensions": [
+      7,
+      1024
+    ],
+    "all_finite": true,
+    "id_order_preserved": true,
+    "token_alignment_checked": true,
+    "single_vs_batched_consistency": {
+      "max_abs_diff": 0.00048828125,
+      "mean_abs_diff": 2.2704354705638252e-05,
+      "min_cos_sim": 0.9999997615814209,
+      "tolerance_threshold": 0.005,
+      "verified": true
+    },
+    "duplicate_sequence_checks": [
+      {
+        "seq_id_1": "O52251",
+        "seq_id_2": "O52251_dup",
+        "clean_sha256": "a7ad43e3311956bf69d772b5c8227c62f03673ef83ec125d1630fba7487ffa03",
+        "max_abs_diff": 0.0,
+        "identical": true
+      },
+      {
+        "seq_id_1": "O52251",
+        "seq_id_2": "O52251_stop",
+        "clean_sha256": "a7ad43e3311956bf69d772b5c8227c62f03673ef83ec125d1630fba7487ffa03",
+        "max_abs_diff": 0.0,
+        "identical": true
+      }
+    ]
+  }
+}

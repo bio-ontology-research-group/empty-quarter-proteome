@@ -1,0 +1,68 @@
+{
+  "runner": "prostt5_embed.py",
+  "run_signature": "a1b729348c4af6b82b3c530677375a7acfc88b3ec2850cd6feaafe9e031c90ff",
+  "timestamp_utc": "2026-10-15T05:25:12Z",
+  "input_fasta": {
+    "path": "/mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/smoke_references.fasta",
+    "sha256": "3783da95d16d9ebdca521170ece249de89dbbe8027c3aaa57b09f6108f97d452",
+    "num_sequences": 6
+  },
+  "model": {
+    "dir": "/mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/model",
+    "weights_filename": "model.safetensors",
+    "weights_sha256": "e067227fca56e6e60423dabeb5d911de2161d5c078afeb2bce563d9a53a18dde",
+    "config_sha256": "69c1915585d20b1d3c1d44a566968a27c7d9cf784f223569ffc5dc2a9e0f892c",
+    "architecture": "T5EncoderModel",
+    "pooling": "mean_excluding_special_tokens",
+    "prefix": "<AA2fold>"
+  },
+  "parameters": {
+    "precision": "half",
+    "batch_tokens": 4096,
+    "max_seq_len": 2048,
+    "num_batches": 1
+  },
+  "software_environment": {
+    "python_version": "3.10.20 | packaged by conda-forge | (main, Mar  5 2026, 16:42:22) [GCC 14.3.0]",
+    "torch_version": "2.10.0",
+    "transformers_version": "4.57.6",
+    "numpy_version": "1.26.4",
+    "cuda_runtime_version": "12.9",
+    "cudnn_version": 91400
+  },
+  "hardware": {
+    "device_name": "NVIDIA H200",
+    "total_vram_gb": 139.8109,
+    "peak_vram_used_gb": 3.1197,
+    "peak_vram_used_bytes": 3349799936
+  },
+  "performance": {
+    "embedding_duration_seconds": 0.6621,
+    "total_duration_seconds": 9.6676,
+    "sequences_per_second": 9.06
+  },
+  "validation": {
+    "dimensions": [
+      6,
+      1024
+    ],
+    "all_finite": true,
+    "id_order_preserved": true,
+    "single_vs_batched_consistency": {
+      "max_abs_diff": 0.00048828125,
+      "mean_abs_diff": 2.2087120669311844e-05,
+      "min_cos_sim": 0.9999997615814209,
+      "tolerance_threshold": 0.005,
+      "verified": true
+    },
+    "duplicate_sequence_checks": [
+      {
+        "seq_id_1": "O52251",
+        "seq_id_2": "O52251_dup",
+        "sha256": "a7ad43e3311956bf69d772b5c8227c62f03673ef83ec125d1630fba7487ffa03",
+        "max_abs_diff": 0.0,
+        "identical": true
+      }
+    ]
+  }
+}

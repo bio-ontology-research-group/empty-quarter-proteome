@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "python_version": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "smag_source_sha256": "7ed0a60b27ba2baf0fdef434215803e7dc4eb994ade303b23effc6f622f861ea",
+  "smag_frame_matches_all_40039_xlsx_ids": true,
+  "smag_exact_replay_rule": "sorted(random.Random(20261014).sample(sorted(frame),1500))",
+  "gem": {
+    "20261014": {
+      "same_exact_genome_set_both_callers": true,
+      "counts": {
+        "harmonized": 2055,
+        "published": 2055
+      },
+      "selection_rule": "random.Random(seed).shuffle(sorted(frame)); first2055"
+    },
+    "20261015": {
+      "same_exact_genome_set_both_callers": true,
+      "counts": {
+        "harmonized": 2055,
+        "published": 2055
+      },
+      "selection_rule": "random.Random(seed).shuffle(sorted(frame)); first2055"
+    },
+    "20261016": {
+      "same_exact_genome_set_both_callers": true,
+      "counts": {
+        "harmonized": 2055,
+        "published": 2055
+      },
+      "selection_rule": "random.Random(seed).shuffle(sorted(frame)); first2055"
+    }
+  }
+}

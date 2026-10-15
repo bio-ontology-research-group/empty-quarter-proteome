@@ -1,0 +1,2974 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "O48652",
+  "secondaryAccessions": [
+    "Q2V3V6"
+  ],
+  "uniProtkbId": "UVR3_ARATH",
+  "entryAudit": {
+    "firstPublicDate": "2010-10-05",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2010-10-05",
+    "entryVersion": 140,
+    "sequenceVersion": 2
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Arabidopsis thaliana",
+    "commonName": "Mouse-ear cress",
+    "taxonId": 3702,
+    "lineage": [
+      "Eukaryota",
+      "Viridiplantae",
+      "Streptophyta",
+      "Embryophyta",
+      "Tracheophyta",
+      "Spermatophyta",
+      "Magnoliopsida",
+      "eudicotyledons",
+      "Gunneridae",
+      "Pentapetalae",
+      "rosids",
+      "malvids",
+      "Brassicales",
+      "Brassicaceae",
+      "Camelineae",
+      "Arabidopsis"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "(6-4)DNA photolyase"
+      },
+      "ecNumbers": [
+        {
+          "value": "4.1.99.13"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Protein UV repair defective 3"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "UVR3"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "At3g15620"
+        }
+      ],
+      "orfNames": [
+        {
+          "value": "SJ11.2"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17164245"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9421527"
+            }
+          ],
+          "value": "Involved in repair of UV radiation-induced DNA damage. Catalyzes the photoreactivation of pyrimidine [6-4] pyrimidone photoproduct (6-4 products). Binds specifically to DNA containing 6-4 products and repairs these lesions in a visible light-dependent manner. Not required for repair of cyclobutane pyrimidine dimer (CPD)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "(6-4) photoproduct (in DNA) = 2 pyrimidine residues (in DNA).",
+        "ecNumber": "4.1.99.13"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "FAD",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9421527"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:57692"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "9421527"
+              }
+            ],
+            "value": "Binds 1 FAD per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "ALTERNATIVE PRODUCTS",
+      "events": [
+        "Alternative splicing"
+      ],
+      "isoforms": [
+        {
+          "name": {
+            "value": "1"
+          },
+          "isoformIds": [
+            "O48652-1"
+          ],
+          "isoformSequenceStatus": "Displayed"
+        },
+        {
+          "name": {
+            "value": "2"
+          },
+          "isoformIds": [
+            "O48652-2"
+          ],
+          "sequenceIds": [
+            "VSP_039720",
+            "VSP_039721"
+          ],
+          "isoformSequenceStatus": "Described"
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "11971912"
+            }
+          ],
+          "value": "Expressed in siliques, flowers and leaves. Not detected in roots"
+        }
+      ],
+      "commentType": "TISSUE SPECIFICITY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "11971912"
+            }
+          ],
+          "value": "Expressed at all developmental stages"
+        }
+      ],
+      "commentType": "DEVELOPMENTAL STAGE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "11971912"
+            }
+          ],
+          "value": "Not induced by white or UV-B light"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the DNA photolyase class-1 family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Erroneous initiation",
+      "sequence": "BAA24449.1",
+      "note": "Truncated N-terminus.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Erroneous initiation",
+      "sequence": "BAA34711.1",
+      "note": "Truncated N-terminus.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 556,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "(6-4)DNA photolyase",
+      "featureId": "PRO_0000397886"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 24,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 162,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Photolyase/cryptochrome alpha/beta"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 382,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 387,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Interaction with DNA",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 534,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 556,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 539,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 548,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic and acidic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 262,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 262,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:43474"
+        }
+      ],
+      "ligand": {
+        "name": "phosphate",
+        "id": "ChEBI:CHEBI:43474"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 263,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 263,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 276,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 280,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 317,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 321,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 320,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 320,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:16991"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "DNA",
+        "id": "ChEBI:CHEBI:16991"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 380,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 383,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 386,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 386,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 415,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 417,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 421,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 421,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 427,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 427,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:16991"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "DNA",
+        "id": "ChEBI:CHEBI:16991"
+      }
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 348,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 348,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 402,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 402,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 425,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 425,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Alternative sequence",
+      "location": {
+        "start": {
+          "value": 437,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 445,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in isoform 2",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "featureId": "VSP_039720",
+      "alternativeSequence": {
+        "originalSequence": "FNRIYSPIS",
+        "alternativeSequences": [
+          "ALSPFCFSF"
+        ]
+      }
+    },
+    {
+      "type": "Alternative sequence",
+      "location": {
+        "start": {
+          "value": 446,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 556,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in isoform 2",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "featureId": "VSP_039721",
+      "alternativeSequence": {}
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 263,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 263,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "No effect on DNA repair activity.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "K",
+        "alternativeSequences": [
+          "R"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 276,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 276,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "No effect on DNA repair activity.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "T",
+        "alternativeSequences": [
+          "P"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 383,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 383,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Loss of DNA repair activity.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "H",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 387,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 387,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Loss of DNA repair activity.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "H",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 439,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 439,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "No effect on DNA repair activity.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "19359474"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "R",
+        "alternativeSequences": [
+          "H",
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 25,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 32,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 40,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 46,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 52,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 58,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 60,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 63,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 69,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 73,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 79,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 98,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 104,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 108,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 110,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 118,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 123,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 128,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 134,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 149,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 153,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 155,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 160,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 163,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 165,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 171,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 173,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 175,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 180,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 187,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 191,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 194,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 217,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 220,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 221,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 225,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 228,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 230,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 241,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 251,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 255,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 259,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 263,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 265,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 280,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 284,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 290,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 302,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 310,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 312,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 314,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 329,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 332,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 335,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 352,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 359,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 366,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 378,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 383,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 391,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 392,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 396,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 402,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 412,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 418,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 428,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 431,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 433,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 443,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 446,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 447,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 449,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 455,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 460,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 462,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 464,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 469,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 473,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 475,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 477,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 480,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 486,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 491,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 493,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 501,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 521,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 522,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 524,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 528,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 541,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3FY4"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-0025",
+      "category": "Coding sequence diversity",
+      "name": "Alternative splicing"
+    },
+    {
+      "id": "KW-0227",
+      "category": "Biological process",
+      "name": "DNA damage"
+    },
+    {
+      "id": "KW-0234",
+      "category": "Biological process",
+      "name": "DNA repair"
+    },
+    {
+      "id": "KW-0238",
+      "category": "Molecular function",
+      "name": "DNA-binding"
+    },
+    {
+      "id": "KW-0274",
+      "category": "Ligand",
+      "name": "FAD"
+    },
+    {
+      "id": "KW-0285",
+      "category": "Ligand",
+      "name": "Flavoprotein"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0547",
+      "category": "Ligand",
+      "name": "Nucleotide-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "9421527",
+        "citationType": "journal article",
+        "authors": [
+          "Nakajima S.",
+          "Sugiyama M.",
+          "Iwai S.",
+          "Hitomi K.",
+          "Otoshi E.",
+          "Kim S.T.",
+          "Jiang C.Z.",
+          "Todo T.",
+          "Britt A.B.",
+          "Yamamoto K."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9421527"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/nar/26.2.638"
+          }
+        ],
+        "title": "Cloning and characterization of a gene (UVR3) required for photorepair of 6-4 photoproducts in Arabidopsis thaliana.",
+        "publicationDate": "1998",
+        "journal": "Nucleic Acids Res.",
+        "firstPage": "638",
+        "lastPage": "644",
+        "volume": "26"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [MRNA]",
+        "FUNCTION",
+        "COFACTOR"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Landsberg erecta",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "CI-B9V3PIV2LBMNA",
+        "citationType": "online journal article",
+        "authors": [
+          "Sakamoto A.",
+          "Tanaka A.",
+          "Tano S.",
+          "Nakajima S.",
+          "Yamamoto K.",
+          "Watanabe H."
+        ],
+        "title": "The genomic organization of the Arabidopsis 6-4 photolyase gene.",
+        "publicationDate": "1998",
+        "journal": "Plant Gene Register",
+        "locator": "PGR98-180"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Columbia",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "10819329",
+        "citationType": "journal article",
+        "authors": [
+          "Sato S.",
+          "Nakamura Y.",
+          "Kaneko T.",
+          "Katoh T.",
+          "Asamizu E.",
+          "Tabata S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "10819329"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/7.2.131"
+          }
+        ],
+        "title": "Structural analysis of Arabidopsis thaliana chromosome 3. I. Sequence features of the regions of 4,504,864 bp covered by sixty P1 and TAC clones.",
+        "publicationDate": "2000",
+        "journal": "DNA Res.",
+        "firstPage": "131",
+        "lastPage": "135",
+        "volume": "7"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Columbia",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "27862469",
+        "citationType": "journal article",
+        "authors": [
+          "Cheng C.Y.",
+          "Krishnakumar V.",
+          "Chan A.P.",
+          "Thibaud-Nissen F.",
+          "Schobel S.",
+          "Town C.D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "27862469"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/tpj.13415"
+          }
+        ],
+        "title": "Araport11: a complete reannotation of the Arabidopsis thaliana reference genome.",
+        "publicationDate": "2017",
+        "journal": "Plant J.",
+        "firstPage": "789",
+        "lastPage": "804",
+        "volume": "89"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Columbia",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "CI-CI4AM1G71UC0S",
+        "citationType": "submission",
+        "authoringGroup": [
+          "The Arabidopsis Information Resource (TAIR)"
+        ],
+        "title": "Community-consensus reference genome of Arabidopsis thaliana Col-0.",
+        "publicationDate": "FEB-2026",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Columbia",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "11971912",
+        "citationType": "journal article",
+        "authors": [
+          "Waterworth W.M.",
+          "Jiang Q.",
+          "West C.E.",
+          "Nikaido M.",
+          "Bray C.M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11971912"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/jexbot/53.371.1005"
+          }
+        ],
+        "title": "Characterization of Arabidopsis photolyase enzymes and analysis of their role in protection from ultraviolet-B radiation.",
+        "publicationDate": "2002",
+        "journal": "J. Exp. Bot.",
+        "firstPage": "1005",
+        "lastPage": "1015",
+        "volume": "53"
+      },
+      "referencePositions": [
+        "TISSUE SPECIFICITY",
+        "DEVELOPMENTAL STAGE",
+        "INDUCTION BY LIGHT"
+      ]
+    },
+    {
+      "referenceNumber": 7,
+      "citation": {
+        "id": "17164245",
+        "citationType": "journal article",
+        "authors": [
+          "Schleicher E.",
+          "Hitomi K.",
+          "Kay C.W.",
+          "Getzoff E.D.",
+          "Todo T.",
+          "Weber S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17164245"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.m604734200"
+          }
+        ],
+        "title": "Electron nuclear double resonance differentiates complementary roles for active site histidines in (6-4) photolyase.",
+        "publicationDate": "2007",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "4738",
+        "lastPage": "4747",
+        "volume": "282"
+      },
+      "referencePositions": [
+        "FUNCTION"
+      ]
+    },
+    {
+      "referenceNumber": 8,
+      "citation": {
+        "id": "19359474",
+        "citationType": "journal article",
+        "authors": [
+          "Hitomi K.",
+          "DiTacchio L.",
+          "Arvai A.S.",
+          "Yamamoto J.",
+          "Kim S.T.",
+          "Todo T.",
+          "Tainer J.A.",
+          "Iwai S.",
+          "Panda S.",
+          "Getzoff E.D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19359474"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.0809180106"
+          }
+        ],
+        "title": "Functional motifs in the (6-4) photolyase crystal structure make a comparative framework for DNA repair photolyases and clock cryptochromes.",
+        "publicationDate": "2009",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "6962",
+        "lastPage": "6967",
+        "volume": "106"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (2.7 ANGSTROMS) IN COMPLEX WITH FAD",
+        "MUTAGENESIS OF LYS-263; THR-276; HIS-383; HIS-387 AND ARG-439"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AB003687",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA24449.1"
+        },
+        {
+          "key": "Status",
+          "value": "ALT_INIT"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AB017331",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA34711.1"
+        },
+        {
+          "key": "Status",
+          "value": "ALT_INIT"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AB017071",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAB02293.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CP002686",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AEE75703.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CP002686",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AEE75704.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "OZ408685",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAO7041051.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_001030703.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NM_001035626.2"
+        }
+      ],
+      "isoformId": "O48652-2"
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_566520.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NM_112432.2"
+        }
+      ],
+      "isoformId": "O48652-1"
+    },
+    {
+      "database": "PDB",
+      "id": "3FY4",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.70 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B/C=20-556"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3FY4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "O48652",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "O48652",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "O48652",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "2114"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "3702.O48652",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "3702-O48652",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "ProteomicsDB",
+      "id": "228566",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ],
+      "isoformId": "O48652-1"
+    },
+    {
+      "database": "GeneID",
+      "id": "820804",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ath:AT3G15620",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Araport",
+      "id": "AT3G15620",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "TAIR",
+      "id": "AT3G15620",
+      "properties": [
+        {
+          "key": "GeneName",
+          "value": "UVR3"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG0133",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_010348_3_4_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "O48652",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "YTVFTPY",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "O48652",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:MONOMER-15021",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "4.1.99.13",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "399"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "O48652",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:O48652",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000006548",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome 3"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009507",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:chloroplast"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "29069446"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0042644",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:chloroplast nucleoid"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "39080534"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005739",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:mitochondrion"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "29069446"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005634",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleus"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "29069446"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003904",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:deoxyribodipyrimidine photo-lyase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003914",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:DNA (6-4) photolyase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "9421527"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0032922",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:circadian regulation of gene expression"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0043153",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:entrainment of circadian clock by photoperiod"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006290",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:pyrimidine dimer repair"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "9750104"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009411",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:response to UV"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "9750104"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.620:FF:000278",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "(6-4)DNA photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.579.10:FF:000004",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome-1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.25.40.80",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.579.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA Cyclobutane Dipyrimidine Photolyase, subunit A, domain 3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.620",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HUPs"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036134",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_FAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036155",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005101",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochr/Photolyase_FAD-bd"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR002081",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/DNA_photolyase_1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006050",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014729",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rossmann-like_a/b/a_fold"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CRYPTOCHROME"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455:SF9",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CRYPTOCHROME CIRCADIAN CLOCK 5 ISOFORM X1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00875",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF03441",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "FAD_binding_7"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF48173",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase FAD-binding domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF52425",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51645",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHR_CRY_ALPHA_BETA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MQRFCVCSPSSYRLNPITSMATGSGSLIWFRKGLRVHDNPALEYASKGSEFMYPVFVIDPHYMESDPSAFSPGSSRAGVNRIRFLLESLKDLDSSLKKLGSRLLVFKGEPGEVLVRCLQEWKVKRLCFEYDTDPYYQALDVKVKDYASSTGVEVFSPVSHTLFNPAHIIEKNGGKPPLSYQSFLKVAGEPSCAKSELVMSYSSLPPIGDIGNLGISEVPSLEELGYKDDEQADWTPFRGGESEALKRLTKSISDKAWVANFEKPKGDPSAFLKPATTVMSPYLKFGCLSSRYFYQCLQNIYKDVKKHTSPPVSLLGQLLWREFFYTTAFGTPNFDKMKGNRICKQIPWNEDHAMLAAWRDGKTGYPWIDAIMVQLLKWGWMHHLARHCVACFLTRGDLFIHWEQGRDVFERLLIDSDWAINNGNWMWLSCSSFFYQFNRIYSPISFGKKYDPDGKYIRHFLPVLKDMPKQYIYEPWTAPLSVQTKANCIVGKDYPKPMVLHDSASKECKRKMGEAYALNKKMDGKVDEENLRDLRRKLQKDEHEESKIRNQRPKLK",
+    "length": 556,
+    "molWeight": 63790,
+    "crc64": "3110841DBA33CAC8",
+    "md5": "29B2D1E0B1EAF96FB42D51CDB49806D9"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "ALTERNATIVE PRODUCTS": 2,
+      "TISSUE SPECIFICITY": 1,
+      "DEVELOPMENTAL STAGE": 1,
+      "INDUCTION": 1,
+      "SIMILARITY": 1,
+      "SEQUENCE CAUTION": 2
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 1,
+      "Region": 2,
+      "Compositional bias": 1,
+      "Binding site": 10,
+      "Site": 3,
+      "Alternative sequence": 2,
+      "Mutagenesis": 5,
+      "Beta strand": 9,
+      "Helix": 28,
+      "Turn": 8
+    },
+    "uniParcId": "UPI00001633E3"
+  }
+}

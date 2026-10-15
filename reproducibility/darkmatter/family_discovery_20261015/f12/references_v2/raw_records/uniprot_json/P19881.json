@@ -1,0 +1,1820 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P19881",
+  "secondaryAccessions": [
+    "D6VRC0",
+    "Q07689"
+  ],
+  "uniProtkbId": "PGP_YEAST",
+  "entryAudit": {
+    "firstPublicDate": "1991-02-01",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2004-12-21",
+    "entryVersion": 185,
+    "sequenceVersion": 2
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Saccharomyces cerevisiae (strain ATCC 204508 / S288c)",
+    "commonName": "Baker's yeast",
+    "taxonId": 559292,
+    "lineage": [
+      "Eukaryota",
+      "Fungi",
+      "Dikarya",
+      "Ascomycota",
+      "Saccharomycotina",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomycetaceae",
+      "Saccharomyces"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "27294321"
+          }
+        ],
+        "value": "Phosphoglycolate phosphatase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "27294321"
+            }
+          ],
+          "value": "3.1.3.18"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "PHO13"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "YDL236W"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "2558283"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "27294321"
+            }
+          ],
+          "value": "Phosphatase with activity against multiple substrates (PubMed:27294321). Acts as a metabolite repair enzyme which eliminates toxic glycolytic side products (PubMed:27294321). Dephosphorylates 2-phosphoglycolate which is generated during the repair of oxidative DNA lesions (PubMed:27294321). Dephosphorylates 4-phosphoerythronate, a side product produced by glyceraldehyde-3-phosphate dehydrogenase which inhibits 6-phosphogluconate dehydrogenase (PubMed:27294321). Dephosphorylation of 4-phosphoerythronate prevents the accumulation of high 4-phosphoerythronate levels which would otherwise inhibit the pentose phosphate pathway (PubMed:27294321). Dephosphorylates 2-phospho-L-lactate which is a product of a pyruvate kinase side reaction (PubMed:27294321). This prevents the inhibition of fructose-2,6-bisphosphate production and allows glycolysis to occur (PubMed:27294321). Dispensable for vegetative growth and sporulation (PubMed:2558283)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "2-phosphoglycolate + H2O = glycolate + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:14369"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29805"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58033"
+          }
+        ],
+        "ecNumber": "3.1.3.18",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "27294321"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "4-phospho-D-erythronate + H2O = D-erythronate + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:86555"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58766"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:136591"
+          }
+        ],
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "27294321"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "(2S)-2-phospholactate + H2O = (S)-lactate + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:86559"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16651"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:59906"
+          }
+        ],
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "27294321"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q8CHP8"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "Q8CHP8"
+              }
+            ],
+            "value": "Binds 1 Mg(2+) ion per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "michaelisConstants": [
+          {
+            "constant": 0.221,
+            "unit": "mM",
+            "substrate": "2-phosphoglycolate",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "27294321"
+              }
+            ]
+          },
+          {
+            "constant": 0.202,
+            "unit": "mM",
+            "substrate": "4-phosphoerythronate",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "27294321"
+              }
+            ]
+          },
+          {
+            "constant": 0.747,
+            "unit": "mM",
+            "substrate": "2-phospho-L-lactate",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "27294321"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "2558283"
+            }
+          ],
+          "value": "Homodimer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "2558283"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "27294321"
+            }
+          ],
+          "value": "Increased levels of 4-phosphoerythronate, 2-phosphoglycolate and 6-phosphogluconate (PubMed:27294321). Up-regulation of genes encoding enzymes of the pentose phosphate pathway and of gluconate metabolism (PubMed:27294321). No effect on cell growth, sporulation or viability of ascospores (PubMed:2558283)"
+        }
+      ],
+      "commentType": "DISRUPTION PHENOTYPE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "14562106"
+            }
+          ],
+          "value": "Present with 2980 molecules/cell in log phase SD medium"
+        }
+      ],
+      "commentType": "MISCELLANEOUS"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the HAD-like hydrolase superfamily. CbbY/CbbZ/Gph/YieH family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 312,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphoglycolate phosphatase",
+      "featureId": "PRO_0000058481"
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 30,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 30,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Nucleophile",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q8CHP8"
+        }
+      ]
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 32,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 32,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Proton donor",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q8CHP8"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 30,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 30,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P60487"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 32,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 32,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P60487"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 254,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 254,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P60487"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 50,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 50,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAB56540",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "N",
+        "alternativeSequences": [
+          "D"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 96,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 96,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAB56540",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "S",
+        "alternativeSequences": [
+          "P"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 284,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 284,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAB56540",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "A",
+        "alternativeSequences": [
+          "T"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 306,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 306,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAB56540",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "T",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "2558283",
+        "citationType": "journal article",
+        "authors": [
+          "Kaneko Y.",
+          "Toh-e A.",
+          "Banno I.",
+          "Oshima Y."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "2558283"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1007/bf00260867"
+          }
+        ],
+        "title": "Molecular characterization of a specific p-nitrophenylphosphatase gene, PHO13, and its mapping by chromosome fragmentation in Saccharomyces cerevisiae.",
+        "publicationDate": "1989",
+        "journal": "Mol. Gen. Genet.",
+        "firstPage": "133",
+        "lastPage": "139",
+        "volume": "220"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]",
+        "FUNCTION",
+        "SUBUNIT",
+        "DISRUPTION PHENOTYPE"
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "9169867",
+        "citationType": "journal article",
+        "authors": [
+          "Jacq C.",
+          "Alt-Moerbe J.",
+          "Andre B.",
+          "Arnold W.",
+          "Bahr A.",
+          "Ballesta J.P.G.",
+          "Bargues M.",
+          "Baron L.",
+          "Becker A.",
+          "Biteau N.",
+          "Bloecker H.",
+          "Blugeon C.",
+          "Boskovic J.",
+          "Brandt P.",
+          "Brueckner M.",
+          "Buitrago M.J.",
+          "Coster F.",
+          "Delaveau T.",
+          "del Rey F.",
+          "Dujon B.",
+          "Eide L.G.",
+          "Garcia-Cantalejo J.M.",
+          "Goffeau A.",
+          "Gomez-Peris A.",
+          "Granotier C.",
+          "Hanemann V.",
+          "Hankeln T.",
+          "Hoheisel J.D.",
+          "Jaeger W.",
+          "Jimenez A.",
+          "Jonniaux J.-L.",
+          "Kraemer C.",
+          "Kuester H.",
+          "Laamanen P.",
+          "Legros Y.",
+          "Louis E.J.",
+          "Moeller-Rieker S.",
+          "Monnet A.",
+          "Moro M.",
+          "Mueller-Auer S.",
+          "Nussbaumer B.",
+          "Paricio N.",
+          "Paulin L.",
+          "Perea J.",
+          "Perez-Alonso M.",
+          "Perez-Ortin J.E.",
+          "Pohl T.M.",
+          "Prydz H.",
+          "Purnelle B.",
+          "Rasmussen S.W.",
+          "Remacha M.A.",
+          "Revuelta J.L.",
+          "Rieger M.",
+          "Salom D.",
+          "Saluz H.P.",
+          "Saiz J.E.",
+          "Saren A.-M.",
+          "Schaefer M.",
+          "Scharfe M.",
+          "Schmidt E.R.",
+          "Schneider C.",
+          "Scholler P.",
+          "Schwarz S.",
+          "Soler-Mira A.",
+          "Urrestarazu L.A.",
+          "Verhasselt P.",
+          "Vissers S.",
+          "Voet M.",
+          "Volckaert G.",
+          "Wagner G.",
+          "Wambutt R.",
+          "Wedler E.",
+          "Wedler H.",
+          "Woelfl S.",
+          "Harris D.E.",
+          "Bowman S.",
+          "Brown D.",
+          "Churcher C.M.",
+          "Connor R.",
+          "Dedman K.",
+          "Gentles S.",
+          "Hamlin N.",
+          "Hunt S.",
+          "Jones L.",
+          "McDonald S.",
+          "Murphy L.D.",
+          "Niblett D.",
+          "Odell C.",
+          "Oliver K.",
+          "Rajandream M.A.",
+          "Richards C.",
+          "Shore L.",
+          "Walsh S.V.",
+          "Barrell B.G.",
+          "Dietrich F.S.",
+          "Mulligan J.T.",
+          "Allen E.",
+          "Araujo R.",
+          "Aviles E.",
+          "Berno A.",
+          "Carpenter J.",
+          "Chen E.",
+          "Cherry J.M.",
+          "Chung E.",
+          "Duncan M.",
+          "Hunicke-Smith S.",
+          "Hyman R.W.",
+          "Komp C.",
+          "Lashkari D.",
+          "Lew H.",
+          "Lin D.",
+          "Mosedale D.",
+          "Nakahara K.",
+          "Namath A.",
+          "Oefner P.",
+          "Oh C.",
+          "Petel F.X.",
+          "Roberts D.",
+          "Schramm S.",
+          "Schroeder M.",
+          "Shogren T.",
+          "Shroff N.",
+          "Winant A.",
+          "Yelton M.A.",
+          "Botstein D.",
+          "Davis R.W.",
+          "Johnston M.",
+          "Andrews S.",
+          "Brinkman R.",
+          "Cooper J.",
+          "Ding H.",
+          "Du Z.",
+          "Favello A.",
+          "Fulton L.",
+          "Gattung S.",
+          "Greco T.",
+          "Hallsworth K.",
+          "Hawkins J.",
+          "Hillier L.W.",
+          "Jier M.",
+          "Johnson D.",
+          "Johnston L.",
+          "Kirsten J.",
+          "Kucaba T.",
+          "Langston Y.",
+          "Latreille P.",
+          "Le T.",
+          "Mardis E.",
+          "Menezes S.",
+          "Miller N.",
+          "Nhan M.",
+          "Pauley A.",
+          "Peluso D.",
+          "Rifkin L.",
+          "Riles L.",
+          "Taich A.",
+          "Trevaskis E.",
+          "Vignati D.",
+          "Wilcox L.",
+          "Wohldman P.",
+          "Vaudin M.",
+          "Wilson R.",
+          "Waterston R.",
+          "Albermann K.",
+          "Hani J.",
+          "Heumann K.",
+          "Kleine K.",
+          "Mewes H.-W.",
+          "Zollner A.",
+          "Zaccaria P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9169867"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/387s075"
+          }
+        ],
+        "title": "The nucleotide sequence of Saccharomyces cerevisiae chromosome IV.",
+        "publicationDate": "1997",
+        "journal": "Nature",
+        "firstPage": "75",
+        "lastPage": "78",
+        "volume": "387"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 204508 / S288c",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "24374639",
+        "citationType": "journal article",
+        "authors": [
+          "Engel S.R.",
+          "Dietrich F.S.",
+          "Fisk D.G.",
+          "Binkley G.",
+          "Balakrishnan R.",
+          "Costanzo M.C.",
+          "Dwight S.S.",
+          "Hitz B.C.",
+          "Karra K.",
+          "Nash R.S.",
+          "Weng S.",
+          "Wong E.D.",
+          "Lloyd P.",
+          "Skrzypek M.S.",
+          "Miyasato S.R.",
+          "Simison M.",
+          "Cherry J.M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "24374639"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1534/g3.113.008995"
+          }
+        ],
+        "title": "The reference genome sequence of Saccharomyces cerevisiae: Then and now.",
+        "publicationDate": "2014",
+        "journal": "G3 (Bethesda)",
+        "firstPage": "389",
+        "lastPage": "398",
+        "volume": "4"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 204508 / S288c",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "14562106",
+        "citationType": "journal article",
+        "authors": [
+          "Ghaemmaghami S.",
+          "Huh W.-K.",
+          "Bower K.",
+          "Howson R.W.",
+          "Belle A.",
+          "Dephoure N.",
+          "O'Shea E.K.",
+          "Weissman J.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "14562106"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nature02046"
+          }
+        ],
+        "title": "Global analysis of protein expression in yeast.",
+        "publicationDate": "2003",
+        "journal": "Nature",
+        "firstPage": "737",
+        "lastPage": "741",
+        "volume": "425"
+      },
+      "referencePositions": [
+        "LEVEL OF PROTEIN EXPRESSION [LARGE SCALE ANALYSIS]"
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "18407956",
+        "citationType": "journal article",
+        "authors": [
+          "Albuquerque C.P.",
+          "Smolka M.B.",
+          "Payne S.H.",
+          "Bafna V.",
+          "Eng J.",
+          "Zhou H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18407956"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/mcp.m700468-mcp200"
+          }
+        ],
+        "title": "A multidimensional chromatography technology for in-depth phosphoproteome analysis.",
+        "publicationDate": "2008",
+        "journal": "Mol. Cell. Proteomics",
+        "firstPage": "1389",
+        "lastPage": "1396",
+        "volume": "7"
+      },
+      "referencePositions": [
+        "IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS]"
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "27294321",
+        "citationType": "journal article",
+        "authors": [
+          "Collard F.",
+          "Baldin F.",
+          "Gerin I.",
+          "Bolsee J.",
+          "Noel G.",
+          "Graff J.",
+          "Veiga-da-Cunha M.",
+          "Stroobant V.",
+          "Vertommen D.",
+          "Houddane A.",
+          "Rider M.H.",
+          "Linster C.L.",
+          "Van Schaftingen E.",
+          "Bommer G.T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "27294321"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nchembio.2104"
+          }
+        ],
+        "title": "A conserved phosphatase destroys toxic glycolytic side products in mammals and yeast.",
+        "publicationDate": "2016",
+        "journal": "Nat. Chem. Biol.",
+        "firstPage": "601",
+        "lastPage": "607",
+        "volume": "12"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "DISRUPTION PHENOTYPE"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "X51611",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAB56540.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "Z74284",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA98816.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "BK006938",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "DAA11630.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "S67800",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S67800"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_010045.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NM_001180296.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P19881",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P19881",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "31875",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "97"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-1665N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "P19881",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "679"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "P19881",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "database": "MINT",
+      "id": "P19881",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "4932.YDL236W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "iPTMnet",
+      "id": "P19881",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "4932-YDL236W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PeptideAtlas",
+      "id": "P19881",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblFungi",
+      "id": "YDL236W_mRNA",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "YDL236W"
+        },
+        {
+          "key": "GeneId",
+          "value": "YDL236W"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "851362",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sce:YDL236W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AGR",
+      "id": "SGD:S000002395",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SGD",
+      "id": "S000002395",
+      "properties": [
+        {
+          "key": "GeneName",
+          "value": "PHO13"
+        }
+      ]
+    },
+    {
+      "database": "VEuPathDB",
+      "id": "FungiDB:YDL236W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG2882",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_043473_0_0_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "P19881",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "PPMHRET",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "413953at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "YEAST:YDL236W-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "3.1.3.18",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "984"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "3.1.3.41",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "984"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID-ORCS",
+      "id": "851362",
+      "properties": [
+        {
+          "key": "hits",
+          "value": "0 hits in 10 CRISPR screens"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:P19881",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000002311",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome IV"
+        }
+      ]
+    },
+    {
+      "database": "RNAct",
+      "id": "P19881",
+      "properties": [
+        {
+          "key": "moleculeType",
+          "value": "protein"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005737",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "14562095"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005634",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleus"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "14562095"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004035",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:alkaline phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "9561742"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016791",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "27294321"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008967",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphoglycolate phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "27294321"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004721",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphoprotein phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "9561742"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005975",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:carbohydrate metabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "27294321"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0110052",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:toxic metabolite repair"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "27294321"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd07510",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_Pase_UmpH-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.1000:FF:000039",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphoglycolate phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006357",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IIA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006349",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGP_euk"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01460",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IIA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01452",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGP_euk"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR19288",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "4-NITROPHENYLPHOSPHATASE-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR19288:SF46",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HALOACID DEHALOGENASE-LIKE HYDROLASE DOMAIN-CONTAINING PROTEIN 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF13344",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hydrolase_6"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF13242",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hydrolase_like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF000915",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGP-type_phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01139",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C2.A:_Pyridoxal_Phosphate_Phos"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDS00003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Haloacid_Dehalogenase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDF00039",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "phosphoglycolate_phosphatase_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MTAQQGVPIKITNKEIAQEFLDKYDTFLFDCDGVLWLGSQALPYTLEILNLLKQLGKQLIFVTNNSTKSRLAYTKKFASFGIDVKEEQIFTSGYASAVYIRDFLKLQPGKDKVWVFGESGIGEELKLMGYESLGGADSRLDTPFDAAKSPFLVNGLDKDVSCVIAGLDTKVNYHRLAVTLQYLQKDSVHFVGTNVDSTFPQKGYTFPGAGSMIESLAFSSNRRPSYCGKPNQNMLNSIISAFNLDRSKCCMVGDRLNTDMKFGVEGGLGGTLLVLSGIETEERALKISHDYPRPKFYIDKLGDIYTLTNNEL",
+    "length": 312,
+    "molWeight": 34625,
+    "crc64": "BBF36D5547018CD5",
+    "md5": "422F49BE1C8C555181516A8C47BED11D"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 3,
+      "COFACTOR": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "SUBUNIT": 1,
+      "DISRUPTION PHENOTYPE": 1,
+      "MISCELLANEOUS": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Active site": 2,
+      "Binding site": 3,
+      "Sequence conflict": 4
+    },
+    "uniParcId": "UPI000006B3EB"
+  }
+}

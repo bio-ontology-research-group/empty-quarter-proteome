@@ -1,0 +1,7 @@
+Root sensitivity rule fixed before inspecting F3 context outcomes (2026-10-15):
+Primary endpoint: any profile-supported sensory/signalling neighbor, not biochemical sensory function.
+Use same-contig control pairs only; drop same-MAG surrogate pairs from primary inference.
+Require absolute difference in extracted neighbor counts <=2; report exclusions and unmatched counts.
+Select one eligible rhodopsin locus per MAG per class by SHA256(identifier) rank, independent of marker outcomes, to limit within-genome pseudoreplication.
+Exact paired binomial/McNemar test on discordant pairs, two-sided, Type1 and Helio separately; Holm adjustment across the two primary tests. Report pair counts, discordants, paired difference and original raw counts. Secondary marker categories descriptive unless separately multiplicity-adjusted.
+This controls only coarse neighborhood gene counts; generic signaling markers are not rhodopsin-specific sensory transducers. Prodigal gene-coordinate span is a lower bound on actual assembled-contig span; inferred edge flags from gene extent are conservative observability flags, not actual sequence boundaries. Missing neighborhood support is not functional refutation. Small matched sample means underpowered rather than a negative mechanistic conclusion.

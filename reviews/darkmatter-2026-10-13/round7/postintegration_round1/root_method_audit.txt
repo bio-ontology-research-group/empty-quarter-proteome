@@ -1,0 +1,11 @@
+Root independent source-to-method audit, 14 October 2026
+
+H1: v3_pgls_ancestry_summary.txt and DESIGN.md agree with both coefficients, SEs, conditional tests, 237 genomes, lambda and six sensitivity specifications. Reference pool218GTDB+29MGnify and selected229+8pairs/32unique verified from source. Add explicit FastTree LG+Gamma ar53 description to mainMethods.
+
+H2: 02_extract_neighbourhoods.py lines837-846 selects per family/species by primary-window eligibility, stop3-window eligibility, exact-mapped flank count, exact-or-stop3 mapped flank count, present-flank count, contig length, gene count (descending), then memberID ascending. These selection criteria do not use KO identities. MainMethods currently points only to archived ordering; spell it out for reproduction. 03_analyse_conservation.py uses random.Random(20261013) for5,000 eligible same-contig position draws, seed20261014 forprimary10,000 label permutations and20261015 forstop3. Strata species2vs3plus, Thermoplasmatota/Actinomycetota/multi/other, annotationopportunityabove pooledmedian vsat/below. WeightnK*nQ/(nK+nQ). Add exactrules toS3, replacing vague strata description.
+
+H3: Root audit sampled40039SMAGframe+allthreeGEMdraws, exactrawFAAs/DBhashes/hits and2x2/lengthtable replay. Auditjob53796196 completed allscientificchecks but failedreportmetadata scipy.stats.__version__; fixscipy.__version__ andrerun53796328 forcleanreceipt. Productionresults unchanged. Table-derived differences and finite-census interpretation inmanuscript agree.
+
+H4: Root GPU audit53796103 inspected6,081,552rows withactualhash/coordinate/CIGAR/qTM checks. PooledKsubsetCPU/GPUarithmeticmatches714/964and731/961,775/1031and794/1031. IndependentmaxalnTM/spanmistake inArgonreview challenged andwithdrawn. Figure4 rebuiltqTMonly, visualinspection passed. Distinguish initialdualreferencegrouping andnewpairedPDBsearch. Cropcontent,lengthscaleandmultiplequeryopportunity jointlychange. RemainingGPUstrict-tiercontrolcaplimits stated.
+
+PDFbuild35pages resolvedcitations. Integrityflags69/90/61p32 arelegitimatewhiteplotlabels,matchingbaselinescan; no injection. RevisedFigure4renderinspected.

@@ -1,0 +1,23 @@
+================================================================================
+PHYLOGENETIC ANCESTRY AND PSEUDOREPLICATION AUDIT REPORT
+================================================================================
+
+1. RESOLUTION OF TWO-CLASS PSEUDOREPLICATION
+  The 237 desert Thermoplasmatota representatives do NOT represent 236 independent evolutionary units:
+  - c__E2 (n=51) consists of a SINGLE order (o__JACPAO01, n=51) across only 3 GTDB families.
+  - c__SW-10-69-26 (n=185) consists predominantly of ONE order (o__JACQPN01, n=153) and o__SW-10-69-26 (n=30) across 4 families.
+  - Naive OLS yields is_sw coefficient = +0.0366 (SE = 0.0053, p = 5.63e-11).
+  - Clustered by family (accounting for lineage dependence), SE expands 2.5-fold to 0.0131 (p = 0.0054).
+
+2. DISAPPEARANCE OF CLASS EFFECT UNDER QUALITY CONTROL
+  When controlling for genome quality and assembly fragmentation (completeness, contamination, log10 length, log10 N50):
+  - Naive QC is_sw coefficient drops to +0.0052 (SE = 0.0056, t = 0.93, p = 0.356).
+  - Family-clustered QC is_sw coefficient is +0.0052 (SE = 0.0127, t = 0.41, p = 0.680).
+  - Conclusion: The 3.7 percentage-point dark fraction difference claimed by Argon is ENTIRELY explained
+    by differences in genome assembly size and contig fragmentation (N50). There is NO remaining class effect.
+
+3. CONTIG FRAGMENTATION CONFAUNDING
+  - Assembly length (log10 length): t = +8.49, p < 1e-14
+  - Contig fragmentation (log10 N50): t = -5.60, p < 1e-7
+  - Lower N50 (more fragmented assemblies) mechanically generates more truncated partial genes, which inflate dark fraction.
+================================================================================

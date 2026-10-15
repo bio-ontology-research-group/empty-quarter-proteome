@@ -1,0 +1,802 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "B9LMX5",
+  "uniProtkbId": "PGP_HALLT",
+  "entryAudit": {
+    "firstPublicDate": "2009-07-28",
+    "lastAnnotationUpdateDate": "2025-02-05",
+    "lastSequenceUpdateDate": "2009-03-24",
+    "entryVersion": 81,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Halorubrum lacusprofundi (strain ATCC 49239 / DSM 5036 / JCM 8891 / ACAM 34)",
+    "taxonId": 416348,
+    "lineage": [
+      "Archaea",
+      "Methanobacteriati",
+      "Methanobacteriota",
+      "Stenosarchaea group",
+      "Halobacteria",
+      "Halobacteriales",
+      "Haloferacaceae",
+      "Halorubrum"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01419"
+          }
+        ],
+        "value": "Phosphoglycolate phosphatase"
+      },
+      "shortNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01419"
+            }
+          ],
+          "value": "PGP"
+        },
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01419"
+            }
+          ],
+          "value": "PGPase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01419"
+            }
+          ],
+          "value": "3.1.3.18"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "orderedLocusNames": [
+        {
+          "value": "Hlac_1119"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01419"
+            }
+          ],
+          "value": "Catalyzes the dephosphorylation of 2-phosphoglycolate"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "2-phosphoglycolate + H2O = glycolate + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:14369"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29805"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58033"
+          }
+        ],
+        "ecNumber": "3.1.3.18",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01419"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01419"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01419"
+            }
+          ],
+          "value": "Belongs to the archaeal SPP-like hydrolase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 227,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphoglycolate phosphatase",
+      "featureId": "PRO_1000184850"
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 8,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 8,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Nucleophile",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01419"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 8,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 8,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01419"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 10,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 10,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01419"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 152,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 152,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01419"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 175,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 175,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01419"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 179,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 179,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01419"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0119",
+      "category": "Biological process",
+      "name": "Carbohydrate metabolism"
+    },
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "27617060",
+        "citationType": "journal article",
+        "authors": [
+          "Anderson I.J.",
+          "DasSarma P.",
+          "Lucas S.",
+          "Copeland A.",
+          "Lapidus A.",
+          "Del Rio T.G.",
+          "Tice H.",
+          "Dalin E.",
+          "Bruce D.C.",
+          "Goodwin L.",
+          "Pitluck S.",
+          "Sims D.",
+          "Brettin T.S.",
+          "Detter J.C.",
+          "Han C.S.",
+          "Larimer F.",
+          "Hauser L.",
+          "Land M.",
+          "Ivanova N.",
+          "Richardson P.",
+          "Cavicchioli R.",
+          "DasSarma S.",
+          "Woese C.R.",
+          "Kyrpides N.C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "27617060"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1186/s40793-016-0194-2"
+          }
+        ],
+        "title": "Complete genome sequence of the Antarctic Halorubrum lacusprofundi type strain ACAM 34.",
+        "publicationDate": "2016",
+        "journal": "Stand. Genomic Sci.",
+        "firstPage": "70",
+        "lastPage": "70",
+        "volume": "11"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 49239 / DSM 5036 / JCM 8891 / ACAM 34",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "CP001365",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ACM56713.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_015909860.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_012029.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "B9LMX5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "B9LMX5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "7400928",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "hla:Hlac_1119",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "arCOG01213",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Archaea"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_044146_2_0_2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000740",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome 1"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000287",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:magnesium ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008967",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphoglycolate phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd01427",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd07514",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_Pase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.90.1070.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "HAMAP",
+      "id": "MF_01419",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GPH_hydrolase_arch"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006379",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IIB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006382",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGPase"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IIB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01487",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pglycolate_arch"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10000:SF8",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD SUPERFAMILY HYDROLASE-LIKE, TYPE 3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHOSPHOSERINE PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF08282",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hydrolase_3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MVPPLALDIDGTLTTASGRLDARVFELLPDWDAPVVLATGKAFPYPVALAHFLGRAETVIAENGGVVHVDGETAILGDAEAPRAVVEAFRERGGDPGWGARDTVNRWRETEVALSLDADEALLREVAAAAGGDVEVVDTGYAYHVKSTGVSKGRGLERVGDALGIGPDEFVAIGDSENDVSTFAVAGESYAVANADGAAREAADIVVADSYMDGTAGVLADLRTRTE",
+    "length": 227,
+    "molWeight": 23552,
+    "crc64": "8114D483E6D778C7",
+    "md5": "576A1C6B67A2CCDF59FC126CB66188B5"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Active site": 1,
+      "Binding site": 5
+    },
+    "uniParcId": "UPI0001929772"
+  }
+}

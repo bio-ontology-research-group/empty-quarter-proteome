@@ -1,0 +1,148 @@
+{
+  "reviewer": "Argon (Gemini 4 Argon High via agy)",
+  "implementer_reviewed": "Flash 3.8 High",
+  "round": "round7_argon_h1h2_review1",
+  "timestamp": "2026-10-14T08:13:00+03:00",
+  "target_venue": "Nature Communications",
+  "scope_override": "Evaluated completed H1 (reviews/darkmatter-2026-10-13/round6/snapshots/h1_final + reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/H1_COMPLETENESS.md) and completed H2 (reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial) ONLY. H3 and H4 are still running on IBEX and will receive separate later results reviews.",
+  "pdf_integrity_check": {
+    "status": "CLEAN",
+    "evidence": "reviews/darkmatter-2026-10-13/round7/root_checks/pdf_integrity_verdict.txt",
+    "details": "Only 3 unchanged white numeric heatmap labels (69, 90, 61 at 6.6 pt on p. 27); zero hidden instructions, zero invisible text, zero prompt injection."
+  },
+  "overall_recommendation": {
+    "h1_h2_combined_verdict": "SUPPORTED_WITH_BOUNDS (require documentation repair to H1_COMPLETENESS.md Section 4 before manuscript/supplement integration)",
+    "manuscript_integration_recommendation": "Integrate H1 as a 2-3 sentence bounded phylogenetic conditioning summary in the Thermoplasmatota main-text subsection (manuscript/main.tex lines 239-279) with full 7-model PGLS tables, lambda profile likelihood, and comparator diagnostics in the Supplementary Information. Integrate H2 as a 1-2 sentence bounded synteny control in the structural dark proteome main-text subsection (manuscript/main.tex lines 281-319) reporting both the positive within-arm non-mobilome syntenic enrichment over same-contig eligible positions (p = 0.0002 in both K and QnotK) and the null covariate-adjusted between-arm contrast (Delta_MH(E_fam) = +0.0354, p = 0.4069; strict 96-pair matched raw difference 0.0000, p = 1.0000), with the full 2,838-to-1,461-to-353 attrition funnel, common-support strata, and regression tables in the Supplementary Information.",
+    "venue_sufficiency_assessment": "H1 and H2 are rigorously executed at full census scale and provide valuable self-correcting controls that prevent overclaiming horizontal gene transfer, de novo gene birth, or differential structural-dark-proteome operon conservation. However, because both H1 and H2 primarily establish phylogenetic and covariate conditioning bounds rather than a novel mechanistic discovery, overall Nature Communications readiness remains contingent on the pending full results of H3 and H4 and resolution of public data/code deposition placeholders."
+  },
+  "unresolved_public_data_deposition_limitations": [
+    {
+      "location": "manuscript/main.tex:696-698",
+      "issue": "Data Availability still contains placeholder strings '[ accession to be added upon acceptance ]' for raw sequencing reads and metagenomic assemblies at ENA and '[ DOI to be added upon acceptance ]' for the 4,768 MAGs, gene catalogues, functional annotations, ESMFold structures, and phylogenetic trees on Zenodo."
+    },
+    {
+      "location": "manuscript/main.tex:700",
+      "issue": "Code Availability still contains placeholder string '[ URL to be added upon acceptance ]' for the pipeline and analysis repository."
+    },
+    {
+      "location": "reviews/darkmatter-2026-10-13/round6/snapshots/h1_final/results/v3_closure_verification.json",
+      "issue": "5 of 237 dereplicated Thermoplasmatota species representatives (48PRr1__SemiBin_020, 062, 095, 111, 112) lack archived CheckM2 .faa protein files on IBEX (missing_faa_n = 5), requiring exclusion in harmonized-denominator sensitivity S7 (n = 232)."
+    },
+    {
+      "location": "reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/results/pilot_join_metrics.json",
+      "issue": "85 of 2,126 refined bins (4.0%, accounting for 27 primary species-representative loci and 108 primary flanks) lack Bakta/eggNOG output directories on IBEX (classified as source_file_unavailable)."
+    }
+  ],
+  "hypotheses": {
+    "H1": {
+      "title": "Lineage-Structured Sequence Novelty vs Divergence and Gene-Content Overlap in Desert Thermoplasmatota",
+      "authoritative_snapshot": "reviews/darkmatter-2026-10-13/round6/snapshots/h1_final",
+      "round7_audit_doc": "reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/H1_COMPLETENESS.md",
+      "execution_status": "COMPLETE (Slurm job 53704703 on IBEX, 00:00:43, exit 0:0; 67/67 SHA-256 checksums verified; full finite census n = 237 dereplicated desert Thermoplasmatota species representatives across 7 PGLS specifications S1-S7 reproduced to <= 5.16e-12 via statsmodels.GLS)",
+      "scientific_verdict": "SUPPORTED_WITH_BOUNDS",
+      "main_vs_supplement": "Main text: 2-3 sentences in the Thermoplasmatota subsection (manuscript/main.tex lines 239-279) stating that species-level sequence novelty (f_novel) across the 237 dereplicated Thermoplasmatota species is strongly lineage-structured (Pagel's lambda_ML = 0.9158, 95% profile-likelihood CI [0.8463, 0.9578], LRT vs lambda = 0: 2 Delta ell = 229.56, p = 7.44e-52) and that conditional on phylogeny and assembly covariates, proteome-wide AAI (+0.001704 +/- 0.000407, p = 4.07e-5) and reciprocal-best-hit gene-content overlap (-0.137484 +/- 0.019456, p = 1.88e-11) to nearest GTDB/MGnify relatives carry opposite partial associations. Supplement: full 7-model specification table (S1-S7), lambda profile-likelihood curve, comparator sharing diagnostics (32 unique GTDB/MGnify reference MAGs), and dual gene-caller harmonization notes.",
+      "supported_claims": [
+        "Across all n = 237 dereplicated Rub' al-Khali Thermoplasmatota species representatives (185 c__SW-10-69-26, 51 c__E2, 1 c__Thermoplasmata) placed on the 1,914-tip GTDB-Tk r232 ar53 backbone tree, species-level sequence novelty (f_novel) exhibits strong phylogenetic signal under Pagel's lambda PGLS (lambda_ML = 0.915784, 95% profile-likelihood CI [0.846303, 0.957823], LRT against OLS lambda = 0: 2 Delta ell = 229.5585, p = 7.44e-52; R^2_GLS = 0.4691).",
+        "In the primary PGLS model (S1, df = 230) controlling for CheckM2 completeness (beta = -0.000335 +/- 0.000126, p = 0.0084), contamination (beta = -0.000320 +/- 0.000491, p = 0.5159), log10 genome length (beta = +0.115427 +/- 0.018391, p = 1.71e-9), and log10 N50 (beta = -0.009005 +/- 0.003031, p = 0.00328), f_novel has a positive partial slope on nearest-relative proteome-wide AAI (beta_AAI = +0.001704 +/- 0.000407, t = +4.1847, two-sided p = 4.07e-5, conditional 95% CI [+0.000902, +0.002506], profile-propagated 95% union CI [+0.000836, +0.002534]) and a negative partial slope on RBH orthologous gene-content overlap (beta_RBH = -0.137484 +/- 0.019456, t = -7.0664, two-sided p = 1.88e-11, conditional 95% CI [-0.175819, -0.099149], profile-propagated 95% union CI [-0.176359, -0.095479]).",
+        "The opposite-signed partial slopes for AAI and RBH overlap remain directionally and statistically consistent across all six pre-specified sensitivity models (S2 raw counts, S3 logit-transformed f_novel, S4 class-restricted c__SW-10-69-26 n = 185, S5 class-fixed-effects n = 236, S6 within-class comparator-restricted n = 236, and S7 CheckM2-harmonized denominator f_novel_aai n = 232)."
+      ],
+      "prohibited_claims": [
+        "Do not claim a positive bivariate/marginal correlation between nearest-relative AAI and f_novel (the marginal correlation is negative, Pearson r = -0.088; the positive PGLS slope is strictly a partial regression effect conditional on holding RBH gene-content overlap and genome length constant).",
+        "Do not claim that the opposite partial signs of AAI and RBH prove horizontal gene transfer (HGT), de novo gene birth, or adaptive desert specialization.",
+        "Do not describe the 32 external reference comparators (25 GTDB r232 and 7 MGnify genomes) as cultivated isolates or type strains; all 32 are uncultured environmental MAGs, and 1 of the 237 pairs (bin_id = 35174, c__Thermoplasmata) is a cross-class match to c__Poseidoniia at 48.68% AAI.",
+        "Do not present Student-t confidence intervals and p-values as design-based random-sampling inference over a larger catalog; the 237 genomes are the complete finite cohort of dereplicated Thermoplasmatota species in this study, so intervals are model-based evolutionary superpopulation quantities conditioned on a single fixed FastTree topology.",
+        "Do not copy the corrupted OLS (lambda = 0) column or the corrupted PGLS Intercept, completeness, and contamination rows from Section 4 of reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/H1_COMPLETENESS.md."
+      ],
+      "critical_findings": [],
+      "major_findings": [
+        {
+          "id": "H1-MAJ-1",
+          "title": "Corrupted OLS (lambda = 0) column and PGLS covariate rows in Round 7 H1_COMPLETENESS.md Section 4",
+          "evidence": "reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/H1_COMPLETENESS.md lines 68-79 vs reviews/darkmatter-2026-10-13/round6/snapshots/h1_final/results/v3_pgls_model_summary.tsv and round6/snapshots/h1_final/DOSSIER.md lines 71-86. H1_COMPLETENESS.md reports PGLS completeness = +0.000109 +/- 0.000446 (p = 0.8066) instead of -0.000335 +/- 0.000126 (p = 0.008398), PGLS contamination = -0.001479 +/- 0.001642 (p = 0.3687) instead of -0.000320 +/- 0.000491 (p = 0.5159), PGLS Intercept = -0.463273 instead of -0.453207, and fabricates all seven OLS (lambda = 0) coefficients and SEs (reporting OLS Intercept = -0.320499, log_len = +0.091176, aai = +0.001525, frac_rbh_desert = -0.130386, sigma^2_OLS = 0.00108991 instead of the true values Intercept = -1.252281, log_len = +0.249850, aai = +0.001931, frac_rbh_desert = -0.105413, sigma^2_OLS = 0.00071159).",
+          "concrete_repair": "Regenerate Section 4 of H1_COMPLETENESS.md directly from reviews/darkmatter-2026-10-13/round6/snapshots/h1_final/results/v3_pgls_model_summary.tsv and v3_pgls_lambda_profile.tsv, and ensure all manuscript/supplement tables use only v3_pgls_model_summary.tsv."
+        }
+      ],
+      "minor_findings": [
+        {
+          "id": "H1-MIN-1",
+          "title": "Explicitly state finite-population conditioning, 32-MAG comparator reuse, and 5 missing CheckM2 .faa files in Supplement",
+          "evidence": "reviews/darkmatter-2026-10-13/round6/snapshots/h1_final/results/v3_closure_verification.json (unique_comparators_n = 32, max_comparator_share_pct = 9.2827%, missing_faa_n = 5).",
+          "concrete_repair": "Include a brief methodological note in the Supplementary Information stating that the 237 species are the complete finite desert Thermoplasmatota cohort (with model-based t-intervals conditional on thermo_tree.nwk), that nearest comparators map to 32 unique environmental GTDB/MGnify MAGs (max share 22/237 = 9.28%), and that 5 species lack archived CheckM2 .faa files in S7 (n = 232)."
+        }
+      ],
+      "venue_contribution": "Provides a rigorous phylogenetic conditioning control for the Thermoplasmatota section of main.tex, demonstrating that sequence darkness is heavily structured by vertical lineage history (lambda = 0.916) while bounding partial divergence relationships."
+    },
+    "H2": {
+      "title": "Genomic Neighbourhood Synteny and Flanking KO Conservation Across Multi-Species Structural Dark Families (K vs QnotK)",
+      "authoritative_snapshot": "reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial",
+      "working_package": "reproducibility/darkmatter/round7_analyses/h2_context",
+      "execution_status": "COMPLETE (Slurm job 53738443 on IBEX, 00:05:21, exit 0:0; 26/26 snapshot files and 13/13 result SHA-256 checksums verified; full Gate 3 census of 1,461 multi-species families and 7,604 member rows across 2,126 refined bins audited and reproduced)",
+      "scientific_verdict": "SUPPORTED_WITH_BOUNDS",
+      "main_vs_supplement": "Main text: 1-2 sentences in the structural dark proteome subsection (manuscript/main.tex lines 281-319) reporting that among the 353 multi-species families evaluable under complete 4-flank exact-coordinate Bakta windows (30.35% of K, 20.20% of QnotK), both known-fold (K: 40.46% vs 8.71% same-contig positional expectation, p = 0.0002) and novel-fold candidate (QnotK: 32.22% vs 6.56% positional expectation, p = 0.0002) families show strong non-mobilome syntenic conservation, but K and QnotK do not differ once stratified or matched on species breadth, coarse phylum group, and flanking KO annotation density (Delta_MH(E_fam) = +0.0354, p = 0.4069; strict 96-pair matched raw difference 0.0000, p = 1.0000). Supplement: full 2,838 -> 1,461 -> 353 (Tier 1) / 637 (Tier 2) / 1,320 (Tier 3) attrition funnel, flank coordinate audit categories, 16-stratum common-support table, caliper matching diagnostics, and multivariable regression tables.",
+      "supported_claims": [
+        "Across the 2,838 confidence-qualified (pLDDT >= 0.70, monomer) structural dark families, 1,461 (51.48%: 570 K, 891 QnotK) span >= 2 distinct dRep 95% ANI species clusters (7,604 member rows; 4,542 primary species-representative loci across 2,126 refined bins, of which 2,041/2,126 = 96.0% are verified by exact uppercase contig SHA-256 and Bakta orig-id with zero hash or reverse-complement mismatches).",
+        "Under the primary Tier 1 complete-window gate (>= 2 species with all 4 flanks m2, m1, p1, p2 present on the contig and mapped by exact coordinates to Bakta/eggNOG; n = 353 evaluable families: 173 K, 180 QnotK), recurrent flanking KO synteny is strongly enriched above same-contig eligible-position expectations (B = 5,000 draws) within both K (40.46% [70/173] observed vs 8.71% expected; within-arm excess +31.75 percentage points, p = 0.0002) and QnotK (32.22% [58/180] observed vs 6.56% expected; within-arm excess +25.67 percentage points, p = 0.0002), with zero mobilome/transposase flags among the best recurrent KOs of all 128 recurrent families.",
+        "Between arms, K does not exhibit higher neighborhood synteny conservation than QnotK once differences in species breadth, coarse phylum composition, and flanking KO annotation opportunity are controlled: in Tier 1 (n = 353, 16/16 common-support strata, 100% coverage), Mantel-Haenszel stratified difference is Delta_MH(E_fam) = +0.0354 (p = 0.4069) and Delta_MH(C_fam) = +0.0489 (p = 0.3204); in Tier 2 (3'-stop match sensitivity, n = 637: 260 K, 377 QnotK), Delta_MH(E_fam) = +0.0184 (p = 0.5618) and Delta_MH(C_fam) = +0.0258 (p = 0.5067); in strict 1:1 exact-phylum and tight-length matching (96 pairs, all post-match |SMD| <= 0.130), raw recurrence is 31.25% in both arms (Delta = 0.0000, p = 1.0000) and excess difference is -0.0054 (p = 0.9226); in multivariable OLS/HC3, beta_is_k = +0.0294 +/- 0.0430 (p = 0.4930) on E_fam and +0.0428 +/- 0.0472 (p = 0.3646) on C_fam."
+      ],
+      "prohibited_claims": [
+        "Do not claim that known-fold dark families (K) have higher genomic neighborhood conservation than novel-fold candidates (QnotK).",
+        "Do not cite the unadjusted Tier 3 partial-window comparison (33.59% vs 24.66%, raw difference +8.93 percentage points, Fisher p = 0.000458 across n = 1,320 families with >= 1 mapped flank) as evidence of a true biological difference between K and QnotK; Tier 3 lacks a same-contig positional null and is confounded by unequal numbers of callable flanks per locus (2.80 in K vs 2.71 in QnotK) and higher species breadth in K (3.22 vs 2.91).",
+        "Do not extrapolate Tier 1 neighborhood conservation rates (40.46% in K, 32.22% in QnotK) as unconditional population estimates for all 2,838 structural dark families or all 1,461 multi-species families without stating that 75.84% (1,108/1,461) of Gate 3 families are excluded by contig-edge truncation and coordinate-matching attrition, and that Tier 1 survival is significantly higher in K (30.35%) than in QnotK (20.20%, Fisher p = 1.15e-5)."
+      ],
+      "critical_findings": [],
+      "major_findings": [
+        {
+          "id": "H2-MAJ-1",
+          "title": "Severe and differential complete-window attrition in Tier 1 (30.35% K vs 20.20% QnotK) and unadjusted flank-completeness confounding in Tier 3",
+          "evidence": "reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/results/pilot_family_conservation.tsv, pilot_neighbourhoods.tsv, and pilot_conservation_summary.json. Only 353/1,461 (24.16%) Gate 3 families pass Tier 1 (173/570 = 30.35% in K vs 180/891 = 20.20% in QnotK, Fisher p = 1.15e-5) because K families have higher baseline species counts (mean 3.30 vs 2.99), longer median contigs (12,608 bp vs 10,256.5 bp), and fewer 5' start shifts (11.2% vs 12.7%). Conversely, Tier 3 (n = 1,320, >= 1 mapped flank) reports only an unadjusted raw difference (+8.93 percentage points, p = 0.000458) without positional expectations or adjustment for unequal callable flanks per locus.",
+          "concrete_repair": "When reporting H2 in the manuscript and Supplement, state the Tier 1 attrition rate (353/1,461 = 24.16%) and arm-specific survival (30.35% K vs 20.20% QnotK) alongside Tier 2 (637/1,461 = 43.60%, where per-locus survival equalizes at 49.73% vs 49.44% and Delta_MH(E_fam) = +0.0184, p = 0.5618), and explicitly label Tier 3 as an unadjusted partial-window sensitivity confounded by unequal flank completeness and species breadth."
+        },
+        {
+          "id": "H2-MAJ-2",
+          "title": "Cross-family species/bin sharing, coarse 4-group phylum pooling, and 85 bins lacking Bakta source files must be stated as structural bounds",
+          "evidence": "reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/results/pilot_conservation_summary.json (cross_family_locus_and_species_independence_tier1: 153/568 shared dRep species, 145/617 shared bins, 30/846 shared contigs; phylum_group pools 14 phyla into other_bacteria_archaea n = 73 and cross-phylum multi n = 126) and results/pilot_join_metrics.json (bins_missing_bakta_or_eggnog_source = 85).",
+          "concrete_repair": "Document in the Supplementary Information that Tier 1 loci share 153/568 dRep species clusters across families (with the 76-family species-disjoint subset yielding Delta E_fam = -0.0156), that phylum_group pools 14 non-dominant phyla into other_bacteria_archaea while cross-phylum families (multi) have lower recurrence (beta = -0.1597, p = 0.0044), and that 85/2,126 bins (4.0%) lack Bakta/eggNOG source files on disk."
+        }
+      ],
+      "minor_findings": [
+        {
+          "id": "H2-MIN-1",
+          "title": "Redundant 10,000x recomputation of matching_summary inside sign-flip permutation loop in 03_analyse_conservation.py",
+          "evidence": "reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/scripts/03_analyse_conservation.py lines 755-779 are indented inside 'for _ in range(B_PERM):' (line 743).",
+          "concrete_repair": "Dedent lines 755-779 by one level (4 spaces) so compute_smd and matching_summary execute once after the sign-flip loop completes."
+        },
+        {
+          "id": "H2-MIN-2",
+          "title": "Stale pilot species count in inline comment and pilot_* artifact naming in full-census snapshot",
+          "evidence": "reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/scripts/03_analyse_conservation.py line 865 ('resampling the 144 unique dRep species clusters' vs actual 568), run_pilot.sbatch duplicating run_full.sbatch, and results/pilot_* filenames.",
+          "concrete_repair": "Update the line 865 comment to reflect 568 unique dRep species clusters in the full run and note in the Supplement README that pilot_* filenames in h2_initial/results/ contain the full 1,461-family census outputs."
+        }
+      ],
+      "venue_contribution": "Establishes that multi-species confidence-qualified dark families reside in conserved non-mobilome genomic neighborhoods in both K and QnotK arms while refuting the naive hypothesis that known-fold dark proteins have more conserved operon context than novel-fold candidates."
+    },
+    "H3": {
+      "title": "Reference-Database Cascade and Taxonomic/Functional Boundary Audit",
+      "execution_status": "INCOMPLETE (still running on IBEX; excluded per explicit Round 7 scope override)",
+      "scientific_verdict": "INCOMPLETE",
+      "main_vs_supplement": "Deferred to separate H3 results review.",
+      "supported_claims": [],
+      "prohibited_claims": [],
+      "critical_findings": [],
+      "major_findings": [],
+      "minor_findings": [],
+      "venue_contribution": "Deferred to separate review per scope override."
+    },
+    "H4": {
+      "title": "Structural and Sequence Boundary Audit",
+      "execution_status": "INCOMPLETE (still running on IBEX; excluded per explicit Round 7 scope override)",
+      "scientific_verdict": "INCOMPLETE",
+      "main_vs_supplement": "Deferred to separate H4 results review.",
+      "supported_claims": [],
+      "prohibited_claims": [],
+      "critical_findings": [],
+      "major_findings": [],
+      "minor_findings": [],
+      "venue_contribution": "Deferred to separate review per scope override."
+    }
+  }
+}

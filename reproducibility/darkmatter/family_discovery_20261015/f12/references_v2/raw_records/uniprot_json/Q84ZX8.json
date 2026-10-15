@@ -1,0 +1,880 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q84ZX8",
+  "uniProtkbId": "SPP2_MAIZE",
+  "entryAudit": {
+    "firstPublicDate": "2008-09-23",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2003-06-01",
+    "entryVersion": 105,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Zea mays",
+    "commonName": "Maize",
+    "taxonId": 4577,
+    "lineage": [
+      "Eukaryota",
+      "Viridiplantae",
+      "Streptophyta",
+      "Embryophyta",
+      "Tracheophyta",
+      "Spermatophyta",
+      "Magnoliopsida",
+      "Liliopsida",
+      "Poales",
+      "Poaceae",
+      "PACMAD clade",
+      "Panicoideae",
+      "Andropogonodae",
+      "Andropogoneae",
+      "Tripsacinae",
+      "Zea"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Sucrose-phosphatase 2"
+      },
+      "shortNames": [
+        {
+          "value": "ZmSPP2"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "value": "3.1.3.24"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "SPP2"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "value": "Catalyzes the final step of sucrose synthesis. Inactive with fructose 6-phosphate as substrate"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "sucrose 6(F)-phosphate + H2O = sucrose + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:19289"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:17992"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57723"
+          }
+        ],
+        "ecNumber": "3.1.3.24"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ]
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "maximumVelocities": [
+          {
+            "velocity": 182.0,
+            "unit": "nmol/min/mg",
+            "enzyme": "enzyme",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "12559580"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "value": "Glycan biosynthesis; sucrose biosynthesis; sucrose from D-fructose 6-phosphate and UDP-alpha-D-glucose: step 2/2"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Homodimer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the sucrose phosphatase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 437,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Sucrose-phosphatase 2",
+      "featureId": "PRO_0000350621"
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "12559580",
+        "citationType": "journal article",
+        "authors": [
+          "Lunn J.E."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12559580"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s0378-1119(02)01177-0"
+          }
+        ],
+        "title": "Sucrose-phosphatase gene families in plants.",
+        "publicationDate": "2003",
+        "journal": "Gene",
+        "firstPage": "187",
+        "lastPage": "196",
+        "volume": "303"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [MRNA]",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "GENE FAMILY",
+        "NOMENCLATURE"
+      ],
+      "referenceComments": [
+        {
+          "value": "Seedling",
+          "type": "TISSUE"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AF493561",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAO33158.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_001105652.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NM_001112182.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q84ZX8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q84ZX8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "Q84ZX8",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "240"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "4577.Q84ZX8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "4577-Q84ZX8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblPlants",
+      "id": "Zm00001eb417940_T001",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Zm00001eb417940_P001"
+        },
+        {
+          "key": "GeneId",
+          "value": "Zm00001eb417940"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblPlants",
+      "id": "Zm00001eb417940_T002",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Zm00001eb417940_P002"
+        },
+        {
+          "key": "GeneId",
+          "value": "Zm00001eb417940"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblPlants",
+      "id": "Zm00001eb417940_T004",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Zm00001eb417940_P004"
+        },
+        {
+          "key": "GeneId",
+          "value": "Zm00001eb417940"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "542661",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Gramene",
+      "id": "Zm00001eb417940_T001",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Zm00001eb417940_P001"
+        },
+        {
+          "key": "GeneId",
+          "value": "Zm00001eb417940"
+        }
+      ]
+    },
+    {
+      "database": "Gramene",
+      "id": "Zm00001eb417940_T002",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Zm00001eb417940_P002"
+        },
+        {
+          "key": "GeneId",
+          "value": "Zm00001eb417940"
+        }
+      ]
+    },
+    {
+      "database": "Gramene",
+      "id": "Zm00001eb417940_T004",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Zm00001eb417940_P004"
+        },
+        {
+          "key": "GeneId",
+          "value": "Zm00001eb417940"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "zma:542661",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "ENOG502S2R4",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_030534_1_0_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q84ZX8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "531008at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00371",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00546"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000007305",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome 10"
+        }
+      ]
+    },
+    {
+      "database": "ExpressionAtlas",
+      "id": "Q84ZX8",
+      "properties": [
+        {
+          "key": "ExpressionPatterns",
+          "value": "baseline and differential"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000287",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:magnesium ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0050307",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:sucrose-phosphate phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005986",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:sucrose biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniPathway"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd02605",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_SPP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.10.450.50",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.90.1070.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006379",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IIB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR032710",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "NTF2-like_dom_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006380",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPP-like_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR013679",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPP_C"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR051518",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Sucrose_Phosphatase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR012847",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Sucrose_phosphatase_pln/cyn"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IIB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01482",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPP-subfamily"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01485",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPP_plant-cyano"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR46521",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SUCROSE-PHOSPHATASE 2-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR46521:SF2",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SUCROSE-PHOSPHATASE 3-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF05116",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S6PP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF08472",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S6PP_C"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01141",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C2.B.1:_Sucrose_Phosphatase_Li"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01140",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C2.B:_Phosphomannomutase_and_P"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDS00003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Haloacid_Dehalogenase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDF00043",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "sucrose-phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF54427",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "NTF2-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MDRLDGSARLLLVSDLDQTMIDHDDRENLSLLRFEALWEAEFAQDSLLVFSTGRTPVSYKGLRRDKPLVTPDVTIMSVGTVIAYGEEMVRDVGWEERLDSDWDRAVVVEETARLPQLTRMQPERNQGPHKVSFFVDKQGAQEVMDYLPKKLERRGVDVKIVYSSGNALDVLPRGAGKGQALVYLLKKLDSNGKPPKNTLVCGDSGNDAELFGVPSVHGVMVCNAQEELVQWYQENARDNPRIIQATERCAAGIMQAIGHLGLGPNVSARDLVGFPAYYPNNNKKGAAATAKPADVVVRFYVLYEKWRRGELPSSNYFSSSSAMRYLKSITHPNGTIIHPCGSERSLHASVDALLSSCYGDKKNFRVWVDRLVTSPIGTSSWLARFDSWEMEGGVRYCCRTTILLNIKPESPEGLELTHIHKTWVQGHSAGPGSALVF",
+    "length": 437,
+    "molWeight": 48585,
+    "crc64": "9F36BB70F0C658BE",
+    "md5": "A6437D6619873BF05F945E8A78B0C251"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "PATHWAY": 1,
+      "SUBUNIT": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1
+    },
+    "uniParcId": "UPI0000003733"
+  }
+}

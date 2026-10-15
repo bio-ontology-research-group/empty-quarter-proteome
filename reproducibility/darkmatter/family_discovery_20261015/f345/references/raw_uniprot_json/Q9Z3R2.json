@@ -1,0 +1,879 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q9Z3R2",
+  "uniProtkbId": "RHBA_RHIME",
+  "entryAudit": {
+    "firstPublicDate": "2000-05-30",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1999-05-01",
+    "entryVersion": 145,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Rhizobium meliloti (strain 1021)",
+    "commonName": "Ensifer meliloti",
+    "synonyms": [
+      "Sinorhizobium meliloti"
+    ],
+    "taxonId": 266834,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Alphaproteobacteria",
+      "Hyphomicrobiales",
+      "Rhizobiaceae",
+      "Sinorhizobium/Ensifer group",
+      "Sinorhizobium"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Diaminobutyrate--2-oxoglutarate aminotransferase"
+      },
+      "ecNumbers": [
+        {
+          "value": "2.6.1.76"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Diaminobutyrate transaminase"
+        }
+      },
+      {
+        "fullName": {
+          "value": "L-2,4-diaminobutyrate:2-ketoglutarate 4-aminotransferase"
+        },
+        "shortNames": [
+          {
+            "value": "DABA aminotransferase"
+          },
+          {
+            "value": "DABA-AT"
+          }
+        ]
+      },
+      {
+        "fullName": {
+          "value": "L-diaminobutyric acid transaminase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "rhbA"
+      },
+      "synonyms": [
+        {
+          "value": "rhsA"
+        }
+      ],
+      "orderedLocusNames": [
+        {
+          "value": "RA1258"
+        }
+      ],
+      "orfNames": [
+        {
+          "value": "SMa2400"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "L-2,4-diaminobutanoate + 2-oxoglutarate = L-aspartate 4-semialdehyde + L-glutamate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:11160"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16810"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29985"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58761"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:537519"
+          }
+        ],
+        "ecNumber": "2.6.1.76"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "pyridoxal 5'-phosphate",
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:597326"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "value": "Siderophore biosynthesis; rhizobactin biosynthesis"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the class-III pyridoxal-phosphate-dependent aminotransferase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 470,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Diaminobutyrate--2-oxoglutarate aminotransferase",
+      "featureId": "PRO_0000120516"
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 304,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 304,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "N6-(pyridoxal phosphate)lysine",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ]
+    }
+  ],
+  "geneLocations": [
+    {
+      "value": "pSymA (megaplasmid 1)",
+      "geneEncodingType": "Plasmid"
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0032",
+      "category": "Molecular function",
+      "name": "Aminotransferase"
+    },
+    {
+      "id": "KW-0614",
+      "category": "Technical term",
+      "name": "Plasmid"
+    },
+    {
+      "id": "KW-0663",
+      "category": "Ligand",
+      "name": "Pyridoxal phosphate"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0808",
+      "category": "Molecular function",
+      "name": "Transferase"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "11274118",
+        "citationType": "journal article",
+        "authors": [
+          "Lynch D.",
+          "O'Brien J.",
+          "Welch T.",
+          "Clarke P.",
+          "Cuiv P.O.",
+          "Crosa J.H.",
+          "O'Connell M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11274118"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.183.8.2576-2585.2001"
+          }
+        ],
+        "title": "Genetic organization of the region encoding regulation, biosynthesis, and transport of rhizobactin 1021, a siderophore produced by Sinorhizobium meliloti.",
+        "publicationDate": "2001",
+        "journal": "J. Bacteriol.",
+        "firstPage": "2576",
+        "lastPage": "2585",
+        "volume": "183"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "RCR2011 / SU47",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "11481432",
+        "citationType": "journal article",
+        "authors": [
+          "Barnett M.J.",
+          "Fisher R.F.",
+          "Jones T.",
+          "Komp C.",
+          "Abola A.P.",
+          "Barloy-Hubler F.",
+          "Bowser L.",
+          "Capela D.",
+          "Galibert F.",
+          "Gouzy J.",
+          "Gurjal M.",
+          "Hong A.",
+          "Huizar L.",
+          "Hyman R.W.",
+          "Kahn D.",
+          "Kahn M.L.",
+          "Kalman S.",
+          "Keating D.H.",
+          "Palm C.",
+          "Peck M.C.",
+          "Surzycki R.",
+          "Wells D.H.",
+          "Yeh K.-C.",
+          "Davis R.W.",
+          "Federspiel N.A.",
+          "Long S.R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11481432"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.161294798"
+          }
+        ],
+        "title": "Nucleotide sequence and predicted functions of the entire Sinorhizobium meliloti pSymA megaplasmid.",
+        "publicationDate": "2001",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "9883",
+        "lastPage": "9888",
+        "volume": "98"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "1021",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "11474104",
+        "citationType": "journal article",
+        "authors": [
+          "Galibert F.",
+          "Finan T.M.",
+          "Long S.R.",
+          "Puehler A.",
+          "Abola P.",
+          "Ampe F.",
+          "Barloy-Hubler F.",
+          "Barnett M.J.",
+          "Becker A.",
+          "Boistard P.",
+          "Bothe G.",
+          "Boutry M.",
+          "Bowser L.",
+          "Buhrmester J.",
+          "Cadieu E.",
+          "Capela D.",
+          "Chain P.",
+          "Cowie A.",
+          "Davis R.W.",
+          "Dreano S.",
+          "Federspiel N.A.",
+          "Fisher R.F.",
+          "Gloux S.",
+          "Godrie T.",
+          "Goffeau A.",
+          "Golding B.",
+          "Gouzy J.",
+          "Gurjal M.",
+          "Hernandez-Lucas I.",
+          "Hong A.",
+          "Huizar L.",
+          "Hyman R.W.",
+          "Jones T.",
+          "Kahn D.",
+          "Kahn M.L.",
+          "Kalman S.",
+          "Keating D.H.",
+          "Kiss E.",
+          "Komp C.",
+          "Lelaure V.",
+          "Masuy D.",
+          "Palm C.",
+          "Peck M.C.",
+          "Pohl T.M.",
+          "Portetelle D.",
+          "Purnelle B.",
+          "Ramsperger U.",
+          "Surzycki R.",
+          "Thebault P.",
+          "Vandenbol M.",
+          "Vorhoelter F.J.",
+          "Weidner S.",
+          "Wells D.H.",
+          "Wong K.",
+          "Yeh K.-C.",
+          "Batut J."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11474104"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.1060966"
+          }
+        ],
+        "title": "The composite genome of the legume symbiont Sinorhizobium meliloti.",
+        "publicationDate": "2001",
+        "journal": "Science",
+        "firstPage": "668",
+        "lastPage": "672",
+        "volume": "293"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "1021",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AF110737",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAD09412.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AE006469",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAK65916.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "B95419",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "B95419"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "T46814",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "T46814"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_010968201.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_003037.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q9Z3R2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q9Z3R2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "AAK65916",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAK65916"
+        },
+        {
+          "key": "GeneId",
+          "value": "SMa2400"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sme:SMa2400",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|266834.11.peg.1311",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_016922_10_0_5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9801834at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:MONOMER-15538",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00020",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001976",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Plasmid pSymA"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0045303",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:L-2,4-diaminobutyrate:2-oxoglutarate transaminase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0030170",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:pyridoxal phosphate binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0019289",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:rhizobactin 1021 biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniPathway"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00610",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "OAT_like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.640.10:FF:000091",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Diaminobutyrate--2-oxoglutarate aminotransferase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.90.1150.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aspartate Aminotransferase, domain 1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.640.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Type I PLP-dependent aspartate aminotransferase-like (Major domain)"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005814",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aminotrans_3"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR049704",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aminotrans_3_PPA_site"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR004637",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Dat"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015424",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PyrdxlP-dep_Trfase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015421",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PyrdxlP-dep_Trfase_major"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015422",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PyrdxlP-dep_Trfase_small"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR00709",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "dat"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF005393",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK06938.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43552",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DIAMINOBUTYRATE--2-OXOGLUTARATE AMINOTRANSFERASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43552:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DIAMINOBUTYRATE--2-OXOGLUTARATE AMINOTRANSFERASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00202",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Aminotran_3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF000521",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Transaminase_4ab_Lys_Orn"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53383",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PLP-dependent transferases"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00600",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "AA_TRANSFER_CLASS_3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MPADLAARTSSKIFNGVDLMDASARADNAFYLDRQERRESNARSYPRRFPVALKSASGCIVTDVDGRSYLDCLAGAGTLALGHNHPEVIETLQQVLGSGLPLHTLDLTTPVKDRFVSDIFGTLPAGLRDEAKIQFCSPSGTDAVEAAIKLAKTATGRTDLVSFRGAYHGMSQGSLSLMGSLGPKASVGQLVPGAHFFPYPYAYRCPFGRGGNETATLAAEYFERALRDPEGGINRPAAVILEAVQGEGGVIPAPVEWLRAVRRVTRDLGIPLIVDEVQSGVGRTGSFYAFQKAGIIPDVVVLSKAIGGGLPLAVVIYREDLDLWKPGAHAGTFRGNQLAMAAGSKTLEIIERERLVERAAIAGRRLRANLERIAAQTPYIGEVRGEGLMLGVEVVDPEGLPDALGHPPHGQEIARMIQHEMFRAGIILETGGRFGSVLRLLPPLVISDAEIDQVSGALAAAFERLGRKAA",
+    "length": 470,
+    "molWeight": 50148,
+    "crc64": "0377B3B8B9A09049",
+    "md5": "CCF9E30AE32D3B1DE1274334354E1700"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Modified residue": 1
+    },
+    "uniParcId": "UPI0000133859"
+  }
+}

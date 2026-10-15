@@ -1,0 +1,770 @@
+
+==============================================================================
+1. LINEAGE DARKNESS REGRESSION & NOVELTY TEST
+==============================================================================
+v2_reps n: 5438
+dark_fraction median: 0.063117 IQR: 0.03648175 0.10381725
+Corrected size OLS: slope=-0.09565, R2=0.06706
+mA (quality): R2=0.1147, adjR2=0.1140, df_model=4.0
+mB (A+phylum): R2=0.7680, adjR2=0.7656, df_model=54.0
+mC (B+genus): R2=0.8347, adjR2=0.8260, df_model=274.0
+Unique to lineage (mL3 - mA): 0.7201, Unique to quality (mL3 - mL2): 0.0203
+Novelty nA R2=0.4955, nB R2=0.8356, nB-nA=0.3401, ratio=0.5206
+  first_unnamed_rank=1: n=10, median_dark=0.2170
+  first_unnamed_rank=2: n=560, median_dark=0.1745
+  first_unnamed_rank=3: n=272, median_dark=0.1084
+  first_unnamed_rank=4: n=1006, median_dark=0.0828
+  first_unnamed_rank=5: n=1613, median_dark=0.0652
+  first_unnamed_rank=6: n=1855, median_dark=0.0327
+  first_unnamed_rank=7: n=122, median_dark=0.0170
+  Actinomycetota     named       : n= 588, median=0.0215
+  Actinomycetota     placeholder : n= 569, median=0.0751
+  Actinomycetota     blank       : n= 476, median=0.0774
+  Pseudomonadota     named       : n= 678, median=0.0303
+  Pseudomonadota     placeholder : n= 349, median=0.0514
+  Pseudomonadota     blank       : n= 189, median=0.0514
+  Bacteroidota       named       : n= 233, median=0.0526
+  Bacteroidota       placeholder : n=  66, median=0.0683
+  Bacteroidota       blank       : n=  89, median=0.0740
+  Thermoplasmatota   placeholder : n= 102, median=0.3118
+  Thermoplasmatota   blank       : n= 135, median=0.3084
+
+Phyla with n_reps >= 20 sorted by median_resid_A:
+           phylum  n_reps  median_dark_fraction  median_resid_A  median_completeness  frac_named_genus  median_first_unnamed
+ Thermoplasmatota     237              0.309565        0.214914               85.420          0.000000                   2.0
+  Cyanobacteriota      21              0.207620        0.137318               89.700          0.142857                   5.0
+ Bdellovibrionota      42              0.188294        0.100812               91.130          0.095238                   4.0
+    Myxococcota_A     124              0.111477        0.061754               93.810          0.161290                   5.0
+Patescibacteriota     183              0.185022        0.043566               91.720          0.081967                   4.0
+  Planctomycetota     210              0.104210        0.034806               86.765          0.171429                   5.0
+  Acidobacteriota     114              0.096954        0.034761               93.545          0.035088                   4.0
+    Chloroflexota     249              0.109069        0.027045               85.370          0.012048                   4.0
+  Gemmatimonadota     163              0.077389        0.004750               92.370          0.196319                   5.0
+      Myxococcota      77              0.041905       -0.002985               92.880          0.350649                   5.0
+   Thermoproteota      56              0.096442       -0.005435               89.100          0.767857                   6.0
+Verrucomicrobiota      69              0.076520       -0.006388               87.630          0.246377                   5.0
+     Deinococcota      36              0.074299       -0.012688               92.685          0.388889                   5.0
+     Bacteroidota     388              0.059700       -0.020020               91.745          0.600515                   6.0
+   Actinomycetota    1633              0.058226       -0.021473               90.390          0.360073                   5.0
+   Pseudomonadota    1216              0.039879       -0.041865               91.340          0.557566                   6.0
+        Bacillota     208              0.041791       -0.045698               90.645          0.649038                   6.0
+   Halobacteriota     269              0.036829       -0.052240               79.730          0.576208                   6.0
+
+Thermoplasmatota n=237, med=0.3096
+Other Archaea n=354, med=0.0456
+Bacteria n=4847, med=0.0619, p95=0.1815
+Thermo > bac p95: 236/237
+Rank=2 (class): Thermo n=236 med=0.3101 vs Other n=324 med=0.1249
+
+==============================================================================
+2. THERMOPLASMATOTA ECOLOGY & METABOLISM CHECK
+==============================================================================
+v2_thermo_ecology_summary.tsv.gz (selected rows):
+       section            group                                                metric       value  numerator  denominator                                                                   note
+        inputs              all                               species_representatives        5438     5438.0         5438                                                                    NaN
+        inputs              all                              abundance_sample_columns         550      550.0          551                           551 canonical samples; F13PRr1 has no column
+        inputs              all                                 usable_sample_columns         549      549.0          550                                        dropped all-nan/all-zero: F5Dr1
+        groups Thermoplasmatota                                     n_representatives         237      237.0         5438                                                                    NaN
+        groups Thermoplasmatota                                   median_completeness       85.42        NaN          237                                                     IQR 71.38 to 93.07
+        groups   Halobacteriota                                     n_representatives         269      269.0         5438                                                                    NaN
+        groups   Halobacteriota                                   median_completeness       79.73        NaN          269                                                     IQR 69.38 to 86.93
+        groups Thermoplasmatota                                            n_class_E2          51       51.0          237                                                                    NaN
+        groups Thermoplasmatota                                   n_class_SW-10-69-26         185      185.0          237                                                                    NaN
+        groups Thermoplasmatota                                n_class_Thermoplasmata           1        1.0          237                                                                    NaN
+    occurrence Thermoplasmatota                         samples_with_any_rep_detected         481      481.0          549                                                                    NaN
+    occurrence Thermoplasmatota                               summed_share_pct_median      0.3892        NaN          549                                                                    NaN
+    occurrence Thermoplasmatota                                  summed_share_pct_q25      0.0649        NaN          549                                                                    NaN
+    occurrence Thermoplasmatota                                  summed_share_pct_q75      1.0078        NaN          549                                                                    NaN
+    occurrence Thermoplasmatota                                 frac_of_mapped_median      0.0081        NaN          549                          summed share divided by total mapped per cent
+    occurrence Thermoplasmatota                                    frac_of_mapped_q25      0.0014        NaN          549                          summed share divided by total mapped per cent
+    occurrence Thermoplasmatota                                    frac_of_mapped_q75      0.0212        NaN          549                          summed share divided by total mapped per cent
+    occurrence Thermoplasmatota                     n_reps_detected_per_sample_median     21.0000        NaN          549                                                                    NaN
+    occurrence Thermoplasmatota                        n_reps_detected_per_sample_q25      4.0000        NaN          549                                                                    NaN
+    occurrence Thermoplasmatota                        n_reps_detected_per_sample_q75     42.0000        NaN          549                                                                    NaN
+    occurrence   Halobacteriota                         samples_with_any_rep_detected          81       81.0          549                                                                    NaN
+    occurrence   Halobacteriota                               summed_share_pct_median      0.0000        NaN          549                                                                    NaN
+    occurrence   Halobacteriota                                  summed_share_pct_q25      0.0000        NaN          549                                                                    NaN
+    occurrence   Halobacteriota                                  summed_share_pct_q75      0.0000        NaN          549                                                                    NaN
+    occurrence   Halobacteriota                                 frac_of_mapped_median      0.0000        NaN          549                          summed share divided by total mapped per cent
+    occurrence   Halobacteriota                                    frac_of_mapped_q25      0.0000        NaN          549                          summed share divided by total mapped per cent
+    occurrence   Halobacteriota                                    frac_of_mapped_q75      0.0000        NaN          549                          summed share divided by total mapped per cent
+    occurrence   Halobacteriota                     n_reps_detected_per_sample_median      0.0000        NaN          549                                                                    NaN
+    occurrence   Halobacteriota                        n_reps_detected_per_sample_q25      0.0000        NaN          549                                                                    NaN
+    occurrence   Halobacteriota                        n_reps_detected_per_sample_q75      0.0000        NaN          549                                                                    NaN
+by_compartment Thermoplasmatota                    samples_with_any_rep_detected_Deep         155      155.0          165                                                                    NaN
+by_compartment Thermoplasmatota                          summed_share_pct_Deep_median      0.5469        NaN          165                                                                    NaN
+by_compartment Thermoplasmatota                             summed_share_pct_Deep_q25      0.2141        NaN          165                                                                    NaN
+by_compartment Thermoplasmatota                             summed_share_pct_Deep_q75      1.2602        NaN          165                                                                    NaN
+by_compartment   Halobacteriota                    samples_with_any_rep_detected_Deep          15       15.0          165                                                                    NaN
+by_compartment   Halobacteriota                          summed_share_pct_Deep_median      0.0000        NaN          165                                                                    NaN
+by_compartment   Halobacteriota                             summed_share_pct_Deep_q25      0.0000        NaN          165                                                                    NaN
+by_compartment   Halobacteriota                             summed_share_pct_Deep_q75      0.0000        NaN          165                                                                    NaN
+by_compartment Thermoplasmatota               samples_with_any_rep_detected_PlantRoot         224      224.0          267                                                                    NaN
+by_compartment Thermoplasmatota                     summed_share_pct_PlantRoot_median      0.3799        NaN          267                                                                    NaN
+by_compartment Thermoplasmatota                        summed_share_pct_PlantRoot_q25      0.0496        NaN          267                                                                    NaN
+by_compartment Thermoplasmatota                        summed_share_pct_PlantRoot_q75      1.1006        NaN          267                                                                    NaN
+by_compartment   Halobacteriota               samples_with_any_rep_detected_PlantRoot          48       48.0          267                                                                    NaN
+by_compartment   Halobacteriota                     summed_share_pct_PlantRoot_median      0.0000        NaN          267                                                                    NaN
+by_compartment   Halobacteriota                        summed_share_pct_PlantRoot_q25      0.0000        NaN          267                                                                    NaN
+by_compartment   Halobacteriota                        summed_share_pct_PlantRoot_q75      0.0000        NaN          267                                                                    NaN
+by_compartment Thermoplasmatota                 samples_with_any_rep_detected_Surface         102      102.0          117                                                                    NaN
+by_compartment Thermoplasmatota                       summed_share_pct_Surface_median      0.1743        NaN          117                                                                    NaN
+by_compartment Thermoplasmatota                          summed_share_pct_Surface_q25      0.0244        NaN          117                                                                    NaN
+by_compartment Thermoplasmatota                          summed_share_pct_Surface_q75      0.5251        NaN          117                                                                    NaN
+by_compartment   Halobacteriota                 samples_with_any_rep_detected_Surface          18       18.0          117                                                                    NaN
+by_compartment   Halobacteriota                       summed_share_pct_Surface_median      0.0000        NaN          117                                                                    NaN
+by_compartment   Halobacteriota                          summed_share_pct_Surface_q25      0.0000        NaN          117                                                                    NaN
+by_compartment   Halobacteriota                          summed_share_pct_Surface_q75      0.0000        NaN          117                                                                    NaN
+       by_trip Thermoplasmatota                   samples_with_any_rep_detected_trip1         190      190.0          210                                                                    NaN
+       by_trip Thermoplasmatota                         summed_share_pct_trip1_median      0.4725        NaN          210                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip1_q25      0.1192        NaN          210                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip1_q75      1.4258        NaN          210                                                                    NaN
+       by_trip   Halobacteriota                   samples_with_any_rep_detected_trip1          42       42.0          210                                                                    NaN
+       by_trip   Halobacteriota                         summed_share_pct_trip1_median      0.0000        NaN          210                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip1_q25      0.0000        NaN          210                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip1_q75      0.0000        NaN          210                                                                    NaN
+       by_trip Thermoplasmatota                   samples_with_any_rep_detected_trip2          34       34.0           37                                                                    NaN
+       by_trip Thermoplasmatota                         summed_share_pct_trip2_median      0.3077        NaN           37                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip2_q25      0.0327        NaN           37                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip2_q75      0.5013        NaN           37                                                                    NaN
+       by_trip   Halobacteriota                   samples_with_any_rep_detected_trip2           1        1.0           37                                                                    NaN
+       by_trip   Halobacteriota                         summed_share_pct_trip2_median      0.0000        NaN           37                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip2_q25      0.0000        NaN           37                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip2_q75      0.0000        NaN           37                                                                    NaN
+       by_trip Thermoplasmatota                   samples_with_any_rep_detected_trip3         105      105.0          126                                                                    NaN
+       by_trip Thermoplasmatota                         summed_share_pct_trip3_median      0.2057        NaN          126                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip3_q25      0.0159        NaN          126                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip3_q75      0.5956        NaN          126                                                                    NaN
+       by_trip   Halobacteriota                   samples_with_any_rep_detected_trip3          12       12.0          126                                                                    NaN
+       by_trip   Halobacteriota                         summed_share_pct_trip3_median      0.0000        NaN          126                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip3_q25      0.0000        NaN          126                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip3_q75      0.0000        NaN          126                                                                    NaN
+       by_trip Thermoplasmatota                   samples_with_any_rep_detected_trip4          72       72.0           85                                                                    NaN
+       by_trip Thermoplasmatota                         summed_share_pct_trip4_median      0.4541        NaN           85                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip4_q25      0.0296        NaN           85                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip4_q75      0.7363        NaN           85                                                                    NaN
+       by_trip   Halobacteriota                   samples_with_any_rep_detected_trip4           9        9.0           85                                                                    NaN
+       by_trip   Halobacteriota                         summed_share_pct_trip4_median      0.0000        NaN           85                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip4_q25      0.0000        NaN           85                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip4_q75      0.0000        NaN           85                                                                    NaN
+       by_trip Thermoplasmatota                   samples_with_any_rep_detected_trip5          80       80.0           91                                                                    NaN
+       by_trip Thermoplasmatota                         summed_share_pct_trip5_median      0.4994        NaN           91                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip5_q25      0.0882        NaN           91                                                                    NaN
+       by_trip Thermoplasmatota                            summed_share_pct_trip5_q75      1.0090        NaN           91                                                                    NaN
+       by_trip   Halobacteriota                   samples_with_any_rep_detected_trip5          17       17.0           91                                                                    NaN
+       by_trip   Halobacteriota                         summed_share_pct_trip5_median      0.0000        NaN           91                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip5_q25      0.0000        NaN           91                                                                    NaN
+       by_trip   Halobacteriota                            summed_share_pct_trip5_q75      0.0000        NaN           91                                                                    NaN
+        paired Thermoplasmatota                       sites_with_both_Surface_vs_Deep          45       45.0           61                                                                    NaN
+        paired Thermoplasmatota                        Surface_vs_Deep_median_Surface      0.2690        NaN           45                                                                    NaN
+        paired Thermoplasmatota                           Surface_vs_Deep_median_Deep      0.7210        NaN           45                                                                    NaN
+        paired Thermoplasmatota              Surface_vs_Deep_median_paired_difference     -0.3846        NaN           45                                                                    NaN
+        paired Thermoplasmatota                  Surface_vs_Deep_sites_Surface_higher           5        5.0           45                                                                 0 ties
+        paired Thermoplasmatota                     Surface_vs_Deep_sites_Deep_higher          40       40.0           45                                                                 0 ties
+        paired Thermoplasmatota                Surface_vs_Deep_wilcoxon_nonzero_pairs          45       45.0           45             scipy drops zero-difference pairs; this is the effective n
+        paired Thermoplasmatota                    Surface_vs_Deep_wilcoxon_statistic       105.0        NaN           45                                                                    NaN
+        paired Thermoplasmatota                            Surface_vs_Deep_wilcoxon_p   4.177e-07        NaN           45                                                                    NaN
+        paired Thermoplasmatota                             Surface_vs_Deep_direction Deep higher        NaN           45                    signed-rank on per-site medians of the summed share
+        paired Thermoplasmatota                     sites_with_both_PlantRoot_vs_bulk          53       53.0           61                                                                    NaN
+        paired Thermoplasmatota                    PlantRoot_vs_bulk_median_PlantRoot      0.4035        NaN           53                                                                    NaN
+        paired Thermoplasmatota                         PlantRoot_vs_bulk_median_bulk      0.5131        NaN           53                                                                    NaN
+        paired Thermoplasmatota            PlantRoot_vs_bulk_median_paired_difference     -0.0081        NaN           53                                                                    NaN
+        paired Thermoplasmatota              PlantRoot_vs_bulk_sites_PlantRoot_higher          26       26.0           53                                                                 0 ties
+        paired Thermoplasmatota                   PlantRoot_vs_bulk_sites_bulk_higher          27       27.0           53                                                                 0 ties
+        paired Thermoplasmatota              PlantRoot_vs_bulk_wilcoxon_nonzero_pairs          53       53.0           53             scipy drops zero-difference pairs; this is the effective n
+        paired Thermoplasmatota                  PlantRoot_vs_bulk_wilcoxon_statistic       666.0        NaN           53                                                                    NaN
+        paired Thermoplasmatota                          PlantRoot_vs_bulk_wilcoxon_p   6.612e-01        NaN           53                                                                    NaN
+        paired Thermoplasmatota                           PlantRoot_vs_bulk_direction bulk higher        NaN           53                    signed-rank on per-site medians of the summed share
+        paired Thermoplasmatota            sites_with_both_Surface_vs_Deep_fracmapped          45       45.0           61                                                                    NaN
+        paired Thermoplasmatota             Surface_vs_Deep_fracmapped_median_Surface      0.0061        NaN           45                                                                    NaN
+        paired Thermoplasmatota                Surface_vs_Deep_fracmapped_median_Deep      0.0148        NaN           45                                                                    NaN
+        paired Thermoplasmatota   Surface_vs_Deep_fracmapped_median_paired_difference     -0.0078        NaN           45                                                                    NaN
+        paired Thermoplasmatota       Surface_vs_Deep_fracmapped_sites_Surface_higher           7        7.0           45                                                                 0 ties
+        paired Thermoplasmatota          Surface_vs_Deep_fracmapped_sites_Deep_higher          38       38.0           45                                                                 0 ties
+        paired Thermoplasmatota     Surface_vs_Deep_fracmapped_wilcoxon_nonzero_pairs          45       45.0           45             scipy drops zero-difference pairs; this is the effective n
+        paired Thermoplasmatota         Surface_vs_Deep_fracmapped_wilcoxon_statistic       113.0        NaN           45                                                                    NaN
+        paired Thermoplasmatota                 Surface_vs_Deep_fracmapped_wilcoxon_p   7.936e-07        NaN           45                                                                    NaN
+        paired Thermoplasmatota                  Surface_vs_Deep_fracmapped_direction Deep higher        NaN           45                    signed-rank on per-site medians of the summed share
+        paired Thermoplasmatota          sites_with_both_PlantRoot_vs_bulk_fracmapped          53       53.0           61                                                                    NaN
+        paired Thermoplasmatota         PlantRoot_vs_bulk_fracmapped_median_PlantRoot      0.0079        NaN           53                                                                    NaN
+        paired Thermoplasmatota              PlantRoot_vs_bulk_fracmapped_median_bulk      0.0094        NaN           53                                                                    NaN
+        paired Thermoplasmatota PlantRoot_vs_bulk_fracmapped_median_paired_difference     -0.0001        NaN           53                                                                    NaN
+        paired Thermoplasmatota   PlantRoot_vs_bulk_fracmapped_sites_PlantRoot_higher          25       25.0           53                                                                 0 ties
+        paired Thermoplasmatota        PlantRoot_vs_bulk_fracmapped_sites_bulk_higher          28       28.0           53                                                                 0 ties
+        paired Thermoplasmatota   PlantRoot_vs_bulk_fracmapped_wilcoxon_nonzero_pairs          53       53.0           53             scipy drops zero-difference pairs; this is the effective n
+        paired Thermoplasmatota       PlantRoot_vs_bulk_fracmapped_wilcoxon_statistic       615.0        NaN           53                                                                    NaN
+        paired Thermoplasmatota               PlantRoot_vs_bulk_fracmapped_wilcoxon_p   3.736e-01        NaN           53                                                                    NaN
+        paired Thermoplasmatota                PlantRoot_vs_bulk_fracmapped_direction bulk higher        NaN           53                    signed-rank on per-site medians of the summed share
+        paired   Halobacteriota                       sites_with_both_Surface_vs_Deep          45       45.0           61                                                                    NaN
+        paired   Halobacteriota                        Surface_vs_Deep_median_Surface      0.0000        NaN           45                                                                    NaN
+        paired   Halobacteriota                           Surface_vs_Deep_median_Deep      0.0000        NaN           45                                                                    NaN
+        paired   Halobacteriota              Surface_vs_Deep_median_paired_difference      0.0000        NaN           45                                                                    NaN
+        paired   Halobacteriota                  Surface_vs_Deep_sites_Surface_higher           5        5.0           45                                                                37 ties
+        paired   Halobacteriota                     Surface_vs_Deep_sites_Deep_higher           3        3.0           45                                                                37 ties
+        paired   Halobacteriota                Surface_vs_Deep_wilcoxon_nonzero_pairs           8        8.0           45             scipy drops zero-difference pairs; this is the effective n
+        paired   Halobacteriota                    Surface_vs_Deep_wilcoxon_statistic        18.0        NaN           45                                                                    NaN
+        paired   Halobacteriota                            Surface_vs_Deep_wilcoxon_p   1.000e+00        NaN           45                                                                    NaN
+        paired   Halobacteriota                             Surface_vs_Deep_direction         tie        NaN           45                    signed-rank on per-site medians of the summed share
+        paired   Halobacteriota                     sites_with_both_PlantRoot_vs_bulk          53       53.0           61                                                                    NaN
+        paired   Halobacteriota                    PlantRoot_vs_bulk_median_PlantRoot      0.0000        NaN           53                                                                    NaN
+        paired   Halobacteriota                         PlantRoot_vs_bulk_median_bulk      0.0000        NaN           53                                                                    NaN
+        paired   Halobacteriota            PlantRoot_vs_bulk_median_paired_difference      0.0000        NaN           53                                                                    NaN
+        paired   Halobacteriota              PlantRoot_vs_bulk_sites_PlantRoot_higher           6        6.0           53                                                                41 ties
+        paired   Halobacteriota                   PlantRoot_vs_bulk_sites_bulk_higher           6        6.0           53                                                                41 ties
+        paired   Halobacteriota              PlantRoot_vs_bulk_wilcoxon_nonzero_pairs          12       12.0           53             scipy drops zero-difference pairs; this is the effective n
+        paired   Halobacteriota                  PlantRoot_vs_bulk_wilcoxon_statistic        36.0        NaN           53                                                                    NaN
+        paired   Halobacteriota                          PlantRoot_vs_bulk_wilcoxon_p   8.139e-01        NaN           53                                                                    NaN
+        paired   Halobacteriota                           PlantRoot_vs_bulk_direction         tie        NaN           53                    signed-rank on per-site medians of the summed share
+        paired   Halobacteriota            sites_with_both_Surface_vs_Deep_fracmapped          45       45.0           61                                                                    NaN
+        paired   Halobacteriota             Surface_vs_Deep_fracmapped_median_Surface      0.0000        NaN           45                                                                    NaN
+        paired   Halobacteriota                Surface_vs_Deep_fracmapped_median_Deep      0.0000        NaN           45                                                                    NaN
+        paired   Halobacteriota   Surface_vs_Deep_fracmapped_median_paired_difference      0.0000        NaN           45                                                                    NaN
+        paired   Halobacteriota       Surface_vs_Deep_fracmapped_sites_Surface_higher           5        5.0           45                                                                37 ties
+        paired   Halobacteriota          Surface_vs_Deep_fracmapped_sites_Deep_higher           3        3.0           45                                                                37 ties
+        paired   Halobacteriota     Surface_vs_Deep_fracmapped_wilcoxon_nonzero_pairs           8        8.0           45             scipy drops zero-difference pairs; this is the effective n
+        paired   Halobacteriota         Surface_vs_Deep_fracmapped_wilcoxon_statistic        17.0        NaN           45                                                                    NaN
+        paired   Halobacteriota                 Surface_vs_Deep_fracmapped_wilcoxon_p   8.886e-01        NaN           45                                                                    NaN
+        paired   Halobacteriota                  Surface_vs_Deep_fracmapped_direction         tie        NaN           45                    signed-rank on per-site medians of the summed share
+        paired   Halobacteriota          sites_with_both_PlantRoot_vs_bulk_fracmapped          53       53.0           61                                                                    NaN
+        paired   Halobacteriota         PlantRoot_vs_bulk_fracmapped_median_PlantRoot      0.0000        NaN           53                                                                    NaN
+        paired   Halobacteriota              PlantRoot_vs_bulk_fracmapped_median_bulk      0.0000        NaN           53                                                                    NaN
+        paired   Halobacteriota PlantRoot_vs_bulk_fracmapped_median_paired_difference      0.0000        NaN           53                                                                    NaN
+        paired   Halobacteriota   PlantRoot_vs_bulk_fracmapped_sites_PlantRoot_higher           6        6.0           53                                                                41 ties
+        paired   Halobacteriota        PlantRoot_vs_bulk_fracmapped_sites_bulk_higher           6        6.0           53                                                                41 ties
+        paired   Halobacteriota   PlantRoot_vs_bulk_fracmapped_wilcoxon_nonzero_pairs          12       12.0           53             scipy drops zero-difference pairs; this is the effective n
+        paired   Halobacteriota       PlantRoot_vs_bulk_fracmapped_wilcoxon_statistic        33.0        NaN           53                                                                    NaN
+        paired   Halobacteriota               PlantRoot_vs_bulk_fracmapped_wilcoxon_p   6.379e-01        NaN           53                                                                    NaN
+        paired   Halobacteriota                PlantRoot_vs_bulk_fracmapped_direction         tie        NaN           53                    signed-rank on per-site medians of the summed share
+        inputs              all                                    reps_with_a_ko_row        5438     5438.0         5438                                                                    NaN
+     ko_marker Thermoplasmatota                                                K00399           0        0.0          237                                 mcrA methyl-coenzyme M reductase alpha
+     ko_marker Thermoplasmatota                                                K00401           0        0.0          237                                  mcrB methyl-coenzyme M reductase beta
+     ko_marker Thermoplasmatota                                                K00402           0        0.0          237                                 mcrG methyl-coenzyme M reductase gamma
+     ko_marker Thermoplasmatota                                                K10944           0        0.0          237                              pmoA-amoA ammonia/methane monooxygenase A
+     ko_marker Thermoplasmatota                                                K10945           0        0.0          237                              pmoB-amoB ammonia/methane monooxygenase B
+     ko_marker Thermoplasmatota                                                K10946           0        0.0          237                              pmoC-amoC ammonia/methane monooxygenase C
+     ko_marker Thermoplasmatota                                                K04641           0        0.0          237                                                  bop bacteriorhodopsin
+     ko_marker Thermoplasmatota                                                K04642           0        0.0          237                                                      hop halorhodopsin
+     ko_marker Thermoplasmatota                                                K04643           0        0.0          237                                                  sop sensory rhodopsin
+     ko_marker Thermoplasmatota                                                K06281          17       17.0          237                               hyaB/hybC NiFe hydrogenase large subunit
+     ko_marker Thermoplasmatota                                                K03520          12       12.0          237                             coxL form-I CO dehydrogenase large subunit
+     ko_marker Thermoplasmatota                                                K02588           0        0.0          237                                          nifH nitrogenase iron protein
+     ko_marker Thermoplasmatota                                                K02586           0        0.0          237                                            nifD nitrogenase MoFe alpha
+     ko_marker Thermoplasmatota                                                K02591           0        0.0          237                                             nifK nitrogenase MoFe beta
+     ko_marker Thermoplasmatota                                                K01669           5        5.0          237                                   phr deoxyribodipyrimidine photolyase
+     ko_marker Thermoplasmatota                                                K00697          24       24.0          237                                    otsA trehalose-6-phosphate synthase
+     ko_marker Thermoplasmatota                                                K01087          23       23.0          237                                 otsB trehalose-6-phosphate phosphatase
+     ko_marker Thermoplasmatota                                                K06720           1        1.0          237                                                ectC L-ectoine synthase
+     ko_marker Thermoplasmatota                                                K02274         168      168.0          237                                    coxA cytochrome c oxidase subunit I
+     ko_marker Thermoplasmatota                                                K00425          31       31.0          237                                           cydA cytochrome bd subunit I
+     ko_marker Thermoplasmatota                                                K00426          35       35.0          237                                          cydB cytochrome bd subunit II
+    ko_set_any Thermoplasmatota                                                   mcr           0        0.0          237 methanogenesis / anaerobic methanotrophy (any of K00399+K00401+K00402)
+    ko_set_all Thermoplasmatota                                                   mcr           0        0.0          237 methanogenesis / anaerobic methanotrophy (all of K00399+K00401+K00402)
+    ko_set_any Thermoplasmatota                                                   amo           0        0.0          237          ammonia (methane) monooxygenase (any of K10944+K10945+K10946)
+    ko_set_all Thermoplasmatota                                                   amo           0        0.0          237          ammonia (methane) monooxygenase (all of K10944+K10945+K10946)
+    ko_set_any Thermoplasmatota                                             rhodopsin           0        0.0          237                     microbial rhodopsins (any of K04641+K04642+K04643)
+    ko_set_all Thermoplasmatota                                             rhodopsin           0        0.0          237                     microbial rhodopsins (all of K04641+K04642+K04643)
+    ko_set_any Thermoplasmatota                                           hydrogenase          17       17.0          237                         NiFe hydrogenase large subunit (any of K06281)
+    ko_set_all Thermoplasmatota                                           hydrogenase          17       17.0          237                         NiFe hydrogenase large subunit (all of K06281)
+    ko_set_any Thermoplasmatota                                                  coxL          12       12.0          237                                form-I CO dehydrogenase (any of K03520)
+    ko_set_all Thermoplasmatota                                                  coxL          12       12.0          237                                form-I CO dehydrogenase (all of K03520)
+    ko_set_any Thermoplasmatota                                                   nif           0        0.0          237                              nitrogenase (any of K02588+K02586+K02591)
+    ko_set_all Thermoplasmatota                                                   nif           0        0.0          237                              nitrogenase (all of K02588+K02586+K02591)
+    ko_set_any Thermoplasmatota                                            photolyase           5        5.0          237                                             photolyase (any of K01669)
+    ko_set_all Thermoplasmatota                                            photolyase           5        5.0          237                                             photolyase (all of K01669)
+    ko_set_any Thermoplasmatota                                             trehalose          30       30.0          237                             trehalose synthesis (any of K00697+K01087)
+    ko_set_all Thermoplasmatota                                             trehalose          17       17.0          237                             trehalose synthesis (all of K00697+K01087)
+    ko_set_any Thermoplasmatota                                               ectoine           1        1.0          237                                       ectoine synthase (any of K06720)
+    ko_set_all Thermoplasmatota                                               ectoine           1        1.0          237                                       ectoine synthase (all of K06720)
+    ko_set_any Thermoplasmatota                                          aerobic_coxA         168      168.0          237                         cytochrome c oxidase subunit I (any of K02274)
+    ko_set_all Thermoplasmatota                                          aerobic_coxA         168      168.0          237                         cytochrome c oxidase subunit I (all of K02274)
+    ko_set_any Thermoplasmatota                                           aerobic_cyd          38       38.0          237                                   cytochrome bd (any of K00425+K00426)
+    ko_set_all Thermoplasmatota                                           aerobic_cyd          28       28.0          237                                   cytochrome bd (all of K00425+K00426)
+     ko_marker Thermoplasmatota                                   median_completeness       85.42        NaN          237                                             read absences against this
+     ko_marker   Halobacteriota                                                K00399           0        0.0          269                                 mcrA methyl-coenzyme M reductase alpha
+     ko_marker   Halobacteriota                                                K00401           0        0.0          269                                  mcrB methyl-coenzyme M reductase beta
+     ko_marker   Halobacteriota                                                K00402           0        0.0          269                                 mcrG methyl-coenzyme M reductase gamma
+     ko_marker   Halobacteriota                                                K10944           0        0.0          269                              pmoA-amoA ammonia/methane monooxygenase A
+     ko_marker   Halobacteriota                                                K10945           0        0.0          269                              pmoB-amoB ammonia/methane monooxygenase B
+     ko_marker   Halobacteriota                                                K10946           0        0.0          269                              pmoC-amoC ammonia/methane monooxygenase C
+     ko_marker   Halobacteriota                                                K04641          26       26.0          269                                                  bop bacteriorhodopsin
+     ko_marker   Halobacteriota                                                K04642          13       13.0          269                                                      hop halorhodopsin
+     ko_marker   Halobacteriota                                                K04643          30       30.0          269                                                  sop sensory rhodopsin
+     ko_marker   Halobacteriota                                                K06281          39       39.0          269                               hyaB/hybC NiFe hydrogenase large subunit
+     ko_marker   Halobacteriota                                                K03520         151      151.0          269                             coxL form-I CO dehydrogenase large subunit
+     ko_marker   Halobacteriota                                                K02588           0        0.0          269                                          nifH nitrogenase iron protein
+     ko_marker   Halobacteriota                                                K02586           0        0.0          269                                            nifD nitrogenase MoFe alpha
+     ko_marker   Halobacteriota                                                K02591           0        0.0          269                                             nifK nitrogenase MoFe beta
+     ko_marker   Halobacteriota                                                K01669         108      108.0          269                                   phr deoxyribodipyrimidine photolyase
+     ko_marker   Halobacteriota                                                K00697         170      170.0          269                                    otsA trehalose-6-phosphate synthase
+     ko_marker   Halobacteriota                                                K01087         146      146.0          269                                 otsB trehalose-6-phosphate phosphatase
+     ko_marker   Halobacteriota                                                K06720           5        5.0          269                                                ectC L-ectoine synthase
+     ko_marker   Halobacteriota                                                K02274         235      235.0          269                                    coxA cytochrome c oxidase subunit I
+     ko_marker   Halobacteriota                                                K00425          47       47.0          269                                           cydA cytochrome bd subunit I
+     ko_marker   Halobacteriota                                                K00426          49       49.0          269                                          cydB cytochrome bd subunit II
+    ko_set_any   Halobacteriota                                                   mcr           0        0.0          269 methanogenesis / anaerobic methanotrophy (any of K00399+K00401+K00402)
+    ko_set_all   Halobacteriota                                                   mcr           0        0.0          269 methanogenesis / anaerobic methanotrophy (all of K00399+K00401+K00402)
+    ko_set_any   Halobacteriota                                                   amo           0        0.0          269          ammonia (methane) monooxygenase (any of K10944+K10945+K10946)
+    ko_set_all   Halobacteriota                                                   amo           0        0.0          269          ammonia (methane) monooxygenase (all of K10944+K10945+K10946)
+    ko_set_any   Halobacteriota                                             rhodopsin          51       51.0          269                     microbial rhodopsins (any of K04641+K04642+K04643)
+    ko_set_all   Halobacteriota                                             rhodopsin           5        5.0          269                     microbial rhodopsins (all of K04641+K04642+K04643)
+    ko_set_any   Halobacteriota                                           hydrogenase          39       39.0          269                         NiFe hydrogenase large subunit (any of K06281)
+    ko_set_all   Halobacteriota                                           hydrogenase          39       39.0          269                         NiFe hydrogenase large subunit (all of K06281)
+    ko_set_any   Halobacteriota                                                  coxL         151      151.0          269                                form-I CO dehydrogenase (any of K03520)
+    ko_set_all   Halobacteriota                                                  coxL         151      151.0          269                                form-I CO dehydrogenase (all of K03520)
+    ko_set_any   Halobacteriota                                                   nif           0        0.0          269                              nitrogenase (any of K02588+K02586+K02591)
+    ko_set_all   Halobacteriota                                                   nif           0        0.0          269                              nitrogenase (all of K02588+K02586+K02591)
+    ko_set_any   Halobacteriota                                            photolyase         108      108.0          269                                             photolyase (any of K01669)
+    ko_set_all   Halobacteriota                                            photolyase         108      108.0          269                                             photolyase (all of K01669)
+    ko_set_any   Halobacteriota                                             trehalose         175      175.0          269                             trehalose synthesis (any of K00697+K01087)
+    ko_set_all   Halobacteriota                                             trehalose         141      141.0          269                             trehalose synthesis (all of K00697+K01087)
+    ko_set_any   Halobacteriota                                               ectoine           5        5.0          269                                       ectoine synthase (any of K06720)
+    ko_set_all   Halobacteriota                                               ectoine           5        5.0          269                                       ectoine synthase (all of K06720)
+    ko_set_any   Halobacteriota                                          aerobic_coxA         235      235.0          269                         cytochrome c oxidase subunit I (any of K02274)
+    ko_set_all   Halobacteriota                                          aerobic_coxA         235      235.0          269                         cytochrome c oxidase subunit I (all of K02274)
+    ko_set_any   Halobacteriota                                           aerobic_cyd          50       50.0          269                                   cytochrome bd (any of K00425+K00426)
+    ko_set_all   Halobacteriota                                           aerobic_cyd          46       46.0          269                                   cytochrome bd (all of K00425+K00426)
+     ko_marker   Halobacteriota                                   median_completeness       79.73        NaN          269                                             read absences against this
+
+--- v2_thermo_metabolism_report.txt (full) ---
+modules 399  genomes 5438  median modules present per genome 80
+KO classes: glycoside hydrolase (EC:3.2.1) 223, peptidase (EC:3.4.) 802, transport-system 589 (carbohydrate 104, peptide/amino-acid 67)
+matched halo: 181 of 237 pairs, caliper 1.0 completeness points; median completeness thermo 81.88 vs control 81.87
+matched archaea_other: 216 of 237 pairs, caliper 1.0 completeness points; median completeness thermo 84.16 vs control 84.14
+matched bacteria: 237 of 237 pairs, caliper 1.0 completeness points; median completeness thermo 85.42 vs control 85.42
+group thermo_237               n=  237  median completeness 85.42
+group thermo_SW-10-69-26       n=  185  median completeness 85.64
+group thermo_E2                n=   51  median completeness 82.45
+group halo_all                 n=  269  median completeness 79.73
+group archaea_other_all        n=  354  median completeness 80.81
+group archaea_nonhalo_all      n=   85  median completeness 88.43
+group bacteria_all             n= 4847  median completeness 90.58
+group halo_matched             n=  181  median completeness 81.87
+group archaea_other_matched    n=  216  median completeness 84.14
+group bacteria_matched         n=  237  median completeness 85.42
+wrote /ibex/project/c2014/rob/metagenomics/06_darkmatter/lineage_darkness_clean/results/v2_thermo_metabolism_summary.tsv  rows 6526
+wrote /ibex/project/c2014/rob/metagenomics/06_darkmatter/lineage_darkness_clean/results/v2_thermo_metabolism_by_rep.tsv  rows 5438  cols 403
+
+=== contrasts, Thermoplasmatota against completeness-matched controls (Fisher exact, BH q over all features x 3 controls) ===
+
+--- vs halo_matched, LOWER in the 237
+feature       thermo  control   delta          q  name
+ilv_carbon_skeleton   0.017    0.912  -0.895   3.13e-77  
+M00526         0.017    0.867  -0.851   1.67e-69  Lysine biosynthesis, DAP dehydrogenase pathway, aspartate 
+pyruvate_ferredoxin_OR   0.017    0.851  -0.834   6.58e-67  
+AA_Val         0.017    0.845  -0.829   3.94e-66  
+M00019         0.017    0.845  -0.829   3.94e-66  Valine/isoleucine biosynthesis, pyruvate => valine / 2-oxo
+M00016         0.000    0.823  -0.823   2.93e-68  Lysine biosynthesis, succinyl-DAP pathway, aspartate => ly
+M00570         0.017    0.818  -0.801   4.27e-62  Isoleucine biosynthesis, threonine => 2-oxobutanoate => is
+M00378         0.000    0.773  -0.773   1.54e-61  F420 biosynthesis
+COF_F420       0.000    0.773  -0.773   1.54e-61  
+M00134         0.000    0.773  -0.773   1.54e-61  Polyamine biosynthesis, arginine => ornithine => putrescin
+M00527         0.000    0.762  -0.762   3.99e-60  Lysine biosynthesis, DAP aminotransferase pathway, asparta
+M00006         0.006    0.751  -0.746   1.02e-56  Pentose phosphate pathway, oxidative phase, glucose 6P => 
+
+--- vs halo_matched, HIGHER in the 237
+feature       thermo  control   delta          q  name
+M00028         0.906    0.039   0.867   1.91e-70  Ornithine biosynthesis, glutamate => ornithine
+M00007         0.773    0.000   0.773   1.54e-61  Pentose phosphate pathway, non-oxidative phase, fructose 6
+M00580         0.818    0.099   0.718   1.61e-45  Pentose phosphate pathway, archaea, fructose 6P => ribose 
+M00373         0.680    0.000   0.680   2.44e-50  Ethylmalonyl pathway
+M00035         0.812    0.144   0.669   1.68e-38  Methionine degradation
+M00338         0.669    0.099   0.569   1.94e-29  Cysteine biosynthesis, homocysteine + serine => cysteine
+M00167         0.519    0.006   0.514   5.74e-33  Reductive pentose phosphate cycle, glyceraldehyde-3P => ri
+M00151         0.475    0.006   0.470   2.76e-29  Cytochrome bc1 complex respiratory unit
+M00260         0.470    0.017   0.453   3.81e-26  DNA polymerase III complex, bacteria
+AA_Pro         0.586    0.133   0.453   6.20e-19  
+M00015         0.586    0.133   0.453   6.20e-19  Proline biosynthesis, glutamate => proline
+M00845         0.442    0.000   0.442   2.39e-28  Arginine biosynthesis, glutamate => acetylcitrulline => ar
+
+--- vs archaea_other_matched, LOWER in the 237
+feature       thermo  control   delta          q  name
+ilv_carbon_skeleton   0.014    0.833  -0.819   1.34e-77  
+AA_Val         0.014    0.764  -0.750   1.91e-66  
+M00019         0.014    0.764  -0.750   1.91e-66  Valine/isoleucine biosynthesis, pyruvate => valine / 2-oxo
+M00570         0.014    0.741  -0.727   4.60e-63  Isoleucine biosynthesis, threonine => 2-oxobutanoate => is
+COF_F420       0.000    0.694  -0.694   4.23e-62  
+M00378         0.000    0.694  -0.694   4.23e-62  F420 biosynthesis
+M00122         0.000    0.630  -0.630   6.79e-54  Cobalamin biosynthesis, cobinamide => cobalamin
+COF_cobalamin   0.000    0.630  -0.630   6.79e-54  
+M00526         0.019    0.639  -0.620   1.86e-48  Lysine biosynthesis, DAP dehydrogenase pathway, aspartate 
+M00016         0.000    0.606  -0.606   3.78e-51  Lysine biosynthesis, succinyl-DAP pathway, aspartate => ly
+pyruvate_ferredoxin_OR   0.014    0.616  -0.602   3.82e-47  
+M00050         0.093    0.694  -0.602   4.18e-39  Guanine ribonucleotide biosynthesis IMP => GDP,GTP
+
+--- vs archaea_other_matched, HIGHER in the 237
+feature       thermo  control   delta          q  name
+M00028         0.907    0.042   0.866   1.81e-83  Ornithine biosynthesis, glutamate => ornithine
+M00580         0.819    0.079   0.741   1.33e-58  Pentose phosphate pathway, archaea, fructose 6P => ribose 
+M00035         0.833    0.125   0.708   4.50e-52  Methionine degradation
+M00373         0.699    0.000   0.699   1.04e-62  Ethylmalonyl pathway
+M00007         0.787    0.162   0.625   1.02e-39  Pentose phosphate pathway, non-oxidative phase, fructose 6
+M00338         0.699    0.079   0.620   4.05e-42  Cysteine biosynthesis, homocysteine + serine => cysteine
+M00167         0.532    0.009   0.523   1.79e-39  Reductive pentose phosphate cycle, glyceraldehyde-3P => ri
+M00015         0.611    0.102   0.509   7.60e-29  Proline biosynthesis, glutamate => proline
+M00012         0.782    0.273   0.509   6.38e-26  Glyoxylate cycle
+AA_Pro         0.611    0.102   0.509   7.60e-29  
+M00845         0.486    0.000   0.486   3.43e-38  Arginine biosynthesis, glutamate => acetylcitrulline => ar
+M00045         0.810    0.338   0.472   9.70e-23  Histidine degradation, histidine => N-formiminoglutamate =
+
+--- vs bacteria_matched, LOWER in the 237
+feature       thermo  control   delta          q  name
+M00183         0.051    0.983  -0.932  2.29e-111  RNA polymerase, bacteria
+M00157         0.030    0.954  -0.924  5.06e-108  F-type ATPase, prokaryotes and chloroplasts
+ATPase_F_half   0.000    0.840  -0.840   9.76e-93  
+M00082         0.068    0.873  -0.806   5.22e-77  Fatty acid biosynthesis, initiation
+M00016         0.004    0.806  -0.802   5.09e-84  Lysine biosynthesis, succinyl-DAP pathway, aspartate => ly
+oxoglutarate_dehydrogenase   0.030    0.819  -0.789   5.37e-77  
+ilv_carbon_skeleton   0.017    0.806  -0.789   6.90e-79  
+M00527         0.000    0.789  -0.789   3.26e-83  Lysine biosynthesis, DAP aminotransferase pathway, asparta
+M00526         0.021    0.797  -0.776   5.35e-76  Lysine biosynthesis, DAP dehydrogenase pathway, aspartate 
+COF_pantothenate   0.000    0.764  -0.764   6.90e-79  
+M00119         0.000    0.764  -0.764   6.90e-79  Pantothenate biosynthesis, valine/L-aspartate => pantothen
+M00050         0.084    0.835  -0.751   8.91e-66  Guanine ribonucleotide biosynthesis IMP => GDP,GTP
+
+--- vs bacteria_matched, HIGHER in the 237
+feature       thermo  control   delta          q  name
+M00184         1.000    0.004   0.996  3.94e-136  RNA polymerase, archaea
+archaellum_fla   0.996    0.004   0.992  4.65e-134  
+M00177         1.000    0.021   0.979  3.66e-129  Ribosome, eukaryotes
+M00264         0.954    0.004   0.949  3.92e-118  DNA polymerase II complex, archaea
+M00159         0.987    0.051   0.937  5.04e-113  V/A-type ATPase, prokaryotes
+ATPase_VA_half   0.911    0.013   0.899  1.04e-102  
+M00072         0.937    0.046   0.890   1.05e-97  N-glycosylation by oligosaccharyltransferase
+M00849         0.949    0.059   0.890   1.14e-97  C5 isoprenoid biosynthesis, mevalonate pathway, archaea
+M00580         0.827    0.042   0.785   9.37e-75  Pentose phosphate pathway, archaea, fructose 6P => ribose 
+M00031         0.768    0.030   0.738   2.93e-68  Lysine biosynthesis, mediated by LysW, 2-aminoadipate => l
+M00365         0.827    0.152   0.675   2.87e-51  C10-C20 isoprenoid biosynthesis, archaea
+crispr_any     0.793    0.177   0.616   3.95e-42  
+
+=== consistent standouts: |delta| > 0.10 against ALL THREE matched controls ===
+HIGHER in the 237: 18 features
+  M00580       halo +0.718  arch +0.741  bact +0.785  Pentose phosphate pathway, archaea, fructose 6P => ribose 5P
+  M00338       halo +0.569  arch +0.620  bact +0.502  Cysteine biosynthesis, homocysteine + serine => cysteine
+  M00035       halo +0.669  arch +0.708  bact +0.481  Methionine degradation
+  M00012       halo +0.420  arch +0.509  bact +0.414  Glyoxylate cycle
+  M00145       halo +0.337  arch +0.435  bact +0.376  NAD(P)H:quinone oxidoreductase, chloroplasts and cyanobacter
+  M00045       halo +0.326  arch +0.472  bact +0.414  Histidine degradation, histidine => N-formiminoglutamate => 
+  M00166       halo +0.254  arch +0.375  bact +0.329  Reductive pentose phosphate cycle, ribulose-5P => glyceralde
+  M00416       halo +0.265  arch +0.287  bact +0.249  Cytochrome aa3-600 menaquinol oxidase
+  crispr_cas3_typeI halo +0.232  arch +0.273  bact +0.249  crispr_cas3_typeI
+  rieske_bc_K03886 halo +0.370  arch +0.384  bact +0.224  rieske_bc_K03886
+  M00373       halo +0.680  arch +0.699  bact +0.186  Ethylmalonyl pathway
+  sqr_sulfide_oxidation halo +0.320  arch +0.208  bact +0.173  sqr_sulfide_oxidation
+  oxoglutarate_ferredoxin_OR halo +0.166  arch +0.231  bact +0.468  oxoglutarate_ferredoxin_OR
+  M00845       halo +0.442  arch +0.486  bact +0.156  Arginine biosynthesis, glutamate => acetylcitrulline => argi
+  AA_Cys       halo +0.144  arch +0.329  bact +0.160  AA_Cys
+  M00072       halo +0.149  arch +0.144  bact +0.890  N-glycosylation by oligosaccharyltransferase
+  M00433       halo +0.133  arch +0.153  bact +0.135  Lysine biosynthesis, 2-oxoglutarate => 2-oxoadipate
+  AA_ornithine halo +0.243  arch +0.287  bact +0.127  AA_ornithine
+LOWER in the 237: 43 features
+  ilv_carbon_skeleton halo -0.895  arch -0.819  bact -0.789  ilv_carbon_skeleton
+  AA_Val       halo -0.829  arch -0.750  bact -0.713  AA_Val
+  M00019       halo -0.829  arch -0.750  bact -0.713  Valine/isoleucine biosynthesis, pyruvate => valine / 2-oxobu
+  M00570       halo -0.801  arch -0.727  bact -0.654  Isoleucine biosynthesis, threonine => 2-oxobutanoate => isol
+  M00526       halo -0.851  arch -0.620  bact -0.776  Lysine biosynthesis, DAP dehydrogenase pathway, aspartate =>
+  M00016       halo -0.823  arch -0.606  bact -0.802  Lysine biosynthesis, succinyl-DAP pathway, aspartate => lysi
+  M00050       halo -0.702  arch -0.602  bact -0.751  Guanine ribonucleotide biosynthesis IMP => GDP,GTP
+  M00527       halo -0.762  arch -0.560  bact -0.789  Lysine biosynthesis, DAP aminotransferase pathway, aspartate
+  M00006       halo -0.746  arch -0.551  bact -0.557  Pentose phosphate pathway, oxidative phase, glucose 6P => ri
+  sugar_ABC_msm halo -0.707  arch -0.528  bact -0.582  sugar_ABC_msm
+  paps_reductase halo -0.586  arch -0.574  bact -0.523  paps_reductase
+  pep_carboxykinase halo -0.519  arch -0.505  bact -0.705  pep_carboxykinase
+  glutamate_synthase_GOGAT halo -0.624  arch -0.417  bact -0.591  glutamate_synthase_GOGAT
+  COF_cobalamin halo -0.663  arch -0.630  bact -0.397  COF_cobalamin
+  M00122       halo -0.663  arch -0.630  bact -0.397  Cobalamin biosynthesis, cobinamide => cobalamin
+  catalase     halo -0.575  arch -0.398  bact -0.376  catalase
+  M00308       halo -0.657  arch -0.458  bact -0.333  Semi-phosphorylative Entner-Doudoroff pathway, gluconate => 
+  M00615       halo -0.696  arch -0.514  bact -0.329  Nitrate assimilation
+  M00021       halo -0.459  arch -0.315  bact -0.418  Cysteine biosynthesis, serine => cysteine
+  trehalose_otsAB halo -0.475  arch -0.296  bact -0.447  trehalose_otsAB
+  COF_F420     halo -0.773  arch -0.694  bact -0.283  COF_F420
+  M00378       halo -0.773  arch -0.694  bact -0.283  F420 biosynthesis
+  M00046       halo -0.276  arch -0.324  bact -0.295  Pyrimidine degradation, uracil => beta-alanine, thymine => 3
+  M00525       halo -0.392  arch -0.273  bact -0.451  Lysine biosynthesis, acetyl-DAP pathway, aspartate => lysine
+  nitrate_reductase_assim halo -0.387  arch -0.273  bact -0.363  nitrate_reductase_assim
+
+=== SW-10-69-26 (185) vs E2 (51): features differing by more than 0.25 in share ===
+completeness  SW 85.64  E2 82.45  MWU p=1.83e-01
+corrected size  SW 3.84 Mb  E2 2.89 Mb  MWU p=2.85e-19
+1:1 completeness-matched SW control for E2: 51 of 51 pairs; median KO richness E2 819 vs SW 952
+feature          SW     E2   delta          p  name
+peptide_nickel_ABC  0.686  0.039  +0.647   3.67e-18  
+glutamate_synthase_GOGAT  0.054  0.686  -0.632   1.31e-20  
+branched_chain_aa_ABC  0.908  0.353  +0.555   2.51e-15  
+pyruvate_kinase  0.881  0.353  +0.528   2.02e-13  
+M00023        0.941  0.451  +0.490   5.40e-14  Tryptophan biosynthesis, chorismate => tryptophan
+AA_Trp        0.941  0.451  +0.490   5.40e-14  
+acetyl_CoA_synthetase  0.941  0.471  +0.470   3.21e-13  
+M00015        0.703  0.235  +0.467   3.57e-09  Proline biosynthesis, glutamate => proline
+AA_Pro        0.703  0.235  +0.467   3.57e-09  
+M00026        0.930  0.549  +0.381   1.56e-09  Histidine biosynthesis, PRPP => histidine
+AA_His        0.930  0.549  +0.381   1.56e-09  
+superoxide_dismutase  0.881  0.510  +0.371   5.48e-08  
+M00121        0.697  0.333  +0.364   3.58e-06  Heme biosynthesis, plants and bacteria, glutamate => heme
+COF_heme      0.697  0.333  +0.364   3.58e-06  
+chemotaxis_cheAY  0.795  0.431  +0.363   1.17e-06  
+oligopeptide_POT  0.400  0.039  +0.361   1.27e-07  
+M00017        0.692  0.333  +0.359   7.13e-06  Methionine biosynthesis, apartate => homoserine => methion
+AA_Met        0.692  0.333  +0.359   7.13e-06  
+crispr_cas3_typeI  0.416  0.059  +0.357   2.65e-07  
+M00018        0.805  0.451  +0.354   1.76e-06  Threonine biosynthesis, aspartate => homoserine => threoni
+AA_Thr        0.805  0.451  +0.354   1.76e-06  
+sulfate_adenylyltransferase  0.524  0.196  +0.328   2.75e-05  
+M00846        0.589  0.275  +0.315   7.00e-05  Siroheme biosynthesis, glutamate => siroheme
+COF_siroheme  0.589  0.275  +0.315   7.00e-05  
+M00095        0.584  0.275  +0.309   1.19e-04  C5 isoprenoid biosynthesis, mevalonate pathway
+M00115        0.481  0.176  +0.305   9.14e-05  NAD biosynthesis, aspartate => NAD
+COF_NAD       0.481  0.176  +0.305   9.14e-05  
+M00416        0.400  0.098  +0.302   2.18e-05  Cytochrome aa3-600 menaquinol oxidase
+M00260        0.395  0.686  -0.292   2.46e-04  DNA polymerase III complex, bacteria
+M00020        0.919  0.627  +0.291   1.83e-06  Serine biosynthesis, glycerate-3P => serine
+
+=== aggregate counts per group (median; per100comp = divided by completeness/100) ===
+group                       n   comp ko_richness n_modules_p          gh   peptidase transporter carb_transp pep_aa_tran  AAproto/16  COF/17
+thermo_237                237  85.42         923          62           5          28          38           2          11          11       5
+thermo_SW-10-69-26        185  85.64         957          63           6          30          41           2          13          11       5
+thermo_E2                  51  82.45         819          59           4          19          28           2           1           8       4
+halo_all                  269  79.73         910          64           4          17          48           7          12          11       7
+archaea_other_all         354  80.81         873          61           3          16          45           6          10          11       7
+archaea_nonhalo_all        85  88.43         694          50           2          14          20           1           4           8       4
+bacteria_all             4847  90.58        1301          83          10          34          68           9          14          12      10
+halo_matched              181  81.87         931          65           4          17          48           7          12          11       7
+archaea_other_matched     216  84.14         875          62           3          17          44           6          10          11       7
+bacteria_matched          237  85.42        1257          78           8          33          67           9          14          12       9
+
+=== amino-acid prototrophy (module-encoded): share of genomes per group ===
+feature           thermo_237 thermo_SW-10-     thermo_E2        halo_m archaea_other    bacteria_m  bacteria_all
+Arg                    0.852         0.854         0.863         0.840         0.769         0.814         0.826
+Cys                    0.700         0.741         0.549         0.530         0.375         0.540         0.613
+His                    0.844         0.930         0.549         0.994         0.894         0.857         0.844
+Ile                    0.852         0.865         0.804         0.945         0.852         0.819         0.844
+Leu                    0.945         0.957         0.902         0.867         0.796         0.789         0.826
+Lys                    0.781         0.762         0.863         0.939         0.856         0.869         0.889
+Met                    0.612         0.692         0.333         0.354         0.250         0.523         0.623
+Phe                    0.000         0.000         0.000         0.000         0.000         0.097         0.111
+Pro                    0.599         0.703         0.235         0.133         0.102         0.671         0.679
+Ser                    0.857         0.919         0.627         0.840         0.773         0.671         0.694
+Thr                    0.726         0.805         0.451         0.818         0.736         0.734         0.779
+Trp                    0.831         0.941         0.451         0.978         0.866         0.890         0.901
+Tyr                    0.000         0.000         0.000         0.000         0.000         0.097         0.114
+Val                    0.017         0.011         0.020         0.845         0.764         0.730         0.774
+chorismate             0.751         0.762         0.725         0.773         0.718         0.882         0.898
+ornithine              0.928         0.919         0.980         0.691         0.648         0.802         0.811
+
+=== cofactor biosynthesis: share of genomes per group ===
+feature           thermo_237 thermo_SW-10-     thermo_E2        halo_m archaea_other    bacteria_m  bacteria_all
+NAD                    0.414         0.481         0.176         0.348         0.255         0.599         0.652
+CoA                    0.755         0.751         0.765         0.796         0.704         0.911         0.920
+pantothenate           0.000         0.000         0.000         0.000         0.000         0.764         0.784
+riboflavin             0.810         0.800         0.843         0.762         0.704         0.806         0.845
+thiamine               0.004         0.005         0.000         0.265         0.204         0.654         0.627
+pyridoxal              0.000         0.000         0.000         0.000         0.000         0.219         0.254
+biotin                 0.076         0.032         0.235         0.298         0.343         0.439         0.490
+folate                 0.333         0.373         0.196         0.028         0.028         0.688         0.752
+cobalamin              0.004         0.005         0.000         0.663         0.630         0.401         0.370
+heme                   0.616         0.697         0.333         0.436         0.296         0.662         0.706
+siroheme               0.523         0.589         0.275         0.901         0.815         0.776         0.816
+menaquinone            0.333         0.319         0.392         0.862         0.625         0.338         0.375
+ubiquinone             0.004         0.005         0.000         0.000         0.000         0.165         0.145
+glutathione            0.055         0.000         0.255         0.000         0.000         0.249         0.249
+F420                   0.000         0.000         0.000         0.773         0.694         0.283         0.345
+coenzyme_M             0.000         0.000         0.000         0.000         0.005         0.000         0.002
+isoprenoid             0.949         0.946         0.961         0.978         0.875         0.692         0.751
+
+=== most prevalent enzymes of each class in the 237, with matched-control shares ===
+
+--- glycoside hydrolase (EC:3.2.1): 69 of 223 seen in the 237
+KO         thermo     SW     E2  halo_m  arch_m  bact_m  name
+K01179      0.793  0.773  0.863   0.282   0.250   0.536  endoglucanase [EC:3.2.1.4]
+K07405      0.565  0.616  0.392   0.000   0.060   0.038  alpha-amylase [EC:3.2.1.1]
+K01183      0.443  0.459  0.373   0.188   0.139   0.203  chitinase [EC:3.2.1.14]
+K01178      0.430  0.514  0.118   0.072   0.079   0.186  glucoamylase [EC:3.2.1.3]
+K05989      0.401  0.497  0.039   0.188   0.162   0.177  alpha-L-rhamnosidase [EC:3.2.1.40]
+K01186      0.384  0.411  0.294   0.039   0.065   0.190  sialidase-1 [EC:3.2.1.18]
+K19668      0.325  0.303  0.412   0.000   0.023   0.042  cellulose 1,4-beta-cellobiosidase [EC:3.2.1.91]
+K12308      0.304  0.389  0.000   0.105   0.079   0.181  beta-galactosidase [EC:3.2.1.23]
+K01181      0.241  0.222  0.314   0.138   0.134   0.262  endo-1,4-beta-xylanase [EC:3.2.1.8]
+K01187      0.152  0.195  0.000   0.066   0.042   0.578  alpha-glucosidase [EC:3.2.1.20]
+K21606      0.143  0.173  0.039   0.105   0.069   0.008  endo-chitodextinase [EC:3.2.1.202]
+K01224      0.093  0.108  0.039   0.000   0.000   0.072  arabinogalactan endo-1,4-beta-galactosidase [EC:3.2.
+
+--- peptidase (EC:3.4.): 175 of 802 seen in the 237
+KO         thermo     SW     E2  halo_m  arch_m  bact_m  name
+K13280      0.962  0.978  0.902   0.945   0.935   0.173  signal peptidase I [EC:3.4.21.89]
+K03799      0.962  0.962  0.961   0.972   0.931   0.705  heat shock protein HtpX [EC:3.4.24.-]
+K17734      0.958  0.989  0.843   0.028   0.032   0.236  serine protease AprX [EC:3.4.21.-]
+K03432      0.932  0.941  0.902   0.934   0.931   0.173  proteasome alpha subunit [EC:3.4.25.1]
+K14645      0.920  0.989  0.667   0.696   0.574   0.350  serine protease [EC:3.4.21.-]
+K01265      0.907  0.903  0.922   0.834   0.847   0.835  methionyl aminopeptidase [EC:3.4.11.18]
+K07991      0.890  0.881  0.922   0.895   0.750   0.000  archaeal preflagellin peptidase FlaK [EC:3.4.23.52]
+K07059      0.882  0.930  0.725   0.884   0.722   0.042  rhomboid family protease [EC:3.4.21.105]
+K01255      0.882  0.881  0.882   0.000   0.185   0.772  leucyl aminopeptidase [EC:3.4.11.1]
+K04076      0.869  0.838  0.980   0.785   0.602   0.051  ATP-dependent Lon protease [EC:3.4.21.53]
+K01281      0.857  0.908  0.686   0.127   0.102   0.135  X-Pro dipeptidyl-peptidase [EC:3.4.14.11]
+K03433      0.827  0.784  0.980   0.950   0.949   0.194  proteasome beta subunit [EC:3.4.25.1]
+
+--- carbohydrate transport system: 18 of 104 seen in the 237
+KO         thermo     SW     E2  halo_m  arch_m  bact_m  name
+K09695      0.814  0.778  0.961   0.000   0.014   0.312  lipooligosaccharide transport system ATP-binding pro
+K09694      0.755  0.762  0.745   0.000   0.000   0.253  lipooligosaccharide transport system permease protei
+K02068      0.173  0.184  0.137   0.337   0.250   0.139  UDP-glucose/iron transport system ATP-binding protei
+K10439      0.169  0.195  0.078   0.160   0.125   0.473  ribose transport system substrate-binding protein
+K02069      0.169  0.168  0.176   0.210   0.153   0.249  UDP-glucose/iron transport system permease protein
+K02026      0.076  0.065  0.098   0.696   0.532   0.586  multiple sugar transport system permease protein
+K02025      0.030  0.032  0.000   0.746   0.579   0.578  multiple sugar transport system permease protein
+K10112      0.025  0.022  0.020   0.840   0.648   0.646  multiple sugar transport system ATP-binding protein 
+K02027      0.025  0.022  0.020   0.646   0.579   0.599  multiple sugar transport system substrate-binding pr
+K15772      0.008  0.011  0.000   0.193   0.148   0.105  arabinogalactan oligomer / maltooligosaccharide tran
+K15770      0.008  0.011  0.000   0.177   0.125   0.101  arabinogalactan oligomer / maltooligosaccharide tran
+K10441      0.008  0.011  0.000   0.000   0.000   0.447  ribose transport system ATP-binding protein [EC:7.5.
+
+--- peptide / amino-acid transport system: 28 of 67 seen in the 237
+KO         thermo     SW     E2  halo_m  arch_m  bact_m  name
+K01998      0.738  0.859  0.294   0.917   0.676   0.650  branched-chain amino acid transport system permease 
+K01999      0.734  0.849  0.314   0.867   0.662   0.722  branched-chain amino acid transport system substrate
+K01995      0.713  0.827  0.294   0.906   0.657   0.633  branched-chain amino acid transport system ATP-bindi
+K01996      0.705  0.800  0.353   0.895   0.657   0.633  branched-chain amino acid transport system ATP-bindi
+K02035      0.679  0.805  0.216   0.983   0.875   0.852  peptide/nickel transport system substrate-binding pr
+K11955      0.650  0.784  0.157   0.260   0.194   0.000  neutral amino acid transport system permease protein
+K11956      0.641  0.757  0.235   0.243   0.181   0.181  neutral amino acid transport system permease protein
+K02032      0.578  0.708  0.098   0.972   0.866   0.781  peptide/nickel transport system ATP-binding protein
+K02033      0.544  0.676  0.059   0.961   0.856   0.764  peptide/nickel transport system permease protein
+K02031      0.536  0.654  0.098   0.978   0.875   0.772  peptide/nickel transport system ATP-binding protein
+K02029      0.523  0.649  0.059   0.459   0.329   0.586  polar amino acid transport system permease protein
+K02028      0.523  0.654  0.039   0.442   0.338   0.540  polar amino acid transport system ATP-binding protei
+
+
+Selected rows from v2_thermo_metabolism_summary.tsv:
+                   feature                                                                                      feature_name                 group    n  n_present    share
+                    M00001                                         Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate            thermo_237  237      195.0 0.822785
+                    M00001                                         Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate              halo_all  269      239.0 0.888476
+                    M00001                                         Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate          bacteria_all 4847     4374.0 0.902414
+                    M00001                                         Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate          halo_matched  181      160.0 0.883978
+                    M00001                                         Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate archaea_other_matched  216      162.0 0.750000
+                    M00001                                         Glycolysis (Embden-Meyerhof pathway), glucose => pyruvate      bacteria_matched  237      201.0 0.848101
+                    M00002                                          Glycolysis, core module involving three-carbon compounds            thermo_237  237      210.0 0.886076
+                    M00002                                          Glycolysis, core module involving three-carbon compounds              halo_all  269      217.0 0.806691
+                    M00002                                          Glycolysis, core module involving three-carbon compounds          bacteria_all 4847     4173.0 0.860945
+                    M00002                                          Glycolysis, core module involving three-carbon compounds          halo_matched  181      148.0 0.817680
+                    M00002                                          Glycolysis, core module involving three-carbon compounds archaea_other_matched  216      173.0 0.800926
+                    M00002                                          Glycolysis, core module involving three-carbon compounds      bacteria_matched  237      190.0 0.801688
+                    M00009                                                            Citrate cycle (TCA cycle, Krebs cycle)            thermo_237  237      197.0 0.831224
+                    M00009                                                            Citrate cycle (TCA cycle, Krebs cycle)              halo_all  269      246.0 0.914498
+                    M00009                                                            Citrate cycle (TCA cycle, Krebs cycle)          bacteria_all 4847     4180.0 0.862389
+                    M00009                                                            Citrate cycle (TCA cycle, Krebs cycle)          halo_matched  181      163.0 0.900552
+                    M00009                                                            Citrate cycle (TCA cycle, Krebs cycle) archaea_other_matched  216      174.0 0.805556
+                    M00009                                                            Citrate cycle (TCA cycle, Krebs cycle)      bacteria_matched  237      189.0 0.797468
+                    M00011                            Citrate cycle, second carbon oxidation, 2-oxoglutarate => oxaloacetate            thermo_237  237      193.0 0.814346
+                    M00011                            Citrate cycle, second carbon oxidation, 2-oxoglutarate => oxaloacetate              halo_all  269      243.0 0.903346
+                    M00011                            Citrate cycle, second carbon oxidation, 2-oxoglutarate => oxaloacetate          bacteria_all 4847     4168.0 0.859913
+                    M00011                            Citrate cycle, second carbon oxidation, 2-oxoglutarate => oxaloacetate          halo_matched  181      161.0 0.889503
+                    M00011                            Citrate cycle, second carbon oxidation, 2-oxoglutarate => oxaloacetate archaea_other_matched  216      171.0 0.791667
+                    M00011                            Citrate cycle, second carbon oxidation, 2-oxoglutarate => oxaloacetate      bacteria_matched  237      187.0 0.789030
+                    M00012                                                                                  Glyoxylate cycle            thermo_237  237      188.0 0.793249
+                    M00012                                                                                  Glyoxylate cycle              halo_all  269       91.0 0.338290
+                    M00012                                                                                  Glyoxylate cycle          bacteria_all 4847     2084.0 0.429957
+                    M00012                                                                                  Glyoxylate cycle          halo_matched  181       63.0 0.348066
+                    M00012                                                                                  Glyoxylate cycle archaea_other_matched  216       59.0 0.273148
+                    M00012                                                                                  Glyoxylate cycle      bacteria_matched  237       90.0 0.379747
+         complexI_nuo_half K00330+K00331+K00332+K00333+K00334+K00335+K00336+K00337+K00338+K00339+K00340+K00341+K00342+K00343            thermo_237  237      168.0 0.708861
+         complexI_nuo_half K00330+K00331+K00332+K00333+K00334+K00335+K00336+K00337+K00338+K00339+K00340+K00341+K00342+K00343              halo_all  269      150.0 0.557621
+         complexI_nuo_half K00330+K00331+K00332+K00333+K00334+K00335+K00336+K00337+K00338+K00339+K00340+K00341+K00342+K00343          bacteria_all 4847     3923.0 0.809367
+         complexI_nuo_half K00330+K00331+K00332+K00333+K00334+K00335+K00336+K00337+K00338+K00339+K00340+K00341+K00342+K00343          halo_matched  181      104.0 0.574586
+         complexI_nuo_half K00330+K00331+K00332+K00333+K00334+K00335+K00336+K00337+K00338+K00339+K00340+K00341+K00342+K00343 archaea_other_matched  216      122.0 0.564815
+         complexI_nuo_half K00330+K00331+K00332+K00333+K00334+K00335+K00336+K00337+K00338+K00339+K00340+K00341+K00342+K00343      bacteria_matched  237      186.0 0.784810
+        complexII_sdh_2sub                                           K00239+K00240+K00241+K00242+K00234+K00235+K00236+K00237            thermo_237  237      184.0 0.776371
+        complexII_sdh_2sub                                           K00239+K00240+K00241+K00242+K00234+K00235+K00236+K00237              halo_all  269      204.0 0.758364
+        complexII_sdh_2sub                                           K00239+K00240+K00241+K00242+K00234+K00235+K00236+K00237          bacteria_all 4847     4132.0 0.852486
+        complexII_sdh_2sub                                           K00239+K00240+K00241+K00242+K00234+K00235+K00236+K00237          halo_matched  181      131.0 0.723757
+        complexII_sdh_2sub                                           K00239+K00240+K00241+K00242+K00234+K00235+K00236+K00237 archaea_other_matched  216      145.0 0.671296
+        complexII_sdh_2sub                                           K00239+K00240+K00241+K00242+K00234+K00235+K00236+K00237      bacteria_matched  237      192.0 0.810127
+       complexIV_coxA_coxB                                                                                     K02274+K02275            thermo_237  237      139.0 0.586498
+       complexIV_coxA_coxB                                                                                     K02274+K02275              halo_all  269      223.0 0.828996
+       complexIV_coxA_coxB                                                                                     K02274+K02275          bacteria_all 4847     3896.0 0.803796
+       complexIV_coxA_coxB                                                                                     K02274+K02275          halo_matched  181      150.0 0.828729
+       complexIV_coxA_coxB                                                                                     K02274+K02275 archaea_other_matched  216      154.0 0.712963
+       complexIV_coxA_coxB                                                                                     K02274+K02275      bacteria_matched  237      190.0 0.801688
+            complexIV_coxA                                                                                            K02274            thermo_237  237      168.0 0.708861
+            complexIV_coxA                                                                                            K02274              halo_all  269      235.0 0.873606
+            complexIV_coxA                                                                                            K02274          bacteria_all 4847     4074.0 0.840520
+            complexIV_coxA                                                                                            K02274          halo_matched  181      159.0 0.878453
+            complexIV_coxA                                                                                            K02274 archaea_other_matched  216      166.0 0.768519
+            complexIV_coxA                                                                                            K02274      bacteria_matched  237      199.0 0.839662
+            ATPase_VA_half                                    K02107+K02117+K02118+K02119+K02120+K02121+K02122+K02123+K02124            thermo_237  237      216.0 0.911392
+            ATPase_VA_half                                    K02107+K02117+K02118+K02119+K02120+K02121+K02122+K02123+K02124              halo_all  269      213.0 0.791822
+            ATPase_VA_half                                    K02107+K02117+K02118+K02119+K02120+K02121+K02122+K02123+K02124          bacteria_all 4847      100.0 0.020631
+            ATPase_VA_half                                    K02107+K02117+K02118+K02119+K02120+K02121+K02122+K02123+K02124          halo_matched  181      148.0 0.817680
+            ATPase_VA_half                                    K02107+K02117+K02118+K02119+K02120+K02121+K02122+K02123+K02124 archaea_other_matched  216      178.0 0.824074
+            ATPase_VA_half                                    K02107+K02117+K02118+K02119+K02120+K02121+K02122+K02123+K02124      bacteria_matched  237        3.0 0.012658
+oxoglutarate_ferredoxin_OR                                                                                     K00174+K00175            thermo_237  237      228.0 0.962025
+oxoglutarate_ferredoxin_OR                                                                                     K00174+K00175              halo_all  269      210.0 0.780669
+oxoglutarate_ferredoxin_OR                                                                                     K00174+K00175          bacteria_all 4847     2543.0 0.524654
+oxoglutarate_ferredoxin_OR                                                                                     K00174+K00175          halo_matched  181      144.0 0.795580
+oxoglutarate_ferredoxin_OR                                                                                     K00174+K00175 archaea_other_matched  216      158.0 0.731481
+oxoglutarate_ferredoxin_OR                                                                                     K00174+K00175      bacteria_matched  237      117.0 0.493671
+       ilv_carbon_skeleton                                                                K01652+K01653+K11258+K00053+K01687            thermo_237  237        4.0 0.016878
+       ilv_carbon_skeleton                                                                K01652+K01653+K11258+K00053+K01687              halo_all  269      242.0 0.899628
+       ilv_carbon_skeleton                                                                K01652+K01653+K11258+K00053+K01687          bacteria_all 4847     3903.0 0.805240
+       ilv_carbon_skeleton                                                                K01652+K01653+K11258+K00053+K01687          halo_matched  181      165.0 0.911602
+       ilv_carbon_skeleton                                                                K01652+K01653+K11258+K00053+K01687 archaea_other_matched  216      180.0 0.833333
+       ilv_carbon_skeleton                                                                K01652+K01653+K11258+K00053+K01687      bacteria_matched  237      191.0 0.805907
+     bcaa_aminotransferase                                                                                            K00826            thermo_237  237      221.0 0.932489
+     bcaa_aminotransferase                                                                                            K00826              halo_all  269      251.0 0.933086
+     bcaa_aminotransferase                                                                                            K00826          bacteria_all 4847     4323.0 0.891892
+     bcaa_aminotransferase                                                                                            K00826          halo_matched  181      172.0 0.950276
+     bcaa_aminotransferase                                                                                            K00826 archaea_other_matched  216      184.0 0.851852
+     bcaa_aminotransferase                                                                                            K00826      bacteria_matched  237      202.0 0.852321
+                  catalase                                                                              K03781+K03782+K07217            thermo_237  237       68.0 0.286920
+                  catalase                                                                              K03781+K03782+K07217              halo_all  269      228.0 0.847584
+                  catalase                                                                              K03781+K03782+K07217          bacteria_all 4847     3332.0 0.687436
+                  catalase                                                                              K03781+K03782+K07217          halo_matched  181      153.0 0.845304
+                  catalase                                                                              K03781+K03782+K07217 archaea_other_matched  216      147.0 0.680556
+                  catalase                                                                              K03781+K03782+K07217      bacteria_matched  237      157.0 0.662447
+            archaellum_fla                                    K07324+K07325+K07327+K07328+K07329+K07330+K07331+K07332+K07333            thermo_237  237      236.0 0.995781
+            archaellum_fla                                    K07324+K07325+K07327+K07328+K07329+K07330+K07331+K07332+K07333              halo_all  269      263.0 0.977695
+            archaellum_fla                                    K07324+K07325+K07327+K07328+K07329+K07330+K07331+K07332+K07333          bacteria_all 4847       20.0 0.004126
+            archaellum_fla                                    K07324+K07325+K07327+K07328+K07329+K07330+K07331+K07332+K07333          halo_matched  181      177.0 0.977901
+            archaellum_fla                                    K07324+K07325+K07327+K07328+K07329+K07330+K07331+K07332+K07333 archaea_other_matched  216      192.0 0.888889
+            archaellum_fla                                    K07324+K07325+K07327+K07328+K07329+K07330+K07331+K07332+K07333      bacteria_matched  237        1.0 0.004219
+          crispr_cas1_cas2                                                                                     K15342+K09951            thermo_237  237       34.0 0.143460
+          crispr_cas1_cas2                                                                                     K15342+K09951              halo_all  269       23.0 0.085502
+          crispr_cas1_cas2                                                                                     K15342+K09951          bacteria_all 4847      779.0 0.160718
+          crispr_cas1_cas2                                                                                     K15342+K09951          halo_matched  181       13.0 0.071823
+          crispr_cas1_cas2                                                                                     K15342+K09951 archaea_other_matched  216       18.0 0.083333
+          crispr_cas1_cas2                                                                                     K15342+K09951      bacteria_matched  237       29.0 0.122363
+                crispr_any                                                  K15342+K09951+K07012+K09952+K07464+K09002+K19046            thermo_237  237      188.0 0.793249
+                crispr_any                                                  K15342+K09951+K07012+K09952+K07464+K09002+K19046              halo_all  269      223.0 0.828996
+                crispr_any                                                  K15342+K09951+K07012+K09952+K07464+K09002+K19046          bacteria_all 4847     1168.0 0.240974
+                crispr_any                                                  K15342+K09951+K07012+K09952+K07464+K09002+K19046          halo_matched  181      150.0 0.828729
+                crispr_any                                                  K15342+K09951+K07012+K09952+K07464+K09002+K19046 archaea_other_matched  216      162.0 0.750000
+                crispr_any                                                  K15342+K09951+K07012+K09952+K07464+K09002+K19046      bacteria_matched  237       42.0 0.177215
+     branched_chain_aa_ABC                                                                K01995+K01996+K01997+K01998+K01999            thermo_237  237      187.0 0.789030
+     branched_chain_aa_ABC                                                                K01995+K01996+K01997+K01998+K01999              halo_all  269      249.0 0.925651
+     branched_chain_aa_ABC                                                                K01995+K01996+K01997+K01998+K01999          bacteria_all 4847     3087.0 0.636889
+     branched_chain_aa_ABC                                                                K01995+K01996+K01997+K01998+K01999          halo_matched  181      167.0 0.922652
+     branched_chain_aa_ABC                                                                K01995+K01996+K01997+K01998+K01999 archaea_other_matched  216      146.0 0.675926
+     branched_chain_aa_ABC                                                                K01995+K01996+K01997+K01998+K01999      bacteria_matched  237      158.0 0.666667
+             sugar_ABC_msm                                                         K10117+K10118+K10119+K02025+K02026+K02027            thermo_237  237        5.0 0.021097
+             sugar_ABC_msm                                                         K10117+K10118+K10119+K02025+K02026+K02027              halo_all  269      196.0 0.728625
+             sugar_ABC_msm                                                         K10117+K10118+K10119+K02025+K02026+K02027          bacteria_all 4847     3015.0 0.622034
+             sugar_ABC_msm                                                         K10117+K10118+K10119+K02025+K02026+K02027          halo_matched  181      132.0 0.729282
+             sugar_ABC_msm                                                         K10117+K10118+K10119+K02025+K02026+K02027 archaea_other_matched  216      119.0 0.550926
+             sugar_ABC_msm                                                         K10117+K10118+K10119+K02025+K02026+K02027      bacteria_matched  237      143.0 0.603376
+              COF_thiamine                                                                                            M00127            thermo_237  237        1.0 0.004219
+              COF_thiamine                                                                                            M00127              halo_all  269       66.0 0.245353
+              COF_thiamine                                                                                            M00127          bacteria_all 4847     3040.0 0.627192
+              COF_thiamine                                                                                            M00127          halo_matched  181       48.0 0.265193
+              COF_thiamine                                                                                            M00127 archaea_other_matched  216       44.0 0.203704
+              COF_thiamine                                                                                            M00127      bacteria_matched  237      155.0 0.654008
+             COF_cobalamin                                                                                            M00122            thermo_237  237        1.0 0.004219
+             COF_cobalamin                                                                                            M00122              halo_all  269      178.0 0.661710
+             COF_cobalamin                                                                                            M00122          bacteria_all 4847     1793.0 0.369920
+             COF_cobalamin                                                                                            M00122          halo_matched  181      120.0 0.662983
+             COF_cobalamin                                                                                            M00122 archaea_other_matched  216      136.0 0.629630
+             COF_cobalamin                                                                                            M00122      bacteria_matched  237       95.0 0.400844
+                  COF_F420                                                                                            M00378            thermo_237  237        0.0 0.000000
+                  COF_F420                                                                                            M00378              halo_all  269      211.0 0.784387
+                  COF_F420                                                                                            M00378          bacteria_all 4847     1670.0 0.344543
+                  COF_F420                                                                                            M00378          halo_matched  181      140.0 0.773481
+                  COF_F420                                                                                            M00378 archaea_other_matched  216      150.0 0.694444
+                  COF_F420                                                                                            M00378      bacteria_matched  237       67.0 0.282700

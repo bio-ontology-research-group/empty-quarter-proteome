@@ -1,0 +1,806 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q8SSL0",
+  "secondaryAccessions": [
+    "O96721"
+  ],
+  "uniProtkbId": "TPP_ENCCU",
+  "entryAudit": {
+    "firstPublicDate": "2004-08-31",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2002-06-01",
+    "entryVersion": 109,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Encephalitozoon cuniculi (strain GB-M1)",
+    "commonName": "Microsporidian parasite",
+    "taxonId": 284813,
+    "lineage": [
+      "Eukaryota",
+      "Fungi",
+      "Fungi incertae sedis",
+      "Microsporidia",
+      "Unikaryonidae",
+      "Encephalitozoon"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Probable trehalose-phosphatase"
+      },
+      "ecNumbers": [
+        {
+          "value": "3.1.3.12"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Trehalose-6-phosphate phosphatase"
+        },
+        "shortNames": [
+          {
+            "value": "TPP"
+          }
+        ]
+      }
+    ]
+  },
+  "genes": [
+    {
+      "orderedLocusNames": [
+        {
+          "value": "ECU01_0870"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha,alpha-trehalose 6-phosphate + H2O = alpha,alpha-trehalose + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:23420"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16551"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58429"
+          }
+        ],
+        "ecNumber": "3.1.3.12"
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "16691553"
+            }
+          ],
+          "value": "Expressed in late sporogonial stages"
+        }
+      ],
+      "commentType": "DEVELOPMENTAL STAGE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "In the N-terminal section; belongs to the glycosyltransferase 20 family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "In the C-terminal section; belongs to the trehalose phosphatase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 718,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Probable trehalose-phosphatase",
+      "featureId": "PRO_0000122507"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 449,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 470,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 459,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 470,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 421,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 421,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAA07262",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "R",
+        "alternativeSequences": [
+          "K"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "CI-6QSUL7OSTNEJS",
+        "citationType": "submission",
+        "authors": [
+          "Duffieux F.",
+          "Peyret P.",
+          "Roe B.A.",
+          "Vivares C.P."
+        ],
+        "title": "Putative trehalose 6-phosphate phosphatase from the chromosome I of Encephalitozoon cuniculi (Microspora).",
+        "publicationDate": "JUN-1998",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "11157783",
+        "citationType": "journal article",
+        "authors": [
+          "Peyret P.",
+          "Katinka M.D.",
+          "Duprat S.",
+          "Duffieux F.",
+          "Barbe V.",
+          "Barbazanges M.",
+          "Weissenbach J.",
+          "Saurin W.",
+          "Vivares C.P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11157783"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1101/gr.164301"
+          }
+        ],
+        "title": "Sequence and analysis of chromosome I of the amitochondriate intracellular parasite Encephalitozoon cuniculi (Microspora).",
+        "publicationDate": "2001",
+        "journal": "Genome Res.",
+        "firstPage": "198",
+        "lastPage": "207",
+        "volume": "11"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "GB-M1",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "11719806",
+        "citationType": "journal article",
+        "authors": [
+          "Katinka M.D.",
+          "Duprat S.",
+          "Cornillot E.",
+          "Metenier G.",
+          "Thomarat F.",
+          "Prensier G.",
+          "Barbe V.",
+          "Peyretaillade E.",
+          "Brottier P.",
+          "Wincker P.",
+          "Delbac F.",
+          "El Alaoui H.",
+          "Peyret P.",
+          "Saurin W.",
+          "Gouy M.",
+          "Weissenbach J.",
+          "Vivares C.P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11719806"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/35106579"
+          }
+        ],
+        "title": "Genome sequence and gene compaction of the eukaryote parasite Encephalitozoon cuniculi.",
+        "publicationDate": "2001",
+        "journal": "Nature",
+        "firstPage": "450",
+        "lastPage": "453",
+        "volume": "414"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "GB-M1",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "16691553",
+        "citationType": "journal article",
+        "authors": [
+          "Brosson D.",
+          "Kuhn L.",
+          "Delbac F.",
+          "Garin J.",
+          "Vivares C.P.",
+          "Texier C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16691553"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1002/pmic.200500796"
+          }
+        ],
+        "title": "Proteomic analysis of the eukaryotic parasite Encephalitozoon cuniculi (microsporidia): a reference map for proteins expressed in late sporogonial stages.",
+        "publicationDate": "2006",
+        "journal": "Proteomics",
+        "firstPage": "3625",
+        "lastPage": "3635",
+        "volume": "6"
+      },
+      "referencePositions": [
+        "IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS]",
+        "DEVELOPMENTAL STAGE"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AJ006825",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA07262.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AL391737",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAD24957.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_001402172.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NM_001415641.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q8SSL0",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q8SSL0",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "Q8SSL0",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "11"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "284813.Q8SSL0",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "860263",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecu:ECU01_0870",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "VEuPathDB",
+      "id": "MicrosporidiaDB:ECU01_0870",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_002351_3_3_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q8SSL0",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "GWEFSWD",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "755951at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000819",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome I"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003825",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:alpha,alpha-trehalose-phosphate synthase (UDP-forming) activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004805",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:trehalose-phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005992",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:trehalose biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd01627",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_TPP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.2000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glycogen Phosphorylase B"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.70.1020",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose-6-phosphate phosphatase related protein, domain 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001830",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glyco_trans_20"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR003337",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR00685",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "T6PP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10788:SF106",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BCDNA.GH08860"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10788",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TREHALOSE-6-PHOSPHATE SYNTHASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00982",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glyco_transf_20"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02358",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53756",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "UDP-Glycosyltransferase/glycogen phosphorylase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MKIIVAAEELPICASRMEPSEAIKNWISTPLKKIPHPDKASKIQIEFGDRSKESLHLFAKPHFMVPDMLDDDEMFFVGAPGFYSPEEFSDEDCRRIEESMKAYRCYPIFQKRVKYSKMIEEILGKNTYEFVQSNFDHANMFARYKEYNTRWHEKIMEIYEEGDVVWVMDHSLFLLPGMLGNSIPVGMSASVPFSSLLKCIPFWEQIFSSILCCRYIEFNESSSKESFDLLVSQKTGFCMGDPGYKDIREPLTCVGKKGIDKDVLLKMSSEVHEFEGLGKGKVILLPSDSQTHLLGVEAYLSRYGKEITVLFLRTRVLNGDSDKQAEVMRLREYLEINYKVLSREFTPASDPEFISMLKRCDLCHCPEVADVCSLFGIPVVRNNPYDFFDIADEINENLMQRGEGSKEGSSEVIGKMEWKKRFMTSLLSISGMEYDVDLEPKEPRIRSSLSMDQTGHKKVDAKKKPGIRKKNREKEEAVEIILNNKEDANAARIVNDFKKSKARTLVMDYDGTLTNIVARPPMAAPTQEIKDLLIRLGKICRVVISTGRSVEDCDKFFPKEIEVFAEHGACHRIDGKWKEGGTFPQKDLAWRIGQFFLARTPGSELERKKTGYAFHFRNVSPLIGVKQARALFELLMRVCKDYVKKGNHVIEVRSSKKSCAMEKIEEGFVLCAGDDVADEDMFDVCKGYTIKVGDQSTSAAYRVKDPENFRMLLGRLLE",
+    "length": 718,
+    "molWeight": 82064,
+    "crc64": "B82FC7D318854CD5",
+    "md5": "BA624BCA2A6CB59FAE1793A6CF693593"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "CATALYTIC ACTIVITY": 1,
+      "DEVELOPMENTAL STAGE": 1,
+      "SIMILARITY": 2
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Region": 1,
+      "Compositional bias": 1,
+      "Sequence conflict": 1
+    },
+    "uniParcId": "UPI0000082A83"
+  }
+}

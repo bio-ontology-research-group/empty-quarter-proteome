@@ -1,0 +1,24 @@
+{
+  "job_id": "53816424",
+  "genomes": 5438,
+  "proteins": 20451986,
+  "profile_supported_candidates": 1154,
+  "complete_partial00": 914,
+  "carrier_genomes": 935,
+  "command": [
+    "hmmsearch",
+    "--cpu",
+    "16",
+    "--domE",
+    "1e-3",
+    "-E",
+    "1e-3",
+    "--domtblout",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/domains.tsv",
+    "-o",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/hmm_report.txt",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/cpf.hmm",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/cohort.faa"
+  ],
+  "interpretation": "profile-supported CPF candidates; not verified functions, subfamilies or novelty"
+}

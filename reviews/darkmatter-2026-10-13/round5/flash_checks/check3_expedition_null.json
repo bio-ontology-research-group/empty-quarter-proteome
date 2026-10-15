@@ -1,0 +1,117 @@
+{
+  "expedition_metadata": {
+    "total_samples": 551,
+    "samples_per_trip": {
+      "1": 210,
+      "2": 37,
+      "3": 128,
+      "4": 85,
+      "5": 91
+    },
+    "total_sites": 61,
+    "sites_per_trip": {
+      "1": 60,
+      "2": 7,
+      "3": 47,
+      "4": 51,
+      "5": 52
+    }
+  },
+  "observed_manuscript_claims": {
+    "mapping_median_samples": 98,
+    "mapping_pct_all_5_trips": 79.4,
+    "mapping_pct_ge_4_trips": 94.8,
+    "assembly_median_samples": 12,
+    "assembly_median_sites": 9,
+    "assembly_pct_all_5_trips": 28.9
+  },
+  "null_model_1_uniform_sample_draw": {
+    "5": {
+      "p_all_5_trips": 0.0184,
+      "p_ge_4_trips": 0.2885
+    },
+    "10": {
+      "p_all_5_trips": 0.2811,
+      "p_ge_4_trips": 0.8107
+    },
+    "12": {
+      "p_all_5_trips": 0.3953,
+      "p_ge_4_trips": 0.8909
+    },
+    "20": {
+      "p_all_5_trips": 0.6998,
+      "p_ge_4_trips": 0.9891
+    },
+    "25": {
+      "p_all_5_trips": 0.8068,
+      "p_ge_4_trips": 0.9968
+    },
+    "50": {
+      "p_all_5_trips": 0.9744,
+      "p_ge_4_trips": 1.0
+    },
+    "75": {
+      "p_all_5_trips": 0.9968,
+      "p_ge_4_trips": 1.0
+    },
+    "98": {
+      "p_all_5_trips": 0.9998,
+      "p_ge_4_trips": 1.0
+    },
+    "150": {
+      "p_all_5_trips": 1.0,
+      "p_ge_4_trips": 1.0
+    },
+    "200": {
+      "p_all_5_trips": 1.0,
+      "p_ge_4_trips": 1.0
+    }
+  },
+  "null_model_2_site_geometry_trip2_bottleneck": {
+    "2": {
+      "p_miss_trip2": 0.781967213114754,
+      "p_hit_trip2": 0.21803278688524597,
+      "upper_bound_p_all_5_trips": 0.21803278688524597
+    },
+    "3": {
+      "p_miss_trip2": 0.6891914420672408,
+      "p_hit_trip2": 0.3108085579327592,
+      "upper_bound_p_all_5_trips": 0.3108085579327592
+    },
+    "5": {
+      "p_miss_trip2": 0.5315904952424272,
+      "p_hit_trip2": 0.4684095047575728,
+      "upper_bound_p_all_5_trips": 0.4684095047575728
+    },
+    "9": {
+      "p_miss_trip2": 0.3066548715456029,
+      "p_hit_trip2": 0.6933451284543971,
+      "upper_bound_p_all_5_trips": 0.6933451284543971
+    },
+    "15": {
+      "p_miss_trip2": 0.12268683224670694,
+      "p_hit_trip2": 0.877313167753293,
+      "upper_bound_p_all_5_trips": 0.877313167753293
+    },
+    "25": {
+      "p_miss_trip2": 0.019134171672006088,
+      "p_hit_trip2": 0.980865828327994,
+      "upper_bound_p_all_5_trips": 0.980865828327994
+    },
+    "38": {
+      "p_miss_trip2": 0.0005619377030017917,
+      "p_hit_trip2": 0.9994380622969982,
+      "upper_bound_p_all_5_trips": 0.9994380622969982
+    },
+    "50": {
+      "p_miss_trip2": 7.564109611008099e-07,
+      "p_hit_trip2": 0.9999992435890389,
+      "upper_bound_p_all_5_trips": 0.9999992435890389
+    }
+  },
+  "key_findings": {
+    "mapping_comparison": "At median prevalence k=98, uniform null expectation for all 5 trips is 99.96%, whereas observed is 79.4%. Observed detection is DELETED relative to random temporal mixing, reflecting spatial clustering.",
+    "assembly_comparison": "At median assembly k=12 samples, uniform null expectation is 39.8%. At median 9 sites, 23.7% of families miss Trip 2 by spatial omission alone, capping maximum possible 5-trip assembly at 76.3%. Observed 28.9% matches a spatially clustered null.",
+    "scientific_implication": "Multi-trip detection does not demonstrate temporal persistence or seasonal resilience; it is a mathematical consequence of spatial prevalence and transect sampling design."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "job_id": "53817185",
+  "positive_control": "QCI56913.1 / MK474076; Xu2021doi10.1093/molbev/msab191",
+  "profile_gate_blindspot": "PF03441 bestdomain coverage64/203 <0.7 despite iE1.3e-9; specificknownSPLnotrecovered by coreprofiledefinition",
+  "coverage_passing_sequence_homologs": 3,
+  "outside_profile_census": 2,
+  "interpretation": "additionalSPL-like sequenceleads, notverifiedfunctions; coreprofilecensusnotexhaustiveCPF survey",
+  "commands": [
+    [
+      "/ibex/scratch/projects/c2014/rob/metagenomics/../miniconda3/envs/eggnog/bin/diamond",
+      "makedb",
+      "--in",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/cohort.faa",
+      "--db",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_spl_sensitivity/eq_full",
+      "--threads",
+      "16"
+    ],
+    [
+      "/ibex/scratch/projects/c2014/rob/metagenomics/../miniconda3/envs/eggnog/bin/diamond",
+      "blastp",
+      "--query",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/references_v2/raw_records/ncbi/QCI56913.1.fasta",
+      "--db",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_spl_sensitivity/eq_full.dmnd",
+      "--out",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_spl_sensitivity/hits.tsv",
+      "--ultra-sensitive",
+      "--max-target-seqs",
+      "0",
+      "--evalue",
+      "1e-5",
+      "--threads",
+      "16",
+      "--outfmt",
+      "6",
+      "qseqid",
+      "sseqid",
+      "pident",
+      "qstart",
+      "qend",
+      "sstart",
+      "send",
+      "evalue",
+      "bitscore",
+      "qlen",
+      "slen"
+    ]
+  ]
+}

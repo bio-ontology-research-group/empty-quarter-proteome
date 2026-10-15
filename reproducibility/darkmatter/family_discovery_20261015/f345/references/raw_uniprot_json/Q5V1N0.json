@@ -1,0 +1,874 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q5V1N0",
+  "uniProtkbId": "BACH_HALMA",
+  "entryAudit": {
+    "firstPublicDate": "2014-05-14",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2004-12-07",
+    "entryVersion": 91,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Haloarcula marismortui (strain ATCC 43049 / DSM 3752 / JCM 8966 / VKM B-1809)",
+    "commonName": "Halobacterium marismortui",
+    "taxonId": 272569,
+    "lineage": [
+      "Archaea",
+      "Methanobacteriati",
+      "Methanobacteriota",
+      "Stenosarchaea group",
+      "Halobacteria",
+      "Halobacteriales",
+      "Haloarculaceae",
+      "Haloarcula"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Halorhodopsin"
+      },
+      "shortNames": [
+        {
+          "value": "HmHR"
+        }
+      ]
+    },
+    "flag": "Precursor"
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "hop"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "rrnAC1659"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20802037"
+            }
+          ],
+          "value": "Light-driven chloride pump"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "absorption": {
+        "max": 576,
+        "approximate": false,
+        "note": {
+          "texts": [
+            {
+              "value": "If the chloride concentration decreases, the spectrum exhibits a red-shift."
+            }
+          ]
+        },
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "20802037"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000305"
+              }
+            ],
+            "value": "Membrane",
+            "id": "SL-0162"
+          },
+          "topology": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000305"
+              }
+            ],
+            "value": "Multi-pass membrane protein",
+            "id": "SL-9909"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20802037"
+            }
+          ],
+          "value": "Expressed constitutively throughout the growth phases, both in presence and absence of white light"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "The covalent binding of retinal to the apoprotein, bacterioopsin, generates bacteriorhodopsin"
+        }
+      ],
+      "commentType": "PTM"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the archaeal/bacterial/fungal opsin family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Propeptide",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 20,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "featureId": "PRO_0000428851"
+    },
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 21,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 276,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Halorhodopsin",
+      "featureId": "PRO_0000428852"
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 31,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 51,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 61,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 81,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 109,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 129,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 134,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 154,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 162,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 182,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 195,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 215,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 220,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 240,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ]
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 21,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 21,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Pyrrolidone carboxylic acid",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 241,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 241,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "N6-(retinylidene)lysine",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0157",
+      "category": "Ligand",
+      "name": "Chromophore"
+    },
+    {
+      "id": "KW-0406",
+      "category": "Biological process",
+      "name": "Ion transport"
+    },
+    {
+      "id": "KW-0472",
+      "category": "Cellular component",
+      "name": "Membrane"
+    },
+    {
+      "id": "KW-0600",
+      "category": "Molecular function",
+      "name": "Photoreceptor protein"
+    },
+    {
+      "id": "KW-0873",
+      "category": "PTM",
+      "name": "Pyrrolidone carboxylic acid"
+    },
+    {
+      "id": "KW-0675",
+      "category": "Molecular function",
+      "name": "Receptor"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0681",
+      "category": "Molecular function",
+      "name": "Retinal protein"
+    },
+    {
+      "id": "KW-0716",
+      "category": "Biological process",
+      "name": "Sensory transduction"
+    },
+    {
+      "id": "KW-0812",
+      "category": "Domain",
+      "name": "Transmembrane"
+    },
+    {
+      "id": "KW-1133",
+      "category": "Domain",
+      "name": "Transmembrane helix"
+    },
+    {
+      "id": "KW-0813",
+      "category": "Biological process",
+      "name": "Transport"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "15520287",
+        "citationType": "journal article",
+        "authors": [
+          "Baliga N.S.",
+          "Bonneau R.",
+          "Facciotti M.T.",
+          "Pan M.",
+          "Glusman G.",
+          "Deutsch E.W.",
+          "Shannon P.",
+          "Chiu Y.",
+          "Weng R.S.",
+          "Gan R.R.",
+          "Hung P.",
+          "Date S.V.",
+          "Marcotte E.",
+          "Hood L.",
+          "Ng W.V."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15520287"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1101/gr.2700304"
+          }
+        ],
+        "title": "Genome sequence of Haloarcula marismortui: a halophilic archaeon from the Dead Sea.",
+        "publicationDate": "2004",
+        "journal": "Genome Res.",
+        "firstPage": "2221",
+        "lastPage": "2234",
+        "volume": "14"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 43049 / DSM 3752 / JCM 8966 / VKM B-1809",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "20802037",
+        "citationType": "journal article",
+        "authors": [
+          "Fu H.Y.",
+          "Lin Y.C.",
+          "Chang Y.N.",
+          "Tseng H.",
+          "Huang C.C.",
+          "Liu K.C.",
+          "Huang C.S.",
+          "Su C.W.",
+          "Weng R.R.",
+          "Lee Y.Y.",
+          "Ng W.V.",
+          "Yang C.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "20802037"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.00642-10"
+          }
+        ],
+        "title": "A novel six-rhodopsin system in a single archaeon.",
+        "publicationDate": "2010",
+        "journal": "J. Bacteriol.",
+        "firstPage": "5866",
+        "lastPage": "5873",
+        "volume": "192"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "INDUCTION",
+        "CHARACTERIZATION",
+        "BIOPHYSICOCHEMICAL PROPERTIES"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AY596297",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAV46572.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_011223771.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_006396.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q5V1N0",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q5V1N0",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "272569.rrnAC1659",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "272569-rrnAC1659",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "AAV46572",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAV46572"
+        },
+        {
+          "key": "GeneId",
+          "value": "rrnAC1659"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "40152624",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "hma:rrnAC1659",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|272569.17.peg.2347",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "arCOG02811",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Archaea"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_054785_5_1_2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001169",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome I"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016020",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:membrane"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005216",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:monoatomic ion channel activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd15243",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "7tm_Halorhodopsin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.20.1070.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rhodopsin 7-helix transmembrane proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001425",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Arc/bac/fun_rhodopsins"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR018229",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rhodopsin_retinal_BS"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR28286",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR28286:SF2",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTERIORHODOPSIN _OPSIN, NOPA (EUROFUNG)"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF01036",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Bac_rhodopsin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00251",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTRLOPSIN"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM01021",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Bac_rhodopsin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF81321",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Family A G protein-coupled receptor-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00950",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTERIAL_OPSIN_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00327",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTERIAL_OPSIN_RET"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MTAASTTATTVLQATQSDVLQEIQSNFLLNSSIWVNIALAGVVILLFVAMGRDLESPRAKLIWVATMLVPLVSISSYAGLASGLTVGFLQMPPGHALAGQEVLSPWGRYLTWTFSTPMILLALGLLADTDIASLFTAITMDIGMCVTGLAAALITSSHLLRWVFYGISCAFFVAVLYVLLVQWPADAEAAGTSEIFGTLKILTVVLWLGYPILWALGSEGVALLSVGVTSWGYSGLDILAKYVFAFLLLRWVAANEGTVSGSGMGIGSGGATPADD",
+    "length": 276,
+    "molWeight": 29043,
+    "crc64": "A6817F3BFBDF50E5",
+    "md5": "C374116818B6F7DF70296533247E199D"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "INDUCTION": 1,
+      "PTM": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Propeptide": 1,
+      "Chain": 1,
+      "Transmembrane": 7,
+      "Modified residue": 2
+    },
+    "uniParcId": "UPI0000455272"
+  }
+}

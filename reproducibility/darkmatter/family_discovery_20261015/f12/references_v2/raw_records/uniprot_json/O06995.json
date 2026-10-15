@@ -1,0 +1,1987 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "O06995",
+  "uniProtkbId": "PGMB_BACSU",
+  "entryAudit": {
+    "firstPublicDate": "1998-07-15",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1997-07-01",
+    "entryVersion": 158,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Bacillus subtilis (strain 168)",
+    "taxonId": 224308,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Bacillota",
+      "Bacilli",
+      "Caryophanales",
+      "Bacillaceae",
+      "Bacillus"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Beta-phosphoglucomutase"
+      },
+      "shortNames": [
+        {
+          "value": "Beta-PGM"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P71447"
+            }
+          ],
+          "value": "5.4.2.6"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "yvdM"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "BSU34550"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P71447"
+            }
+          ],
+          "value": "Catalyzes the interconversion of D-glucose 1-phosphate (G1P) and D-glucose 6-phosphate (G6P), forming beta-D-glucose 1,6-(bis)phosphate (beta-G16P) as an intermediate"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "beta-D-glucose 1-phosphate = beta-D-glucose 6-phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:20113"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57684"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58247"
+          }
+        ],
+        "ecNumber": "5.4.2.6",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "P71447"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P71447"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "P71447"
+              }
+            ],
+            "value": "Binds 1 magnesium ion per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "Reference",
+              "id": "Ref.3"
+            }
+          ],
+          "value": "Homodimer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000305"
+              }
+            ],
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P71447"
+            }
+          ],
+          "value": "Autophosphorylated"
+        }
+      ],
+      "commentType": "PTM"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P71447"
+            }
+          ],
+          "value": "The catalysis proceeds via a phosphoenzyme formed by reaction of an active-site nucleophile with the cofactor glucose 1,6-diphosphate (G1,6-diP). The phosphorylated mutase binds either G1P or G6P and transfers the phosphoryl group to the C(6)OH or C(1)OH, respectively"
+        }
+      ],
+      "commentType": "MISCELLANEOUS"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the HAD-like hydrolase superfamily. CbbY/CbbZ/Gph/YieH family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 226,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Beta-phosphoglucomutase",
+      "featureId": "PRO_0000108051"
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 7,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 7,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Nucleophile",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ]
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 9,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 9,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Proton donor/acceptor",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 7,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 7,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 9,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 9,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 9,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 9,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 44,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 44,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 45,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 45,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 47,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 47,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 116,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 116,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 117,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 117,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 118,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 118,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58247"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "beta-D-glucose 6-phosphate",
+        "id": "ChEBI:CHEBI:58247"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 170,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 170,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 7,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 7,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "4-aspartylphosphate",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P71447"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 3,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 6,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 10,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 12,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 15,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 29,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 36,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 41,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 42,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 44,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 47,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 57,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 61,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 63,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 66,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 85,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 89,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 91,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 96,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 105,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 109,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 112,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 119,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 125,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 129,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 131,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 133,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 135,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 150,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 158,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 162,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 164,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 165,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 169,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 172,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 180,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 184,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 187,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 192,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 194,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 198,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 200,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 204,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 206,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 209,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 221,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-0119",
+      "category": "Biological process",
+      "name": "Carbohydrate metabolism"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0413",
+      "category": "Molecular function",
+      "name": "Isomerase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0597",
+      "category": "PTM",
+      "name": "Phosphoprotein"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "CI-83VLBI6EPOAAM",
+        "citationType": "submission",
+        "authors": [
+          "Denizot F."
+        ],
+        "publicationDate": "APR-1997",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "168",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "9384377",
+        "citationType": "journal article",
+        "authors": [
+          "Kunst F.",
+          "Ogasawara N.",
+          "Moszer I.",
+          "Albertini A.M.",
+          "Alloni G.",
+          "Azevedo V.",
+          "Bertero M.G.",
+          "Bessieres P.",
+          "Bolotin A.",
+          "Borchert S.",
+          "Borriss R.",
+          "Boursier L.",
+          "Brans A.",
+          "Braun M.",
+          "Brignell S.C.",
+          "Bron S.",
+          "Brouillet S.",
+          "Bruschi C.V.",
+          "Caldwell B.",
+          "Capuano V.",
+          "Carter N.M.",
+          "Choi S.-K.",
+          "Codani J.-J.",
+          "Connerton I.F.",
+          "Cummings N.J.",
+          "Daniel R.A.",
+          "Denizot F.",
+          "Devine K.M.",
+          "Duesterhoeft A.",
+          "Ehrlich S.D.",
+          "Emmerson P.T.",
+          "Entian K.-D.",
+          "Errington J.",
+          "Fabret C.",
+          "Ferrari E.",
+          "Foulger D.",
+          "Fritz C.",
+          "Fujita M.",
+          "Fujita Y.",
+          "Fuma S.",
+          "Galizzi A.",
+          "Galleron N.",
+          "Ghim S.-Y.",
+          "Glaser P.",
+          "Goffeau A.",
+          "Golightly E.J.",
+          "Grandi G.",
+          "Guiseppi G.",
+          "Guy B.J.",
+          "Haga K.",
+          "Haiech J.",
+          "Harwood C.R.",
+          "Henaut A.",
+          "Hilbert H.",
+          "Holsappel S.",
+          "Hosono S.",
+          "Hullo M.-F.",
+          "Itaya M.",
+          "Jones L.-M.",
+          "Joris B.",
+          "Karamata D.",
+          "Kasahara Y.",
+          "Klaerr-Blanchard M.",
+          "Klein C.",
+          "Kobayashi Y.",
+          "Koetter P.",
+          "Koningstein G.",
+          "Krogh S.",
+          "Kumano M.",
+          "Kurita K.",
+          "Lapidus A.",
+          "Lardinois S.",
+          "Lauber J.",
+          "Lazarevic V.",
+          "Lee S.-M.",
+          "Levine A.",
+          "Liu H.",
+          "Masuda S.",
+          "Mauel C.",
+          "Medigue C.",
+          "Medina N.",
+          "Mellado R.P.",
+          "Mizuno M.",
+          "Moestl D.",
+          "Nakai S.",
+          "Noback M.",
+          "Noone D.",
+          "O'Reilly M.",
+          "Ogawa K.",
+          "Ogiwara A.",
+          "Oudega B.",
+          "Park S.-H.",
+          "Parro V.",
+          "Pohl T.M.",
+          "Portetelle D.",
+          "Porwollik S.",
+          "Prescott A.M.",
+          "Presecan E.",
+          "Pujic P.",
+          "Purnelle B.",
+          "Rapoport G.",
+          "Rey M.",
+          "Reynolds S.",
+          "Rieger M.",
+          "Rivolta C.",
+          "Rocha E.",
+          "Roche B.",
+          "Rose M.",
+          "Sadaie Y.",
+          "Sato T.",
+          "Scanlan E.",
+          "Schleich S.",
+          "Schroeter R.",
+          "Scoffone F.",
+          "Sekiguchi J.",
+          "Sekowska A.",
+          "Seror S.J.",
+          "Serror P.",
+          "Shin B.-S.",
+          "Soldo B.",
+          "Sorokin A.",
+          "Tacconi E.",
+          "Takagi T.",
+          "Takahashi H.",
+          "Takemaru K.",
+          "Takeuchi M.",
+          "Tamakoshi A.",
+          "Tanaka T.",
+          "Terpstra P.",
+          "Tognoni A.",
+          "Tosato V.",
+          "Uchiyama S.",
+          "Vandenbol M.",
+          "Vannier F.",
+          "Vassarotti A.",
+          "Viari A.",
+          "Wambutt R.",
+          "Wedler E.",
+          "Wedler H.",
+          "Weitzenegger T.",
+          "Winters P.",
+          "Wipat A.",
+          "Yamamoto H.",
+          "Yamane K.",
+          "Yasumoto K.",
+          "Yata K.",
+          "Yoshida K.",
+          "Yoshikawa H.-F.",
+          "Zumstein E.",
+          "Yoshikawa H.",
+          "Danchin A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9384377"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/36786"
+          }
+        ],
+        "title": "The complete genome sequence of the Gram-positive bacterium Bacillus subtilis.",
+        "publicationDate": "1997",
+        "journal": "Nature",
+        "firstPage": "249",
+        "lastPage": "256",
+        "volume": "390"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "168",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "CI-4M421L7KP3VNF",
+        "citationType": "submission",
+        "authoringGroup": [
+          "New York structural genomix research consortium (NYSGXRC)"
+        ],
+        "title": "The crystal structure of beta-phosphoglucomutase from bacillus subtilis.",
+        "publicationDate": "JUL-2010",
+        "submissionDatabase": "PDB data bank"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (3.0 ANGSTROMS) OF 2-224",
+        "SUBUNIT"
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3NAS"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "Z94043",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAB08042.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AL009126",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAB15460.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "E70034",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "E70034"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_003228210.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_000964.3"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3NAS",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "3.00 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=2-224"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3NAS",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "O06995",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "O06995",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "O06995",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "90"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "224308.BSU34550",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "224308-BSU34550",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DNASU",
+      "id": "938624",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "CAB15460",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAB15460"
+        },
+        {
+          "key": "GeneId",
+          "value": "BSU_34550"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "938624",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "bsu:BSU34550",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|224308.179.peg.3742",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0637",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "O06995",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9797743at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "O06995",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "BSUB:BSU34550-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "O06995",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001570",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "O06995",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005737",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008801",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:beta-phosphoglucomutase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000287",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:magnesium ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005975",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:carbohydrate metabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd02598",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_BPGM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.150.240:FF:000010",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Beta-phosphoglucomutase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.150.240",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Putative phosphatase, domain 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR010976",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "B-phosphoglucomutase_hydrolase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR010972",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Beta-PGM"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006439",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023198",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGP-like_dom2"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01990",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "bPGM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01509",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IA-v3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR02009",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGMB-YQAB-SF"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR18901",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "2-DEOXYGLUCOSE-6-PHOSPHATE PHOSPHATASE 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR18901:SF38",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PSEUDOURIDINE-5'-PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00702",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hydrolase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDF00046",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta-phosphoglucomutase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01135",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C1.5.6:_HAD__Beta-PGM__Phospha"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01129",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C1.5:_HAD__Beta-PGM__Phosphata"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDS00003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Haloacid_Dehalogenase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MKAVIFDLDGVITDTAEYHFLAWKHIAEQIDIPFDRDMNERLKGISREESLESILIFGGAETKYTNAEKQELMHRKNRDYQMLISKLTPEDLLPGIGRLLCQLKNENIKIGLASSSRNAPKILRRLAIIDDFHAIVDPTTLAKGKPDPDIFLTAAAMLDVSPADCAAIEDAEAGISAIKSAGMFAVGVGQGQPMLGADLVVRQTSDLTLELLHEEWEQYRIRESIP",
+    "length": 226,
+    "molWeight": 25102,
+    "crc64": "593851AE23BF9DA7",
+    "md5": "D3EEC20D1C386C57C67648CA4E355109"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "PTM": 1,
+      "MISCELLANEOUS": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Active site": 2,
+      "Binding site": 10,
+      "Modified residue": 1,
+      "Beta strand": 6,
+      "Turn": 4,
+      "Helix": 13
+    },
+    "uniParcId": "UPI0000060AC8"
+  }
+}

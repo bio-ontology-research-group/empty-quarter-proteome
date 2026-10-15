@@ -1,0 +1,75 @@
+# Independent Review of Hypothesis 2 (h2_v2): Conserved Gene Neighbourhoods of Low-Query-TM vs Fold-Matched Sequence-Dark Families
+
+**Reviewer:** Gemini 4 Argon (High)
+**Target Dossier:** `reviews/darkmatter-2026-10-13/round6/snapshots/h2_v2/` (`SNAPSHOT_MANIFEST.json`, Slurm job `53703301`)
+**Verdict:** **REVISE**
+
+---
+
+## 1. Bounded Hypothesis, Scope Changes & Root Adjudication
+
+* **Bounded Hypothesis:** Among confidence-qualified monomer structural dark families (mean $\text{pLDDT} \geq 0.70$, length $\geq 100$ aa; $N = 2{,}838$) conditioned on $\geq 2$ distinct refined-MAG dRep 95% ANI species clusters carrying complete, Bakta-mapped 4-flank ($\pm 2$ CDS) windows, test whether low-query-TM families ($K$, $\text{qTM} < 0.5$ vs. PDB and AFDB; $n = 1{,}031$) differ in cross-species flanking KEGG KO recurrence ($C_{\text{fam}} \in \{0,1\}$ and $R_{\text{fam}} \in [0,1]$) from fold-matched sequence-dark families ($Q \setminus K$, $\text{qTM} \geq 0.5$; $n = 1{,}807$), controlling for species breadth, annotation opportunity, sequence length, pLDDT, and refined GTDB-Tk host phylum.
+* **Scope Changes from Original (`round5/EXTENSIONS.md` H2):**
+  1. Condition primary inference on families with $\geq 2$ distinct dRep species clusters carrying complete, Bakta-mapped 4-flank windows; classify truncated, unbinned, or unannotated loci as ineligible/missing rather than negatives.
+  2. State whether family membership uses the 90%-sequence-cluster representatives in `04_cluster/clusters.tsv` or expands across `all_cluster90.tsv` instances prior to species deduplication.
+  3. Restrict interpretation to computational flanking KO recurrence and chromosomal colocalisation (no novel-fold, operon, expression, or adaptive claims; no wet-lab proof required; negative/null outcomes remain informative).
+
+**Adjudication of Root Notes:** Inspecting v2 code and rows confirms two v1 defects were fixed in v2:
+1. *Admission vs. analysis species identity (`scripts/01_select_cohort.py:137-139,204,228`):* Unlike v1 (`v1_superseded/scripts/01_select_cohort.py:121`, `bin_to_species.get(b, b)`), v2 uses `bin_to_species.get(b, "")` and excludes blank species. In all 100 pilot families, `pilot_cohort.tsv` `n_species` equals distinct non-blank species in `pilot_members.tsv` and `n_primary_loci` in `pilot_family_conservation.tsv`.
+2. *Contig-qualified annotation keys (`scripts/02_extract_neighbourhoods.py:324`):* Bakta CDSs are indexed by `(normalize_contig(r_contig), start, stop, strand)`.
+
+However, all five remaining Root v2 concerns are confirmed, along with two linked bugs (`contig_len == 0` for all 534 rows and a 99.6% broken GTDB-Tk join causing logistic regression quasi-separation and non-convergence).
+
+---
+
+## 2. Critical Findings (Blocking Viability)
+
+### C1. Primary KO aggregation includes incomplete-window loci, and unmapped/unavailable flanks are counted as callable complete windows
+* **Evidence:**
+  * `scripts/03_analyse_conservation.py:134-135` (`if r[f"{flank_key}_truncated"] == "0": ko_by_sp_primary[k].add(sp)`) aggregates KOs from any non-truncated flank of a primary locus *before* checking locus completeness (`is_complete`, line 139). Edge-truncated loci (`is_complete == False`, excluded from `n_sp_complete`) still contribute species to `ko_by_sp_primary` (`recurrent_kos_primary` at line 151 and `best_ko_sp_count` at line 158).
+  * In `results/pilot_family_conservation.tsv`, this contaminates **7 / 24** reported primary-conserved families:
+    1. Four families have impossible proportions $R_{\text{fam}} = \text{best\_ko\_sp\_count} / n_{\text{sp\_complete}} > 1.0$: `F25Dr2::F25Dr2_61875_4` ($11/10 = 1.1$, line 51), `F2Dr1::F2Dr1_2447321_2` ($3/2 = 1.5$, line 56), `V2PRr1::V2PRr1_1965096_2` ($5/4 = 1.25$, line 87), and `V5PRr1::V5PRr1_986749_4` ($3/2 = 1.5$, line 99).
+    2. `S52PRr1::S52PRr1_309397_2` (line 73) inflates `best_ko_species_count` from `3` to `5` ($R_{\text{fam}} = 0.4545$ vs. $3/11 = 0.2727$).
+    3. Two `QnotK` families — `38PRr3::38PRr3_622317_3` (`K01790`, line 18) and `V45Dr1::V45Dr1_764362_26` (`K18244`, line 94) — are false-positive `c_fam_primary = 1` calls where the KO occurs in only 1 complete-window species plus 1 edge-truncated species.
+  * In `scripts/03_analyse_conservation.py:103-124`, `is_complete` is `False` only when `audit == "contig_edge_truncated"`; `source_file_unavailable` (lines 112–114) and `coordinate_mismatch` (lines 115–117) set `has_any_callable = True` and leave `is_complete = True`, and line 172 includes them in `callable_flanks = total_flanks - edge_truncated_flanks` across all `prim_loci`. Of `319` primary loci (`1,276` flanks), `185` have no `contig_edge_truncated` flank, but **97 / 185** have $\geq 1$ `coordinate_mismatch` (`252` flanks) or `source_file_unavailable` (`3` flanks, e.g., `44Dr2::44Dr2_1111472_2` on unannotated bin `44Dr2__single_SemiBin_9_sub`) flank; only **88 loci** have all 4 flanks mapped in Bakta (`mapped_KO` or `mapped_noKO`).
+  * On IBEX, **164 / 272 (60.3%)** `coordinate_mismatch` flanks across binned rows share the **exact 3' stop codon and strand** (`stop` on `+`, `start` on `-`) with a Bakta CDS on the same contig (5' start differences between meta-Pyrodigal and bin-trained Bakta), including **61 flanks with KEGG KOs** discarded as `coordinate_mismatch` and counted as `noKO` negatives.
+* **Impact:** Removing incomplete-locus KOs changes `QnotK` primary conservation from `14/24 (58.33%)` to `12/24 (50.00%)` ($\Delta = -0.1875$, Fisher $p = 0.1778$ vs. reported $\Delta = -0.2708, p = 0.0581$). Requiring 4 Bakta-mapped flanks (`88` loci) leaves `27` families (`18 K, 9 QnotK`; $K = 9/18$ vs. $Q \setminus K = 5/9$, $\Delta = -0.0556$, Fisher $p = 1.000$).
+* **Repair / Check:** Determine locus eligibility *first* (requiring 4 Bakta-mapped flanks for the primary gate, optionally auditing exact 3'-stop+strand matches as an explicit tier); never treat `source_file_unavailable` or unmapped `coordinate_mismatch` flanks as complete/callable; aggregate numerator, denominator, and `ko_annotation_opportunity` strictly over eligible loci so $R_{\text{fam}} \in [0,1]$; and report join counts separately for `319` primary binned loci vs. `178` unbinned non-primary rows (`384 / 426` `source_file_unavailable` flanks).
+
+### C2. Broken `contig_len == 0` tie-breaker, broken GTDB-Tk join (`99% unassigned`), and non-converged logistic regression
+* **Evidence:**
+  * `scripts/01_select_cohort.py:92` parses contig length from column 2 of `contig_to_bin_refined.tsv.gz`, which is `"refined"` on every row. Thus `contig_len == 0` for **534 / 534 (100%)** rows in `results/pilot_members.tsv`. Line 226 falls back to lexicographical `member` sorting, picking a shorter contig in `11 / 20` multi-copy species pairs and an edge-truncated copy over a complete-window copy in `64PRr2::64PRr2_61434_59` (`sp=4150_0`: 35-gene truncated vs. 63-gene complete contig).
+  * `scripts/01_select_cohort.py:32-33` reads unrefined `02_taxonomy/gtdbtk_out/gtdbtk.{bac120,ar53}.summary.tsv` (`10Dr2__SemiBin_0`) instead of refined `05_refine/_gtdbtk_refined/gtdbtk.{bac120,ar53}.summary.tsv` and `05_refine/_gtdbtk_r232/` (`10Dr2__single_SemiBin_0`, `15Dr1__self_SemiBin_160_sub`). Thus `532 / 534 (99.6%)` rows in `pilot_members.tsv` have `taxonomy = ""`, `2,821 / 2,838 (99.4%)` families in `all_evaluable_families.tsv` and `99 / 100` in `pilot_cohort.tsv` have `phylum = "unassigned"`, and `1` (`S52PRr1::S52PRr1_309397_2`) has `phylum = "multi"`.
+  * In `scripts/03_analyse_conservation.py:316-353`, `phylum_unassigned` (55 vs. 1 with $y = 1$) causes quasi-complete separation ($\text{coef} = -14.7502, \text{SE} = 424{,}697.1$, `results/pilot_conservation_summary.json:120-129`) and non-convergence (`"converged": false`, line 57) without raising an exception, bypassing `fit_regularized` (lines 331–332). `DOSSIER.md:120-131` omits `"converged": false` and `phylum_unassigned`, reporting non-converged estimates as valid.
+* **Impact:** Invalidates multiplicity tie-breaking, phylum stratification (`01_select_cohort.py:176`), and covariate-adjusted regression.
+* **Repair / Check:** Compute true contig lengths/completeness before selecting primary loci; join taxonomy from `05_refine/_gtdbtk_refined/` and propagate species-cluster R232 taxonomy via `Cdb.csv` ($>95\%$ phylum coverage); check `model.mle_retvals.get("converged", False)` and finite SEs explicitly (using penalized/Firth logit or stratified permutation when sparse); and report convergence status.
+
+### C3. Unconditioned locus/edge sampling and invalid between-arm test statistic in the permutation null
+* **Evidence:**
+  * Across the 56 `primary_evaluable_fams`, `scripts/03_analyse_conservation.py:262-289` loops over all `212` `fam_primary_loci[fam]` (including **53 edge-truncated loci** alongside `159` complete-window loci) and draws `pseudo_idx = rng.randint(0, n_cds - 1)` across all contig positions (`71 / 212 = 33.5%` edge-truncated draws in `b = 0`).
+  * Line 299 compares observed $\Delta^{\text{obs}} = -0.2708$ against $\Delta^{\text{null}, b} = \bar{C}_K^{\text{null}, b} - \bar{C}_{Q\setminus K}^{\text{null}, b}$. Random positions destroy synteny in *both* arms, reducing mean recurrence from $31.25\%$ and $58.33\%$ to $12.47\%$ and $10.13\%$. Because Bernoulli variance $p(1-p)$ is $4\times$ smaller at $p \approx 0.11$ than at pooled prevalence $p = 24/56 = 0.429$, the SD of $\Delta^{\text{null}, b}$ shrinks to `0.0681` (vs. `0.1336` under arm-label exchangeability, Fisher $p = 0.0581$), yielding an artifactual $p = 0.0010$ (`DOSSIER.md:117-118`).
+* **Impact:** Conflates within-arm synteny enrichment above random contig positions with the between-arm contrast $\Delta$.
+* **Repair / Check:** Sample pseudo-focal positions strictly from eligible complete-window positions on eligible complete-window primary loci; use positional permutation to test within-arm enrichment above background; and test the between-arm contrast on family-level background-adjusted excess $E_{\text{fam}} = C_{\text{fam}}^{\text{obs}} - \mathbb{E}[C_{\text{fam}}^{\text{pos-null}}]$ via arm-label permutation.
+
+### C4. Order/length-only contig mapping, silent missing-bin attrition, and unpinned `DYNAMIC` inputs
+* **Evidence:**
+  * `scripts/02_extract_neighbourhoods.py:235-281` pairs `output_bins/{parent}.fa.gz` and `bakta/{parent}/{parent}.fna` by FASTA order and length only. On IBEX, **209 / 293 (71.3%)** available pilot bins have duplicate contig lengths (`29,760` contigs), while **14 / 307** unique bins lack Bakta files and silently return `{}` (lines 231–233), contradicting `DOSSIER.md:69` ("Across all 307 evaluated refined MAG bins... 0.0%"). `INPUTS.tsv:14-17` marks per-sample/per-bin inputs as `DYNAMIC` and omits `bakta/{parent}/{parent}.fna` and `.log`.
+* **Impact:** Unverified contig sequence/orientation identity, misreported missing Bakta bins, and unpinned inputs.
+* **Repair / Check:** Verify contig mapping by uppercase nucleotide SHA-256 and `id=contig_N, orig-id=...` in `bakta/{parent}/{parent}.log` (failing closed on mismatch); record `293` available vs. `14` missing bins in `pilot_join_metrics.json`; and emit a manifest with byte sizes and SHA-256 hashes for all sample/bin files read.
+
+### C5. Undocumented 90%-cluster representative basis of `04_cluster/clusters.tsv` and residual novel-fold/operon prose
+* **Evidence:**
+  * Upstream scripts (`00_structure_clean/scripts/01_prep.sh:19-20`, `04_cluster.sh:6-9`, `darkclean_5_mag.sh:73-101`) show `04_cluster/clusters.tsv` contains only **90%-sequence-cluster representatives** (`mag_dark_rep_ids.txt.gz`), where a 90%-cluster was included if *any* member in `all_cluster90.tsv` mapped to a MAG. Reading only `clusters.tsv` leaves `6,244 / 12,382 (50.4%)` member contigs unbinned (`pilot_v2_53703301.out:14`) and drops `412 / 2,838` families. Moreover, `DOSSIER.md` retains `"candidate novel folds"` (line 3) and `"operons"` (lines 167, 195, 202) despite line 34.
+* **Impact:** Ambiguous member population definition and overclaimed novel-fold/operon prose.
+* **Repair / Check:** State explicitly whether the population conditions on `clusters.tsv` 90%-cluster representatives or expands through `all_cluster90.tsv`, and remove remaining `"novel folds"` and `"operons"` phrasing.
+
+---
+
+## 3. Optional Enhancements
+* **O1:** Report `same_strand_fraction` and intergenic distances (`_dist`) across eligible complete windows as descriptive context.
+
+---
+
+## 4. Concise Verdict
+
+**REVISE.** Repair primary locus eligibility and KO aggregation (`C1`), `contig_len` and refined GTDB-Tk joins plus regression convergence (`C2`), permutation-null conditioning and test statistic (`C3`), sequence-hash/log contig verification and input checksum manifest (`C4`), and 90%-cluster membership documentation and prose bounds (`C5`).

@@ -1,0 +1,2175 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q8DKB5",
+  "uniProtkbId": "CCMM_THEVB",
+  "entryAudit": {
+    "firstPublicDate": "2020-10-07",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2003-03-01",
+    "entryVersion": 138,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Thermosynechococcus vestitus (strain NIES-2133 / IAM M-273 / BP-1)",
+    "taxonId": 197221,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Cyanobacteriota",
+      "Cyanophyceae",
+      "Acaryochloridales",
+      "Thermosynechococcaceae",
+      "Thermosynechococcus"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305"
+          }
+        ],
+        "value": "Carboxysome assembly protein CcmM"
+      },
+      "shortNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "30591587"
+            }
+          ],
+          "value": "CcmM70"
+        },
+        {
+          "value": "M70"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Carbon dioxide concentrating mechanism protein CcmM"
+        }
+      },
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "20133749"
+            }
+          ],
+          "value": "Carbonic anhydrase"
+        },
+        "ecNumbers": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "20133749"
+              }
+            ],
+            "value": "4.2.1.1"
+          }
+        ]
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "20133749"
+          }
+        ],
+        "value": "ccmM"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "tll0944"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03513"
+            },
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "30591587"
+            }
+          ],
+          "value": "Functions as a scaffold protein for the assembly of beta-carboxysomes, initiates carboxysome assembly by coalescing RuBisCO (ribulose bisphosphate carboxylase, rbcL-rbcS) (Probable). Produced as a full-length and a shorter form; both forms are required for correct carboxysome assembly and growth (By similarity)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20133749"
+            }
+          ],
+          "value": "A carbonic anhydrase, catalyzes the reversible hydration of carbon dioxide. Essential to photosynthetic carbon dioxide fixation, supplies CO(2) to ribulose bisphosphate carboxylase (RuBisCO) in the carboxysome. Active when the disulfide bond (194-200) is oxidized, suggesting the interior of the carboxysome is oxidizing"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03513"
+            },
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "30591587"
+            }
+          ],
+          "value": "Beta-carboxysome assembly initiates when soluble RuBisCO is condensed into a liquid matrix in a pre-carboxysome by the RbcS-like domains of probably both forms of CcmM (Probable). CcmN interacts with the N-terminus of full length CcmM, and then recruits the shell proteins (CcmK) via CcmN's encapsulation peptide. Shell formation requires both CcmK proteins and CcmO. CcmL caps the otherwise elongated carboxysome. Once fully encapsulated carboxysomes are formed, they migrate within the cell probably via interactions with the cytoskeleton (By similarity)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "hydrogencarbonate + H(+) = CO2 + H2O",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:10748"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16526"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:17544"
+          }
+        ],
+        "ecNumber": "4.2.1.1",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "20133749"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Zn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20133749"
+            },
+            {
+              "evidenceCode": "ECO:0007744",
+              "source": "PDB",
+              "id": "3KWC"
+            },
+            {
+              "evidenceCode": "ECO:0007744",
+              "source": "PDB",
+              "id": "3KWD"
+            },
+            {
+              "evidenceCode": "ECO:0007744",
+              "source": "PDB",
+              "id": "3KWE"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29105"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "20133749"
+              }
+            ],
+            "value": "Binds 3 zinc per trimer."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20133749"
+            }
+          ],
+          "value": "Carbonic anhydrase (CA) activity is probably under redox control to remain inactive in the cytoplasm. CA activity of full-length protein inhibited by ethoxyzolamide, and for both full-length and CcmM 1-209 construct by reducing agents"
+        }
+      ],
+      "commentType": "ACTIVITY REGULATION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03513"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20133749"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "30591587"
+            }
+          ],
+          "value": "The N-terminal structure crystallizes as a homotrimer; zinc is bound between adjacent monomers (PubMed:20133749). The C-terminal RbcS-like domains bind to holo-RuBisCO (PubMed:30591587). Full length protein interacts with CcmN (By similarity)"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "20133749"
+              }
+            ],
+            "value": "This cyanobacterium makes beta-type carboxysomes"
+          }
+        ]
+      },
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "20133749"
+              }
+            ],
+            "value": "Carboxysome",
+            "id": "SL-0034"
+          }
+        }
+      ]
+    },
+    {
+      "commentType": "ALTERNATIVE PRODUCTS",
+      "events": [
+        "Alternative initiation"
+      ],
+      "isoforms": [
+        {
+          "name": {
+            "value": "CcmM70"
+          },
+          "isoformIds": [
+            "Q8DKB5-1"
+          ],
+          "isoformSequenceStatus": "Displayed"
+        },
+        {
+          "name": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "Q03513"
+              }
+            ],
+            "value": "CcmM47"
+          },
+          "isoformIds": [
+            "Q8DKB5-2"
+          ],
+          "sequenceIds": [
+            "VSP_060777"
+          ],
+          "isoformSequenceStatus": "Described"
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20133749"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "30591587"
+            }
+          ],
+          "value": "The N-terminus (residues 1-164) forms a trimer with a partially blocked channel forms at the trimer interface (PubMed:20133749). The C-terminus has 4 domains that resemble the small subunit of RuBisCO (rbcS) joined by flexible linkers; the first one (CcmMS1) has been crystallized and folds much like RbcS. CcmMS1 binds to holo-RuBisCO (RbcL(8)-RbcS(8)), a CcmMS1-CcmMS2 constructs binds about 10-fold better, while the entire C-terminus with all 4 CcmMS domains binds with an intermediate affinity. CcmMS1 binds to a different region of RbcL than does RbcS, up to 5 CcmMS1 domains can bind to the intact holo enzyme (PubMed:30591587)"
+        }
+      ],
+      "commentType": "DOMAIN"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "20133749"
+            }
+          ],
+          "value": "Belongs to the gamma-class carbonic anhydrase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 652,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Carboxysome assembly protein CcmM",
+      "featureId": "PRO_0000451244"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 209,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Has carbonic anhydrase (CA) activity",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20133749"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 193,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Does not have CA activity",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20133749"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 233,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 313,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "RbcS-like repeat 1, CcmMS1",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "30591587"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 338,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 422,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "RbcS-like repeat 2, CcmMS2",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "30591587"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 451,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 533,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "RbcS-like repeat 3, CcmMS3",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "30591587"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 530,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 566,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 565,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 649,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "RbcS-like repeat 4, CcmMS4",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "30591587"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 537,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 566,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Polar residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 56,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 56,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Proton donor/acceptor",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P40881"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 75,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 75,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in other chain",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20133749"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWC"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWD"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWE"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105",
+        "note": "ligand shared between two neighboring subunits"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 102,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 102,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20133749"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWC"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWD"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWE"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105",
+        "note": "ligand shared between two neighboring subunits"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 107,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 107,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in other chain",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20133749"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWC"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWD"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWE"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105",
+        "note": "ligand shared between two neighboring subunits"
+      }
+    },
+    {
+      "type": "Disulfide bond",
+      "location": {
+        "start": {
+          "value": 194,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 200,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20133749"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWC"
+        }
+      ]
+    },
+    {
+      "type": "Alternative sequence",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 228,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in isoform CcmM47",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q03513"
+        }
+      ],
+      "featureId": "VSP_060777",
+      "alternativeSequence": {}
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 174,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 197,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "About 50% activity (in the CcmM 1-209 construct), not inhibited by reducing agents.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20133749"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "DIHFAQHVVGINEALLSGYQCAEN",
+        "alternativeSequences": [
+          "AYSHTNEAVVYVNVHLAEGYKETS"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 200,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 200,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Loss of CA activity (in the CcmM 1-209 construct).",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "20133749"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "C",
+        "alternativeSequences": [
+          "S"
+        ]
+      }
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 7,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 10,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWC"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 18,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 20,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 32,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 40,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 51,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 57,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 60,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 62,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 73,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 76,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 89,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 94,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 105,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 112,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 123,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 129,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 140,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 143,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 150,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 152,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 161,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 164,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 172,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 181,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWD"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 198,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 207,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "3KWC"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 228,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 230,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 234,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 243,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 246,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 252,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 254,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 258,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 263,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 268,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 273,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 286,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 287,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 289,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 290,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 297,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 299,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 301,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 304,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 313,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-0024",
+      "category": "Coding sequence diversity",
+      "name": "Alternative initiation"
+    },
+    {
+      "id": "KW-1283",
+      "category": "Cellular component",
+      "name": "Bacterial microcompartment"
+    },
+    {
+      "id": "KW-0120",
+      "category": "Biological process",
+      "name": "Carbon dioxide fixation"
+    },
+    {
+      "id": "KW-1282",
+      "category": "Cellular component",
+      "name": "Carboxysome"
+    },
+    {
+      "id": "KW-1015",
+      "category": "PTM",
+      "name": "Disulfide bond"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0602",
+      "category": "Biological process",
+      "name": "Photosynthesis"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0677",
+      "category": "Domain",
+      "name": "Repeat"
+    },
+    {
+      "id": "KW-0862",
+      "category": "Ligand",
+      "name": "Zinc"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "12240834",
+        "citationType": "journal article",
+        "authors": [
+          "Nakamura Y.",
+          "Kaneko T.",
+          "Sato S.",
+          "Ikeuchi M.",
+          "Katoh H.",
+          "Sasamoto S.",
+          "Watanabe A.",
+          "Iriguchi M.",
+          "Kawashima K.",
+          "Kimura T.",
+          "Kishida Y.",
+          "Kiyokawa C.",
+          "Kohara M.",
+          "Matsumoto M.",
+          "Matsuno A.",
+          "Nakazaki N.",
+          "Shimpo S.",
+          "Sugimoto M.",
+          "Takeuchi C.",
+          "Yamada M.",
+          "Tabata S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12240834"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/9.4.123"
+          }
+        ],
+        "title": "Complete genome structure of the thermophilic cyanobacterium Thermosynechococcus elongatus BP-1.",
+        "publicationDate": "2002",
+        "journal": "DNA Res.",
+        "firstPage": "123",
+        "lastPage": "130",
+        "volume": "9"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "NIES-2133 / IAM M-273 / BP-1",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "20133749",
+        "citationType": "journal article",
+        "authors": [
+          "Pena K.L.",
+          "Castel S.E.",
+          "de Araujo C.",
+          "Espie G.S.",
+          "Kimber M.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "20133749"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.0910866107"
+          }
+        ],
+        "title": "Structural basis of the oxidative activation of the carboxysomal gamma-carbonic anhydrase, CcmM.",
+        "publicationDate": "2010",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "2455",
+        "lastPage": "2460",
+        "volume": "107"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.10 ANGSTROMS) OF 1-193 IN COMPLEX WITH ZINC",
+        "X-RAY CRYSTALLOGRAPHY (2.00 ANGSTROMS) OF 1-209 IN COMPLEX WITH ZINC",
+        "FUNCTION AS A CARBONIC ANHYDRASE",
+        "CATALYTIC ACTIVITY",
+        "COFACTOR",
+        "ACTIVITY REGULATION",
+        "SUBCELLULAR LOCATION",
+        "DISULFIDE BONDS",
+        "MUTAGENESIS OF 174-ASP--ASN-197 AND CYS-200"
+      ],
+      "referenceComments": [
+        {
+          "value": "NIES-2133 / IAM M-273 / BP-1",
+          "type": "STRAIN"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWC"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWD"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "3KWE"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "30591587",
+        "citationType": "journal article",
+        "authors": [
+          "Ryan P.",
+          "Forrester T.J.B.",
+          "Wroblewski C.",
+          "Kenney T.M.G.",
+          "Kitova E.N.",
+          "Klassen J.S.",
+          "Kimber M.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "30591587"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.ra118.006330"
+          }
+        ],
+        "title": "The small RbcS-like domains of the beta-carboxysome structural protein CcmM bind RubisCO at a site distinct from that binding the RbcS subunit.",
+        "publicationDate": "2019",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "2593",
+        "lastPage": "2603",
+        "volume": "294"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.35 ANGSTROMS) OF 227-320",
+        "FUNCTION",
+        "SUBUNIT",
+        "DOMAIN"
+      ],
+      "referenceComments": [
+        {
+          "value": "NIES-2133 / IAM M-273 / BP-1",
+          "type": "STRAIN"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "6MR1"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "BA000039",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAC08496.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_011056788.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_004113.1"
+        }
+      ],
+      "isoformId": "Q8DKB5-1"
+    },
+    {
+      "database": "PDB",
+      "id": "3KWC",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.00 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B/C/D/E/F=1-209"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3KWD",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.10 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-193"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "3KWE",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.10 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-193"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "6MR1",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.35 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=227-320"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3KWC",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3KWD",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "3KWE",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "6MR1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q8DKB5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q8DKB5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-58532N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "Q8DKB5",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "197221.gene:10747536",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "BAC08496",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAC08496"
+        },
+        {
+          "key": "GeneId",
+          "value": "BAC08496"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "tel:tll0944",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|197221.4.peg.991",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0663",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG4451",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "Q8DKB5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000440",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0031470",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:carboxysome"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "20133749"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004089",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:carbonate dehydratase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "20133749"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0043886",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:structural constituent of carboxysome shell"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IPI:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000353",
+          "source": "PubMed",
+          "id": "30591587"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008270",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:zinc ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "20133749"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00710",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "LbH_gamma_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00307",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_small_like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.160.10.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapeptide repeat proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.190.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ribulose bisphosphate carboxylase, small subunit"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR047223",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CA_gamma_LbH"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR017156",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CcmM"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR052265",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gamma-CA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR000894",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_ssu_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036385",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_ssu_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011004",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trimer_LpxA-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43360",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBON DIOXIDE CONCENTRATING MECHANISM PROTEIN CCMM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43360:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBOXYSOME ASSEMBLY PROTEIN CCMM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00101",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_small"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF037250",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CcmM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00961",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_small"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF55239",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO, small subunit"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51161",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trimeric LpxA-like enzymes"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MAVQSYAAPPTPWSRDLAEPEIAPTAYVHSFSNLIGDVRIKDYVHIAPGTSIRADEGTPFHIGSRTNIQDGVVIHGLQQGRVIGDDGQEYSVWIGDNVSITHMALIHGPAYIGDGCFIGFRSTVFNARVGAGCVVMMHVLIQDVEIPPGKYVPSGMVITTQQQADRLPNVEESDIHFAQHVVGINEALLSGYQCAENIACIAPIRNELQRQEDPPTLHVEMLTGEKNTMTTDYGTHVRQLLQQGYQISLEYADARRYRTSSWQSGPTLTGQQESQVMAAIAQLLKEHEGEYVRLIGVDPKAKRRVFEEIIQRPGQAAVASSSSSRPSATVNASPVGSLDAAVVAQVRQLLQQGYQIGTEHADARRYRTSSWTSCAPIQSKQEPEVLAALEACLQEHAGEYVRLIGIDQKQKRRVLEQIIQRPQGPVAIAPKTPTPVATSHASVSSGGNDTLLSADLVNQIQDLLRQGCQVITEYADQRRFRTSSWQSGIKITSAQQINDLRSFLAEHQRDYIRLVGVNPQAKQRVLETIIHRPNGKAASNGNSTRGQGFTPRPTASSQGSPSTHSLSQEVIEQVRQLLQQGYTLGLEHVDARRYRTNSWQSGPRIEAKNLNEALAAIQACLQEYSGEYVRLIGINPAGKQRVAEILLQQAAK",
+    "length": 652,
+    "molWeight": 71584,
+    "crc64": "84157EFA0CB3110D",
+    "md5": "AAAC2442E3335B2FD951B76C4442A167"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 3,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "ACTIVITY REGULATION": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "ALTERNATIVE PRODUCTS": 2,
+      "DOMAIN": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Region": 7,
+      "Compositional bias": 1,
+      "Active site": 1,
+      "Binding site": 3,
+      "Disulfide bond": 1,
+      "Alternative sequence": 1,
+      "Mutagenesis": 2,
+      "Helix": 8,
+      "Beta strand": 14,
+      "Turn": 2
+    },
+    "uniParcId": "UPI00000E3AF2"
+  }
+}

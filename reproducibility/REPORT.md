@@ -1,0 +1,441 @@
+# Reproducibility report
+
+## Figures
+```
+== regenerating derived result prose and figures ==
+  -> python3 code/make_figures.py
+  -> python3 code/phase_d_endemism.py
+  -> python3 code/phase_d_global.py
+  -> python3 code/make_darkmatter_figures.py
+  -> python3 code/make_global_specificity_figure.py
+  -> python3 code/make_picrust2_bias_figure.py
+  -> python3 RQ/E2/run.py
+== checking expected figure PDFs exist ==
+  OK   fig_amr_class.pdf
+  OK   fig_bgc_product.pdf
+  OK   fig_lifeonair_by_phylum.pdf
+  OK   fig_darkmatter_dnds.pdf
+  OK   fig_darkmatter_pcoa.pdf
+  OK   fig_darkmatter_permanova.pdf
+  OK   fig_darkmatter_endemism.pdf
+  OK   fig_darkmatter_global_endemism.pdf
+  OK   fig_darkmatter_endemism_sites.pdf
+  OK   fig_picrust2_bias.pdf
+  OK   fig_darkmatter_global_specificity.pdf
+All 11 figures present.
+== checking B4 exploratory-screen products exist ==
+  OK   RQ/E2/fig_posel_function.pdf
+  OK   RQ/E2/table_positive_families_summary.tsv
+  OK   RQ/E2/table_structural_tiers.tsv
+  OK   RQ/E2/table_functional_categories.tsv
+  OK   RQ/E2/table_boltz_hypotheses.tsv
+== synchronising generated PDFs into manuscript/figures/ ==
+  SYNC fig_amr_class.pdf
+  SYNC fig_bgc_product.pdf
+  SYNC fig_lifeonair_by_phylum.pdf
+  SYNC fig_darkmatter_dnds.pdf
+  SYNC fig_darkmatter_pcoa.pdf
+  SYNC fig_darkmatter_permanova.pdf
+  SYNC fig_darkmatter_endemism.pdf
+  SYNC fig_darkmatter_global_endemism.pdf
+  SYNC fig_darkmatter_endemism_sites.pdf
+  SYNC fig_picrust2_bias.pdf
+  SYNC fig_darkmatter_global_specificity.pdf
+Figure 4 rebuilt from checksum-verified qTM inputs; pooled transition counts: [714, 167, 38, 0, 45]
+```
+
+## Numbers (recompute vs paper)
+```
+GATES: PASS (65 frozen artifacts; manuscript boundary language current)
+STATUS   ID                              PAPER      COMPUTED  DESCRIPTION
+----------------------------------------------------------------------------------------------------
+PASS     scale.read_pairs                  573           573  paired-read sample universe
+PASS     scale.metadata                    551           551  samples with canonical metadata
+PASS     scale.binnable                    550           550  binnable samples
+PASS     scale.coassembly_samples            527           527  samples assigned to coassembly groups
+PASS     scale.coassembly_groups            126           126  coassembly groups
+PASS     scale.refined_bins              14426         14426  canonical refined bins
+PASS     scale.refined_hq                 4225          4225  canonical refined HQ bins
+PASS     scale.refined_mq                 8209          8209  canonical refined MQ bins
+PASS     scale.refined_lq                 1992          1992  canonical refined LQ bins
+PASS     scale.refined_hq_mq             12434         12434  canonical refined HQ+MQ bins
+PASS     scale.drep_inputs               12433         12433  members in the frozen historical dRep Cdb table
+PASS     scale.drep_current_only              1             1  current HQ/MQ identifiers absent from historical Cdb membership
+PASS     scale.drep_historical_only              0             0  historical Cdb identifiers absent from the current HQ/MQ set
+PASS     scale.salvage                     304           304  coassembly LQ salvage bins retained as a separate prospective cohort
+PASS     scale.representatives            5438          5438  ANI95 HQ/MQ representatives classified with GTDB R232
+PASS     scale.rep_hq                     2259          2259  HQ representatives
+PASS     scale.rep_mq                     3179          3179  MQ representatives
+PASS     scale.named_phyla                  51            51  named phyla represented in the ANI95 catalogue
+PASS     scale.gap_domain                    0             0  first assignment gaps at domain
+PASS     scale.gap_phylum                    0             0  first assignment gaps at phylum
+PASS     scale.gap_class                     0             0  first assignment gaps at class
+PASS     scale.gap_order_all                11            11  first assignment gaps at order
+PASS     scale.gap_order_hq                  6             6  HQ first assignment gaps at order
+PASS     scale.gap_family                  142           142  first assignment gaps at family
+PASS     scale.gap_family_hq                64            64  HQ first assignment gaps at family
+PASS     scale.gap_genus                  1343          1343  first assignment gaps at genus
+PASS     scale.gap_genus_hq                530           530  HQ first assignment gaps at genus
+PASS     scale.gap_species                3755          3755  first assignment gaps at species
+PASS     scale.gap_species_hq             1555          1555  HQ first assignment gaps at species
+PASS     scale.fully_assigned              187           187  representatives assigned through species
+PASS     scale.r226_changed               1898          1898  R232 classifications changed from R226
+PASS     scale.phylogeny_candidates             10            10  R232 empty-order candidates staged into de novo phylogenies
+PASS     scale.phylogeny_present             10            10  staged candidates present in de novo trees
+PASS     scale.order_assignments              0             0  automatic novel-rank assignments after phylogeny/RED
+PASS     scale.manual_proposals              0             0  candidates advanced to manual taxonomic proposal
+PASS     scale.functional_mags           15469         15469  MAGs in the historical R226-era functional/Bakta snapshot
+LEDGER   scale.proteins               51920778  [PROVENANCE]  predicted proteins in the historical Bakta snapshot (job 46528255)  <- workbench/CHANGELOG.md:2039
+PASS     a1.hydB1l.prot                   5292          5292  hydB group 1l proteins
+PASS     a1.hydB1l.mag                    2609          2609  hydB group 1l MAGs
+PASS     a1.hydB1h.prot                    986           986  hydB group 1h proteins
+PASS     a1.hydB1h.mag                     893           893  hydB group 1h MAGs
+PASS     a1.coxL.prot                     5645          5645  coxL form-I proteins
+PASS     a1.coxL.mag                      3828          3828  coxL form-I MAGs
+PASS     a1.guildcore                     1204          1204  guild core (H2+CO) MAGs
+PASS     a1.aridity.rho                 -0.172        -0.172  group-1l share vs precipitation Spearman rho
+PASS     a1.aridity.p                    0.196         0.196  group-1l share vs precipitation permutation p
+PASS     a1.aridity.n                       58            58  group-1l share vs precipitation sites
+SOURCE   a1.aridity.cross             NEGATIVE       [TABLE]  cross-biome group-1l share has no monotonic aridity gradient  <- results/atmospheric/aridity/cross_biome_hydrogenase.tsv
+PASS     a2.ner                           99.4          99.4  NER prevalence %
+PASS     a2.ber                           99.5          99.5  BER prevalence %
+PASS     a2.nhej                          78.4          78.4  NHEJ prevalence %
+PASS     a2.photo.surf                    22.4          22.4  photolyase surface %
+PASS     a2.photo.deep                    13.1          13.1  photolyase deep %
+SOURCE   a3.osmolyte.or         OR 1.10, p=0.45       [TABLE]  osmolyte class enrichment OR/p (null)  <- results/darkmatter_ecology/OSMOLYTE.md
+PASS     a4.terpene                       64.5          64.5  terpene BGC % of MAGs
+PASS     a4.nrps                          25.3          25.3  NRPS BGC % of MAGs
+PASS     a4.ectoine                         17            17  ectoine BGC % of MAGs
+PASS     a5.arsenic                       2423          2423  arsenic-resistance MAGs
+PASS     a5.mercury                       1077          1077  mercury-resistance MAGs
+PASS     a5.betalactam                    24.7          24.7  beta-lactam resistome % of MAGs
+PASS     a5.pathogens                     0.05          0.05  named pathogen MAGs % (rounds to 0.05)
+LEDGER   b1.reps                      23416070  [PROVENANCE]  linclust 90%id/80%cov representatives of the 51.9M Bakta proteins  <- workbench/CHANGELOG.md:2039
+LEDGER   b1.uniref.hit                20577040  [PROVENANCE]  UniRef50-hit representatives (of 23416070)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_structure/seq_vs_uniref50/hit_ids.txt
+LEDGER   b1.dark                2839030 / 12.1%  [PROVENANCE]  UniRef50 no-hit (sequence-dark) representatives = 12.1% of 23416070  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_structure/seq_vs_uniref50/nohit_ids.txt
+LEDGER   b1.structnovel         2533446 / 89.2%  [PROVENANCE]  no-AFDB-match representatives in the predicted-3Di screen (of 2839030 sequence-dark)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_structure/foldseek_results/struct_nohit_ids.txt
+LEDGER   b1.afdbhit             305584 / 10.8%  [PROVENANCE]  AFDB-hit representatives in the predicted-3Di screen (of 2839030 sequence-dark)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_structure/prostt5_foldseek_orix/merged_afdb_hit_ids.txt
+LEDGER   b1.clusters30                 1875540  [PROVENANCE]  30%-id clusters of ALL 2839030 sequence-dark reps (not of the 2533446 subset)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_structure/novelty_analysis/novel_family_summary.tsv
+LEDGER   b1.families                    334810  [PROVENANCE]  multi-member sequence-dark families (>=2 members; of 1875540 clusters)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_structure/novelty_analysis/novel_family_summary.tsv
+LEDGER   b1.family.members             1298300  [PROVENANCE]  representatives inside the 334810 multi-member families (of 2839030)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_structure/novelty_analysis/novel_family_summary.tsv
+LEDGER   b1.singletons                 1540730  [PROVENANCE]  sequence-dark singleton clusters (of 1875540 clusters)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_structure/novelty_analysis/novel_family_summary.tsv
+LEDGER   b1.assembly.catalog         753305533  [PROVENANCE]  assembly protein catalogue (both binning strategies, incl. unbinned)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_protein_catalog/assembly_proteins.mmseqsdb.index
+LEDGER   b1.assembly.clusters90      449265306  [PROVENANCE]  assembly-catalogue 90%-id clusters (of 753305533 proteins)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_protein_catalog/catalog_ladder/catalog_ladder_summary.tsv
+LEDGER   b1.assembly.dark       68646640 / 15.3%  [PROVENANCE]  UniRef50-dark assembly clusters (of 449265306 clusters)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_protein_catalog/catalog_ladder/catalog_ladder_summary.tsv
+LEDGER   b1.tier1.input               11418079  [PROVENANCE]  historical tier1 MAG-associated input from its own pre-correction snapshot  <- workbench/results/tier1_structural_novelty/SUMMARY.md
+LEDGER   b1.tier1.novel         10534391 / 92.26%  [PROVENANCE]  tier1 no-AFDB-match (raw rate; fragment-inflated)  <- workbench/results/tier1_structural_novelty/SUMMARY.md
+LEDGER   b1.tier1.fragment      2339154 / 22.2% / 74.0%  [PROVENANCE]  tier1 fragment caveat: 2339154 no-hits >=100 aa = 22.2% of raw no-hits; 74.0% no-hit among >=100-aa inputs  <- workbench/results/tier1_structural_novelty/SUMMARY.md
+LEDGER   b1.tier2.input               57379961  [PROVENANCE]  historical tier2 non-MAG input from a separate snapshot  <- workbench/CHANGELOG.md:1307
+PASS     b1.tier.nonclosure             151400        151400  tier1 + tier2 exceed the assembly-catalogue dark count; snapshots do not close
+LEDGER   b1.tier1.superseded    11418079 -> 1902233  [PROVENANCE]  later re-tiering vs DAS_Tool-refined bins: 9515846 tier1 reps demoted to tier2  <- workbench/CHANGELOG.md:1306
+LEDGER   b1.tier2.structinput         13088646  [PROVENANCE]  tier2 structural-analysis input (>=100 aa subset of 57379961)  <- workbench/results/tier2_structural_novelty/README.md
+LEDGER   b1.tier2.novel         10113496 / 77.27%  [PROVENANCE]  tier2 (non-MAG, >=100 aa) no-AFDB-match of 13088646  <- workbench/results/tier2_structural_novelty/README.md
+LEDGER   b1.tier2.families              156743  [PROVENANCE]  historical candidate novel-fold families (separate tier2 clustering; not used elsewhere)  <- workbench/results/tier2_structural_novelty/headline.txt
+LEDGER   b1.tier1.clusters      10898521 / 220177  [PROVENANCE]  tier1 structural clusters / multi-member (of 11418079)  <- workbench/results/tier2_structural_novelty/headline_tier1.txt
+LEDGER   b1.folds                        68808  [PROVENANCE]  candidate novel-fold families (>=2 members, 0 AFDB hit; of 220177 tier1 multi-member)  <- /ibex/scratch/projects/c2014/rob/metagenomics/04_structure/tier1_cluster/novel_fold_analysis/family_summary.tsv
+LEDGER   b1.folds.proteins              169651  [PROVENANCE]  proteins inside the 68808 historical candidate novel-fold families  <- workbench/results/tier2_structural_novelty/headline_tier1.txt
+PASS     b1a.structures                  68527         68527  explicit ESMFold candidate structures in the current-reference integration
+PASS     b1a.qtm.all                     41127         41127  query-normalised dual current-PDB/AFDB no-hits among all candidate models
+PASS     b1a.qtm.all.no_rows              6097          6097  unfiltered qTM candidate no-hits with neither reference row
+PASS     b1a.qtm.all.low                 35030         35030  unfiltered qTM candidate no-hits with a retrieved row below threshold
+PASS     b1a.alntm.all                   16386         16386  alignment-normalised dual current-PDB/AFDB no-hits among all candidate models
+PASS     b1a.alntm.all.no_rows            6097          6097  unfiltered alignment-TM candidate no-hits with neither reference row
+PASS     b1a.alntm.all.low               10289         10289  unfiltered alignment-TM candidate no-hits with a retrieved row below threshold
+PASS     b1a.candidate.qualified_n           1875          1875  candidate models passing length >=100 aa and mean pLDDT >=0.70
+PASS     b1a.qtm.qualified                 608           608  query-normalised dual no-hits after the confidence/length gate
+PASS     b1a.qtm.qualified_pct           32.43         32.43  query-normalised candidate dual-nohit rate %
+PASS     b1a.qtm.qualified.no_rows             74            74  gated qTM candidate no-hits with neither reference row
+PASS     b1a.qtm.qualified.low             534           534  gated qTM candidate no-hits with a retrieved row below threshold
+PASS     b1a.control.qualified_n           3013          3013  confidence- and length-qualified known-fold controls
+PASS     b1a.control.qtm.qualified            101           101  query-normalised known-fold false dual no-hits
+PASS     b1a.control.qtm.pct              3.35          3.35  query-normalised known-fold false dual-nohit rate %
+PASS     b1a.control.qtm.no_rows             66            66  query-normalised false no-hits with neither reference row
+PASS     b1a.control.qtm.low                35            35  query-normalised false no-hits with a row but both qTM scores below 0.5
+PASS     b1a.control.wilson_lo            2.77          2.77  query-normalised known-fold false dual-nohit Wilson 95% lower bound %
+PASS     b1a.control.wilson_hi            4.06          4.06  query-normalised known-fold false dual-nohit Wilson 95% upper bound %
+PASS     b1a.control.all_n                3684          3684  all structure-defined known-fold controls
+PASS     b1a.control.qtm.all               440           440  unfiltered query-normalised known-fold false dual no-hits
+PASS     b1a.control.qtm.all_pct          11.94         11.94  unfiltered query-normalised known-fold false dual-nohit rate %
+PASS     b1a.control.qtm.all.no_rows            110           110  unfiltered qTM control no-hits with neither reference row
+PASS     b1a.control.qtm.all.low            330           330  unfiltered qTM control no-hits with a retrieved row below threshold
+PASS     b1a.control.alntm.all             236           236  unfiltered alignment-normalised known-fold false dual no-hits
+PASS     b1a.control.alntm.all_pct           6.41          6.41  unfiltered alignment-normalised known-fold false dual-nohit rate %
+PASS     b1a.control.alntm.all.no_rows            110           110  unfiltered alignment-TM control no-hits with neither reference row
+PASS     b1a.control.alntm.all.low            126           126  unfiltered alignment-TM control no-hits with a retrieved row below threshold
+PASS     b.orthogroups                   23382         23382  dark orthogroups (50% id over 5438 dRep MAGs, dark rep, >=3 members) = denominator of B2/B3/B5/C3
+LEDGER   b.orthogroups.faa               23382  [PROVENANCE]  materialised query set for the endemism searches (23382 records)  <- /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/darkfam_ecology/endemism/query.faa
+PASS     b2.dark.median                  0.391         0.391  filtered pairwise NG86 median dN/dS for recurrent dark orthogroups
+PASS     b2.dark.n                       22767         22767  dark orthogroups with an evaluable codon alignment (of 23382)
+PASS     b2.dark.floor5.med              0.418        0.4184  dark median dN/dS at >=5 total family members
+PASS     b2.dark.floor5.n                 8769          8769  evaluable dark families at >=5 total members
+PASS     b2.dark.floor10.med             0.449        0.4485  dark median dN/dS at >=10 total family members
+PASS     b2.dark.floor10.n                2479          2479  evaluable dark families at >=10 total members
+PASS     b2.dark.floor20.med             0.489        0.4894  dark median dN/dS at >=20 total family members
+PASS     b2.dark.floor20.n                 671           671  evaluable dark families at >=20 total members
+PASS     b2.dark.floor30.med             0.499       0.49915  dark median dN/dS at >=30 total family members
+PASS     b2.dark.floor30.n                 302           302  evaluable dark families at >=30 total members
+SOURCE   b2.site_restricted.med  0.332 / 0.420       [TABLE]  descriptive <=3-site vs EQ-wide(>=30) orthogroup pairwise NG86 dN/dS  <- results/darkmatter_ecology/ENDEMISM.md
+SOURCE   b3.occupancy               45.6 / 2.3       [TABLE]  orthogroup site occupancy: EQ-wide 10669/23382 vs single-site 543/23382  <- results/darkmatter_ecology/ENDEMISM.md
+PASS     b3d.single                        1.3           1.3  dark orthogroups single-sample % (of 23382)
+PASS     b3d.peak10                       99.5          99.5  dark orthogroups peak>=10 % (of 23382)
+PASS     b3d.medpeak                       585           585  median peak abundance ~585 (23382 x 551 matrix)
+PASS     b3d.medprev                        52            52  median orthogroup in N samples (of 551)
+PASS     b4.screen_tail                    148           148  historical pairwise-NG86 screen-tail families with mean dN/dS > 1
+PASS     b4.screen_heuristic               123           123  screen-tail families passing minimum-dS and pair-count heuristic
+PASS     b4.confident_struct                 8             8  screen-tail families with a confident structural analogue
+PASS     b4.recognition_hyp                  5             5  confident analogues annotated as recognition/binding/surface/transport hypotheses
+PASS     b4.sites                          332           332  nominal FUBAR-positive sites in predicted-pocket families
+PASS     b4.sites_in_pocket                 23            23  nominal FUBAR-positive sites inside predicted pockets
+SOURCE   b5.enzymes                         10       [TABLE]  well-supported specific-EC dark enzymes (from the 23382-orthogroup decode)  <- results/darkmatter_ecology/family_ec.tsv
+PASS     c1.nsti                          0.16          0.16  weighted NSTI median
+PASS     c1.pic_ko                       10543         10543  PICRUSt2 KOs/sample under the non-zero rule (constant, not a median)
+PASS     c1.mag_ko                        4482          4482  KOs encoded/sample (median)
+PASS     c1.recall                          93            93  KO presence-recall % (median)
+PASS     c1.no_ko                         56.7          56.7  MAG proteins with no KO %
+PASS     c1.rebuild_n                      440           440  samples in threshold rebuild
+PASS     c1.presence_ratio_zero            2.4           2.4  asymmetric PICRUSt2-threshold/MAG-any-presence ratio at zero
+PASS     c1.presence_ratio_1e5            1.11          1.11  asymmetric PICRUSt2-threshold/MAG-any-presence ratio at 1e-5
+PASS     c1.shared_rel_zero              31.41         31.41  shared relative-abundance threshold ratio at zero
+PASS     c1.shared_rel_1e5               14.63         14.63  shared relative-abundance threshold ratio at 1e-5
+PASS     c1.signature_rho_min            -0.12         -0.12  signature-function abundance Spearman minimum
+PASS     c1.signature_rho_med             0.09          0.09  signature-function abundance Spearman median
+PASS     c1.signature_rho_max             0.42          0.42  signature-function abundance Spearman maximum
+SOURCE   c2.mro                 MRO 0.7 / p=0.69       [TABLE]  SMETANA global MRO ~0.7; guild p=0.69  <- results/smetana/CROSSFEED.md
+PASS     c3.gem                           47.4          47.4  dark orthogroups absent from GEM % (of 23382)
+PASS     c3.deserts                       31.9          31.9  dark orthogroups absent from desert union % (of 23382)
+PASS     c3.mgnify                        36.6          36.6  dark orthogroups absent from MGnify90 % (of 23382)
+PASS     c3.intersection_n                5011          5011  no detected homolog in the named MGnify90/GEM/five-desert comparison
+PASS     c3.intersection                  21.4          21.4  no-detected-homolog fraction in the named MGnify90/GEM/five-desert comparison
+PASS     h1.reps                           237           237  within-Thermoplasmatota species representatives evaluated in PGLS
+PASS     h1.pgls.rbh_coef              -0.1375       -0.1375  PGLS shared-protein coverage slope (frac_rbh_desert)
+PASS     h1.pgls.rbh_se                 0.0195        0.0195  PGLS shared-protein coverage standard error
+PASS     h1.pgls.rbh_p                1.88e-11      1.88e-11  PGLS shared-protein coverage two-sided p-value
+PASS     h1.pgls.aai_coef               0.0017        0.0017  PGLS amino-acid identity slope (per percentage point)
+PASS     h1.pgls.aai_se                0.00041       0.00041  PGLS amino-acid identity standard error
+PASS     h1.pgls.aai_p                4.07e-05      4.07e-05  PGLS amino-acid identity two-sided p-value
+PASS     h1.pgls.lambda                 0.9158        0.9158  PGLS profile maximum likelihood Pagel's lambda
+PASS     h1.pgls.lambda_ci_lo           0.8463        0.8463  Pagel's lambda profile likelihood 95% CI lower bound
+PASS     h1.pgls.lambda_ci_hi           0.9578        0.9578  Pagel's lambda profile likelihood 95% CI upper bound
+PASS     h1.pgls.r2_gls                 0.4691        0.4691  whitened generalised-least-squares R-squared at lambda_ML
+PASS     h1.meta.distinct_refs              32            32  distinct reference genomes selected across 237 pairs
+PASS     h1.meta.gtdb_selected             229           229  pairs selecting a GTDB R232 reference
+PASS     h1.meta.mgnify_selected              8             8  pairs selecting an MGnify reference
+PASS     h1.meta.env_soil                  142           142  pairs with soil environmental metadata
+PASS     h1.meta.env_marine                  3             3  pairs with marine sediment environmental metadata
+PASS     h1.meta.env_unknown                92            92  pairs with unknown environmental metadata
+PASS     h1.tree.total_taxa               1914          1914  taxa in GTDB-Tk R232 archaeal marker tree
+PASS     h1.sens.caller_complete_n            232           232  genomes retained in complete-gene-call proxy specification
+PASS     h1.sens.missing_checkm2_faa              5             5  genomes lacking archived CheckM2 protein calls
+PASS     h1.closure.status                   1             1  closure verification pass for within-lineage PGLS pipeline
+PASS     h2.funnel.qualified              2838          2838  qualified dark structural families in attrition universe
+PASS     h2.funnel.binned                 2426          2426  dark families with a member on a refined-bin contig
+PASS     h2.funnel.drep_species           2378          2378  dark families with member in recognized 95% ANI species
+PASS     h2.funnel.multispecies           1461          1461  dark families occurring in at least two species
+PASS     h2.funnel.multispecies_k            570           570  low-query-score dark families in at least two species
+PASS     h2.funnel.multispecies_qnotk            891           891  reference-matched dark families in at least two species
+PASS     h2.admission.tier1_evaluable            353           353  complete-window evaluable families admitted in Tier 1
+PASS     h2.admission.tier1_k              173           173  complete-window evaluable low-query-score families
+PASS     h2.admission.tier1_qnotk            180           180  complete-window evaluable reference-matched families
+PASS     h2.admission.tier1_gate_k_pct          30.35         30.35  Tier 1 complete-window retention % in low-query-score group
+PASS     h2.admission.tier1_gate_qnotk_pct           20.2          20.2  Tier 1 complete-window retention % in reference-matched group
+PASS     h2.admission.tier1_multispecies_pct          24.16         24.16  Tier 1 complete-window retention % of multispecies families
+PASS     h2.unadj.k_obs_pct              40.46         40.46  low-query-score observed recurrence %
+PASS     h2.unadj.qnotk_obs_pct          32.22         32.22  reference-matched observed recurrence %
+PASS     h2.unadj.k_exp_pct               8.71          8.71  low-query-score same-contig positional expectation %
+PASS     h2.unadj.qnotk_exp_pct           6.56          6.56  reference-matched same-contig positional expectation %
+PASS     h2.unadj.k_excess_pct           31.75         31.75  low-query-score background-adjusted excess recurrence pp
+PASS     h2.unadj.qnotk_excess_pct          25.67         25.67  reference-matched background-adjusted excess recurrence pp
+PASS     h2.contrast.tier1_mh_diff         0.0354        0.0354  primary covariate-adjusted difference in excess recurrence (MH weight)
+PASS     h2.contrast.tier1_p_perm          0.407         0.407  primary between-group stratified permutation p-value
+PASS     h2.strict.pairs                    96            96  strict exact-phylum length-matched pairs
+PASS     h2.strict.recurrence_pct          31.25         31.25  strict matched pairs recurrence % in each group
+PASS     h2.strict.excess_diff         -0.0054       -0.0054  strict matched pairs difference in excess recurrence
+PASS     h2.strict.p_perm                0.923         0.923  strict matched pairs sign-flip permutation p-value
+PASS     h2.stop3.evaluable                637           637  evaluable families under 3-prime stop match sensitivity
+PASS     h2.stop3.k                        260           260  low-query-score families under 3-prime stop match sensitivity
+PASS     h2.stop3.qnotk                    377           377  reference-matched families under 3-prime stop match sensitivity
+PASS     h2.stop3.mh_diff               0.0184        0.0184  adjusted excess recurrence difference under 3-prime stop match
+PASS     h2.stop3.p_perm                 0.562         0.562  stratified permutation p-value under 3-prime stop match
+PASS     h2.disjoint.families              112           112  families retained in species-disjoint sensitivity
+PASS     h2.disjoint.k                      51            51  low-query-score families in species-disjoint sensitivity
+PASS     h2.disjoint.qnotk                  61            61  reference-matched families in species-disjoint sensitivity
+PASS     h2.disjoint.k_excess           0.2619        0.2619  species-disjoint mean excess recurrence in low-query-score
+PASS     h2.disjoint.qnotk_excess         0.1984        0.1984  species-disjoint mean excess recurrence in reference-matched
+PASS     h2.partial.evaluable             1320          1320  evaluable families retained in partial-window analysis
+PASS     h2.join.bins_verified            2041          2041  refined bins verified by SHA-256 and Bakta logs
+PASS     h2.join.bins_total               2126          2126  total refined bins containing candidate loci
+PASS     h2.join.bins_missing               85            85  bins lacking required Bakta annotation logs
+PASS     h2.loci.total                     877           877  selected loci across Tier 1 evaluable families
+PASS     h2.loci.bin_contigs               869           869  unique bin-contig pairs occupied by selected loci
+PASS     h2.loci.bins                      617           617  unique refined bins occupied by selected loci
+PASS     h2.loci.species                   568           568  unique 95% ANI species groups occupied by selected loci
+PASS     h2.loci.multi_contigs               8             8  contigs contributing to multiple families
+PASS     h2.loci.multi_bins                145           145  bins contributing to multiple families
+PASS     h2.loci.multi_species             153           153  species groups contributing to multiple families
+PASS     h3.matched.proteins_per_arm        4210592   4.21059e+06  exact matched protein quota per reference arm
+PASS     h3.matched.residues_per_arm     1295970055   1.29597e+09  exact matched residue quota per reference arm
+PASS     h3.primary.dark_smag_hits          30064         30064  dark queries with hit in SMAG matched reference
+PASS     h3.primary.dark_gem_hits          10399         10399  dark queries with hit in GEM matched reference
+PASS     h3.primary.dark_smag_pct          28.35         28.35  dark query hit rate % in SMAG matched reference
+PASS     h3.primary.dark_gem_pct           9.81          9.81  dark query hit rate % in GEM matched reference
+PASS     h3.primary.dark_diff_pp          18.54         18.54  paired dark query recovery difference percentage points
+PASS     h3.primary.control_smag_pct          93.99         93.99  control query hit rate % in SMAG matched reference
+PASS     h3.primary.control_gem_pct          90.89         90.89  control query hit rate % in GEM matched reference
+PASS     h3.primary.control_diff_pp            3.1           3.1  paired control query recovery difference percentage points
+PASS     h3.contingency.dark_both           8015          8015  dark queries with hits in both SMAG and GEM
+PASS     h3.contingency.dark_smag_only          22049         22049  dark queries with hits in SMAG only
+PASS     h3.contingency.dark_gem_only           2384          2384  dark queries with hits in GEM only
+PASS     h3.contingency.dark_neither          73594         73594  dark queries with hits in neither reference
+PASS     h3.contingency.ctrl_both          94277         94277  control queries with hits in both SMAG and GEM
+PASS     h3.contingency.ctrl_smag_only           5396          5396  control queries with hits in SMAG only
+PASS     h3.contingency.ctrl_gem_only           2108          2108  control queries with hits in GEM only
+PASS     h3.contingency.ctrl_neither           4261          4261  control queries with hits in neither reference
+PASS     h3.draws.harmonized_draw2_diff          16.83         16.83  harmonized GEM draw 2 dark recovery difference pp
+PASS     h3.draws.harmonized_draw3_diff          16.91         16.91  harmonized GEM draw 3 dark recovery difference pp
+PASS     h3.draws.published_draw1_diff          18.46         18.46  published GEM calls draw 1 dark recovery difference pp
+PASS     h3.draws.published_draw2_diff          16.87         16.87  published GEM calls draw 2 dark recovery difference pp
+PASS     h3.draws.published_draw3_diff          16.91         16.91  published GEM calls draw 3 dark recovery difference pp
+PASS     h3.overlap.shared_exact_seqs          22310         22310  exact shared sequences retained between primary arms
+PASS     h3.no_overlap.proteins_per_arm        4185525   4.18552e+06  proteins per arm after removing shared sequences
+PASS     h3.no_overlap.residues_per_arm     1289129312   1.28913e+09  residues per arm after removing shared sequences
+PASS     h3.no_overlap.dark_diff_pp          18.62         18.62  dark difference pp with zero shared sequence overlap
+PASS     h3.id30.dark_diff_pp            18.14         18.14  dark difference pp under >=30% sequence identity filter
+PASS     h3.manifest.zenodo_parts            373           373  verified archive parts from SMAG Zenodo deposit 8223844
+PASS     h4.census.total_models           5851          5851  finite population models evaluated in paired PDB census
+PASS     h4.census.total_crops            7773          7773  confidence-defined crops extracted across all models
+PASS     h4.census.models_no_region            161           161  models lacking an eligible confidence-defined region
+PASS     h4.pooled_k.total_models           1031          1031  pooled initial low-query-score dark models (K_local_pdb + K_local_afdb_only + K_dual_none)
+PASS     h4.pooled_k.eligible_regions            984           984  initial low-query-score dark models with an eligible region
+PASS     h4.cpu.pooled_k_wc_matched             67            67  paired CPU PDB whole-chain matches in initial low-query dark group
+PASS     h4.cpu.pooled_k_wc_unmatched            964           964  paired CPU PDB whole-chain absences in initial low-query dark group
+PASS     h4.cpu.pooled_k_crop_recovered            714           714  whole-chain-unmatched dark models recovering a crop match
+PASS     h4.cpu.pooled_k_crop_recovered_pct          74.07         74.07  recovery rate % of whole-chain-unmatched dark models
+PASS     h4.cpu.pooled_k_crop_matched_total            775           775  initial low-query dark models with at least one matched crop
+PASS     h4.cpu.ctrl_tier1_crop_matched           2889          2889  control crop matches after excluding source PDB entry
+PASS     h4.cpu.ctrl_tier1_crop_pct          95.88         95.88  control crop match % under source-entry exclusion
+PASS     h4.cpu.ctrl_tier2_crop_matched           2842          2842  control crop matches under 30% sequence identity exclusion
+PASS     h4.cpu.ctrl_tier3_crop_matched           2823          2823  control crop matches under 25% sequence identity exclusion
+PASS     h4.cpu.ctrl_tier4_crop_matched           2796          2796  control crop matches under 20% sequence identity exclusion
+PASS     h4.adaptive.wc_expanded             39            39  CPU whole chains with hit cap expanded to 5,000
+PASS     h4.adaptive.crop_expanded             55            55  CPU crops with hit cap expanded to 5,000
+PASS     h4.adaptive.wc_saturated_unmatched              3             3  whole chains remaining cap-saturated and unmatched
+PASS     h4.adaptive.crop_saturated_unmatched              1             1  crops remaining cap-saturated and unmatched
+PASS     h4.gpu.wc_rows                2853102    2.8531e+06  ORIX GPU whole-chain alignment rows returned
+PASS     h4.gpu.crop_rows              3228450   3.22845e+06  ORIX GPU crop alignment rows returned
+PASS     h4.gpu.pooled_k_wc_unmatched            961           961  GPU whole-chain absences in initial low-query dark group
+PASS     h4.gpu.pooled_k_crop_recovered            731           731  GPU whole-chain absences recovering a crop match
+PASS     h4.gpu.pooled_k_crop_matched_total            794           794  initial low-query dark models with matched crop on GPU
+PASS     h4.gpu.wc_disagreements             41            41  CPU vs GPU whole-chain binary classification differences
+PASS     h4.gpu.crop_disagreements             43            43  CPU vs GPU crop binary classification differences
+PASS     h4.gpu.pooled_k_cap_unmatched              0             0  dark queries cap-saturated while remaining unmatched on GPU
+PASS     h4.gpu.ctrl_crop_matched           2896          2896  control crop matches on GPU under source exclusion
+PASS     h4.gpu.ctrl_wc_cap_unmatched              2             2  control whole chains cap-saturated and unmatched on GPU
+PASS     h4.anomaly.cpu_rows_audited        6845932   6.84593e+06  CPU raw alignment rows audited across four hit files
+PASS     h4.anomaly.cpu_alntm_gt1           2194          2194  CPU raw alignment rows with alnTM > 1 (all controls)
+PASS     h4.anomaly.gpu_alntm_gt1           1708          1708  GPU raw alignment rows with alnTM > 1 (all controls)
+PASS     h4.anomaly.cpu_exclusion_changed_models              9             9  distinct control models with crop status changed by alnTM>1 exclusion
+PASS     h1.sens.same_class_n              236           236  genomes with same-class comparator
+PASS     h1.tree.gtdb_thermoplasmatota           1647          1647  tree tips in gtdb_thermoplasmatota
+PASS     h1.tree.outgroup                   30            30  tree tips in outgroup
+PASS     h3.overlap.pre_matching          25067         25067  shared exact sequences before quota matching
+PASS     h4.cpu.other_wc                  1408          1408  other wc
+PASS     h4.cpu.other_crop                1578          1578  other crop
+PASS     h4.cpu.initial_pdb_n             1107          1107  initial pdb n
+PASS     h4.cpu.initial_pdb_wc            1107          1107  initial pdb wc
+PASS     h4.cpu.initial_pdb_crop           1009          1009  initial pdb crop
+PASS     h4.cpu.initial_afdb_n             700           700  initial afdb n
+PASS     h4.cpu.initial_afdb_wc            301           301  initial afdb wc
+PASS     h4.cpu.initial_afdb_crop            569           569  initial afdb crop
+PASS     h4.cpu.control_wc                2878          2878  control wc
+PASS     h4.k.trans_persistent_low            167           167  pooled K trans_persistent_low
+PASS     h4.k.trans_raw_zero                38            38  pooled K trans_raw_zero
+PASS     h4.k.trans_post_empty               0             0  pooled K trans_post_empty
+PASS     h4.k.trans_unm_no_reg              45            45  pooled K trans_unm_no_reg
+PASS     h4.k.trans_retained                61            61  pooled K trans_retained
+PASS     h4.k.trans_lost_low                 4             4  pooled K trans_lost_low
+PASS     h4.k.trans_m_no_reg                 2             2  pooled K trans_m_no_reg
+PASS     h4.gpu.control_tier2             2816          2816  GPU finite-depth control crop matches
+PASS     h4.gpu.control_tier3             2788          2788  GPU finite-depth control crop matches
+PASS     h4.gpu.control_tier4             2753          2753  GPU finite-depth control crop matches
+PASS     h4.anomaly.wc_changed               4             4  unique control whole-chain classifications changed under strict tiers
+PASS     family.helio.complete              65            65  Complete EQ heliorhodopsin profile candidates
+PASS     family.helio.site.EQ               45            45  Aligned-lysine-conserving HeR records: EQ
+PASS     family.helio.site.SMAG             35            35  Aligned-lysine-conserving HeR records: SMAG
+PASS     family.helio.site.GEM              73            73  Aligned-lysine-conserving HeR records: GEM
+PASS     family.helio.site.curated_reference             25            25  Aligned-lysine-conserving HeR records: curated_reference
+PASS     family.helio.sacch.EQ              22            22  Unique Saccharimonadia HeRs: EQ
+PASS     family.helio.sacch.GEM             10            10  Unique Saccharimonadia HeRs: GEM
+PASS     family.helio.sacch.SMAG              2             2  Unique Saccharimonadia HeRs: SMAG
+PASS     family.helio.published_n           1566          1566  Profile/site-qualified published HeRs
+PASS     family.helio.published_hits             45            45  EQ HeRs with coverage-qualified published hits
+PASS     family.helio.identity            57.3          57.3  Median identity of best-bit-score published hit
+PASS     family.helio.patesci_n             24            24  EQ Patescibacteriota HeR loci
+PASS     family.helio.patesci_identity           39.4          39.4  Patescibacteriota median published hit identity
+PASS     family.helio.rarefaction.full.EQ           7.36         7.361  Mean added 50%-identity clusters, 10 sequences
+PASS     family.helio.rarefaction.full.GEM              0             0  Mean added 50%-identity clusters, 10 sequences
+PASS     family.helio.extra_clusters.full             13            13  All EQ Saccharimonadia clusters absent expanded reference
+PASS     family.helio.rarefaction.core.EQ           7.33         7.332  Mean added 50%-identity clusters, 10 sequences
+PASS     family.helio.rarefaction.core.GEM              0             0  Mean added 50%-identity clusters, 10 sequences
+PASS     family.helio.extra_clusters.core             12            12  All EQ Saccharimonadia clusters absent expanded reference
+PASS     family.helio.read_rarefaction           7.31         7.309  Mean core clusters in read-supported EQ sensitivity
+PASS     family.helio.GEM_overlap              8             8  GEM records exactly present in published panel
+PASS     family.helio.projection_unique_sequences           1726          1726  Expanded ProstT5 projection_unique_sequences
+PASS     family.helio.input_records           1744          1744  Expanded ProstT5 input_records
+PASS     family.reads.F3_Helio              43            43  Loci passing depth/breadth rule: F3_Helio
+PASS     family.reads.F4_EctCD               5             5  Loci passing depth/breadth rule: F4_EctCD
+PASS     family.fusion.templates.min              4             4  min junction-spanning templates
+PASS     family.fusion.templates.max             19            19  max junction-spanning templates
+PASS     family.helio.structure_pass.mean_CA_pLDDT             45            45  EQ models above mean_CA_pLDDT threshold
+PASS     family.helio.structure_median.mean_CA_pLDDT          93.13       93.1251  Median EQ mean_CA_pLDDT
+PASS     family.helio.structure_pass.query_TM             45            45  EQ models above query_TM threshold
+PASS     family.helio.structure_median.query_TM          0.865       0.86512  Median EQ query_TM
+PASS     family.cpf.genes                  914           914  Complete CPF profile candidates
+PASS     family.cpf.mags                   775           775  MAGs with complete CPF candidates
+PASS     family.prodigal.proteins       20451986      20451986  Caller-specific family-screen Prodigal translations
+PASS     family.ecology.CPF.sites             37            37  CPF sites
+PASS     family.ecology.CPF.visits             69            69  CPF visits
+PASS     family.ecology.CPF.median_difference_pp           8.47       8.47261  CPF median_difference_pp
+PASS     family.ecology.CPF.p_Holm_six_contrasts        0.00131    0.00130581  CPF p_Holm_six_contrasts
+PASS     family.ecology.EctABC_strict.median_difference_pp           0.56      0.558621  EctABC_strict median_difference_pp
+PASS     family.ecology.EctABC_strict.p_raw         0.0974     0.0973666  EctABC_strict p_raw
+PASS     family.ecology.EctABC_strict.p_Holm_six_contrasts          0.389      0.389466  EctABC_strict p_Holm_six_contrasts
+PASS     family.cpf.decomposition.total_pp           8.71          8.71  Genus grouping CPF total_pp
+PASS     family.cpf.decomposition.between_pp           5.31       5.30505  Genus grouping CPF between_pp
+PASS     family.cpf.decomposition.within_pp           1.03       1.02675  Genus grouping CPF within_pp
+PASS     family.cpf.decomposition.exclusive_pp           2.38        2.3782  Genus grouping CPF exclusive_pp
+PASS     family.cpf.unclassified_mass           25.7       25.6979  Mean mass in individually grouped genus-unclassified MAGs, percent
+PASS     family.cpf.decomposition.total_pp.mean_ci_low           4.19       4.19209  CPF descriptive site-bootstrap interval
+PASS     family.cpf.decomposition.total_pp.mean_ci_high           13.2       13.1956  CPF descriptive site-bootstrap interval
+PASS     family.cpf.decomposition.between_pp.mean_ci_low           1.21       1.20888  CPF descriptive site-bootstrap interval
+PASS     family.cpf.decomposition.between_pp.mean_ci_high           9.02       9.01624  CPF descriptive site-bootstrap interval
+PASS     family.cpf.decomposition.exclusive_pp.mean_ci_low            0.9      0.904973  CPF descriptive site-bootstrap interval
+PASS     family.cpf.decomposition.exclusive_pp.mean_ci_high           3.89       3.88885  CPF descriptive site-bootstrap interval
+PASS     family.cpf.decomposition.within_pp.mean_ci_low           0.68      0.684683  CPF descriptive site-bootstrap interval
+PASS     family.cpf.decomposition.within_pp.mean_ci_high            1.4       1.39861  CPF descriptive site-bootstrap interval
+PASS     family.ect.complete               940           940  EQ EctC complete
+PASS     family.ect.WEYH                   822           822  EQ EctC WEYH
+PASS     family.ect.ABC                    616           616  EQ EctC ABC
+PASS     family.ect.ABC_cov70              612           612  EQ EctC ABC_cov70
+PASS     family.ect.edge                   164           164  EQ EctC edge
+PASS     family.ect.internal                42            42  EQ EctC internal
+PASS     family.ect.mags.strict_ABC            608           608  MAGs carrying strict_ABC
+PASS     family.ect.mags.strict_ABC_cov70            604           604  MAGs carrying strict_ABC_cov70
+PASS     family.ect.distinct_AB            609           609  Strict EQ loci with separate A/B ORFs
+PASS     family.ect.dual_AB                  7             7  Strict EQ loci with a single A/B-profile ORF
+PASS     family.ect.fusion_nonWEYH              1             1  Complete EQ EctCD fusions outside WEYH criterion
+PASS     family.cpf.without_K01669             28            28  CPF-carrier MAGs lacking K01669
+PASS     family.helio.sacch.GEM_overlap              2             2  Unique GEM Saccharimonadia exactly present in published panel
+PASS     family.helio.reference_free.50.EQ           8.04          8.04  Mean total core clusters without references
+PASS     family.helio.reference_free.50.GEM              4             4  Mean total core clusters without references
+PASS     family.helio.reference_free.80.EQ           9.61         9.605  Mean total core clusters without references
+PASS     family.helio.reference_free.80.GEM             10            10  Mean total core clusters without references
+PASS     family.helio.translation_matches             45            45  EQ HeR translations independently matching original contigs
+----------------------------------------------------------------------------------------------------
+COMPUTE: 62 pass | FROZEN: 288 pass | TABLE sources: 6 present | PROVENANCE: 25 ledger-pinned | FAIL: 0
+```
+
+## Manuscript build
+```
+MANUSCRIPT: OK (36 pages; BibTeX resolved; public snapshot)
+```
+

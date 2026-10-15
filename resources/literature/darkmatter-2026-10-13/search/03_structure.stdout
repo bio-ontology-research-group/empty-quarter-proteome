@@ -1,0 +1,167 @@
+I am downloading the full-text files and verifying the literature for Direction 3 (Protein structure dark matter, Foldseek, TM-score normalisations, ESMFold confidence, known-fold calibration, domain architecture versus new folds). I will review the results as soon as the test fetch finishes.
+I am fetching the full-text files from Europe PMC for the structure direction and will review the output once complete.
+I will wait for the download task to complete.
+### Literature Expansion & Critical Synthesis: Direction 03
+
+**Assigned Direction:** Protein structure dark matter, Foldseek, TM-score normalisations, ESMFold confidence, known-fold calibration, domain architecture versus new folds.  
+**Context:** P4 dark-proteome paper (§1.3, Methods M.6, Fig. 4, Dossier 03 `notes/dossiers/03_structural_novelty.md`).  
+**Saved Deliverables:**
+- **Full Texts:** [`resources/literature/darkmatter-2026-10-13/papers/03_structure/`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/) (12 full-text papers: 6 PDFs, 6 JATS full-text XMLs; total 30 MB)
+- **Manifest TSV:** [`resources/literature/darkmatter-2026-10-13/papers/03_structure/manifest.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/manifest.tsv)
+- **Substantive Search Synthesis:** [`resources/literature/darkmatter-2026-10-13/search/03_structure.md`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/search/03_structure.md)
+
+---
+
+### Core Findings & Critical Challenge to Novelty Claims
+
+1. **The Normalisation Dilemma (qTM vs alnTM):**
+   - In P4, screening 2,838 confident candidate models against AFDB v6 (241M) and PDB (324k chains) yields **1,031 dual no-hits (36.3%)** under query-normalised TM-score ($\text{qTM} < 0.5$, a 10.8× crude excess over blinded PDB controls).
+   - Under alignment-normalised TM-score ($\text{alnTM} < 0.5$), this excess drops to **95 models (3.35%)** vs a 2.26% floor (a 1.38× ratio, 95% CI 0.87–2.41, crossing 1.0).
+   - Scoring by query length penalises unaligned domains, terminal extensions, and insertions. In a 300-aa two-domain protein where one 120-aa domain perfectly matches a known structure ($\text{TM} \approx 1.0$), $\text{qTM} = 1.0 \times (120/300) = 0.40$ (flagged as "novel fold"), while $\text{alnTM} = 1.0$ (recognised as known).
+   - Exactly **936 models** sit between the two normalisations: **96.7%** of confident models contain a locally familiar domain, while only **63.7%** are covered end-to-end. P4 candidates are significantly longer (mean 301 vs 215 aa, $p < 10^{-15}$). Novelty is **architectural recombination**, not new fold topology.
+
+2. **ESMFold Confidence Confounding & Hallucinations:**
+   - Single-sequence predictors (ESMFold) lack evolutionary constraints from MSAs. As demonstrated by [Orr & Bateman (2024)](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Orr_Bateman_2024_Folding_unfoldable_2_BioinformaticsAdvances.xml), ESMFold predicts compact, high-pLDDT structures for spurious ORFs and noncoding sequences under 100 aa. Discrimination between true proteins and spurious sequences improves sharply at $\ge 100$ aa, directly validating P4's length gate.
+   - P4's gate-passing controls are significantly more confident than candidates (mean pLDDT 0.867 vs 0.775). Because control false-negative rates fall steeply with higher confidence (from 7.32% at 0.75–0.80 down to 1.53% at $\ge 0.90$), crude comparisons overstate excess. Standardising the control floor to the candidate pLDDT distribution shifts the excess from 10.8× down to **6.6×** (or **8.1×** jointly with length).
+
+3. **Foldseek 3Di Triage Limitations:**
+   - P4's initial ProstT5/Foldseek 3Di triage left 68.0% of dark queries without a hit. As proven by [Edgar (2024)](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Edgar_2024_Reseek_remote_homologs_Bioinformatics.xml), Foldseek's 3Di alphabet misses remote structural homologs detectable by coordinate superposition, and Foldseek E-values underestimate error rates on large databases.
+   - P4 correctly treats 3Di absence as an operational prefilter, not evidence of novelty, and validates candidates via coordinate-level TMalign (`--alignment-type 1`) co-searched with blinded controls.
+
+4. **Near-Saturation of Single-Domain Fold Space:**
+   - The large-scale consensus across [TED (Lau et al. 2024)](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Lau_2024_TED_encyclopedia_domains_Science.pdf), [AFESM (Yeo et al. 2025)](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Yeo_2025_AFESM_structure_universe_bioRxiv.pdf), and [CATH v4.4 (Waman et al. 2025)](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Waman_2025_CATHv44_expansion_NAR.pdf) is that natural single-domain fold space is approaching saturation.
+   - In AFESM, re-predicting 2.3 million unclassified proteins with AlphaFold2 yielded only **one** new fold, but uncovered **~12,000 new multi-domain architectures**. Putative novel folds collapse under domain segmentation; microbial sequence darkness represents extreme sequence divergence and novel domain architectures.
+
+---
+
+### The 12 Audited & Retained Literature Sources
+
+#### 1. Lau et al. (2024) — The Encyclopedia of Domains (TED)
+- **Title:** Exploring structural diversity across the protein universe with The Encyclopedia of Domains
+- **Authors/Year:** Andy M. Lau, Nicola Bordin, Shaun M. Kandathil, Ian Sillitoe, Vaishali P. Waman, Jude Wells, Christine A. Orengo, David T. Jones (2024)
+- **DOI:** [10.1126/science.adq4946](https://doi.org/10.1126/science.adq4946)
+- **Publisher URL:** `https://www.science.org/doi/10.1126/science.adq4946`
+- **Accessible Full Text / PDF:** [Lau_2024_TED_encyclopedia_domains_Science.pdf](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Lau_2024_TED_encyclopedia_domains_Science.pdf) (3.2 MB)
+- **Precise Claim / Limitation:** Deep-learning domain parsing (Chainsaw/Merizo) segmented 365M domains from 214M AFDB models; 77% matched existing CATH superfamilies. A strict attrition cascade (globularity, secondary structure count $\ge 6$, $\text{pLDDT}80 \ge 90$, Foldseek TM-align exclusion $>0.56$ at 60% coverage) collapsed 41.9M non-CATH clusters to just **7,427 putative novel folds** ($<0.02\%$).
+- **Cited in P4:** Yes (`lau2024ted`).
+
+#### 2. Yeo et al. (2025) — AFESM Structure Universe
+- **Title:** Metagenomic-scale analysis of the predicted protein structure universe
+- **Authors/Year:** Jingi Yeo, Yewon Han, Nicola Bordin, Andy M. Lau, Shaun M. Kandathil, Hyunbin Kim, Eli Levy Karin, Milot Mirdita, David T. Jones, Christine Orengo, Martin Steinegger (2025)
+- **DOI:** [10.1101/2025.04.23.650224](https://doi.org/10.1101/2025.04.23.650224)
+- **Publisher URL:** `https://doi.org/10.1101/2025.04.23.650224`
+- **Accessible Full Text / PDF:** [Yeo_2025_AFESM_structure_universe_bioRxiv.pdf](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Yeo_2025_AFESM_structure_universe_bioRxiv.pdf) (8.0 MB)
+- **Precise Claim / Limitation:** Merged AFDB and ESM Metagenomic Atlas into 821M structures (`AFESM`). Initial ESMFold models revealed zero novel domain folds; re-predicting 2.3M proteins with AlphaFold2 yielded only **one new fold**. However, it revealed **~12,000 novel multi-domain architectures**, demonstrating that metagenomic structural diversity is driven by modular domain recombination.
+- **Cited in P4:** Yes (`yeo2025afesm`).
+
+#### 3. Waman et al. (2025) — CATH v4.4 Expansion
+- **Title:** CATH v4.4: major expansion of CATH by experimental and predicted structural data
+- **Authors/Year:** Vaishali P. Waman, Nicola Bordin, Andy Lau, Shaun Kandathil, Jude Wells, David Miller, Sameer Velankar, David T. Jones, Ian Sillitoe, Christine Orengo (2025)
+- **DOI:** [10.1093/nar/gkae1087](https://doi.org/10.1093/nar/gkae1087)
+- **Publisher URL:** `https://doi.org/10.1093/nar/gkae1087`
+- **Accessible Full Text / PDF:** [Waman_2025_CATHv44_expansion_NAR.pdf](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Waman_2025_CATHv44_expansion_NAR.pdf) (8.4 MB)
+- **Precise Claim / Limitation:** CATH expanded by absorbing ~90M predicted TED domains (+54% folds, +88% architectures). The authors explicitly caution: *"TED data comprises predicted structures, so these new folds and architectures remain hypothetical until experimentally confirmed."* Licenses P4's framing of candidates as "reference-relative candidates, not experimentally validated structures."
+- **Cited in P4:** Yes (`waman2025cath`).
+
+#### 4. Harteveld et al. (2024) — Generative Dark-Matter Folds
+- **Title:** Exploring "dark-matter" protein folds using deep learning
+- **Authors/Year:** Zander Harteveld, Alexandra Van Hall-Beauvais, Irina Morozova, Joshua Southern, Casper Goverde, Sandrine Georgeon, Stéphane Rosset, Michaël Defferrard, Andreas Loukas, Pierre Vandergheynst, Michael M. Bronstein, Bruno E. Correia (2024)
+- **DOI:** [10.1016/j.cels.2024.09.006](https://doi.org/10.1016/j.cels.2024.09.006)
+- **Publisher URL:** `https://doi.org/10.1016/j.cels.2024.09.006`
+- **Accessible Full Text / PDF:** [Harteveld_2024_darkmatter_folds_deeplearning_CellSystems.pdf](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Harteveld_2024_darkmatter_folds_deeplearning_CellSystems.pdf) (8.4 MB)
+- **Precise Claim / Limitation:** Developed *Genesis* (SE(3) VAE + trRosetta) to generate de novo "dark-matter" folds unobserved in nature, validated by protease assays. Clarifies the crucial semantic boundary: designable fold space is physically possible, but natural microbial dark matter overwhelmingly reuses known fold topologies.
+- **Cited in P4:** Yes (`harteveld2024darkfolds`).
+
+#### 5. Durairaj et al. (2023) — New Families and Folds in AFDB
+- **Title:** Uncovering new families and folds in the natural protein universe
+- **Authors/Year:** Janani Durairaj, Andrew M. Waterhouse, Toomas Mets, Tetiana Brodiazhenko, Minhal Abdullah, Gabriel Studer, Gerardo Tauriello, Mehmet Akdel, Antonina Andreeva, Alex Bateman, Tanel Tenson, Vasili Hauryliuk, Torsten Schwede, Joana Pereira (2023)
+- **DOI:** [10.1038/s41586-023-06622-3](https://doi.org/10.1038/s41586-023-06622-3)
+- **Publisher URL:** `https://doi.org/10.1038/s41586-023-06622-3`
+- **Accessible Full Text / XML:** [Durairaj_2023_new_families_folds_Nature.xml](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Durairaj_2023_new_families_folds_Nature.xml) (164 KB; Europe PMC PMC10584680)
+- **Precise Claim / Limitation:** Clustered AFDB into structural communities, identifying uncharacterized clusters and discovering genuine novel folds (such as the $\beta$-flower fold). Serves as the benchmark for large-scale structure clustering, showing that true fold discovery requires manual curation and high-confidence filtering.
+- **Cited in P4:** Yes (`durairaj2023folds`).
+
+#### 6. Xu & Zhang (2010) — TM-Score Normalisation & Significance
+- **Title:** How significant is a protein structure similarity with TM-score = 0.5?
+- **Authors/Year:** Jinrui Xu, Yang Zhang (2010)
+- **DOI:** [10.1093/bioinformatics/btq066](https://doi.org/10.1093/bioinformatics/btq066)
+- **Publisher URL:** `https://academic.oup.com/bioinformatics/article/26/7/889/212628`
+- **Accessible Full Text / PDF:** [Xu_Zhang_2010_TMscore_05_significance_Bioinformatics.pdf](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Xu_Zhang_2010_TMscore_05_significance_Bioinformatics.pdf) (398 KB)
+- **Precise Claim / Limitation:** Derived that $\text{TM-score} \ge 0.5$ has a $P$-value $< 5.5 \times 10^{-7}$ for sharing the same global fold. Rigorously formulated the role of $L_{\text{norm}}$: normalizing by query length ($L_Q$) measures global covering alignment, whereas normalizing by aligned length ($L_{\text{common}}$) measures local domain similarity. Direct mathematical origin for P4's qTM vs alnTM distinction.
+- **Cited in P4:** Yes (`xu2010tmscore`).
+
+#### 7. Orr & Bateman (2024) — ESMFold & AlphaFold on Spurious Proteins
+- **Title:** Folding the unfoldable 2: using AlphaFold and ESMFold to explore spurious proteins
+- **Authors/Year:** Ailsa K. Orr, Alex Bateman (2024)
+- **DOI:** [10.1093/bioadv/vbag160](https://doi.org/10.1093/bioadv/vbag160)
+- **Publisher URL:** `https://academic.oup.com/bioinformaticsadvances/article/4/1/vbag160/7693522`
+- **Accessible Full Text / XML:** [Orr_Bateman_2024_Folding_unfoldable_2_BioinformaticsAdvances.xml](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Orr_Bateman_2024_Folding_unfoldable_2_BioinformaticsAdvances.xml) (93 KB; Europe PMC PMC13294457)
+- **Precise Claim / Limitation:** ESMFold, AF2, and AF3 predict short spurious sequences from AntiFam with deceptively high pLDDT scores ($>70$). Discrimination between spurious and real proteins improves sharply for sequences $\ge 100$ aa. Directly justifies P4's gating rule ($\ge 100$ aa) and proves that uncalibrated ESMFold predictions on short fragments produce artificial novel fold claims.
+- **Cited in P4:** **No** (Recommended new citation).
+
+#### 8. Wells et al. (2024) — Chainsaw Domain Parser
+- **Title:** Chainsaw: protein domain segmentation with fully convolutional neural networks
+- **Authors/Year:** Jude Wells, Alex Hawkins-Hooker, Nicola Bordin, Christine Orengo, David T. Jones (2024)
+- **DOI:** [10.1093/bioinformatics/btae296](https://doi.org/10.1093/bioinformatics/btae296)
+- **Publisher URL:** `https://academic.oup.com/bioinformatics/article/40/5/btae296/58958105`
+- **Accessible Full Text / XML:** [Wells_2024_Chainsaw_domain_segmentation_Bioinformatics.xml](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Wells_2024_Chainsaw_domain_segmentation_Bioinformatics.xml) (123 KB; Europe PMC PMC11256964)
+- **Precise Claim / Limitation:** Deep residual convolutional network predicting pairwise residue domain co-membership matrices, outperforming previous unsupervised parsers. Directly powers TED. Serves as the primary tool to segment P4 candidates into autonomous domains and verify that their sub-regions match known CATH folds.
+- **Cited in P4:** **No** (Recommended new citation for Methods M.6).
+
+#### 9. Lau, Kandathil & Jones (2023) — Merizo Coordinate Domain Parser
+- **Title:** Merizo: a rapid and accurate protein domain segmentation method using invariant point attention
+- **Authors/Year:** Andy M. Lau, Shaun M. Kandathil, David T. Jones (2023)
+- **DOI:** [10.1038/s41467-023-43934-4](https://doi.org/10.1038/s41467-023-43934-4)
+- **Publisher URL:** `https://www.nature.com/articles/s41467-023-43934-4`
+- **Accessible Full Text / XML:** [Lau_2023_Merizo_domain_segmentation_NatCommun.xml](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Lau_2023_Merizo_domain_segmentation_NatCommun.xml) (108 KB; Europe PMC PMC10730818)
+- **Precise Claim / Limitation:** Uses Invariant Point Attention (IPA) trained on CATH and self-distilled on predicted AlphaFold2 structures for end-to-end domain segmentation from coordinates. Specifically identified in P4 Dossier 03 as the unrun tool that can turn architectural novelty from an inference into a direct measurement.
+- **Cited in P4:** **No** (Recommended new citation).
+
+#### 10. Edgar (2024) — Reseek & Foldseek Benchmarking
+- **Title:** Protein structure alignment by Reseek improves sensitivity to remote homologs
+- **Authors/Year:** Robert C. Edgar (2024)
+- **DOI:** [10.1093/bioinformatics/btae687](https://doi.org/10.1093/bioinformatics/btae687)
+- **Publisher URL:** `https://academic.oup.com/bioinformatics/article/40/12/btae687/7841961`
+- **Accessible Full Text / XML:** [Edgar_2024_Reseek_remote_homologs_Bioinformatics.xml](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Edgar_2024_Reseek_remote_homologs_Bioinformatics.xml) (62 KB; Europe PMC PMC11601161)
+- **Precise Claim / Limitation:** Benchmarked Foldseek 3Di against SCOP40. Proved that Foldseek 3Di misses remote structural homologs and underestimates false-positive E-values by orders of magnitude on large databases. Directly challenges claims of novel folds based solely on Foldseek 3Di triage, justifying P4's coordinate-level validation screen and blinded known-fold calibration floor.
+- **Cited in P4:** **No** (Recommended new citation).
+
+#### 11. Lee et al. (2025) — Foldseek-Multimer
+- **Title:** Rapid and sensitive protein complex alignment with Foldseek-Multimer
+- **Authors/Year:** Jeongjae Lee, Michel van Kempen, Stephanie S. Kim, Cameron L. M. Gilchrist, Martin Steinegger (2025)
+- **DOI:** [10.1038/s41592-025-02593-7](https://doi.org/10.1038/s41592-025-02593-7)
+- **Publisher URL:** `https://www.nature.com/articles/s41592-025-02593-7`
+- **Accessible Full Text / XML:** [Lee_2025_Foldseek_Multimer_NatMethods.xml](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Lee_2025_Foldseek_Multimer_NatMethods.xml) (95 KB; Europe PMC PMC11903335)
+- **Precise Claim / Limitation:** Extends Foldseek to multi-chain assemblies and complexes, formalizing TM-score evaluation across multi-component structures. Directly contextualizes the failure of rigid-body alignment metrics on multi-domain architectures with flexible linkers.
+- **Cited in P4:** **No** (Recommended new citation).
+
+#### 12. Zhang et al. (2023) — DPAM Domain Parser
+- **Title:** DPAM: A domain parser for AlphaFold models
+- **Authors/Year:** Jing Zhang, Qian Cong, Lisa N. Kinch, Jimin Pei, R. Dustin Schaeffer, Nick V. Grishin (2023)
+- **DOI:** [10.1002/pro.4548](https://doi.org/10.1002/pro.4548)
+- **Publisher URL:** `https://onlinelibrary.wiley.com/doi/pdf/10.1002/pro.4548`
+- **Accessible Full Text / PDF:** [Zhang_2023_DPAM_domain_parser_ProteinScience.pdf](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/Zhang_2023_DPAM_domain_parser_ProteinScience.pdf) (2.0 MB)
+- **Precise Claim / Limitation:** Uses AlphaFold Predicted Aligned Error (PAE) matrices and Dali to parse globular domains and assign them to ECOD. Shows that multi-domain models systematically yield low whole-chain TM-scores to single-domain templates even when each constituent domain is an established fold.
+- **Cited in P4:** **No** (Recommended new citation).
+
+---
+
+### Distinction: Verified Sources vs. Unresolved Leads
+
+| Lead / Resource | Status | Grounded Analysis & Verification | Action for P4 |
+|---|---|---|---|
+| **12 Audited Papers** | **Verified Primary Literature** | Full texts (PDF/XML) retrieved, inspected, and archived in `03_structure/`. | Ready to cite and discuss in manuscript §1.3 and Discussion. |
+| **"223 published novel folds"** | **Unresolved Lead** | Appears only in planning notes (`notes/PAPER_STRUCTURE_PROPOSED.md`); no coordinates, citations, or accession tables exist in the repo. | **Do NOT cite or claim in text** until the source paper is named. |
+| **ESM Metagenomic Atlas Structure DB** | **Known Reference Boundary** | `highquality_clust30` is a multi-TB structure database not indexed on IBEX. Screen queried AFDB v6 (241M) and PDB (324k). | Maintain explicitly as a stated boundary in Methods M.6. |
+| **AlphaFold2/ColabFold MSA Refolding** | **Unexecuted Revision Armour** | A 200-protein pilot exists (`04_structure/pilot_af2/`), but full execution across all $K = 1,031$ has not been run. | Hold as primary revision rebuttal against single-sequence ESMFold critique. |
+| **Merizo / Chainsaw Domain Calling** | **Unexecuted Workbench Armour** | Model weights and segmentation pipeline not yet run on IBEX for the 2,838 candidates. | Feasible revision item to turn architectural novelty into an empirical domain count. |
+| **Pfam-A 38.2 Search on 4,880 Members** | **Executed & Verified** | Pfam matches a domain in only 8.75% of members and 14.0% of families, covering a median quarter of the chain. | Fully integrated in §1.3. |
+
+---
+
+### Manifest File Verification
+
+The complete TSV manifest is generated and saved at:
+[`resources/literature/darkmatter-2026-10-13/papers/03_structure/manifest.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/manifest.tsv)
+
+All 12 files in [`resources/literature/darkmatter-2026-10-13/papers/03_structure/`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/03_structure/) are complete, verified full texts (no abstracts-only), and the full search synthesis is preserved in [`resources/literature/darkmatter-2026-10-13/search/03_structure.md`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/search/03_structure.md). No manuscript or analysis files were modified.

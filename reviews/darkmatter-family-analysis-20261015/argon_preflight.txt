@@ -1,0 +1,1038 @@
+================================================================================
+INDEPENDENT CRITICAL CODE & SCIENTIFIC PROVENANCE PREFLIGHT AUDIT
+Approved F1-F5 Environmental Protein Family Analyses & ProstT5 GPU Harness
+================================================================================
+Date: 2026-10-15
+Reviewer / Model Identity: Gemini 4 Argon (High)
+  (Operating in the Antigravity local read-only audit harness; human-readable
+   model identity: Gemini 4 Argon High)
+Scope: Local read-only audit of reproducibility/darkmatter/family_discovery_20261015/
+  (f12/, f345/, gpu/, reference_checks/, and root inventory/audit artifacts).
+Deliverable: reviews/darkmatter-family-analysis-20261015/argon_preflight.txt
+Constraints Enforced:
+  - Zero remote compute or external network queries executed.
+  - Zero subagent or external model delegation.
+  - Zero edits to manuscript/main.tex or any analysis scripts.
+  - Zero biological findings invented (no biological result exists or is accepted
+    yet; cancelled jobs 53815526, 53815527, 53815546, 53815547 and partial rebuild
+    outputs are treated strictly as preflight engineering test cases).
+
+================================================================================
+SECTION 0: EXECUTIVE SUMMARY & VERDICT MATRIX
+================================================================================
+
+1. OVERALL PREFLIGHT VERDICT:
+   - Track F1/F2 (`f12/scripts/`): **HOLD / BLOCKING CORRECTIONS REQUIRED**
+     Even after three concurrent hotfix waves by the F12 worker (culminating in
+     Wave 4 at 2026-10-15 08:43, which fixed the Cdb/Wdb secondary_cluster join,
+     contig_to_bin column index, and domtblout accession vs name parsing),
+     **7 scientifically or computationally fatal blocking defects remain** in the
+     latest Wave 4 scripts (`01_fetch_references.py` `ca2195a3...`,
+     `02_f1_screen.py` `9a5a25a0...`, `03_f2_remapping_and_test.py` `7172a35d...`,
+     `04_audit_and_summarize.py` `f803756d...`, and `test_references_control.py`
+     `a4382418...`):
+       * [BLOCKING-F12-1] `03_f2_remapping_and_test.py` (L191-222, L271-272,
+         L502-506) fails to strip the `<sample>::` prefix from FASTA headers in
+         `04_protein_catalog/assembly_proteins/{sample}/{sample}.faa.gz`, causing
+         100% of Lead 1 (`1PRr2_1391604_4`) and Lead 2 (`F12Dr1_653317_3`) gene
+         and contig extractions to return 0 genes (`length_aa=0`, 0-byte
+         `raw_hits/f2_leads.faa`), empirically confirmed in
+         `f12/results/f2_lead_remapping.tsv` (`46b71de2...`).
+       * [BLOCKING-F12-2] `01_fetch_references.py` (L528, L231-232) uses
+         `OR gene:stpA` in the GgpP query and unconditionally labels all returned
+         records as `GgpP_EC_3_1_3_69`. Because `stpA` is the canonical gene name
+         for enterobacterial H-NS-like DNA-binding transcriptional repressors,
+         **7 of the 8 (87.5%) "GgpP phosphatase" references are non-GgpP false
+         positives** (5 H-NS DNA-binding proteins `P0ACG1`, `P0A1S4`, `P0ACG3`,
+         `P0A1S5`, `P0ACG2`; 1 ABC transporter `P0C0E9`; 1 virulence tyrosine
+         phosphatase SptP `P74851`). Only 1 record (`Q55034`) is true GgpP!
+       * [BLOCKING-F12-3] `01_fetch_references.py` (L505-506, L205-227) pollutes
+         `cpf_references.faa` with non-CPF *Arabidopsis* bHLH transcription
+         factors (`Q9C670` CIB5, `Q8GY61` CIB1) via `protein_name:cryptochrome`,
+         and its `if/elif/else` classifier misassigns the canonical bacterial
+         FeS-BCP prototype *Agrobacterium fabrum* PhrB (`A9CH39`) to `Eu6_4`
+         (leaving **0 references in `FeS_BCP`**), while dumping all human, mouse,
+         chicken, and mosquito animal cryptochromes (`Q16526`, `Q49AN0`, `P97784`,
+         `Q8QG61`, `Q17DK5`) and plant `CRY1` (`P40115`) into `CRY_DASH`.
+       * [BLOCKING-F12-4] `01_fetch_references.py` (L176-199) corrupts ECO
+         evidence tiers via two bugs: (a) L177 checks `"CATALYTIC_ACTIVITY"` with
+         an underscore whereas UniProt JSON uses `"CATALYTIC ACTIVITY"` with a
+         space (and never checks `ecNumbers[*].evidences`), missing 100% of
+         catalytic/EC ECO tags in `function_ecos`; and (b) L195-196 evaluates
+         `(function_ecos or all_ecos)`, falling back to the whole-JSON regex dump
+         (`all_ecos`, including X-ray structure `ECO:0007829` or localization
+         `ECO:0000314`) whenever `FUNCTION` lacks an ECO tag.
+       * [BLOCKING-F12-5] `03_f2_remapping_and_test.py` (L529-552) deleted the
+         cognate synthase search in Wave 4 and hardcoded `"synthase_match": "NONE"`
+         on L541 for all flanking genes without checking Bakta, eggNOG, or HMMs
+         for MpgS/GgpS/OtsA, while `04_audit_and_summarize.py` (L155-169, L287)
+         still reports `"No cognate osmolyte synthase (MpgS, GgpS, or OtsA)
+         detected within +/- 5 flanking genes"` as if an empirical test had run.
+       * [BLOCKING-F12-6] `03_f2_remapping_and_test.py` (L267, L581) queries
+         `tax_map.get(refined_bin, {})` against `_gtdbtk_r232`, which contains
+         only the 5,438 `Wdb.csv` species representatives. Non-representative
+         refined bins receive `"Unclassified"` unless falling back to
+         `tax_map.get(rep_mag, {})`.
+       * [BLOCKING-F12-7] `02_f1_screen.py` (L304-389) retains all DIAMOND hits
+         (`e <= 1e-3`) as confirmed CPF candidates (`is_outgroup_splb == 0`) even
+         when `matched_hmms` is empty (`""`), allowing hits to non-CPF bHLH
+         contaminants (`Q9C670`, `Q8GY61`) or non-homologous C-terminal tails to
+         pass as CPF loci; additionally, `01_fetch_references.py` L464 builds
+         `had_all.hmm` from only `PF00702` and `PF13419` (omitting `PF02358` for
+         TPP and `PF08282` for GgpP), causing 100% of TPP and GgpP references to
+         fail HMM self-validation (`top_hmm = NONE` in
+         `reference_control_audit.tsv` L101-125).
+
+   - Track F3/F4/F5 (`f345/scripts/`): **HOLD / BLOCKING CORRECTIONS REQUIRED**
+     Four blocking defects exist in the `08:40` snapshot:
+       * [BLOCKING-F345-1] `f345/scripts/01_fetch_references.py` (L251-260,
+         L318-332) writes gzip-compressed binary payloads (`\x1f\x8b...`) from
+         EBI InterPro `?annotation=hmm` directly into `.hmm` files without
+         decompressing, concatenates gzipped blobs into `f3_rhodopsins.hmm`,
+         `f4_ectc.hmm`, and `f5_carbonic_anhydrase.hmm`, and ignores `hmmpress`
+         failure (`pass` on L331-332). All downstream `hmmsearch` calls will fail.
+       * [BLOCKING-F345-2] `f345/scripts/01_fetch_references.py` (L68-87,
+         L342-413, L435) fetches hardcoded UniProt accession lists and forcibly
+         overwrites their `category` and `subcategory` labels (`L435` prioritizes
+         `"Pushkarev"`/`"PDB"` manual labels over paginated queries) without
+         validating the JSON record's actual protein description, EC, or domain
+         (including internal label contradictions such as `O52251` labeled
+         `SaEctC_Halomonas_elongata` on L372).
+       * [BLOCKING-F345-3] `f345/scripts/01_fetch_references.py` (L134-154)
+         ignores comment-level `c.get("evidences", [])` and `ecNumbers[*].evidences`,
+         and treats `ECO:0000353` (physical interaction) on any feature site as
+         catalytic functional validation.
+       * [BLOCKING-F345-4] `03_f3_rhodopsin_pilot.py` (L197),
+         `04_f4_ectc_pilot.py` (L165, L183-185), and
+         `05_f5_carbonic_anhydrase_pilot.py` (L168) check `h["profile_name"]`
+         (`parts[3]`, the HMM `NAME` field, e.g., `ectA_dab_acet`, `cam_ca`) for
+         accession strings (`"NF009806"`, `"NF050158"`, `"NF040597"`,
+         `"TIGR02701"`) and capitalized gene names (`"EctA"`, `"EctB"`, `"EctD"`),
+         which reside in `h["profile_acc"]` (`parts[4]`) or lowercase names. As a
+         result, `has_ecta`/`has_ectb`/`has_ectd` are **always False**,
+         misclassifying **100% of EctC hits as `"Orphan_EctC_Candidate"`**!
+         Furthermore, `03_f3`, `04_f4`, and `05_f5` omit the domain coverage,
+         catalytic residue (TM7 retinal Lysine, EctC 2-His-1-carboxylate triad,
+         Gamma-CA 3-His / Beta-CA Cys-His-Cys triad), and same-contig synteny
+         gates specified in `f345/DESIGN.txt`.
+
+   - GPU ProstT5 Embedding Harness (`gpu/`): **READY FOR SMOKE / 1 CONDITIONAL
+     BLOCKER TO FIX BEFORE FULL EQ PRODIGAL `.faa` RUNS**
+     `gpu/prostt5_embed.py` (v2 `cf898bbc...`), `gpu/verify_embeddings.py`
+     (v2 `055797a5...`), and `gpu/smoke_results_v2/` (`provenance.json`
+     `95842ac3...`, `verification_report.json` `56b0b8ab...`) pass all core
+     tokenization, residue slicing (`1 : 1 + seq_len`), batch invariance
+     (`5.96e-08`), duplicate identity (`0.0`), and parameter-bound provenance
+     checks. However:
+       * [BLOCKING-GPU-1 (Conditional on Prodigal `.faa` with trailing `*`)]
+         `prostt5_embed.py` (L141-145) hashes `seq_upper` *before* stripping
+         trailing `*`, whereas `verify_embeddings.py` (L49-52) hashes `seq`
+         *after* stripping trailing `*`. On any Prodigal `.faa` containing
+         trailing stop-codon `*`, `verify_embeddings.py` check
+         `sequence_shas_match` (L163) will fail.
+
+================================================================================
+SECTION 1: EXACT SHA-256 MANIFEST OF ALL FILES AUDITED Across Concurrent Waves
+================================================================================
+
+Because the F12 worker modified `f12/scripts/*.py` across four concurrent waves
+during the preflight window (Wave 1 rejected_v1 -> Wave 2 at 08:30 -> Wave 3 at
+08:36/08:39 -> Wave 4 at 08:43), every version read was hashed and inspected.
+
+1.1 Manuscript & Governing Audit Documents
+  - `manuscript/main.tex` (UNTOUCHED):
+    `2fcc918baaf344de6ef96915b060e4b8ce0ee6fefa7a26168475766b281b0a8b`
+  - `CLAUDE.md`:
+    `15efaa8dfee3a0dc1ca14de4cb7e4f8f54cd671ef34500c6fb18a8efdc56df71`
+  - `reviews/darkmatter-family-analysis-20261015/AUDIT_PLAN.txt`:
+    `505a761a765ca3375cede56de9ee87c64c28b9a5ef63a2c21f5b58a31a34e1e`
+  - `reviews/darkmatter-family-analysis-20261015/ROOT_ASSESSMENT.txt`:
+    `3e271580ee306332f7688a5d612246a7d8a3fd7e57cf6713ca84fc3fdbe76b2c`
+  - `reviews/darkmatter-family-analysis-20261015/ROOT_AUDIT.txt`:
+    `dc27a820eb93e2e3bf4ec12d91716ff70565f22bdffde3fb4807938ab14e134b`
+  - `reviews/darkmatter-family-analysis-20261015/prompts/f12_pilot.txt`:
+    `231b1de1cf069db7f04e852bf1da0566bd7524bf569c0d943ce0867e8ab81be2`
+  - `reviews/darkmatter-family-analysis-20261015/prompts/f345_pilot.txt`:
+    `05a5d42c3790609786fd2484fd4c3a4ab6991844c549761c575031e19386bf54`
+  - `reviews/darkmatter-family-analysis-20261015/prompts/gpu_embeddings.txt`:
+    `d6ee34dd39e8655fc3df194e4c735a8d2c6f16d47ec9e7a283e7ff750621e77c`
+
+1.2 Root Inventory & Reference Check Artifacts (`reproducibility/darkmatter/family_discovery_20261015/`)
+  - `ROOT_PROGRESS.txt` (08:35):
+    `3fe8aa9aa08f8aa11075fb647b2ef8b426c303c58f098305975320d62ead166b`
+  - `root_inventory.out`:
+    `34100be52bcb0181ce454dc1b746a3671824f1f974bb1e9ca837c5b2deb59bb8`
+  - `root_inventory_v2.out`:
+    `a210901d655d02883d16136ba2d99a1d4d1ef09215bc69f274ee9e2aa4b9b6e3`
+  - `reference_checks/CHECKS.json`:
+    `e48203ade6f0a9a3bab7341f40a1361c710e4fcd961dc0ab12208ad9ae67ddbc`
+  - `reference_checks/root_record_check.json`:
+    `a11004820b9e6c19f2b1f8bb29df1114c4b7d506c1b2291385322d52a31e6c42`
+
+1.3 Track F1/F2 (`reproducibility/darkmatter/family_discovery_20261015/f12/`)
+  * Root Audit & Design Files:
+    - `f12/ROOT_CORRECTION_REQUIRED.txt`:
+      `f481db308cee33388e0d9daa7344b0726ad6e7d7b63b42eaa84c681be104a3c8`
+    - `f12/ROOT_BLOCKING_CODE_AUDIT.txt` (v1, 08:32):
+      `55c4a4f5c8c4a692d04df0664994d7bf6ef6025c23c03c45ac429f3d276a4664`
+    - `f12/ROOT_BLOCKING_CODE_AUDIT.txt` (v2, 08:37):
+      `b41fe3cd9a107450164199373a05da22cbad2bb8c16256025935db691bfd977b`
+    - `f12/ROOT_BLOCKING_CODE_AUDIT.txt` (v3, 08:40):
+      `ac2db4fe1a6a4aa163b79e87562ef6a48ed7b14993f19e11c7a3c59b950bcb2d`
+    - `f12/DESIGN.txt`:
+      `3439b1e6c3eda15d129f86eeda0fdcb5254093cd781403d6f09498a5a9097072`
+    - `f12/references/osmolyte_families.tsv`:
+      `aa73a116a8fc536cd7ebabeec3f4c58ded024d5ebd46cc76c75444c5713ba400`
+    - `f12/STATUS.json` (v1 08:34 / v2 08:37 / v3 08:43):
+      v1: `65fcbd7cabd42a7827070394c87c18e9c66d4575cf4021c5c458ac5bc8af87bf`
+      v2: `d41f9a0335d722a313bc8905280647a6d61fc3152fd6bdec115566fd86fb5643`
+      v3: `2a4ec5b1a66ec0412c23b9da7c1cdf09c8a88650557e906a7901768e5d0e8fa6`
+
+  * Wave 1 (`rejected_v1`, hardcoded fabricated sequences & manual dictionaries):
+    - `f12/scripts/01_fetch_references_rejected_v1.py`:
+      `57134f2c11dc6db6a3aa5fae6805ea9409f78320d7708b18536c4f50efded043`
+    - `f12/scripts/02_f1_screen_rejected_v1.py`:
+      `e49489c11dafbcd21a331dee4cb7ed455f76652b1fa8f394ac31aea096e7182e`
+    - `f12/scripts/03_f2_remapping_and_test_rejected_v1.py`:
+      `1c493a830022741804f8bafc60247a7ea5cf45fe94e438791b38c5f5d8bca042`
+
+  * Wave 2 (08:30 rebuild, introduced live API fetch but kept join/column bugs):
+    - `f12/scripts/01_fetch_references.py` (08:30):
+      `bcfbe95998461a9b784e12dfaff6d9cf21ae68b7734b5973655f9f70e44e2da8`
+    - `f12/scripts/02_f1_screen.py` (08:25):
+      `daece935d6ce956d65d261be9581d9498c200ad75e47ba1e4cd2f3b05f50f9f5`
+    - `f12/scripts/03_f2_remapping_and_test.py` (08:29):
+      `a9fa550f0ab2b0cddb15684ce7ada538040e3646a75e663e19a87e7e0a6716c2`
+    - `f12/scripts/04_audit_and_summarize.py` (08:20):
+      `589347dd85a786e4ca57be637283ef3d121d9bdbced255f95e7315b24dc0f289`
+
+  * Wave 3 (08:36-08:39 rebuild + partial worker execution):
+    - `f12/scripts/01_fetch_references.py` (08:36):
+      `71c0a25b24648a1324d801fe6c8afbbd79304d48cc254a8779a0f0f18531765c`
+    - `f12/scripts/02_f1_screen.py` (08:39):
+      `a05a98e5740f30e735b74a653cbea65ff668e1fae5a8eaa3b596eb1fe0c0aa47`
+    - `f12/scripts/03_f2_remapping_and_test.py` (08:39):
+      `561831d856cb8eb7de98dff30430a9d78a49aeb28eada00ddd201cd0831f761b`
+    - `f12/scripts/04_audit_and_summarize.py` (08:36):
+      `7bea0e336e0a1c5a2044ae6e6a73b6126121cc1d63dffa3e1d33e0dc23655862`
+    - `f12/scripts/test_references_control.py` (08:36):
+      `2489d0ed8e0a397b86752e84c27b14cbd09ce45a791f8063d33f7492469ec780`
+    - `f12/references/verified_references_metadata.tsv` (08:38):
+      `cba59a034cdc7c954ab44a7c88fe963ed5ca8b77fa630e002c9d7c312796c6de`
+    - `f12/references/reference_control_audit.tsv` (08:38):
+      `557f83e08ae689816bf7c46d214d6187bffdb6aec07966c3d11f707834644aa1`
+    - `f12/references/REFERENCE_AUDIT_REPORT.txt` (08:38):
+      `56076ce12c0fa41384672ba016c5b2811b45eec3792eb7cfbc3fca22bdf96509`
+    - `f12/results/f2_lead_remapping.tsv` (08:38):
+      `46b71de2c34c7b8d725523dcecd27e77b243bea041bb6abe8f6268792fb2c156`
+    - `f12/results/raw_hits/f2_leads.faa` (08:38, 0 bytes):
+      `e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`
+
+  * Wave 4 (08:43 LATEST current disk state of `f12/scripts/`):
+    - `f12/scripts/01_fetch_references.py` (08:43):
+      `ca2195a3f9aeb504d7bbb8f89b11e40cc4a9085af2da30c2304549b7f1d80414`
+    - `f12/scripts/02_f1_screen.py` (08:43):
+      `9a5a25a02031d62dc3967ce3beb248d657a4f88f1ff19ae7dfdbf3b7b46178c9`
+    - `f12/scripts/03_f2_remapping_and_test.py` (08:43):
+      `7172a35d556f3b9b50f8867055e8d7d96042a7f5ab78f881fdc1de787129331a`
+    - `f12/scripts/04_audit_and_summarize.py` (08:43):
+      `f803756d438a513e14eccfc2afe9f0646dd21c65bc5ba359960f3fbbb45e98d5`
+    - `f12/scripts/test_references_control.py` (08:43):
+      `a43824189ccfab05bbb88cc1aad226c2e5a0edeebcd635009067807ab2cd2c57`
+    - `f12/scripts/require_slurm_worker.sh`:
+      `e9c7d9b04fb509aa148de5aa2fb35046373f5b1086942a212e8737ab66071190`
+    - `f12/scripts/run_01_fetch.sbatch`:
+      `c64196b47b3a91e81f47b84599765fc8d661a26c6244f2238282f684fd71b837`
+    - `f12/scripts/run_02_f1_screen.sbatch`:
+      `207df2541379c84699c6d4570d75890cb860098862848292b2bcbe1efca69444`
+    - `f12/scripts/run_03_f2_test.sbatch`:
+      `082b7236ca6ccfd188c1e780ffca5e202c3e9dc71cf10e9a0bc1fb5e794d786b`
+
+1.4 Track F3/F4/F5 (`reproducibility/darkmatter/family_discovery_20261015/f345/`)
+  - `f345/DESIGN.txt`:
+    `6860a40ae914deaea0250be7860abc11f26be5120e5799d0a584cd8ee8107f5f`
+  - `f345/STATUS.json`:
+    `d50199d82007471b47d13a8d1a463cbfeb81a8a5257133a6665f0386fd3b1c4c`
+  - `f345/scripts/require_slurm_worker.sh`:
+    `a23f2187436a7b1472d5aa752d70fd0f9eb7daed0a047bbc9398046a38deeb1f`
+  - `f345/scripts/01_fetch_references.py`:
+    `00dbfbc5715597f53c67facfd25645f4e9cd48b909ba328ba4eaea1c2e6071e9`
+  - `f345/scripts/02_inspect_input_schemas.py`:
+    `130b7325006b2807975a59d6527bf036cd18696bfd99c10d5b24707aa3f758c4`
+  - `f345/scripts/03_f3_rhodopsin_pilot.py`:
+    `423e594c1b32e3ea51a9772d15b8dc61227928ba6f85270993eef11548fd374e`
+  - `f345/scripts/04_f4_ectc_pilot.py`:
+    `dd701f7f85d9e0692bbc1e195e156e8e4a5daed59c5a78d211b7c82ded00f184`
+  - `f345/scripts/05_f5_carbonic_anhydrase_pilot.py`:
+    `143587b1ee6ead1407067420e9e90fc2e5a6fa717e4ca411be3db2a79d6ac79f`
+  - `f345/scripts/06_audit_and_summarize.py`:
+    `db5715d150d1dba3cb78fddcdd0f7cb608cc5ac4883aff002045e133489d125a`
+  - `f345/scripts/run_01_fetch_and_inspect.sbatch`:
+    `bc41d6fb6d4fc0be5ffef2e8e26c31ca6ef776d21fd8706e72a4f500e7f3a25f`
+  - `f345/scripts/run_03_f3_pilot.sbatch`:
+    `84a6b4827cf3ec4816bfba06deacdb8a40339c9377bbca8a4f6174acfd69f483`
+  - `f345/scripts/run_04_f4_pilot.sbatch`:
+    `fd0c2bb0706cf5c334a08823fd81b894270ac5343f581d6be3bfefda2009b885`
+  - `f345/scripts/run_05_f5_pilot.sbatch`:
+    `7141f57778db30a0a647a3db36270e5f23f027193663414e895e0a81db5292d1`
+  - `f345/scripts/run_06_summarize.sbatch`:
+    `c259b25d1cb58bcfa16bc4297cf52da47fa912b5139d1431b538edbb3f91b40a`
+
+1.5 GPU ProstT5 Harness (`reproducibility/darkmatter/family_discovery_20261015/gpu/`)
+  - `gpu/prostt5_embed.py` (v1 / v2 latest):
+    v1: `e87f22f5bb155033fc9f7369f21098bdd2ce4f8c2e1e21b90751974232fc6c7f`
+    v2: `cf898bbc61d4e8ff955c3065eaea376142b7bf5a82e3dd1936f6ab61b4ac8908`
+  - `gpu/verify_embeddings.py` (v1 / v2 latest):
+    v1: `7ec5a4976079734b19a65e34c186b6f1de165f227be23a3ff7c8972d184145f8`
+    v2: `055797a5673c66e6a6c9f9622f8e04f210700ab75d90faeda51790da0a74f2b8`
+  - `gpu/build_smoke_fasta.py`:
+    `9755a41fc5fb150a5e9bc9229098a35012ba72a3228661f108fd8832c2079184`
+  - `gpu/smoke_references.fasta`:
+    `800b31e86bfeddc9b0d92c0a1f73c7bf2f6f0fd242a7c8be4e440cb8e222e963`
+  - `gpu/run_embed.sbatch`:
+    `3e9e4db5e2df51c85fb38710b61eb8dbbd3b7714a0a1bf44a6ff69b9358e88cc`
+  - `gpu/run_smoke.sbatch`:
+    `03d5a5bc817a261bd6599c740f70c791eb499dc083f0fd362b99fc0c6ad3d1ef`
+  - `gpu/STATUS.json`:
+    `65c1b8dd13e750ef7e0d4131cf2963912b51bd35e54ab4731ebda19eb6143dd9`
+  - `gpu/DESIGN.txt`:
+    `81cc3d9fc7587e8f17ddcdbfdd15583a23bc48112fc480b786c25b16a4de15bd`
+  - `gpu/smoke_results/provenance.json`:
+    `739b0e068951fe2a607dea8b985ff11603174b71673c457976133bf59e9432e4`
+  - `gpu/smoke_results/verification_report.json`:
+    `d22bfb2d390381d7400ce1e20a27e736c1e5a1be6e489d320037b3f34ee829f8`
+  - `gpu/smoke_results/sequence_index.tsv`:
+    `abdc6ecda713ac123029ec57f375b789a56e43616c781d0a8a3e1342df2b5c8a`
+  - `gpu/smoke_results/checksums.sha256`:
+    `a28e7290985c9145a99818f40485cb42989e83448c75325782ac1134a6691e52`
+  - `gpu/smoke_results_v2/provenance.json`:
+    `95842ac3ed24028b2a65ac0a658392ab4cab534144cef9d5bfbcfbedc01242e3`
+  - `gpu/smoke_results_v2/verification_report.json`:
+    `56b0b8ab77839de6e0020402b30e6644c48ba31157b2332d79b7c87fe474c0fb`
+  - `gpu/smoke_results_v2/sequence_index.tsv`:
+    `fc62458da6c23b89c8a0f08b7e7f483fa53aa47b69001fb3ba19660f42d40100`
+  - `gpu/smoke_results_v2/checksums.sha256`:
+    `f8df7ab81f22d846c8e0c9b1177fc7e8d801da559e9c28b594497a89ac8d1b5d`
+
+================================================================================
+SECTION 2: AUTHORITATIVE INPUT SCHEMAS & CATALOGUE DENOMINATORS
+================================================================================
+
+Cross-checked against `root_inventory.out`, `root_inventory_v2.out`,
+`reproducibility/01_select_cohort.py` (`L65-169`), `reproducibility/darkmatter/v2_scan_cluster90.py`
+(`L40-70`), and `reproducibility/darkmatter/round7_analyses/h2_context/scripts/02_extract_neighbourhoods.py`
+(`L95-115`):
+
+1. **Catalogue Denominator Distinction (`drep_rep_proteomes` vs `assembly_proteins`)**:
+   - The authoritative manuscript protein catalogue (`20,379,930` proteins across
+     the `5,438` species-level representative MAGs; `1,600,067` dark proteins in
+     `607,231` dark clusters; `22,554` strict-dark clusters) comes from the
+     unified assembly protein calls in
+     `04_protein_catalog/assembly_proteins/<sample>/<sample>.faa.gz` mapped via
+     `contig_to_bin_refined.tsv.gz` and `Cdb.csv`/`Wdb.csv` (see
+     `v2_scan_cluster90.py` L1-60).
+   - By contrast, `06_darkmatter/drep_rep_proteomes/*.faa.gz` contains `5,438`
+     per-MAG FASTA files called independently by Prodigal on each representative
+     bin FASTA (`reproducibility/darkmatter/run_darkmatter_pipeline.sh` L51-72).
+     Wait: while `drep_rep_proteomes` covers the exact same `5,438` species
+     representative genomes (`Wdb.csv` winners), per-bin Prodigal training can
+     differ slightly at contig edges from whole-assembly Prodigal training, and
+     its total gene count is NOT identical to the `20,379,930` assembly-catalogue
+     count. Any report scanning `drep_rep_proteomes/*.faa.gz` MUST report the
+     exact `total_proteins_scanned` counted from those `5,438` `.faa.gz` files
+     (which `02_f1_screen.py` L161 and `03_f3`/`04_f4`/`05_f5` do) and must NOT
+     conflate that denominator with `20,379,930`.
+
+2. **FASTA Header Format in `drep_rep_proteomes` vs `assembly_proteins`**:
+   - In `06_darkmatter/drep_rep_proteomes/<mag>.faa.gz`:
+     Headers are ALREADY prefixed with `<mag_name>::`:
+     `>10Dr2__single_SemiBin_0::10Dr2_950564_1 # 221 # 682 # 1 # ID=1_1;partial=00;...`
+     (verified in `root_inventory_v2.out` L50-55).
+     Wait: if a script prepends `{mag_id}::` again (as `f12/scripts/02_f1_screen.py`
+     did in Wave 1/Wave 2 L166 before fixing it in Wave 3/Wave 4 L158-167), it
+     creates a double prefix `MAG::MAG::CONTIG_GENE`. In `f345/scripts/03_f3`
+     (L96-103), `04_f4` (L88-95), and `05_f5` (L89-96), the guard
+     `if not line[1:].startswith(f"{mag_id}::"):` prevents double-prefixing.
+   - In `04_protein_catalog/assembly_proteins/<sample>/<sample>.faa.gz`:
+     Headers are ALSO prefixed with `<sample>::`:
+     `>1PRr2::1PRr2_1391604_4 # start # end # strand # ID=...;partial=00;...`
+     (verified in `reproducibility/darkmatter/round7_analyses/h2_context/scripts/02_extract_neighbourhoods.py`
+     L98-112: `raw_pid = pid.split("::", 1)[1] if "::" in pid else pid`).
+
+3. **`03_binning/contig_to_bin_refined.tsv.gz` Schema**:
+   - Exact 3-column tab-separated schema (no header):
+     `col 0`: `<sample>::<contig_id>` (e.g., `F12Dr1::F12Dr1_653317`)
+     `col 1`: literal string `"refined"`
+     `col 2`: `<refined_bin_id>` (e.g., `F12Dr1__self_SemiBin_127`)
+   - Verified in `root_inventory_v2.out` L1-5 and `02_extract_neighbourhoods.py`
+     L54-60.
+
+4. **dRep `Cdb.csv` vs `Wdb.csv` Join Semantics & Unclustered Bins**:
+   - `Cdb.csv` (`12,433` clustered bins) columns:
+     `genome,secondary_cluster,threshold,cluster_method,comparison_algorithm,primary_cluster`
+     Example: `10Dr1__co_MetaBAT2_100.fa,1_1,0.05,average,fastANI,1`
+   - `Wdb.csv` (`5,438` species-level representative winners) columns:
+     `genome,cluster,score`
+     Example: `10Dr2__single_SemiBin_0.fa,1000_1,105.00297619047619`
+   - **Critical Join Rule**: `Wdb.cluster` (`"1000_1"`) is the 95% ANI fastANI
+     **`secondary_cluster`**, NOT the 90% MASH `primary_cluster` (`"1000"`).
+     Joining `Cdb.primary_cluster` to `Wdb.cluster` fails 100% of the time.
+   - **Unclustered Refined Bins (`14,426` vs `12,433`)**:
+     `data_tables/genomeInformation.csv` contains `14,426` refined bins, whereas
+     `Cdb.csv` contains `12,433` rows (`reproducibility/01_select_cohort.py`
+     L70-121). Thus `1,993` refined bins in `contig_to_bin_refined.tsv.gz` did
+     not enter dRep secondary clustering (typically `<50%` completeness or `>10%`
+     contamination prior to dRep). A contig mapping to one of those `1,993` bins
+     has a valid `refined_bin` in `contig_to_bin_refined.tsv.gz`, `in_cdb = False`,
+     and `representative_mag = "UNCLUSTERED_OR_FILTERED"`.
+
+5. **GTDB-Tk R232 (`_gtdbtk_r232`) vs Refined-Bin Taxonomy**:
+   - `03_binning/_gtdbtk_r232/gtdbtk.bac120.summary.tsv` (`4,847` genomes) and
+     `gtdbtk.ar53.summary.tsv` (`591` genomes) contain ONLY the `5,438` dRep
+     representative winner MAGs (`Wdb.csv`), NOT all `12,433` clustered bins or
+     `14,426` refined bins (`reproducibility/01_select_cohort.py` L138-167).
+   - Therefore, to look up the GTDB R232 taxonomy of any non-representative
+     refined bin, scripts MUST look up `tax_map.get(rep_mag)` (the `Wdb.csv`
+     winner for its `secondary_cluster`), not just `tax_map.get(refined_bin)`.
+
+6. **HMMER `--domtblout` Column Indices (0-based after `line.split()`)**:
+   - Verified in `root_inventory_v2.out` L30-48:
+     * `parts[0]`: target sequence name (protein ID)
+     * `parts[2]`: `tlen` (target protein length in aa)
+     * `parts[3]`: `query name` (HMM `NAME` field, e.g. `DNA_photolyase`,
+       `ectA_dab_acet`, `cam_ca`)
+     * `parts[4]`: `query accession` (HMM `ACC` field, e.g. `PF00875.24`,
+       `NF009806.1`, `TIGR02006.1`, or `-` if none)
+     * `parts[5]`: `qlen` (HMM profile length in nodes/positions)
+     * `parts[6]`: full-sequence E-value (`full_evalue`)
+     * `parts[7]`: full-sequence bitscore (`full_score`)
+     * `parts[11]`: domain c-Evalue (`dom_cevalue`)
+     * `parts[12]`: domain i-Evalue (`dom_ievalue`)
+     * `parts[13]`: domain bitscore (`dom_score`)
+     * `parts[15]`, `parts[16]`: `hmm_from`, `hmm_to` (`hmm_cov = (hmm_to - hmm_from + 1) / qlen`)
+     * `parts[17]`, `parts[18]`: `ali_from`, `ali_to`
+
+================================================================================
+SECTION 3: TRACK F1 & F2 (`f12/`) — BLOCKING CORRECTIONS VS TOLERABLE LIMITS
+================================================================================
+
+3.1 Progression Across Waves 1-4 (What Was Fixed vs What Remains Broken)
+  - Wave 1 (`*_rejected_v1.py`) contained 14 hardcoded literal sequences in
+    `01_fetch_references_rejected_v1.py` (`57134f2c...` L45-238) that were 100%
+    fabricated/chimeric or mismatched to their accessions (confirmed in
+    `reference_checks/CHECKS.json` `e48203ad...`). Root rightly rejected Wave 1
+    and cancelled Slurm jobs `53815526`/`53815527` and `53815546`/`53815547`.
+  - Waves 2 (`08:30`) and 3 (`08:36-08:39`) replaced literal sequences with live
+    UniProtKB JSON fetches (`134` records in `verified_references_metadata.tsv`
+    `cba59a03...`), and Wave 4 (`08:43`) fixed:
+      (a) `Cdb.secondary_cluster -> Wdb.cluster` in `03_f2_remapping_and_test.py`
+          (`7172a35d...` L122-152);
+      (b) `contig_to_bin_refined.tsv.gz` `parts[2]` and `f"{sample}::{contig}"`
+          key in `03_f2_remapping_and_test.py` (`7172a35d...` L155-169); and
+      (c) `domtblout` `parts[4]` (`query_acc`) vs `parts[3]` (`query_name`) in
+          `02_f1_screen.py` (`9a5a25a0...` L284-285),
+          `03_f2_remapping_and_test.py` (`7172a35d...` L364-365), and
+          `test_references_control.py` (`a4382418...` L80-81).
+  - HOWEVER, **seven blocking defects remain in the latest Wave 4 (`08:43`)
+    scripts**, plus already-corrupted Wave 3 output files on disk
+    (`verified_references_metadata.tsv`, `reference_control_audit.tsv`,
+    `f2_lead_remapping.tsv`, `raw_hits/f2_leads.faa`).
+
+3.2 BLOCKING CORRECTIONS REQUIRED IN `f12/scripts/` (Latest Wave 4 `08:43`)
+
+  * **[BLOCKING-F12-1] `f12/scripts/03_f2_remapping_and_test.py` (`7172a35d...`
+    L191-222, L271-272, L502-506): `<sample>::` FASTA header prefix mismatch in
+    `assembly_proteins/{sample}/{sample}.faa.gz` causes 100% failure to extract
+    Lead 1 (`1PRr2_1391604_4`) and Lead 2 (`F12Dr1_653317_3`), producing 0-byte
+    `f2_leads.faa` and breaking Step 2 and Step 3.**
+    - **Code Evidence**:
+      In `03_f2_remapping_and_test.py` L191-222 (`extract_contig_genes(sample,
+      target_contig)`):
+      ```python
+      header = line[1:].strip()
+      parts = header.split(" # ")
+      cur_pid = parts[0].strip()
+      ```
+      And on L204 and L216:
+      ```python
+      if cur_pid and cur_pid.rsplit("_", 1)[0] == target_contig:
+      ```
+      In `04_protein_catalog/assembly_proteins/{sample}/{sample}.faa.gz`, every
+      FASTA header starts with `{sample}::` (e.g., `1PRr2::1PRr2_1391604_4`, as
+      handled in `reproducibility/darkmatter/round7_analyses/h2_context/scripts/02_extract_neighbourhoods.py`
+      L102: `raw_pid = pid.split("::", 1)[1]`).
+      Consequently, `cur_pid.rsplit("_", 1)[0]` evaluates to
+      `"1PRr2::1PRr2_1391604"`, whereas `target_contig` (`lead["contig_id"]`,
+      L73 & L83) is `"1PRr2_1391604"`. The equality is **FALSE for every gene**!
+      Even if fixed on L204/L216, L272 (`if g["pid"] == prot_id:`) and L503
+      (`if g["pid"] == lead["protein_id"]:`) also compare `cur_pid` against
+      unprefixed `1PRr2_1391604_4` / `F12Dr1_653317_3` (`False`).
+    - **Empirical Proof on Disk**:
+      `f12/results/f2_lead_remapping.tsv` (`46b71de2...` L2-3) recorded:
+      - `Lead1_MpgP`: `length_aa = 0`, `partial = unknown`, `total_genes_on_contig = 0`
+      - `Lead2_GgpP`: `length_aa = 0`, `partial = unknown`, `total_genes_on_contig = 0`
+      And `f12/results/raw_hits/f2_leads.faa` (`e3b0c442...`) is **0 bytes**!
+    - **Required Fix**:
+      Strip `{sample}::` when parsing `cur_pid` in `extract_contig_genes`:
+      `raw_pid = parts[0].strip(); cur_pid = raw_pid.split("::", 1)[1] if "::" in raw_pid else raw_pid`.
+
+  * **[BLOCKING-F12-2] `f12/scripts/01_fetch_references.py` (`ca2195a3...` L528,
+    L231-232): `OR gene:stpA` in the GgpP query and unconditional assignment to
+    `GgpP_EC_3_1_3_69` contaminates the GgpP reference panel with 87.5% (7/8)
+    non-GgpP proteins (5 H-NS DNA-binding transcriptional repressors, 1 ABC
+    transporter, 1 Salmonella virulence tyrosine phosphatase).**
+    - **Code & Data Evidence**:
+      L528 queries UniProt with:
+      `"(ec:3.1.3.69 OR gene:stpA OR protein_name:\"glucosylglycerol-phosphate phosphatase\") AND (reviewed:true)"`
+      And L231-232 assigns every returned record unconditionally:
+      ```python
+      elif target_label == "Phosphatase_target_GgpP":
+          cls_assign = "GgpP_EC_3_1_3_69"
+      ```
+      Inspecting `f12/references/verified_references_metadata.tsv` (`cba59a03...`
+      L102-109) and `f12/references/reference_control_audit.tsv` (`557f83e0...`
+      L101-108) proves that of the 8 records in `GgpP_EC_3_1_3_69`:
+      1. `P0ACG1` (`STPA_ECOLI`, *E. coli* K-12, 134 aa, EC `NONE`): DNA-binding
+         protein StpA (H-NS paralog, nucleoid-associated transcriptional repressor)!
+      2. `P0A1S4` (`STPA_SALTY`, *S. typhimurium*, 133 aa, EC `NONE`): DNA-binding
+         protein StpA!
+      3. `P0ACG3` (`STPA_SHIFL`, *S. flexneri*, 134 aa, EC `NONE`): DNA-binding
+         protein StpA!
+      4. `P0A1S5` (`STPA_SALTI`, *S. typhi*, 133 aa, EC `NONE`): DNA-binding
+         protein StpA!
+      5. `P0ACG2` (`STPA_ECO57`, *E. coli* O157:H7, 134 aa, EC `NONE`): DNA-binding
+         protein StpA!
+      6. `P0C0E9` (`ECFA_STRPY`, *S. pyogenes*, 275 aa, EC `7.-.-.-`): Energy-coupling
+         factor transporter ATP-binding protein EcfA!
+      7. `P74851` (`SPTP_SALTI`, *S. typhi*, 543 aa, EC `3.1.3.48`): Effector
+         protein SptP (Type III secretion system protein-tyrosine phosphatase)!
+      8. `Q55034` (`STP_SYNY3`, *Synechocystis* sp. PCC 6803, 360 aa, EC `3.1.3.69`):
+         Glucosylglycerol-phosphate phosphatase (the ONLY genuine GgpP in the set!).
+      Worse still, in `reference_control_audit.tsv` (L101-105), the 5 enterobacterial
+      H-NS DNA-binding proteins hit each other via DIAMOND and are scored as
+      `valid_subfamily_recovery = 1`, creating a completely false 5/8 (62.5%)
+      "pass rate" for GgpP!
+    - **Required Fix**:
+      Remove `OR gene:stpA` from L528 (in *Synechocystis* `Q55034`, `stpA` is a
+      historical synonym already captured by `ec:3.1.3.69` or
+      `protein_name:"glucosylglycerol-phosphate phosphatase"`, or scope it as
+      `(gene:ggpP OR (gene:stpA AND taxonomy_id:1117))`). Enforce post-fetch
+      validation in `parse_uniprot_json` rejecting any GgpP candidate whose EC
+      number is not `3.1.3.69` and whose description does not match
+      glucosylglycerol-phosphate phosphatase / salt-tolerance protein.
+
+  * **[BLOCKING-F12-3] `f12/scripts/01_fetch_references.py` (`ca2195a3...`
+    L505-506, L205-227): `F1_CPF` query pulls in non-CPF *Arabidopsis* bHLH
+    transcription factors (`Q9C670`, `Q8GY61`), and `parse_uniprot_json`
+    misclassifies *Agrobacterium* FeS-BCP (`A9CH39`) as `Eu6_4` (leaving 0
+    `FeS_BCP` references) and all vertebrate/mosquito animal cryptochromes as
+    `CRY_DASH`.**
+    - **Code & Data Evidence**:
+      1. Query L506 `(protein_name:cryptochrome) AND (reviewed:true)` matches any
+         protein with "cryptochrome" anywhere in its name, pulling in:
+         - `Q9C670` (`BH076_ARATH`, *Arabidopsis thaliana* CIB5, "Transcription
+           factor bHLH76 / Cryptochrome-interacting basic-helix-loop-helix 5")
+         - `Q8GY61` (`BH063_ARATH`, *Arabidopsis thaliana* CIB1, "Transcription
+           factor bHLH63 / Cryptochrome-interacting basic-helix-loop-helix 1")
+         Both are bHLH transcription factors with **zero CPF homology** (`top_hmm
+         = NONE` in `reference_control_audit.tsv` L41-42), yet Wave 3 labeled
+         them `CPD_I` (`verified_references_metadata.tsv` L42-43) and Wave 4
+         L227 labels them `CRY_DASH`!
+      2. In L212-215:
+         ```python
+         elif acc in ["O48652", "Q0E2Y1"] or "(6-4)" in pname_l and "bacterial" not in pname_l:
+             cls_assign = "Eu6_4"
+         elif acc in ["A9CH39", "Q88NT7"] or "fes-bcp" in pname_l or "iron-sulfur" in pname_l or ("(6-4)" in pname_l and "bacterial" in pname_l):
+             cls_assign = "FeS_BCP"
+         ```
+         In Python, `and` has higher precedence than `or`, and *Agrobacterium
+         fabrum* PhrB (`A9CH39`, the canonical bacterial FeS-BCP `(6-4)`
+         photolyase) has `rec_name = "(6-4) photolyase"` (`verified_references_metadata.tsv`
+         L28), which contains `"(6-4)"` and does NOT contain `"bacterial"`.
+         Therefore, the `Eu6_4` branch at L212 matches `A9CH39` BEFORE L214 is
+         ever reached! And `Q88NT7` (*Pseudomonas putida*) was never fetched
+         because L505 only queried `gene:phrB` / `iron-sulfurcluster` (a typo for
+         `iron-sulfur`). Result: **`FeS_BCP` has 0 references in
+         `verified_references_metadata.tsv`**!
+      3. In L218-227:
+         ```python
+         elif "cryptochrome" in pname_l and ("plant" in pname_l or "arabidopsis" in org_l):
+             cls_assign = "pCry"
+         elif "cryptochrome" in pname_l and ("animal" in pname_l or "drosophila" in org_l):
+             cls_assign = "aCry"
+         else:
+             cls_assign = "CRY_DASH"
+         ```
+         Because human (`Q16526` `CRY1_HUMAN`, `Q49AN0` `CRY2_HUMAN`), mouse
+         (`P97784` `CRY1_MOUSE`, `Q9R194` `CRY2_MOUSE`), rat (`Q923I8`), chicken
+         (`Q8QG61`, `Q8QG60`), bullfrog (`Q8UVQ4`), mosquito (`Q17DK5`), monarch
+         butterfly (`Q6GZT4`), and white mustard (`P40115` `CRY1_SINAL`) have
+         `rec_name = "Cryptochrome-1"` or `"Cryptochrome-2"` (which lacks the
+         literal words `"animal"` or `"plant"`), **every single vertebrate,
+         insect (non-Drosophila), and non-Arabidopsis plant cryptochrome falls
+         into `else: cls_assign = "CRY_DASH"`** (`verified_references_metadata.tsv`
+         L35-62)!
+    - **Required Fix**:
+      (a) Filter out non-CPF records (`"interacting"` in `pname_l`, or require
+          InterPro/Pfam cross-reference in `{PF00875, PF03441, PF04244, IPR005101,
+          IPR006050, IPR002081}`);
+      (b) Put the `FeS_BCP` `elif` branch *before* `Eu6_4` (and include explicit
+          fetch or query for `A9CH39` and *Rhodobacter sphaeroides* CryB `Q3J156`
+          / *P. aeruginosa* PhrB `Q9I410`);
+      (c) Classify `pCry` vs `aCry` vs `CRY_DASH` using UniProt taxonomy lineage
+          (`Viridiplantae` -> `pCry`, `Metazoa` -> `aCry` unless `"dash"` in
+          `pname_l` or gene `cry3`/`cry-dash`).
+
+  * **[BLOCKING-F12-4] `f12/scripts/01_fetch_references.py` (`ca2195a3...`
+    L176-199): Two bugs in ECO evidence parsing (`"CATALYTIC_ACTIVITY"` typo and
+    `(function_ecos or all_ecos)` fallback) misclassify structural/localization
+    ECO tags as functional experimental validation.**
+    - **Code & Data Evidence**:
+      1. On L177:
+         ```python
+         if c_type in ["FUNCTION", "CATALYTIC_ACTIVITY"]:
+         ```
+         In UniProtKB REST JSON, the commentType string is `"CATALYTIC ACTIVITY"`
+         with a space, NOT an underscore (verified in
+         `reference_checks/P00914.json` L81 and `reference_checks/P76329.json`
+         L95: `"commentType": "CATALYTIC ACTIVITY"`). Moreover, L176-187 never
+         inspects `proteinDescription.recommendedName.ecNumbers[*].evidences`
+         (`P76329.json` L61-72, where *E. coli* Gph `P76329` has its
+         `ECO:0000269` PubMed `16051645` experimental phosphatase evidence!).
+         Thus `function_ecos` is empty (`set()`) for `P76329` and every enzyme
+         whose experimental evidence is attached to `CATALYTIC ACTIVITY` or `EC`!
+      2. On L195-196:
+         ```python
+         has_direct_assay = any(code in DIRECT_ASSAY_ECOS for code in (function_ecos or all_ecos))
+         has_experimental = any(code in EXPERIMENTAL_ECOS for code in (function_ecos or all_ecos))
+         ```
+         Because `(function_ecos or all_ecos)` evaluates to `all_ecos` whenever
+         `function_ecos` is empty (`set()`), ANY protein that lacks a `FUNCTION`
+         comment ECO tag automatically falls back to `all_ecos` (the regex scrape
+         of the entire JSON record from L169), counting X-ray crystal structure
+         (`ECO:0007829` / `ECO:0000269` on `PDB` cross-references), mass spec, or
+         subcellular localization (`ECO:0000314`) as `has_direct_assay = 1`!
+    - **Required Fix**:
+      (a) Change `"CATALYTIC_ACTIVITY"` to `"CATALYTIC ACTIVITY"`, add
+          `"BIOPHYSICOCHEMICAL PROPERTIES"` and `"ACTIVITY REGULATION"`, and
+          extract `evidences` from `reaction.evidences`, comment-level
+          `c.get("evidences", [])`, and
+          `proteinDescription.recommendedName.ecNumbers[*].evidences`.
+      (b) Remove `or all_ecos` from L195-196 so `has_direct_assay` and
+          `has_experimental` test ONLY `function_ecos`.
+
+  * **[BLOCKING-F12-5] `f12/scripts/03_f2_remapping_and_test.py` (`7172a35d...`
+    L529-552) and `f12/scripts/04_audit_and_summarize.py` (`f803756d...`
+    L155-169, L202, L287, L297): Wave 4 deleted the flanking synthase check and
+    hardcoded `"synthase_match": "NONE"`, while `04_audit_and_summarize.py` still
+    claims an empirical +/- 5 gene test for MpgS, GgpS, and OtsA was executed.**
+    - **Code Evidence**:
+      In `03_f2_remapping_and_test.py` (`7172a35d...` L529-549), the Step 3 loop
+      writes:
+      ```python
+      row = {
+          "lead_label": lead["label"],
+          ...
+          "synthase_match": "NONE"
+      }
+      ```
+      No HMMER search, DIAMOND search, or Bakta/eggNOG annotation lookup is
+      performed anywhere in `03_f2_remapping_and_test.py`! Yet
+      `04_audit_and_summarize.py` (`f803756d...` L155-169, L287) checks
+      `if r.get("synthase_match") != "NONE":` and writes in the audit report:
+      `"No cognate osmolyte synthase (MpgS, GgpS, or OtsA) detected within +/- 5
+      flanking genes."` Reporting a negative empirical finding when the code
+      hardcodes `"NONE"` is a severe scientific provenance violation.
+    - **Required Fix**:
+      Either (a) scan the extracted +/- 5 flanking genes against the downloaded
+      Pfam/UniProt synthase profiles or look up their existing Bakta/eggNOG
+      annotations in `04_protein_catalog/annotations/`, OR (b) ifLead 1 and Lead 2
+      already fail Gate 1 (not in 5,438 species reps or fail specific phosphatase
+      homology), explicitly label Step 3 as `NOT_EVALUATED_OR_NO_SYNTHASE_DB`
+      rather than claiming `"No cognate osmolyte synthase ... detected"`.
+
+  * **[BLOCKING-F12-6] `f12/scripts/03_f2_remapping_and_test.py` (`7172a35d...`
+    L267, L581): GTDB-Tk R232 lookup uses `tax_map.get(refined_bin, {})` without
+    falling back to `tax_map.get(rep_mag, {})`.**
+    - **Code Evidence**:
+      As established in Section 2.5, `_gtdbtk_r232` contains ONLY the `5,438`
+      `Wdb.csv` winner MAGs. On L267 (`tax = tax_map.get(refined_bin, {})`) and
+      L581 (`tax = tax_map.get(b, {})`), any non-representative refined bin (such
+      as `F12Dr1__self_SemiBin_127` for Lead 2, or any non-winner bin among the
+      306 historical families on L581) is missing from `tax_map` and gets labeled
+      `"Unclassified"` / `"Unknown"` even when its species cluster representative
+      `rep_mag` has a valid GTDB-Tk R232 classification!
+      (Empirically confirmed in `f12/results/f2_lead_remapping.tsv` L3:
+      `Lead2_GgpP` in `F12Dr1__self_SemiBin_127` received `Unclassified`.)
+    - **Required Fix**:
+      Use `tax = tax_map.get(refined_bin) or tax_map.get(rep_mag, {})` on L267
+      and L581 (and optionally load `_gtdbtk_refined` for the 1,993 unclustered
+      refined bins).
+
+  * **[BLOCKING-F12-7] `f12/scripts/02_f1_screen.py` (`9a5a25a0...` L304-389) and
+    `f12/scripts/01_fetch_references.py` (`ca2195a3...` L464): Candidate
+    filtering and HMM library completeness bugs.**
+    - **Code Evidence**:
+      1. In `02_f1_screen.py` L304-389, `candidate_pids = set(hmm_hits.keys()) |
+         set(dmnd_hits.keys())`. If a protein has NO HMM hit (`matched_hmms == ""`)
+         and only a weak DIAMOND hit (`e <= 1e-3`) to a non-CPF contaminant in
+         `cpf_references.faa` (or to an unaligned C-terminal tail), `is_outgroup`
+         is `0` (`L354`), and `04_audit_and_summarize.py` L96 counts it as a
+         confirmed CPF locus (`r.get("is_outgroup_splb") == "0"`). A valid CPF
+         candidate must require at least one core CPF HMM hit (`PF00875`,
+         `PF03441`, or `PF04244` with `dom_ievalue <= 1e-5`), or at minimum be
+         flagged separately as `DMND_ONLY_NO_CPF_DOMAIN`.
+      2. In `01_fetch_references.py` L464, `had_all.hmm` is built from only
+         `["PF00702", "PF13419"]`, omitting `PF02358` (`Trehalose_PPase`, TPP)
+         and `PF08282` (`Hydrolase_3`, which covers *Synechocystis* GgpP `Q55034`
+         and many TPP/MpgP enzymes). Consequently, in
+         `reference_control_audit.tsv` (L101-125), **100% of TPP (`17/17`) and
+         GgpP (`8/8`) references had `top_hmm = NONE`**. Adding `PF02358` and
+         `PF08282` to `had_all.hmm` is required for valid positive-control and
+         decoy competition in Step 2 of `03_f2_remapping_and_test.py`.
+
+3.3 TOLERABLE PILOT LIMITATIONS IN `f12/` (Document Only; Non-Blocking Once 3.2 Fixed)
+  - **[TOLERABLE-F12-1] UniProt reviewed-only scope for MpgP (`EC 3.1.3.70`) and
+    GgpP (`EC 3.1.3.69`)**:
+    In UniProtKB/Swiss-Prot (`reviewed:true`), only 2 reviewed records exist for
+    EC 3.1.3.70 (`P76329` *E. coli* Gph, which is primarily 2-phosphoglycolate
+    phosphatase with promiscuous activity, and `Q5SHZ3` *Thermus thermophilus*
+    MpgP) and 1 reviewed record for EC 3.1.3.69 (`Q55034` *Synechocystis* StpA/GgpP).
+    Other biochemically characterized bacterial MpgP/GgpP orthologs (e.g.,
+    *Rhodothermus marinus*, *Persephonella marina*, *Pseudomonas* GgpP) are in
+    UniProtKB/TrEMBL (`reviewed:false`). Because F2 is strictly a forensic falsification/
+    verification test of two specific prior leads (`1PRr2_1391604_4` and
+    `F12Dr1_653317_3`) and tests them with both DIAMOND and Pfam HMMs (`PF00702`,
+    `PF13419`, plus `PF02358`/`PF08282`), the small Swiss-Prot seed set is a
+    tolerable pilot limitation once the `stpA` DNA-binding false positives are
+    removed.
+  - **[TOLERABLE-F12-2] Single-sample contig extract for Lead 1 and Lead 2**:
+    Scanning only `1PRr2.faa.gz` and `F12Dr1.faa.gz` for Lead 1 and Lead 2
+    neighborhoods in `03_f2_remapping_and_test.py` is fast and appropriate for
+    targeted lead verification.
+
+================================================================================
+SECTION 4: TRACK F3, F4, & F5 (`f345/`) — BLOCKING CORRECTIONS VS TOLERABLE LIMITS
+================================================================================
+
+4.1 BLOCKING CORRECTIONS REQUIRED IN `f345/scripts/` (`08:40` Snapshot)
+
+  * **[BLOCKING-F345-1] `f345/scripts/01_fetch_references.py` (`00dbfbc5...`
+    L251-260, L318-332): InterPro HMM payloads (`?annotation=hmm`) are saved as
+    raw gzipped binary streams without decompression, producing corrupt `.hmm`
+    files that fail `hmmpress` and `hmmsearch`.**
+    - **Code Evidence**:
+      In `f345/scripts/01_fetch_references.py` L251-257:
+      ```python
+      url = f"https://www.ebi.ac.uk/interpro/api/entry/{source_db}/{acc}?annotation=hmm"
+      content = fetch_url(url, accept="application/octet-stream")
+      if content and len(content) > 50:
+          with open(out_path, "wb") as f:
+              f.write(content)
+      ```
+      And on L318-332, those raw files are concatenated byte-for-byte into
+      `f3_rhodopsins.hmm`, `f4_ectc.hmm`, and `f5_carbonic_anhydrase.hmm`, with
+      `hmmpress` wrapped in `try: ... except Exception: pass` (L331-332)!
+      As verified in `f12/scripts/01_fetch_references.py` L430-431, EBI InterPro
+      `?annotation=hmm` returns a **gzip-compressed binary stream (`\x1f\x8b`)**,
+      NOT plain ASCII HMMER3 text! Writing `content` without
+      `if content[:2] == b"\x1f\x8b": content = gzip.decompress(content)` and
+      `assert content.startswith(b"HMMER3/f")` produces corrupt binary `.hmm`
+      files and causes `hmmsearch` in `03_f3`, `04_f4`, and `05_f5` to crash.
+    - **Required Fix**:
+      Decompress gzipped bytes (`gzip.decompress(content)` if `content[:2] ==
+      b"\x1f\x8b"`), assert `content.startswith(b"HMMER3/f")`, and remove the
+      silent `except Exception: pass` around `hmmpress`.
+
+  * **[BLOCKING-F345-2] `f345/scripts/01_fetch_references.py` (`00dbfbc5...`
+    L68-87, L342-413, L435): Hardcoded UniProt accession lists overwrite
+    `category` and `subcategory` with manual labels without verifying the
+    fetched JSON record's actual identity.**
+    - **Code Evidence**:
+      In L68-87 (`fetch_uniprot_entry_by_accession(acc, track, category,
+      subcategory)`), the script fetches `https://rest.uniprot.org/uniprotkb/{acc}.json`
+      and unconditionally overwrites `rec["category"] = category` and
+      `rec["subcategory"] = subcategory` using the caller's hardcoded string
+      (L342-413), and L435 (`if "Pushkarev" in r["subcategory"] or "PDB" in
+      r["subcategory"]`) forces those manual labels to win over paginated search
+      results!
+      Moreover, L372 hardcodes `("O52251", "Target_EctC",
+      "SaEctC_Halomonas_elongata_PDB")`—an internal contradiction (`SaEctC` is
+      *Sphingopyxis alaskensis* or *Streptomyces albus*, whereas *Halomonas
+      elongata* is `HeEctC`). And under the Root Audit Rules (`ROOT_CORRECTION_REQUIRED.txt`),
+      no hardcoded accession list may force functional labels onto fetched
+      records without programmatic verification of the fetched JSON's organism,
+      recommended protein name, EC number, and InterPro/Pfam domains.
+    - **Required Fix**:
+      Derive `category` and `subcategory` strictly from the fetched UniProt JSON
+      fields (`proteinDescription`, `organism.scientificName`, `ecNumbers`,
+      `uniProtKBCrossReferences`), and assert that any accession queried as a
+      structural/biochemical benchmark matches the expected protein family and
+      organism in the returned JSON.
+
+  * **[BLOCKING-F345-3] `f345/scripts/01_fetch_references.py` (`00dbfbc5...`
+    L134-154): Function-specific ECO evidence extraction misses comment-level
+    and EC-level evidences and falsely counts `ECO:0000353` (physical
+    interaction) as catalytic validation.**
+    - **Code Evidence**:
+      1. L136-140 checks `c.get("texts", [])` on `FUNCTION` comments, ignoring
+         comment-level `c.get("evidences", [])` and
+         `proteinDescription.recommendedName.ecNumbers[*].evidences`.
+      2. L152 includes `"ECO:0000353"` (physical interaction evidence, e.g.,
+         yeast two-hybrid or co-IP) in `exp_eco_prefixes` for both
+         `func_eco_codes` and `site_eco_codes`.
+    - **Required Fix**:
+      Extract comment-level and EC-level `evidences`, and restrict direct
+      functional assay evidence to `ECO:0000269` (and experimental catalyst/mutant
+      assays `ECO:0000305`, `ECO:0000250`), excluding `ECO:0000353` from
+      catalytic validation.
+
+  * **[BLOCKING-F345-4] `f345/scripts/03_f3_rhodopsin_pilot.py` (`423e594c...`),
+    `04_f4_ectc_pilot.py` (`dd701f7f...`), and
+    `05_f5_carbonic_anhydrase_pilot.py` (`143587b1...`): Broken HMM profile
+    accession vs name matching (`h["profile_name"]`) and missing QC gates from
+    `f345/DESIGN.txt`.**
+    - **Code Evidence**:
+      1. **Fatal HMM `profile_name` (`parts[3]`) vs `profile_acc` (`parts[4]`)
+         matching bug across F3, F4, and F5**:
+         - In `04_f4_ectc_pilot.py` L165:
+           `has_nf009806 = any("NF009806" in h["profile_name"] for h in ectc_hits)`
+           And on L183-185:
+           ```python
+           has_ecta = any("EctA" in h[1]["profile_name"] or "TIGR02406" in h[1]["profile_name"] for h in mag_hits)
+           has_ectb = any("EctB" in h[1]["profile_name"] or "TIGR02407" in h[1]["profile_name"] for h in mag_hits)
+           has_ectd = any("EctD" in h[1]["profile_name"] or "TIGR02408" in h[1]["profile_name"] for h in mag_hits)
+           ```
+           In HMMER `--domtblout`, `parts[3]` (`h["profile_name"]`) is the HMM
+           `NAME` field (for TIGR02406/02407/02408/NF009806, the `NAME` strings
+           are lowercase identifiers like `ectA_dab_acet`, `ectB_dab_amin`,
+           `ectD_hydroxyl`, `ectoine_EctC`), while the accession (`NF009806.1`,
+           `TIGR02406.1`, `PF06339.15`) is in `parts[4]` (`h["profile_acc"]`)!
+           Because Python `in` is case-sensitive (`"EctA" in "ectA_dab_acet"` is
+           `False`) and `"TIGR02406"` is in `profile_acc` (not `profile_name`),
+           **`has_ecta`, `has_ectb`, and `has_ectd` will evaluate to `False`
+           100% of the time**, causing `04_f4_ectc_pilot.py` L190-191 to
+           misclassify **100% of EctC hits as `"Orphan_EctC_Candidate"`**!
+         - In `05_f5_carbonic_anhydrase_pilot.py` L168:
+           `has_specific_ca = any("NF050158" in h["profile_name"] or "NF040597" in h["profile_name"] or "TIGR02701" in h["profile_name"] for h in gamma_hits)`
+           Again checks `h["profile_name"]` (`parts[3]`) instead of
+           `h["profile_acc"]` (`parts[4]`), so `has_specific_ca` is always `False`
+           and every Gamma-CA hit is downgraded to `"Gamma_CA_or_LbH_Ambiguous"`!
+         - In `03_f3_rhodopsin_pilot.py` L197:
+           `has_helio = any("PF18761" in h["profile_acc"] or "NF033717" in h["profile_acc"] or "Heliorhodopsin" in h["profile_name"] for h in hits)`
+           Checks `PF18761` in `profile_acc` (good), but on L209-212 leaves
+           `f3_candidates.faa` (`candidates_faa` defined on L135) completely
+           unwritten and never runs `F3_DMND` (defined on L47) to distinguish
+           viral rhodopsins, xanthorhodopsins, proteorhodopsins, or sensory
+           rhodopsins (`DESIGN.txt` Gate F3-3 / F3-5).
+      2. **Missing Domain Coverage, E-value, Motif, and Synteny Gates Required
+         by `f345/DESIGN.txt`**:
+         - **F3 (`03_f3_rhodopsin_pilot.py`)**:
+           * Does not enforce `hmm_coverage >= 0.70` (`DESIGN.txt` Gate F3-2);
+             accepts truncated fragments that merely satisfy `180 <= seq_len <= 380`.
+           * Does not verify conservation of the TM7 retinal-binding Lysine (`K`)
+             or distinguishes retinal-less kainate-type / R278Q-like variants
+             (`DESIGN.txt` Gate F3-3).
+           * Never runs DIAMOND against `f3_rhodopsins.dmnd` and never inspects
+             +/- 5 flanking genes for `crtE`/`crtB`/`crtI`/`crtY`/`blh` retinal
+             biosynthesis (`DESIGN.txt` Gate F3-5).
+         - **F4 (`04_f4_ectc_pilot.py`)**:
+           * Does not enforce `dom_ievalue <= 1e-10` (`DESIGN.txt` Gate F4-2;
+             only checks `hmm_cov >= 0.75` on L175).
+           * Does not check the 2-His-1-carboxylate iron-binding triad (`DESIGN.txt`
+             Gate F4-3) required to separate EctC from non-enzymatic cupin seeds.
+           * Checks `hits_by_mag` across the whole MAG (L182) rather than
+             same-contig synteny (`<= 5 kb` / `+/- 5` genes, `DESIGN.txt` Gate
+             F4-4), and never checks whether a putative "orphan EctC" sits near a
+             contig boundary (`<= 3` genes from contig edge) where `ectAB` may
+             simply have been split across contigs!
+         - **F5 (`05_f5_carbonic_anhydrase_pilot.py`)**:
+           * Does not enforce `dom_ievalue <= 1e-7` (`DESIGN.txt` Gate F5-2).
+           * Does not enforce `hmm_coverage >= 0.70` for Gamma-CA (`L166` only
+             checks `seq_len >= 120`).
+           * Does not check the metal-coordinating triad (3 His for Gamma-CA;
+             Cys-His-Cys for Beta-CA; `DESIGN.txt` Gate F5-3) or run DIAMOND
+             against verified Gamma-CA vs LbH acyltransferase references.
+    - **Required Fix**:
+      (a) Match HMM profiles using `h["profile_acc"].split(".")[0]` against the
+          exact Pfam/NCBIFAM/TIGRFAM accession sets (`PF18761`, `NF033717`,
+          `PF01036`, `PF06339`, `NF009806`, `TIGR02406`, `TIGR02407`, `TIGR02408`,
+          `PF00194`, `PF00484`, `TIGR02006`, `PF00132`, `NF050158`, `NF040597`,
+          `TIGR02701`);
+      (b) Enforce the `dom_ievalue` and `hmm_cov` thresholds from `f345/DESIGN.txt`;
+      (c) Run the DIAMOND reference comparisons (`F3_DMND`, `F4_DMND`, `F5_DMND`)
+          and catalytic residue / same-contig synteny (and contig-edge) checks
+          before classifying candidates.
+
+4.2 TOLERABLE PILOT LIMITATIONS IN `f345/` (Non-Blocking Once 4.1 Fixed)
+  - **[TOLERABLE-F345-1] Absence of custom de novo profile HMMs for Viral
+    Rhodopsins and Zeta/Eta/Theta/Iota-CAs in public Pfam/NCBIFAM**:
+    As documented in `f345/DESIGN.txt`, Zeta-CA is primarily marine diatom (`cd00882`)
+    and Eta-CA is *Plasmodium*, while Iota-CA and Viral Rhodopsins lack dedicated
+    curated Pfam HMMs. Screening `PF01036`/`PF18761`/`NF033717` + DIAMOND against
+    verified Swiss-Prot/PDB references is an appropriate and transparent pilot
+    strategy for the 5,438 representative MAGs.
+
+================================================================================
+SECTION 5: GPU PROSTT5 EMBEDDING HARNESS (`gpu/`) AUDIT
+================================================================================
+
+Audited files:
+  - `gpu/prostt5_embed.py` (v2 `cf898bbc61d4e8ff955c3065eaea376142b7bf5a82e3dd1936f6ab61b4ac8908`)
+  - `gpu/verify_embeddings.py` (v2 `055797a5673c66e6a6c9f9622f8e04f210700ab75d90faeda51790da0a74f2b8`)
+  - `gpu/run_embed.sbatch` (`3e9e4db5e2df51c85fb38710b61eb8dbbd3b7714a0a1bf44a6ff69b9358e88cc`)
+  - `gpu/run_smoke.sbatch` (`03d5a5bc817a261bd6599c740f70c791eb499dc083f0fd362b99fc0c6ad3d1ef`)
+  - `gpu/smoke_results_v2/provenance.json` (`95842ac3ed24028b2a65ac0a658392ab4cab534144cef9d5bfbcfbedc01242e3`)
+  - `gpu/smoke_results_v2/verification_report.json` (`56b0b8ab77839de6e0020402b30e6644c48ba31157b2332d79b7c87fe474c0fb`)
+
+5.1 Verified Strengths (Confirmed in Code and `smoke_results_v2/`)
+  1. **Slurm Worker Enforcement**: `enforce_slurm_gpu_worker()` (`prostt5_embed.py`
+     L41-61) enforces `SLURM_JOB_ID`, non-login hostname, and CUDA device
+     availability before any model load.
+  2. **ProstT5 Tokenization & Prefix Contract**:
+     - Uses `T5Tokenizer.from_pretrained(..., do_lower_case=False, legacy=True)`
+       (`prostt5_embed.py` L305-309) so uppercase amino acids map to the AA
+       vocabulary rather than lowercase 3Di tokens.
+     - Prepends `"<AA2fold> " + " ".join(list(seq))` (`L75-78`) and replaces
+       rare/ambiguous residues `[UZOB*]` with `X` (`L64`, logged per sequence in
+       `sequence_index.tsv` `non_canonical_replaced_count`).
+     - Explicitly asserts on every sequence in every batch (`L199-219`) that
+       `input_ids[i, 0] == aa2fold_id`, `input_ids[i, 1 + seq_len] == eos_id`,
+       and `attention_mask[i, :1 + seq_len].sum() == 1 + seq_len`, then slices
+       `hidden[i, 1 : 1 + seq_len, :]` (`L221`) before mean pooling (`L222`).
+  3. **Numerical Determinism & Smoke Test Metrics (`smoke_results_v2/`)**:
+     - Executed on `gpu102-17` (NVIDIA A100-SXM4-80GB, Slurm job `53815548`,
+       `torch 2.5.1+cu121`, `transformers 4.57.1`, `fp16`).
+     - 18 sequences (`133` aa to `757` aa, including duplicate control pair
+       `F1_CPF|Q4J946_Sulfolobus_tokodaii` and `DUPLICATE_CONTROL|Q4J946_copy`).
+     - `duplicate_max_abs_diff = 0.0` (exact bitwise identity on duplicate pair).
+     - `single_vs_batch_max_abs_diff = 5.960464477539063e-08` (well below `1e-3`).
+     - `residue_token_alignment_passed = true` for all 18 sequences.
+     - Parameter-bound `run_signature` (`9888c4b2770019b8ef6a938767d0b3dc7a1e188c13069f9d60ef5393e3c6b267`)
+       binds `fasta_sha256`, `model_dir`, `precision`, `save_per_residue`,
+       `max_length`, `max_tokens_per_batch`, and `seed` (`prostt5_embed.py`
+       L245-282).
+
+5.2 One Conditional Blocking Defect & Two Hardening Fixes in `gpu/`
+
+  * **[BLOCKING-GPU-1 (Conditional: Triggers on any Prodigal `.faa` with trailing
+    `*`)] `gpu/prostt5_embed.py` (`cf898bbc...` L141-145) vs
+    `gpu/verify_embeddings.py` (`055797a5...` L49-52): Trailing stop-codon `*`
+    is stripped AFTER hashing in `prostt5_embed.py` but BEFORE hashing in
+    `verify_embeddings.py`!**
+    - **Code Evidence**:
+      In `prostt5_embed.py` L141-145:
+      ```python
+      seq_upper = raw_seq.strip().upper()
+      raw_sha256 = hashlib.sha256(seq_upper.encode("utf-8")).hexdigest()
+      seq_clean = seq_upper
+      if seq_clean.endswith("*"):
+          seq_clean = seq_clean[:-1]
+      ```
+      Here `raw_sha256` (saved as `seq_sha256` in `sequence_index.tsv`, L351) is
+      computed on `seq_upper` **including** the trailing `*`.
+      By contrast, in `verify_embeddings.py` L49-52 (`parse_fasta`):
+      ```python
+      seq = "".join(cur_seq).upper()
+      if seq.endswith("*"):
+          seq = seq[:-1]
+      seq_sha = hashlib.sha256(seq.encode("utf-8")).hexdigest()
+      ```
+      Here `seq_sha` (`expected_shas`) is computed **after** stripping the
+      trailing `*`!
+      In `smoke_references.fasta` (UniProt sequences), no sequence ends with `*`,
+      so `sequence_shas_match` passed. However, **Prodigal `.faa` files in the
+      Empty Quarter catalogue (`drep_rep_proteomes/*.faa.gz` and
+      `assembly_proteins/*.faa.gz`) end every complete gene with a trailing `*`**
+      (verified in `root_inventory_v2.out` L51-55)! As soon as `prostt5_embed.py`
+      and `verify_embeddings.py` are run on any Prodigal `.faa` file from F1-F5,
+      `sequence_shas_match` (`verify_embeddings.py` L163) will be `False` for
+      every complete ORF and `verify_embeddings.py` will exit with code `1`
+      (`VERIFICATION FAILED`)!
+    - **Required Fix**:
+      In `prostt5_embed.py` L141-145, strip trailing `*` *before* computing
+      `raw_sha256` (matching `verify_embeddings.py` L49-52), or hash `seq_clean`
+      in both scripts.
+
+  * **[TOLERABLE / RECOMMENDED HARDENING-GPU-2] `gpu/run_embed.sbatch`
+    (`3e9e4db5...` L28-59): Bash-level `COMPLETE` short-circuit bypasses Python
+    `run_signature` validation.**
+    - In `run_embed.sbatch` L28-59, if `$OUTPUT_DIR/COMPLETE` exists and
+      `sha256sum -c checksums.sha256` passes, the bash script exits `0` *before*
+      invoking `prostt5_embed.py`. If a user accidentally points `run_embed.sbatch`
+      at an existing `OUTPUT_DIR` with a different `INPUT_FASTA` or `PRECISION`
+      (without `FORCE_RERUN=1`), the bash script will silently skip execution
+      instead of reaching `prostt5_embed.py` L259-282 (which checks
+      `run_signature`). Letting `prostt5_embed.py` perform the `COMPLETE` +
+      `run_signature` check directly (or checking `fasta_sha256` in bash) closes
+      this gap.
+
+  * **[TOLERABLE / COSMETIC-GPU-3] `gpu/prostt5_embed.py` (`cf898bbc...` L450-480):
+    `verification_report.json` records the temporary `.work_<jobid>` path in
+    `"output_dir"`.**
+    - Because `verify_embeddings.py` runs inside `work_dir` before `os.replace(work_dir,
+      out_dir)` (`L480`), `smoke_results_v2/verification_report.json` L2 records
+      `"output_dir": ".../smoke_results_v2.work_53815548"`. Totally harmless,
+      logged here for completeness.
+
+================================================================================
+SECTION 6: PRIORITIZED ACTION CHECKLIST BEFORE LAUNCHING SLURM WORKERS
+================================================================================
+
+1. **In `f12/scripts/` (Must fix before running F1/F2 jobs)**:
+   - [ ] `03_f2_remapping_and_test.py` (L197, L204, L216, L272, L503): Strip
+         `{sample}::` from `cur_pid` when reading
+         `04_protein_catalog/assembly_proteins/{sample}/{sample}.faa.gz` so Lead 1
+         and Lead 2 sequences and their contig gene neighborhoods are actually
+         extracted (non-empty `f2_leads.faa`).
+   - [ ] `01_fetch_references.py` (L528, L231-232): Remove `OR gene:stpA` from
+         the GgpP query and validate EC `3.1.3.69` / glucosylglycerol-phosphate
+         phosphatase description so the 5 H-NS DNA-binding proteins (`P0ACG1`
+         etc.), `EcfA` (`P0C0E9`), and `SptP` (`P74851`) are purged from
+         `GgpP_EC_3_1_3_69`.
+   - [ ] `01_fetch_references.py` (L505-506, L205-227): Purge non-CPF bHLH
+         transcription factors (`Q9C670`, `Q8GY61`), place the `FeS_BCP` branch
+         ahead of `Eu6_4` so `A9CH39` (*Agrobacterium fabrum* PhrB) is classified
+         as `FeS_BCP` (and include additional verified FeS-BCP seeds such as
+         `Q3J156` / `Q88NT7`), and use organism lineage (`Metazoa` vs
+         `Viridiplantae`) to classify `aCry` and `pCry` instead of dumping
+         human/mouse/chicken/insect cryptochromes into `CRY_DASH`.
+   - [ ] `01_fetch_references.py` (L177, L195-196): Fix `"CATALYTIC_ACTIVITY"` ->
+         `"CATALYTIC ACTIVITY"` (with space), extract `ecNumbers[*].evidences` and
+         comment-level `evidences`, and remove `or all_ecos` from L195-196.
+   - [ ] `01_fetch_references.py` (L464): Add `PF02358` (`Trehalose_PPase`) and
+         `PF08282` (`Hydrolase_3`) to `had_all.hmm` so TPP and GgpP references
+         have positive-control HMM coverage.
+   - [ ] `03_f2_remapping_and_test.py` (L267, L581): Fall back to
+         `tax_map.get(rep_mag, {})` when `refined_bin` is not a `Wdb.csv`
+         winner.
+   - [ ] `03_f2_remapping_and_test.py` (L529-552) & `04_audit_and_summarize.py`
+         (L155-169, L287): Either restore an actual flanking-gene synthase check
+         (via Bakta/eggNOG annotations or synthase HMMs/DIAMOND) or remove the
+         unverified claim that `"No cognate osmolyte synthase ... detected within
+         +/- 5 flanking genes"`.
+   - [ ] `02_f1_screen.py` (L354-389): Require a core CPF Pfam domain (`PF00875`,
+         `PF03441`, or `PF04244`) for confirmed CPF candidates, flagging
+         DIAMOND-only hits without a CPF domain separately.
+
+2. **In `f345/scripts/` (Must fix before running F3/F4/F5 jobs)**:
+   - [ ] `01_fetch_references.py` (L251-260, L318-332): Decompress gzipped bytes
+         (`gzip.decompress`) from EBI InterPro `?annotation=hmm`, assert
+         `HMMER3/f` header, and fail loudly if `hmmpress` fails.
+   - [ ] `01_fetch_references.py` (L68-87, L342-413, L435): Remove forced manual
+         `category`/`subcategory` overrides on accession lookups and validate
+         every fetched JSON record programmatically; fix `L134-154` ECO parsing
+         (include comment/EC evidences, exclude `ECO:0000353` from catalytic
+         assay evidence).
+   - [ ] `03_f3_rhodopsin_pilot.py` (L197), `04_f4_ectc_pilot.py` (L165,
+         L183-185), `05_f5_carbonic_anhydrase_pilot.py` (L168): Match HMM
+         profiles via `h["profile_acc"].split(".")[0]` instead of case-sensitive
+         substrings on `h["profile_name"]`, and implement the `dom_ievalue`,
+         `hmm_cov`, DIAMOND reference comparison, catalytic residue, and
+         same-contig synteny / contig-edge checks required by `f345/DESIGN.txt`.
+
+3. **In `gpu/` (Must fix before running ProstT5 on Prodigal `.faa` files)**:
+   - [ ] `prostt5_embed.py` (L141-145): Strip trailing `*` *before* computing
+         `raw_sha256` so `sequence_shas_match` in `verify_embeddings.py` (L49-52,
+         L163) passes on Prodigal `.faa` files containing stop-codon `*`.
+================================================================================

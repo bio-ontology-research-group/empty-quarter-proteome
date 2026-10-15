@@ -1,0 +1,70 @@
+INDEPENDENT VIABILITY REVIEW — HYPOTHESIS 1 (H1, SNAPSHOT h1_v3)
+Reviewer: Gemini 4 Argon (High)
+Target Snapshot: reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/
+Prior Review: reviews/darkmatter-2026-10-13/round6/h1_review1/ (REVISE)
+Verdict: VIABLE
+
+================================================================================
+1. EXECUTIVE VERDICT, BOUNDED HYPOTHESIS, AND SCOPE CHANGES
+================================================================================
+
+Status: VIABLE
+
+Bounded Hypothesis (Identifiable Finite-Cohort Estimand):
+Across the n = 237 Rub' al-Khali desert Thermoplasmatota species-representative MAGs placed in the 1,914-taxon GTDB-Tk r232 ar53 phylogeny (thermo_tree.nwk), how does the per-genome catalogue dark proteome fraction (Y_i = N_dark,i / N_proteins_cat,i) vary conditionally with (1) amino acid identity (aai, spanning 48.678%-80.041% across all 237 representatives; 50.389%-80.041% across the 236 c__SW-10-69-26 and c__E2 representatives) to the nearest external GTDB r232 or MGnify reference genome (beta_AAI) and (2) desert-normalized shared reciprocal-best-hit gene coverage (frac_rbh_desert = N_RBH,i / N_prot_aai,i, slope beta_RBH), in a two-sided Phylogenetic Generalized Least Squares (PGLS) linear model controlling for CheckM2 completeness, contamination, log10(assembly length), log10(contig N50), and branch-length covariance scaled by Pagel's lambda? Secondary descriptive analyses evaluate matched-denominator Spearman correlations of dark and RBH fractions alongside an independent-numerator common-denominator algebraic permutation illustration, descriptive count scaling with proteome size, and cross-sectional occupancy of 14,645 admitted dark gene families across the 237 representatives, without causal gene-caller, isolate-cultivation, disjoint proteome-partition, or macroevolutionary gain/loss claims.
+
+Scope Changes from Original (round5/EXTENSIONS.md H1):
+1. Narrows H1 from macroevolutionary "accessory expansion" vs "core dilution" between c__SW-10-69-26 and c__E2 to a finite-cohort, two-sided PGLS conditional association study across the 237 representatives.
+2. Replaces few-cluster taxonomic sandwich SEs (7 named families; f__JAJPHT01 holds 140/237 genomes) with Pagel's lambda PGLS on the 1,914-taxon ar53 tree, 95% profile-likelihood lambda bounds, and seven sensitivities (S1-S7).
+3. Reconciles the RBH denominator from min(N_A, N_B) to the desert genome's protein count (single-genome Pyrodigal N_prot_aai in S1; catalogue N_proteins_cat in S3), documents the dual gene-caller bases and non-exclusivity of N_dark and N_RBH, and leaves ancestral gain/loss reconstruction as optional future work.
+
+Viability Summary:
+Independent verification of all 67 manifest-pinned files in snapshots/h1_v3/ confirms that all five critical issues (C1-C5) and audit items from h1_review1 and round6/root_checks are resolved in executed code (Slurm Job 53704703, 42.65s, exit 0:0) and output tables. No critical flaw remains.
+
+================================================================================
+2. DISPOSITION OF PRIOR CRITICAL ISSUES (C1-C5) AND AUDIT ITEMS
+================================================================================
+
+C1. Corrupted GLS and OLS R-Squared via 1D-to-2D Broadcasting — RESOLVED
+- Evidence: scripts/02_v3_pgls_ancestry_models.py (lines 32, 52-55, 94-103, 160-205); results/v3_pgls_model_summary.tsv; results/v3_pgls_lambda_profile.tsv; results/v3_pgls_sensitivity.tsv; results/v3_pgls_statsmodels_verification.tsv; DESIGN.md (lines 66-72); DOSSIER.md (lines 12, 24, 60-62, 80).
+- Verification: y_1d, y_tilde, ones_1d, ones_tilde, and null_resid are flattened to 1D arrays of shape (n,) with shape assertions before computing tss_gls and r2_gls = 1 - rss / tss_gls. Cross-checking against statsmodels.GLS at lambda in {0.0, 0.5, 0.91578426, 0.91580000} confirms machine-precision agreement (max |Delta beta| = 5.16e-12, max |Delta SE_unb| = 3.15e-13, max |Delta R^2_GLS| = 4.44e-15). Primary PGLS R^2_GLS is 0.469051 at lambda_ML = 0.915784 (0.46905148 at lambda = 0.9158, matching root_checks/h1_v2_gls_audit.json), OLS R^2 is 0.495786, and S1-S7 span R^2_GLS = 0.444105 to 0.500906.
+
+C2. Biased ML Variance (RSS/n), Normal Quantiles, Truncated p-Values, and Lambda Uncertainty — RESOLVED
+- Evidence: scripts/02_v3_pgls_ancestry_models.py (lines 69-91, 130-157, 261-345); results/v3_pgls_model_summary.tsv; results/v3_pgls_lambda_profile.tsv; results/v3_pgls_sensitivity.tsv; DESIGN.md (lines 56-65); DOSSIER.md (lines 8-12, 25, 53-97).
+- Verification: ML variance sigma2_ml = RSS / n (0.00102759 in S1) is restricted to loglik, while unbiased fixed-lambda variance sigma2_unb = RSS / (n - p) (0.00105887 in S1, df = 230) is used for SE_unb, two-sided Student-t tests, scientific-notation p-values, and exact t_{0.975, 230} = 1.970332 CIs (both SE_unb and SE_ML tabulated). Pagel's lambda_ML = 0.915784 has a 95% profile-likelihood CI of [0.846303, 0.957823] (LRT vs lambda = 0: 2*Delta_ell = 229.5585, p = 7.4411e-52). Standard errors and CIs are labeled conditional on fixed lambda = lambda_ML, and v3_pgls_lambda_profile.tsv reports estimates across [0, 1] including the 95% profile CI bounds (beta_AAI spans +0.001790 to +0.001613, p <= 2.51e-4; beta_RBH spans -0.139789 to -0.133697, p <= 3.90e-11). All DOSSIER.md numbers match the TSVs.
+
+C3. Post-Hoc One-Sided Confirmatory Hypothesis Framing — RESOLVED
+- Evidence: DESIGN.md (lines 23, 48-50); DOSSIER.md (lines 8-10, 26, 45-50, 70-79); scripts/02_v3_pgls_ancestry_models.py (lines 10-11, 85, 430-437).
+- Verification: All primary and sensitivity models specify two-sided exploratory tests (H_0: beta_j = 0 vs H_1: beta_j != 0) with informative interpretations in both directions.
+
+C4. Unverified Disjoint Partition Claim and Mixed Permutation Denominators — RESOLVED
+- Evidence: DESIGN.md (lines 92-100); DOSSIER.md (lines 27, 130-161); scripts/03_v3_coupling_and_comparator_audit.py (lines 29-63, 136-255); results/v3_coupling_and_comparator_audit.tsv; results/v3_pgls_sensitivity.tsv (S3).
+- Verification: Disjoint-partition claims are removed. DESIGN.md and DOSSIER.md document the distinct callers (catalogue N_proteins_cat vs single-genome Pyrodigal N_prot_aai; difference -13 to +93 proteins, median +18.0, r = 0.999752) and non-exclusive criteria. In 03_v3_coupling_and_comparator_audit.py, observed and permuted ratio correlations (10,000 permutations, seed 42, plus-one p = 9.9990e-5) use strictly identical denominators: in c__SW-10-69-26 (n = 185), shared N_proteins_cat gives observed rho = -0.395303 (p = 2.57e-8) vs permutation mean +0.301737 ([+0.1789, +0.4194]); shared N_prot_aai gives observed rho = -0.381418 (p = 8.48e-8) vs permutation mean +0.302959 ([+0.1807, +0.4199]). The permutation is framed strictly as an algebraic illustration, count scaling is framed descriptively, and sensitivity S3 (N_RBH / N_proteins_cat) confirms unchanged PGLS slopes (beta_AAI = +0.001693, p = 4.50e-5; beta_RBH = -0.136591, p = 2.27e-11).
+
+C5. Comparator Mischaracterization ("Isolates") and Empirical AAI Range — RESOLVED
+- Evidence: DESIGN.md (lines 24-25); DOSSIER.md (lines 15, 28, 117-128); scripts/03_v3_coupling_and_comparator_audit.py (lines 84-131); results/v3_comparator_metadata_summary.tsv; results/v3_pgls_sensitivity.tsv (S6).
+- Verification: Comparators are described accurately as external GTDB r232 (229/237 nearest pairs) and MGnify (8/237) reference genomes (32 unique accessions; 142 soil MAGs, 3 marine sediment MAGs, 92 GTDB-only without cultivation metadata). Exact empirical AAI ranges are reported by stratum: 48.678%-80.041% across all 237 representatives (median 64.774%), 50.389%-80.041% across the 236 same-class c__SW-10-69-26 + c__E2 representatives (median 64.781%; c__SW-10-69-26: 50.389%-80.041%; c__E2: 58.763%-76.964%), and 48.678% for the single c__Thermoplasmata representative. Sensitivity S6 (n = 236, excluding c__Thermoplasmata) confirms robustness (beta_AAI = +0.001568, p = 8.39e-5; beta_RBH = -0.145879, p = 7.49e-13).
+
+Additional Audit Items (O1, O2, Input Pinning, Closure) — RESOLVED
+- scripts/01_v3_input_manifest_and_phylo_audit.py and results/v3_phylo_vcv_validation.json prove outgroup rooting on the 30 Halobacteriota/Thermoproteota tips yields identical 237-tip VCV/correlation matrices to midpoint rooting (max |diff| = 0.0), pin all 247 raw inputs with SHA-256 hashes in INPUTS.tsv (10 core files + 232 readable CheckM2 .faa + 5 missing 48PRr1__SemiBin_* .faa), and report exact Mann-Whitney U = 8292.5 (U_min = 1142.5, p = 1.224554e-16) for dark-family counts.
+
+================================================================================
+3. NEW CRITICAL ISSUES
+================================================================================
+
+None.
+
+================================================================================
+4. OPTIONAL IMPROVEMENTS (NON-BLOCKING)
+================================================================================
+
+1. Clarify Parameter Count k in AIC/BIC:
+   fit_pgls() computes AIC and BIC using k = p + 1 = 8 (fixed lambda). For profiled lambda_ML, full-ML criteria count k = p + 2 = 9 (PGLS AIC = -1263.87 vs -1265.87; BIC = -1232.65 vs -1238.12). Label Table 4.1 AIC/BIC as fixed-lambda (k = p + 1) or report k = p + 2 for profiled lambda.
+2. Harmonize Minor Prose Transcriptions in DOSSIER.md:
+   In DOSSIER.md line 39, align root-to-tip distances and min eigenvalues with the crown-zeroed 237-tip values in DESIGN.md (line 80) and results/v3_phylo_vcv_validation.json ([0.258680, 0.528319]; min eigenvalues 2.351e-3 and 4.944e-3). In DOSSIER.md line 131, change meta=True to meta=False to match DESIGN.md line 96.
+
+================================================================================
+5. CONCISE FINAL VERDICT
+================================================================================
+
+Verdict: VIABLE. H1 v3 defines an identifiable, two-sided finite-cohort PGLS association experiment across all 237 desert Thermoplasmatota species representatives, resolves all prior critical defects (C1-C5) with statsmodels-verified GLS computations and source-verified inputs, and is scientifically viable as executed.

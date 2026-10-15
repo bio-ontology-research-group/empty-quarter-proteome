@@ -1,0 +1,18 @@
+contrast	n_1l_a	n_1h_a	n_1l_b	n_1h_b	odds_ratio	p_fisher
+atacama_vs_gtdb_soil	440	0	2	12	inf	6.582e-22
+empty_quarter_vs_gtdb_soil	5292	986	2	12	32.2	1.596e-08
+bay2021_autotroph_vs_gtdb_soil	4504	1284	2	12	21.05	8.538e-07
+antarctic_colddesert_vs_gtdb_soil	8894	7271	2	12	7.339	0.00238
+mojave_vs_gtdb_soil	1361	2961	2	12	2.758	0.2494
+arid_vs_gtdb_soil	530	1734	2	12	1.834	0.5417
+
+# provenance
+workbench_commit	4838105b184af73152a9c5f4563fdc3c3dd89a1d
+eq_counts_source	results/atmospheric/hydB_class_summary.tsv (1l=5292, 1h=986)
+search	diamond 2.0.15, screen e<1e-5 then --ultra-sensitive --max-target-seqs 1 vs HydDB (identical to 82c_atmo_classify.sh)
+input	/tmp/claude-1000/-home-leechuck-Public-software-empty-quarter/cc872bc3-f629-4f01-b2ac-37717694cc04/scratchpad/xbiome/antarctic_colddesert_hydB_diamond.tsv	sha256=67ee32705cb69ad72c31d613fb8d7970c048ffed75ec3d534a46bcd467a726b3	rows=36631
+input	/tmp/claude-1000/-home-leechuck-Public-software-empty-quarter/cc872bc3-f629-4f01-b2ac-37717694cc04/scratchpad/xbiome/arid_hydB_diamond.tsv	sha256=61d4d5b33b9aa30046f7482380577acc2dccbc30bd11d7b8303f604a6c88a01f	rows=14922
+input	/tmp/claude-1000/-home-leechuck-Public-software-empty-quarter/cc872bc3-f629-4f01-b2ac-37717694cc04/scratchpad/xbiome/atacama_hydB_diamond.tsv	sha256=ddd7c5b9596adab80c1c3e625a90c4b8a3e9881347ab48212cf242777eeca227	rows=2604
+input	/tmp/claude-1000/-home-leechuck-Public-software-empty-quarter/cc872bc3-f629-4f01-b2ac-37717694cc04/scratchpad/xbiome/bay2021_autotroph_hydB_diamond.tsv	sha256=7649df6fbb69c40ea5d1e7130d1db065cf73418596ca3ddf77d82cabd2da8f92	rows=12858
+input	/tmp/claude-1000/-home-leechuck-Public-software-empty-quarter/cc872bc3-f629-4f01-b2ac-37717694cc04/scratchpad/xbiome/gtdb_soil_hydB_diamond.tsv	sha256=c0db582530eabc38633640445914b45ea96a5e505653d2e1859aa9ef88057f2d	rows=696
+input	/tmp/claude-1000/-home-leechuck-Public-software-empty-quarter/cc872bc3-f629-4f01-b2ac-37717694cc04/scratchpad/xbiome/mojave_hydB_diamond.tsv	sha256=6cc18bdf84810ee7d9f7ba118249e73c32f2a8a7c6ca2c0e3a5e15572bb6f891	rows=29367

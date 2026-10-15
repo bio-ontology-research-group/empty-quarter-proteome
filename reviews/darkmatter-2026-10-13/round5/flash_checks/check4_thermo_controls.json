@@ -1,0 +1,106 @@
+{
+  "quality_breakdown": {
+    "near_complete": {
+      "Thermoplasmatota": {
+        "n": 59,
+        "dark_fraction_median": 0.294058,
+        "dark_fraction_mean": 0.29802974576271185,
+        "dark_fraction_iqr": [
+          0.2703855,
+          0.324283
+        ],
+        "completeness_median": 93.7,
+        "contamination_median": 2.69
+      },
+      "Other_Archaea": {
+        "n": 60,
+        "dark_fraction_median": 0.089155,
+        "dark_fraction_mean": 0.12070884999999999,
+        "dark_fraction_iqr": [
+          0.036064750000000007,
+          0.17139825
+        ],
+        "completeness_median": 95.88999999999999,
+        "contamination_median": 1.3599999999999999
+      },
+      "Bacteria": {
+        "n": 2140,
+        "dark_fraction_median": 0.056766,
+        "dark_fraction_mean": 0.06703841775700935,
+        "dark_fraction_iqr": [
+          0.03161725,
+          0.0868495
+        ],
+        "completeness_median": 96.275,
+        "contamination_median": 1.83
+      }
+    },
+    "medium_quality": {
+      "Thermoplasmatota": {
+        "n": 178,
+        "dark_fraction_median": 0.313211,
+        "dark_fraction_mean": 0.31394770224719104,
+        "dark_fraction_iqr": [
+          0.289369,
+          0.33472250000000003
+        ],
+        "completeness_median": 80.755,
+        "contamination_median": 4.945
+      },
+      "Other_Archaea": {
+        "n": 294,
+        "dark_fraction_median": 0.043612,
+        "dark_fraction_mean": 0.06112551360544217,
+        "dark_fraction_iqr": [
+          0.02843475,
+          0.06427875
+        ],
+        "completeness_median": 78.93,
+        "contamination_median": 3.56
+      },
+      "Bacteria": {
+        "n": 2707,
+        "dark_fraction_median": 0.06595,
+        "dark_fraction_mean": 0.07947980568895456,
+        "dark_fraction_iqr": [
+          0.039475,
+          0.104604
+        ],
+        "completeness_median": 81.82,
+        "contamination_median": 4.21
+      }
+    }
+  },
+  "novelty_contrast_class_rank": {
+    "Thermoplasmatota_class_novel": {
+      "n": 236,
+      "dark_fraction_median": 0.3101,
+      "dark_fraction_mean": 0.31067737711864407,
+      "dark_fraction_iqr": [
+        0.28407875,
+        0.333893
+      ],
+      "completeness_median": 85.405,
+      "contamination_median": 4.21
+    },
+    "Other_phyla_class_novel": {
+      "n": 324,
+      "dark_fraction_median": 0.12493,
+      "dark_fraction_mean": 0.13588712037037037,
+      "dark_fraction_iqr": [
+        0.10800925,
+        0.15159075
+      ],
+      "completeness_median": 88.72999999999999,
+      "contamination_median": 3.1
+    },
+    "fold_difference_median": 2.4821900264147922,
+    "mann_whitney_u": 76238.0,
+    "mann_whitney_pvalue": 7.168491849185724e-90
+  },
+  "key_findings": {
+    "quality_independence": "In near-complete bins (completeness >= 90%, contamination <= 5%), Thermoplasmatota median dark fraction remains 29.41% (n=59), compared to 8.92% in other Archaea (n=60) and 5.68% in Bacteria (n=2,140). Darkness is not a bin fragmentation artifact.",
+    "novelty_conditioning": "At matched class-rank taxonomic novelty, Thermoplasmatota genomes (median 31.01%, n=236) are 2.48-fold darker than non-Thermoplasmatota genomes at the same rank (median 12.49%, n=324; MWU p = 7.17e-90).",
+    "ibex_test_design": "To test whether this remaining 2.48-fold elevation reflects reference absence, the 237 Thermoplasmatota should be joined to results/v2_thermo_relatives_pairs.tsv on IBEX to regress dark fraction against nearest-relative AAI."
+  }
+}

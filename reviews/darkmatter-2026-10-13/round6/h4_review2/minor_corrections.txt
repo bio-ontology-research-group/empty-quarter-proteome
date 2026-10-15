@@ -1,0 +1,56 @@
+# Post-Review2 Documentation-Only Minor Corrections — H4 (`h4_structure`)
+Date: 2026-10-13
+Scope: Documentation-only minor corrections applied to live `reproducibility/darkmatter/round6_hypotheses/h4_structure/DOSSIER.md` and `reproducibility/darkmatter/round6_hypotheses/h4_structure/DESIGN.md`, plus clarification of `INPUTS.tsv` hash vs directory-locator entries and PDB reference component byte totals from `reviews/darkmatter-2026-10-13/round6/h4_review2/review.txt`.
+Frozen Snapshot Integrity: `reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3/` and the original review files (`reviews/darkmatter-2026-10-13/round6/h4_review2/review.txt` and `reviews/darkmatter-2026-10-13/round6/h4_review2/verdicts.json`) remain untouched. No alignments, scripts, or scientific result files were modified or re-executed.
+
+## 1. Corrections Applied to Live `DOSSIER.md` and `DESIGN.md`
+
+1. **`K_local_all` Horvitz–Thompson Non-Match Percentages and Table 3.1 CIs (`DOSSIER.md` Table 2.3 line 85 & Table 3.1 lines 97–102)**:
+   - Updated the `K_local_all` ($N = 936, n = 100$) Horvitz–Thompson non-match percentages and FPC standard errors in `DOSSIER.md` Table 2.3 (line 85) to match `results/v3_recovery_summary.json` (`stratum_summaries.K_local_all.tiers.tier_1.horvitz_thompson_design_weighted`) exactly:
+     - `PERSISTENT_LOW_SCORE`: `13.91%` (`130.16 / 936.0`, FPC SE `3.85%`, 95% CI `[6.37, 21.44]`) — replacing the mistyped `13.36% (SE 3.78%)`.
+     - `RAW_ZERO_RETRIEVAL`: `0.99%` (`9.24 / 936.0`, FPC SE `0.93%`, 95% CI `[0.00, 2.81]`) — replacing the mistyped `1.53% (SE 1.45%)`.
+     - `NO_CONFIDENT_REGION`: `2.95%` (`27.64 / 936.0`, FPC SE `1.93%`, 95% CI `[0.00, 6.73]`) — replacing the mistyped `SE 1.74%`.
+   - Synchronized the 1-ulp rounding values in `DOSSIER.md` Table 3.1 (lines 97–102) to match `results/v3_recovery_summary.json` (`K_local_afdb_only` `wc_unm_rec` CI `[35.35, 100.0]`; `K_local_all` `region_eligible_crop_match` CI `[76.73, 92.58]`; `K_dual_none` `region_eligible_crop_match` CI `[29.33, 48.94]`; `Q_not_K_afdb_only` and `Q_not_K_all` `wc_unm_rec` CI `[46.79, 98.67]`; `Q_not_K_all` `region_eligible_crop_match` CI `[91.16, 100.0]`).
+
+2. **Actual Local Result File Byte Sizes (`DOSSIER.md` Section 5.2)**:
+   - Corrected the transcribed byte sizes in `DOSSIER.md` Section 5.2 to match the actual generated V3 files on disk (`reproducibility/darkmatter/round6_hypotheses/h4_structure/results/` and `SNAPSHOT_MANIFEST.json`):
+     - `v3_full5851_cropped_regions_manifest.tsv`: `1,835,820` bytes (was `1,732,140`)
+     - `v3_cropped_regions_manifest.tsv`: `112,535` bytes (was `96,090`)
+     - `v3_wc_pdb_hits.raw.tsv`: `26,585,879` bytes (unchanged)
+     - `v3_crop_pdb_hits.raw.tsv`: `27,142,286` bytes (unchanged)
+     - `v3_region_evaluations.tsv`: `188,351` bytes (was `132,053`)
+     - `v3_model_summaries.tsv`: `193,577` bytes (was `176,120`)
+     - `v3_recovery_summary.json`: `218,523` bytes (was `218,529`)
+     - `v3_audited_example_hits.tsv`: `45,232` bytes (was `41,533`)
+   - All SHA-256 digests in Section 5.2 were already exact.
+
+3. **Explicit Methodological Note on Boundary Taylor/Wald `[0,0]` or `[100,100]` Intervals and Empty-Domain `0` / `[0,0]` Placeholders (`DESIGN.md` §2.3 & `DOSSIER.md` §3.1, §4 item 5)**:
+   - Added an explicit methodological note in both `DESIGN.md` (§2.3) and `DOSSIER.md` (§3.1 and §4 item 5) stating that:
+     - In `ht_domain_estimate()` and `wilson_ci()`, an empty conditioning domain (`w_den == 0` or `n == 0`—occurring only for whole-chain-unmatched recovery in `Q_not_K_pdb`, where all `55 / 55` models are whole-chain matched by definition, and whole-chain-matched retention in `K_dual_none`, where `0 / 50` models are whole-chain matched) emits `0.0` with `[0.0, 0.0]` solely as a numeric JSON schema implementation placeholder, **not** an estimable zero rate.
+     - At boundary sample outcomes (`k == 0` or `k == n_D` in a non-empty domain, such as `51 / 51 = 100.0%` region-eligible retention in `Q_not_K_pdb`, `0 / 300` `POST_EXCLUSION_EMPTY`, or `0 / n_h` pilot `NO_CONFIDENT_REGION` counts in `K_local_afdb_only`, `Q_not_K_afdb_only`, and `Controls`), Taylor-linearized Wald variance has sample residuals `z_i = 0` and yields degenerate `[0.0, 0.0]` or `[100.0, 100.0]` intervals (`fpc_se_pct = 0.0`), which **do not establish finite-population absence or certainty**. Exact finite-population `NO_CONFIDENT_REGION` rates are established directly by the `N = 5,851` census (`Table 2.2`), residual homology-saturation censoring is tracked via `total_hits_raw >= 1000` (`8 / 103` control regions), and none of these boundary or empty-domain cells are used for the primary cross-stratum inference.
+
+4. **Clarification of `INPUTS.tsv` Regular-File Hashes vs Directory/Database Locator Placeholders and Root PDB Reference Verification Pointer (`DESIGN.md` §3.2 item 6, `DOSSIER.md` §5.1, and Clarification of `h4_review2/review.txt` line 12)**:
+   - Clarified in `DESIGN.md` (§3.2 item 6), `DOSSIER.md` (§5.1), and here (without editing the original `h4_review2/review.txt`) that `INPUTS.tsv` (15 rows total) contains **11 regular file entries** with actual byte sizes and 64-hex SHA-256 digests (`per_rep_structures.tsv`, `per_control_structures.tsv`, `current_reference_control_manifest_20260802.tsv`, `pfam_domtbl.txt`, `per_protein_pfam.tsv`, `pdb_hits.raw.tsv`, `afdb_hits.raw.tsv`, `foldseek_pdb.version`, `05c_screen.sh`, `05_integrate.py`, `foldseek_version.txt`), whereas the remaining **4 rows** (`foldseek_pdb` [`directory_database`], `afdb` [`directory_database`], `query_pdb` [`20905_pdb_symlinks`, `directory`], and `control_folds` [`32_shards`, `directory`]) are **historical directory/database locator placeholders**, not file hashes.
+   - Clarified that AFDB (`afdb_uniprot_v6_uniprot_2025_03/database/afdb`) is a historical upstream baseline database (used only via the SHA-256-pinned baseline outputs `per_rep_structures.tsv`, `per_control_structures.tsv`, and `afdb_hits.raw.tsv`) and is **not searched in V3**.
+   - Added the explicit root proof pointer to `reviews/darkmatter-2026-10-13/round6/root_checks/pdb_reference_verification.json` (Slurm job `53709618`; manifest `/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/structural_calibration/references/pdb_20260730/foldseek_pdb.sha256`, SHA-256 `bd591f60d06786864a3ac0540557af56d7dfafd7bdf1f461b0f07ed4b567eaea`), which independently pins all **32 actual component files** of the searched `pdb_20260730/foldseek_pdb` database. The 32 actual component files in `pdb_reference_verification.json` sum to **`4,530,919,251` bytes**; the historical 33-entry manifest total of `4,530,926,229` bytes included the `6,978`-byte self-entry of `foldseek_pdb.sha256` (`4,530,919,251 + 6,978 = 4,530,926,229`), which was the only entry that mismatched itself while all 32 actual database components matched `100%`. All `5,851` queried parent PDB files and `7,773` cropped region PDB files are individually SHA-256 pinned in `results/v3_full5851_cropped_regions_manifest.tsv`.
+
+## 2. Final Document Checksums (Post-Correction Live Files)
+
+- `reproducibility/darkmatter/round6_hypotheses/h4_structure/DOSSIER.md`
+  - Bytes: `37,993`
+  - SHA-256: `07ee9b53b6854c05a2f9980505f9056740fe72a9279e63ec8fc1e1e8aa2f9656`
+  - Frozen Snapshot (`h4_v3`) SHA-256: `abd9fb399d5612b48e8eec064044749d2cefadd93453137e911c2250008cf9c3`
+- `reproducibility/darkmatter/round6_hypotheses/h4_structure/DESIGN.md`
+  - Bytes: `20,466`
+  - SHA-256: `119670883c9a6e7d21614e3fd3b40b9bb0e15231c52dcdf2ac7ff8dadbe54aad`
+  - Frozen Snapshot (`h4_v3`) SHA-256: `521a035145902823fb7da351f1a171032c6dff0308e7de69b9fe2d75f3b9d7dd`
+- `reviews/darkmatter-2026-10-13/round6/h4_review2/review.txt` (preserved untouched)
+  - Bytes: `11,765`
+  - SHA-256: `1dc845164a97cb52e045a6abfc6d6bf5ec827ef9065fd20f30c1415cc800f66c`
+- `reviews/darkmatter-2026-10-13/round6/h4_review2/verdicts.json` (preserved untouched)
+  - Bytes: `7,342`
+  - SHA-256: `279263d2acc6891bf5fbfbf713d81a988675706b008dbaa9177b5e0b20be730e`
+
+## 3. Final Viability Reconfirmation
+
+Verdict: **VIABLE** (reconfirmed; zero open critical findings).

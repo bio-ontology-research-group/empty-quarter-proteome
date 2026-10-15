@@ -1,0 +1,1924 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q1GNW5",
+  "uniProtkbId": "ECTD_SPHAL",
+  "entryAudit": {
+    "firstPublicDate": "2018-09-12",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2006-06-27",
+    "entryVersion": 96,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Sphingopyxis alaskensis (strain DSM 13593 / LMG 18877 / RB2256)",
+    "commonName": "Sphingomonas alaskensis",
+    "taxonId": 317655,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Alphaproteobacteria",
+      "Sphingomonadales",
+      "Sphingopyxidaceae",
+      "Sphingopyxis"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "24714029"
+          }
+        ],
+        "value": "Ectoine dioxygenase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24714029"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "25172507"
+            }
+          ],
+          "value": "1.14.11.55"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "24714029"
+            }
+          ],
+          "value": "Ectoine hydroxylase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "24714029"
+          }
+        ],
+        "value": "ectD"
+      },
+      "orderedLocusNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000312",
+              "source": "EMBL",
+              "id": "ABF54657.1"
+            }
+          ],
+          "value": "Sala_2952"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24714029"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "25172507"
+            }
+          ],
+          "value": "Involved in the biosynthesis of 5-hydroxyectoine, called compatible solute, which helps organisms to survive extreme osmotic stress by acting as a highly soluble organic osmolyte. Catalyzes the 2-oxoglutarate-dependent selective hydroxylation of L-ectoine to yield (4S,5S)-5-hydroxyectoine"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "L-ectoine + 2-oxoglutarate + O2 = 5-hydroxyectoine + succinate + CO2",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:45740"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15379"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16526"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16810"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:30031"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58515"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:85413"
+          }
+        ],
+        "ecNumber": "1.14.11.55",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "24714029"
+          },
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "25172507"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Fe(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24714029"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "25172507"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29033"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24714029"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "25172507"
+              }
+            ],
+            "value": "Binds 1 Fe(2+) ion."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "maximumVelocities": [
+          {
+            "velocity": 1.0,
+            "unit": "umol/min/mg",
+            "enzyme": "enzyme (at pH 8 and 40 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24714029"
+              }
+            ]
+          }
+        ],
+        "michaelisConstants": [
+          {
+            "constant": 2.7,
+            "unit": "mM",
+            "substrate": "2-oxoglutarate (at pH 8 and 40 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24714029"
+              }
+            ]
+          },
+          {
+            "constant": 9.8,
+            "unit": "mM",
+            "substrate": "ectoine (at pH 8 and 40 degrees Celsius)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24714029"
+              }
+            ]
+          }
+        ],
+        "note": {
+          "texts": [
+            {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000269",
+                  "source": "PubMed",
+                  "id": "24714029"
+                }
+              ],
+              "value": "kcat is 1.2 sec(-1) for ectoin as substrate (at pH 8 and 40 degrees Celsius)."
+            }
+          ]
+        }
+      },
+      "phDependence": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24714029"
+              }
+            ],
+            "value": "Optimum pH is 8."
+          }
+        ]
+      },
+      "temperatureDependence": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24714029"
+              }
+            ],
+            "value": "Optimum temperature is 40 degrees Celsius (PubMed:24714029). Active from 5 to 50 degrees Celsius (PubMed:24714029)."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24714029"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "25172507"
+            }
+          ],
+          "value": "Homodimer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the PhyH family. EctD subfamily"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 306,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Ectoine dioxygenase",
+      "featureId": "PRO_0000445004"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 127,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 127,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58515"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "25172507"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "4Q5O"
+        }
+      ],
+      "ligand": {
+        "name": "L-ectoine",
+        "id": "ChEBI:CHEBI:58515"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 133,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 133,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:16810"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "4Q5O"
+        }
+      ],
+      "ligand": {
+        "name": "2-oxoglutarate",
+        "id": "ChEBI:CHEBI:16810"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 144,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 144,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:24875"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "4MHU"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "4Q5O"
+        }
+      ],
+      "ligand": {
+        "name": "Fe cation",
+        "id": "ChEBI:CHEBI:24875"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 146,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 146,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:24875"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "4MHU"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "4Q5O"
+        }
+      ],
+      "ligand": {
+        "name": "Fe cation",
+        "id": "ChEBI:CHEBI:24875"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 245,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 245,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:24875"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "4MHU"
+        },
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PDB",
+          "id": "4Q5O"
+        }
+      ],
+      "ligand": {
+        "name": "Fe cation",
+        "id": "ChEBI:CHEBI:24875"
+      }
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 150,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 150,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Important for ectoine stabilization",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        }
+      ]
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 127,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 127,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Loss of dioxygenase activity.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "Q",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 139,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 140,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "No effect on the dioxygenase activity and on the dimerization.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "RE",
+        "alternativeSequences": [
+          "AA"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 149,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 149,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Strong reduction in the production of 5-hydroxyectoine.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "T",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 150,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 150,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Loss of dioxygenase activity.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "W",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 280,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 280,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Strong reduction in the production of 5-hydroxyectoine.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "25172507"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "R",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 8,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 12,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 15,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 17,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 31,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 33,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 35,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 44,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 45,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 49,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 55,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 70,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 72,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 74,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 77,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 79,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 80,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 82,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 84,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 86,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHU"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 89,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 93,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 95,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 98,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 100,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 107,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 109,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 119,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 123,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 133,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 135,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 138,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 141,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 144,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 146,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 154,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 161,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 169,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 173,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 175,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 184,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 186,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 187,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 189,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 211,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 213,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4Q5O"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 214,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 224,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 236,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 240,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 245,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 247,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 256,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 265,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 266,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 268,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 274,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 277,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4Q5O"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 282,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 284,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 290,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 295,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "4MHR"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-0223",
+      "category": "Molecular function",
+      "name": "Dioxygenase"
+    },
+    {
+      "id": "KW-0408",
+      "category": "Ligand",
+      "name": "Iron"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0560",
+      "category": "Molecular function",
+      "name": "Oxidoreductase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "19805210",
+        "citationType": "journal article",
+        "authors": [
+          "Lauro F.M.",
+          "McDougald D.",
+          "Thomas T.",
+          "Williams T.J.",
+          "Egan S.",
+          "Rice S.",
+          "DeMaere M.Z.",
+          "Ting L.",
+          "Ertan H.",
+          "Johnson J.",
+          "Ferriera S.",
+          "Lapidus A.",
+          "Anderson I.",
+          "Kyrpides N.",
+          "Munk A.C.",
+          "Detter C.",
+          "Han C.S.",
+          "Brown M.V.",
+          "Robb F.T.",
+          "Kjelleberg S.",
+          "Cavicchioli R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19805210"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.0903507106"
+          }
+        ],
+        "title": "The genomic basis of trophic strategy in marine bacteria.",
+        "publicationDate": "2009",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "15527",
+        "lastPage": "15533",
+        "volume": "106"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000312",
+              "source": "Proteomes",
+              "id": "UP000006578"
+            }
+          ],
+          "value": "DSM 13593 / LMG 18877 / RB2256",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "24714029",
+        "citationType": "journal article",
+        "authors": [
+          "Widderich N.",
+          "Hoppner A.",
+          "Pittelkow M.",
+          "Heider J.",
+          "Smits S.H.",
+          "Bremer E."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "24714029"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1371/journal.pone.0093809"
+          }
+        ],
+        "title": "Biochemical properties of ectoine hydroxylases from extremophiles and their wider taxonomic distribution among microorganisms.",
+        "publicationDate": "2014",
+        "journal": "PLoS ONE",
+        "firstPage": "e93809",
+        "lastPage": "e93809",
+        "volume": "9"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "COFACTOR",
+        "SUBUNIT"
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "25172507",
+        "citationType": "journal article",
+        "authors": [
+          "Hoppner A.",
+          "Widderich N.",
+          "Lenders M.",
+          "Bremer E.",
+          "Smits S.H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "25172507"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.m114.576769"
+          }
+        ],
+        "title": "Crystal structure of the ectoine hydroxylase, a snapshot of the active site.",
+        "publicationDate": "2014",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "29570",
+        "lastPage": "29583",
+        "volume": "289"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (2.10 ANGSTROMS) IN COMPLEX WITH IRON ION; 2-OXOGLUTARATE AND SUBSTRATE ANALOG",
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "MUTAGENESIS OF GLN-127; 139-ARG-GLU-140; THR-149; TRP-150 AND ARG-280",
+        "COFACTOR",
+        "SUBUNIT"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "CP000356",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ABF54657.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_011543221.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_008048.1"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "4MHR",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.10 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-306"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "4MHU",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.56 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-306"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "4Q5O",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.64 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A/B=1-306"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "4MHR",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "4MHU",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "4Q5O",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q1GNW5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q1GNW5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "317655.Sala_2952",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sal:Sala_2952",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG5285",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_048953_5_0_5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9791262at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "1.14.11.55",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "12995"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "Q1GNW5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000006578",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016706",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:2-oxoglutarate-dependent dioxygenase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "24714029"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005506",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:iron ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "24714029"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "2.60.120.620:FF:000016",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine hydroxylase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.60.120.620",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "q2cbj1_9rhob like domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR012774",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EctD"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR008775",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phytyl_CoA_dOase-like"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR02408",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ectoine_ThpD"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR20883:SF48",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ECTOINE DIOXYGENASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR20883",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHYTANOYL-COA DIOXYGENASE DOMAIN CONTAINING 1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF05721",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PhyH"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51197",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Clavaminate synthase-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MQDLYPSRQRADAEMRPRLDPVVHSEWTNDAPISARQAAAFDRDGYIVLEDIFSADEVAFLQKAAGNLLADPAALDADTIVTEPQSNEIRSIFEIHAQSPVMARLAADARLADVARFLLGDEVYIHQSRLNYKPGFKGREFYWHSDFETWHVEDGMPRMRALSMSVLLAENTPHNGPLMVIPGSHRTYLTCVGETPDDHYLSSLKKQEYGVPDEESLAELAHRHGIVAPTGKPGTVILFDCNLMHGSNGNITPFPRANAFLVYNAVSNRLEKPFGVEKPRPWFLARRGEPAALRVERGPLVETVPA",
+    "length": 306,
+    "molWeight": 34140,
+    "crc64": "5DD8E21229C25D6A",
+    "md5": "79939185CDF24E2E8DEDEDEFBEB19C8E"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "SUBUNIT": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 5,
+      "Site": 1,
+      "Mutagenesis": 5,
+      "Beta strand": 17,
+      "Helix": 14
+    },
+    "uniParcId": "UPI00005517A3"
+  }
+}

@@ -1,0 +1,592 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "A5F0H9",
+  "secondaryAccessions": [
+    "C3M6B7"
+  ],
+  "uniProtkbId": "ECTC_VIBC3",
+  "entryAudit": {
+    "firstPublicDate": "2008-02-26",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2007-06-12",
+    "entryVersion": 86,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Vibrio cholerae serotype O1 (strain ATCC 39541 / Classical Ogawa 395 / O395)",
+    "taxonId": 345073,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Vibrionales",
+      "Vibrionaceae",
+      "Vibrio"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01255"
+          }
+        ],
+        "value": "L-ectoine synthase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "4.2.1.108"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "N-acetyldiaminobutyrate dehydratase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01255"
+          }
+        ],
+        "value": "ectC"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "VC0395_0411"
+        },
+        {
+          "value": "VC395_A0847"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "Catalyzes the circularization of gamma-N-acetyl-alpha,gamma-diaminobutyric acid (ADABA) to ectoine (1,4,5,6-tetrahydro-2-methyl-4-pyrimidine carboxylic acid), which is an excellent osmoprotectant"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "(2S)-4-acetamido-2-aminobutanoate = L-ectoine + H2O",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:17281"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58515"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58929"
+          }
+        ],
+        "ecNumber": "4.2.1.108",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01255"
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "Amine and polyamine biosynthesis; ectoine biosynthesis; L-ectoine from L-aspartate 4-semialdehyde: step 3/3"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01255"
+            }
+          ],
+          "value": "Belongs to the ectoine synthase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 138,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "L-ectoine synthase",
+      "featureId": "PRO_1000073178"
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "CI-A723527N7G917",
+        "citationType": "submission",
+        "authors": [
+          "Heidelberg J."
+        ],
+        "publicationDate": "MAR-2007",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 39541 / Classical Ogawa 395 / O395",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "19115014",
+        "citationType": "journal article",
+        "authors": [
+          "Feng L.",
+          "Reeves P.R.",
+          "Lan R.",
+          "Ren Y.",
+          "Gao C.",
+          "Zhou Z.",
+          "Ren Y.",
+          "Cheng J.",
+          "Wang W.",
+          "Wang J.",
+          "Qian W.",
+          "Li D.",
+          "Wang L."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19115014"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1371/journal.pone.0004053"
+          }
+        ],
+        "title": "A recalibrated molecular clock and independent origins for the cholera pandemic clones.",
+        "publicationDate": "2008",
+        "journal": "PLoS ONE",
+        "firstPage": "E4053",
+        "lastPage": "E4053",
+        "volume": "3"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 39541 / Classical Ogawa 395 / O395",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "CP000626",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ABQ19414.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CP001236",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ACP11680.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_000637098.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_009456.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "A5F0H9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "A5F0H9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "vco:VC0395_0411",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "vcr:VC395_A0847",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|345073.21.peg.3578",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0662",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_154525_0_0_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9801830at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00067",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00123"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0033990",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:ectoine synthase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0019491",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:ectoine biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd06978",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "cupin_EctC"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.60.120.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Jelly Rolls"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "HAMAP",
+      "id": "MF_01255",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine_synth"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR010462",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine_synth"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014710",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC-like_jellyroll"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011051",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC_Cupin_sf"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF009806",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK13290.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR39289",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR39289:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "L-ECTOINE SYNTHASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF06339",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine_synth"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51182",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC-like cupins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MIVRTLEECRQSERRVVAENWESVRMLLKDDHMGFSFHITTIYANTQTHIHYRNHLESVYCMSGEGEIEVVGGKTYPIQPGTLYILDQHDEHYLRAFSSEMVMACVFNPPLTGHEIHDAEGVYPLDKSELISQCHKEK",
+    "length": 138,
+    "molWeight": 15996,
+    "crc64": "500962E3FEBF8F05",
+    "md5": "D4FC05B35635B3A3E17A359D9D820BF4"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1
+    },
+    "uniParcId": "UPI00000C366F"
+  }
+}

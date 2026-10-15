@@ -1,0 +1,30 @@
+ROOT judgement, 2026-10-15; results before manuscript incorporation.
+F1: PARTIAL SUPPORT, not a new-family discovery claim.
+- Core three-profile census (not exhaustive all CPF classes): 1,154 candidates in 935/5,438 genomes, 914 complete predicted proteins in 775 genomes; 20,451,986 proteins scanned. Independent raw-domain recount and full-output checksum verification pass (53818551).
+- Complete-gene comparison: 914 EQ, 398 SMAG, 1,079 GEM, 59 curated references. All 1,695 original environmental candidate IDs/hashes exactly join source coordinate records; incomplete candidates excluded from primary comparison and retained separately.
+- Coverage-qualified best-bit-score reference identities: curated median43.8%, SMAG55.8%, GEM57.75%; 883/914,903/914,904/914 have respective qualified hits. Thus sparse curated reference coverage is not equivalent to globally unprecedented diversity.
+- Equal-size additions on short domain trees do not show exceptional EQ branch-length expansion over GEM. Complete-gene sensitivity agrees; topology fitted on joint all-quality panel is a limitation. Do not call new clades from these short-domain exploratory trees.
+- ProstT5 real GPU embeddings (316862, H200) are finite, input/output IDs and sequence hashes validated. Exact clean duplicates computed once and expanded to all source IDs. Primary complete-gene plots use frozen subset, all-quality plots retained. Neither 2D distances nor occupied plot area establish novelty.
+- Ecological association: 551 metadata profiles considered; one zero-mapped sample excluded,550 contribute ratios. Hierarchical matching yields37sites/69site-trip pairs. CompleteCPF mapped-community fraction has pairedmedian Surface-Deep difference8.4726 percentagepoints, bootstrap95%CI2.2993..13.5544, HolmP.0019587. Independent reconstruction from compactsampletable passes. Newly identified completeCPF carriers outside earlierK01669 annotation: difference.0045points, CI-.0149...0447, P.53261; inconclusive. No demonstrated new light-adaptation mechanism. Within-phylum tests are exploratory, multiplicity corrected separately in rootaudit; species turnover remains unresolved.
+- Positive-control sensitivity: published short-photolyase QCI56913.1 fails the core profile coverage rule. Separate full-catalogue sequence search53817185 finds3qualified homologues,2outsidecorecensus. They are separately labelled SPL-like leads, not validated new functions. This exposes a known blindspot and prevents exhaustiveCPF wording.
+Recommendation: possible supporting biology/resource illustration; do not sell as exceptional desert novelty or use it alone to strengthen NatComm novelty claim. The strongest ecological effect overlaps prior photolyase annotation.
+
+F2: STOP AFTER PILOT; specific compatible-solute-phosphatase assignment unsupported.
+- Exact historical representative/currentMAG/pilot sequence identity established for both leads by directFASTA reads andSHA256 (53816465), lengths93and148aa. This is not an identifier-only remap.
+- Retained HAD profiles PF00702/PF13419 yield no reported domain hits; ultrasensitiveDIAMOND against retained target/competitor reference panel yields0alignments. No fullfamilycensus justified under the prespecified gate. This does not disprove biological function.
+- No pathway-context, salinity, expression or catalytic claims are supported for these leads.
+Recommendation: retain negative screening outcome in study audit; do not include as positive functional discovery.
+
+Rejected overclaims in generated artifacts/review:
+- Ecology v3 provenance phrase 'indicates ecological selection' is not accepted: observational association only.
+- Ecology samples_analyzed551 denotes profiles considered, not550 nonzero-ratio samples.
+- Argoninitial report mentions PF08282/PF13344 forF2 without matching actual pilot evidence; authoritative current pilot uses PF00702/PF13419.
+- High CheckM completeness is an estimate, not proof of a closed genome or absolute pathway absence.
+- Historical false reference/NO_HIT and genericRadicalSAM narratives remain rejected, not silently incorporated.
+No manuscript/claims registry edits made for this new track.
+
+Final Argon disposition (argon_f12_final.txt, received 2026-10-15):
+Agree with partial/conditional F1 support, rejection of exceptional breadth, and F2 stop.
+Argon's phrase 'refutes historical phosphatase label' is stronger than the evidence; use 'assignment unsupported', not biochemical refutation.
+Primary complete-only plots finished successfully in Slurm53818392, 6m03s. All 2450 records retained, PCA and tSNE show strong environmental overlap. Argon's timing note about these being pending is superseded by actual completion.
+Source closure means candidate-level source sequence/coordinate checks and full-file checksums; it is not individual coordinate validation of every protein in the 20.45m-protein catalogue.

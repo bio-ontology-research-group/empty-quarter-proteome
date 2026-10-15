@@ -1,0 +1,1013 @@
+\documentclass[11pt]{article}
+
+% ============================================================================
+%  Rub' al-Khali soil metagenome -- MANUSCRIPT v2, rewritten 2026-09-17.
+%  v1 is archived at main_v1.tex and no prose is carried over from it.
+%  Historical claims: notes/CATALOGUE_NUMBERS.md and notes/CORRECTIONS.md.
+%  October review revisions: reproducibility/darkmatter/current_claims.tsv,
+%  retained input manifests and reviews/darkmatter-2026-10-13/.
+%  Whole-paper registry migration and public data release remain incomplete.
+% ============================================================================
+
+\usepackage[a4paper,margin=2.4cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,citecolor=teal!60!black,urlcolor=blue!50!black}
+\setlength{\emergencystretch}{2em}
+
+\providecommand{\todo}[1]{\textcolor{red}{\textbf{[TODO: #1]}}}
+\newcommand{\unreg}[1]{\textcolor{orange!80!black}{#1}}   % computed, not yet registered
+
+\title{\textbf{Known phyla, unknown proteome:\\ a controlled census of the Rub' al-Khali soil metagenome}}
+\author{A. Lopez Velazquez \textit{et al.}\\ \small King Abdullah University of Science and Technology}
+\date{}
+
+\begin{document}
+\maketitle
+
+% ============================================================================
+\section*{Abstract}
+% 150 words, unreferenced. Written last; this is the working version.
+Reference coverage limits interpretation of microbial gene content. We analysed 551 soil
+metagenomes from the Rub' al-Khali and recovered 5{,}438 species-level genome representatives.
+Among 43.4 million protein clusters linked to genome bins, 9.89\% lacked a detected UniRef50
+match. A recurrent subset contained 106{,}042 families and 12.5\% of the dark representatives.
+Their evolutionary comparisons showed frame-dependent constraint, with between-group contrasts
+that depended on divergence and population weighting. Culture-derived assemblies revealed DNA
+support for many dark calls lacking a reciprocal protein match. Structural reference coverage
+depended on score normalisation and retrieval. Per-genome darkness varied strongly by lineage:
+237 Thermoplasmatota representatives had a median dark fraction of 31.0\%. Soil- and genome-derived
+catalogues recovered more dark families than an E-value-corrected MGnify90 rarefaction expectation.
+The catalogue connects reference-absent gene content to genomes and repeated sampling, providing
+a controlled basis for investigating the unknown proteome of hyperarid soils.
+
+% ============================================================================
+\section*{Introduction}
+
+Drylands cover roughly two fifths of the land surface and are projected to expand
+\citep{huang2016dryland,maestre2015aridity}, and their hot hyperarid interiors are the low-biomass
+case in which contamination approaches the detection limit \citep{contamination2025guidelines}. The
+Rub' al-Khali, the largest contiguous sand sea, had no genome-resolved microbial survey. A companion
+16S rRNA survey of the same transect mapped its bacterial ecology by landscape, soil position and
+rainfall \citep{tawfiq2026companion}, and listed what
+amplicons cannot reach: gene content without primer bias, function tied to a genome, and the archaea.
+
+What genomes reveal is mostly unknown. Across global catalogues a large share of microbial protein
+families match no characterised family, and the size of that share depends on the reference and
+the rule used to call it \citep{pavlopoulos2023darkmatter,vanni2022agnostos,coelho2022gmgc}. The
+unknown families are numerous, span species, evolve under purifying selection and concentrate in
+uncultivated lineages \citep{rodriguezdelrio2024fesnov}; most are restricted to one ecosystem
+\citep{aplakidou2025quadrupling}; and large structural surveys extend domain assignments beyond sequence-based annotations
+\citep{lau2024ted,yeo2025afesm}. Interpreting the remaining reference-absent proteins requires
+separating evidence for coding status from evidence for structural or functional novelty.
+Repeated environmental sampling provides an opportunity to connect these questions to the
+persistence and genomic context of individual families.
+
+A reference no-hit depends on gene prediction, database composition and search sensitivity.
+Recurrent families can support evolutionary comparisons, while culture-derived assemblies offer
+an independent reconstruction of DNA from related organisms. Known-fold proteins processed
+through a structural pipeline provide a retrieval control. Combining these comparisons in one
+sampling programme can delimit which parts of an unknown repertoire are supported by each
+form of evidence.
+
+Here we combine these comparisons in one biome. We shotgun sequenced 551 soil samples from 61 sampled locations across
+the Rub' al-Khali on five expeditions over 31 months, at three soil positions and with elemental
+chemistry, recovered 5{,}438 species-level genomes, and measured the unknown fraction of their
+proteome against a control at every layer: matched annotated families for recurrence, selection and
+reference absence; long-read genomes of strains cultured from soils of the same basin; blinded
+known-fold controls for structure; and matched comparisons for a lineage with a high dark fraction. The
+comparisons distinguish evidence of coding constraint in recurrent families from variation in
+reference coverage across lineages, genomes and structural search criteria.
+
+% ============================================================================
+\section*{Results}
+
+\subsection*{Genome recovery and taxonomic coverage}
+
+We sampled 59 core transect sites and two auxiliary locations along a 1{,}043~km transect of the Rub' al-Khali on five expeditions between
+March 2023 and October 2025, at the soil surface, in the subsurface and beside plant roots, and
+shotgun sequenced 551 soil samples to a median depth of 21.58~Gbp per sample (Fig.~\ref{fig:design}a,b).
+Of the 549 samples that assembled, two SemiBin2 binnings (pretrained model and self-supervised)
+refined by DAS\_Tool yielded 14{,}426 bins, 4{,}225 near-complete and 8{,}209 additional medium-completeness bins
+under the operational CheckM2 thresholds; dereplication at 95\% average nucleotide identity gave
+5{,}438 species representatives, including 2{,}259 near-complete genomes
+(Fig.~\ref{fig:design}c). Full MIMAG assessment classified 126 as high quality and 5{,}312 as medium quality. Taxonomy throughout is GTDB release 232.
+
+Every representative was placed to class rank, within 51 GTDB phylum labels. The first empty
+taxonomic rank was order for 11 representatives, family for 142, genus for 1{,}343 and species for
+3{,}755; 187 carry a species assignment. These are mutually exclusive depths of
+the first empty rank, not counts of validated new taxa. Of the 11 order-level gaps, the 10 with
+adequate marker coverage were chimera-clean by GUNC (clade separation 0.01 to 0.32 against a 0.45
+threshold), and de novo trees with release-calibrated relative evolutionary divergence supported no
+new order: six are single-genome lineages and the two multi-genome clades sit at genus and family
+depth. Empty-rank depth is distinct from a naming heuristic that flags an empty or digit-bearing
+GTDB label (Table~\ref{tab:naming}). The latter is a proxy for reference naming coverage.
+
+\begin{table}[ht]\centering\small
+\caption{Mutually exclusive taxonomy depths among 5,438 representatives. The domain count is zero for both rules.}\label{tab:naming}
+\begin{tabular}{lrrrrrrr}\toprule
+First flagged rank & Phylum & Class & Order & Family & Genus & Species & None\\\midrule
+Empty label & 0 & 0 & 11 & 142 & 1,343 & 3,755 & 187\\
+Empty or digit-bearing label & 10 & 560 & 272 & 1,006 & 1,613 & 1,855 & 122\\\bottomrule
+\end{tabular}\end{table}
+
+\subsection*{A recurrent subset of sequence-dark clusters shows frame-dependent sequence constraint}
+
+Gene prediction on the 552 assembly files gave 753{,}305{,}533 proteins, which collapsed to
+449{,}265{,}306 cluster representatives at 90\% identity over 80\% of the length. A cluster was
+called sequence-dark when none of its searched members returned a UniRef50 hit under a sensitive
+search with an E-value threshold and no identity or coverage filter (Methods); 69{,}938{,}628
+representatives (15.6\%) were dark. Restricting to clusters with at least one member on a contig of
+the 37{,}949 bins meeting the operational CheckM2 medium-or-better thresholds in the two binnings before refinement gives the
+genome-resolved census: 4{,}292{,}446 of 43{,}423{,}322 representatives (9.89\%) have no reference
+homolog. Both percentages are shares of cluster representatives, not of
+proteins or of species. Within the genome-resolved dark set, 65.8\% of representatives are
+shorter than 100 residues and 56.4\% are partial gene calls. Across the assembly-wide catalogue,
+including unbinned sequence, the corresponding dark-set values are 75.7\% and 86.7\%; among all
+449 million representatives, including dark clusters, 29.7\% are shorter than 100 residues and
+87.5\% are partial. These distributions use different catalogue scopes.
+
+We selected recurrent families to examine sequence constraint and distribution. Clustering the
+4{,}292{,}446 genome-resolved dark representatives at 50\% identity produced 3{,}658{,}797 clusters:
+3{,}353{,}521 singletons, 196{,}450 two-member clusters and 108{,}826 clusters with at least three
+members. Requiring at least three samples and two sites retained 106{,}042 families with 536{,}437
+members, or 12.5\% of the dark representatives. The other 2{,}784 clusters with at least three
+members failed the spread criterion. An additional 782{,}616 singleton or two-member clusters
+recurred across the required samples and sites but remained outside the admitted family set.
+The median admitted family was assembled in 12 samples at 9 sites. Subsequent family analyses
+are conditional on this recurrence-based selection.
+
+Persistence: with reads from all 551 samples mapped to the member genes, the median family is
+detected in 98 samples, four families are confined to one sample, and 79.4\% of families are detected
+in all five expeditions (94.8\% in at least four). Under the stricter criterion of independent
+assembly, 28.9\% were assembled in all five. Detection by covered fraction
+favours short genes, and these frequencies describe prevalence under the mapping rule. A prevalence-conditioned null and competitive mapping would be needed to interpret temporal persistence beyond repeated DNA detection.
+
+Selection: the median pairwise dN/dS across 97{,}200 evaluable dark families is 0.425, with 96.7\%
+below one, against 0.388 (99.6\% below one, $n = 95{,}647$) for 106{,}042 UniRef50-matched families
+selected using representative length and family size and passed through the same clustering,
+alignment and estimation steps (Fig.~\ref{fig:dark}a). The pooled distributions differ, and the groups also differ in sequence divergence: median
+family mean dS is 0.607 in the dark arm and 0.863 in the control. Comparisons therefore depend
+on divergence strata. For families with mean dS at most 0.10, median dN/dS is 0.582 in the dark
+arm and 0.321 in the control; for mean dS between 0.5 and 1.0, the medians are 0.435 and 0.452.
+The control provides a reference distribution for the estimation pipeline, with divergence and
+family-admission differences that remain relevant to interpretation.
+
+The difference between stratum medians was +0.261 (95\% family-bootstrap interval
+0.197--0.288) at mean dS below 0.1 and $-0.0163$ ($-0.0187$ to $-0.0142$) at dS 0.5--1.0
+(Fig.~\ref{fig:dark}c). These conditional intervals treat families as independent.
+Time dependence, population sampling and correlated estimation error limit direct interpretation
+of pairwise dN/dS as selection strength \citep{kryazhimskiy2008dnds,mugal2014time}.
+
+Coarsened matching on mean synonymous divergence, median coding-sequence length, GC content
+and sequence count retained 61{,}427 families in each arm, with medians 0.386 and 0.423.
+This subset retained 7.5\% of dark families in the lowest divergence stratum and 98.8\% in
+the highest; 88.4\% had mean dS at least 0.5. Across the 553 shared covariate strata,
+weighted mean differences of family medians were +0.012 using the dark-arm distribution,
+$-0.022$ using the annotated-arm distribution and $-0.018$ using overlap weights.
+These means and the pooled medians are different estimands. The direction of the contrast
+depends on divergence and the target population. Residual dS imbalance remained after matching
+(standardised mean difference $-0.124$), and dS shares estimation noise with dN/dS.
+
+For a seeded input subset of 10{,}000 families, shifting member genes by one nucleotide and
+masking stop codons produced 9{,}148 evaluable families, with median dN/dS 1.086 and 37.6\%
+below one. The corresponding masked annotated-frame analysis yielded 9{,}182 families, with
+median 0.427 and 97.0\% below one. Both arms were evaluable for 9{,}029 families, and the shifted
+frame gave the higher estimate in 92.4\%. This contrast shows that the estimated constraint
+depends on reading frame. Interpreting coding status also requires tests of overlapping gene
+calls and of the effects of sequence ascertainment.
+An AntiFam screen flagged 141 admitted member proteins in 56 families. A coordinate-verified
+screen found 70 members in 46 families overlapping an opposite-strand non-dark Pyrodigal call
+by at least half their length. Excluding the union of 102 flagged families left 97{,}109
+evaluable dark families, with median dN/dS 0.4251 and 96.7\% below one. These checks identify
+known spurious-family matches and overlaps among existing calls; they do not detect every
+uncalled alternative ORF or establish translation \citep{eberhardt2012antifam}.
+
+Genomes recovered from cultures provide a complementary comparison. Long-read assemblies of
+722 cultured genomes from saline pans, oases and campground soils of the basin were assessed
+with the same UniRef50 search rule. They shared a species-level ANI match with 25 catalogue
+representatives, yielding 23 representative--culture groups after assignment to the best-ANI
+representative. Excluding the \emph{Escherichia coli} representative detected in the no-template
+control left 22 groups. Cultured genomes had a lower dark fraction in 18 of these groups,
+with a median difference of $-0.36$ percentage points (Wilcoxon $p = 0.0066$).
+The cultured assemblies had a median of two contigs, and 49\% were single-contig assemblies.
+Across all cultured genomes, dark proteins had median length 59 residues, compared with 70 for
+genome-resolved dark representatives.
+
+In the 22 retained representative--culture pairs, reciprocal protein matches covered 65{,}478
+of 81{,}723 UniRef50-matched MAG proteins (80.1\%) and 238 of 1{,}507 dark MAG proteins (15.8\%).
+The annotated fraction was more frequently shared in every pair; shared matches had median
+identity 99.7\%. Among the 166 complete dark calls of at least 100 residues, 26 had a reciprocal
+partner. These comparisons measure sharing between two predicted proteomes. Gene-caller
+sensitivity, assembly fragmentation, bin membership and strain variation can each contribute to
+unmatched calls. Base-level nucleotide alignments covering at least 90\% of a coding interval
+at 95\% identity supported 516 of 1{,}105 eligible dark calls without a protein partner (46.7\%)
+and 4{,}877 of 16{,}056 annotated calls without a partner (30.4\%). Among protein-shared calls,
+the corresponding counts were 219 of 236 dark calls (92.8\%) and 62{,}925 of 65{,}477 annotated
+calls (96.1\%). Protein sharing therefore understates DNA sharing in both groups (Fig.~\ref{fig:dark}d--f). Across pairs, recovery of protein-shared calls ranged from 67.9\% to 99.6\%. In the post hoc subset of 20 pairs with at least 90\% recovery, DNA support for protein-unshared calls was 496/940 (52.8\%) for dark calls and 4{,}254/11{,}240 (37.8\%) for annotated calls.
+A nucleotide-search negative still depends on divergence and alignment sensitivity.
+Among the 516 DNA-supported dark calls without protein partners, 343 had no Bakta CDS
+overlapping at least half the aligned target span, 81 overlapped a different frame or orientation,
+and 92 had a same-orientation CDS compatible with the phase at the alignment start. The corresponding
+annotated counts were 606, 183 and 4{,}088. This local diagnostic separates possible gene-call
+and protein-match effects; it does not establish full codon correspondence or validate a gene.
+Harmonised gene prediction would further distinguish these cases.
+
+The cultured comparison covers well-referenced bacteria with low dark
+fractions; archaeal lineages require separate validation.
+
+\subsection*{Per-genome darkness varies strongly among lineages}
+
+Per genome, the dark fraction is the share of protein instances on a representative's contigs whose
+cluster has no UniRef50 homolog; across the 5{,}438 representatives its median is 6.3\%
+(interquartile range 3.7--10.4\%), a per-genome rate. Assembly quality (completeness, contamination, N50 and length together) explains 11.5\% of the
+variance in that fraction. Adding phylum raises the explained share to 76.8\% and genus to 83.5\%;
+72.0\% of the variance is unique to lineage and 2.0\% unique to quality.
+Larger genomes are slightly less dark ($-0.096$ per tenfold increase in corrected size, $R^2$ 0.067),
+so genome size does not explain darkness. Taxonomic novelty predicts part of it: the median dark
+fraction falls from 0.217 for genomes first flagged at phylum to 0.017 for genomes with no flagged rank
+(Fig.~\ref{fig:lineage}b), and within Actinomycetota, Pseudomonadota and Bacteroidota genomes with a
+placeholder genus are darker than those with a named genus (medians 0.075 against 0.022, 0.051
+against 0.030, 0.068 against 0.053). That much is expected, because a lineage absent from UniRef50
+is dark by construction. Novelty does not absorb the lineage term: with first empty or digit-bearing rank in the
+model, phylum still adds 0.340 to $R^2$, 52\% of its unconditioned increment. Phylum and genus enter
+with far more degrees of freedom than the four quality covariates and the model treats genomes as
+independent draws, so these increments are descriptive upper bounds; the like-for-like test is the
+matched contrast in the next section.
+
+The residual is concentrated. After the quality model, Thermoplasmatota genomes are 0.21 darker than
+predicted, Cyanobacteriota 0.14 and Bdellovibrionota 0.10, while Halobacteriota, Bacillota,
+Pseudomonadota and Actinomycetota sit below the line. Thermoplasmatota have the largest positive residual among these phyla; Actinomycetota contribute more dark protein instances in absolute terms.
+
+\subsection*{Thermoplasmatota carry a large share of the attributable dark families}
+
+The catalogue holds 237 Thermoplasmatota species: 185 in class SW-10-69-26, 51 in class E2 and one
+in Thermoplasmata, none with a named genus. GTDB release 232 holds 21 and 197 species
+representatives in the two classes, fewer together than this one sand sea. Their median dark
+fraction is 0.310, against 0.046 for the other 354 archaea and 0.062 for the 4{,}847 bacteria, and
+236 of 237 lie above the bacterial 95th percentile.
+
+The obvious alternative is that rare, poorly assembled genomes look unknown. We therefore matched
+each Thermoplasmatota representative 1:1 without replacement to a comparator on completeness,
+contamination, corrected genome size, N50, mean relative abundance and prevalence. Against other
+archaea, 218 of 237 found a match within one standardised unit; the matched pairs have median dark
+fractions of 0.308 and 0.048, a 6.5-fold difference, with the Thermoplasmatota genome the darker in
+216 of 218 pairs. Against bacteria all 237 matched within half a unit, with residual imbalance below
+0.05 standardised units on every covariate; medians 0.310 against 0.069, 4.5-fold, darker in 237 of
+237 pairs (Fig.~\ref{fig:lineage}c). The contrast persists after this quality and abundance matching. In a separate comparison
+restricted to genomes whose first empty or digit-bearing label occurs at class rank, the 236
+Thermoplasmatota representatives have median darkness 0.310, compared with 0.125 in 324 other
+representatives, a 2.5-fold contrast. These descriptive comparisons share phylogenetic dependence
+within lineages.
+
+Thermoplasmatota contribute a small share of community abundance and a larger share of the
+attributable unknown repertoire. They are 4.4\%
+of species and 0.8\% of mapped reads (median across samples), yet carry 19.8\% of the 77{,}069
+single-phylum dark families and 15.2\% of dark protein instances, an enrichment of 4.6-fold by
+families and 4.0-fold by proteins; Actinomycetota, half of the mapped community, carry dark families
+in proportion to their species share (1.1-fold).
+
+These are not rare organisms. Thermoplasmatota representatives are detected in 481 of 549 samples,
+a median of 21 species per sample, at a median 0.39\% of reads, and they are the cosmopolitan archaea
+of the sand sea where Halobacteriota are patchy (81 of 549 samples, in bulk where present). Depth is
+their axis: their share is 0.55\% of reads in subsurface samples against 0.17\% at the surface, higher
+below than above at 40 of 45 sites with both positions (Wilcoxon $p = 4 \times 10^{-7}$, unchanged
+after dividing by the mapped fraction), and indifferent to plant roots (26 of 53 sites, $p = 0.66$).
+Annotations in the remaining approximately 70\% provide a provisional metabolic profile. Against Halobacteriota, other archaea and
+bacteria matched one to one on completeness, the 237 encode glycolysis (82\%), a TCA cycle run through
+2-oxoglutarate:ferredoxin oxidoreductase (96\%), a glyoxylate cycle (79\% against 35\% in matched
+Halobacteriota), complex I and II, cytochrome c oxidase (59\%) and an archaeal ATPase (91\%), with no detected marker annotations for
+methanogenesis, ammonia oxidation or rhodopsin (0 of 237, against 51 of 269 Halobacteriota for
+rhodopsin). The annotations include more peptide-associated than sugar-associated uptake functions: branched-chain amino-acid
+transporters in 79\% and sugar transporters in 2\% (73\% in matched Halobacteriota), an extracellular
+serine protease in 96\%, endoglucanase in 79\% and chitinase in 44\%. They lack the carbon skeleton of
+branched-chain amino-acid synthesis (2\%, against 91\%) while keeping the terminal transaminase
+(93\%), a pattern consistent with uptake dependence, and they have few annotations for cobalamin, thiamine or F420
+synthesis and little catalase (29\% against 85\%). All carry an archaellum and 79\% a CRISPR-Cas
+system. The smaller class E2 (2.9 against 3.8~Mb at the same completeness) has shed importers and
+several amino-acid pathways. These annotations suggest peptide and polysaccharide use in subsurface archaea. Pathway
+completeness, auxotrophy and rhodopsin absence require further validation with lineage-sensitive
+models; incomplete pathways and missing orthologues in these genomes cannot establish physiological
+absence. Approximately a third of their proteins remain without a UniRef50 match.
+
+\subsection*{Whole-protein and local structural matches give different reference-coverage estimates}
+
+Sequence search misses remote homology, so the 1{,}466{,}943 genome-resolved dark representatives
+of at least 100 residues were screened by predicted structure (Methods). A 3Di search against the
+AlphaFold Database (v6, 241{,}070{,}489 entries) and the PDB (release 250101) left 997{,}646
+(68.0\%) with no hit in either, a triage rather than a result. Structural clustering of those
+candidates and admission at three or more members gave 17{,}221 fold families with one model each,
+13{,}770 folded here with ESMFold and 3{,}451 reused from an earlier run. Only 2{,}838 models
+(16.5\%) passed the confidence gate (mean pLDDT $\geq 0.70$, $\geq 100$ residues); the gate is on
+confidence.
+
+Co-searched with them under the same command were 3{,}684 blinded controls: complete chains and
+deterministic fragments of experimentally solved PDB chains, matched to the candidates' length,
+composition and partiality and renamed before folding, of which 3{,}013 passed the same gate.
+Against both references, 1{,}031 of 2{,}838 dark models (36.3\%) fell below a query-normalised
+TM-score of 0.5, compared with 101 of 3{,}013 controls (3.35\%; Fig.~\ref{fig:structural}a).
+Raw-hit inspection separates retrieval from scoring: 22 dark models and 66 controls returned
+no rows from either reference. Among models with a retrieved alignment, 1{,}009 of 2{,}816 dark
+models and 35 of 2{,}947 controls fell below the query threshold. This conditional comparison
+selects on retrieval and does not calibrate all search failures.
+
+Alignment-normalised scores give a different result. Across all qualified models, 95 dark
+models and 68 controls fell below 0.5; among retrieved models, the counts were 73 of 2{,}816
+(2.59\%) and two of 2{,}947 (0.068\%). Thus missing retrievals account for most control failures
+under the alignment-normalised score. Treating all failures as a single control rate obscures
+this difference. The query and alignment scores are independent maxima across reported hits
+and may come from different reference targets.
+
+Local matches remain frequent under alignment-length gates. Requiring at least 50 aligned
+residues leaves 97 dark models below the alignment-normalised threshold. Of the 1{,}031 models
+below the query-normalised threshold, 797 have an alignment-normalised score of at least 0.5
+over at least 100 residues and half the query length. These are models whose full length is
+poorly matched under the query-normalised metric; they can contain substantial familiar regions.
+At query thresholds of 0.45 and 0.55, dark-model counts are 780 and 1{,}300, compared with 85
+and 118 controls (Fig.~\ref{fig:structural}b,c). Domain arrangement, extensions and uncertain
+inter-domain placement can affect this comparison. Confidence-qualified predictions alone do
+not validate a novel fold \citep{orr2026spurious}.
+
+Pfam recognises a domain in 8.75\% of the 4{,}880 member proteins of the 1{,}031 families and
+in 14.0\% of those families, compared with 90.7\% of the controls. Sequence and structural
+searches therefore provide different descriptions of reference coverage. The controls derive
+from PDB chains present in the references and serve as positive retrieval controls. Homology-excluded
+controls and domain-resolved analysis would be needed to calibrate remote homology and delimit
+unmatched structural regions.
+
+\subsection*{Reference composition affects recovery of dark families}
+
+Two ceilings measure how far existing references reach into this proteome. The first is
+annotation: of the 19{,}186{,}853 protein-coding genes in the 5{,}438 representatives, 55.6\% carry
+no KEGG orthologue, and the value is 53.9\% in the near-complete representatives alone, showing that incomplete annotation persists in this subset. The second is prediction. In the 448
+samples with both a genome profile and a 16S profile from the companion survey, marker-gene
+prediction agreed with genome-encoded content (median weighted nearest-taxon index 0.159, recall of
+genome-encoded orthologues 86.0\%, Spearman $\rho$ 0.839 on shared orthologues;
+Fig.~\ref{fig:reference}a). Its reach is fixed by its reference: 2{,}517 of the 11{,}374
+orthologues the genomes encode (22\%) lie outside the 10{,}543 families it can emit, and in 420 of
+the 448 samples no orthologue inside that set went unpredicted, placing this component of the shortfall in reference coverage.
+
+We next tested whether sequence-dark families have detectable homologues in additional catalogues. We searched
+the 106{,}042 dark family representatives together with the 106{,}042 matched UniRef50-matched
+families against MGnify90, GEM, SPIRE and five desert catalogues, 1.258 billion sequences, in one
+DIAMOND pass: 28.74\% of dark families (30{,}479) had no hit in any of them, compared with 0.41\% of
+the control (435) (Fig.~\ref{fig:reference}b). Absence here is defined by the catalogue and the
+search rule, not by geography; MGnify90 biome labels carry no coordinates. What the control isolates
+is which reference is missing. The five desert catalogues together hold 147.5 million sequences, a
+fifth of MGnify90, yet leave 42.60\% of dark families unexplained against MGnify90's 52.68\%.
+Compared with an analytical expectation for random retention of MGnify90 sequences at the same size (a rarefaction model whose full-catalogue endpoint agrees with the
+observed MGnify90 absence to 0.15 percentage points), the desert catalogues leave 24.33 fewer points
+of dark families unexplained and SPIRE 21.30 fewer, while the same comparison for known proteins moves
+by about one point (Fig.~\ref{fig:reference}b). The larger-release sensitivity search recovered a small additional fraction. Against the complete
+MGnify90 2026\_07 release (1.66 billion sequences, searched with a different aligner, so a robustness
+check), 5.8\% of
+the absent dark families gain a hit while 34.3\% of the control's residual absences are resolved,
+leaving 27.08\% of dark families unmatched. The absent families are not rare or local within the
+basin: their median occupancy is 37 of 61 sampled locations against 38 for families with a hit, and
+the difference is small in every length stratum. Soil- and genome-derived catalogues recover more dark families than the random-MGnify90
+expectation. Their redundancy, assembly basis and biome composition differ, so the comparison
+combines these properties. Searches of actual random subsets and matched non-desert soil
+catalogues would separate their contributions.
+
+Exploratory functional and environmental associations are reported in Supplementary Note S1.
+
+% ============================================================================
+\section*{Discussion}
+
+This catalogue links reference-absent protein clusters to genomes and repeated sampling of a
+hyperarid environment. Evidence is strongest for the recurrent subset: 106{,}042 families hold
+12.5\% of genome-resolved dark representatives, and 79.4\% recruit reads in all five expeditions.
+Most evaluable families have median pairwise dN/dS below one, and the annotated frame usually
+has a lower estimate than the shifted frame. These observations support frame-dependent
+sequence constraint within the selected families. Recurrence and recruitment describe the
+persistence of homologous DNA; expression measurements and overlap-aware gene validation would further resolve coding status and biological activity.
+
+Darkness also varies strongly among lineages. Quality- and abundance-matched comparisons
+retain a large Thermoplasmatota contrast, while a comparison at the same placeholder rank gives
+a smaller 2.5-fold difference. Reference proximity and shared ancestry therefore remain relevant
+to the lineage pattern. \citet{maeke2025thermoplasmatota} examined the relationship between rarity
+and unknown-gene content in other Thermoplasmatota; direct searches against close relatives
+would test how much of the desert catalogue's darkness reflects representation in UniRef50.
+
+The cultured-genome comparison identifies lower sharing of dark than annotated protein calls,
+even after exclusion of the confirmed \emph{E. coli} contaminant. Its interpretation depends on
+gene prediction and genome reconstruction as well as strain variation. Re-calling both partners
+with one pipeline would help interpret the DNA support already observed for protein-unmatched calls. The current control evidence also has limited campaign
+coverage: one no-template library was sequenced with expedition four, and the catalogue-level
+lineage and environmental summaries still include the flagged representatives. Sensitivity
+analyses across these summaries are required to assess their contribution.
+
+The global family catalogues established that unknown families are numerous, span species, evolve
+under purifying selection and concentrate in uncultivated taxa
+\citep{rodriguezdelrio2024fesnov,pavlopoulos2023darkmatter,vanni2022agnostos}, that restriction to
+one ecosystem is the norm (63.4\% of 608{,}258 families; \citealp{aplakidou2025quadrupling}), and
+that structural surveys recover many familiar folds and domain combinations
+\citep{lau2024ted,yeo2025afesm}. Our 28.74\% reference absence is unremarkable as a fraction, and
+36.3\% of confident models fall below the whole-query similarity threshold, while local
+similarity is detected much more frequently. The known-fold comparison provides a positive-control
+retrieval baseline; domain boundaries and remote-homology controls would refine the biological
+interpretation of the unmatched regions. This study links families to repeated sampling within one biome and measures a reference-composition effect: the desert-derived comparison explains 24 percentage points more of the dark families
+than expected from a random MGnify90 subset of the same size, against about one point for the
+control. Comparable gains in other genome-derived catalogues motivate a test of reference
+composition, assembly basis and redundancy using matched sequence sets.
+
+The annotated toolkit reads as expected and comparatively modest.
+% P3 LIFE ON AIR: moved to the separate life-on-air paper (repository folder lifeonair/), 10 Oct 2026.
+% A third of species carry
+% high-affinity trace-gas machinery, fewer than the 58\% of Antarctic soil genomes reported by
+% \citet{hutchinson2025antarctic}, and carbon-monoxide-weighted where cold deserts are
+% hydrogen-weighted.
+The biosynthetic census is a target list rather than a mineable set, and the detected $\beta$-lactam and arsenic resistance determinants can be considered alongside
+reports of environmental resistance in ancient and remote samples \citep{dcosta2011ancient,vangoethem2018antarctic}. The companion amplicon survey
+reports close agreement between predicted and shotgun functional profiles; we reproduce it
+($\rho = 0.839$ on shared orthologues) and measure its ceiling, 55.6\% of protein-coding genes with
+no orthologue to predict.
+
+Every value is genomic capacity and DNA-based abundance, not activity. Incomplete genomes
+reduce sensitivity to gene presence, with consequences that depend on how genome quality varies
+among the compared communities; half the representatives
+are below 90\% complete. The environmental analysis used recorded elemental values without pH adjustment. The frame-shifted null
+calibrates whether the annotated frame is the selected one, not neutral evolution in general. What
+any dark family does is not measured here.
+
+The two archaeal classes are culture and fold targets, and none of the 25 soil species already in
+hand as strains is archaeal. Strain-level persistence across five expeditions is the next study on
+these reads.
+
+% ============================================================================
+\section*{Methods}
+
+\subsection*{Sampling, sequencing and environmental data}
+Soil was sampled on five expeditions along a west to east transect through the Saudi Rub' al-Khali
+from the western escarpment ($19.15^\circ$N, $45.17^\circ$E) to the Omani border ($20.71^\circ$N,
+$54.73^\circ$E), a cumulative path of 1{,}043~km with 60 numbered sites at predetermined coordinates
+and ten named locations. The expeditions ran on 17--20 March 2023, 14 July 2023 (restricted by heat
+to eight sites), 17--21 February 2024, 19--21 August 2024 and 12--15 October 2025. At each site and
+visit three soil positions were sampled in three co-located replicates: surface soil at 0~cm,
+subsurface soil at 5--10~cm, and soil from the root zone at 5--10~cm, termed root-adjacent because
+soil was not consistently attached to roots. Soil was held at $-20^\circ$C in the field and at
+$-80^\circ$C in the laboratory. Sampling design and field handling are shared with the companion
+16S rRNA survey and field-data descriptor \citep{tawfiq2026companion,rubalkhali_datapaper}. The 551 soil samples with complete metadata (117 surface, 166 subsurface, 268 root-adjacent)
+are the cohort used throughout; they cover 59 of the 60 transect sites and two named locations, the
+61 sampled locations used in occupancy statistics. Narrower cohorts are defined where used.
+
+DNA was extracted from 0.9--1.2~g of soil with the QIAGEN PowerLyzer PowerSoil kit (12855-50) or the
+DNeasy PowerSoil Pro kit (47014), homogenised on a PowerLyzer 24, eluted in 50~$\mu$L and quantified
+with the Qubit high-sensitivity double-stranded DNA assay. DNA was fragmented on a Covaris instrument
+to 350~bp, purified with AMPure XP beads at 1.6:1, prepared with the QIAseq FX and NEBNext Ultra II
+kits and sequenced at KAUST in 150-nt paired-end mode on Illumina NovaSeq 6000 and NovaSeq X instruments.
+The submission comprises 554 runs for 551 samples: 221 NovaSeq 6000 runs and 333 NovaSeq X runs
+across four sequencing batches. The sample-to-run manifest records instrument, library kit and
+batch; three samples have two submitted runs.\todo{verify the exact duplicate-run merge commands
+and include batch sensitivity in environmental analyses} Reads were
+processed with fastp v1.0.1 \citep{chen2018fastp} with base correction in overlapping pairs, a
+qualified-base threshold of Q20, at most 40\% unqualified bases per read, a minimum length of 50~nt
+and a low-complexity filter at 20\%; surviving pairs and orphaned reads were both retained. The
+median sample retained 21.58~Gbp (156.6 million reads; IQR 16.53--25.08~Gbp).
+
+Soil chemistry and climate covariates are those of the companion survey restricted to the samples
+profiled here: X-ray fluorescence total elemental contents of archived soil (248 profiled samples
+with chemistry; 251 in the family-level cohort) and reanalysis climate series (453 and 456 samples).
+The retained laboratory XRF table is distinct from the fifth-expedition handheld field measurements.
+Units, instrument metadata and detection-limit coding require confirmation. Climate inputs were
+retrieved from the Open-Meteo archive as daily temperature and precipitation series over twelve-month
+windows centred on each visit; retained tables record the start and end dates. The provider's model
+selection and original API responses were not archived. The de Martonne index divides annualised
+precipitation by mean temperature plus ten. The environmental analysis did not include pH.
+The complete analysis table rebuilds byte-for-byte from the preserved metadata, laboratory and
+climate summary tables; regenerating the original climate retrieval is a separate provenance gap.
+
+\subsection*{Assembly, binning, dereplication and taxonomy}
+Each sample was assembled with MEGAHIT v1.2.9 \citep{li2015megahit} (\texttt{meta-large} preset,
+contigs $\geq 500$~nt, $k$-mers seen at least twice, pruning level 1, low-local-coverage ratio 0.3),
+supplying pairs and orphaned reads; 549 of the 551 samples produced an assembly (\texttt{51Sr1}
+produced no contigs and \texttt{F5Dr1} an empty file). Assembly statistics used QUAST v5.2.0
+\citep{gurevich2013quast}. Every assembly was binned twice with SemiBin2 v2.2.1
+\citep{pan2023semibin2}: with the pretrained global model (\texttt{single\_easy\_bin --environment
+global --sequencing-type short\_read}) on minimap2 \citep{li2018minimap2} coverage of the paired
+reads, and with a self-supervised per-sample model (\texttt{single\_easy\_bin --self-supervised -m
+1000}) on BWA-MEM \citep{li2013bwamem} coverage of pairs and orphans. They produced 16{,}333 and
+21{,}616 bins of at least medium quality, 37{,}949 in the union of the two unrefined binnings. The
+two bin sets were reconciled per sample with DAS\_Tool v1.1.7 \citep{sieber2018dastool} at its
+defaults (score threshold 0.5, DIAMOND search); of 542 samples binned by both runs, 539 yielded
+refined bins, 14{,}426 in total. Quality was estimated with CheckM2 v1.1.0 \citep{chklovski2023checkm2}
+and tiered by completeness and contamination alone: near-complete at completeness $\geq 90\%$ and
+contamination $\leq 5\%$ (4{,}225), medium at $\geq 50\%$ and $\leq 10\%$ inclusive (8{,}209; two
+bins sit at exactly 10.0\%), the rest below these thresholds (1{,}992). These operational tiers use CheckM2 alone. Subsequent barrnap v0.9 and tRNAscan-SE v2.0.12 \citep{chan2021trnascan} assessment of representatives found all three rRNAs in 157 genomes and at least 18 tRNA amino-acid types in 3{,}629. Full MIMAG classification gave 126 high-quality and 5{,}312 medium-quality representatives \citep{bowers2017mimag}. No chimerism screen was
+run on the 14{,}426 bins; GUNC v1.1.1 \citep{orakov2021gunc} against ProGenomes 3 was run on the ten
+order-gap candidates only.
+
+The 12{,}434 bins of at least medium quality were dereplicated with dRep v3.6.2 \citep{olm2017drep}
+(fastANI \citep{jain2018fastani}, primary and secondary ANI 0.90 and 0.95, completeness $\geq 50\%$,
+contamination $\leq 10\%$, other parameters default; one bin was dropped internally), giving 5{,}438
+species representatives (2{,}259 near-complete, 3{,}179 additional genomes meeting the medium-completeness thresholds). Representatives were classified with
+GTDB-Tk v2.7.2 \citep{chaumeil2022gtdbtk} (\texttt{classify\_wf}, ANI pre-screen on) against GTDB
+release 232 \citep{parks2022gtdb}; 1{,}898 classifications changed relative to an earlier run
+against release 226, and every reported taxon is from release 232. The first-empty-rank census
+assigns each representative to the first of the seven ranks from domain to species carrying an empty
+label; classes are mutually exclusive. The ten order-gap candidates with adequate marker coverage
+were placed on de novo trees (GTDB-Tk \texttt{de\_novo\_wf}) and assessed by relative evolutionary
+divergence against release-232 rank intervals; the eleventh candidate (46\% of marker positions
+aligned) was excluded from adjudication.
+
+\subsection*{Protein catalogue and the sequence-dark call}
+Genes were called on assemblies rather than on bins, so that the catalogue covers unbinned sequence;
+the 552 assembly files present at that step are a superset of the 549 canonical assemblies, a
+catalogue-level basis that enters no per-sample cohort. Prediction used Pyrodigal v3.7.1 \citep{larralde2022pyrodigal,hyatt2010prodigal}
+(\texttt{-p meta --no-stop-codon}, partial genes retained): 753{,}305{,}533 proteins, clustered with
+MMseqs2 v18.8cc5c \citep{steinegger2017mmseqs2,steinegger2018linclust} (\texttt{linclust
+--min-seq-id 0.9 -c 0.8 --cov-mode 0}) into 449{,}265{,}306 representatives, the unit counted in
+every dark rate. Every representative was searched against UniRef50 release 2026\_01
+\citep{suzek2015uniref} with \texttt{mmseqs search -s 7.5 -e 1e-3 --max-seqs 10}, a pure E-value
+criterion with no identity or coverage filter; a cluster is sequence-dark when no searched member
+returned a hit. A cluster is genome-resolved when any member lies on a contig assigned to one of the
+37{,}949 unrefined bins of at least medium quality, tested over every member; this membership rule,
+not read mapping, defines the 43{,}423{,}322 genome-resolved representatives and the 4{,}292{,}446
+dark ones among them. Functional annotation of the 5{,}438 representatives used Bakta v1.12.0
+\citep{schwengers2021bakta} for gene calling and eggNOG-mapper v2.1.13 \citep{cantalapiedra2021eggnog}
+with DIAMOND v2.0.15 \citep{buchfink2021diamond} against the v2.1.12 reference data for KEGG
+orthologues. Representatives that refinement emitted as strict contig subsets of a parent bin were
+annotated by restricting the parent's gene calls to their own contigs; the resulting table
+(\texttt{rep\_ko\_v2}) has no empty rows.
+
+\subsection*{Read recruitment and detection}
+Two recruitment runs underlie the paper. The representative-level run mapped each sample's paired
+reads to the 5{,}438 representatives with CoverM v0.7.0 \citep{aroney2025coverm} in genome mode
+(\texttt{-p minimap2-sr -m relative\_abundance}, all other parameters default). The default minimum
+covered fraction of 10\% defines detection: a representative is detected when its relative abundance
+exceeds zero, that is, when at least a tenth of its genome is covered. This is an inherited default,
+not a chosen threshold. The census and stress analyses use the frozen 548-sample profile cohort available when those analyses were run; subsequent profiles are outside that cohort. Community values use two denominators: the share of all reads (organisms outside
+the catalogue counted as non-carriers, a lower bound) and the share of reads mapping to any
+representative (median unmapped fraction near 51\%). The member-aware run mapped the reads of all 551
+samples to the 536{,}437 dark-family member genes in contig mode (\texttt{-m tpm covered\_fraction}).
+A family is present when any member gene reaches a covered fraction of 0.5 and its abundance is the
+summed member TPM. That rule is easier to satisfy for a short gene and reverses the length to
+occupancy relation when replaced by any-read presence, so occupancy is compared within length strata.
+The two shotgun control libraries sequenced with the fourth expedition, a no-template extraction
+control (335{,}190 read pairs after filtering) and a positive control of \emph{Hafnia paralvei}
+(119{,}683{,}914 pairs; GTDB-Tk R232 on its assembly, ANI 98.99\%), were profiled with the identical
+CoverM invocation and index. Representatives detected in the no-template control are annotated as
+reagent contaminants in the catalogue table and excluded from the pathogen census, which is
+therefore not reported; the no-template assembly (11 contigs, 11~kb) was identified by UniRef50
+search of its predicted proteins.
+
+\subsection*{Dark families, matched control and selection}
+The 4{,}292{,}446 genome-resolved dark representatives were clustered with MMseqs2
+\texttt{easy-cluster} (\texttt{--min-seq-id 0.5 -c 0.8 --cov-mode 0}, default sensitivity 4) and each
+cluster mapped through the 90\%-identity membership table to the samples and sites in which its
+instances were assembled. A cluster was admitted as a dark family when it held at least three
+distinct 90\%-identity representatives assembled in at least three samples and two sites (106{,}042
+families, 536{,}437 member genes; 2{,}784 three-member clusters failing the spread gate were dropped
+as within-genome paralog sets). Member nucleotide sequences were excised from the assemblies using the
+prediction coordinates. The control pool comprised every non-dark representative on a contig of the
+same 37{,}949 bins, with darkness excluded against the assembly-wide dark set. Because dark
+representatives are short, the pool was sampled per 10-residue length bin to reproduce the dark
+length distribution (seed 20260813; the sample ran 12.5\% short of target, in the 20--39 residue
+bins), clustered identically, and control families were drawn to match dark families by size bin
+(3--9 exactly, 10--19, 20 or more), one per dark family. Two asymmetries are disclosed: control
+families were admitted on member count alone, without the sample and site gate, and after admission
+the dark query set is longer than the control (median 105 against 75 residues). These differences, together with the divergent dS distributions, affect comparability; their
+direction and size depend on the endpoint. Family admission uses the unrefined bins; phylum attribution traces each member
+through its contig to the refined bin, the dereplicated representative and its release-232
+classification, which attributes 78{,}727 families.
+
+For each family with at least three usable coding sequences ($\geq 90$~nt, translatable under table
+11 without internal stops, protein $\geq 25$ residues), proteins were aligned with MAFFT v7.526
+(\texttt{--auto}) \citep{katoh2013mafft} and back-translated to codons. Pairwise dN and dS were computed
+by the Nei--Gojobori method \citep{nei1986dnds} (Biopython v1.87 \citep{cock2009biopython}) over at most
+80 deterministically thinned pairs per family, retaining pairs with at least 30 codons after removal
+of gapped or ambiguous positions, excluding identical pairs and requiring $0 < \mathrm{dS} \leq 2$.
+The family statistic is the median pairwise dN/dS (97{,}200 dark and 95{,}647 control families).
+For the joint sensitivity comparison, we extracted median coding-sequence length and GC
+fraction from all indexed family FASTA sequences of at least 90 nt, before the usable-sequence filters for dN/dS. We formed strata using mean dS boundaries
+0, 0.1, 0.25, 0.5, 1 and 2; coding-sequence length boundaries 0, 60, 100, 200 and 400 amino-acid
+equivalents; GC bins of width 0.05; and aligned sequence-count boundaries 0, 5, 10 and 20.
+The final length and count bins were open-ended. Within each stratum represented in both arms,
+we sampled the smaller arm's count from each arm without replacement (seed 20261013).
+We repeated selection for seeds 20261013--20261032 and reported covariate balance and median
+differences. Seed ranges measure selection sensitivity, not sampling uncertainty. Divergence-stratum median differences used 1{,}000 independent family bootstrap replicates per arm (seed 20261014), with 2.5th and 97.5th percentiles. These intervals condition on the observed strata and assume family independence. Strata were left-closed; the final dS bin included 2. Weighted mean contrasts averaged within-stratum mean differences using dark-arm counts, control-arm counts or the smaller arm count. This comparison conditions on the retained common-support families; shared ancestry
+and the original family-construction process remain sources of dependence.
+
+The null arm reads the same member genes in the +1 frame: the first nucleotide is dropped, the
+sequence trimmed to a codon multiple, every codon translating to a stop under table 11 masked to NNN
+(removed by the existing pairwise gap and ambiguity stripping), and all other filters left identical.
+It was run on a seeded subset of 10{,}000 families with at least three indexed coding
+sequences (seed 20260920), together with the same input subset in the annotated frame. Stop
+codons were masked in both calibration arms. An input audit found terminal stops in 43{,}953 of
+50{,}898 sequences and internal stops in 21 sequences from 16 families. The null, annotated-frame and paired output sets
+contain 9{,}148, 9{,}182 and 9{,}029 families, respectively. A shifted frame inherits the composition and
+substitution pattern of the real gene, so this null tests whether the annotated frame is the selected
+one, not neutral evolution in general. Expedition persistence counts
+expeditions with presence under the member-aware rule; re-assembly persistence counts expeditions in
+which an instance was independently assembled. Threshold robustness reclustered the same
+representatives at 30\% identity.
+
+AntiFam v8.0 (278 profiles, release 12 October 2023) was searched with HMMER
+\texttt{hmmsearch --cut\_ga} against all genome-resolved dark representatives and the control
+protein pool. Matches flagged 3{,}385 dark proteins, including 141 members of admitted families.
+A family was flagged when any admitted member matched. For the overlap audit, original Pyrodigal
+FASTA-header coordinates were verified for all 536{,}437 admitted members, then intersected with
+opposite-strand calls from the same sample and contig. A candidate required overlap covering at
+least 50\% of the dark call. The opposing call's darkness was resolved through the complete
+90\%-identity cluster membership and assembly-wide dark-ID tables. This audit is conditional on
+the gene caller retaining both ORFs. Sensitivity exclusions used the union of family flags.
+
+\subsection*{Cultured-genome comparison}
+Long-read genomes recovered from 722 cultured assemblies from saline pans, oases and campground soils of the
+same basin (companion pangenome catalogue) were compared with the 5{,}438 representatives by skani
+v0.3.1 \citep{shaw2023skani} (\texttt{sketch}, \texttt{search -s 75}); a shared species required ANI $\geq 95\%$ and aligned
+fraction $\geq 30\%$. The Bakta proteomes of all 722 cultured genomes (3{,}024{,}784 proteins) were
+searched against UniRef50 release 2026\_01 with the identical MMseqs2 rule, so cultured darkness is per protein under
+the same call as catalogue darkness, which is per cluster representative. The 4{,}292{,}446 dark
+representatives, together with the 106{,}042 dark and 106{,}042 matched control family
+representatives of the reference-absence search, were searched against the cultured proteomes with
+DIAMOND v2.0.15 (\texttt{blastp --very-sensitive -e 1e-5 -k 500}), a homolog requiring reciprocal
+query and subject coverage $\geq 50\%$. Because several cultured strains map to one representative,
+the rate comparison was paired by species: one cultured aggregate against one representative, each
+cultured genome assigned to its best-ANI representative, giving 23 pairs from the 25 shared species,
+before contaminant exclusion. We excluded representative \texttt{V42PRr2\_\_single\_SemiBin\_33},
+identified as \emph{E. coli} in the no-template control, leaving 22 groups for the paired rate
+comparison by Wilcoxon signed-rank. Protein sharing used the best-ANI cultured genome of each
+representative and reciprocal best DIAMOND hits (\texttt{--very-sensitive -e 1e-5 -k 5}),
+requiring at least 50\% identity and 50\% coverage of both proteins. Sharing percentages pool
+protein counts across the 22 pairs. The complete-call sensitivity subset contains 166 dark MAG
+proteins of at least 100 residues. Gene callers differ (Bakta on cultured genomes, Pyrodigal
+on assemblies).
+
+For the nucleotide sensitivity search, we extracted each MAG gene's recorded interval from its
+dereplicated representative assembly and retained intervals of at least 90 nucleotides. Each was
+aligned to the paired culture-derived assembly using minimap2 v2.17-r943-dirty
+(\texttt{-c -x sr -k 11 -w 5 -n 2 -m 20 --secondary=yes -N 20}). Support required a single
+alignment spanning at least 90\% of the query with at least 95\% nucleotide identity, calculated
+as matching bases divided by alignment block length. Counts were stratified by darkness and
+reciprocal protein-hit status. Input assemblies, gene-coordinate tables and protein-search outputs
+are identified in the analysis checksum manifest. Recovery of the protein-shared subset provides
+a positive comparison for this search's sensitivity. Per-pair recovery and a post hoc restriction to pairs with at least
+90\% recovery were reported. All qualifying alignments were checked at identity thresholds
+0.85, 0.90 and 0.95. For DNA-supported protein-unshared calls, culture Bakta CDS coordinates were
+intersected with each alignment's target span. A CDS had to cover at least half that span;
+orientation and phase at the first aligned position defined a diagnostic category, with
+same-orientation phase compatibility taking precedence if several alignments qualified. Indels
+can change phase downstream, so this is not a full coding-sequence correspondence test.
+
+\subsection*{Lineage darkness and the matched null}
+For each representative, every protein on its contigs was traced to its 90\%-identity cluster and
+scored dark or not by the cluster call above; the dark fraction is the share of dark protein
+instances, computed on the refined winner contigs of all 5{,}438 representatives (native key, no
+renaming). Ordinary least squares (statsmodels v0.14.2) modelled the dark fraction on assembly quality
+(completeness, contamination, $\log_{10}$~N50, $\log_{10}$~length), then adding phylum and genus
+(genera with fewer than five representatives pooled; unnamed genera one level); unique and shared
+variance are differences of $R^2$ between nested models. Placeholder-name depth was coded as the first rank with an empty or digit-bearing label, separately from the taxonomy census of empty ranks and added to the quality model before phylum. No
+phylogenetic mixed model was fitted, so the representatives enter as independent draws. Genome size
+was completeness-corrected length. The archaeal contrast is a 1:1 nearest-neighbour match without
+replacement on standardised completeness, contamination, $\log_{10}$ corrected size,
+$\log_{10}$~N50, $\log_{10}$ mean relative abundance and prevalence (samples detected), against two
+pools reported separately, other archaea and bacteria, at calipers of 0.5 to 2.0 standardised units
+(0.25 also against bacteria); residual imbalance is reported as standardised mean differences. Dark-family attribution by
+phylum uses the 78{,}727 attributable families; enrichment is the phylum's share of single-phylum
+dark families divided by its share of species, and its share of dark protein instances divided by
+its share of all protein instances. The class placement of the Thermoplasmatota representatives was
+displayed on an approximate-maximum-likelihood tree (FastTree, LG with gamma; \citealp{price2010fasttree}) of the GTDB-Tk
+release-232 archaeal marker alignment, with the 1{,}647 release-232 Thermoplasmatota species
+representatives and 30 Halobacteriota and Thermoproteota outgroups; the tree supports no branching
+claim.
+
+\subsection*{Structural analysis}
+Queries were the 1{,}466{,}943 genome-resolved dark representatives of at least 100 residues. 3Di
+strings were predicted with ProstT5 \citep{heinzinger2024prostt5} through Foldseek
+\citep{vankempen2024foldseek} (\texttt{createdb --prostt5-model}) and searched
+(\texttt{--alignment-type 2 -s 9.5 -e 1e-3 --max-seqs 50}) against the AlphaFold Database v6 on
+UniProt 2025\_03 (241{,}070{,}489 entries) \citep{varadi2024alphafolddb} and the PDB release of 1
+January 2025 (324{,}204 chains in the Foldseek database) \citep{berman2000pdb}. Queries with no hit
+in either were clustered in structure space (\texttt{cluster --single-step-clustering --cluster-mode
+2 -s 4}) and clusters of at least three members admitted as fold families (17{,}221). One model per
+family was folded with ESMFold \citep{lin2023esmfold} (\texttt{esmfold\_v1}, transformers v4.40.2,
+PyTorch v2.2.2, half-precision trunk, sequences truncated at 1{,}022 residues, four recycles), except
+that 3{,}451 families reused a member's existing ESMFold model from an earlier candidate set; those
+reused representatives come from a novelty-enriched prior cohort and their dual no-hit rate is higher
+(42.8\% against 35.3\% for models folded here), and the reported rate holds when they are excluded.
+Models were screened as coordinates (\texttt{--alignment-type 1 -e 10 -s 9.5 --max-seqs 50})
+against the same references. 3Di prediction, triage and clustering ran on a GPU build of Foldseek
+(commit \texttt{8dc75c74}); the validation screen ran on the packaged build \texttt{10-941cd33},
+with candidates and controls in one query set under one command. A model enters at length
+$\geq 100$ and mean pLDDT $\geq 0.70$; a dual no-hit is a query-normalised TM-score below 0.5 against
+both references \citep{zhang2004tmscore}, the alignment-normalised score is reported alongside, and a
+model returning no row scores zero. The 3{,}684 blinded controls are 1{,}777 complete PDB chains and
+1{,}907 deterministic crops matched to an earlier candidate set on length, composition and
+partiality, renamed before folding by the same procedure; 3{,}013 passed the gate. Retrieval failures were counted separately from retrieved alignments with scores below threshold.
+The primary comparison retains all qualified models; a secondary comparison conditions on at least
+one returned alignment. For each query, maxima under the two normalisations were computed
+independently across both references. Sensitivity searches of the retained raw-hit tables imposed
+at least 50 aligned residues, or at least 100 residues together with 50\% query coverage.
+
+
+The 4{,}880 member proteins of
+the candidate families, the 1{,}807 other confident dark representatives and the 3{,}013 gate-passing
+controls were searched in one run against Pfam-A 38.2 with HMMER v3.3.2 (\texttt{hmmsearch --cut\_ga});
+per protein we recorded the number of domains, the fraction of the sequence covered by Pfam
+envelopes and the longest uncovered stretch.
+
+\subsection*{Reference ceilings and absence from catalogues}
+The orthologue ceiling is one minus the pooled ratio of Bakta protein-coding genes carrying a KEGG
+orthologue to all Bakta protein-coding genes over the 5{,}438 representatives (19{,}186{,}853 genes);
+the CheckM2 gene-call denominator gives 58.3\%. Predicted profiles are PICRUSt2 v2.4.1
+\citep{douglas2020picrust2} KEGG-orthologue predictions from the companion V3--V4 amplicon survey
+(10{,}543 families, 1{,}270 profiles, byte-identical to that study's input) with weighted
+nearest-sequenced-taxon indices. Genome-encoded profiles join the orthologue table to the CoverM
+profiles, presence being relative abundance above zero; 448 samples carry both profiles (four
+amplicon duplicates summed and renormalised; no amplicon-side depth or NSTI filter was applied, and
+29 profiles return fewer than the full family set). Per sample we report presence-recall of
+genome-encoded orthologues, Spearman correlation over orthologues both methods report, and the count
+of genome-encoded orthologues outside the predictor's emitted set; the last is a reference-vintage
+gap, not prediction error.
+
+Reference absence searched the 106{,}042 dark and 106{,}042 control family representatives in one
+file with DIAMOND v2.0.15 (\texttt{blastp --sensitive --evalue 1e-3 -k 1}) against MGnify90
+(717{,}738{,}164 cluster representatives \citep{richardson2023mgnify}), GEM (122{,}978{,}191
+proteins, 52{,}515 genomes \citep{nayfach2021gem}), the SPIRE species representatives (269{,}496{,}580
+proteins from 107{,}008 genomes, Prodigal v2.6.3 \texttt{-p meta} \citep{schmidt2024spire}) and the
+gene calls of five desert metagenome studies assembled in SPIRE (147{,}531{,}178 proteins: Atacama
+PRJNA484015, 6{,}193{,}359; desert trace-gas autotrophy PRJNA657906, 7{,}200{,}701; JGI arid soils,
+30{,}569{,}562; JGI Antarctic cold desert, 49{,}206{,}550; JGI Mojave, 54{,}361{,}006). A
+representative with no reported hit is absent under this rule. Searching the desert catalogues
+separately rather than concatenated returns 2{,}544 further families (2.40\%), so cross-catalogue
+ordering is descriptive and the content-versus-depth comparison rests on a rarefaction. Both query
+sets were searched once against MGnify90 at \texttt{--evalue 1 -k 500 --max-hsps 1}. Under random
+retention of subjects with probability $p$ a hit remains reportable at the $10^{-3}$ rule only if
+$E \leq 10^{-3}/p$, so the probability of no reportable hit is $(1-p)^{h(p)}$ over the $h(p)$ subjects
+meeting that bound, and expected absence is its mean over families at $p$ matched to each catalogue's
+size. The \texttt{-k} cap inflates the expectation by at most $(1-p)^{500}$, about 1.3\% at the
+smallest catalogue. The depth check searched the absent families against the complete MGnify90
+2026\_07 set (1{,}661{,}142{,}385 sequences) with MMseqs2 \texttt{search -s 7.5 -e 1e-3 --max-seqs 10};
+it uses a different aligner and release and is never unioned with the DIAMOND sets. Occupancy of the
+absent families uses the member-aware presence matrix over the 61 sampled locations, within length strata.
+
+\subsection*{Environmental structure and stress censuses}
+Family abundance (TPM) over the 547 environmentally annotated samples was Hellinger-transformed and
+compared by Bray--Curtis dissimilarity, excluding families present in fewer than five samples
+(105{,}977 retained). Each block was tested by distance-based PERMANOVA \citep{mcardle2001dbrda}
+with 999 permutations of samples: soil position (dummy-coded), space (standardised latitude and
+longitude), climate (temperature, precipitation, aridity index; $n = 456$) and geochemistry (eleven
+standardised axes: S, Cl, Na, Ca, K, Fe, Mn, V, Si, Ti and a summed salinity proxy; $n = 251$), the
+latter two also conditioned on space and on space and position. Every block was tested twice, with
+permutations free over samples and restricted within site (59 sites); each environmental block kept
+$p \leq 0.002$ under the restricted test, geography is untestable within site by construction, and
+the vanadium control stayed null (0.88), so nesting does not carry the result. Sequencing depth ($\log_{10}$ filtered bases per sample, from the read-filtering
+reports) explains 1.1\% of composition and leaves the geochemistry share beyond space unchanged
+(0.089). Variance partitioning \citep{borcard1992varpart} over position, space and
+geochemistry was run on the 251-sample chemistry cohort (499 permutations); a Mantel test
+\citep{mantel1967} compared Bray--Curtis with great-circle distance. A single vanadium axis run
+through the identical PERMANOVA is the negative control. At family level, abundance was correlated
+by Spearman rank with each of thirteen elements, the aridity index and a plant-root contrast over
+families present in at least 25 samples of the axis subset, Benjamini--Hochberg corrected within
+axis; the five most associated axes were re-tested as partial Spearman controlling ranked latitude
+and longitude. The salinity proxy (unweighted Na + Cl + S) retained 41\% of its associations under
+conditioning and is not used as a family-level axis.
+
+Stress censuses screened a 28-orthologue DNA-damage panel in eight groups and a 13-orthologue
+compatible-solute synthesis panel (Supplementary Table~S3) against the
+orthologue table, prevalences being fractions of the 5{,}438 representatives. Community values per
+sample used occurrence, whole-community and mapped-community metrics over the 548-sample cohort;
+the unmapped fraction does not differ between surface and subsurface (54.3\% against 53.7\%,
+Mann--Whitney $p = 0.50$), and root-adjacent comparisons use the mapped denominator. Surface against
+subsurface was tested on site medians by Wilcoxon signed-rank over the 44 sites with both positions
+profiled, Holm-corrected within metric; effects were re-tested within each of the eight most
+abundant phyla (a phylum tested at $\geq 15$ paired sites with $\geq 15$ detected species per
+sample) and interpreted only if the direction replicated, which the mismatch-repair contrast failed.
+Within-species differentiation compared surface and subsurface member genomes of the 327 species
+recovered from both positions (324 with annotations) by Wilcoxon signed-rank. Gradient tests were
+partial Spearman on ranked latitude and longitude against five salt axes ($n = 248$) and three
+climate axes ($n = 453$), Benjamini--Hochberg corrected within block; the Halobacteriota association
+was re-tested on centred log-ratio fractions and on detection.
+
+Differential encoded function by soil position used the carriage of each feature, the share of the
+mapped community whose representatives encode it, over the 549 profiled samples: 282 KEGG modules in
+DRAM's step form (present when at least two thirds of steps are encoded; 117 modules absent everywhere
+or universal were excluded) and the 4{,}127 orthologues at 5 to 95\% prevalence. Replicates were
+collapsed to the median per site, position and visit; root-adjacent minus bulk (the median of surface
+and subsurface at the same visit) was taken at 52 sites and surface minus subsurface at 37, each
+difference then medianed over visits per site. A feature passed at Benjamini--Hochberg $q < 0.05$
+within basis and contrast, an absolute effect of at least 5 percentage points, and the same sign when
+carriage was recomputed within Actinomycetota alone and within Pseudomonadota alone (samples where
+the phylum held under 1\% of mapped abundance blanked); within-phylum magnitudes are reported beside
+each effect. One-step modules are single orthologues or any-of sets and are named by enzyme. Size
+normalisation (per Mb of completeness-corrected genome) and restriction to representatives at least
+90\% complete were run as sensitivity analyses. Chemistry and expedition contrasts were computed but
+are not reported, the former because X-ray fluorescence coverage differs by expedition and the latter
+because only eight site pairs qualify.
+
+% P3 LIFE ON AIR: heading was "Trace-gas, biosynthetic and resistance censuses".
+\subsection*{Biosynthetic and resistance censuses}
+% P3 LIFE ON AIR: moved to the separate life-on-air paper (repository folder lifeonair/), 10 Oct 2026.
+% Hydrogenase large subunits (K06281) and carbon-monoxide dehydrogenase large subunits (K03520) were
+% retrieved from the Bakta proteomes and classified by DIAMOND best hit against HydDB
+% \citep{sondergaard2016hyddb}, high-affinity uptake being groups 1h and 1l
+% \citep{greening2016genomic}, and against three form-I CoxL references, form I being called at
+% $>55\%$ identity with $\geq 90\%$ coverage or on the AYRGAGR motif \citep{cordero2019atmospheric}. No
+% identity or coverage floor was applied to the HydDB call, and 2{,}815 of 4{,}727 CoxL proteins remain
+% unresolved, so the form-I count is a floor. Trees were built for display only (MMseqs2, MAFFT,
+% FastTree). Five representatives emitted by refinement were removed from the guild after typing.
+Biosynthetic gene clusters were detected with antiSMASH v8.0.4 \citep{blin2025antismash8} in minimal
+mode on the 5{,}438 genomes, counting per-species presence of a product type; 85.3\% of 44{,}002
+regions abut a contig edge, so completeness and novelty are not estimated. Resistance and stress
+determinants used AMRFinderPlus v4.2.7 (database 2026-05-15.1, plus set, no organism option, so no
+point mutations) \citep{feldgarden2021amrfinderplus}. Because the no-template control assembled into a
+laboratory plasmid carrying aph(3')-Ia, a TEM $\beta$-lactamase and a chloramphenicol
+acetyltransferase, resistance hits were checked against contigs matching that plasmid: two
+aph(3')-Ia hits sit on such contigs, and aph(3')-Ia occurs in seven species in all, five of them on
+an identical 7{,}838-bp contig at 100\% identity. Removing every aph(3')-Ia hit lowers aminoglycoside
+prevalence from 11.9\% to 11.8\%; no other reported class moves. Ectoine synthesis calls from the orthologue
+panel and from antiSMASH were compared as two independent methods. None of these censuses has a
+matched genome set or size normalisation and they are reported as description; the pathogen census
+of the representatives is not reported because two of its hits are reagent contaminants.
+
+\subsection*{Statistics}
+Tests are two-sided and rank-based: Wilcoxon signed-rank for paired designs, Mann--Whitney $U$ for
+two groups, Kruskal--Wallis for more. Associations are Spearman or partial Spearman on ranked
+coordinates. Multiple-testing control is applied within named blocks (Holm across traits within a
+metric \citep{holm1979multiple}; Benjamini--Hochberg within an axis or block \citep{benjamini1995fdr})
+and never across the paper. Confidence intervals for proportions are Wilson intervals. Stochastic
+steps are seeded. Estimators used NumPy v1.26 \citep{harris2020numpy} and SciPy v1.11
+\citep{virtanen2020scipy}. The independent unit is the species representative for genome-level
+statistics, the family for family-level statistics, the site for paired compartment contrasts, and
+the sample for PERMANOVA, where non-independence within site is acknowledged above.
+
+% ============================================================================
+\section*{Supplementary Note S1: exploratory functional and environmental profiles}
+These analyses provide descriptive context for the catalogue. Laboratory XRF units, detection
+limits and the meaning of recorded zeros remain undocumented. Family-level sample correlations
+reuse sites and visits; relative-abundance effects, sequencing batch and extraction kit remain
+potential confounders. An exploratory sensitivity analysis aggregated the 251 chemistry samples to 59 sites and retained the 94{,}568 families present in at least 25 measured samples and five sites. Within-site mean TPM and median chemistry gave 59{,}120 sulfur, 49{,}387 calcium, 48{,}567 chloride and 12{,}054 iron associations at 5\% FDR. This changes the observational unit but leaves spatial, compositional, batch and measurement concerns unresolved. The tests below do not establish chemical exclusion or physiological responses.
+
+\subsection*{Encoded function shifts with soil position, mostly by lineage turnover}
+
+The annotated fraction of the catalogue carries the toolkit expected of a hyperarid soil (Extended
+Data Table 1).
+% P3 LIFE ON AIR: moved to the separate life-on-air paper (repository folder lifeonair/), 10 Oct 2026.
+% A third of species (1{,}860 of 5{,}438) encode high-affinity trace-gas machinery, a
+% group 1h or 1l [NiFe]-hydrogenase or a form-I carbon monoxide dehydrogenase, and the carriers make up
+% a median 18.4\% of each sample's reads; both counts are floors, because the hydrogenase call has no
+% identity floor and 2{,}815 of 4{,}727 CoxL proteins are unresolved between forms.
+DNA-damage repair
+is near-universal (base and nucleotide excision repair in 99.6\% and 99.5\% of species) and
+compatible-solute synthesis is encoded by 79.5\%. Biosynthetic gene clusters occur in 97.5\% of
+species but 85.3\% of the 44{,}002 regions abut a contig edge, and acquired resistance determinants
+occur in 37.4\%, led by $\beta$-lactam (24.6\%) and arsenic (17.3\%) determinants, the latter rising
+with calcium and falling with precipitation after conditioning on geography.
+
+Where encoded function shifts, it shifts with soil position. For 282 KEGG modules and 4{,}127
+orthologues we compared the share of the mapped community encoding each feature between paired
+samples of one site visit, root-adjacent soil against bulk soil at 52 sites and surface against
+subsurface at 37, and kept a feature only if it cleared a 5-percentage-point floor at 5\%
+false-discovery rate and kept its sign when recomputed within Actinomycetota alone and within
+Pseudomonadota alone. Fourteen modules pass beside roots. The root-adjacent community encodes more
+cytochrome bd oxidase (+13.0 points; +17.0 within Actinomycetota, +1.9 within Pseudomonadota),
+serine-to-cysteine synthesis (+11.0), the Entner-Doudoroff pathway (+9.4), heme synthesis (+6.9 and
++7.2 by the two routes) and glutathione synthesis (+6.6), and less F420 synthesis ($-10.1$), complex I
+($-7.8$) and its NDH-1-type relative ($-10.3$).
+% P3 LIFE ON AIR: moved to the separate life-on-air paper (repository folder lifeonair/), 10 Oct 2026.
+% ; the hydrogenase large subunit is the single largest
+% orthologue loss beside roots ($-15.6$ points; $-19.8$ within Actinomycetota).
+Nine modules pass at
+the surface, where putrescine synthesis (+8.7), formaldehyde assimilation (+8.7) and acetate
+kinase-phosphotransacetylase (+7.0) rise and F420 synthesis again falls ($-10.1$); photolyase
+(+8.8) and glycine betaine transport (+10.4) rise at the surface. The within-phylum effect is a
+median 0.16 of the whole-community effect, so the shifts ride mostly on lineage turnover; the mapped
+fraction is 5.6 points higher beside roots, so root-adjacent values describe the mapped half of the
+community; and no sign reverses when the analysis is restricted to representatives at least 90\%
+complete. These patterns describe differences in encoded capacity and community composition.
+
+\subsection*{Exploratory environmental associations}
+
+The dark repertoire is carried by the same genomes as the annotated one, so it should answer the same
+gradients; the test here is whether the families behave as gene content of these soils rather than
+as noise spread at random. Environmental covariates were associated with repertoire composition under the fitted models. Across the 547
+samples with environmental annotation, composition of the 106{,}042-family repertoire (105{,}977
+families present in at least five samples) is structured by soil position (PERMANOVA $R^2 = 0.044$)
+and by geographic position (0.079), and communities decay with distance (Mantel $r = 0.341$). In the
+251 samples with X-ray fluorescence chemistry, eleven geochemical axes explain 13.2\% of
+compositional variance, of which 8.9\% survives conditioning on latitude and longitude and 9.2\%
+conditioning on position as well; climate (temperature, precipitation, aridity index, $n = 456$)
+explains 3.0\% beyond space . Partitioning the three blocks on the
+chemistry cohort gives geochemistry 0.106 of unique variance against 0.055 for space and 0.057 for
+position. Every environmental block holds when permutations are restricted within site
+($p \leq 0.002$; geography itself cannot be tested that way) and when sequencing depth is conditioned
+out, and the same design run on a single vanadium axis returns $R^2 = 0.003$, $p = 0.78$, under unrestricted permutations (within-site restricted $p = 0.884$). Each $R^2$ is a share of
+compositional variance across families, not of any one family's abundance.
+
+At family resolution, 94{,}568 families were testable against the chemistry axes and 100{,}293
+against aridity. Sulfur associates with 54{,}227 families at 5\% false-discovery rate, calcium
+with 47{,}174, chloride with 46{,}972, iron with 24{,}110 and the aridity index with 23{,}031; in
+each case 90 to 96\% of associations are negative, a pattern in relative abundances whose interpretation depends on compositionality and non-detect handling . Vanadium, molybdenum, nickel, cobalt,
+manganese and zinc associate with no family. Conditioning on geography retains 82 to 86\% of the
+sulfur, chloride and aridity associations and 71\% of the calcium ones; a summed salinity proxy
+retains 41\% and is not used as an axis. Aridity is therefore not null for what the dark repertoire
+contains, although the index never leaves the hyperarid class along the transect.
+
+The dark families also sort by soil position, and change owners as they do. Of the 102{,}005 dark
+families testable against the root-adjacent contrast, 19{,}818 are more abundant beside roots and
+40{,}495 less, and this is the least spatially confounded axis in the panel: 94.1\% of the
+associations survive conditioning on geography, against 71 to 86\% for the chemical axes. The
+root-depleted families belong to the desert core, 52.7\% Actinomycetota; the root-enriched families
+do not. Actinomycetota fall to 16.8\% of them and Thermoplasmatota to 11.2\%, while Pseudomonadota
+(19.2\% against 9.6\% of all attributable families), Myxococcota (11.3\% against 4.9\%),
+Planctomycetota (8.3\% against 2.4\%), Bacillota, Bdellovibrionota, Cyanobacteriota and
+Verrucomicrobiota are two to four times over-represented. Both sets persist more than the average
+dark family (86.8\% and 89.8\% detected in all five expeditions against 79.4\%). Beside desert plants
+the unknown proteome shifts from the phyla that own it in bulk sand to lineages known from
+rhizospheres elsewhere, and the families that shift are among the most persistent in the catalogue.
+Effects are modest (median $\rho$ of $+0.15$ and $-0.19$), no host plant is identified in the
+metadata, and root-adjacent soil was not consistently attached to roots.
+
+The annotated fraction sorts along the same axes, in two modes. Soil-position contrasts include the following:
+across 44 sites with paired surface and subsurface samples, the share of the mapped community
+carrying photolyase is 24.3\% at the surface against 12.1\% below, carotenoid synthesis 70.3\%
+against 61.0\%, and non-homologous end joining runs the other way (80.0\% against 85.7\%)
+. The photolyase shift replicates in the same direction inside each of
+the three phyla with enough paired sites to test, and a within-species test across 324 species
+present in both positions is null (all $p > 0.17$), consistent with species turnover in this comparison. Elemental associations include the following: after conditioning on geography,
+the share of Halobacteriota rises with sulfur ($\rho = 0.451$, $p = 7 \times 10^{-14}$, $n = 248$)
+and chloride ($\rho = 0.385$), robust to centred log-ratio and to detection-only coding, while the
+near-universal DNA-repair floor moves with no gradient. These exploratory associations motivate analyses that account jointly for batch, spatial dependence, compositionality and measurement limits.
+
+
+\section*{Data and code availability}
+The shotgun reads of the 551 soil samples are deposited at the European Nucleotide Archive under
+study PRJEB125153 (554 runs; public release scheduled for 1 November 2026)\todo{confirm the release
+date and add the sample-level accessions}. Successful private submission receipts map all 554 runs to ENA accessions; the public
+filereport returned zero runs on 13 October 2026. The sample-to-run accession map is retained
+with the reproducibility records. The 14{,}426 refined bins and the 5{,}438 species
+representatives, the compact evidence tables behind every figure, the environmental table and its preserved source tables, the figure code and the analysis scripts are at
+\url{https://github.com/bio-ontology-research-group/empty-quarter-mags}\todo{genome deposition
+target and archived-release DOI before submission}. Reference database releases are named where
+they are used: UniRef50 2026\_01, GTDB release 232, AlphaFold Database v6 on UniProt 2025\_03, PDB
+release 250101, MGnify90 and MGnify90 2026\_07, GEM, SPIRE, and the five desert studies listed in
+the Methods.
+
+% ============================================================================
+% Current figures generated from checksum-verified compact inputs.
+\begin{figure}[p]\centering
+\includegraphics[width=\textwidth]{figures/fig_study_current.pdf}
+\caption{\textbf{Sampling and genome quality.} \textbf{a}, Counts of the 551 soil samples
+across five expeditions. \textbf{b}, Sample counts by soil position and expedition.
+\textbf{c}, CheckM2 completeness and contamination for the 5{,}438 species representatives.
+Sampling covers 59 core sites and two auxiliary locations; expedition and position counts describe samples, while the quality
+panel describes dereplicated genomes.}
+\label{fig:design}
+\end{figure}
+
+\begin{figure}[p]\centering
+\includegraphics[width=\textwidth]{figures/fig_dark_current.pdf}
+\caption{\textbf{Coding constraint in recurrent dark families and protein sharing in culture comparisons.}
+\textbf{a}, Empirical cumulative distributions of family median dN/dS for 97{,}200 dark and
+95{,}647 annotated families. The display extends to dN/dS = 2; cumulative fractions use all families.
+\textbf{b}, Annotated- and shifted-frame calibration distributions from a 10{,}000-family input,
+with 9{,}182 and 9{,}148 evaluable outputs; the display extends to dN/dS = 3.
+\textbf{c}, Difference between dark and annotated family medians in left-closed divergence strata (final bin includes 2), with 95\% intervals from 1,000 family bootstrap replicates. Labels give dark/control counts. Shared ancestry is not modelled.
+\textbf{d}, Percentage of annotated and dark MAG protein calls with reciprocal protein hits
+in the paired culture-derived assembly, for 22 species groups after exclusion of a confirmed
+\emph{E. coli} contaminant. Each line joins the two fractions for one MAG. \textbf{e}, DNA support by protein-hit status, with counts above bars. Eligible coding intervals are at least 90 nt; support requires a base-level alignment at 95\% identity and 90\% query coverage. \textbf{f}, Recovery of protein-shared calls by genome pair; the dotted line marks a post hoc 90\% diagnostic threshold.}
+\label{fig:dark}
+\end{figure}
+
+\begin{figure}[p]\centering
+\includegraphics[width=\textwidth]{figures/fig_lineage_current.pdf}
+\caption{\textbf{Lineage-associated variation in per-genome darkness.} \textbf{a}, The twelve
+highest median dark fractions among phyla with at least 20 representatives. \textbf{b}, Dark
+fraction by the first empty or digit-bearing label: 1, phylum; 2, class; 3, order; 4, family;
+5, genus; 6, species; 7, no flagged rank. \textbf{c}, Thermoplasmatota (T) and matched other
+archaea (A) or bacteria (B), matched on completeness, contamination, corrected genome size,
+N50, abundance and prevalence. The archaeal and bacterial matching sets have separate target
+subsets (218 and 237 pairs). Boxes show the median and interquartile range; whiskers extend to 1.5 interquartile
+ranges, and points beyond the whiskers are omitted.}
+\label{fig:lineage}
+\end{figure}
+
+\begin{figure}[p]\centering
+\includegraphics[width=\textwidth]{figures/fig_structure_current.pdf}
+\caption{\textbf{Structural reference coverage depends on score normalisation and retrieval.}
+\textbf{a}, Best query- and alignment-normalised TM-scores across the PDB and AlphaFold Database
+for 2{,}838 confidence-qualified dark models and 3{,}013 controls. Dashed lines mark 0.5.
+\textbf{b}, Fractions below thresholds from 0.4 to 0.6 under both normalisations.
+\textbf{c}, Query-score no-hits at 0.5 separated into no returned alignment rows and retrieved scores
+below threshold. Zero-score counts are 22 dark models and 66 controls; nonzero below-threshold
+counts are 1{,}009 and 35. The controls derive from PDB chains represented in the search references.}
+\label{fig:structural}
+\end{figure}
+
+\begin{figure}[p]\centering
+\includegraphics[width=\textwidth]{figures/fig_reference_current.pdf}
+\caption{\textbf{Reference coverage and catalogue composition.} \textbf{a}, Recall of genome-encoded orthologues and rank correlation on shared orthologues across 448 paired profiles. Boxes show medians and interquartile ranges, with 1.5-interquartile-range whiskers and outliers omitted. \textbf{b}, Observed absence versus the analytical E-value-corrected MGnify90 rarefaction expectation at each catalogue's size. The diagonal indicates agreement with the size-only expectation. Each point is a catalogue, coloured by query group; points below the diagonal have lower observed absence. \textbf{c}, Median occupied locations out of 61, stratified by representative length and absence from every searched catalogue. Absence is relative to the database and search rule.}
+\label{fig:reference}
+\end{figure}
+
+
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\end{document}

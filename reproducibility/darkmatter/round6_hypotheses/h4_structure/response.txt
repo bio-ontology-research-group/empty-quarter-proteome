@@ -1,0 +1,171 @@
+POINT-BY-POINT RESPONSE TO INDEPENDENT VIABILITY REVIEW (H4_REVIEW1) AND ROOT_AUDIT_NOTES.MD
+Hypothesis 4 (h4_structure) — Revision V3
+Date: 2026-10-13
+
+================================================================================
+OVERVIEW OF V3 EXECUTION & PRESERVATION OF EARLIER ARTIFACTS
+================================================================================
+1. Frozen / Immutable Files Untouched:
+   - reviews/darkmatter-2026-10-13/round6/h4_review1/review.txt and verdicts.json
+   - reviews/darkmatter-2026-10-13/round6/snapshots/h4_v2/
+2. V2 Artifacts Preserved Separately:
+   - Original V2 scripts/results remain intact at their original paths and are also archived in:
+     * reproducibility/darkmatter/round6_hypotheses/h4_structure/scripts/v2_superseded/ (with README.md)
+     * reproducibility/darkmatter/round6_hypotheses/h4_structure/results/v2_superseded/ (with README.md)
+3. V3 Pipeline, Execution Logs, and Outputs:
+   - Updated specification: DESIGN.md and INPUTS.tsv (adding SHA-256 digests for 05c_screen.sh, 05_integrate.py, and foldseek_version.txt).
+   - V3 pipeline & closure verifier:
+     * scripts/v3_crop_and_search_regions.py
+     * scripts/v3_full.sbatch (Slurm Job 53704591 on cn506-11-l, 16 CPUs, 64 GB RAM; log: logs/h4_v3_53704591.out)
+     * scripts/v3_pilot.sbatch (Slurm Job 53706771 on gpu510-32, 16 CPUs, 64 GB RAM; log: logs/h4_v3_53706771.out)
+     * scripts/v3_verify_closure.py
+   - V3 retained outputs (all SHA-256 pinned in results/v3_results.sha256.tsv):
+     * results/v3_full5851_cropped_regions_manifest.tsv (full N=5,851 cohort: 7,773 cropped regions across 5,690 eligible models + 161 NO_CONFIDENT_REGION models; SHA-256: 52cd3071948013edc6ca18d9a6d37d0d326c512d1a23db9f0e525e2fc6656eed)
+     * results/v3_cropped_regions_manifest.tsv (n=300 stratified pilot: 413 cropped regions across 289 eligible models + 11 NO_CONFIDENT_REGION models; SHA-256: 9b11053182562d2b1bc80bd3e1d1bdc9e2fc8c467b52002c28566ceece359272)
+     * results/v3_wc_pdb_hits.raw.tsv (IBEX only, 26,585,879 bytes, 115,916 rows; SHA-256: 517d3a4858e0f419bb67ca4e78fba957a789f74768995a3b248b1dfd39745191)
+     * results/v3_crop_pdb_hits.raw.tsv (IBEX only, 27,142,286 bytes, 129,914 rows; SHA-256: d86f09d371dab34b60dfea3c11f86b44672f980d1c00351f7661a3755e8b87df)
+     * results/v3_region_evaluations.tsv (413 cropped regions across Tiers 0-4; SHA-256: e5e52b2ff24130a50669652b8c52c359b5eab8f8f8c3e941dfa199f0a27773bc)
+     * results/v3_model_summaries.tsv (300 models across Tiers 0-4 with symmetric whole-chain & cropped statuses, 10-state transitions, and Horvitz-Thompson weights; SHA-256: 98f57db2416bdc3f00f034d6e0127b47fd6dd22f0e88b2a037ac5537a7ba4cc9)
+     * results/v3_recovery_summary.json (complete unweighted and Horvitz-Thompson weighted summaries, FPC SEs, full 5,851 region census, and V2 vs V3 comparison; SHA-256: ff4ee8034ffd1c459a3673c7b7b8a045f5c80fae9e9c7a53584ddd12a88ac30d)
+     * results/v3_audited_example_hits.tsv (230 representative raw hit rows including 59 top-1 region rows and 53 top-1 whole-chain rows; SHA-256: ef282a768b2a00c4146065a5a89e30a968618a9119389dfefaa77f3e4f30f344)
+
+================================================================================
+RESPONSE TO CRITICAL ISSUES C1-C5 (h4_review1/review.txt & verdicts.json)
+================================================================================
+
+--------------------------------------------------------------------------------
+CRITICAL ISSUE C1: Post-hoc sequence-identity filtering of `--max-seqs 50` output conflates hit-list saturation with structural match failure in controls (Tiers 2-4).
+--------------------------------------------------------------------------------
+* Reviewer Finding:
+  In V2 (`--max-seqs 50`), filtering the 50-hit list post hoc at Tiers 2-4 (`fident < 0.30, 0.25, 0.20`) produced empty hit lists for 17, 22, and 27 of the 103 control regions (e.g., `KF000066_reg1`, `KF000126_reg1`), which V2 coded as `qTM = 0.0` (`matched = 0`), causing an artificial control match-rate drop (`97.1% -> 80.6% -> 75.7% -> 68.0%`).
+
+* Exact V3 Code & Design Repairs:
+  1. Increased `--max-seqs` from `50` to `1000` (`MAX_SEQS = 1000`) for both whole-chain and cropped searches (`scripts/v3_crop_and_search_regions.py`, lines 57, 378-401).
+  2. Recorded `total_hits_raw`, `raw_list_saturated` (`int(total_hits_raw >= 1000)`), and per-tier remaining hit counts (`t0_remaining_hits`..`t4_remaining_hits` and `wc_t0_remaining_hits`..`wc_t4_remaining_hits`) in `results/v3_region_evaluations.tsv` and `results/v3_model_summaries.tsv` (`scripts/v3_crop_and_search_regions.py`, lines 601-619, 1084-1147, 1170-1208).
+  3. Explicitly separated `POST_EXCLUSION_EMPTY` (`total_hits_raw > 0` and `t{k}_remaining_hits == 0`) from `LOW_SCORE` / `PERSISTENT_LOW_SCORE` (`t{k}_remaining_hits > 0` and `qTM < 0.5`) and `RAW_ZERO_RETRIEVAL` (`total_hits_raw == 0`), and reported both unconditional and remaining-hit-conditional match rates (`scripts/v3_crop_and_search_regions.py`, lines 605-624, 688-785).
+  4. Documented explicitly in `DESIGN.md` (§1.2, §2.4) and `DOSSIER.md` (§3.2A, §4.4) that an increased prefilter cap (`1000`) mitigates but does not eliminate homology-saturation censoring (`8/103` control regions and `8/75` control whole chains still reach `total_hits_raw == 1000`).
+
+* Retained V3 Output Evidence:
+  - In `results/v3_recovery_summary.json` (`v2_max_seqs_50_vs_v3_max_seqs_1000_control_regions`, lines 78-130) and `results/v3_region_evaluations.tsv`:
+    * Across all 103 control regions, increasing `--max-seqs` from `50` to `1000` reduced `POST_EXCLUSION_EMPTY` from `17` (Tier 2), `22` (Tier 3), and `27` (Tier 4) in V2 to **`0 / 103 (0.00%)` across all five tiers (Tiers 0-4) in V3**:
+      - Tier 1 (source-PDB excluded): `102/103 (99.03%)` matched (`100.00%` [102/102] conditional on remaining hits; `0` low-score, `0` post-exclusion empty, `1` raw zero retrieval; +2 regions rescued vs V2).
+      - Tier 2 (`fident < 30%`): `102/103 (99.03%)` matched (`100.00%` [102/102] conditional; `0` post-exclusion empty; +19 regions rescued vs V2).
+      - Tier 3 (`fident < 25%`): `101/103 (98.06%)` matched (`99.02%` [101/102] conditional; `1` low-score, `0` post-exclusion empty; +23 regions rescued vs V2).
+      - Tier 4 (`fident < 20%`): `101/103 (98.06%)` matched (`99.02%` [101/102] conditional; `1` low-score, `0` post-exclusion empty; +31 regions rescued vs V2).
+    * Specifically audited control regions in `results/v3_region_evaluations.tsv`:
+      - `KF000066_reg1` (empty at Tier 2 in V2): `total_hits_raw = 872` (`raw_list_saturated = 0`), retains `755` hits at Tier 2 (`t2_qtm = 0.8244`), `753` hits at Tier 3 (`t3_qtm = 0.7245`), and `752` hits at Tier 4 (`t4_qtm = 0.7245`).
+      - `KF000126_reg1` (empty at Tier 2 in V2): `total_hits_raw = 1000` (`raw_list_saturated = 1`), retains `36` hits at Tier 2 (`t2_qtm = 0.7817`), `23` hits at Tier 3 (`t3_qtm = 0.7740`), and `10` hits at Tier 4 (`t4_qtm = 0.7040`).
+    * At the parent-model level (`n = 75` controls in `results/v3_model_summaries.tsv`), control match rates are `74/75 (98.67%)` at Tiers 0-2 and `73/75 (97.33%)` at Tiers 3-4 (`0` `POST_EXCLUSION_EMPTY` models in any tier).
+
+--------------------------------------------------------------------------------
+CRITICAL ISSUE C2: Models with zero eligible confident regions (`n_confident_regions == 0`) are misclassified as Foldseek `ZERO_RETRIEVAL`.
+--------------------------------------------------------------------------------
+* Reviewer Finding:
+  Eleven pilot models (`3 K_local`, `4 K_dual_none`, `4 Q_not_K`, e.g. `41PRr3::41PRr3_702372_18`) had zero confident regions (`>= 50` aa, smoothed pLDDT `>= 0.70`), generated no cropped PDB (`cropped_pdb = "NONE"`), and were never searched by Foldseek, yet V2 classified them as `ZERO_RETRIEVAL` and attributed their absence of hits to Foldseek k-mer prefilters.
+
+* Exact V3 Code & Design Repairs:
+  1. `classify_model_crops()` (`scripts/v3_crop_and_search_regions.py`, lines 615-624) and `classify_transition()` (lines 627-650) explicitly assign `NO_CONFIDENT_REGION` (`WC_UNMATCHED_NO_CONFIDENT_REGION` or `WC_MATCHED_LOST_NO_CONFIDENT_REGION`) whenever `n_confident_regions == 0`, reserving `RAW_ZERO_RETRIEVAL` strictly for models with `n_confident_regions >= 1` and `total_hits_raw == 0` across all cropped regions.
+  2. Programmatic assertion in `run_closure_assertions()` (`scripts/v3_crop_and_search_regions.py`, lines 928-936) and `scripts/v3_verify_closure.py` (lines 142-151) verifies that every model with `n_confident_regions == 0` has `crop_t{k}_status == "NO_CONFIDENT_REGION"` and no model with `n_confident_regions >= 1` has `NO_CONFIDENT_REGION`.
+  3. Retained the complete finite-population ($N = 5,851$) physical cropping manifest (`results/v3_full5851_cropped_regions_manifest.tsv`, generated in Slurm Job `53704591`) and summarized exact population `NO_CONFIDENT_REGION` counts per stratum in `results/v3_recovery_summary.json` (`full_5851_region_eligibility_census`, lines 131-205) and `DOSSIER.md` (§2.2).
+  4. Removed the erroneous V2 DOSSIER prose attributing model-level `NO_CONFIDENT_REGION` counts to Foldseek prefilter truncation.
+
+* Retained V3 Output Evidence:
+  - Full-cohort ($N = 5,851$) region-eligibility census (`results/v3_full5851_cropped_regions_manifest.tsv` & `results/v3_recovery_summary.json` lines 131-205):
+    * `5,690 / 5,851 (97.25%)` models have `>= 1` confident region (`7,773` cropped regions total) and `161 / 5,851 (2.75%)` have `NO_CONFIDENT_REGION`:
+      - `K_local_pdb`: `37 / 849 (4.36%)` `NO_CONFIDENT_REGION` (`812` eligible models, `1,269` regions).
+      - `K_local_afdb_only`: `3 / 87 (3.45%)` `NO_CONFIDENT_REGION` (`84` eligible models, `130` regions).
+      - `K_local_all`: `40 / 936 (4.27%)` `NO_CONFIDENT_REGION` (`896` eligible models, `1,399` regions).
+      - `K_dual_none`: `7 / 95 (7.37%)` `NO_CONFIDENT_REGION` (`88` eligible models, `119` regions).
+      - `Q_not_K_pdb`: `70 / 1,107 (6.32%)` `NO_CONFIDENT_REGION` (`1,037` eligible models, `1,247` regions).
+      - `Q_not_K_afdb_only`: `31 / 700 (4.43%)` `NO_CONFIDENT_REGION` (`669` eligible models, `883` regions).
+      - `Controls`: `13 / 3,013 (0.43%)` `NO_CONFIDENT_REGION` (`3,000` eligible models, `4,125` regions).
+  - Stratified pilot ($n = 300$, `results/v3_model_summaries.tsv` & `results/v3_recovery_summary.json`):
+    * `K_local_pdb` ($n = 90$): `3` `NO_CONFIDENT_REGION` (`3.33%` unweighted / `3.33%` H-T weighted, including `41PRr3::41PRr3_702372_18`) and only `1` (`1.11%` unweighted / `1.69%` H-T weighted) true `RAW_ZERO_RETRIEVAL` (`7 / 150 = 4.67%` of cropped regions). Region-eligible cropped match rate is `75 / 87 (86.21% unweighted; 86.60% H-T weighted)`.
+    * `K_dual_none` ($n = 50$): `4` `NO_CONFIDENT_REGION` (`8.00%`) and `10` (`20.00%`) true `RAW_ZERO_RETRIEVAL` (`15 / 60 = 25.00%` of cropped regions). Region-eligible cropped match rate is `18 / 46 (39.13% unweighted and H-T weighted)`.
+    * `Q_not_K_pdb` ($n = 55$): `4` `NO_CONFIDENT_REGION` (`7.27%`) and `0` (`0.00%`) `RAW_ZERO_RETRIEVAL` (`0 / 58 = 0.00%` of cropped regions). Region-eligible cropped match rate is `51 / 51 (100.00%)`.
+
+--------------------------------------------------------------------------------
+CRITICAL ISSUE C3: Exclusion-tier and reference-database asymmetry between whole-chain baseline and cropped evaluation.
+--------------------------------------------------------------------------------
+* Reviewer Finding:
+  1. V2 compared Tier 0 unfiltered historical whole-chain `best_pdb_qtm` (`--max-seqs 50`, no `fident`) against Tier 1-4 cropped evaluations, misclassifying 42 controls with self-only whole-chain matches in `--mode full`.
+  2. V2 defined `K_local`, `K_dual_none`, and `Q_not_K` on dual-reference (PDB + AFDB) baseline scores while searching crops against PDB only (`10/100` pilot `K_local` models had AFDB-only local hits, e.g. `V12Sr1::V12Sr1_267603_7`; `20/75` pilot `Q_not_K` models had AFDB-only whole-chain matches, causing V2 to report `14/75` of `Q_not_K` as "recovered after cropping" in PDB).
+  3. V2 masked whole-chain matched models that lost their match upon cropping (`5/55` in `Q_not_K_pdb` in V2).
+
+* Exact V3 Code & Design Repairs:
+  1. Pinned `05c_screen.sh`, `05_integrate.py`, and `foldseek_version.txt` with byte sizes and SHA-256 digests in `INPUTS.tsv` (lines 10-12) and `DOSSIER.md` (§5.1).
+  2. Executed de novo Foldseek `easy-search` on **both whole chains (`v3_wc_pdb_hits.raw.tsv`) and physically cropped regions (`v3_crop_pdb_hits.raw.tsv`) in the same V3 run** (Slurm Job `53706771`) with identical Foldseek version (`10-941cd33`), PDB reference (`pdb_20260730/foldseek_pdb`), parameters (`--alignment-type 1 -e 10 -s 9.5 --max-seqs 1000`), and 21-column output format (`...fident...cigar`) (`scripts/v3_crop_and_search_regions.py`, lines 378-401, 1054-1065).
+  3. Applied Tiers 0-4 symmetrically to both whole-chain (`wc_t0_status`..`wc_t4_status`) and cropped (`crop_t0_status`..`crop_t4_status`) evaluations and tracked the full 10-state transition matrix (`trans_t0`..`trans_t4`) separating whole-chain-unmatched recovery (`WC_UNMATCHED_TO_CROP_RECOVERED` vs `PERSISTENT_LOW_SCORE` / `POST_EXCLUSION_EMPTY` / `RAW_ZERO_RETRIEVAL` / `NO_CONFIDENT_REGION`) from whole-chain-matched retention and loss (`WC_MATCHED_RETAINED_IN_CROP` vs `WC_MATCHED_LOST_LOW_SCORE` / `POST_EXCLUSION_EMPTY` / `RAW_ZERO_RETRIEVAL` / `NO_CONFIDENT_REGION`) (`scripts/v3_crop_and_search_regions.py`, lines 627-650, 1170-1208).
+  4. Explicitly partitioned reference-consistent PDB vs AFDB-only sub-strata (`K_local_pdb` [$N=849, n=90$], `K_local_afdb_only` [$N=87, n=10$], `K_dual_none` [$N=95, n=50$], `Q_not_K_pdb` [$N=1,107, n=55$], `Q_not_K_afdb_only` [$N=700, n=20$], `Controls` [$N=3,013, n=75$]) alongside combined `K_local_all` and `Q_not_K_all` (`scripts/v3_crop_and_search_regions.py`, lines 60-72, 245-316).
+
+* Retained V3 Output Evidence:
+  - In `results/v3_recovery_summary.json` and `results/v3_model_summaries.tsv`:
+    * `K_local_pdb` ($n = 90$): At `--max-seqs 1000`, `81` models are whole-chain `LOW_SCORE` (`67` `WC_UNMATCHED_TO_CROP_RECOVERED` [`82.72%` unweighted / `83.04%` H-T weighted], `11` `WC_UNMATCHED_TO_PERSISTENT_LOW_SCORE`, `1` `WC_UNMATCHED_TO_RAW_ZERO_RETRIEVAL`, `2` `WC_UNMATCHED_NO_CONFIDENT_REGION`) and `9` reach whole-chain `MATCHED` (`8` `WC_MATCHED_RETAINED_IN_CROP`, `1` `WC_MATCHED_LOST_NO_CONFIDENT_REGION` [`41PRr3::41PRr3_702372_18`]).
+    * `K_local_afdb_only` ($n = 10$): `1` reaches whole-chain `MATCHED` in PDB at `--max-seqs 1000` (`WC_MATCHED_RETAINED_IN_CROP = 1`), and of the `9` whole-chain `LOW_SCORE` models, `6` (`66.67%` unweighted / `68.20%` H-T weighted, including `V12Sr1::V12Sr1_267603_7` with `wc_t1_qtm = 0.1864 -> crop_t1_max_qtm = 0.8633`) recover in crops and `3` have `WC_UNMATCHED_TO_PERSISTENT_LOW_SCORE`.
+    * `Q_not_K_pdb` ($n = 55$): All `55/55 (100.0%)` are whole-chain `MATCHED` in PDB; `51/55 (92.73%)` are `WC_MATCHED_RETAINED_IN_CROP` (`51/51 = 100.0%` of region-eligible models, including `V34Dr2::V34Dr2_233315_1`, whose cropped region `reg1` increased from `qTM = 0.4161` at `--max-seqs 50` in V2 to `qTM = 0.5089` at `--max-seqs 1000` in V3), and `4/55 (7.27%)` are `WC_MATCHED_LOST_NO_CONFIDENT_REGION` (`0` lost to low score).
+    * `Q_not_K_afdb_only` ($n = 20$): Partitioning removes the V2 artifact where AFDB-only baseline matches were pooled into `Q_not_K`. At `--max-seqs 1000` in PDB, `9/20` match on the whole chain (`WC_MATCHED_RETAINED_IN_CROP = 9`) and `8/11 (72.73%)` of the whole-chain `LOW_SCORE` models transition to `WC_UNMATCHED_TO_CROP_RECOVERED` (`3` `WC_UNMATCHED_TO_PERSISTENT_LOW_SCORE`).
+
+--------------------------------------------------------------------------------
+CRITICAL ISSUE C4: Unweighted length-stratified pilot estimator for `K_local` vs unstratified comparators.
+--------------------------------------------------------------------------------
+* Reviewer Finding:
+  V2 sampled `K_local` ($n = 100$) using equal allocation of 25 models across four fixed length bins `[100,200), [200,300), [300,400), [400,10000)` (mislabeled as "quartiles" in code and omitted from `DESIGN.md`), where population shares in $N = 936$ are `13.68% (128)`, `46.47% (435)`, `24.68% (231)`, and `15.17% (142)`, and reported only unweighted means without design weights.
+
+* Exact V3 Code & Design Repairs:
+  1. Documented the empirical 16-CPU scaling benchmark from Slurm Job `53704591` (`logs/h4_v3_53704591.out`, `results/v3_recovery_summary.json` lines 19-34, `DESIGN.md` §3.1, `DOSSIER.md` §2.1): full-cohort `--max-seqs 1000` passes `990` sequences/query (`5.79M` whole-chain pairs) into `tmalign`, progressing `9/65 (13.85%)` in `702s (11m 42s)` and projecting to `84.5 min` for whole-chain `tmalign` alone and `~183 min (3.05h)` for combined whole-chain + cropped searches on 16 CPUs (exceeding the `<=16CPU, <=64GB, <=1h` single-job constraint).
+  2. Disclosed the exact 7-stratum sampling design (`K_local_len_100_200`, `K_local_len_200_300`, `K_local_len_300_400`, `K_local_len_400_10000`, `K_dual_none_SRS`, `Q_not_K_SRS`, `Controls_SRS`), population counts $N_h$, sample sizes $n_h$, inclusion probabilities $\pi_h = n_h / N_h$, Horvitz-Thompson weights $w_h = N_h / n_h$ ($\sum_{i=1}^{300} w_i = 5,851.00$), and finite-population correction factors $1 - n_h / N_h$ in `DESIGN.md` (§2.3), `DOSSIER.md` (§2.3), and `results/v3_model_summaries.tsv` (`design_stratum_h`, `pilot_bin`, `pilot_pop_n`, `pilot_samp_n`, `pilot_sampling_prob`, `pilot_ht_weight`).
+  3. Implemented `ht_domain_estimate()` (`scripts/v3_crop_and_search_regions.py`, lines 94-149) computing Horvitz-Thompson / Hajek design-weighted finite-population proportions, totals, Taylor-linearized FPC-adjusted standard errors, and 95% CIs across every stratum and tier in `results/v3_recovery_summary.json`.
+
+* Retained V3 Output Evidence:
+  - In `results/v3_model_summaries.tsv` and `DOSSIER.md` (§2.3):
+    * At `--max-seqs 1000`, V3 cropped match rates across the four `K_local_all` length bins are `17/25 (68.00%)` in `[100,200)` ($N_1=128, w_1=5.12$), `20/25 (80.00%)` in `[200,300)` ($N_2=435, w_2=17.40$), `22/25 (88.00%)` in `[300,400)` ($N_3=231, w_3=9.24$), and `23/25 (92.00%)` in `[400,10000)` ($N_4=142, w_4=5.68$).
+    * For `K_local_all` ($N = 936, n = 100$), the Horvitz-Thompson design-weighted 5-state decomposition at Tiers 0-4 is:
+      - `MATCHED`: `82.15%` (FPC SE `4.23%`, 95% CI `[73.86%, 90.45%]`; unweighted `82.00%`)
+      - `PERSISTENT_LOW_SCORE`: `13.36%` (FPC SE `3.78%`, 95% CI `[5.95%, 20.77%]`; unweighted `14.00%`)
+      - `POST_EXCLUSION_EMPTY`: `0.00%` (unweighted `0.00%`)
+      - `RAW_ZERO_RETRIEVAL`: `1.53%` (FPC SE `1.45%`, 95% CI `[0.00%, 4.38%]`; unweighted `1.00%`)
+      - `NO_CONFIDENT_REGION`: `2.95%` (FPC SE `1.74%`, 95% CI `[0.00%, 6.36%]`; unweighted `3.00%`, full-census truth `40/936 = 4.27%`).
+    * For `K_local_pdb` ($N = 849, n = 90$), the Horvitz-Thompson design-weighted crop match rate is `83.72%` (FPC SE `4.28%`, 95% CI `[75.33%, 92.11%]`; unweighted `83.33%`), and whole-chain-unmatched recovery is `83.04%` (FPC SE `4.58%`, 95% CI `[74.06%, 92.02%]`; unweighted `67/81 = 82.72%`).
+
+--------------------------------------------------------------------------------
+CRITICAL ISSUE C5: Mislabeling of query span as aligned residue count and factual/statistical reporting errors in DOSSIER.md.
+--------------------------------------------------------------------------------
+* Reviewer Finding:
+  1. V2 set `qalnlen = qend - qstart + 1` (query coordinate span), conflating it with aligned residue pairs (`qspan + tspan - alnlen`).
+  2. V2 `DOSSIER.md` line 108 reported `p = 0.010, McNemar's test on paired exclusions` (`117/3,013` vs `159/3,013`), which was actually an unpaired two-sample chi-square test (`p = 0.00965`) instead of the paired McNemar test ($b = 0, c = 42$, $p = 4.55 \times 10^{-13}$).
+  3. V2 tested Go Criterion 2 on region-level proportions (`78/103` vs `19/60`) rather than parent models and omitted Tiers 3-4 from `v2_model_summaries.tsv`.
+  4. V2 falsely claimed all candidate hits had sequence identity `< 20%` and averaged `t1_fident` across unretrieved regions coded as `0.0`.
+
+* Exact V3 Code & Design Repairs:
+  1. Included `cigar` in the 21-column Foldseek `--format-output` for both whole-chain and cropped searches (`scripts/v3_crop_and_search_regions.py`, line 386). In `parse_and_accumulate_hits()` (lines 466-483), parsed exact `M` operation lengths from `cigar` (`aligned_pairs`), asserted `cigar_tot == alnlen` and `cigar_m == qspan + tspan - alnlen` on 100% of rows, and recorded both `aligned_pairs` / `aligned_pair_qcov` (`aligned_pairs / qlen`) and `qspan` / `qspan_cov` (`(qend - qstart + 1) / qlen`) in `results/v3_region_evaluations.tsv`, `results/v3_model_summaries.tsv`, `results/v3_audited_example_hits.tsv`, and `results/v3_recovery_summary.json`.
+  2. Implemented `compute_historical_3013_control_leakage_audit()` (`scripts/v3_crop_and_search_regions.py`, lines 888-922) computing the exact paired discordant counts ($b = 0, c = 42$) and exact two-sided McNemar binomial $p = 2 \times 0.5^{42} = 4.55 \times 10^{-13}$ on `results/control_leakage_audit.tsv`, alongside the V3 `--max-seqs 1000` whole-chain control self-exclusion check ($b = 0, c = 0$ on $n = 75$ controls).
+  3. Included all five exclusion tiers (`Tier 0` through `Tier 4`) at the parent-model level in `results/v3_model_summaries.tsv` (`wc_t{k}_*`, `crop_t{k}_*`, `trans_t{k}` for $k \in \{0,1,2,3,4\}$) and conducted all cross-stratum hypothesis comparisons (`K_local_pdb` vs `K_dual_none`, `Controls` vs `K_dual_none`, `Q_not_K_pdb` vs `K_dual_none`) at the parent-model level using both unweighted Fisher's exact tests and Horvitz-Thompson FPC $z$-tests in `DOSSIER.md` (§1, §3).
+  4. Computed `mean_t1_fident_retrieved_only_pct` and `max_t1_fident_retrieved_only_pct` strictly across retrieved regions (`t1_remaining_hits > 0`) (`scripts/v3_crop_and_search_regions.py`, lines 660-672), recorded exact counts of candidate raw hit rows and top-1 region hits with `fident >= 0.20, 0.25, 0.30`, and corrected the prose in `DOSSIER.md` (§1.5, §3.2B).
+
+* Retained V3 Output Evidence:
+  - Exact CIGAR Aligned Pairs vs Query Span (`results/v3_recovery_summary.json` lines 36-60, 228-229 & `DOSSIER.md` §1.5, §3.2B):
+    * Verified `cigar_m == qspan + tspan - alnlen` on 100% of `115,916` whole-chain hit rows and `129,914` cropped hit rows (`96.44%` of whole-chain rows and `93.48%` of cropped rows have query insertions opposite target gaps where `qspan > aligned_pairs`).
+    * Among retrieved Tier 1 regions, mean `aligned_pair_qcov` vs `qspan_cov` is `82.79% vs 92.75%` in `K_local_pdb`, `74.86% vs 88.77%` in `K_dual_none`, `89.53% vs 96.14%` in `Q_not_K_pdb`, and `98.06% vs 99.55%` in `Controls`.
+    * Audited region `25Sr1::25Sr1_59902_2_reg1` (`reg_len = 91`): top hit `2rck-assembly1_A` (`t1_qtm = 0.6127`) has `qspan = 89` (`qspan_cov = 0.9780`) vs `aligned_pairs = 79` (`aligned_pair_qcov = 0.8681`).
+  - Repaired Paired Control Self-Hit Exclusion Test (`results/v3_recovery_summary.json` lines 61-70 & `DOSSIER.md` §1.1):
+    * Across all `3,013` controls in `control_leakage_audit.tsv`, Tier 0 unfiltered unmatched count is `117/3,013 (3.88%)` and Tier 1 source-excluded unmatched count is `159/3,013 (5.28%)`, with paired discordant counts `b = 0, c = 42` (exact two-sided McNemar binomial $p = 4.547 \times 10^{-13}$).
+  - Parent-Model-Level Comparisons Across Tiers (`results/v3_recovery_summary.json` & `DOSSIER.md` §1.4, §3.1, §3.2A):
+    * `K_local_pdb` vs `K_dual_none` (Tiers 1-4): `83.72%` vs `36.00%` H-T weighted (diff `+47.72%`, FPC SE `6.37%`, $z = 7.49$, two-sided $p = 6.91 \times 10^{-14}$; unweighted `75/90 [83.33%]` vs `18/50 [36.00%]`, Fisher's exact $p = 2.35 \times 10^{-8}$).
+    * `Controls` vs `K_dual_none` at Tier 3 (`SeqId < 25%`) and Tier 4 (`SeqId < 20%`) on parent models: `97.33%` vs `36.00%` H-T weighted (diff `+61.33%`, FPC SE `5.07%`, $z = 12.10$, two-sided $p = 1.09 \times 10^{-33}$; unweighted `73/75 [97.33%]` vs `18/50 [36.00%]`, Fisher's exact $p = 1.08 \times 10^{-14}$).
+  - Retrieved-Only Sequence Identity (`results/v3_recovery_summary.json` lines 44-59, 222-227 & `DOSSIER.md` §1.5, §3.2B):
+    * Retrieved-only mean `t1_fident` is `6.17%` (max `24.40%`) in `K_local_pdb` ($n=143$), `5.18%` (max `21.20%`) in `K_dual_none` ($n=45$, correcting V2's zero-padded `4.5%`), `7.52%` (max `20.40%`) in `Q_not_K_pdb` ($n=58$), and `69.67%` (max `100.0%`) in `Controls` ($n=102$).
+    * Four candidate regions have top-1 `t1_fident >= 0.20` (`2` in `K_local_pdb` [including `27Dr3::27Dr3_493525_1_reg1` at `0.2400`], `1` in `K_dual_none`, `1` in `Q_not_K_pdb`), and `417` raw candidate cropped hit rows (`114` whole-chain rows) have `fident >= 0.20`.
+
+================================================================================
+INDEPENDENT CODE-DATA CLOSURE VERIFICATION
+================================================================================
+Executed locally via:
+  uv run python reproducibility/darkmatter/round6_hypotheses/h4_structure/scripts/v3_verify_closure.py
+All 8 verification suites pass:
+  1. SHA-256 verification of all 6 local V3 files against `results/v3_results.sha256.tsv`.
+  2. Full finite-population ($N=5,851$) region-eligibility manifest closure (`7,773` cropped regions + `161` zero-region models across 6 sub-strata).
+  3. Stratified pilot ($n=300$) partition closure and Horvitz-Thompson weight sum closure ($\sum w_i = 5,851.00$).
+  4. Evaluated manifest closure (`413` cropped regions + `11` zero-region models, with verified 64-hex source and crop SHA-256 digests).
+  5. Strict `NO_CONFIDENT_REGION` separation, Tier 0-4 monotonicity, and whole-chain/crop exclusion symmetry.
+  6. JSON stratum category sum closure and Horvitz-Thompson 5-state decomposition closure (`100.0%`) across all strata and tiers.
+  7. Independent CIGAR aligned-pair (`M == qspan + tspan - alnlen`) and summary-table cross-check across `230` representative raw hit rows (`59` matched top-1 region rows and `53` matched top-1 whole-chain rows).

@@ -1,0 +1,1559 @@
+=== 1. JSON SUMMARIES UNDER reproducibility/darkmatter ===
+
+--- antifam/download.json ---
+{
+  "url": "https://ftp.ebi.ac.uk/pub/databases/Pfam/AntiFam/current/Antifam.tar.gz",
+  "sha256": "e06a17b4a46be27de0c5f532ab0a2e149f95d2f4119a851d19a2fe715ad077bb",
+  "members": [
+    "AntiFam.seed",
+    "AntiFam_Eukaryota.seed",
+    "AntiFam_Bacteria.seed",
+    "AntiFam_Archaea.seed",
+    "AntiFam_Virus.seed",
+    "AntiFam.hmm",
+    "AntiFam_Eukaryota.hmm",
+    "AntiFam_Bacteria.hmm",
+    "AntiFam_Archaea.hmm",
+    "AntiFam_Virus.hmm",
+    "relnotes",
+    "version"
+  ]
+}
+
+--- antifam/summary.json ---
+{
+  "dark_proteins_with_hit": 3385,
+  "control_proteins_with_hit": 2148,
+  "admitted_members_with_hit": 141,
+  "admitted_families_with_hit": 56,
+  "evaluable_unflagged_dark_n": 97153,
+  "evaluable_unflagged_dark_median_dnds": 0.4252,
+  "evaluable_unflagged_dark_fraction_below_one": 0.9670416765308328
+}
+
+
+--- culture_family_membership/summary.json ---
+{
+  "eligible_dark_calls": 1341,
+  "admitted_family_members": 65,
+  "distinct_admitted_families": 47
+}
+
+
+--- culture_locus/summary.json ---
+{
+  "classifications": {
+    "0": {
+      "same_orientation_start_phase": 4088,
+      "no_major_CDS_overlap": 606,
+      "other_frame_or_orientation": 183
+    },
+    "1": {
+      "no_major_CDS_overlap": 343,
+      "other_frame_or_orientation": 81,
+      "same_orientation_start_phase": 92
+    }
+  },
+  "thresholds": [
+    {
+      "dark": 0,
+      "protein_shared": 0,
+      "identity": 0.85,
+      "n": 16056,
+      "supported": 5643
+    },
+    {
+      "dark": 0,
+      "protein_shared": 0,
+      "identity": 0.9,
+      "n": 16056,
+      "supported": 5540
+    },
+    {
+      "dark": 0,
+      "protein_shared": 0,
+      "identity": 0.95,
+      "n": 16056,
+      "supported": 4877
+    },
+    {
+      "dark": 0,
+      "protein_shared": 1,
+      "identity": 0.85,
+      "n": 65477,
+      "supported": 64587
+    },
+    {
+      "dark": 0,
+      "protein_shared": 1,
+      "identity": 0.9,
+      "n": 65477,
+      "supported": 64459
+    },
+    {
+      "dark": 0,
+      "protein_shared": 1,
+      "identity": 0.95,
+      "n": 65477,
+      "supported": 62925
+    },
+    {
+      "dark": 1,
+      "protein_shared": 0,
+      "identity": 0.85,
+      "n": 1105,
+      "supported": 587
+    },
+    {
+      "dark": 1,
+      "protein_shared": 0,
+      "identity": 0.9,
+      "n": 1105,
+      "supported": 567
+    },
+    {
+      "dark": 1,
+      "protein_shared": 0,
+      "identity": 0.95,
+      "n": 1105,
+      "supported": 516
+    },
+    {
+      "dark": 1,
+      "protein_shared": 1,
+      "identity": 0.85,
+      "n": 236,
+      "supported": 232
+    },
+    {
+      "dark": 1,
+      "protein_shared": 1,
+      "identity": 0.9,
+      "n": 236,
+      "supported": 232
+    },
+    {
+      "dark": 1,
+      "protein_shared": 1,
+      "identity": 0.95,
+      "n": 236,
+      "supported": 219
+    }
+  ],
+  "caveat": "First-aligned-base phase, >=50% of target aligned span overlapping CDS; not full codon correspondence. Any qualifying alignment can support classification."
+}
+
+
+--- culture_locus_all/summary.json ---
+{
+  "classifications": {
+    "0": {
+      "same_orientation_start_phase": 66559,
+      "no_major_CDS_overlap": 607,
+      "other_frame_or_orientation": 636
+    },
+    "1": {
+      "no_major_CDS_overlap": 344,
+      "same_orientation_start_phase": 309,
+      "other_frame_or_orientation": 82
+    }
+  },
+  "thresholds": [
+    {
+      "dark": 0,
+      "protein_shared": 0,
+      "identity": 0.85,
+      "n": 16056,
+      "supported": 5643
+    },
+    {
+      "dark": 0,
+      "protein_shared": 0,
+      "identity": 0.9,
+      "n": 16056,
+      "supported": 5540
+    },
+    {
+      "dark": 0,
+      "protein_shared": 0,
+      "identity": 0.95,
+      "n": 16056,
+      "supported": 4877
+    },
+    {
+      "dark": 0,
+      "protein_shared": 1,
+      "identity": 0.85,
+      "n": 65477,
+      "supported": 64587
+    },
+    {
+      "dark": 0,
+      "protein_shared": 1,
+      "identity": 0.9,
+      "n": 65477,
+      "supported": 64459
+    },
+    {
+      "dark": 0,
+      "protein_shared": 1,
+      "identity": 0.95,
+      "n": 65477,
+      "supported": 62925
+    },
+    {
+      "dark": 1,
+      "protein_shared": 0,
+      "identity": 0.85,
+      "n": 1105,
+      "supported": 587
+    },
+    {
+      "dark": 1,
+      "protein_shared": 0,
+      "identity": 0.9,
+      "n": 1105,
+      "supported": 567
+    },
+    {
+      "dark": 1,
+      "protein_shared": 0,
+      "identity": 0.95,
+      "n": 1105,
+      "supported": 516
+    },
+    {
+      "dark": 1,
+      "protein_shared": 1,
+      "identity": 0.85,
+      "n": 236,
+      "supported": 232
+    },
+    {
+      "dark": 1,
+      "protein_shared": 1,
+      "identity": 0.9,
+      "n": 236,
+      "supported": 232
+    },
+    {
+      "dark": 1,
+      "protein_shared": 1,
+      "identity": 0.95,
+      "n": 236,
+      "supported": 219
+    }
+  ],
+  "caveat": "First-aligned-base phase, >=50% of target aligned span overlapping CDS; not full codon correspondence. Any qualifying alignment can support classification."
+}
+
+
+--- culture_nucleotide/summary.json ---
+{
+  "pairs": 22,
+  "minimap2_version": "2.17-r943-dirty",
+  "min_query_nt": 90,
+  "min_query_coverage": 0.9,
+  "min_identity": 0.95,
+  "groups": [
+    {
+      "dark": 0,
+      "protein_shared": 0,
+      "eligible": 16056,
+      "dna_supported": 2611
+    },
+    {
+      "dark": 0,
+      "protein_shared": 1,
+      "eligible": 65477,
+      "dna_supported": 47532
+    },
+    {
+      "dark": 1,
+      "protein_shared": 0,
+      "eligible": 1105,
+      "dna_supported": 347
+    },
+    {
+      "dark": 1,
+      "protein_shared": 1,
+      "eligible": 236,
+      "dna_supported": 172
+    }
+  ]
+}
+
+
+--- culture_nucleotide_cigar/posthoc_recovery_subset.json ---
+{
+  "pairs": 20,
+  "criterion": "post hoc >=90% recovery of protein-shared calls",
+  "per_pair_min": 0.6789915966386555,
+  "per_pair_max": 0.9963702359346642,
+  "groups": [
+    {
+      "dark": 0,
+      "protein_shared": 0,
+      "n": 11240,
+      "supported": 4254
+    },
+    {
+      "dark": 0,
+      "protein_shared": 1,
+      "n": 62039,
+      "supported": 60485
+    },
+    {
+      "dark": 1,
+      "protein_shared": 0,
+      "n": 940,
+      "supported": 496
+    },
+    {
+      "dark": 1,
+      "protein_shared": 1,
+      "n": 231,
+      "supported": 217
+    }
+  ]
+}
+
+
+--- culture_nucleotide_cigar/summary.json ---
+{
+  "pairs": 22,
+  "base_alignment": true,
+  "minimap2_version": "2.17-r943-dirty",
+  "min_query_nt": 90,
+  "min_query_coverage": 0.9,
+  "min_identity": 0.95,
+  "groups": [
+    {
+      "dark": 0,
+      "protein_shared": 0,
+      "eligible": 16056,
+      "dna_supported": 4877
+    },
+    {
+      "dark": 0,
+      "protein_shared": 1,
+      "eligible": 65477,
+      "dna_supported": 62925
+    },
+    {
+      "dark": 1,
+      "protein_shared": 0,
+      "eligible": 1105,
+      "dna_supported": 516
+    },
+    {
+      "dark": 1,
+      "protein_shared": 1,
+      "eligible": 236,
+      "dna_supported": 219
+    }
+  ]
+}
+
+
+--- current_table_checks.json ---
+{
+  "selection_dark": {
+    "families": 97200,
+    "median": 0.4253,
+    "fraction_below_one": 0.9669444444444445
+  },
+  "selection_ctrl": {
+    "families": 95647,
+    "median": 0.3884,
+    "fraction_below_one": 0.9961106987150669
+  },
+  "frame_contrast": {
+    "null_n": 9148,
+    "real_n": 9182,
+    "paired_n": 9029,
+    "null_median": 1.0864500000000001,
+    "real_median": 0.427,
+    "null_higher_fraction": 0.9239118396278657
+  },
+  "representatives": {
+    "n": 5438,
+    "median_dark": 0.063117,
+    "thermoplasmatota_n": 237,
+    "thermoplasmatota_median_dark": 0.309565
+  },
+  "structure_candidate": {
+    "all_n": 17221,
+    "qualified_n": 2838,
+    "qtm_nohit": 1031,
+    "alntm_nohit": 95
+  },
+  "structure_control": {
+    "all_n": 3684,
+    "qualified_n": 3013,
+    "qtm_nohit": 101,
+    "alntm_nohit": 68
+  },
+  "length_table": [
+    {
+      "set": "mag_dark_reps",
+      "n": "4292446",
+      "median_aa": "70",
+      "q1_aa": "40",
+      "q3_aa": "131",
+      "share_under_100aa": "0.6583",
+      "share_under_60aa": "0.4241",
+      "share_incomplete_gene_call": "0.5640"
+    },
+    {
+      "set": "cultured_dark_proteins",
+      "n": "48741",
+      "median_aa": "59",
+      "q1_aa": "43",
+      "q3_aa": "91",
+      "share_under_100aa": "0.7849",
+      "share_under_60aa": "0.5038",
+      "share_incomplete_gene_call": "NA"
+    }
+  ],
+  "culture_comparison": {
+    "pairs": 23,
+    "culture_lower": 18,
+    "median_delta": -0.003258
+  }
+}
+
+
+--- ena_evidence/public_filereport.tsv.json ---
+{
+  "url": "https://www.ebi.ac.uk/ena/portal/api/filereport?accession=PRJEB125153&result=read_run&fields=run_accession%2Csample_accession%2Csample_alias%2Cfastq_ftp%2Cfastq_md5%2Cfastq_bytes&format=tsv",
+  "checked_utc": "2026-10-13T10:58:55.335800+00:00",
+  "bytes": 76
+}
+
+--- ena_summary.json ---
+{
+  "runs": 554,
+  "samples": 551,
+  "matched_receipts": 554,
+  "instrument_counts": {
+    "Illumina NovaSeq X": 333,
+    "Illumina NovaSeq 6000": 221
+  },
+  "public_run_rows_on_2026_10_13": 0,
+  "public_status_basis": "ena_evidence/public_filereport.tsv; private receipts do not establish current public availability"
+}
+
+
+--- environment_rebuild/comparison.json ---
+{
+  "byte_identical": true,
+  "reconstructed_sha256": "581d602009f36a03a8409903a0e51802b9f1728e65bb387a6b222b2c186be9eb",
+  "existing_sha256": "581d602009f36a03a8409903a0e51802b9f1728e65bb387a6b222b2c186be9eb"
+}
+
+
+--- frame_stops/frame_stop_summary.json ---
+{
+  "sequences": 50898,
+  "terminal_stop": 43953,
+  "internal_stop": 21,
+  "eligible_masked": 48889,
+  "eligible_original": 48868,
+  "families": 10000,
+  "families_with_internal_stop": 16
+}
+
+
+--- ibex_inventory_summary.json ---
+{
+  "records": 447872,
+  "status": {
+    "sha256": 446361,
+    "metadata_only_large": 1497,
+    "error": 14
+  },
+  "sum_bytes_including_link_duplicates": 503459850403,
+  "analysis_tree_counts": {
+    "metadata/alejandra_sample_counts.tsv": 1,
+    "metadata/assemblies_all.txt": 1,
+    "metadata/assemblies_broken_audit.tsv": 1,
+    "metadata/assemblies_in_canonical_tree.txt": 1,
+    "metadata/assemblies_in_metadata.txt": 1,
+    "metadata/assemblies_missing_from_tree.txt": 1,
+    "metadata/assemblies_pyrodigal.txt": 1,
+    "metadata/assemblies_tree_no_source.txt": 1,
+    "metadata/assemblies_with_contigs.txt": 1,
+    "metadata/binnable_samples.txt": 1,
+    "metadata/busco_chain_jobs.tsv": 1,
+    "metadata/canonical_samples.txt": 1,
+    "metadata/checkm2_all_samples.tsv": 1,
+    "metadata/dna_conc.tsv": 1,
+    "metadata/drep_reps.txt": 1,
+    "metadata/drep_reps_sub.txt": 1,
+    "metadata/failed_tasks.txt": 1,
+    "metadata/gspa_chain_jobs.tsv": 1,
+    "metadata/sample_metadata.tsv": 1,
+    "metadata/self_supervised_samples.txt": 1,
+    "metadata/self_supervised_samples_with_paths.tsv": 1,
+    "metadata/self_supervised_skipped_no_alejandra.txt": 1,
+    "metadata/self_supervised_skipped_no_canonical.txt": 1,
+    "metadata/selfsup_chain_jobs.tsv": 1,
+    "metadata/site_coords.tsv": 1,
+    "metadata/site_groups.tsv": 1,
+    "metadata/skipped_no_metadata.txt": 1,
+    "metadata/ss_lq_chain_jobs.tsv": 1,
+    "mimag_rrna_trna_clean/README.md": 1,
+    "mimag_rrna_trna_clean/logs": 11094,
+    "mimag_rrna_trna_clean/results": 10880,
+    "mimag_rrna_trna_clean/scripts": 3,
+    "04_functional/repko_clean": 524,
+    "04_protein_catalog/darkmatter_clean": 3389,
+    "04_structure/00_structure_clean": 41743,
+    "04_structure/pfam_candidates_clean": 36,
+    "06_darkmatter/108_enrich_v4.sh": 1,
+    "06_darkmatter/_smoketest": 9,
+    "06_darkmatter/antismash": 44,
+    "06_darkmatter/benchmark_i1": 2,
+    "06_darkmatter/calibration_baseline": 2,
+    "06_darkmatter/calibration_pilot": 2,
+    "06_darkmatter/calibration_sub": 2,
+    "06_darkmatter/contamination_clean": 94,
+    "06_darkmatter/cultured_comparison_clean": 1050,
+    "06_darkmatter/dark_on_mge": 2,
+    "06_darkmatter/darkfam_basis_clean": 216237,
+    "06_darkmatter/darkfam_ecology": 50357,
+    "06_darkmatter/darkfam_ecology_clean": 68,
+    "06_darkmatter/decontam": 4,
+    "06_darkmatter/dossier": 75,
+    "06_darkmatter/drep_rep_proteomes": 10876,
+    "06_darkmatter/esmfold": 535,
+    "06_darkmatter/esmfold_v3": 707,
+    "06_darkmatter/gap_context": 56,
+    "06_darkmatter/gapsmith_models": 54380,
+    "06_darkmatter/isdark": 82,
+    "06_darkmatter/lineage_darkness_clean": 143,
+    "06_darkmatter/localization": 188,
+    "06_darkmatter/orthogroups": 9,
+    "06_darkmatter/pfba": 223,
+    "06_darkmatter/reallydark": 423,
+    "06_darkmatter/scores": 19,
+    "06_darkmatter/scores_v2": 5,
+    "06_darkmatter/scores_v3": 218,
+    "06_darkmatter/scripts": 6,
+    "06_darkmatter/size_diag": 2,
+    "06_darkmatter/specificity_clean": 263,
+    "06_darkmatter/v3_benchmark": 5,
+    "06_reference_bias/refbias_clean": 18,
+    "05_refine/_drep": 44005,
+    "06_metabolism/uv_survival_clean": 31,
+    "06_metabolism/osmolyte_clean": 31
+  },
+  "error_count": 14,
+  "slurm_job": "53675321",
+  "slurm_exit": "COMPLETED 0:0",
+  "runtime": "00:15:34",
+  "scope": "Metadata and <=16MiB SHA256 for selected analysis roots; not all raw data or all reference databases"
+}
+
+
+--- large_analysis_checksums/summary.json ---
+{
+  "job_id": 53680819,
+  "unique_files": 1494,
+  "successful_sha256": 1494,
+  "errors": [],
+  "bytes": 292813193914
+}
+
+
+--- local_environment.json ---
+{
+  "python": "3.13.5 (main, Aug 10 2026, 12:06:59) [GCC 14.2.0]",
+  "packages": {
+    "numpy": "2.2.4",
+    "pandas": "3.0.3",
+    "scipy": "1.15.3",
+    "matplotlib": "3.10.1+dfsg1",
+    "biopython": "1.85"
+  }
+}
+
+
+--- round1_sensitivity.json ---
+{
+  "all_pairs": {
+    "pairs": 23,
+    "mag_annot": 85868,
+    "mag_annot_shared": 68969,
+    "mag_dark": 1513,
+    "mag_dark_shared": 238,
+    "mag_dark_full": 166,
+    "mag_dark_full_shared": 26,
+    "annotated_share": 0.803197931709135,
+    "dark_share": 0.15730337078651685,
+    "median_shared_identity": 99.7,
+    "pairs_annotated_more_shared": 23
+  },
+  "exclude_confirmed_ecoli": {
+    "pairs": 22,
+    "mag_annot": 81723,
+    "mag_annot_shared": 65478,
+    "mag_dark": 1507,
+    "mag_dark_shared": 238,
+    "mag_dark_full": 166,
+    "mag_dark_full_shared": 26,
+    "annotated_share": 0.8012187511471679,
+    "dark_share": 0.1579296615792966,
+    "median_shared_identity": 99.7,
+    "pairs_annotated_more_shared": 22
+  },
+  "culture_dark_rate_exclude_ecoli": {
+    "pairs": 22,
+    "culture_lower": 18,
+    "median_delta": -0.0035849999999999996,
+    "wilcoxon_two_sided_p": 0.006649494171142578
+  },
+  "divergence_strata": [
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 0,
+      "upper_inclusive": 0.1,
+      "arm": "dark",
+      "families": 9201,
+      "median_dnds": 0.5822
+    },
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 0,
+      "upper_inclusive": 0.1,
+      "arm": "ctrl",
+      "families": 690,
+      "median_dnds": 0.3211
+    },
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 0.1,
+      "upper_inclusive": 0.25,
+      "arm": "dark",
+      "families": 7417,
+      "median_dnds": 0.5395
+    },
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 0.1,
+      "upper_inclusive": 0.25,
+      "arm": "ctrl",
+      "families": 946,
+      "median_dnds": 0.33245
+    },
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 0.25,
+      "upper_inclusive": 0.5,
+      "arm": "dark",
+      "families": 17881,
+      "median_dnds": 0.4962
+    },
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 0.25,
+      "upper_inclusive": 0.5,
+      "arm": "ctrl",
+      "families": 5794,
+      "median_dnds": 0.4629
+    },
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 0.5,
+      "upper_inclusive": 1,
+      "arm": "dark",
+      "families": 49577,
+      "median_dnds": 0.4354
+    },
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 0.5,
+      "upper_inclusive": 1,
+      "arm": "ctrl",
+      "families": 55308,
+      "median_dnds": 0.4517
+    },
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 1,
+      "upper_inclusive": 2,
+      "arm": "dark",
+      "families": 13124,
+      "median_dnds": 0.2542
+    },
+    {
+      "axis": "mean_dS",
+      "lower_exclusive": 1,
+      "upper_inclusive": 2,
+      "arm": "ctrl",
+      "families": 32909,
+      "median_dnds": 0.2933
+    },
+    {
+      "axis": "mean_pid",
+      "lower_exclusive": 0,
+      "upper_inclusive": 0.7,
+      "arm": "dark",
+      "families": 33754,
+      "median_dnds": 0.4647
+    },
+    {
+      "axis": "mean_pid",
+      "lower_exclusive": 0,
+      "upper_inclusive": 0.7,
+      "arm": "ctrl",
+      "families": 61498,
+      "median_dnds": 0.4245
+    },
+    {
+      "axis": "mean_pid",
+      "lower_exclusive": 0.7,
+      "upper_inclusive": 0.8,
+      "arm": "dark",
+      "families": 35371,
+      "median_dnds": 0.3965
+    },
+    {
+      "axis": "mean_pid",
+      "lower_exclusive": 0.7,
+      "upper_inclusive": 0.8,
+      "arm": "ctrl",
+      "families": 26894,
+      "median_dnds": 0.3278
+    },
+    {
+      "axis": "mean_pid",
+      "lower_exclusive": 0.8,
+      "upper_inclusive": 0.9,
+      "arm": "dark",
+      "families": 15023,
+      "median_dnds": 0.3707
+    },
+    {
+      "axis": "mean_pid",
+      "lower_exclusive": 0.8,
+      "upper_inclusive": 0.9,
+      "arm": "ctrl",
+      "families": 5718,
+      "median_dnds": 0.2194
+    },
+    {
+      "axis": "mean_pid",
+      "lower_exclusive": 0.9,
+      "upper_inclusive": 0.95,
+      "arm": "dark",
+      "families": 5839,
+      "median_dnds": 0.5284
+    },
+    {
+      "axis": "mean_pid",
+      "lower_exclusive": 0.9,
+      "upper_inclusive": 0.95,
+      "arm": "ctrl",
+      "families": 763,
+      "median_dnds": 
+
+--- round2_checks.json ---
+{
+  "structural": {
+    "dark": {
+      "n": 2838,
+      "zero_reported_scores": 22,
+      "thresholds": {
+        "0.4": {
+          "qtm_below": 544,
+          "alntm_below": 41,
+          "qtm_below_with_score": 522,
+          "alntm_below_with_score": 19
+        },
+        "0.45": {
+          "qtm_below": 780,
+          "alntm_below": 63,
+          "qtm_below_with_score": 758,
+          "alntm_below_with_score": 41
+        },
+        "0.5": {
+          "qtm_below": 1031,
+          "alntm_below": 95,
+          "qtm_below_with_score": 1009,
+          "alntm_below_with_score": 73
+        },
+        "0.55": {
+          "qtm_below": 1300,
+          "alntm_below": 127,
+          "qtm_below_with_score": 1278,
+          "alntm_below_with_score": 105
+        },
+        "0.6": {
+          "qtm_below": 1576,
+          "alntm_below": 179,
+          "qtm_below_with_score": 1554,
+          "alntm_below_with_score": 157
+        }
+      },
+      "qtm_045_to_05": 251
+    },
+    "control": {
+      "n": 3013,
+      "zero_reported_scores": 66,
+      "thresholds": {
+        "0.4": {
+          "qtm_below": 78,
+          "alntm_below": 67,
+          "qtm_below_with_score": 12,
+          "alntm_below_with_score": 1
+        },
+        "0.45": {
+          "qtm_below": 85,
+          "alntm_below": 68,
+          "qtm_below_with_score": 19,
+          "alntm_below_with_score": 2
+        },
+        "0.5": {
+          "qtm_below": 101,
+          "alntm_below": 68,
+          "qtm_below_with_score": 35,
+          "alntm_below_with_score": 2
+        },
+        "0.55": {
+          "qtm_below": 118,
+          "alntm_below": 69,
+          "qtm_below_with_score": 52,
+          "alntm_below_with_score": 3
+        },
+        "0.6": {
+          "qtm_below": 154,
+          "alntm_below": 70,
+          "qtm_below_with_score": 88,
+          "alntm_below_with_score": 4
+        }
+      },
+      "qtm_045_to_05": 16
+    }
+  },
+  "frame": {
+    "input_families": 10000,
+    "null": 9148,
+    "annotated": 9182,
+    "both": 9029,
+    "null_only": 119,
+    "annotated_only": 153,
+    "neither": 699,
+    "paired_median_difference": 0.6547000000000001
+  }
+}
+
+
+--- sample_input_summary.json ---
+{
+  "rows": 2204,
+  "samples": 551,
+  "status": {
+    "present_metadata_only": 2203,
+    "missing": 1
+  },
+  "total_bytes_present": 6196249835701
+}
+
+--- selection_covariates/matching_summary.json ---
+{
+  "seed": 20261013,
+  "common_strata": 553,
+  "unmatched": {
+    "median_dark": 0.4253,
+    "median_control": 0.3884,
+    "median_difference": 0.03689999999999999,
+    "balance": {
+      "mean_dS": {
+        "dark_median": 0.6071,
+        "control_median": 0.8628,
+        "standardised_mean_difference": -0.8274640100706828
+      },
+      "median_cds_aa": {
+        "dark_median": 117.0,
+        "control_median": 80.0,
+        "standardised_mean_difference": 0.3075625158322262
+      },
+      "median_gc": {
+        "dark_median": 0.7093846527082706,
+        "control_median": 0.6807511737089202,
+        "standardised_mean_difference": 0.3437440978735566
+      },
+      "n_seq": {
+        "dark_median": 4.0,
+        "control_median": 4.0,
+        "standardised_mean_difference": -0.016297779532841127
+      }
+    },
+    "arm_counts": {
+      "dark": 97200,
+      "ctrl": 95647
+    }
+  },
+  "matched": {
+    "per_arm": 61427,
+    "median_dark": 0.3862,
+    "median_control": 0.4229,
+    "median_difference": -0.03670000000000001,
+    "balance": {
+      "mean_dS": {
+        "dark_median": 0.7261,
+        "control_median": 0.7883,
+        "standardised_mean_difference": -0.12369957068570299
+      },
+      "median_cds_aa": {
+        "dark_median": 99.5,
+        "control_median": 99.5,
+        "standardised_mean_difference": 0.012203669742196954
+      },
+      "median_gc": {
+        "dark_median": 0.6944444444444444,
+        "control_median": 0.6940298507462687,
+        "standardised_mean_difference": 0.010977626847741836
+      },
+      "n_seq": {
+        "dark_median": 4.0,
+        "control_median": 4.0,
+        "standardised_mean_difference": -0.014573288515286942
+      }
+    }
+  },
+  "twenty_seed_difference_range": [
+    -0.03820000000000001,
+    -0.0358
+  ],
+  "covariates_sha256": "3618335766f2ef182e85b089d588f9ed740858a21b42707858b9717f58705c59"
+}
+
+
+--- selection_estimands/summary.json ---
+{
+  "bootstrap_seed": 20261014,
+  "bootstrap_replicates": 1000,
+  "bootstrap_scope": "families independent within each arm/stratum; shared ancestry unmodelled",
+  "strata": [
+    {
+      "stratum": 0,
+      "dark_n": 9194,
+      "control_n": 690,
+      "dark_median": 0.58195,
+      "control_median": 0.3211,
+      "difference": 0.26084999999999997,
+      "bootstrap_low": 0.19730000000000003,
+      "bootstrap_high": 0.28825375000000003
+    },
+    {
+      "stratum": 1,
+      "dark_n": 7419,
+      "control_n": 944,
+      "dark_median": 0.5399,
+      "control_median": 0.33245,
+      "difference": 0.20745000000000002,
+      "bootstrap_low": 0.18129,
+      "bootstrap_high": 0.23835124999999996
+    },
+    {
+      "stratum": 2,
+      "dark_n": 17873,
+      "control_n": 5787,
+      "dark_median": 0.4962,
+      "control_median": 0.4632,
+      "difference": 0.032999999999999974,
+      "bootstrap_low": 0.0232,
+      "bootstrap_high": 0.04260249999999997
+    },
+    {
+      "stratum": 3,
+      "dark_n": 49588,
+      "control_n": 55309,
+      "dark_median": 0.4354,
+      "control_median": 0.4517,
+      "difference": -0.01629999999999998,
+      "bootstrap_low": -0.018699999999999994,
+      "bootstrap_high": -0.01419999999999999
+    },
+    {
+      "stratum": 4,
+      "dark_n": 13126,
+      "control_n": 32917,
+      "dark_median": 0.25425,
+      "control_median": 0.2933,
+      "difference": -0.03905000000000003,
+      "bootstrap_low": -0.04199999999999998,
+      "bootstrap_high": -0.03670000000000001
+    }
+  ],
+  "weighted_mean_differences_of_family_medians": {
+    "dark_distribution": 0.012112684603806715,
+    "control_distribution": -0.02169130619762127,
+    "overlap_distribution": -0.018127144495204396
+  },
+  "common_strata": 553,
+  "common_support_dark": 93220,
+  "common_support_control": 95541
+}
+
+
+--- shadow_overlap/selection_sensitivity.json ---
+[
+  {
+    "exclusion": "antifam",
+    "flagged_families": 56,
+    "remaining_evaluable": 97153,
+    "median_dnds": 0.4252,
+    "fraction_below_one": 0.9670416765308328,
+    "flagged_evaluable": 47,
+    "flagged_median": 0.8307,
+    "flagged_q1": 0.5826,
+    "flagged_q3": 0.9883,
+    "flagged_fraction_below_one": 0.7659574468085106
+  },
+  {
+    "exclusion": "opposite_overlap",
+    "flagged_families": 46,
+    "remaining_evaluable": 97156,
+    "median_dnds": 0.4252,
+    "fraction_below_one": 0.9670324014986208,
+    "flagged_evaluable": 44,
+    "flagged_median": 0.67465,
+    "flagged_q1": 0.471375,
+    "flagged_q3": 0.92795,
+    "flagged_fraction_below_one": 0.7727272727272727
+  },
+  {
+    "exclusion": "union",
+    "flagged_families": 102,
+    "remaining_evaluable": 97109,
+    "median_dnds": 0.4251,
+    "fraction_below_one": 0.9671297202113089,
+    "flagged_evaluable": 91,
+    "flagged_median": 0.7622,
+    "flagged_q1": 0.5315000000000001,
+    "flagged_q3": 0.97395,
+    "flagged_fraction_below_one": 0.7692307692307693
+  }
+]
+
+
+--- shadow_overlap/summary.json ---
+{
+  "admitted_families": 106042,
+  "admitted_members": 536437,
+  "overlap_pairs_any": 97,
+  "members_opposite_nondark_overlap": 70,
+  "families_with_opposite_nondark_overlap": 46
+}
+
+
+--- site_level_sensitivity/summary.json ---
+[
+  {
+    "axis": "S",
+    "samples": 251,
+    "sites": 59,
+    "families": 94568,
+    "q_lt_005": 59120,
+    "negative": 54411,
+    "positive": 4709
+  },
+  {
+    "axis": "Ca",
+    "samples": 251,
+    "sites": 59,
+    "families": 94568,
+    "q_lt_005": 49387,
+    "negative": 45006,
+    "positive": 4381
+  },
+  {
+    "axis": "Cl",
+    "samples": 251,
+    "sites": 59,
+    "families": 94568,
+    "q_lt_005": 48567,
+    "negative": 43625,
+    "positive": 4942
+  },
+  {
+    "axis": "Fe",
+    "samples": 251,
+    "sites": 59,
+    "families": 94568,
+    "q_lt_005": 12054,
+    "negative": 11257,
+    "positive": 797
+  }
+]
+
+
+--- structural_raw_audit/summary.json ---
+{
+  "dark": {
+    "qualified": 2838,
+    "no_rows": 22,
+    "qtm_below": 1031,
+    "alntm_below": 95,
+    "retrieved_qtm_below": 1009,
+    "retrieved_alntm_below": 73,
+    "min50_alntm_below": 97,
+    "qtm_below_but_min100_cov50_alntm_hit": 797
+  },
+  "control": {
+    "qualified": 3013,
+    "no_rows": 66,
+    "qtm_below": 101,
+    "alntm_below": 68,
+    "retrieved_qtm_below": 35,
+    "retrieved_alntm_below": 2,
+    "min50_alntm_below": 69,
+    "qtm_below_but_min100_cov50_alntm_hit": 26
+  }
+}
+
+
+=== 2. METABOLISM / BGC / AMR SUMMARIES IN source_snapshot ===
+
+--- 06_metabolism/bgc_clean/results/bgc_category_summary.tsv ---
+category	n_protoclusters	n_MAGs	pct_species
+terpene	13541	5060	93.05
+RiPP	9112	3489	64.16
+PKS	8167	3061	56.29
+other	5799	2759	50.74
+NRPS	11714	2255	41.47
+saccharide	72	64	1.18
+
+
+--- 06_metabolism/bgc_clean/results/bgc_census_summary.tsv ---
+metric	value
+n_species	5438
+n_species_with_BGC	5301
+pct_species_with_BGC	97.48
+total_regions	44002
+regions_on_contig_edge	37529
+pct_regions_contig_edge	85.29
+areas_vs_gbk_mismatches	0
+
+
+--- 06_metabolism/bgc_clean/results/bgc_product_summary.tsv ---
+product_type	n_BGCs	n_edge_BGCs	n_MAGs	pct_species
+terpene-precursor	6496	5050	4556	83.78
+terpene	7034	6082	3379	62.14
+T3PKS	2553	2256	2256	41.49
+RiPP-like	3200	2719	1986	36.52
+NRPS-like	3388	3068	1701	31.28
+NRPS	7495	7083	1363	25.06
+RRE-containing	1668	1355	1273	23.41
+T1PKS	3308	2957	1216	22.36
+ectoine	992	806	899	16.53
+NI-siderophore	1082	917	810	14.90
+redox-cofactor	691	560	656	12.06
+betalactone	737	511	647	11.90
+arylpolyene	792	679	600	11.03
+lassopeptide	711	509	582	10.70
+azole-containing-RiPP	504	357	416	7.65
+hserlactone	478	424	399	7.34
+hydrogen-cyanide	434	220	374	6.88
+NAGGN	360	250	358	6.58
+hglE-KS	411	381	309	5.68
+NRP-metallophore	347	309	292	5.37
+phosphonate	310	262	290	5.33
+ranthipeptide	300	250	288	5.30
+lanthipeptide-class-ii	399	315	285	5.24
+thioamitides	331	272	277	5.09
+lanthipeptide-class-i	338	235	267	4.91
+NAPAA	276	217	243	4.47
+indole	237	187	204	3.75
+HR-T2PKS	214	167	194	3.57
+lanthipeptide-class-iii	216	164	180	3.31
+other	204	168	169	3.11
+T2PKS	205	172	160	2.94
+resorcinol	167	139	159	2.92
+PKS-like	171	142	145	2.67
+lanthipeptide-class-iv	160	133	138	2.54
+butyrolactone	159	123	124	2.28
+lanthipeptide-class-v	129	108	122	2.24
+transAT-PKS-like	344	342	118	2.17
+nucleoside	112	94	110	2.02
+acyl_amino_acids	153	141	109	2.00
+proteusin	108	99	92	1.69
+transAT-PKS	93	81	80	1.47
+linaridin	72	62	69	1.27
+oligosaccharide	71	62	64	1.18
+triceptide	66	44	63	1.16
+phenazine	59	47	57	1.05
+microviridin	66	49	56	1.03
+CDPS	56	33	48	0.88
+cyclic-lactone-autoinducer	43	39	36	0.66
+phosphonate-like	36	29	34	0.63
+opine-like-metallophore	32	26	32	0.59
+crocagin	32	22	30	0.55
+polyhalogenated-pyrrole	32	19	30	0.55
+amglyccycl	30	24	28	0.51
+deazapurine	26	25	26	0.48
+cyanobactin	27	18	26	0.48
+aminopolycarboxylic-acid	23	14	23	0.42
+melanin	28	22	22	0.40
+azoxy-crosslink	23	18	22	0.40
+thioamide-NRP	21	15	21	0.39
+cytokinin	16	10	16	0.29
+blactam	17	10	15	0.28
+2dos	14	9	14	0.26
+furan	13	10	13	0.24
+ladderane	13	10	12	0.22
+sactipeptide	11	10	10	0.18
+darobactin	10	4	10	0.18
+polyyne	9	7	8	0.15
+lipolanthine	7	6	7	0.13
+guanidinotides	7	5	7	0.13
+hydroxytropolone	7	0	7	0.13
+bottromycin	5	3	5	0.09
+prodigiosin	5	4	5	0.09
+aminocoumarin	3	3	3	0.06
+lincosamides	3	3	3	0.06
+isocyanide-nrp	3	2	3	0.06
+PUFA	3	2	3	0.06
+mycosporine	2	2	2	0.04
+epipeptide	2	2	2	0.04
+benzoxazole	2	1	2	0.04
+tropodithietic-acid	1	1	1	0.02
+spliceotide	1	1	1	0.02
+PBDE	1	0	1	0.02
+
+
+--- 06_metabolism/bgc_clean/results/community_summary.tsv ---
+trait	compartment	n_samples	occ_median	occ_q1	occ_q3	abund_whole_median	abund_whole_q1	abund_whole_q3	abund_mapped_median
+any_BGC	ALL	548	99.03	98.80	99.26	48.17	40.00	56.34	99.43
+any_BGC	Surface	116	99.16	98.97	99.35	45.27	35.73	51.25	99.62
+any_BGC	Deep	165	99.03	98.84	99.18	46.00	37.76	51.30	99.24
+any_BGC	PlantRoot	267	98.96	98.68	99.28	52.32	43.51	58.73	99.44
+terpene-precursor	ALL	548	83.54	81.88	85.11	39.89	31.83	46.96	82.47
+terpene-precursor	Surface	116	82.94	81.66	84.53	36.75	29.19	41.12	80.76
+terpene-precursor	Deep	165	82.40	80.38	83.80	35.94	29.45	42.15	80.74
+terpene-precursor	PlantRoot	267	84.46	83.08	85.85	43.83	36.43	50.67	84.71
+terpene	ALL	548	65.86	61.70	70.58	31.60	25.46	38.72	67.54
+terpene	Surface	116	67.18	63.51	72.65	31.49	26.69	38.05	74.38
+terpene	Deep	165	62.18	58.58	66.01	29.39	23.26	34.66	64.28
+terpene	PlantRoot	267	67.35	62.68	71.79	33.40	27.19	41.51	67.23
+T3PKS	ALL	548	43.98	38.91	48.77	20.81	14.71	28.91	45.59
+T3PKS	Surface	116	44.27	41.56	48.37	21.24	16.52	27.27	50.03
+T3PKS	Deep	165	40.40	33.94	45.60	16.42	10.01	22.61	38.09
+T3PKS	PlantRoot	267	46.54	40.72	50.66	24.68	16.51	32.01	49.96
+RiPP-like	ALL	548	30.53	27.97	32.96	13.82	10.62	18.50	29.34
+RiPP-like	Surface	116	30.71	27.86	32.36	12.70	9.72	15.83	28.64
+RiPP-like	Deep	165	30.19	27.38	32.03	12.55	10.10	16.39	28.17
+RiPP-like	PlantRoot	267	30.78	28.45	33.98	15.62	11.72	20.15	30.71
+NRPS-like	ALL	548	31.89	30.06	34.00	14.59	11.77	17.98	31.89
+NRPS-like	Surface	116	31.99	30.29	33.25	13.77	11.71	16.18	32.77
+NRPS-like	Deep	165	32.09	30.79	33.72	14.03	11.28	17.11	31.41
+NRPS-like	PlantRoot	267	31.63	29.42	34.63	15.88	12.59	18.89	31.90
+NRPS	ALL	548	22.32	20.27	24.40	9.98	7.18	13.03	21.86
+NRPS	Surface	116	21.35	19.54	23.11	7.63	5.29	10.92	17.69
+NRPS	Deep	165	23.14	21.53	24.75	10.31	8.09	13.40	23.72
+NRPS	PlantRoot	267	22.19	19.76	25.09	10.78	7.64	13.92	22.29
+RRE-containing	ALL	548	23.73	20.80	25.90	9.48	7.19	12.49	21.36
+RRE-containing	Surface	116	23.58	21.51	25.14	8.63	6.57	11.64	20.49
+RRE-containing	Deep	165	25.69	23.86	27.29	10.74	8.39	13.46	24.45
+RRE-containing	PlantRoot	267	22.08	19.11	24.60	9.15	6.96	12.22	19.14
+T1PKS	ALL	548	19.00	16.57	21.13	7.28	4.98	9.95	15.61
+T1PKS	Surface	116	18.04	15.98	19.66	5.49	3.84	7.00	12.24
+T1PKS	Deep	165	19.24	16.95	21.28	7.16	5.25	9.49	16.52
+T1PKS	PlantRoot	267	19.36	16.57	21.77	8.30	5.88	12.10	16.93
+ectoine	ALL	548	10.64	8.19	15.09	4.92	2.73	9.44	10.24
+ectoine	Surface	116	9.67	8.04	12.70	3.91	2.21	6.36	8.24
+ectoine	Deep	165	8.56	6.95	11.16	3.82	2.03	6.94	8.61
+ectoine	PlantRoot	267	12.87	9.76	17.72	6.39	3.48	12.42	13.06
+NI-siderophore	ALL	548	14.66	12.56	16.66	6.95	4.73	10.49	15.15
+NI-siderophore	Surface	116	14.96	13.54	16.02	6.36	5.00	8.62	15.05
+NI-siderophore	Deep	165	13.03	10.98	15.14	5.75	3.77	9.43	12.82
+NI-siderophore	PlantRoot	267	15.58	13.49	17.73	8.07	5.31	11.78	16.66
+redox-cofactor	ALL	548	11.76	10.00	14.20	5.94	4.16	8.26	12.84
+redox-cofactor	Surface	116	11.62	10.51	12.88	5.98	4.90	7.30	14.37
+redox-cofactor	Deep	165	10.11	8.61	11.51	4.60	2.48	6.27	10.24
+redox-cofactor	PlantRoot	267	13.30	11.05	15.85	7.01	4.84	10.49	13.98
+betalactone	ALL	548	13.83	12.03	15.77	7.97	5.07	10.62	17.02
+betalactone	Surface	116	13.59	12.38	15.11	6.62	4.92	9.29	16.22
+betalactone	Deep	165	12.98	11.33	14.42	6.64	4.48	9.17	14.99
+betalactone	PlantRoot	267	14.35	12.55	16.56	9.32	6.51	12.13	18.56
+arylpolyene	ALL	548	8.13	6.52	10.03	3.12	1.85	4.74	6.74
+arylpolyene	Surface	116	7.48	6.70	8.75	2.83	1.89	3.82	6.29
+arylpolyene	Deep	165	6.66	5.60	8.19	2.28	1.23	3.39	5.00
+arylpolyene	PlantRoot	267	9.42	7.50	11.57	4.11	2.55	5.98	8.32
+lassopeptide	ALL	548	10.18	8.80	11.43	3.75	2.62	5.45	8.69
+lassopeptide	Surface	116	10.14	9.37	11.09	3.29	2.41	4.20	7.88
+lassopeptide	Deep	165	10.75	9.39	11.82	4.09	3.05	5.37	9.43
+lassopeptide	PlantRoot	267	9.91	8.27	11.56	3.74	2.41	6.24	8.21
+azole-containing-RiPP	ALL	548	5.80	4.65	6.81	1.91	1.19	2.85	4.23
+azole-containing-RiPP	Surface	116	5.19	4.29	5.94	1.20	0.79	1.75	2.65
+azole-containing-RiPP	Deep	165	6.37	5.36	7.22	2.11	1.50	2.
+
+--- 06_metabolism/osmolyte_clean/results/community_summary.tsv ---
+trait	compartment	n_samples	occ_median	occ_q1	occ_q3	abund_whole_median	abund_annotated_median
+trehalose	Surface	116	76.12	73.63	79.12	35.67	81.22
+trehalose	Deep	165	74.38	70.61	76.96	36.01	79.73
+trehalose	PlantRoot	267	73.63	70.20	77.55	39.36	78.29
+trehalose_strict	Surface	116	68.84	67.10	71.89	32.37	74.55
+trehalose_strict	Deep	165	68.29	64.19	71.09	32.16	74.41
+trehalose_strict	PlantRoot	267	67.61	64.17	72.17	36.40	72.96
+trehalose_any	Surface	116	85.09	82.33	87.97	39.53	90.29
+trehalose_any	Deep	165	84.25	80.77	86.79	40.69	90.09
+trehalose_any	PlantRoot	267	82.84	79.47	86.50	43.60	86.80
+ectoine	Surface	116	9.96	8.57	12.64	4.02	8.40
+ectoine	Deep	165	8.92	7.40	11.25	3.96	8.93
+ectoine	PlantRoot	267	13.00	9.85	17.77	6.59	12.94
+hydroxyectoine	Surface	116	12.88	11.39	16.09	5.06	10.89
+hydroxyectoine	Deep	165	12.56	10.52	15.05	4.88	10.96
+hydroxyectoine	PlantRoot	267	17.10	13.95	21.69	7.75	15.45
+glucosylglycerol	Surface	116	5.40	4.47	6.40	1.97	4.63
+glucosylglycerol	Deep	165	4.10	2.60	5.01	1.11	2.30
+glucosylglycerol	PlantRoot	267	5.05	3.94	6.09	2.07	4.13
+glucosylglycerol_strict	Surface	116	0.00	0.00	0.00	0.00	0.00
+glucosylglycerol_strict	Deep	165	0.00	0.00	0.00	0.00	0.00
+glucosylglycerol_strict	PlantRoot	267	0.00	0.00	0.00	0.00	0.00
+mannosylglycerate	Surface	116	1.95	1.22	2.66	0.36	0.80
+mannosylglycerate	Deep	165	2.65	1.95	3.26	0.82	1.99
+mannosylglycerate	PlantRoot	267	1.53	0.63	2.48	0.34	0.69
+mannosylglycerate_strict	Surface	116	0.38	0.23	0.49	0.07	0.15
+mannosylglycerate_strict	Deep	165	0.47	0.33	0.61	0.11	0.25
+mannosylglycerate_strict	PlantRoot	267	0.35	0.19	0.50	0.06	0.12
+any_osmolyte	Surface	116	87.08	84.76	89.58	40.12	91.24
+any_osmolyte	Deep	165	86.37	83.58	89.50	41.64	92.09
+any_osmolyte	PlantRoot	267	85.21	82.74	88.41	45.10	88.68
+
+
+--- 06_metabolism/osmolyte_clean/results/v551/community_summary.tsv ---
+trait	compartment	n_samples	occ_median	occ_q1	occ_q3	abund_whole_median	abund_annotated_median
+trehalose	Surface	117	76.05	73.53	79.08	35.53	81.15
+trehalose	Deep	165	74.38	70.61	76.96	36.01	79.73
+trehalose	PlantRoot	268	73.64	70.21	77.54	39.41	78.32
+trehalose_strict	Surface	117	68.78	67.08	71.89	32.30	74.51
+trehalose_strict	Deep	165	68.29	64.19	71.09	32.16	74.41
+trehalose_strict	PlantRoot	268	67.61	64.18	72.17	36.45	72.99
+trehalose_any	Surface	117	84.97	82.23	87.96	39.41	90.21
+trehalose_any	Deep	165	84.25	80.77	86.79	40.69	90.09
+trehalose_any	PlantRoot	268	82.85	79.49	86.50	43.66	86.87
+ectoine	Surface	117	9.98	8.59	12.72	4.04	8.41
+ectoine	Deep	165	8.92	7.40	11.25	3.96	8.93
+ectoine	PlantRoot	268	13.03	9.87	17.74	6.62	12.95
+hydroxyectoine	Surface	117	12.93	11.42	16.20	5.07	11.01
+hydroxyectoine	Deep	165	12.56	10.52	15.05	4.88	10.96
+hydroxyectoine	PlantRoot	268	17.11	13.96	21.63	7.76	15.46
+glucosylglycerol	Surface	117	5.42	4.48	6.37	1.99	4.66
+glucosylglycerol	Deep	165	4.10	2.60	5.01	1.11	2.30
+glucosylglycerol	PlantRoot	268	5.06	3.94	6.08	2.07	4.13
+glucosylglycerol_strict	Surface	117	0.00	0.00	0.00	0.00	0.00
+glucosylglycerol_strict	Deep	165	0.00	0.00	0.00	0.00	0.00
+glucosylglycerol_strict	PlantRoot	268	0.00	0.00	0.00	0.00	0.00
+mannosylglycerate	Surface	117	1.94	1.21	2.64	0.36	0.80
+mannosylglycerate	Deep	165	2.65	1.95	3.26	0.82	1.99
+mannosylglycerate	PlantRoot	268	1.53	0.63	2.47	0.34	0.69
+mannosylglycerate_strict	Surface	117	0.38	0.23	0.49	0.07	0.15
+mannosylglycerate_strict	Deep	165	0.47	0.33	0.61	0.11	0.25
+mannosylglycerate_strict	PlantRoot	268	0.35	0.19	0.50	0.06	0.12
+any_osmolyte	Surface	117	87.07	84.66	89.57	39.80	91.15
+any_osmolyte	Deep	165	86.37	83.58	89.50	41.64	92.09
+any_osmolyte	PlantRoot	268	85.22	82.77	88.44	45.31	88.75
+
+
+--- 06_metabolism/pathway_check_clean/results/triangulation_summary.tsv ---
+comparison	n_universe	n_method1	n_method2	n_both	pct_agree	jaccard
+ectoine: KO vs antiSMASH	5438	895	899	860	98.6	0.921
+ectoine: KO vs gapsmith	5438	895	15	15	83.8	0.017
+ectoine: antiSMASH vs gapsmith	5438	899	15	14	83.7	0.016
+trehalose: KO vs gapsmith	5438	4099	4075	3620	82.8	0.795
+
+
+--- 06_metabolism/resistome_clean/results/amr_census_summary.tsv ---
+metric	value
+n_species	5438
+n_species_any_hit	2747
+n_species_AMR	2034
+pct_species_AMR	37.40
+n_species_STRESS	1275
+pct_species_STRESS	23.45
+n_hits_AMR	4182
+n_hits_STRESS	1614
+n_hits_VIRULENCE_type	8
+AMR_scope_core	4040
+AMR_scope_plus	142
+
+
+--- 06_metabolism/resistome_clean/results/amr_class_summary.tsv ---
+amr_class	n_hits	n_MAGs	pct_species
+BETA-LACTAM	1745	1335	24.55
+AMINOGLYCOSIDE	734	649	11.93
+RIFAMYCIN	447	394	7.25
+PHENICOL	319	273	5.02
+MACROLIDE	270	252	4.63
+GLYCOPEPTIDE	457	238	4.38
+FOSFOMYCIN	87	86	1.58
+STREPTOGRAMIN	31	30	0.55
+TETRACYCLINE	28	27	0.50
+EFFLUX	14	12	0.22
+LINCOSAMIDE/MACROLIDE/STREPTOGRAMIN	8	8	0.15
+THIOSTREPTON	6	6	0.11
+LINCOSAMIDE	5	5	0.09
+LINCOSAMIDE/STREPTOGRAMIN	5	5	0.09
+NITROFURAN/PHENICOL/QUINOLONE/TETRACYCLINE	5	4	0.07
+TRIMETHOPRIM	4	4	0.07
+TUBERACTINOMYCIN	4	4	0.07
+MACROLIDE/STREPTOGRAMIN	4	4	0.07
+LINCOSAMIDE/PLEUROMUTILIN/STREPTOGRAMIN	4	4	0.07
+STREPTOTHRICIN	2	2	0.04
+BLEOMYCIN	1	1	0.02
+QUATERNARY AMMONIUM	1	1	0.02
+AVILAMYCIN	1	1	0.02
+
+
+--- 06_metabolism/resistome_clean/results/community_summary.tsv ---
+trait	compartment	n_samples	occ_median	occ_q1	occ_q3	abund_whole_median	abund_whole_q1	abund_whole_q3	abund_mapped_median
+any_AMR	ALL	548	38.77	33.20	44.75	14.97	10.87	23.17	33.53
+any_AMR	Surface	116	37.70	35.30	41.02	12.84	10.74	16.44	31.44
+any_AMR	Deep	165	34.48	29.33	38.68	12.14	8.82	17.23	28.36
+any_AMR	PlantRoot	267	42.69	36.54	49.56	20.22	12.75	29.32	40.85
+BETA-LACTAM	ALL	548	26.06	21.58	31.06	9.37	6.28	15.97	21.48
+BETA-LACTAM	Surface	116	25.54	22.80	27.97	8.22	6.42	11.21	20.37
+BETA-LACTAM	Deep	165	22.36	18.13	25.44	7.47	4.66	10.96	17.31
+BETA-LACTAM	PlantRoot	267	29.79	24.75	35.35	13.48	7.77	20.04	26.41
+AMINOGLYCOSIDE	ALL	548	13.01	11.38	14.83	4.56	3.39	6.72	10.67
+AMINOGLYCOSIDE	Surface	116	12.84	11.62	14.37	4.11	3.36	4.88	10.02
+AMINOGLYCOSIDE	Deep	165	11.80	10.50	13.30	4.20	3.14	5.78	10.36
+AMINOGLYCOSIDE	PlantRoot	267	14.03	12.12	15.94	5.43	3.68	8.27	11.75
+RIFAMYCIN	ALL	548	6.15	4.43	8.40	2.50	1.56	4.61	5.79
+RIFAMYCIN	Surface	116	6.14	4.81	7.61	2.27	1.67	3.08	4.97
+RIFAMYCIN	Deep	165	4.73	3.64	6.73	1.89	1.05	3.03	4.29
+RIFAMYCIN	PlantRoot	267	7.49	5.11	9.83	3.78	1.87	7.23	7.87
+PHENICOL	ALL	548	5.41	3.25	7.59	1.74	0.74	3.93	3.73
+PHENICOL	Surface	116	5.10	3.79	6.17	1.26	0.72	1.96	3.06
+PHENICOL	Deep	165	3.79	2.54	5.62	1.18	0.52	3.18	2.89
+PHENICOL	PlantRoot	267	6.94	4.21	9.34	2.82	1.04	6.44	5.62
+MACROLIDE	ALL	548	3.72	2.33	5.48	0.96	0.44	2.69	2.21
+MACROLIDE	Surface	116	3.36	2.40	4.55	0.73	0.37	1.05	1.70
+MACROLIDE	Deep	165	3.08	1.80	4.19	0.71	0.33	1.42	1.78
+MACROLIDE	PlantRoot	267	4.73	2.64	7.00	1.74	0.59	3.81	4.09
+GLYCOPEPTIDE	ALL	548	5.15	3.99	6.22	1.62	0.86	2.79	3.48
+GLYCOPEPTIDE	Surface	116	5.08	3.99	5.80	1.09	0.67	1.75	2.70
+GLYCOPEPTIDE	Deep	165	5.15	4.09	6.05	1.32	0.75	2.15	3.12
+GLYCOPEPTIDE	PlantRoot	267	5.23	3.79	6.76	2.25	1.12	4.14	4.63
+FOSFOMYCIN	ALL	548	1.90	1.41	2.50	0.69	0.32	1.09	1.52
+FOSFOMYCIN	Surface	116	1.80	1.40	2.24	0.71	0.42	0.96	1.57
+FOSFOMYCIN	Deep	165	1.48	1.07	1.94	0.38	0.17	0.72	0.94
+FOSFOMYCIN	PlantRoot	267	2.24	1.68	2.90	0.87	0.52	1.31	1.73
+STRESS:ARSENIC	ALL	548	19.27	17.50	20.89	7.16	5.40	9.33	16.28
+STRESS:ARSENIC	Surface	116	20.13	18.78	21.92	8.03	5.95	9.82	18.16
+STRESS:ARSENIC	Deep	165	20.30	19.10	21.44	7.78	6.22	9.91	18.15
+STRESS:ARSENIC	PlantRoot	267	17.92	15.93	19.72	6.29	4.81	8.41	13.49
+STRESS:MERCURY	ALL	548	6.90	4.56	8.74	2.56	1.17	3.90	6.13
+STRESS:MERCURY	Surface	116	7.77	5.83	8.93	2.80	2.01	4.03	7.03
+STRESS:MERCURY	Deep	165	8.29	6.70	9.93	3.30	2.27	4.76	7.84
+STRESS:MERCURY	PlantRoot	267	5.24	3.34	7.59	1.65	0.82	3.05	3.63
+
+
+--- 06_metabolism/resistome_clean/results/pathogen_census_summary.tsv ---
+metric	value
+n_species	5438
+n_named_pathogen_species	2
+n_reps_named_pathogen	2
+pct_reps_named_pathogen	0.037
+n_reps_pathogen_containing_genus_human_animal	47
+pct_human_animal_genus	0.86
+n_reps_pathogen_containing_genus_plant	6
+pct_plant_genus	0.11
+
+
+--- 06_metabolism/resistome_clean/results/stress_class_summary.tsv ---
+stress_class	n_hits	n_MAGs	pct_species
+ARSENIC	1063	943	17.34
+MERCURY	529	409	7.52
+NA	16	11	0.20
+COPPER/SILVER	3	3	0.06
+EFFLUX	2	2	0.04
+NICKEL	1	1	0.02
+
+
+--- 06_metabolism/uv_survival_clean/results/community_summary.tsv ---
+trait	compartment	n_samples	occ_median	occ_q1	occ_q3	abund_whole_median	abund_annotated_median
+photolyase	Surface	116	17.04	13.63	20.86	11.17	26.04
+photolyase	Deep	165	12.66	9.99	16.29	5.02	11.94
+photolyase	PlantRoot	267	17.34	13.49	21.28	9.10	18.94
+nhej	Surface	116	83.05	79.69	85.10	34.97	80.65
+nhej	Deep	165	85.74	82.63	88.77	37.27	86.85
+nhej	PlantRoot	267	84.59	79.85	87.78	42.05	85.64
+carotenoid	Surface	116	63.19	59.21	67.26	30.63	70.68
+carotenoid	Deep	165	57.25	53.93	61.33	28.13	61.29
+carotenoid	PlantRoot	267	63.49	57.86	67.49	31.12	62.60
+SOS_translesion	Surface	116	96.13	95.10	97.14	43.07	97.79
+SOS_translesion	Deep	165	95.00	93.96	96.42	42.88	96.83
+SOS_translesion	PlantRoot	267	96.56	95.20	97.38	49.12	97.70
+base_excision_repair	Surface	116	99.64	99.53	99.73	45.56	99.65
+base_excision_repair	Deep	165	99.65	99.56	99.74	46.15	99.60
+base_excision_repair	PlantRoot	267	99.67	99.56	99.76	52.42	99.78
+dna_protection_oxidative	Surface	116	94.55	93.66	95.73	41.22	95.05
+dna_protection_oxidative	Deep	165	93.20	91.66	95.03	41.96	91.66
+dna_protection_oxidative	PlantRoot	267	95.96	94.11	97.18	50.17	97.40
+dsb_nhej	Surface	116	83.05	79.69	85.10	34.97	80.65
+dsb_nhej	Deep	165	85.74	82.63	88.77	37.27	86.85
+dsb_nhej	PlantRoot	267	84.59	79.85	87.78	42.05	85.64
+mismatch_repair	Surface	116	49.75	45.60	56.23	18.41	43.87
+mismatch_repair	Deep	165	45.49	38.25	51.84	15.58	33.21
+mismatch_repair	PlantRoot	267	54.30	46.65	61.27	22.42	47.15
+nucleotide_excision_repair	Surface	116	99.78	99.69	99.90	45.67	99.94
+nucleotide_excision_repair	Deep	165	99.65	99.52	99.78	46.31	99.86
+nucleotide_excision_repair	PlantRoot	267	99.84	99.71	99.91	52.67	99.95
+photoprotective_pigment	Surface	116	63.19	59.21	67.26	30.63	70.68
+photoprotective_pigment	Deep	165	57.25	53.93	61.33	28.13	61.29
+photoprotective_pigment	PlantRoot	267	63.49	57.86	67.49	31.12	62.60
+photoreactivation	Surface	116	17.04	13.63	20.86	11.17	26.04
+photoreactivation	Deep	165	12.66	9.99	16.29	5.02	11.94
+photoreactivation	PlantRoot	267	17.34	13.49	21.28	9.10	18.94
+
+
+--- 06_metabolism/uv_survival_clean/results/read_ladder_summary.tsv ---
+compartment	n_samples	never_assembled_pct	assembled_unbinned_pct	binned_pct
+ALL	546	44.19	40.11	11.71
+Surface	116	50.30	41.15	7.38
+Deep	164	48.87	37.36	11.35
+PlantRoot	266	37.56	42.10	14.74
+
+
+--- 06_metabolism/uv_survival_clean/results/v551/community_summary.tsv ---
+trait	compartment	n_samples	occ_median	occ_q1	occ_q3	abund_whole_median	abund_annotated_median
+photolyase	Surface	117	17.05	13.65	20.77	11.24	26.04
+photolyase	Deep	165	12.66	9.99	16.29	5.02	11.94
+photolyase	PlantRoot	268	17.37	13.52	21.30	9.11	18.95
+nhej	Surface	117	83.00	79.62	85.09	34.93	80.43
+nhej	Deep	165	85.74	82.63	88.77	37.27	86.85
+nhej	PlantRoot	268	84.58	79.86	87.78	42.14	85.74
+carotenoid	Surface	117	63.23	59.21	67.24	30.62	70.71
+carotenoid	Deep	165	57.25	53.93	61.33	28.13	61.29
+carotenoid	PlantRoot	268	63.54	57.88	67.49	31.15	62.66
+SOS_translesion	Surface	117	96.11	95.08	97.14	42.98	97.78
+SOS_translesion	Deep	165	95.00	93.96	96.42	42.88	96.83
+SOS_translesion	PlantRoot	268	96.56	95.20	97.40	49.12	97.71
+base_excision_repair	Surface	117	99.64	99.53	99.73	45.32	99.66
+base_excision_repair	Deep	165	99.65	99.56	99.74	46.15	99.60
+base_excision_repair	PlantRoot	268	99.67	99.56	99.76	52.56	99.78
+dna_protection_oxidative	Surface	117	94.56	93.67	95.79	41.15	95.07
+dna_protection_oxidative	Deep	165	93.20	91.66	95.03	41.96	91.66
+dna_protection_oxidative	PlantRoot	268	95.97	94.11	97.17	50.20	97.41
+dsb_nhej	Surface	117	83.00	79.62	85.09	34.93	80.43
+dsb_nhej	Deep	165	85.74	82.63	88.77	37.27	86.85
+dsb_nhej	PlantRoot	268	84.58	79.86	87.78	42.14	85.74
+mismatch_repair	Surface	117	49.88	45.60	56.37	18.59	43.88
+mismatch_repair	Deep	165	45.49	38.25	51.84	15.58	33.21
+mismatch_repair	PlantRoot	268	54.34	46.66	61.26	22.44	46.79
+nucleotide_excision_repair	Surface	117	99.78	99.69	99.90	45.53	99.94
+nucleotide_excision_repair	Deep	165	99.65	99.52	99.78	46.31	99.86
+nucleotide_excision_repair	PlantRoot	268	99.84	99.71	99.91	52.73	99.95
+photoprotective_pigment	Surface	117	63.23	59.21	67.24	30.62	70.71
+photoprotective_pigment	Deep	165	57.25	53.93	61.33	28.13	61.29
+photoprotective_pigment	PlantRoot	268	63.54	57.88	67.49	31.15	62.66
+photoreactivation	Surface	117	17.05	13.65	20.77	11.24	26.04
+photoreactivation	Deep	165	12.66	9.99	16.29	5.02	11.94
+photoreactivation	PlantRoot	268	17.37	13.52	21.30	9.11	18.95
+

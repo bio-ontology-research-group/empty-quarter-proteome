@@ -1,0 +1,238 @@
+{
+  "snapshots_sha256": {
+    "h1_final": {
+      "total": 67,
+      "matched": 67,
+      "mismatches": []
+    },
+    "h2_initial": {
+      "total": 26,
+      "matched": 26,
+      "mismatches": []
+    },
+    "h2_v2": {
+      "total": 26,
+      "matched": 26,
+      "mismatches": []
+    }
+  },
+  "h2_outputs_sha256_verified": 13,
+  "h1_verification": {
+    "h2_v2_h1_completeness_repaired": true,
+    "n_primary": 237,
+    "n_s7_caller_complete_proxy": 232,
+    "missing_checkm2_faa_genomes": [
+      "48PRr1__SemiBin_112",
+      "48PRr1__SemiBin_141",
+      "48PRr1__SemiBin_510",
+      "48PRr1__SemiBin_539",
+      "48PRr1__SemiBin_849"
+    ],
+    "primary_lambda_ml": 0.915784,
+    "primary_lambda_ci95": [
+      0.846303,
+      0.957823
+    ],
+    "primary_r2_gls": 0.469051,
+    "ols_r2": 0.495786,
+    "primary_sigma2_unb": 0.00105887,
+    "ols_sigma2_unb": 0.00071159,
+    "max_abs_diff_vs_statsmodels_From_table": {
+      "beta": 5.1569859494e-12,
+      "se": 3.1463720518000004e-13,
+      "r2": 4.4408920985e-15,
+      "verified_rows_in_v3_pgls_statsmodels_verification_tsv": 28
+    },
+    "models_S1_to_S7": [
+      {
+        "model_id": "S1_Primary_All_237",
+        "n": 237,
+        "p": 7,
+        "df_resid": 230,
+        "lambda_ml": 0.915784,
+        "r2_gls": 0.469051,
+        "coef_aai": 0.001704,
+        "se_unb_aai": 0.000407,
+        "p_unb_aai": 4.065008e-05,
+        "coef_frac_rbh": -0.137484,
+        "se_unb_frac_rbh": 0.019456,
+        "p_unb_frac_rbh": 1.879206e-11
+      },
+      {
+        "model_id": "S2_Unnormalized_Brownian_VCV_237",
+        "n": 237,
+        "p": 7,
+        "df_resid": 230,
+        "lambda_ml": 0.916132,
+        "r2_gls": 0.475264,
+        "coef_aai": 0.001744,
+        "se_unb_aai": 0.000407,
+        "p_unb_aai": 2.694748e-05,
+        "coef_frac_rbh": -0.140505,
+        "se_unb_frac_rbh": 0.019533,
+        "p_unb_frac_rbh": 8.831619e-12
+      },
+      {
+        "model_id": "S3_Catalogue_Denominator_RBH_237",
+        "n": 237,
+        "p": 7,
+        "df_resid": 230,
+        "lambda_ml": 0.915415,
+        "r2_gls": 0.468174,
+        "coef_aai": 0.001693,
+        "se_unb_aai": 0.000407,
+        "p_unb_aai": 4.499514e-05,
+        "coef_frac_rbh": -0.136591,
+        "se_unb_frac_rbh": 0.019416,
+        "p_unb_frac_rbh": 2.265112e-11
+      },
+      {
+        "model_id": "S4_Restricted_c__SW-10-69-26_185",
+        "n": 185,
+        "p": 7,
+        "df_resid": 178,
+        "lambda_ml": 0.900804,
+        "r2_gls": 0.500906,
+        "coef_aai": 0.001921,
+        "se_unb_aai": 0.000491,
+        "p_unb_aai": 0.0001285632,
+        "coef_frac_rbh": -0.180441,
+        "se_unb_frac_rbh": 0.022624,
+        "p_unb_frac_rbh": 1.776834e-13
+      },
+      {
+        "model_id": "S5_Dominant_Family_JAJPHT01_Omitted_97",
+        "n": 97,
+        "p": 7,
+        "df_resid": 90,
+        "lambda_ml": 0.901145,
+        "r2_gls": 0.444105,
+        "coef_aai": 0.001494,
+        "se_unb_aai": 0.000513,
+        "p_unb_aai": 0.004526286,
+        "coef_frac_rbh": -0.102379,
+        "se_unb_frac_rbh": 0.030547,
+        "p_unb_frac_rbh": 0.001176333
+      },
+      {
+        "model_id": "S6_Same_Class_Comparators_SW_plus_E2_236",
+        "n": 236,
+        "p": 7,
+        "df_resid": 229,
+        "lambda_ml": 0.893376,
+        "r2_gls": 0.47504,
+        "coef_aai": 0.001568,
+        "se_unb_aai": 0.000392,
+        "p_unb_aai": 8.387793e-05,
+        "coef_frac_rbh": -0.145879,
+        "se_unb_frac_rbh": 0.019191,
+        "p_unb_frac_rbh": 7.485088e-13
+      },
+      {
+        "model_id": "S7_With_Caller_Complete_Proxy_232",
+        "n": 232,
+        "p": 8,
+        "df_resid": 224,
+        "lambda_ml": 0.913489,
+        "r2_gls": 0.483091,
+        "coef_aai": 0.00155,
+        "se_unb_aai": 0.000452,
+        "p_unb_aai": 0.0007245799,
+        "coef_frac_rbh": -0.104756,
+        "se_unb_frac_rbh": 0.026891,
+        "p_unb_frac_rbh": 0.000129368
+      }
+    ],
+    "comparator_summary_all_237": {
+      "stratum": "All_Thermoplasmatota_237",
+      "n_genomes": 237,
+      "n_nearest_gtdb_r232_rep": 229,
+      "n_nearest_mgnify": 8,
+      "n_unique_nearest_comparators": 32,
+      "n_biome_soil": 142,
+      "n_biome_marine_sediment": 3,
+      "n_biome_unannotated_gtdb_only": 92,
+      "aai_min": 48.678,
+      "aai_q25": 58.763,
+      "aai_median": 64.774,
+      "aai_mean": 63.727435,
+      "aai_q75": 66.392,
+      "aai_max": 80.041,
+      "frac_rbh_desert_aai_median": 0.409236,
+      "frac_rbh_desert_cat_median": 0.413209,
+      "frac_rbh_min_denom_median": 0.469
+    }
+  },
+  "h2_recomputed_and_verified": {
+    "tier1_survival_by_arm": {
+      "K": {
+        "evaluable": 173,
+        "total": 570,
+        "rate": 0.303509
+      },
+      "QnotK": {
+        "evaluable": 180,
+        "total": 891,
+        "rate": 0.20202
+      },
+      "p_fisher_two_sided": 1.4586686712158623e-05
+    },
+    "recomputed_mh_tier1": {
+      "n_strata": 16,
+      "mh_weighted_excess_c_diff": 0.035358,
+      "mh_weighted_raw_c_diff": 0.05385,
+      "mh_weighted_excess_r_diff": 0.047337
+    },
+    "recomputed_mh_tier2": {
+      "n_strata": 16,
+      "mh_weighted_excess_c_diff": 0.018391,
+      "mh_weighted_raw_c_diff": 0.043859,
+      "mh_weighted_excess_r_diff": 0.032909
+    },
+    "recomputed_ols_hc3_excess_is_k": {
+      "coef": 0.029446,
+      "se_hc3": 0.04295,
+      "p_value": 0.49297,
+      "phylum_group_multi_coef": -0.16006,
+      "phylum_group_multi_se": 0.056174,
+      "phylum_group_multi_p": 0.004381
+    },
+    "recomputed_ols_hc3_raw_is_k": {
+      "coef": 0.049661,
+      "se_hc3": 0.046674,
+      "p_value": 0.28733,
+      "phylum_group_multi_coef": -0.198166,
+      "phylum_group_multi_se": 0.060164,
+      "phylum_group_multi_p": 0.000989
+    },
+    "recomputed_logit_raw_is_k": {
+      "coef": 0.280149,
+      "se": 0.296352,
+      "p_value": 0.344492,
+      "odds_ratio": 1.323327
+    },
+    "recomputed_dependence_and_disjoint_subset": {
+      "tier1_evaluable_families": 353,
+      "tier1_evaluable_primary_loci": 877,
+      "unique_bin_contig_pairs": 869,
+      "contigs_shared_across_multiple_families": 8,
+      "unique_refined_bins": 617,
+      "bins_shared_across_multiple_families": 145,
+      "unique_drep_species_clusters": 568,
+      "species_shared_across_multiple_families": 153,
+      "species_disjoint_subset": {
+        "n_families_with_zero_shared_species": 112,
+        "n_K": 51,
+        "n_QnotK": 61,
+        "mean_excess_c_K": 0.261855,
+        "mean_excess_c_QnotK": 0.19843,
+        "diff_excess_c": 0.063425
+      }
+    },
+    "bin_verification_counts": {
+      "verified_sha256_and_log": 2041,
+      "annotation_files_missing": 85
+    },
+    "n_bins_missing_annotations": 85
+  }
+}

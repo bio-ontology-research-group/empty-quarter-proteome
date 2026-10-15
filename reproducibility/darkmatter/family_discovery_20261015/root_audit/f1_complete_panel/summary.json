@@ -1,0 +1,45 @@
+{
+  "job_id": "53817327",
+  "coordinate_closure": {
+    "SMAG": {
+      "candidate_rows": 503,
+      "exact_coordinate_hash_joins": 503,
+      "complete": 398
+    },
+    "GEM": {
+      "candidate_rows": 1192,
+      "exact_coordinate_hash_joins": 1192,
+      "complete": 1079
+    }
+  },
+  "complete_panel_sources": {
+    "EQ": 914,
+    "SMAG": 398,
+    "GEM": 1079,
+    "curated_reference": 59
+  },
+  "comparison": {
+    "curated_reference": {
+      "queries": 914,
+      "with_hit": 883,
+      "without_coverage_passing_hit": 31,
+      "identity_median": 43.8,
+      "below50amonghits": 652
+    },
+    "SMAG": {
+      "queries": 914,
+      "with_hit": 903,
+      "without_coverage_passing_hit": 11,
+      "identity_median": 55.8,
+      "below50amonghits": 292
+    },
+    "GEM": {
+      "queries": 914,
+      "with_hit": 904,
+      "without_coverage_passing_hit": 10,
+      "identity_median": 57.75,
+      "below50amonghits": 170
+    }
+  },
+  "limits": "curated references exempt from caller partial flags; no newGPUrun, subsetofverifiedembeddings; profilescreenmissesknownSPLcontrol; samplesnotentireenvironmentalcatalogues"
+}

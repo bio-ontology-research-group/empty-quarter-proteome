@@ -1,0 +1,32 @@
+{
+  "candidate_counts": {
+    "total_conf_qualified": 2838,
+    "k_local_alntm_ge_05": 936,
+    "k_dual_none_alntm_lt_05": 95,
+    "q_not_k_fold_matched": 1807,
+    "zero_retrieval_count": 22,
+    "retrieved_low_score_count": 1009,
+    "retrieved_match_count": 1807
+  },
+  "control_leakage_audit": {
+    "total_conf_controls": 3013,
+    "controls_with_pdb_self_hit": 2844,
+    "pct_controls_with_pdb_self_hit": 94.39,
+    "unfiltered_dual_qtm_floor": 3.35,
+    "unfiltered_pdb_only_floor": 3.88,
+    "excluded_pdb_only_floor": 5.28,
+    "excluded_dual_floor_pdb_self_excl": 3.78,
+    "ci95_excluded_pdb_only_floor": [
+      4.53,
+      6.13
+    ]
+  },
+  "disconnected_maxima_audit": {
+    "multi_hit_pdb_queries": 5694,
+    "diff_target_pdb_queries": 3888,
+    "pct_diff_target_pdb": 68.28,
+    "multi_hit_afdb_queries": 5661,
+    "diff_target_afdb_queries": 3889,
+    "pct_diff_target_afdb": 68.7
+  }
+}

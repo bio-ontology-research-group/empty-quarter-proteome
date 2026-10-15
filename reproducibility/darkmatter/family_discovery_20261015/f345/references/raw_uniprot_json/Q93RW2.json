@@ -1,0 +1,621 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q93RW2",
+  "uniProtkbId": "ECTA_STRCO",
+  "entryAudit": {
+    "firstPublicDate": "2005-02-01",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2001-12-01",
+    "entryVersion": 116,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Streptomyces coelicolor (strain ATCC BAA-471 / A3(2) / M145)",
+    "taxonId": 100226,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Actinomycetota",
+      "Actinomycetes",
+      "Kitasatosporales",
+      "Streptomycetaceae",
+      "Streptomyces",
+      "Streptomyces albidoflavus group"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "L-2,4-diaminobutyric acid acetyltransferase"
+      },
+      "shortNames": [
+        {
+          "value": "DABA acetyltransferase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "value": "2.3.1.178"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "ectA"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "SCO1864"
+        }
+      ],
+      "orfNames": [
+        {
+          "value": "SCI39.11"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Catalyzes the acetylation of L-2,4-diaminobutyrate (DABA) to gamma-N-acetyl-alpha,gamma-diaminobutyric acid (ADABA) with acetyl coenzyme A"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "L-2,4-diaminobutanoate + acetyl-CoA = (2S)-4-acetamido-2-aminobutanoate + CoA + H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:16901"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57287"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57288"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58761"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58929"
+          }
+        ],
+        "ecNumber": "2.3.1.178"
+      }
+    },
+    {
+      "texts": [
+        {
+          "value": "Amine and polyamine biosynthesis; ectoine biosynthesis; L-ectoine from L-aspartate 4-semialdehyde: step 2/3"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the acetyltransferase family. EctA subfamily"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 170,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "L-2,4-diaminobutyric acid acetyltransferase",
+      "featureId": "PRO_0000220092"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 8,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 166,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "N-acetyltransferase",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PROSITE-ProRule",
+          "id": "PRU00532"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0012",
+      "category": "Molecular function",
+      "name": "Acyltransferase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0808",
+      "category": "Molecular function",
+      "name": "Transferase"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "12000953",
+        "citationType": "journal article",
+        "authors": [
+          "Bentley S.D.",
+          "Chater K.F.",
+          "Cerdeno-Tarraga A.-M.",
+          "Challis G.L.",
+          "Thomson N.R.",
+          "James K.D.",
+          "Harris D.E.",
+          "Quail M.A.",
+          "Kieser H.",
+          "Harper D.",
+          "Bateman A.",
+          "Brown S.",
+          "Chandra G.",
+          "Chen C.W.",
+          "Collins M.",
+          "Cronin A.",
+          "Fraser A.",
+          "Goble A.",
+          "Hidalgo J.",
+          "Hornsby T.",
+          "Howarth S.",
+          "Huang C.-H.",
+          "Kieser T.",
+          "Larke L.",
+          "Murphy L.D.",
+          "Oliver K.",
+          "O'Neil S.",
+          "Rabbinowitsch E.",
+          "Rajandream M.A.",
+          "Rutherford K.M.",
+          "Rutter S.",
+          "Seeger K.",
+          "Saunders D.",
+          "Sharp S.",
+          "Squares R.",
+          "Squares S.",
+          "Taylor K.",
+          "Warren T.",
+          "Wietzorrek A.",
+          "Woodward J.R.",
+          "Barrell B.G.",
+          "Parkhill J.",
+          "Hopwood D.A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12000953"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/417141a"
+          }
+        ],
+        "title": "Complete genome sequence of the model actinomycete Streptomyces coelicolor A3(2).",
+        "publicationDate": "2002",
+        "journal": "Nature",
+        "firstPage": "141",
+        "lastPage": "147",
+        "volume": "417"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC BAA-471 / A3(2) / M145",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AL939110",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAC38799.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_003976956.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_003888.3"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q93RW2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q93RW2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "100226.gene:17759461",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "100226-gene:17759461",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "91387158",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sco:SCO1864",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|100226.15.peg.1889",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0456",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_111896_0_0_11",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q93RW2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "2436196at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "Q93RW2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00067",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00122"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001973",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "Q93RW2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016747",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:acyltransferase activity, transferring groups other than amino-acyl groups"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0033816",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:diaminobutyrate acetyltransferase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0019491",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:ectoine biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniPathway"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd04301",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "NAT_SF"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.630.30",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR016181",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acyl_CoA_acyltransferase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR012772",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine_EctA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR000182",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GNAT_dom"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR02406",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ectoine_EctA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00583",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acetyltransf_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF55729",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acyl-CoA N-acyltransferases (Nat)"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51186",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GNAT"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MTAAQADLQIDRPRVADGAALWRIARDSEVLDLNSSYSYLLWCRDFAATSAVVRDGHGVPVGFITGYVRPDSPDTLLVWQVAVDGTYRGRGLAATLVDGLADRVARERGITILETTISPDNTASQRLFTSFAERRGARLEREVLFDTAVFPDGPHEPEVLYRIGPLSAGG",
+    "length": 170,
+    "molWeight": 18534,
+    "crc64": "7A599BD6DC328B51",
+    "md5": "B5BEFC90D36FE548F7438CBED042519F"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 1
+    },
+    "uniParcId": "UPI00000DC427"
+  }
+}

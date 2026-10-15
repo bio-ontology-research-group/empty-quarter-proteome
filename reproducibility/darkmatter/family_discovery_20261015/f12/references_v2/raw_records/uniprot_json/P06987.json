@@ -1,0 +1,1978 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P06987",
+  "secondaryAccessions": [
+    "P78077"
+  ],
+  "uniProtkbId": "HIS7_ECOLI",
+  "entryAudit": {
+    "firstPublicDate": "1988-04-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1988-04-01",
+    "entryVersion": 195,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 4.0,
+  "organism": {
+    "scientificName": "Escherichia coli (strain K12)",
+    "taxonId": 83333,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01022"
+          }
+        ],
+        "value": "Histidine biosynthesis bifunctional protein HisB"
+      }
+    },
+    "includes": [
+      {
+        "recommendedName": {
+          "fullName": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000255",
+                "source": "HAMAP-Rule",
+                "id": "MF_01022"
+              }
+            ],
+            "value": "Histidinol-phosphatase"
+          },
+          "ecNumbers": [
+            {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000255",
+                  "source": "HAMAP-Rule",
+                  "id": "MF_01022"
+                }
+              ],
+              "value": "3.1.3.15"
+            }
+          ]
+        }
+      },
+      {
+        "recommendedName": {
+          "fullName": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000255",
+                "source": "HAMAP-Rule",
+                "id": "MF_01022"
+              }
+            ],
+            "value": "Imidazoleglycerol-phosphate dehydratase"
+          },
+          "shortNames": [
+            {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000255",
+                  "source": "HAMAP-Rule",
+                  "id": "MF_01022"
+                }
+              ],
+              "value": "IGPD"
+            }
+          ],
+          "ecNumbers": [
+            {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000255",
+                  "source": "HAMAP-Rule",
+                  "id": "MF_01022"
+                }
+              ],
+              "value": "4.2.1.19"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01022"
+          }
+        ],
+        "value": "hisB"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "b2022"
+        },
+        {
+          "value": "JW2004"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "D-erythro-1-(imidazol-4-yl)glycerol 3-phosphate = 3-(imidazol-4-yl)-2-oxopropyl phosphate + H2O",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:11040"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57766"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58278"
+          }
+        ],
+        "ecNumber": "4.2.1.19",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01022"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "L-histidinol phosphate + H2O = L-histidinol + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:14465"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57699"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57980"
+          }
+        ],
+        "ecNumber": "3.1.3.15",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01022"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01022"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ]
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Zn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01022"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29105"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01022"
+            }
+          ],
+          "value": "Amino-acid biosynthesis; L-histidine biosynthesis; L-histidine from 5-phospho-alpha-D-ribose 1-diphosphate: step 6/9"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01022"
+            }
+          ],
+          "value": "Amino-acid biosynthesis; L-histidine biosynthesis; L-histidine from 5-phospho-alpha-D-ribose 1-diphosphate: step 8/9"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "commentType": "INTERACTION",
+      "interactions": [
+        {
+          "interactantOne": {
+            "uniProtKBAccession": "P06987",
+            "intActId": "EBI-1126930"
+          },
+          "interactantTwo": {
+            "uniProtKBAccession": "P0ACA7",
+            "geneName": "gstB",
+            "intActId": "EBI-1120568"
+          },
+          "numberOfExperiments": 4,
+          "organismDiffer": false
+        },
+        {
+          "interactantOne": {
+            "uniProtKBAccession": "P06987",
+            "intActId": "EBI-1126930"
+          },
+          "interactantTwo": {
+            "uniProtKBAccession": "P06987",
+            "geneName": "hisB",
+            "intActId": "EBI-1126930"
+          },
+          "numberOfExperiments": 3,
+          "organismDiffer": false
+        }
+      ]
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000255",
+                "source": "HAMAP-Rule",
+                "id": "MF_01022"
+              }
+            ],
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01022"
+            }
+          ],
+          "value": "In the N-terminal section; belongs to the histidinol-phosphatase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01022"
+            }
+          ],
+          "value": "In the C-terminal section; belongs to the imidazoleglycerol-phosphate dehydratase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 355,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Histidine biosynthesis bifunctional protein HisB",
+      "featureId": "PRO_0000158206"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 166,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Histidinol-phosphatase",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 167,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 355,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Imidazoleglycerol-phosphate dehydratase",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ]
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 9,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 9,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Nucleophile",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ]
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 11,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 11,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Proton donor",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 9,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 9,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 11,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 11,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 93,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 93,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 95,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 95,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 101,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 101,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 103,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 103,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 130,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 130,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01022"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0028",
+      "category": "Biological process",
+      "name": "Amino-acid biosynthesis"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0368",
+      "category": "Biological process",
+      "name": "Histidine biosynthesis"
+    },
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0511",
+      "category": "Molecular function",
+      "name": "Multifunctional enzyme"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0862",
+      "category": "Ligand",
+      "name": "Zinc"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "3062174",
+        "citationType": "journal article",
+        "authors": [
+          "Carlomagno M.S.",
+          "Chiariotti L.",
+          "Alifano P.",
+          "Nappo A.G.",
+          "Bruni C.B."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "3062174"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/0022-2836(88)90194-5"
+          }
+        ],
+        "title": "Structure and function of the Salmonella typhimurium and Escherichia coli K-12 histidine operons.",
+        "publicationDate": "1988",
+        "journal": "J. Mol. Biol.",
+        "firstPage": "585",
+        "lastPage": "606",
+        "volume": "203"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "3007936",
+        "citationType": "journal article",
+        "authors": [
+          "Chiariotti L.",
+          "Nappo A.G.",
+          "Carlomagno M.S.",
+          "Bruni C.B."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "3007936"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1007/bf00330514"
+          }
+        ],
+        "title": "Gene structure in the histidine operon of Escherichia coli. Identification and nucleotide sequence of the hisB gene.",
+        "publicationDate": "1986",
+        "journal": "Mol. Gen. Genet.",
+        "firstPage": "42",
+        "lastPage": "47",
+        "volume": "202"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "9097040",
+        "citationType": "journal article",
+        "authors": [
+          "Itoh T.",
+          "Aiba H.",
+          "Baba T.",
+          "Fujita K.",
+          "Hayashi K.",
+          "Inada T.",
+          "Isono K.",
+          "Kasai H.",
+          "Kimura S.",
+          "Kitakawa M.",
+          "Kitagawa M.",
+          "Makino K.",
+          "Miki T.",
+          "Mizobuchi K.",
+          "Mori H.",
+          "Mori T.",
+          "Motomura K.",
+          "Nakade S.",
+          "Nakamura Y.",
+          "Nashimoto H.",
+          "Nishio Y.",
+          "Oshima T.",
+          "Saito N.",
+          "Sampei G.",
+          "Seki Y.",
+          "Sivasundaram S.",
+          "Tagami H.",
+          "Takeda J.",
+          "Takemoto K.",
+          "Wada C.",
+          "Yamamoto Y.",
+          "Horiuchi T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9097040"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/3.6.379"
+          }
+        ],
+        "title": "A 460-kb DNA sequence of the Escherichia coli K-12 genome corresponding to the 40.1-50.0 min region on the linkage map.",
+        "publicationDate": "1996",
+        "journal": "DNA Res.",
+        "firstPage": "379",
+        "lastPage": "392",
+        "volume": "3"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "9278503",
+        "citationType": "journal article",
+        "authors": [
+          "Blattner F.R.",
+          "Plunkett G. III",
+          "Bloch C.A.",
+          "Perna N.T.",
+          "Burland V.",
+          "Riley M.",
+          "Collado-Vides J.",
+          "Glasner J.D.",
+          "Rode C.K.",
+          "Mayhew G.F.",
+          "Gregor J.",
+          "Davis N.W.",
+          "Kirkpatrick H.A.",
+          "Goeden M.A.",
+          "Rose D.J.",
+          "Mau B.",
+          "Shao Y."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9278503"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.277.5331.1453"
+          }
+        ],
+        "title": "The complete genome sequence of Escherichia coli K-12.",
+        "publicationDate": "1997",
+        "journal": "Science",
+        "firstPage": "1453",
+        "lastPage": "1462",
+        "volume": "277"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / MG1655 / ATCC 47076",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "16738553",
+        "citationType": "journal article",
+        "authors": [
+          "Hayashi K.",
+          "Morooka N.",
+          "Yamamoto Y.",
+          "Fujita K.",
+          "Isono K.",
+          "Choi S.",
+          "Ohtsubo E.",
+          "Baba T.",
+          "Wanner B.L.",
+          "Mori H.",
+          "Horiuchi T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16738553"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/msb4100049"
+          }
+        ],
+        "title": "Highly accurate genome sequences of Escherichia coli K-12 strains MG1655 and W3110.",
+        "publicationDate": "2006",
+        "journal": "Mol. Syst. Biol.",
+        "firstPage": "E1",
+        "lastPage": "E5",
+        "volume": "2"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "X03416",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA27151.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "X13462",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA31814.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "U00096",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC75083.2"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AP009048",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA15853.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "E64967",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DWECHB"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_416526.4",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_000913.3"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_000080105.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NZ_CP009789.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P06987",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P06987",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "4260405",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "21"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "850899",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-9901N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "P06987",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "531"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "P06987",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "511145.b2022",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BindingDB",
+      "id": "P06987",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "ChEMBL",
+      "id": "CHEMBL2366452",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "jPOST",
+      "id": "P06987",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "511145-b2022",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "AAC75083",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC75083"
+        },
+        {
+          "key": "GeneId",
+          "value": "b2022"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "946552",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecj:JW2004",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "eco:b2022",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecoc:C3026_11400",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|1411691.4.peg.230",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EchoBASE",
+      "id": "EB0440",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0131",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0241",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_044308_0_0_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "P06987",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "PEDTFWP",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9790411at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "P06987",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "EcoCyc:IMIDPHOSPHADEHYDHISTIDPHOSPHA-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:IMIDPHOSPHADEHYDHISTIDPHOSPHA-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00031",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00011"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00031",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00013"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:P06987",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000625",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "P06987",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005737",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004401",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:histidinol-phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:EcoCyc"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "6284708"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0042802",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:identical protein binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IPI:IntAct"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000353",
+          "source": "PubMed",
+          "id": "24561554"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004424",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:imidazoleglycerol-phosphate dehydratase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000105",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:L-histidine biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd07503",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_HisB-N"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd07914",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IGPD"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.1000:FF:000061",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histidine biosynthesis bifunctional protein HisB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.30.230.40:FF:000001",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Imidazoleglycerol-phosphate dehydratase HisB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.30.230.40:FF:000003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Imidazoleglycerol-phosphate dehydratase HisB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.230.40",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Imidazole glycerol phosphate dehydratase, domain 1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "HAMAP",
+      "id": "MF_01022",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Bifunc_HisB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "HAMAP",
+      "id": "MF_00076",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HisB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006549",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IIIA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR020566",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "His_synth_bifunc_HisB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005954",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HisB_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006543",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histidinol-phos"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR038494",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IGPD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR000807",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ImidazoleglycerolP_deHydtase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR020565",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ImidazoleglycerP_deHydtase_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR020568",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ribosomal_Su5_D2-typ_SF"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01662",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IIIA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01261",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "hisB_Nterm"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01656",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histidinol-ppas"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF002111",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK00951.2-1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF002114",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK00951.2-4"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF003937",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK05446.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR23133:SF2",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IMIDAZOLEGLYCEROL-PHOSPHATE DEHYDRATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR23133",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IMIDAZOLEGLYCEROL-PHOSPHATE DEHYDRATASE HIS7"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF13242",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hydrolase_like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00475",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IGPD"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01134",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C1.5.5:_Heptose_Bisphosphate_P"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01129",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C1.5:_HAD__Beta-PGM__Phosphata"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDS00003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Haloacid_Dehalogenase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDF00028",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "histidinol-phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF54211",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ribosomal protein S5 domain 2-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00954",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IGP_DEHYDRATASE_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00955",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IGP_DEHYDRATASE_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MSQKYLFIDRDGTLISEPPSDFQVDRFDKLAFEPGVIPELLKLQKAGYKLVMITNQDGLGTQSFPQADFDGPHNLMMQIFTSQGVQFDEVLICPHLPADECDCRKPKVKLVERYLAEQAMDRANSYVIGDRATDIQLAENMGITGLRYDRETLNWPMIGEQLTRRDRYAHVVRNTKETQIDVQVWLDREGGSKINTGVGFFDHMLDQIATHGGFRMEINVKGDLYIDDHHTVEDTGLALGEALKIALGDKRGICRFGFVLPMDECLARCALDISGRPHLEYKAEFTYQRVGDLSTEMIEHFFRSLSYTMGVTLHLKTKGKNDHHRVESLFKAFGRTLRQAIRVEGDTLPSSKGVL",
+    "length": 355,
+    "molWeight": 40278,
+    "crc64": "5EC09FB68AE40A9D",
+    "md5": "3A1DC7B17EEF302ACD65C1B776272A30"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "CATALYTIC ACTIVITY": 2,
+      "COFACTOR": 2,
+      "PATHWAY": 2,
+      "INTERACTION": 2,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 2
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Region": 2,
+      "Active site": 2,
+      "Binding site": 7
+    },
+    "uniParcId": "UPI000012C855"
+  }
+}

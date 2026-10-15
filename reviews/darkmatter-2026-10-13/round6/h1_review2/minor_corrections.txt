@@ -1,0 +1,64 @@
+ROUND 6 H1 REVIEW 2 — NON-BLOCKING DOCUMENTATION CORRECTIONS RECORD
+================================================================================
+Date: 2026-10-13
+Reviewer: Gemini 4 Argon (High)
+Target Working Package: reproducibility/darkmatter/round6_hypotheses/h1_lineage/
+Immutable Snapshot Untouched: reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/
+Original Review2 Untouched:
+  - reviews/darkmatter-2026-10-13/round6/h1_review2/review.txt
+    (SHA-256: 15024385b9bd1a32a4ae7f83dab223649548b550f004ab391af30078ee77a95b, 10,225 bytes)
+  - reviews/darkmatter-2026-10-13/round6/h1_review2/verdicts.json
+    (SHA-256: 0f5c51964bf26932aea48f7c2d8acdc458bb23232e0ebf9cea48f3cec854f771, 6,536 bytes)
+
+--------------------------------------------------------------------------------
+1. REVISED DOCUMENT CHECKSUMS
+--------------------------------------------------------------------------------
+* reproducibility/darkmatter/round6_hypotheses/h1_lineage/DOSSIER.md
+  - Previous (h1_v3 snapshot) SHA-256: e80a257a72cf8854d830f23f9f42e53172a345ec294607a28640743a61dd3333 (38,598 bytes)
+  - Final Revised SHA-256:             02ee99ee1c98fbd7e8aef78420aea9d8b0a41117c16a87261e58cf2cd9e110f2 (39,053 bytes)
+
+* reproducibility/darkmatter/round6_hypotheses/h1_lineage/DESIGN.md
+  - Previous (h1_v3 snapshot) SHA-256: 5278fae57e7cd60d4d58c5cd3a22c215cf85181df9a546f242ec83c745165764 (17,305 bytes)
+  - Final Revised SHA-256:             b7fa9ccaf31e4fe7f68cb2a592a25fce50b6bb8585fe2938549083b90045c343 (17,527 bytes)
+
+--------------------------------------------------------------------------------
+2. EXACT CORRECTED TEXT AND SOURCE VERIFICATION
+--------------------------------------------------------------------------------
+
+A. Correction 1 — Align Root-to-Tip Distances, Off-Diagonal Correlation Range, and Eigenvalues with Verified Sources
+- Verified Source Files:
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/results/v3_phylo_vcv_validation.json (lines 13-22)
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/results/v3_phylo_vcv_validation.txt (lines 11-12)
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/results/phylo_vcv.tsv.gz (diagonal min 0.258680, median 0.408705, mean 0.407105, SD 0.043892, max 0.528319; eigenvalues min 2.350676e-03, max 40.950633)
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/results/phylo_correlation.tsv.gz (off-diagonal range [0.000000, 0.995025]; eigenvalues min 4.944177e-03, max 101.468139, condition number 20522.75)
+- Exact Revised Text in reproducibility/darkmatter/round6_hypotheses/h1_lineage/DOSSIER.md (line 39):
+  "- **Symmetry, positive definiteness, and rank:** Both the unnormalized patristic VCV matrix $\mathbf{V}$ (`root-to-tip` diagonal range $[0.258680, 0.528319]$, median $0.408705$, mean $0.407105$, SD $0.043892$ substitutions/site) and the diagonal-normalized correlation matrix $C_{ij} = V_{ij} / \sqrt{V_{ii} V_{jj}}$ (`off-diagonal` range $[0.000000, 0.995025]$) are exactly symmetric ($\max|\mathbf{M} - \mathbf{M}^\top| = 0.0$), full rank ($\mathrm{rank} = 237$), and strictly positive definite ($\lambda_{\min}(\mathbf{V}) = 2.350676 \times 10^{-3} > 0$, $\lambda_{\max}(\mathbf{V}) = 40.950633$; $\lambda_{\min}(\mathbf{C}) = 4.944177 \times 10^{-3} > 0$, $\lambda_{\max}(\mathbf{C}) = 101.468139$, condition number $20522.75$)."
+
+B. Correction 2 — Explicitly Label Reported AIC/BIC as Fixed-Lambda Criteria (k = p + 1 = 8) Alongside Full Profiled-ML Criteria (k = p + 2 = 9)
+- Verified Source Files:
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/scripts/02_v3_pgls_ancestry_models.py (lines 72-73: `aic = float(2.0 * (p + 1) - 2.0 * loglik)`, `bic = float(np.log(n) * (p + 1) - 2.0 * loglik)`)
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/results/v3_pgls_lambda_profile.tsv (line 7: loglik = 640.932977, fixed-lambda k = 8 AIC = -1265.865955, BIC = -1238.121473; full profiled-ML k = 9 AIC = -1263.865955, BIC = -1232.653413)
+- Exact Revised Text in reproducibility/darkmatter/round6_hypotheses/h1_lineage/DOSSIER.md (line 59):
+  "| Fixed-$\lambda$ AIC / BIC ($k = p + 1 = 8$; full profiled-ML $k = p + 2 = 9$ for PGLS: $-1263.865955\;/\;-1232.653413$) | $-1265.865955\;/\;-1238.121473$ | $-1036.307491\;/\;-1008.563010$ |"
+- Exact Revised Text in reproducibility/darkmatter/round6_hypotheses/h1_lineage/DESIGN.md (line 69):
+  "   Both `y_tilde` and `ones_tilde` are asserted to be 1D arrays of shape `(n,)` so no $(n, n)$ broadcasting can occur. Note that $R^2_{\mathrm{GLS}}(\lambda)$ measures goodness of fit within the fixed $\mathbf{V}(\lambda)^{-1/2}$ metric at that $\lambda$; across different $\lambda$ values, model fit is compared via $\ell_{\mathrm{profile}}(\lambda)$ and information criteria (where `fit_pgls` tabulates fixed-$\lambda$ AIC/BIC with $k = p + 1$ parameters counting $\boldsymbol{\beta}$ and $\sigma^2$, and full-ML comparison at profiled $\hat{\lambda}_{\mathrm{ML}}$ counts $k = p + 2$)."
+
+C. Correction 3 — Correct Single-Genome Pyrodigal Call Description from meta=True to meta=False
+- Verified Source Files:
+  * reproducibility/darkmatter/upstream_code/06_darkmatter/lineage_darkness_clean/scripts/v2_thermo_relatives_aai.py (line 52: `gf = pyrodigal.GeneFinder(meta=False)`)
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/DESIGN.md (line 96: `Pyrodigal 3.7.1 (meta=False)`)
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/scripts/01_v3_input_manifest_and_phylo_audit.py (lines 42, 47-50)
+- Exact Revised Text in reproducibility/darkmatter/round6_hypotheses/h1_lineage/DOSSIER.md (line 131):
+  "- **Dual gene-caller provenance:** `n_proteins` (`n_proteins_cat`, median $3302.0$, range $[1481, 5388]$) is the protein count from the unified catalogue gene call (`v2_reps.tsv`), whereas `n_prot_aai` (median $3312.0$, range $[1485, 5469]$) is the protein count from fresh single-genome `pyrodigal.GeneFinder(meta=False)` execution in `v2_thermo_relatives_aai.py`. Across all 237 genomes, $N_{\mathrm{prot,aai}} - N_{\mathrm{proteins,cat}}$ has mean $+19.52$, median $+18.0$, range $[-13, +93]$, and Pearson $r = 0.999752$. Across the `232 / 237` genomes with archived CheckM2 `.faa` files (`5` `48PRr1__SemiBin_*` representatives—`112`, `141`, `510`, `539`, `849`—lack `.faa` files in `_checkm2_refined/protein_files/`), `n_prot_aai` matches the exact count of FASTA headers (`max |n_prot_aai - n_proteins_checkm2| = 0`)."
+
+D. Correction 4 — Refine Comparator Provenance and Non-Disjointness Wording in DOSSIER.md Section 6.2
+- Verified Source Files:
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/results/v3_comparator_metadata_summary.tsv (145 nearest pairs carry MGnify environmental biome metadata—142 soil, 3 marine sediment—and 92 are GTDB-only without cultivation metadata)
+  * reproducibility/darkmatter/round6_hypotheses/h1_lineage/DESIGN.md (lines 24, 97)
+- Exact Revised Text in reproducibility/darkmatter/round6_hypotheses/h1_lineage/DOSSIER.md (line 132):
+  "- **Why disjointness of $N_{\mathrm{dark}}$ and $N_{\mathrm{RBH}}$ is neither established nor assumed:** $N_{\mathrm{dark}}$ counts catalogue genes whose 90%-identity / 80%-coverage MMseqs2 cluster representative lacks any hit in UniRef50 (release `2026_01`) or functional databases (eggNOG, Pfam, KOfam, Bakta). Conversely, $N_{\mathrm{RBH}}$ (`aai_n_rbh`) counts single-genome Pyrodigal calls forming a DIAMOND reciprocal best hit ($\ge 30\%$ identity, $\ge 70\%$ query coverage, $e \le 10^{-5}$) against the nearest external GTDB r232 or MGnify reference genome ($145 / 237$ nearest pairs carry MGnify environmental biome metadata and $92 / 237$ are GTDB-only without cultivation metadata). Because the external comparator set includes environmental MAGs containing uncharacterized proteins, a desert MAG gene can be unannotated in UniRef50/Pfam/KOfam (counted in $N_{\mathrm{dark}}$) and simultaneously share an uncharacterized homolog in a related GTDB/MGnify reference genome (counted in $N_{\mathrm{RBH}}$). Thus disjointness of $N_{\mathrm{dark}}$ and $N_{\mathrm{RBH}}$ ($N_{\mathrm{dark}} + N_{\mathrm{RBH}} \le N_{\mathrm{prot}}$) is neither established nor assumed."
+
+--------------------------------------------------------------------------------
+3. EXPLICIT VIABILITY CONFIRMATION
+--------------------------------------------------------------------------------
+The bounded finite-cohort PGLS association hypothesis for H1 remains explicitly VIABLE after these final documentation corrections. All underlying scripts, statistical outputs, and frozen snapshot files (`snapshots/h1_v3/`) remain unchanged and verified.

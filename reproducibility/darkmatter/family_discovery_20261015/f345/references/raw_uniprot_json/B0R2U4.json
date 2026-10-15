@@ -1,0 +1,1750 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "B0R2U4",
+  "secondaryAccessions": [
+    "P16102",
+    "Q9HSK9"
+  ],
+  "uniProtkbId": "BACH_HALS3",
+  "entryAudit": {
+    "firstPublicDate": "2014-05-14",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2008-04-08",
+    "entryVersion": 85,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 4.0,
+  "organism": {
+    "scientificName": "Halobacterium salinarum (strain ATCC 29341 / DSM 671 / R1)",
+    "taxonId": 478009,
+    "lineage": [
+      "Archaea",
+      "Methanobacteriati",
+      "Methanobacteriota",
+      "Stenosarchaea group",
+      "Halobacteria",
+      "Halobacteriales",
+      "Halobacteriaceae",
+      "Halobacterium",
+      "Halobacterium salinarum NRC-34001"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Halorhodopsin"
+      },
+      "shortNames": [
+        {
+          "value": "HR"
+        }
+      ]
+    },
+    "flag": "Precursor"
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "hop"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "OE_1299R"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24409552"
+            }
+          ],
+          "value": "Light-driven chloride pump"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "absorption": {
+        "max": 578,
+        "approximate": false,
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "24409552"
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "10827943"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17117890"
+            }
+          ],
+          "value": "Homotrimer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "10827943"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24409552"
+              }
+            ],
+            "value": "Cell membrane",
+            "id": "SL-0039"
+          },
+          "topology": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "10827943"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24409552"
+              }
+            ],
+            "value": "Multi-pass membrane protein",
+            "id": "SL-9909"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the archaeal/bacterial/fungal opsin family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Propeptide",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 21,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureId": "PRO_0000428923"
+    },
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 22,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 274,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Halorhodopsin",
+      "featureId": "PRO_0000428924"
+    },
+    {
+      "type": "Topological domain",
+      "location": {
+        "start": {
+          "value": 22,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 25,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Extracellular",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 26,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 51,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical; Name=Helix A"
+    },
+    {
+      "type": "Topological domain",
+      "location": {
+        "start": {
+          "value": 52,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 57,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Cytoplasmic",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 58,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 81,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical; Name=Helix B"
+    },
+    {
+      "type": "Topological domain",
+      "location": {
+        "start": {
+          "value": 82,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 105,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Extracellular",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 106,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 127,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical; Name=Helix C"
+    },
+    {
+      "type": "Topological domain",
+      "location": {
+        "start": {
+          "value": 128,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 130,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Cytoplasmic",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 131,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 154,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical; Name=Helix D"
+    },
+    {
+      "type": "Topological domain",
+      "location": {
+        "start": {
+          "value": 155,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 157,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Extracellular",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 158,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 180,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical; Name=Helix E"
+    },
+    {
+      "type": "Topological domain",
+      "location": {
+        "start": {
+          "value": 181,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 192,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Cytoplasmic",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 193,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 216,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical; Name=Helix F"
+    },
+    {
+      "type": "Topological domain",
+      "location": {
+        "start": {
+          "value": 217,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 226,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Extracellular",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        }
+      ]
+    },
+    {
+      "type": "Transmembrane",
+      "location": {
+        "start": {
+          "value": 227,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 255,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Helical; Name=Helix G"
+    },
+    {
+      "type": "Topological domain",
+      "location": {
+        "start": {
+          "value": 256,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 274,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Cytoplasmic",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 105,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 105,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:17996"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "17117890"
+        }
+      ],
+      "ligand": {
+        "name": "chloride",
+        "id": "ChEBI:CHEBI:17996",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 111,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 111,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:17996"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "17117890"
+        }
+      ],
+      "ligand": {
+        "name": "chloride",
+        "id": "ChEBI:CHEBI:17996",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 115,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 115,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:17996"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "10827943"
+        },
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "17117890"
+        }
+      ],
+      "ligand": {
+        "name": "chloride",
+        "id": "ChEBI:CHEBI:17996",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 242,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 242,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "N6-(retinylidene)lysine"
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 27,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 50,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 51,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 53,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 58,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 82,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 83,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 85,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 87,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 90,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 96,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 99,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Beta strand",
+      "location": {
+        "start": {
+          "value": 100,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 104,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 106,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 127,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 131,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 153,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 158,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 180,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 182,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 190,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 193,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 216,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Turn",
+      "location": {
+        "start": {
+          "value": 218,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 221,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 227,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 238,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 239,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 244,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 245,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 255,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 257,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 261,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2JAF"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-1003",
+      "category": "Cellular component",
+      "name": "Cell membrane"
+    },
+    {
+      "id": "KW-0868",
+      "category": "Ligand",
+      "name": "Chloride"
+    },
+    {
+      "id": "KW-0157",
+      "category": "Ligand",
+      "name": "Chromophore"
+    },
+    {
+      "id": "KW-0903",
+      "category": "Technical term",
+      "name": "Direct protein sequencing"
+    },
+    {
+      "id": "KW-0406",
+      "category": "Biological process",
+      "name": "Ion transport"
+    },
+    {
+      "id": "KW-0472",
+      "category": "Cellular component",
+      "name": "Membrane"
+    },
+    {
+      "id": "KW-0600",
+      "category": "Molecular function",
+      "name": "Photoreceptor protein"
+    },
+    {
+      "id": "KW-0675",
+      "category": "Molecular function",
+      "name": "Receptor"
+    },
+    {
+      "id": "KW-0681",
+      "category": "Molecular function",
+      "name": "Retinal protein"
+    },
+    {
+      "id": "KW-0716",
+      "category": "Biological process",
+      "name": "Sensory transduction"
+    },
+    {
+      "id": "KW-0812",
+      "category": "Domain",
+      "name": "Transmembrane"
+    },
+    {
+      "id": "KW-1133",
+      "category": "Domain",
+      "name": "Transmembrane helix"
+    },
+    {
+      "id": "KW-0813",
+      "category": "Biological process",
+      "name": "Transport"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "15981336",
+        "citationType": "journal article",
+        "authors": [
+          "Blanck A.",
+          "Oesterhelt D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15981336"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1002/j.1460-2075.1987.tb04749.x"
+          }
+        ],
+        "title": "The halo-opsin gene. II. Sequence, primary structure of halorhodopsin and comparison with bacteriorhodopsin.",
+        "publicationDate": "1987",
+        "journal": "EMBO J.",
+        "firstPage": "265",
+        "lastPage": "273",
+        "volume": "6"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]",
+        "PARTIAL PROTEIN SEQUENCE"
+      ],
+      "referenceComments": [
+        {
+          "value": "R1 / S9 / L33",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "18313895",
+        "citationType": "journal article",
+        "authors": [
+          "Pfeiffer F.",
+          "Schuster S.C.",
+          "Broicher A.",
+          "Falb M.",
+          "Palm P.",
+          "Rodewald K.",
+          "Ruepp A.",
+          "Soppa J.",
+          "Tittor J.",
+          "Oesterhelt D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18313895"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/j.ygeno.2008.01.001"
+          }
+        ],
+        "title": "Evolution in the laboratory: the genome of Halobacterium salinarum strain R1 compared to that of strain NRC-1.",
+        "publicationDate": "2008",
+        "journal": "Genomics",
+        "firstPage": "335",
+        "lastPage": "346",
+        "volume": "91"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 29341 / DSM 671 / R1",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "24409552",
+        "citationType": "journal article",
+        "authors": [
+          "Barnberg E.",
+          "Hegemann P.",
+          "Oesterhelt D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "24409552"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/bi00320a050"
+          }
+        ],
+        "title": "The chromoprotein of halorhodopsin is the light-driven electrogenic chloride pump in halobacterium halobium.",
+        "publicationDate": "1984",
+        "journal": "Biochemistry",
+        "firstPage": "6216",
+        "lastPage": "6221",
+        "volume": "23"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "SUBCELLULAR LOCATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "R1 / S9 / L33",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "10827943",
+        "citationType": "journal article",
+        "authors": [
+          "Kolbe M.",
+          "Besir H.",
+          "Essen L.-O.",
+          "Oesterhelt D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "10827943"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.288.5470.1390"
+          }
+        ],
+        "title": "Structure of the light-driven chloride pump halorhodopsin at 1.8-A resolution.",
+        "publicationDate": "2000",
+        "journal": "Science",
+        "firstPage": "1390",
+        "lastPage": "1396",
+        "volume": "288"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.8 ANGSTROMS) OF 22-274 IN COMPLEX WITH CHLORIDE",
+        "SUBUNIT",
+        "SUBCELLULAR LOCATION",
+        "TOPOLOGY",
+        "RETINAL-BINDING SITE"
+      ],
+      "referenceComments": [
+        {
+          "value": "R1 / S9 / D2",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "17117890",
+        "citationType": "journal article",
+        "authors": [
+          "Gmelin W.",
+          "Zeth K.",
+          "Efremov R.",
+          "Heberle J.",
+          "Tittor J.",
+          "Oesterhelt D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17117890"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1562/2006-06-23-ra-947"
+          }
+        ],
+        "title": "The crystal structure of the L1 intermediate of halorhodopsin at 1.9 angstroms resolution.",
+        "publicationDate": "2007",
+        "journal": "Photochem. Photobiol.",
+        "firstPage": "369",
+        "lastPage": "377",
+        "volume": "83"
+      },
+      "referencePositions": [
+        "X-RAY CRYSTALLOGRAPHY (1.70 ANGSTROMS) IN COMPLEX WITH CHLORIDE",
+        "RETINAL-BINDING SITE"
+      ],
+      "referenceComments": [
+        {
+          "value": "R1 / S9 / D2",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "X04777",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAB37866.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AM774415",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAP13054.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "A26161",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A26161"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_010902090.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_010364.1"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "1E12",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.80 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=22-274"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2JAF",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.70 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-274"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2JAG",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.93 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=1-274"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5AHY",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.15 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=20-274"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5AHZ",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.45 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=20-274"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "5G36",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "2.60 A"
+        },
+        {
+          "key": "Chains",
+          "value": "A=20-274"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "1E12",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2JAF",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2JAG",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5AHY",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5AHZ",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "5G36",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "B0R2U4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "B0R2U4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "CAP13054",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAP13054"
+        },
+        {
+          "key": "GeneId",
+          "value": "OE_1299R"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "68693155",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "89348755",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "hsl:OE_1299R",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_054785_5_1_2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "B0R2U4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "B0R2U4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005886",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:plasma membrane"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005216",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:monoatomic ion channel activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd15243",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "7tm_Halorhodopsin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.20.1070.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rhodopsin 7-helix transmembrane proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001425",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Arc/bac/fun_rhodopsins"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR018229",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rhodopsin_retinal_BS"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR28286",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR28286:SF2",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTERIORHODOPSIN _OPSIN, NOPA (EUROFUNG)"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF01036",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Bac_rhodopsin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00251",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTRLOPSIN"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM01021",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Bac_rhodopsin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF81321",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Family A G protein-coupled receptor-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00950",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTERIAL_OPSIN_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00327",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "BACTERIAL_OPSIN_RET"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MSITSVPGVVDAGVLGAQSAAAVRENALLSSSLWVNVALAGIAILVFVYMGRTIRPGRPRLIWGATLMIPLVSISSYLGLLSGLTVGMIEMPAGHALAGEMVRSQWGRYLTWALSTPMILLALGLLADVDLGSLFTVIAADIGMCVTGLAAAMTTSALLFRWAFYAISCAFFVVVLSALVTDWAASASSAGTAEIFDTLRVLTVVLWLGYPIVWAVGVEGLALVQSVGVTSWAYSVLDVFAKYVFAFILLRWVANNERTVAVAGQTLGTMSSDD",
+    "length": 274,
+    "molWeight": 28874,
+    "crc64": "8FEDBBEDC717CD6B",
+    "md5": "3C69D1D2EB43D4C7B53C626F13983702"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Propeptide": 1,
+      "Chain": 1,
+      "Topological domain": 8,
+      "Transmembrane": 7,
+      "Binding site": 3,
+      "Modified residue": 1,
+      "Helix": 11,
+      "Turn": 4,
+      "Beta strand": 2
+    },
+    "uniParcId": "UPI000012674A"
+  }
+}

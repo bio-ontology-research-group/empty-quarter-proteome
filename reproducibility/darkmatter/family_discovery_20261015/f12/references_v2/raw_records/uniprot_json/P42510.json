@@ -1,0 +1,562 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P42510",
+  "uniProtkbId": "GPH_PSESS",
+  "entryAudit": {
+    "firstPublicDate": "1995-11-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1995-11-01",
+    "entryVersion": 86,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Pseudomonas savastanoi",
+    "commonName": "Pseudomonas syringae pv. savastanoi",
+    "taxonId": 29438,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Pseudomonadales",
+      "Pseudomonadaceae",
+      "Pseudomonas"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Probable phosphoglycolate phosphatase"
+      },
+      "shortNames": [
+        {
+          "value": "PGP"
+        },
+        {
+          "value": "PGPase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "value": "3.1.3.18"
+        }
+      ]
+    },
+    "flag": "Fragment"
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "gph"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Specifically catalyzes the dephosphorylation of 2-phosphoglycolate. Is involved in the dissimilation of the intracellular 2-phosphoglycolate formed during the DNA repair of 3'-phosphoglycolate ends, a major class of DNA lesions induced by oxidative stress (By similarity)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "2-phosphoglycolate + H2O = glycolate + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:14369"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29805"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58033"
+          }
+        ],
+        "ecNumber": "3.1.3.18"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "value": "Organic acid metabolism; glycolate biosynthesis; glycolate from 2-phosphoglycolate: step 1/1"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the HAD-like hydrolase superfamily. CbbY/CbbZ/Gph/YieH family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "OUTSIDE"
+        },
+        "end": {
+          "value": 160,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Probable phosphoglycolate phosphatase",
+      "featureId": "PRO_0000108036"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 70,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 70,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Non-terminal residue",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 1,
+          "modifier": "EXACT"
+        }
+      },
+      "description": ""
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0119",
+      "category": "Biological process",
+      "name": "Carbohydrate metabolism"
+    },
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "1987141",
+        "citationType": "journal article",
+        "authors": [
+          "da Costa e Silva O.",
+          "Kosuge T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "1987141"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.173.2.463-471.1991"
+          }
+        ],
+        "title": "Molecular characterization and expression analysis of the anthranilate synthase gene of Pseudomonas syringae subsp. savastanoi.",
+        "publicationDate": "1991",
+        "journal": "J. Bacteriol.",
+        "firstPage": "463",
+        "lastPage": "471",
+        "volume": "173"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "M55911",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "-"
+        },
+        {
+          "key": "Status",
+          "value": "NOT_ANNOTATED_CDS"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "B39128",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "B39128"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P42510",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P42510",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00865",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00834"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008967",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphoglycolate phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006281",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:DNA repair"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0046295",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:glycolate biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniPathway"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.1000:FF:000022",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphoglycolate phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR050155",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_hydrolase_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006439",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR041492",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_2"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01549",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IA-v1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01509",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IA-v3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43434",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHOSPHOGLYCOLATE PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43434:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHOSPHOGLYCOLATE PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF13419",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00413",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HADHALOGNASE"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "LQKMGVEMALITNKPERFVAPLLDEMKLGRFFRWIIGGDTMPQKKPDPAALFFVMKMAGVPASQALFVGDSRSDVQAAKAAGVACVALSYGYNHGRPIAEENPAMVIDDLRKLIPGCLDMDAEILLPDIKRPSPRESIVVVTRKLWMKVIKALARWRWRA",
+    "length": 160,
+    "molWeight": 17848,
+    "crc64": "5AC68F54F5496DB2",
+    "md5": "B5AABEB97AA6A7D471C5412A0232090C"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 1,
+      "Non-terminal residue": 1
+    },
+    "uniParcId": "UPI000012B9C0"
+  }
+}

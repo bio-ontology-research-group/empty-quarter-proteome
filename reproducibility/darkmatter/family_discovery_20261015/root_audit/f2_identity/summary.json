@@ -1,0 +1,43 @@
+{
+  "job_id": "53816465",
+  "historical_leads_found": 2,
+  "identity_by_id": {
+    "1PRr2__self_SemiBin_81::1PRr2_1391604_4": true,
+    "S52PRr1__single_SemiBin_53::S52PRr1_477345_9": true
+  },
+  "commands": [
+    [
+      "/ibex/scratch/projects/c2014/rob/metagenomics/../miniconda3/envs/eggnog/bin/diamond",
+      "blastp",
+      "--query",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f2_identity/historical_leads.faa",
+      "--db",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f2_identity/refs.dmnd",
+      "--out",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f2_identity/diamond.tsv",
+      "--outfmt",
+      "6",
+      "qseqid",
+      "sseqid",
+      "pident",
+      "length",
+      "qstart",
+      "qend",
+      "sstart",
+      "send",
+      "evalue",
+      "bitscore",
+      "qlen",
+      "slen",
+      "--ultra-sensitive",
+      "--max-target-seqs",
+      "0",
+      "--evalue",
+      "1e-3",
+      "--threads",
+      "8"
+    ]
+  ],
+  "diamond_hit_rows": 0,
+  "interpretation": "no-hit cannot establish function or disprove it; source identity required before interpreting prior lead annotations"
+}

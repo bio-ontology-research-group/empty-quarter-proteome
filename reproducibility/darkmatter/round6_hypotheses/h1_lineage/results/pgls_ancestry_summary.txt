@@ -1,0 +1,32 @@
+================================================================================
+PGLS ANCESTRY-AWARE ASSOCIATION REPORT: 237 THERMOPLASMATOTA
+================================================================================
+
+1. PRIMARY MODEL SPECIFICATION AND FIT
+  Response: dark_fraction (N_dark / N_proteins)
+  Population: All desert Thermoplasmatota representatives with valid covariates (n = 237)
+  Phylogenetic Correlation: ar53 FastTree branch-length covariance
+  Profiled Pagel's lambda MLE: 0.9158
+  Model R^2: 0.9992, Residual variance sigma^2: 0.001028
+
+2. PRIMARY ESTIMAND: EXTERNAL DIVERGENCE & SHARED RBH COVERAGE
+  Nearest-relative AAI slope (per 1% AAI): beta = +0.00170 (SE = 0.00040, t = +4.25, p = 0.0000)
+    95% Model-Conditional CI: [+0.00092, +0.00249]
+  Shared RBH coverage slope (frac_rbh_desert): beta = -0.13748 (SE = 0.01917, t = -7.17, p = 0.0000)
+    95% Model-Conditional CI: [-0.17505, -0.09992]
+
+3. QUALITY & FRAGMENTATION COVARIATE EFFECTS
+  Assembly length (log10 length): beta = +0.11543 (SE = 0.01812, t = +6.37, p = 1.0117e-09)
+  Contig fragmentation (log10 N50): beta = -0.00900 (SE = 0.00299, t = -3.02, p = 2.8512e-03)
+  CheckM2 completeness: beta = -0.00033 (SE = 0.00012, t = -2.70, p = 7.4766e-03)
+
+4. SENSITIVITY SUMMARY ACROSS COHORTS AND ASSUMPTIONS
+  Cohort: All Thermoplasmatota (Primary) (n=237, lambda=0.92):
+    AAI beta = +0.00170 (p = 0.0000), RBH frac beta = -0.13748 (p = 0.0000), log_len beta = +0.11543 (p = 1.0117e-09)
+  Cohort: c__SW-10-69-26 Only (n=185, lambda=0.90):
+    AAI beta = +0.00192 (p = 0.0001), RBH frac beta = -0.18044 (p = 0.0000), log_len beta = +0.10202 (p = 3.9299e-07)
+  Cohort: Dominant Family Omitted (No JAJPHT01) (n=97, lambda=0.90):
+    AAI beta = +0.00149 (p = 0.0033), RBH frac beta = -0.10238 (p = 0.0008), log_len beta = +0.10431 (p = 5.6564e-03)
+  Cohort: With Caller Complete Proxy (frac_complete) (n=232, lambda=0.91):
+    AAI beta = +0.00155 (p = 0.0006), RBH frac beta = -0.10476 (p = 0.0001), log_len beta = +0.13324 (p = 2.3248e-10)
+================================================================================

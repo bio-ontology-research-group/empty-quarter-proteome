@@ -1,0 +1,1022 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q97L63",
+  "uniProtkbId": "SPLB_CLOAB",
+  "entryAudit": {
+    "firstPublicDate": "2010-10-05",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2001-10-01",
+    "entryVersion": 111,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 4.0,
+  "organism": {
+    "scientificName": "Clostridium acetobutylicum (strain ATCC 824 / DSM 792 / JCM 1419 / IAM 19013 / LMG 5710 / NBRC 13948 / NRRL B-527 / VKM B-1787 / 2291 / W)",
+    "taxonId": 272562,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Bacillota",
+      "Clostridia",
+      "Eubacteriales",
+      "Clostridiaceae",
+      "Clostridium"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Spore photoproduct lyase"
+      },
+      "ecNumbers": [
+        {
+          "value": "4.1.99.14"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "splB"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "CA_C0699"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "19178276"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20405152"
+            }
+          ],
+          "value": "Involved in repair of UV radiation-induced DNA damage during spore germination. Can repair thymine dimer 5-thyminyl-5,6-dihydrothymine (known as spore photoproduct (SP)) by in situ monomerization of SP to two thymines"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "(5R)-5,6-dihydro-5-(thymidin-7-yl)thymidine in DNA = a thymidine dimer in DNA",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:56132"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:14387"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:14449"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:139518"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:139519"
+          }
+        ],
+        "ecNumber": "4.1.99.14",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "19178276"
+          },
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "20405152"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "[4Fe-4S] cluster",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20405152"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:49883"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "20405152"
+              }
+            ],
+            "value": "Binds 1 [4Fe-4S] cluster per subunit. The cluster is coordinated with 3 cysteines and an exchangeable S-adenosyl-L-methionine."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "S-adenosyl-L-methionine",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "20405152"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:59789"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "20405152"
+              }
+            ],
+            "value": "Binds 1 S-adenosyl-L-methionine per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Monomer or homodimer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the radical SAM superfamily. SPL family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 336,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Spore photoproduct lyase",
+      "featureId": "PRO_0000397844"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 74,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 305,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Radical SAM core",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PROSITE-ProRule",
+          "id": "PRU01266"
+        }
+      ]
+    },
+    {
+      "type": "DNA binding",
+      "location": {
+        "start": {
+          "value": 215,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 232,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "H-T-H motif",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 88,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 88,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:49883"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "[4Fe-4S] cluster",
+        "id": "ChEBI:CHEBI:49883",
+        "note": "4Fe-4S-S-AdoMet"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 92,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 92,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:49883"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "[4Fe-4S] cluster",
+        "id": "ChEBI:CHEBI:49883",
+        "note": "4Fe-4S-S-AdoMet"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 95,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 95,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:49883"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "[4Fe-4S] cluster",
+        "id": "ChEBI:CHEBI:49883",
+        "note": "4Fe-4S-S-AdoMet"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0004",
+      "category": "Ligand",
+      "name": "4Fe-4S"
+    },
+    {
+      "id": "KW-0227",
+      "category": "Biological process",
+      "name": "DNA damage"
+    },
+    {
+      "id": "KW-0234",
+      "category": "Biological process",
+      "name": "DNA repair"
+    },
+    {
+      "id": "KW-0238",
+      "category": "Molecular function",
+      "name": "DNA-binding"
+    },
+    {
+      "id": "KW-0408",
+      "category": "Ligand",
+      "name": "Iron"
+    },
+    {
+      "id": "KW-0411",
+      "category": "Ligand",
+      "name": "Iron-sulfur"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0949",
+      "category": "Ligand",
+      "name": "S-adenosyl-L-methionine"
+    },
+    {
+      "id": "KW-0749",
+      "category": "Biological process",
+      "name": "Sporulation"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "11466286",
+        "citationType": "journal article",
+        "authors": [
+          "Noelling J.",
+          "Breton G.",
+          "Omelchenko M.V.",
+          "Makarova K.S.",
+          "Zeng Q.",
+          "Gibson R.",
+          "Lee H.M.",
+          "Dubois J.",
+          "Qiu D.",
+          "Hitti J.",
+          "Wolf Y.I.",
+          "Tatusov R.L.",
+          "Sabathe F.",
+          "Doucette-Stamm L.A.",
+          "Soucaille P.",
+          "Daly M.J.",
+          "Bennett G.N.",
+          "Koonin E.V.",
+          "Smith D.R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11466286"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.183.16.4823-4838.2001"
+          }
+        ],
+        "title": "Genome sequence and comparative analysis of the solvent-producing bacterium Clostridium acetobutylicum.",
+        "publicationDate": "2001",
+        "journal": "J. Bacteriol.",
+        "firstPage": "4823",
+        "lastPage": "4838",
+        "volume": "183"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 824 / DSM 792 / JCM 1419 / IAM 19013 / LMG 5710 / NBRC 13948 / NRRL B-527 / VKM B-1787 / 2291 / W",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "19178276",
+        "citationType": "journal article",
+        "authors": [
+          "Chandra T.",
+          "Silver S.C.",
+          "Zilinskas E.",
+          "Shepard E.M.",
+          "Broderick W.E.",
+          "Broderick J.B."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19178276"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/ja807375c"
+          }
+        ],
+        "title": "Spore photoproduct lyase catalyzes specific repair of the 5R but not the 5S spore photoproduct.",
+        "publicationDate": "2009",
+        "journal": "J. Am. Chem. Soc.",
+        "firstPage": "2420",
+        "lastPage": "2421",
+        "volume": "131"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "SUBSTRATE SPECIFICITY"
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "20405152",
+        "citationType": "journal article",
+        "authors": [
+          "Silver S.C.",
+          "Chandra T.",
+          "Zilinskas E.",
+          "Ghose S.",
+          "Broderick W.E.",
+          "Broderick J.B."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "20405152"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1007/s00775-010-0656-8"
+          }
+        ],
+        "title": "Complete stereospecific repair of a synthetic dinucleotide spore photoproduct by spore photoproduct lyase.",
+        "publicationDate": "2010",
+        "journal": "J. Biol. Inorg. Chem.",
+        "firstPage": "943",
+        "lastPage": "955",
+        "volume": "15"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "COFACTOR"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 824 / DSM 792 / JCM 1419 / IAM 19013 / LMG 5710 / NBRC 13948 / NRRL B-527 / VKM B-1787 / 2291 / W",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AE001437",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAK78676.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "A96986",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A96986"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_010964018.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_003030.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q97L63",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q97L63",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "272562.CA_C0699",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "cac:CA_C0699",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|272562.8.peg.902",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG1533",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_057301_0_0_9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9787095at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "4.1.99.14",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "1452"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000814",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0042601",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:endospore-forming forespore"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0051539",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:4 iron, 4 sulfur cluster binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003913",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:DNA photolyase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "20405152"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0051536",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:iron-sulfur cluster binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "20405152"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0046872",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:metal ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "20405152"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:1904047",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:S-adenosyl-L-methionine binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "20405152"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.12110",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.80.30.30",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR007197",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "rSAM"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR058240",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "rSAM_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR049539",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPL"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR034559",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPL_Clostridia"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023897",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPL_firmicutes"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR04070",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "photo_TT_lyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR37822:SF2",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPORE PHOTOPRODUCT LYASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR37822",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPORE PHOTOPRODUCT LYASE-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF20903",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SPL"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDS00029",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Radical_SAM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDF00412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "spore_photoproduct_lyase_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01079",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "spore_photoproduct_lyase_like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF102114",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Radical SAM enzymes"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51918",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RADICAL_SAM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MENMFRRVIFEKKALDYPMGRDILRQFENTDIEIRYSETGRITGIPGKDEAQSFFEGKNTLVVGVRRELDFQTCKPSANYQLPIVSGCAAMCEYCYLNTHGGKKPYVKINVNLDDILSKAGEYIEKRKPDITVFEGAAISDPVPVERYSGALKKAIEYFGKNEYSRFRFVTKYADISELLAVQHNNHTTIRFSINTPRVIKNYEHRTSSLEDRIESAYNILNSGYKTGFIVGPVFLYENWKKEYEELLKKASDKLGDKELEFEIISHRFTTSAKNKILKVFPNTKLPMDDEARKFKFGQFGYGKYVYDKDDMQEIKEFFINNINLYFNKATIKYII",
+    "length": 336,
+    "molWeight": 39090,
+    "crc64": "15F544BA7AB51F97",
+    "md5": "8188C58C97645DD53FD20376E57B778C"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 2,
+      "SUBUNIT": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 1,
+      "DNA binding": 1,
+      "Binding site": 3
+    },
+    "uniParcId": "UPI00000C9F57"
+  }
+}

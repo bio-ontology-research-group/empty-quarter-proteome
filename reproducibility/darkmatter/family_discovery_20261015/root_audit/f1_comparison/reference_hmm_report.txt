@@ -1,0 +1,2448 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.3.2 (Nov 2020); http://hmmer.org/
+# Copyright (C) 2020 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_profile_pilot/cpf.hmm
+# target sequence database:        /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/references_v2/cpf_references_dedup.faa
+# output directed to file:         /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/reference_hmm_report.txt
+# per-dom hits tabular output:     /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/reference_domains.tsv
+# number of worker threads:        16
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       DNA_photolyase  [M=164]
+Accession:   PF00875.25
+Description: DNA photolyase
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence Description
+    ------- ------ -----    ------- ------ -----   ---- --  -------- -----------
+    1.7e-53  173.0   0.0      4e-53  171.8   0.0    1.6  1  A9CJC9    broad_family=CPD org=Agrobacterium fabrum (strain C
+      2e-52  169.6   0.1    5.9e-52  168.0   0.0    1.8  1  P05327    broad_family=CPD org=Synechococcus sp. (strain ATCC
+    5.6e-51  164.8   0.0    2.1e-50  163.0   0.0    1.8  2  Q9R194    broad_family=cryptochrome org=Mus musculus len=592 
+    5.7e-51  164.8   0.0    2.5e-50  162.7   0.0    1.9  2  Q49AN0    broad_family=cryptochrome org=Homo sapiens len=593 
+    8.9e-51  164.2   0.0    2.5e-50  162.7   0.0    1.7  1  Q923I8    broad_family=cryptochrome org=Rattus norvegicus len
+    6.8e-50  161.3   0.3    1.2e-49  160.5   0.3    1.3  1  Q3IPX9    broad_family=cryptochrome org=Natronomonas pharaoni
+    8.6e-50  161.0   0.0    3.6e-49  158.9   0.0    1.9  2  Q8QG60    broad_family=cryptochrome org=Gallus gallus len=582
+    2.7e-48  156.1   0.0    6.7e-48  154.8   0.0    1.6  1  Q6ZZY0    broad_family=cryptochrome org=Sylvia borin len=620 
+    2.8e-48  156.1   0.0      7e-48  154.8   0.0    1.6  1  Q5IZC5    broad_family=cryptochrome org=Erithacus rubecula le
+    4.4e-48  155.4   0.0    9.3e-48  154.4   0.0    1.5  1  Q32Q86    broad_family=cryptochrome org=Rattus norvegicus len
+    4.6e-48  155.3   0.0    9.8e-48  154.3   0.0    1.5  1  P97784    broad_family=cryptochrome org=Mus musculus len=606 
+      5e-48  155.2   1.2    1.5e-46  150.4   0.2    2.4  2  Q55081    broad_family=CPD org=Synechocystis sp. (strain ATCC
+    6.4e-48  154.9   0.0    1.6e-47  153.6   0.0    1.6  1  Q8QG61    broad_family=cryptochrome org=Gallus gallus len=621
+      1e-47  154.2   0.0    2.2e-47  153.2   0.0    1.5  1  Q16526    broad_family=cryptochrome org=Homo sapiens len=586 
+      1e-47  154.2   0.7    2.6e-47  152.9   0.3    1.9  1  P00914    broad_family=CPD org=Escherichia coli (strain K12) 
+    1.1e-47  154.2   0.0    2.2e-47  153.2   0.0    1.5  1  Q8WP19    broad_family=cryptochrome org=Macaca fascicularis l
+    1.5e-47  153.7   0.0    3.2e-47  152.6   0.0    1.5  1  Q70AD6    broad_family=cryptochrome org=Nannospalax judaei le
+    1.9e-47  153.4   0.3    5.9e-47  151.7   0.1    1.8  2  Q7NMD1    broad_family=cryptochrome org=Gloeobacter violaceus
+    6.8e-47  151.5   0.0      2e-46  150.0   0.0    1.8  1  O48652    broad_family=6-4 org=Arabidopsis thaliana len=556 E
+    1.2e-46  150.7   0.0    2.4e-46  149.7   0.0    1.4  1  Q4KML2    broad_family=cryptochrome org=Danio rerio len=520 E
+    1.5e-46  150.4   0.4    2.7e-46  149.6   0.4    1.4  1  P25078    broad_family=CPD org=Salmonella typhimurium (strain
+    1.7e-46  150.3   0.4    4.1e-46  149.0   0.4    1.7  1  Q9HQ46    broad_family=CPD org=Halobacterium salinarum (strai
+      7e-46  148.3   0.0    1.3e-45  147.4   0.0    1.4  1  Q17DK5    broad_family=cryptochrome org=Aedes aegypti len=545
+    1.3e-44  144.2   0.0    2.1e-44  143.4   0.0    1.3  1  Q75WS4    broad_family=cryptochrome org=Xenopus laevis len=52
+    1.6e-44  143.8   0.0    3.8e-44  142.6   0.0    1.7  1  Q7PYI7    broad_family=cryptochrome org=Anopheles gambiae len
+    4.3e-44  142.4   1.1    7.9e-44  141.6   1.1    1.4  1  P12768    broad_family=CPD org=Streptomyces griseus len=455 E
+    5.6e-44  142.1   0.0    1.3e-43  140.9   0.0    1.6  1  Q96524    broad_family=cryptochrome org=Arabidopsis thaliana 
+    3.6e-42  136.2   0.0    6.8e-42  135.3   0.0    1.4  1  Q0E2Y1    broad_family=6-4 org=Oryza sativa subsp. japonica l
+    3.9e-42  136.1   0.0    6.6e-42  135.3   0.0    1.4  1  Q43125    broad_family=cryptochrome org=Arabidopsis thaliana 
+    2.2e-41  133.6   0.0    3.6e-41  133.0   0.0    1.3  1  P77967    broad_family=cryptochrome org=Synechocystis sp. (st
+    6.5e-41  132.1   0.1    1.1e-40  131.4   0.1    1.3  1  E9EYW7    broad_family=CPD org=Metarhizium robertsii (strain 
+      2e-40  130.5   0.0    5.8e-40  129.0   0.0    1.7  1  Q84KJ5    broad_family=cryptochrome org=Arabidopsis thaliana 
+    1.6e-39  127.6   0.0    4.2e-39  126.2   0.0    1.7  1  O77059    broad_family=cryptochrome org=Drosophila melanogast
+    4.4e-39  126.1   0.0    8.4e-39  125.2   0.0    1.4  1  Q38JU2    broad_family=cryptochrome org=Solanum lycopersicum 
+    5.8e-39  125.7   0.2      1e-38  124.9   0.2    1.4  1  J4KQS2    broad_family=CPD org=Beauveria bassiana (strain ARS
+    1.3e-38  124.6   0.0    2.3e-38  123.8   0.0    1.3  1  Q7UJB1    broad_family=cryptochrome org=Rhodopirellula baltic
+    1.3e-38  124.6   0.0    3.5e-38  123.2   0.0    1.7  1  P27526    broad_family=CPD org=Neurospora crassa (strain ATCC
+    2.2e-38  123.9   0.0    4.3e-38  122.9   0.0    1.4  1  Q651U1    broad_family=cryptochrome org=Oryza sativa subsp. j
+      5e-38  122.7   0.1    4.1e-37  119.7   0.0    2.0  2  Q04449    broad_family=CPD org=Alkalihalophilus pseudofirmus 
+    5.9e-38  122.5   0.0    1.3e-37  121.4   0.0    1.6  1  Q293P8    broad_family=cryptochrome org=Drosophila pseudoobsc
+    1.4e-37  121.2   0.5    2.7e-37  120.3   0.5    1.4  1  Q6F6A2    broad_family=CPD org=Oryza sativa subsp. japonica l
+    4.1e-37  119.7   0.0    7.3e-37  118.9   0.0    1.4  1  P40115    broad_family=cryptochrome org=Sinapis alba len=501 
+    5.8e-36  116.0   0.3    1.1e-35  115.1   0.3    1.4  1  P61496    broad_family=CPD org=Thermus thermophilus (strain A
+    9.1e-36  115.4   0.0    1.5e-35  114.6   0.0    1.3  1  Q5IFN2    broad_family=cryptochrome org=Ostreococcus tauri le
+    1.7e-35  114.5   0.1    2.9e-35  113.7   0.1    1.4  1  Q9SB00    broad_family=CPD org=Arabidopsis thaliana len=496 E
+    2.7e-35  113.8   0.1    1.2e-34  111.8   0.0    2.0  2  P34205    broad_family=CPD org=Carassius auratus len=556 EC=4
+    6.3e-35  112.6   0.0    9.6e-35  112.0   0.0    1.3  1  P57386    broad_family=CPD org=Buchnera aphidicola subsp. Acy
+    1.3e-34  111.6   0.1    7.3e-34  109.2   0.1    2.1  2  P12769    broad_family=CPD org=Methanothermobacter thermautot
+    5.4e-34  109.6   0.1      1e-33  108.7   0.1    1.4  1  P61497    broad_family=CPD org=Thermus thermophilus (strain A
+    2.3e-33  107.6   0.0    4.4e-33  106.6   0.0    1.4  1  Q28811    broad_family=CPD org=Potorous tridactylus len=532 E
+    3.7e-33  106.9   0.0    5.6e-33  106.3   0.0    1.2  1  Q89AJ9    broad_family=CPD org=Buchnera aphidicola subsp. Bai
+    5.9e-32  103.0   0.0      1e-31  102.2   0.0    1.3  1  Q5QXE0    broad_family=cryptochrome org=Idiomarina loihiensis
+    1.6e-30   98.3   0.0    3.6e-30   97.2   0.0    1.5  1  P58818    broad_family=CPD org=Methanothermobacter marburgens
+    9.9e-24   76.2   0.0    2.3e-23   75.0   0.0    1.6  1  P05066    broad_family=CPD org=Saccharomyces cerevisiae (stra
+    5.3e-22   70.6   0.0      8e-22   70.0   0.0    1.2  1  Q87JP5    broad_family=cryptochrome org=Vibrio parahaemolytic
+    9.4e-21   66.5   0.0    1.7e-20   65.7   0.0    1.4  1  Q7SI68    broad_family=cryptochrome org=Neurospora crassa (st
+    1.2e-19   62.9   0.0    2.1e-19   62.1   0.0    1.4  1  Q4I1Q6    broad_family=cryptochrome org=Gibberella zeae (stra
+
+
+Domain annotation for each sequence (and alignments):
+>> A9CJC9  broad_family=CPD org=Agrobacterium fabrum (strain C58 / ATCC 33970) len=479 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  171.8   0.0   3.4e-53     4e-53       1     161 [.       8     165 ..       8     170 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 171.8 bits;  conditional E-value: 3.4e-53
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavvan 95 
+                     v+vWfr+DlRl+DN AL+aA+++g+p+ipv++ +++ + +l  g+a+ ++l++sLa+L+++l++ g+rLv+ +gd++++l+ l++e+ga++vv+n
+          A9CJC9   8 VIVWFRKDLRLSDNLALLAAVEHGGPVIPVYIREKS-AGPL--GGAQEWWLHHSLAALSSSLEKAGGRLVLASGDAERILRDLISETGADTVVWN 99 
+                     79********************************99.7888..**************************************************** PP
+
+  DNA_photolyase  96 reyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplp 161
+                     r+y+p + + d+a+k+ l++ g++v+sf+g+ll++p +++tk+g+py+v+tpf++a++   ++++p
+          A9CJC9 100 RRYDPTGMATDKALKQKLRDDGLTVRSFSGQLLHEPSRLQTKSGGPYRVYTPFWRALEGSDEPHAP 165
+                     *******************************************************87765444344 PP
+
+>> P05327  broad_family=CPD org=Synechococcus sp. (strain ATCC 27144 / PCC 6301 / SAUG 1402/1) len=484 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  168.0   0.0   5.1e-52   5.9e-52       2     159 ..       6     164 ..       5     170 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 168.0 bits;  conditional E-value: 5.1e-52
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavva 94 
+                     l+W+rrDlRl+DN +LaaA+a++a+li +f+ldp+  ++ ++  ++ar+ +l  +L++L++++++ g+rL++++gdp+ ++p+la++l+a+av++
+          P05327   6 LFWHRRDLRLSDNIGLAAARAQSAQLIGLFCLDPQilQSADM--APARVAYLQGCLQELQQRYQQAGSRLLLLQGDPQHLIPQLAQQLQAEAVYW 98 
+                     89*********************************7666666..*************************************************** PP
+
+  DNA_photolyase  95 nreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell.ep 159
+                     n+++ep++r+rd +v++al+ ag+++ + +++ll+ p+++ +++g py+v+ pf+k ++++ + +p
+          P05327  99 NQDIEPYGRDRDGQVAAALKTAGIRAVQLWDQLLHSPDQILSGSGNPYSVYGPFWKNWQAQPKpTP 164
+                     ************************************************************766544 PP
+
+>> Q9R194  broad_family=cryptochrome org=Mus musculus len=592 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  163.0   0.0   1.8e-50   2.1e-50       1     152 [.      23     175 ..      23     187 .. 0.92
+   2 ?   -1.5   0.0         7       8.1     120     143 ..     454     477 ..     445     479 .. 0.79
+
+  Alignments for each domain:
+  == domain 1  score: 163.0 bits;  conditional E-value: 1.8e-50
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa.eerkl.kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL+aA+++++ + +v++ldp+ +   +  vg +r+rfll+sL+dLd++lr++++rL+v+rg+padv+p+l+ke+g+++++
+          Q9R194  23 SVHWFRKGLRLHDNPALLAAVRGARCVRCVYILDPWfA-A-SsSVGINRWRFLLQSLEDLDTSLRKLNSRLFVVRGQPADVFPRLFKEWGVTRLT 115
+                     69**********************************53.2.2368************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikav 152
+                     ++++ ep++++rd+a+ ++++eagvev + ++h+l++ +++ + +++kp+ +++ f   +
+          Q9R194 116 FEYDSEPFGKERDAAIMKMAKEAGVEVVTENSHTLYDLDRIiELNGQKPPLTYKRFQALI 175
+                     *****************************************777777*********9844 PP
+
+  == domain 2  score: -1.5 bits;  conditional E-value: 7
+  DNA_photolyase 120 vesfdghllvppgevrtkkgkpyk 143
+                     ++ f+++++++p+ ++ + +k++k
+          Q9R194 454 LKGFPSRYIYEPWNAPESVQKAAK 477
+                     678999*******99877666665 PP
+
+>> Q49AN0  broad_family=cryptochrome org=Homo sapiens len=593 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  162.7   0.0   2.2e-50   2.5e-50       1     151 [.      24     175 ..      24     187 .. 0.93
+   2 ?   -1.1   0.0       5.3       6.1     119     142 ..     454     477 ..     446     480 .. 0.78
+
+  Alignments for each domain:
+  == domain 1  score: 162.7 bits;  conditional E-value: 2.2e-50
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa.eerkl.kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL+aA+++++ + +v++ldp+ +   +  vg +r+rfll+sL+dLd++lr++++rL+v+rg+padv+p+l+ke+g+++++
+          Q49AN0  24 SVHWFRKGLRLHDNPALLAAVRGARCVRCVYILDPWfA-A-SsSVGINRWRFLLQSLEDLDTSLRKLNSRLFVVRGQPADVFPRLFKEWGVTRLT 116
+                     69**********************************53.2.2368************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfika 151
+                     ++++ ep++++rd+a+ ++++eagvev + ++h+l++ +++ + +++kp+ +++ f   
+          Q49AN0 117 FEYDSEPFGKERDAAIMKMAKEAGVEVVTENSHTLYDLDRIiELNGQKPPLTYKRFQAI 175
+                     *****************************************777777********9874 PP
+
+  == domain 2  score: -1.1 bits;  conditional E-value: 5.3
+  DNA_photolyase 119 evesfdghllvppgevrtkkgkpy 142
+                     +++ f+++++++p+ ++ + +k++
+          Q49AN0 454 KLKAFPSRYIYEPWNAPESIQKAA 477
+                     578899********9977666665 PP
+
+>> Q923I8  broad_family=cryptochrome org=Rattus norvegicus len=594 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  162.7   0.0   2.2e-50   2.5e-50       1     151 [.      23     174 ..      23     187 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 162.7 bits;  conditional E-value: 2.2e-50
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa.eerkl.kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL+aA+++++ + +v++ldp+ +   +  vg +r+rfll+sL+dLd++lr++++rL+v+rg+padv+p+l+ke+g+++++
+          Q923I8  23 SVHWFRKGLRLHDNPALLAAVRGARCVRCVYILDPWfA-A-SsSVGINRWRFLLQSLEDLDTSLRKLNSRLFVVRGQPADVFPRLFKEWGVTRLT 115
+                     69**********************************53.2.2368************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfika 151
+                     ++++ ep++++rd+a+ ++++eagvev + ++h+l++ +++ + +++kp+ +++ f   
+          Q923I8 116 FEYDSEPFGKERDAAIMKMAKEAGVEVVTENSHTLYDLDRIiELNGQKPPLTYKRFQAL 174
+                     *****************************************777777********9874 PP
+
+>> Q3IPX9  broad_family=cryptochrome org=Natronomonas pharaonis (strain ATCC 35678 / DSM 2160 / CIP 103997 / JCM 8858 / 
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  160.5   0.3     1e-49   1.2e-49       1     158 [.       4     168 ..       4     179 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 160.5 bits;  conditional E-value: 1e-49
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa.eerkl.....kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelga 89 
+                     ++vWfr+DlR++DNp La+A+a+++++ipv+ +dp+ +  ++     k+g++r+ f ++ +adL+++lr+rg++L+vr+g+pa+v+pela++ ga
+          Q3IPX9   4 AVVWFRDDLRVTDNPTLADAVAAAETVIPVYTFDPDrY-TESeygppKTGGHRAVFRRQAVADLRASLRDRGGDLLVRSGRPATVVPELAQRAGA 97 
+                     59**********************************52.33356889************************************************ PP
+
+  DNA_photolyase  90 savvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell..e 158
+                     +av+a+ +++ +errr + v++al++ag+++++ ++h+l++p++++t   ++ ++ftp++k+ ++ ++  +
+          Q3IPX9  98 DAVYAQTKPATEERRRAADVASALDDAGIALRQRWTHTLYHPDDLPTPPTDIDDTFTPWRKETEAAATvrD 168
+                     *************************************************************9999877542 PP
+
+>> Q8QG60  broad_family=cryptochrome org=Gallus gallus len=582 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  158.9   0.0   3.1e-49   3.6e-49       1     152 [.      14     166 ..      14     178 .. 0.92
+   2 ?   -1.2   0.0       5.6       6.4     119     143 ..     444     468 ..     435     470 .. 0.77
+
+  Alignments for each domain:
+  == domain 1  score: 158.9 bits;  conditional E-value: 3.1e-49
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa.eerkl.kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfrr+lRlhDNpAL+aA++++a+l ++++ldp+ +   +  vg +r+rfll+sL+dLd++lr++++rL+v+rg+p dv+p+l+ke+g++++ 
+          Q8QG60  14 SVHWFRRGLRLHDNPALQAALRGAASLRCIYILDPWfA-A-SsAVGINRWRFLLQSLEDLDNSLRKLNSRLFVVRGQPTDVFPRLFKEWGVTRLA 106
+                     69**********************************52.2.2368************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikav 152
+                     ++++ ep++++rd+a+ + ++eagvev   ++h+l++ +++ + ++ kp+ +++ f   +
+          Q8QG60 107 FEYDSEPFGKERDAAIIKLAKEAGVEVVIENSHTLYNLDRIiELNGNKPPLTYKRFQAII 166
+                     *****************************************555555*********8754 PP
+
+  == domain 2  score: -1.2 bits;  conditional E-value: 5.6
+  DNA_photolyase 119 evesfdghllvppgevrtkkgkpyk 143
+                     +++ f+++++++p+ ++ + +k++k
+          Q8QG60 444 KLKGFPSRYIYEPWNAPESVQKAAK 468
+                     477899********99877666665 PP
+
+>> Q6ZZY0  broad_family=cryptochrome org=Sylvia borin len=620 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  154.8   0.0   5.8e-48   6.7e-48       1     151 [.       5     156 ..       5     169 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 154.8 bits;  conditional E-value: 5.8e-48
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL++ +++++++ +v++ldp+  +   + vg +r+rfll++L+dLd++lr++++rL+v+rg+padv+p+l+ke++++++ 
+          Q6ZZY0   5 AVHWFRKGLRLHDNPALRECIQGADTVRCVYILDPWfaG--SSNVGINRWRFLLQCLEDLDANLRKLNSRLFVIRGQPADVFPRLFKEWNIAKLS 97 
+                     59**********************************433..3367************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfika 151
+                     ++++ ep++++rd+a+k+ ++eagvev+   +h+l++ +++ + ++g+p+ +++ f   
+          Q6ZZY0  98 IEYDSEPFGKERDAAIKKLASEAGVEVIVRISHTLYDLDKIiELNGGQPPLTYKRFQTL 156
+                     *****************************************888888*********874 PP
+
+>> Q5IZC5  broad_family=cryptochrome org=Erithacus rubecula len=620 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  154.8   0.0   6.1e-48     7e-48       1     151 [.       5     156 ..       5     169 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 154.8 bits;  conditional E-value: 6.1e-48
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL++ +++++++ +v++ldp+  +   + vg +r+rfll++L+dLd++lr++++rL+v+rg+padv+p+l+ke++++++ 
+          Q5IZC5   5 AVHWFRKGLRLHDNPALRECIRGADTVRCVYILDPWfaG--SSNVGINRWRFLLQCLEDLDANLRKLNSRLFVIRGQPADVFPRLFKEWNIAKLS 97 
+                     59**********************************433..3367************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfika 151
+                     ++++ ep++++rd+a+k+ ++eagvev+   +h+l++ +++ + ++g+p+ +++ f   
+          Q5IZC5  98 IEYDSEPFGKERDAAIKKLASEAGVEVIVRISHTLYDLDKIiELNGGQPPLTYKRFQTL 156
+                     *****************************************888888*********874 PP
+
+>> Q32Q86  broad_family=cryptochrome org=Rattus norvegicus len=588 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  154.4   0.0     8e-48   9.3e-48       1     161 [.       5     164 ..       5     168 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 154.4 bits;  conditional E-value: 8e-48
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL + +++++++ +v++ldp+  +   + vg +r+rfll++L+dLd++lr++++rL+v+rg+padv+p+l+ke++++++ 
+          Q32Q86   5 AVHWFRKGLRLHDNPALKECIQGADTIRCVYILDPWfaG--SSNVGINRWRFLLQCLEDLDANLRKLNSRLFVIRGQPADVFPRLFKEWNITKLS 97 
+                     59**********************************433..3367************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikavlkelleplp 161
+                     ++++ ep++++rd+a+k+ + eagvev+   +h+l++ +++ + ++g+p+ +++ f   v k  +epl+
+          Q32Q86  98 IEYDSEPFGKERDAAIKKLATEAGVEVIVRISHTLYDLDKIiELNGGQPPLTYKRFQTLVSK--MEPLE 164
+                     *****************************************888888*********997666..34444 PP
+
+>> P97784  broad_family=cryptochrome org=Mus musculus len=606 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  154.3   0.0   8.5e-48   9.8e-48       1     161 [.       5     164 ..       5     168 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 154.3 bits;  conditional E-value: 8.5e-48
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL + +++++++ +v++ldp+  +   + vg +r+rfll++L+dLd++lr++++rL+v+rg+padv+p+l+ke++++++ 
+          P97784   5 AVHWFRKGLRLHDNPALKECIQGADTIRCVYILDPWfaG--SSNVGINRWRFLLQCLEDLDANLRKLNSRLFVIRGQPADVFPRLFKEWNITKLS 97 
+                     59**********************************433..3367************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikavlkelleplp 161
+                     ++++ ep++++rd+a+k+ + eagvev+   +h+l++ +++ + ++g+p+ +++ f   v k  +epl+
+          P97784  98 IEYDSEPFGKERDAAIKKLATEAGVEVIVRISHTLYDLDKIiELNGGQPPLTYKRFQTLVSK--MEPLE 164
+                     *****************************************888888*********997666..34444 PP
+
+>> Q55081  broad_family=CPD org=Synechocystis sp. (strain ATCC 27184 / PCC 6803 / Kazusa) len=488 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  150.4   0.2   1.3e-46   1.5e-46       2     163 ..      20     182 ..      19     183 .. 0.95
+   2 ?    3.1   0.0      0.26       0.3      94     135 ..     272     315 ..     268     335 .. 0.83
+
+  Alignments for each domain:
+  == domain 1  score: 150.4 bits;  conditional E-value: 1.3e-46
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavva 94 
+                     l+W+rrDlRl+D+ ALa+A+++ a+++ vf+ld++  +++++  ++ar+ +ll +L++L++ ++ +g++L+v++ dp+++lp+la++lga+ v++
+          Q55081  20 LLWHRRDLRLNDHLALAKARQKTAKIVGVFCLDNKilQAEDM--APARVAYLLGCLQSLQDHYQRLGSELLVFQADPVQLLPKLANTLGAHGVTW 112
+                     89*********************************8777777..*************************************************** PP
+
+  DNA_photolyase  95 nreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell.eplpap 163
+                       ++ep++++rd av++al+e+g+++ + +++l+++pgev t+ g+py+v+tpf+k + +  +  p+p+p
+          Q55081 113 TLDTEPYAQKRDLAVAQALRERGLAIATEWDQLMHHPGEVLTQAGSPYTVYTPFWKNWSQLPKtSPVPTP 182
+                     **********************************************************996666666666 PP
+
+  == domain 2  score: 3.1 bits;  conditional E-value: 0.26
+  DNA_photolyase  94 anreyepderrrdeavkeale..eagvevesfdghllvppgevr 135
+                     ++   e +e++r e+ ++++e  ++++++++f +h+l+    + 
+          Q55081 272 WQTTLEAWEQSRSEEARASIEtwQQELAWREFYQHCLYSFPALA 315
+                     8889999***********9997789************9977773 PP
+
+>> Q8QG61  broad_family=cryptochrome org=Gallus gallus len=621 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  153.6   0.0   1.4e-47   1.6e-47       1     151 [.       5     156 ..       5     169 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 153.6 bits;  conditional E-value: 1.4e-47
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL++ +++++++ +v++ldp+  +   + vg +r+rfll++L+dLd++lr++++rL+v+rg+padv+p+l+ke++++++ 
+          Q8QG61   5 AVHWFRKGLRLHDNPALRECIRGADTVRCVYILDPWfaG--SSNVGINRWRFLLQCLEDLDANLRKLNSRLFVIRGQPADVFPRLFKEWSIAKLS 97 
+                     59**********************************433..3367************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfika 151
+                     ++++ ep++++rd+a+k+ ++eagvev+   +h+l++ +++ + ++g+p+ +++ f   
+          Q8QG61  98 IEYDSEPFGKERDAAIKKLASEAGVEVIVRISHTLYDLDKIiELNGGQPPLTYKRFQTL 156
+                     *****************************************888888*********874 PP
+
+>> Q16526  broad_family=cryptochrome org=Homo sapiens len=586 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  153.2   0.0   1.9e-47   2.2e-47       1     153 [.       5     158 ..       5     169 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 153.2 bits;  conditional E-value: 1.9e-47
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL + +++++++ +v++ldp+  +   + vg +r+rfll++L+dLd++lr++++rL+v+rg+padv+p+l+ke++++++ 
+          Q16526   5 AVHWFRKGLRLHDNPALKECIQGADTIRCVYILDPWfaG--SSNVGINRWRFLLQCLEDLDANLRKLNSRLFVIRGQPADVFPRLFKEWNITKLS 97 
+                     59**********************************433..3367************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikavl 153
+                     ++++ ep++++rd+a+k+ + eagvev+   +h+l++ +++ + ++g+p+ +++ f   + 
+          Q16526  98 IEYDSEPFGKERDAAIKKLATEAGVEVIVRISHTLYDLDKIiELNGGQPPLTYKRFQTLIS 158
+                     *****************************************888888*********98544 PP
+
+>> P00914  broad_family=CPD org=Escherichia coli (strain K12) len=472 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  152.9   0.3   2.3e-47   2.6e-47       2     162 ..       5     168 ..       4     174 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 152.9 bits;  conditional E-value: 2.3e-47
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaas.gaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgd....padvlpelakelga 89 
+                     lvWfr+DlRlhDN ALaaA+++ +a+++++++++p+  +++++  ++++++ +  +L+ L+ +l+e+gi+L++r++d     +++++++++e ++
+          P00914   5 LVWFRQDLRLHDNLALAAACRNsSARVLALYIATPRqwATHNM--SPRQAELINAQLNGLQIALAEKGIPLLFREVDdfvaSVEIVKQVCAENSV 97 
+                     89*****************7773699**********5555656..*******************************99**99************* PP
+
+  DNA_photolyase  90 savvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplpa 162
+                     +++++n++ye +er+rd +v++al+  +v +e fd+++++ppg v t+++++ykvftpf++a+lk+l+e +p+
+          P00914  98 THLFYNYQYEVNERARDVEVERALR--NVVCEGFDDSVILPPGAVMTGNHEMYKVFTPFKNAWLKRLREGMPE 168
+                     ************************9..6**************************************9987776 PP
+
+>> Q8WP19  broad_family=cryptochrome org=Macaca fascicularis len=586 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  153.2   0.0   1.9e-47   2.2e-47       1     153 [.       5     158 ..       5     169 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 153.2 bits;  conditional E-value: 1.9e-47
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL + +++++++ +v++ldp+  +   + vg +r+rfll++L+dLd++lr++++rL+v+rg+padv+p+l+ke++++++ 
+          Q8WP19   5 AVHWFRKGLRLHDNPALKECIQGADTIRCVYILDPWfaG--SSNVGINRWRFLLQCLEDLDANLRKLNSRLFVIRGQPADVFPRLFKEWNITKLS 97 
+                     59**********************************433..3367************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikavl 153
+                     ++++ ep++++rd+a+k+ + eagvev+   +h+l++ +++ + ++g+p+ +++ f   + 
+          Q8WP19  98 IEYDSEPFGKERDAAIKKLATEAGVEVIVRISHTLYDLDKIiELNGGQPPLTYKRFQTLIS 158
+                     *****************************************888888*********98544 PP
+
+>> Q70AD6  broad_family=cryptochrome org=Nannospalax judaei len=587 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  152.6   0.0   2.8e-47   3.2e-47       1     153 [.       5     158 ..       5     169 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 152.6 bits;  conditional E-value: 2.8e-47
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavv 93 
+                     +++Wfr++lRlhDNpAL + +++++++ +v++ldp+  +   + vg +r+rfll++L+dLd++lr++++rL+v+rg+padv+p+l+ke++++++ 
+          Q70AD6   5 AVHWFRKGLRLHDNPALKECIQGADTIRCVYILDPWfaG--SSNVGINRWRFLLQCLEDLDANLRKLNSRLLVIRGQPADVFPRLFKEWNITKLS 97 
+                     59**********************************433..3367************************************************** PP
+
+  DNA_photolyase  94 anreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikavl 153
+                     ++++ ep++++rd+a+k+ + eagvev+   +h+l++ +++ + ++g+p+ +++ f   + 
+          Q70AD6  98 IEYDSEPFGKERDAAIKKLATEAGVEVIVRISHTLYDLDKIiELNGGQPPLTYKRFQTLIS 158
+                     *****************************************888888*********98544 PP
+
+>> Q7NMD1  broad_family=cryptochrome org=Gloeobacter violaceus (strain ATCC 29082 / PCC 7421) len=500 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  151.7   0.1   5.1e-47   5.9e-47       1     163 [.       6     175 ..       6     177 .. 0.97
+   2 ?   -1.5   0.0       6.8       7.9      76     108 ..     463     495 ..     453     499 .. 0.80
+
+  Alignments for each domain:
+  == domain 1  score: 151.7 bits;  conditional E-value: 5.1e-47
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerkl.....kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgas 90 
+                     vlvW r+DlR+hD+++L+ A++++a++++++++dp+++ k      k+g+ r+rflles+adL+++lr++g++L+vrrg p++v+p+l++el+++
+          Q7NMD1   6 VLVWYRNDLRVHDHEPLTSALHKNARVVALYCFDPRQFGKApfgfeKTGPFRARFLLESVADLRRSLRQLGSDLLVRRGHPEEVIPALVSELEIA 100
+                     79**********************************77777889999************************************************ PP
+
+  DNA_photolyase  91 avvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell..eplpap 163
+                     av+++ e++++e   ++ +++al   +v+v+sf+g++lv+p+++++  + +++ ft f+k+v++ ++  +plpap
+          Q7NMD1 101 AVHYHGEVTSEELVVERDLQAALAPLNVPVRSFWGTTLVHPDDLPFAIEAIPELFTDFRKQVERSAAinPPLPAP 175
+                     ****************************************************************98888888887 PP
+
+  == domain 2  score: -1.5 bits;  conditional E-value: 6.8
+  DNA_photolyase  76 padvlpelakelgasavvanreyepderrrdea 108
+                      ++ +  l++   a++ ++n+ +e++ r+r+ +
+          Q7NMD1 463 YPQPVVDLFQSAAANEAIYNAAWEHHHRKRRGQ 495
+                     556677899999999999999999999999865 PP
+
+>> O48652  broad_family=6-4 org=Arabidopsis thaliana len=556 EC=4.1.99.13
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  150.0   0.0   1.7e-46     2e-46       1     151 [.      26     186 ..      26     197 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 150.0 bits;  conditional E-value: 1.7e-46
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerkl.........kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpela 84 
+                     +l+Wfr++lR+hDNpAL+ A ++++ ++pvfv+dp+  e+            ++g +r+rfllesL+dLd++l+++g+rL+v++g+p +vl +++
+          O48652  26 SLIWFRKGLRVHDNPALEYASKGSEFMYPVFVIDPHymES--DpsafspgssRAGVNRIRFLLESLKDLDSSLKKLGSRLLVFKGEPGEVLVRCL 118
+                     589*********************************6433..34689999********************************************* PP
+
+  DNA_photolyase  85 kelgasavvanreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfika 151
+                     +e+++++++++++++p+ ++ d +vk++++ +gvev s  +h+l++p ++ ++++gkp+  +++f k 
+          O48652 119 QEWKVKRLCFEYDTDPYYQALDVKVKDYASSTGVEVFSPVSHTLFNPAHIiEKNGGKPPLSYQSFLKV 186
+                     **************************************************777777*********994 PP
+
+>> Q4KML2  broad_family=cryptochrome org=Danio rerio len=520 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  149.7   0.0   2.1e-46   2.4e-46       1     158 [.       7     173 ..       7     185 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 149.7 bits;  conditional E-value: 2.1e-46
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerkl......kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelg. 88 
+                     v++++r+DlRlhDN+  + A+++++++ip++++dp++ + +      k+g+ r rfll+s++dL++ l+++g++L+vr+g+p+dv++el+k+lg 
+          Q4KML2   7 VICLLRNDLRLHDNEVFHWAQRNAEHIIPLYCFDPRHYQGTyhynfpKTGPFRLRFLLDSVKDLRALLKKHGSTLLVRQGKPEDVVCELIKQLGs 101
+                     7899********************************6666678899************************************************* PP
+
+  DNA_photolyase  89 asavvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkg.kpykvftpfikavlkell.e 158
+                     +s+v +++e++++e++ +e++ke + +++v+v++f+g++l++ +++++++  + ++v+t+f+kav+++ +  
+          Q4KML2 102 VSTVAFHEEVASEEKSVEEKLKEICCQNKVRVQTFWGSTLYHRDDLPFSHIgGLPDVYTQFRKAVEAQGRvR 173
+                     **********************************************999988**************987752 PP
+
+>> P25078  broad_family=CPD org=Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720) len=473 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  149.6   0.4   2.4e-46   2.7e-46       2     162 ..       5     168 ..       4     174 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 149.6 bits;  conditional E-value: 2.4e-46
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaA.aasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgd....padvlpelakelga 89 
+                     lvWfrrDlRl+DN ALaaA ++++a+++++++ +pa  +++  +++++++ f+  +L++L+++l+e+gi+L++ ++       + ++ +++++++
+          P25078   5 LVWFRRDLRLQDNLALAAAcRDASARVLALYISTPAqwQAH--DMAPRQAAFISAQLNALQTALAEKGIPLLFHEVAdfnaSIETVKNVCRQHDV 97 
+                     89*****************5566899**********55555..55*******************************88999999*********** PP
+
+  DNA_photolyase  90 savvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplpa 162
+                     s++++n++ye +er+rd+av++ l   +v +e fd+++++ pg v t+++++ykvftpf++a+lk+l+e++p 
+          P25078  98 SHLFYNYQYEFNERQRDAAVEKTLP--SVICEGFDDSVILAPGAVMTGNHEMYKVFTPFKNAWLKRLKEDIPP 168
+                     *************************..5***************************************977765 PP
+
+>> Q9HQ46  broad_family=CPD org=Halobacterium salinarum (strain ATCC 700922 / JCM 11081 / NRC-1) len=481 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  149.0   0.4   3.5e-46   4.1e-46       2     163 ..       3     172 ..       2     175 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 149.0 bits;  conditional E-value: 3.5e-46
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaA.........aasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakel 87 
+                     l+W+rrDlR++DN +LaaA          + ++p+++vf++d++     ++++ r+ f+l+ La+L+e++r++g++L+vr+gdpa vlp++a+ l
+          Q9HQ46   3 LFWHRRDLRTTDNRGLAAAapgvtavdgGHDQGPVAAVFCFDDEVLA--HAAPPRVAFMLDALAALRERYRDLGSDLIVRHGDPAAVLPAVANDL 95 
+                     79***************99888877665445799**********333..359******************************************* PP
+
+  DNA_photolyase  88 gasavvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell.eplpap 163
+                     +a++vv+n++y   +++rd+ v++al++agv+  +f++ + + pge+rt+ g+py+v+t f+++++ + + +p+p+p
+          Q9HQ46  96 DATRVVWNHDYSGLATDRDAGVRDALDAAGVAHAQFHDAVHHRPGEIRTNAGDPYSVYTYFWRKWQDREKnPPAPEP 172
+                     ******************************************************************98776666665 PP
+
+>> Q17DK5  broad_family=cryptochrome org=Aedes aegypti len=545 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  147.4   0.0   1.1e-45   1.3e-45       2     159 ..       6     170 ..       5     177 .. 0.91
+
+  Alignments for each domain:
+  == domain 1  score: 147.4 bits;  conditional E-value: 1.1e-45
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasgap......lipvfvldpa.eerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelga 89 
+                     ++Wfr++lRlhDNp L++A++++++      l+p+f++d + +  +  vg +r++fllesLadLd++lre g++L+v++g++++v+++l++el++
+          Q17DK5   6 ILWFRHGLRLHDNPSLLEALRNDGTgsesvrLYPIFIFDGEsA-GTKLVGFNRMKFLLESLADLDRQLREIGGQLYVFKGNAVNVMRRLFEELNI 99 
+                     79*****************888555555666**********43.33359********************************************** PP
+
+  DNA_photolyase  90 savvanreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikavlkellep 159
+                     +++++++++ep +++rd+a+++ ++ ++v++ +  +h+l++p+++ rt++g p+ +++ f ++v    ++p
+          Q17DK5 100 RKLCFEQDCEPIWKARDDAIQNLCRMMDVKCVEKVSHTLWDPQQIiRTNGGIPPLTYQMFLHTVDIIGKPP 170
+                     *********************************************999999***********988766644 PP
+
+>> Q75WS4  broad_family=cryptochrome org=Xenopus laevis len=523 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  143.4   0.0   1.8e-44   2.1e-44       2     158 ..       9     175 ..       8     185 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 143.4 bits;  conditional E-value: 1.8e-44
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasgaplipvfvldpa...eerkl......kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakel 87 
+                     ++++r+DlRlhDN+ L+ A++++++++p++++dp+   +   +      k+g++r +flles++dL+ +l+++g+ L++rrg+p++v+  l+k+l
+          Q75WS4   9 ICLLRNDLRLHDNEVLHWAHRNADQIVPLYCFDPRhyvG---ThyfnfpKTGPHRLKFLLESVRDLRITLKKKGSNLLLRRGKPEEVIEDLVKQL 100
+                     789********************************5442...3566999********************************************** PP
+
+  DNA_photolyase  88 g.asavvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkg.kpykvftpfikavlkell..e 158
+                     g +sav++++e +++e++ ++avk+a+ + g++ ++f+g++l++ +++++++  + ++v+t+f+kav+++ +  +
+          Q75WS4 101 GnVSAVTLHEEATKEETDVESAVKQACTRLGIKYQTFWGSTLYHREDLPFRHIsSLPDVYTQFRKAVETQGKvrP 175
+                     99*****************************************************************99877543 PP
+
+>> Q7PYI7  broad_family=cryptochrome org=Anopheles gambiae len=545 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  142.6   0.0   3.3e-44   3.8e-44       2     158 ..       6     171 ..       5     179 .. 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 142.6 bits;  conditional E-value: 3.3e-44
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaA........aasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelg 88 
+                     ++Wfr++lRlhDNp L++A         +++ +l+p+f++d +++ +  vg +r++fllesLadLd+++r++g++L+v+rgd ++vl++l++el+
+          Q7PYI7   6 ILWFRHGLRLHDNPSLLEAlksdcvnqSSEAVKLFPIFIFDGESAGTRIVGYNRMKFLLESLADLDRQFRDLGGQLLVFRGDSVTVLRRLFEELN 100
+                     79*****************77777654444677**********4444478********************************************* PP
+
+  DNA_photolyase  89 asavvanreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikavlkelle 158
+                     ++++++++++ep +++rd+av++ ++ ++v++ +  +h+l++p ev +t+++ p+ +++ f ++v    ++
+          Q7PYI7 101 IKKLCYEQDCEPIWKERDDAVAKLCRTMDVRCVENVSHTLWNPIEViQTNGDIPPLTYQMFLHTVNIIGDP 171
+                     **********************************************666666***********98766554 PP
+
+>> P12768  broad_family=CPD org=Streptomyces griseus len=455 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  141.6   1.1   6.9e-44   7.9e-44       1     157 [.       4     162 ..       4     173 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 141.6 bits;  conditional E-value: 6.9e-44
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerkl.kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavva 94 
+                     ++v+f +DlRlhDNp L+aA++ +++++p+fv d+a ++   + +++   fl+++La+Ld+ lr rg+rL+vrrg++a+ ++++a+e+ga++v++
+          P12768   4 AVVLFTSDLRLHDNPVLRAALRDADEVVPLFVRDDA-VHRAgFDAPNPLAFLADCLAALDAGLRHRGGRLIVRRGEAATEVRRVAEETGAARVHI 97 
+                     599*********************************.5555689*************************************************** PP
+
+  DNA_photolyase  95 nreyepderrrdeavkealeeagvevesfdgh.llvppgev.rtkkgkpykvftpfikavlkell 157
+                      + + +++ rr+++++eal ++g e++ +d+  + + pg+v +t++++++ vftp+ +++++e  
+          P12768  98 AAGVSRYAARREQRIREALADSGRELHVHDAVvTALAPGRVvPTGGKDHFAVFTPYFRRWEAEGV 162
+                     *******************************99999*****666666**************9754 PP
+
+>> Q96524  broad_family=cryptochrome org=Arabidopsis thaliana len=612 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  140.9   0.0   1.1e-43   1.3e-43       1     154 [.       7     160 ..       7     172 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 140.9 bits;  conditional E-value: 1.1e-43
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrg.dpadvlpelakelgasavva 94 
+                     ++vWfrrDlR++DNpALaaAa++ ++++pvf+++p+ee + + g a+r+++ +sLa L+++l+++g++L +++  ++ +++  +++ +ga++vv+
+          Q96524   7 TIVWFRRDLRIEDNPALAAAAHE-GSVFPVFIWCPEEEGQFYPGRASRWWMKQSLAHLSQSLKALGSDLTLIKThNTISAILDCIRVTGATKVVF 100
+                     59******************977.57**********8888899***************************99994599***************** PP
+
+  DNA_photolyase  95 nreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlk 154
+                     n+ y+p    rd+ vke l e+g++v+s +g+ll++p+e+  +kgkp++ f +++k++l 
+          Q96524 101 NHLYDPVSLVRDHTVKEKLVERGISVQSYNGDLLYEPWEIYCEKGKPFTSFNSYWKKCLD 160
+                     ****************************************99999************987 PP
+
+>> Q0E2Y1  broad_family=6-4 org=Oryza sativa subsp. japonica len=551 EC=4.1.99.13
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  135.3   0.0   5.9e-42   6.8e-42       2     150 ..      16     180 ..      15     193 .. 0.91
+
+  Alignments for each domain:
+  == domain 1  score: 135.3 bits;  conditional E-value: 5.9e-42
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasg..aplipvfvldpaeerkl.........kvgaarrrfllesLadLdeelrergirLvvrrgd....padvlp 81 
+                      vWfr++lR+hDNpAL aA+++g  a+l+pvfvldp++ r+          ++g ar+rfllesL dLd++lr +g+rL+++r +    +a  ++
+          Q0E2Y1  16 MVWFRKGLRVHDNPALDAARRGGaaARLYPVFVLDPRYLRPDqaapspgsaRAGVARVRFLLESLSDLDARLRRLGSRLLLLRARddgdVAGTVC 110
+                     69*****************99853378**********55555667889**********************************98777889***** PP
+
+  DNA_photolyase  82 elakelgasavvanreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfik 150
+                     + +k +++ +++++ ++ep++ +rd++v + + ++g+ v s  +h+l++p e+ ++++g p++++++f  
+          Q0E2Y1 111 AALKDWNIGKLCFESDTEPYALARDKKVMDFAAASGIDVFSPVSHTLFDPAEIiEKNGGRPPMTYQSFVA 180
+                     *****************************************************777777********986 PP
+
+>> Q43125  broad_family=cryptochrome org=Arabidopsis thaliana len=681 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  135.3   0.0   5.7e-42   6.6e-42       1     156 [.      14     169 ..      14     180 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 135.3 bits;  conditional E-value: 5.7e-42
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrg.dpadvlpelakelgasavva 94 
+                     ++vWfrrDlR++DNpALaaA+++ +p+i++fv+ p+ee   + g  +r++l  sLa+Ld++lr++g  L++ r  d +  l  ++k +gas++++
+          Q43125  14 SIVWFRRDLRVEDNPALAAAVRA-GPVIALFVWAPEEEGHYHPGRVSRWWLKNSLAQLDSSLRSLGTCLITKRStDSVASLLDVVKSTGASQIFF 107
+                     69******************977.7***********5555579****************************99867999**************** PP
+
+  DNA_photolyase  95 nreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkel 156
+                     n+ y+p    rd++ k+ l ++g++v+sf+++ll++p+ev+ + g p+++f  f++++l+  
+          Q43125 108 NHLYDPLSLVRDHRAKDVLTAQGIAVRSFNADLLYEPWEVTDELGRPFSMFAAFWERCLSMP 169
+                     ****************************************77777************99854 PP
+
+>> P77967  broad_family=cryptochrome org=Synechocystis sp. (strain ATCC 27184 / PCC 6803 / Kazusa) len=489 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  133.0   0.0   3.1e-41   3.6e-41       1     156 [.       8     168 ..       8     183 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 133.0 bits;  conditional E-value: 3.1e-41
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerkl.....kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgas 90 
+                     vlvWfr+DlRlhD+++L++A++sg  + +v++ dp+++ ++     k+g+ r +fl +s+++L+e+l++ g +L+v++g p++v+p++ak+++a+
+          P77967   8 VLVWFRNDLRLHDHEPLHRALKSGLAITAVYCYDPRQFAQThqgfaKTGPWRSNFLQQSVQNLAESLQKVGNKLLVTTGLPEQVIPQIAKQINAK 102
+                     79**********************************6666667799************************************************* PP
+
+  DNA_photolyase  91 avvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkel 156
+                     +++++re++++e + ++++ ++l   g+e++  +g++l +p++++++ ++ ++ ft+f+k ++k+ 
+          P77967 103 TIYYHREVTQEELDVERNLVKQLTILGIEAKGYWGSTLCHPEDLPFSIQDLPDLFTKFRKDIEKKK 168
+                     ************************************************************999864 PP
+
+>> E9EYW7  broad_family=CPD org=Metarhizium robertsii (strain ARSEF 23 / ATCC MYA-3075) len=587 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  131.4   0.1   9.4e-41   1.1e-40       1     157 [.      95     259 ..      95     271 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 131.4 bits;  conditional E-value: 9.4e-41
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALa....aAaasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgd....padvlpelakel 87 
+                     v++Wf+ DlR++DN ALa    +A +++ pli++++++p+++++  +++ r++f+l+ L+ L+++l++++i+L++ +++     +d + el++++
+          E9EYW7  95 VIHWFKTDLRCNDNRALAlaseKAKETAVPLICMYIVSPQDFEAHLTSPVRVDFILRTLEILKRDLAKLDIPLYIETVErrkqIPDRVLELMEQW 189
+                     79****************666666888999**********5544456****************************99988888999999****** PP
+
+  DNA_photolyase  88 gasavvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell 157
+                     g ++++an eye de rr++++   l e+g ++e ++++++vppg++++++g  y v++p+++ + ++  
+          E9EYW7 190 GSRHLFANMEYEVDELRREANMVHDLAENGKSFEVVHDTCVVPPGQLQSGSGNQYAVYSPWYRSWVAHIH 259
+                     *****************************************************************99765 PP
+
+>> Q84KJ5  broad_family=cryptochrome org=Arabidopsis thaliana len=569 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  129.0   0.0     5e-40   5.8e-40       2     157 ..      87     250 ..      86     262 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 129.0 bits;  conditional E-value: 5e-40
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerkl......kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgas 90 
+                     ++Wfr+DlR+ DN AL++A +s+++++pv++ldp+ ++++      k+ga r  fl e+L dL+++l +rg  L++r+g+p+++lp lak  ga+
+          Q84KJ5  87 ILWFRNDLRVLDNDALYKAWSSSDTILPVYCLDPRLFHTThffnfpKTGALRGGFLMECLVDLRKNLMKRGLNLLIRSGKPEEILPSLAKDFGAR 181
+                     89*********************************666667789999************************************************ PP
+
+  DNA_photolyase  91 avvanreyepderrrdeavkealee..agvevesfdghllvppgevrtkkgkpykvftpfikavlkell 157
+                     +v+a++e++++e + ++ v++ l++  ++ ++e  +g+++++ ++++++  + ++v+t+f+k v+++++
+          Q84KJ5 182 TVFAHKETCSEEVDVERLVNQGLKRvgNSTKLELIWGSTMYHKDDLPFDVFDLPDVYTQFRKSVEAKCS 250
+                     ************************733689*******************99***************987 PP
+
+>> O77059  broad_family=cryptochrome org=Drosophila melanogaster len=542 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  126.2   0.0   3.6e-39   4.2e-39       2     158 ..       8     171 ..       7     177 .. 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 126.2 bits;  conditional E-value: 3.6e-39
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasgap...lipvfvldpa..eerklkvgaarrrfllesLadLdeelrerg...irLvvrrgdpadvlpelakelg 88 
+                     ++Wfr++lRlhDNpAL+aA+a +++   lipvf++d +  +++   vg +r+rfll+sL+d+d++l++     +rL+v++g+pa ++++l +++ 
+          O77059   8 VIWFRHGLRLHDNPALLAALADKDQgiaLIPVFIFDGEsaGTK--NVGYNRMRFLLDSLQDIDDQLQAATdgrGRLLVFEGEPAYIFRRLHEQVR 100
+                     89*****************555444444**********44334..66*******************98766679********************* PP
+
+  DNA_photolyase  89 asavvanreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikavlkelle 158
+                      +++++++++ep + +rde +++ ++e ++ + +  +h+l++p+ v +t++g p+ +++ f ++v+   l+
+          O77059 101 LHRICIEQDCEPIWNERDESIRSLCRELNIDFVEKVSHTLWDPQLViETNGGIPPLTYQMFLHTVQIIGLP 171
+                     **********************************************999999***********98766555 PP
+
+>> Q38JU2  broad_family=cryptochrome org=Solanum lycopersicum len=577 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  125.2   0.0   7.2e-39   8.4e-39       1     157 [.      80     258 ..      80     272 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 125.2 bits;  conditional E-value: 7.2e-39
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa...eerkl......kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelake 86 
+                     ++vWfr+DlR+ DN+AL++A  s++ ++pv+++dp+       +      k+ga r++f++e+L+dL+++l +rg +L++++g+p+d++p lak+
+          Q38JU2  80 AIVWFRNDLRVLDNEALLRAWVSSEAILPVYCVDPRlfgT---ThyfgmpKTGALRAQFIIECLNDLKRNLVKRGLDLLIQHGKPEDIVPSLAKA 171
+                     59******************99**************7642...2445889********************************************* PP
+
+  DNA_photolyase  87 lgasavvanreyepderrrdeavkealee................agvevesfdghllvppgevrtkkgkpykvftpfikavlkell 157
+                     ++a++v+a++e++++e + ++ v + l++                +  ++e ++g++++++++++++ ++ ++v+t+f+k v+ + +
+          Q38JU2 172 YKAHTVYAHKETCSEEVKVEKMVTRNLQKlvspssggigndpgsgNTTKLELVWGSTMYHIDDLPFDCESLPDVYTQFRKSVEYKSK 258
+                     *******************************************9999*********************************9987665 PP
+
+>> J4KQS2  broad_family=CPD org=Beauveria bassiana (strain ARSEF 2860) len=587 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  124.9   0.2     9e-39     1e-38       1     157 [.      98     262 ..      98     278 .. 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 124.9 bits;  conditional E-value: 9e-39
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALa....aAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgd....padvlpelak 85 
+                     v +Wf+ DlR++DN+ La    +A + + pl++++ ++p+  e++    ++ r++f+l+ L+ L+e+l++++i+L+v +++    ++  + el++
+          J4KQS2  98 VAHWFKTDLRCADNTSLAlaaqKAKEMNVPLLCFYLVSPQdfEAHL--RSPVRVDFILRTLKVLKEDLAKLDIPLYVETVEertkVPARVLELLE 190
+                     579***************544444666889**********555554..5*******************************988887788899*** PP
+
+  DNA_photolyase  86 elgasavvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell 157
+                      +g+++++an eye de rr++++ + l +++ ++e ++++++vppg++r+++g  y v+tp+++a++++  
+          J4KQS2 191 SWGCNHLCANLEYEVDELRRETKIIRLLAANSKSFEAVHDTCVVPPGQLRSGTGNQYAVYTPWYRAWMAHIH 262
+                     ********************************************************************9765 PP
+
+>> Q7UJB1  broad_family=cryptochrome org=Rhodopirellula baltica (strain DSM 10527 / NCIMB 13988 / SH1) len=488 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  123.8   0.0     2e-38   2.3e-38       1     161 [.       4     170 ..       4     173 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 123.8 bits;  conditional E-value: 2e-38
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerkl.....kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgas 90 
+                     +lvWfr+DlR+ D+++ ++A   ++++++v ++dp++++++     ++g+ r+rfl+e+L dL+++lr++g++L+vr g+p++vl++l+  l ++
+          Q7UJB1   4 ALVWFRNDLRTIDHEPFLRAST-ADRCFAVHCIDPRQFETTelgfqRTGPFRARFLIENLTDLRSRLRSLGGELIVRVGRPETVLQHLLPSLAID 97 
+                     58******************85.588**********7777788**************************************************** PP
+
+  DNA_photolyase  91 avvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell..eplp 161
+                     av++++e+  +e +  e v++ ++++g++ +   g++l++p+e++++  + ++ ft f+k+++k+++   pl+
+          Q7UJB1  98 AVHFHHEPRTEEADTAESVQQLCDQHGIATHVAYGDTLIHPDELPFEIADTPELFTDFRKEIEKQCEarSPLE 170
+                     ***********************************************99***************999555554 PP
+
+>> P27526  broad_family=CPD org=Neurospora crassa (strain ATCC 24698 / 74-OR23-1A / CBS 708.71 / DSM 1257 / FGSC 987) le
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  123.2   0.0     3e-38   3.5e-38       1     160 [.     110     281 ..     110     289 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 123.2 bits;  conditional E-value: 3e-38
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALa....aAaasgaplipvfvldpa..eerklkvgaarrrfllesLadLdeelrergirLvvrrgd....padvlpelak 85 
+                     v++Wf+ DlRlhDN  L+    +A ++g pli+++vl+p+  e++    +++r++f+l+ L+ L+++l+++gi+L+v +++    ++++++el+k
+          P27526 110 VVHWFKMDLRLHDNRSLWlasqKAKEAGVPLICLYVLSPEdlEAHLR--APIRVDFMLRTLEVLKTDLEDLGIPLWVETVEkrkeVPTKIKELMK 202
+                     79****************666666888999**********7766666..******************************9989999999****** PP
+
+  DNA_photolyase  86 elgasavvanreyepderrrdeavkealee....agvevesfdghllvppgevrtkkgkpykvftpfikavlkellepl 160
+                      +gas++++  eye de rr++++ + l e    +++++  ++++++v pg +++++g+ y v++p+ +a+ k+ +e +
+          P27526 203 SWGASHLFCAMEYEVDELRREAKLVKLLAEgekgEKMAADVVHDTCVVMPGALQSGSGGQYAVYSPWFRAWIKHIEENP 281
+                     ****************************987767799999*******************************99877544 PP
+
+>> Q651U1  broad_family=cryptochrome org=Oryza sativa subsp. japonica len=582 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  122.9   0.0   3.7e-38   4.3e-38       1     157 [.      86     263 ..      86     276 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 122.9 bits;  conditional E-value: 3.7e-38
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpa....eerkl......kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelak 85 
+                     ++vWfr+DlR+ DN+A  +A a+++ ++pv+++dp+    +   +      k+ga r++fl+e+L+dL+++l ++g +L++r+g+p+d+lp +ak
+          Q651U1  86 AIVWFRNDLRVLDNEAVVRAWAASDAVLPVYCVDPRisagS---ThyfgfpKTGALRAQFLIECLEDLKRNLTKQGLDLLIRHGKPEDILPSIAK 177
+                     59**********************************85432...356799********************************************* PP
+
+  DNA_photolyase  86 elgasavvanreyepderrrdeavkealee..............agvevesfdghllvppgevrtkkgkpykvftpfikavlkell 157
+                     ++ a++v+a++e++++e   ++ v++ le+              ++ +++  +g +l+++++++++    ++v+t+f+kav+++ +
+          Q651U1 178 AVTAHTVYAHKETCSEELLVEHLVRKGLEQvvipqggasnqkkpRNPKLQLIWGATLYHVDDLPFSVNNLPDVYTQFRKAVESKSS 263
+                     *****************************************9999************************************99876 PP
+
+>> Q04449  broad_family=CPD org=Alkalihalophilus pseudofirmus (strain ATCC BAA-2126 / JCM 17055 / OF4) len=479 EC=4.1.99
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  119.7   0.0   3.5e-37   4.1e-37       3     157 ..      10     166 ..       8     173 .. 0.93
+   2 ?    0.4   0.0       1.8         2     120     141 ..     425     446 ..     414     449 .. 0.81
+
+  Alignments for each domain:
+  == domain 1  score: 119.7 bits;  conditional E-value: 3.5e-37
+  DNA_photolyase   3 vWfrrDlRlhDNpALaaA....aasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelg.asav 92 
+                     vWfrrD+RlhD++AL +A     ++g++ +++f ldp+ +    v++  ++++ + + ++++ l++ g++L++++g  + +l++l+++   ++av
+          Q04449  10 VWFRRDFRLHDHTALKHAieaiEKHGGKWLAFFYLDPK-TA--SVEPVHHDYFFQTVMQFKQMLKTNGGDLYIITGTIEGALSKLLQAFPeIDAV 101
+                     8***************996655555889**********.34..46*******************************************988**** PP
+
+  DNA_photolyase  93 vanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell 157
+                     +an++   d+r rdea +  l ++++++++f++ +l++p++v +k+g+pykvftp++ka+ ke +
+          Q04449 102 YANDDRVGDGRLRDEAAEHFLAKQSIPFYTFEDAYLTEPDQVLKKDGTPYKVFTPYYKAWAKERK 166
+                     *************************************************************9865 PP
+
+  == domain 2  score: 0.4 bits;  conditional E-value: 1.8
+  DNA_photolyase 120 vesfdghllvppgevrtkkgkp 141
+                     +  +++h++++p++++ +++  
+          Q04449 425 LNHVPDHYIHEPWKMSEEEQVK 446
+                     66789**********7666644 PP
+
+>> Q293P8  broad_family=cryptochrome org=Drosophila pseudoobscura pseudoobscura len=540 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  121.4   0.0   1.1e-37   1.3e-37       2     154 ..       8     167 ..       7     177 .. 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 121.4 bits;  conditional E-value: 1.1e-37
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaA...aasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrerg...irLvvrrgdpadvlpelakelgas 90 
+                     ++Wfr++lRlhDNpAL+aA    ++g plipvf++d +++ +  vg +r+rfll+sL+dLde+l++     +rL+v++g+p  ++++l +++  +
+          Q293P8   8 VLWFRHGLRLHDNPALLAAleeKDQGIPLIPVFIFDGESAGTKSVGYNRMRFLLDSLQDLDEQLQSATegrGRLFVFEGEPTLIFRRLHEQVRLH 102
+                     89*****************555555788**********4333368*******************97655579*********************** PP
+
+  DNA_photolyase  91 avvanreyepderrrdeavkealeeagvevesfdghllvppgev.rtkkgkpykvftpfikavlk 154
+                     +++a+ ++ep + +rde  +  ++e g+e  +  +h+l++p  v +t++g p+ +++ f ++v+ 
+          Q293P8 103 KICAELDCEPIWNERDESARLLCRELGIEYVEKVSHTLWDPRLViETNGGIPPLTYQMFLHTVQI 167
+                     ********************************************899999**********98765 PP
+
+>> Q6F6A2  broad_family=CPD org=Oryza sativa subsp. japonica len=506 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  120.3   0.5   2.3e-37   2.7e-37       1     163 [.      40     207 ..      40     210 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 120.3 bits;  conditional E-value: 2.3e-37
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaA....aasgaplipvfvldpaeerklkvgaarrr..fllesLadLdeelrergirLvvrrgdpadvlpelakelga 89 
+                     v++W+ rD+Rl+DN+AL++A    aas++pl+++f l p+   +  ++a+rr+  fll++L++L+++ ++r  ++++++g pa+ +p+l+++lga
+          Q6F6A2  40 VVYWMLRDQRLADNWALLHAaglaAASASPLAVAFALFPR---PFLLSARRRQlgFLLRGLRRLAADAAARHLPFFLFTGGPAE-IPALVRRLGA 130
+                     79****************8889888999************...334477777788****************************9.9********* PP
+
+  DNA_photolyase  90 savvanreyepderrrdeavkealeea..gvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplpa.p 163
+                     s++va++++++  r++ +av   l+++  gv+v+++d+h++vp+++++ k ++++k+f+ +  +v+ e+l ++p+ p
+          Q6F6A2 131 STLVADFSPLRPVREALDAVVGDLRREapGVAVHQVDAHNVVPVWTASAKMEYSAKTFRGKVSKVMDEYLVEFPElP 207
+                     *************************7668******************99999*****************98888744 PP
+
+>> P40115  broad_family=cryptochrome org=Sinapis alba len=501 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  118.9   0.0   6.3e-37   7.3e-37       1     134 [.       7     140 ..       7     159 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 118.9 bits;  conditional E-value: 6.3e-37
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrg.dpadvlpelakelgasavva 94 
+                     ++vWfrrDlR++DNpALaaAa++ ++++pvf+++p+ee + + g a+r+++ +sLa L+++l+++g++L +++  ++++++  +++++ga++vv+
+          P40115   7 TIVWFRRDLRIEDNPALAAAAHE-GSVFPVFIWCPEEEGQFYPGRASRWWMKQSLAHLRQSLKALGSELTLIKThSTVSAILDCVRATGATKVVF 100
+                     59******************977.57**********8888899***************************9999469****************** PP
+
+  DNA_photolyase  95 nreyepderrrdeavkealeeagvevesfdghllvppgev 134
+                     n+ y+p    rd+ vke l e+g++v+s +g+l++ pg+ 
+          P40115 101 NHLYDPVSLVRDHTVKEKLVERGISVQSYNGDLCMSPGRY 140
+                     ************************************9987 PP
+
+>> P61496  broad_family=CPD org=Thermus thermophilus (strain ATCC BAA-163 / DSM 7039 / HB27) len=420 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  115.1   0.3   9.5e-36   1.1e-35       2     163 ..       5     153 ..       4     157 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 115.1 bits;  conditional E-value: 9.5e-36
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavvanr 96 
+                     lvW+r DlRlhD+pAL++A+a+ +p++ + vldp+   +lk+ ++rr ++le++++L+e++r+rg+ L+v++g p +++pe a++l+a+av+a  
+          P61496   5 LVWHRGDLRLHDHPALLEALAR-GPVVGLVVLDPN---NLKTTPRRRAWFLENVRALREAYRARGGALWVLEGLPWEKVPEAARRLKAKAVYALT 95 
+                     89******************88.79**********...45558**************************************************** PP
+
+  DNA_photolyase  97 eyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplpap 163
+                     +y+p++r rd++v+eal    v+++  ++  l+pp+        +y+v+tpf+++ l  +++plpap
+          P61496  96 SYTPYGRYRDAKVQEALP---VPLHLLPAPHLLPPDLP-----RAYRVYTPFARRFLG-VEAPLPAP 153
+                     *****************9...9**99999999999877.....79*********9998.56777776 PP
+
+>> Q5IFN2  broad_family=cryptochrome org=Ostreococcus tauri len=546 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  114.6   0.0   1.3e-35   1.5e-35       1     162 [.       6     191 ..       6     195 .. 0.88
+
+  Alignments for each domain:
+  == domain 1  score: 114.6 bits;  conditional E-value: 1.3e-35
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaA.....aasgaplipvfvldpaeerkl.....kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpel.. 83 
+                     v++Wfr+DlRl DN + a+A      +s+ +++pv+v+d+ +++++     ++ga r +f le++ dL+++lr++g++L+vr g+ +dv++el  
+          Q5IFN2   6 VVIWFRNDLRLLDNACVARAatlasESSDVEVVPVYVFDETYFKPSkrglaRFGAGRGKFTLECVGDLKTSLRALGSDLLVRCGKSRDVIAELtl 100
+                     79****************8867654455678**********777777788******************************************974 PP
+
+  DNA_photolyase  84 akelgasavvanreyepderrrdeavkealee......agvevesfdghllvppgevr...tkkg.kpykvftpfikavlkell..eplpa 162
+                       + + + + ++ e++++e+++d av++a +e      a++++e+++g++l+++++v+   t++  + ++vftpf+++v+++++  + +pa
+          Q5IFN2 101 TGANDRTIILTQTEVTSEETEMDVAVERATRErarggaASATMERHWGSTLYHIDDVPfdvTSGLsDLPDVFTPFRNKVESKCKvrDVIPA 191
+                     56677999***********************978888789*****************734345558***************9997744554 PP
+
+>> Q9SB00  broad_family=CPD org=Arabidopsis thaliana len=496 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  113.7   0.1   2.5e-35   2.9e-35       1     162 [.      30     191 ..      30     196 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 113.7 bits;  conditional E-value: 2.5e-35
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaA....aasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasa 91 
+                     v++W+ rD+Rl+DN+AL +A    ++++ap+++vf l ++ + +   +a++  f+l++L++L+ +++++ i++++++gd+++ +p ++ e+gas+
+          Q9SB00  30 VVYWMFRDQRLKDNWALIHAvdlaNRTNAPVAVVFNLFDQ-FLDA--KARQLGFMLKGLRQLHHQIDSLQIPFFLLQGDAKETIPNFLTECGASH 121
+                     79****************9988778889**********99.7777..999999****************************************** PP
+
+  DNA_photolyase  92 vvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplpa 162
+                     +v++++++++ rr +++v ++ ++ +++++++d+h++vp++ +++k ++++++++ +i+++l ++l ++p+
+          Q9SB00 122 LVTDFSPLREIRRCKDEVVKRTSD-SLAIHEVDAHNVVPMWAASSKLEYSARTIRGKINKLLPDYLIEFPK 191
+                     **********************97.******************88888**************999966665 PP
+
+>> P34205  broad_family=CPD org=Carassius auratus len=556 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   -1.4   0.0       6.2       7.2      45      62 ..      67      84 ..      53      99 .. 0.77
+   2 !  111.8   0.0     1e-34   1.2e-34       2     161 ..     111     270 ..     110     276 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: -1.4 bits;  conditional E-value: 6.2
+  DNA_photolyase 45 aarrr..fllesLadLdeel 62
+                    a+  +  +ll+ +++L+++ 
+          P34205 67 AR--EsgWLLREVNELRRAA 84
+                    23..245*********9976 PP
+
+  == domain 2  score: 111.8 bits;  conditional E-value: 1e-34
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaA....aasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasav 92 
+                     l+W++rD+R++DN+AL  A    +a++ pl+++f+l p+   +     ++  f+l++L+++++e+++++i++++++g+p + lp ++++++  av
+          P34205 111 LYWMSRDQRVQDNWALIYAqqlaLAEKLPLHICFCLVPR-YLDA--TYRQYAFMLKGLQEVAKECKSLDIQFHLLSGEPGQNLPSFVEKWKFGAV 202
+                     8****************88666577889***********.4444..688888******************************************* PP
+
+  DNA_photolyase  93 vanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplp 161
+                     v+++ +++   ++ e vk+ l + +v+++++d+h++vp++e++ k ++ +++++ +i ++l e+l+++p
+          P34205 203 VTDFNPLRIPLQWIETVKKHLPA-DVPFIQVDAHNVVPCWEASGKLEYGARTIRGKITKLLPEFLTEIP 270
+                     *********************95.******************66666***************9997776 PP
+
+>> P57386  broad_family=CPD org=Buchnera aphidicola subsp. Acyrthosiphon pisum (strain APS) len=483 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  112.0   0.0   8.3e-35   9.6e-35       2     161 ..       5     169 ..       4     176 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 112.0 bits;  conditional E-value: 8.3e-35
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasg.aplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgd....padvlpelakelgasa 91 
+                     l+Wfr+DlR+ DN+AL++A++++ +++i +f+ +p++++++ v++ ++ f+   L +L++el +++i L+  +        + l  ++k+++++ 
+          P57386   5 LIWFRNDLRVYDNTALHQACQNDtDKVISLFISTPKQWHNQSVSKKKISFMYYHLISLQKELLKLNIILYYHESTdflnSIEYLIFFCKKHKVNN 99 
+                     89*****************8885499*************999******************************99889999999************ PP
+
+  DNA_photolyase  92 vvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplp 161
+                     +++n+ey+ +er rd  vk+ l+++g  v+ f+++ll+   ++r++k + ykvft f+k+v + l   +p
+          P57386 100 LFYNYEYAINERYRDYLVKKKLSQKGFLVKGFHDNLLFSNRQIRNQKNETYKVFTFFKKKVIQNLHNNIP 169
+                     **********************************************99*************998875555 PP
+
+>> P12769  broad_family=CPD org=Methanothermobacter thermautotrophicus (strain ATCC 29096 / DSM 1053 / JCM 10044 / NBRC 
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  109.2   0.1   6.3e-34   7.3e-34       1     160 [.      22     177 ..      22     183 .. 0.91
+   2 ?   -0.5   0.0       3.4       3.9      76     106 ..     300     330 ..     281     345 .. 0.80
+
+  Alignments for each domain:
+  == domain 1  score: 109.2 bits;  conditional E-value: 6.3e-34
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaA....aasgaplipvfvldpaeerklkvgaarrr..fllesLadLdeelrergirLvvrrgdpadvlpelakelga 89 
+                     v++W++   R h+N+AL+ A    ++ ++pli+vf l+++     + +a++r+  fl+e+L+d++++lrergi+Lvv r +p++vl ++a   +a
+          P12769  22 VVYWMQASVRSHWNHALEYAietaNSLKKPLIVVFGLTDD-----FPNANSRHyrFLIEGLRDVRSNLRERGIQLVVERDSPPSVLLKYAD--DA 109
+                     79****************883332444799**********.....5666766666**********************************88..99 PP
+
+  DNA_photolyase  90 savvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkellepl 160
+                     +a v++r y+  ++++ ++ + al+   +++++++++++vp+++++ k+++++ +f+p+ik++lk+++ pl
+          P12769 110 AAAVTDRGYLDIQKEWVDEAAGALH---IPLTQVESNVIVPVETASDKEEYSAGTFKPKIKRHLKRFMVPL 177
+                     999*********************8...*****************88888****************99776 PP
+
+  == domain 2  score: -0.5 bits;  conditional E-value: 3.4
+  DNA_photolyase  76 padvlpelakelgasavvanreyepderrrd 106
+                       ++lpe+a+++ +++v   reye   r+ +
+          P12769 300 SISCLPEWAQRTLMDHVADPREYEYSLRELE 330
+                     6678999999999999999999998777765 PP
+
+>> P61497  broad_family=CPD org=Thermus thermophilus (strain ATCC 27634 / DSM 579 / HB8) len=420 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  108.7   0.1   9.1e-34     1e-33       2     163 ..       5     153 ..       4     157 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 108.7 bits;  conditional E-value: 9.1e-34
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgasavvanr 96 
+                     lvW+r DlRlhD+pAL++A+a+ +p++ + vldp+   +lk+ ++rr ++le++++L+e++r+rg+ L+v++g p +++pe a++l+a+av+a  
+          P61497   5 LVWHRGDLRLHDHPALLEALAR-GPVVGLVVLDPN---NLKTTPRRRAWFLENVRALREAYRARGGALWVLEGLPWEKVPEAARRLKAKAVYALT 95 
+                     89******************88.79**********...45558**************************************************** PP
+
+  DNA_photolyase  97 eyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplpap 163
+                     + +p++r rd +v+eal    v+++  ++  l+pp+        +y+v+tpf + + + +++plp p
+          P61497  96 SHTPYGRYRDGRVREALP---VPLHLLPAPHLLPPDLP-----RAYRVYTPFSR-LYRGAAPPLPPP 153
+                     *****************9...9**99999999999877.....79*********.444455667665 PP
+
+>> Q28811  broad_family=CPD org=Potorous tridactylus len=532 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  106.6   0.0   3.8e-33   4.4e-33       2     162 ..     100     260 ..      99     264 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 106.6 bits;  conditional E-value: 3.8e-33
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaA....aasgaplipvfvldpaeerklkvgaarrr..fllesLadLdeelrergirLvvrrgdpadvlpelakelgas 90 
+                     ++W++rD+R++DN+A + A    ++++ pl+++f+l p      ++ga+ r+  f+l++L++++ee++++ i+++++ g p+dvlp++++++g+ 
+          Q28811 100 VYWMSRDQRVQDNWAFLYAqrlaLKQKLPLHVCFCLAPC-----FLGATIRHydFMLRGLEEVAEECEKLCIPFHLLLGLPKDVLPAFVQTHGIG 189
+                     8****************886665788999**********.....7788877778***************************************** PP
+
+  DNA_photolyase  91 avvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplpa 162
+                      +v++++++ + +++ + v++al + +v++ ++d+h++vp++ ++ k+++ +++++ +i+  l ++l+++p 
+          Q28811 190 GIVTDFSPLLHHTQWVKDVQDALPR-QVPFVQVDAHNIVPCWVASDKQEYGARTIRHKIHDRLPHFLTEFPP 260
+                     ***********************96.9*****************88888*************9999988875 PP
+
+>> Q89AJ9  broad_family=CPD org=Buchnera aphidicola subsp. Baizongia pistaciae (strain Bp) len=478 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  106.3   0.0   4.8e-33   5.6e-33       2     161 ..       5     169 ..       4     176 .. 0.91
+
+  Alignments for each domain:
+  == domain 1  score: 106.3 bits;  conditional E-value: 4.8e-33
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaA.aasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgd....padvlpelakelgasa 91 
+                     l+Wfr+DlRl+DN AL+   ++++++++++f+++p++++   +++ +   + +++ +L++++ e+gi ++ ++        + + e++k +++++
+          Q89AJ9   5 LMWFRNDLRLSDNSALHFScRNNASTVLALFIATPKQWERHCLAPKKKMLIYKNIVALKKKITELGIIFYYYESTdyleSTNYIIEFCKIHKVTS 99 
+                     79***************772555799**********5555567***************************999978999**************** PP
+
+  DNA_photolyase  92 vvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplp 161
+                     +++n eye +er+rd+ +k+ l+++++ +  f++++l+ pg+++++ gk+yk f+ f+ ++ k+l+  +p
+          Q89AJ9 100 IFFNLEYEFYERQRDKIIKKKLKKNNIIINCFHDSVLITPGSIKNSYGKMYKKFSYFKYKCIKQLQLNIP 169
+                     *******************************************9999**************999985555 PP
+
+>> Q5QXE0  broad_family=cryptochrome org=Idiomarina loihiensis (strain ATCC BAA-735 / DSM 15497 / L2-TR) len=449 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  102.2   0.0   8.8e-32     1e-31       4     155 ..      20     174 ..      18     189 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 102.2 bits;  conditional E-value: 8.8e-32
+  DNA_photolyase   4 WfrrDlRlhDNpALaaAaasgaplipvfvldpa..eerkl......kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakelgas 90 
+                      fr+DlR++DN AL++Aa+++++li++f+++p   +           +g++r+ fl +sL++L++el+ rg +L+v++g  +++l el++e +++
+          Q5QXE0  20 VFRNDLRVEDNLALYEAAQRSETLICCFCFNPTqnK---YghygipAMGKHRFTFLQQSLKQLRTELEMRGQKLIVLTGTFDRILTELISERQVD 111
+                     59*******************************532...24578899************************************************ PP
+
+  DNA_photolyase  91 avvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlke 155
+                     a+++++    +er +   +++++    +++++ ++++l+  +e++++  + +++f++f+k+v+  
+          Q5QXE0 112 AIFLSQHQGYYERLQLGLLQQRFP--FLPFHETPNNTLFSEQELPFELADLPETFSQFRKKVEPL 174
+                     ***********************9..5********************99************9874 PP
+
+>> P58818  broad_family=CPD org=Methanothermobacter marburgensis (strain ATCC BAA-927 / DSM 2133 / JCM 14651 / NBRC 1003
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   97.2   0.0   3.1e-30   3.6e-30       1     161 [.      22     178 ..      22     182 .. 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 97.2 bits;  conditional E-value: 3.1e-30
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaAaas....gaplipvfvldpaeerklkvgaarrr..fllesLadLdeelrergirLvvrrgdpadvlpelakelga 89 
+                     v++W++   R h+N+AL+ A+++     +pli++f l+++     + +a++r+  fl+e+L+d+ ++l +rg rLvv + +p++++ ++    +a
+          P58818  22 VIYWMQASVRAHWNHALEYAIETanslHKPLIVIFGLTDE-----FPNANSRHyrFLIEGLRDVGDALMKRGARLVVENERPPSAVMRYSD--EA 109
+                     79****************885552222689**********.....5666666666**********************************55..89 PP
+
+  DNA_photolyase  90 savvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkelleplp 161
+                     savv++r y+  ++++ ++++e+l+   v++ +++++++vp+++++ k+++++ +f+p+i + l++++ pl+
+          P58818 110 SAVVVDRGYLDIQKEWVDELAESLH---VPLMQVESNVIVPVETASPKEEYSAGTFRPKITRELERFMVPLK 178
+                     ************************9...*****************88888**************99997776 PP
+
+>> P05066  broad_family=CPD org=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) len=565 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   75.0   0.0     2e-23   2.3e-23       1     153 [.      77     251 ..      77     262 .. 0.83
+
+  Alignments for each domain:
+  == domain 1  score: 75.0 bits;  conditional E-value: 2e-23
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaA.........aasgaplipvfvldpaeerklkvgaarrrfllesLadLdeelrergirLvvrrgd........... 75 
+                     v +Wfr+DlRl DN +L++           +++a+l++v+v++++++r+   ++ +  f+   L++L+++l+e+ i+L++ +             
+          P05066  77 VMHWFRNDLRLYDNVGLYKSvalfqqlrqKNAKAKLYAVYVINEDDWRAHMDSGWKLMFIMGALKNLQQSLAELHIPLLLWEFHtpkstlsnske 171
+                     679***************66558888764445688**********5555534788888**********************999889999995555 PP
+
+  DNA_photolyase  76 padvlpelakelg...asavvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavl 153
+                      ++ ++e +  ++    + ++an ey+ de  rd ++ e  e++ ++++  +++++v pg ++t++g+ y+vftp++k++ 
+          P05066 172 FVEFFKEKCMNVSsgtGTIITANIEYQTDELYRDIRLLEN-EDHRLQLKYYHDSCIVAPGLITTDRGTNYSVFTPWYKKWV 251
+                     444444444444412235699*****************99.679***********************************96 PP
+
+>> Q87JP5  broad_family=cryptochrome org=Vibrio parahaemolyticus serotype O3:K6 (strain RIMD 2210633) len=445 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   70.0   0.0   6.9e-22     8e-22       2     162 ..       7     172 ..       6     177 .. 0.90
+
+  Alignments for each domain:
+  == domain 1  score: 70.0 bits;  conditional E-value: 6.9e-22
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasgaplipvfvldpa.....eerkl....kvgaarrrfllesLadLdeelrergirLvvrrgdpadvlpelakel 87 
+                     l+Wf  DlRlhDN  L +A +  ++l+++++         +         +g ar +f+  sL +L+++l ++g rL+++  +p ++l+  ++ l
+          Q87JP5   7 LYWFTFDLRLHDNSLLVDASSFLDELVCLYCRPSVtpflhH---FaqevTLGRARQKFIDASLCELNDALGQLGQRLWTLDLPPYQALKYAIQYL 98 
+                     8******************************8877664532...2556899******************************************** PP
+
+  DNA_photolyase  88 gasavvanreyepderrrdeavkealeeagvevesfdghllvppgevrtkkgkpykvftpfikavlkell..eplpa 162
+                     ++++++ ++   +de++  ++++++     + + +++ + l++  +++++  + +++ft+f+k v+   +  +p++a
+          Q87JP5  99 SVTHLYSDAMAGSDEQSILHKLQDEYPH--LVIVQHSVRSLFDESKLPFTLPDLPETFTQFRKCVEG-IDiaHPIDA 172
+                     **************************95..9999***************999***********5554.333455555 PP
+
+>> Q7SI68  broad_family=cryptochrome org=Neurospora crassa (strain ATCC 24698 / 74-OR23-1A / CBS 708.71 / DSM 1257 / FGS
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   65.7   0.0   1.4e-20   1.7e-20       1     155 [.       7     195 ..       7     207 .. 0.82
+
+  Alignments for each domain:
+  == domain 1  score: 65.7 bits;  conditional E-value: 1.4e-20
+  DNA_photolyase   1 vlvWfrrDlRlhDNpALaaA.....aasgaplipvfvldpa..eerkl.......................kvgaarrrfllesLadLdeelrer 65 
+                     v++ +rr+lRl+DNp  ++       ++ ++l+pv+v+  +  +   l                       + g+ r++fl+es+ dL+++l++ 
+          Q7SI68   7 VIYAMRRELRLSDNPIFHHLsnpesKHGFSHLLPVYVFPAQqiD---LsgfvpkgsenphpapksavggyaRCGPYRAKFLAESVWDLKTSLQSI 98 
+                     6788**************6544442666689*******999441...246677889999999********************************* PP
+
+  DNA_photolyase  66 girLvvrrgdpadvlpel.....akelgasavvanreyepderrrdeavkealeeagvevesfdgh.llvppgev.rtkkgkpykvftpfikavl 153
+                     g++L+vr g+ +dv++ l     ake+++ av +     ++e++ ++ v++ + ++g+ ++  d+  +l++  ++  t   + ++vft ++k+++
+          Q7SI68  99 GSDLLVRAGPYKDVIQSLveglkAKECQVGAVWMTSHEGSEEKSEEKTVASFCAKSGIDFKLWDDEkYLIHDRDTgITHLNDLPDVFTTYRKQIE 193
+                     **********888888773333557888889999999999**********************9998866666666377777***********998 PP
+
+  DNA_photolyase 154 ke 155
+                       
+          Q7SI68 194 PL 195
+                     73 PP
+
+>> Q4I1Q6  broad_family=cryptochrome org=Gibberella zeae (strain ATCC MYA-4620 / CBS 123657 / FGSC 9075 / NRRL 31084 / P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   62.1   0.0   1.8e-19   2.1e-19       2     161 ..       8     202 ..       7     205 .. 0.85
+
+  Alignments for each domain:
+  == domain 1  score: 62.1 bits;  conditional E-value: 1.8e-19
+  DNA_photolyase   2 lvWfrrDlRlhDNpALaaAaasg...aplipvfvldpaeerkl......................kvgaarrrfllesLadLdeelrergirLvv 71 
+                     ++++rrDlR +DNp L++ a s+    +l+p+++l p++ +++                      + g+ r++f +e++ d+++++++ g+ +++
+          Q4I1Q6   8 VYLLRRDLRATDNPILHHLATSDhgfTHLLPIYILPPHQIETSgfvvegqkspyplaksqvgrfwRCGPLRAKFQAECIWDVKKNFENIGSGMLI 102
+                     89***************76444323588**********55555779999999******************************************* PP
+
+  DNA_photolyase  72 rrgdpadvlpelakelg.....asavvanreyepderrrdeavkealeeagvevesfdgh.llvppgev.rtkkgkpykvftpfikavlkell.. 157
+                     r g+ +dvl++l+k l+     +++v + +e+ ++e + ++av++ ++++g+ ++  ++  + ++  +   ++ ++ ++vft ++k+ +  l+  
+          Q4I1Q6 103 RIGKFDDVLKHLIKSLNedhqsIDTVWMTEEPSKEELDDQTAVASVCSKEGIGFKLWHDEkYFIDDRDNgLKDPQDTPDVFTTYRKTQEP-LRer 196
+                     ************9987544445999*****************************986665587777666589999***********5544.3334 PP
+
+  DNA_photolyase 158 ..eplp 161
+                       +plp
+          Q4I1Q6 197 prPPLP 202
+                     444454 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (164 nodes)
+Target sequences:                         66  (34359 residues searched)
+Passed MSV filter:                        59  (0.893939); expected 1.3 (0.02)
+Passed bias filter:                       59  (0.893939); expected 1.3 (0.02)
+Passed Vit filter:                        59  (0.893939); expected 0.1 (0.001)
+Passed Fwd filter:                        57  (0.863636); expected 0.0 (1e-05)
+Initial search space (Z):                 66  [actual number of targets]
+Domain search space  (domZ):              57  [number of targets reported over threshold]
+# CPU time: 0.02u 0.00s 00:00:00.02 Elapsed: 00:00:00.03
+# Mc/sec: 183.80
+//
+Query:       FAD_binding_7  [M=203]
+Accession:   PF03441.20
+Description: FAD binding domain of DNA photolyase
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence       Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------       -----------
+    1.6e-93  303.8   0.3    1.6e-93  303.8   0.3    1.6  1  A9CJC9          broad_family=CPD org=Agrobacterium fabrum (st
+    7.7e-93  301.6   0.4    1.2e-92  301.0   0.4    1.3  1  Q04449          broad_family=CPD org=Alkalihalophilus pseudof
+    3.3e-90  293.0   4.7    3.9e-90  292.7   3.9    1.5  1  P00914          broad_family=CPD org=Escherichia coli (strain
+    2.6e-88  286.8   0.7    5.2e-88  285.8   0.2    1.8  2  E9EYW7          broad_family=CPD org=Metarhizium robertsii (s
+    3.1e-88  286.5   2.5    4.1e-88  286.1   0.3    2.1  2  J4KQS2          broad_family=CPD org=Beauveria bassiana (stra
+    1.7e-87  284.1   5.1    2.5e-87  283.6   5.1    1.2  1  P25078          broad_family=CPD org=Salmonella typhimurium (
+    8.6e-82  265.5   0.0    1.8e-81  264.4   0.0    1.6  1  P27526          broad_family=CPD org=Neurospora crassa (strai
+    1.8e-81  264.5   1.8    2.6e-81  263.9   1.8    1.2  1  Q55081          broad_family=CPD org=Synechocystis sp. (strai
+    2.8e-81  263.8   2.8    3.9e-81  263.4   2.8    1.2  1  Q9HQ46          broad_family=CPD org=Halobacterium salinarum 
+    1.6e-80  261.3   0.7    7.9e-80  259.1   0.6    1.9  2  Q0E2Y1          broad_family=6-4 org=Oryza sativa subsp. japo
+    6.2e-80  259.4   0.3    9.4e-80  258.8   0.3    1.3  1  P57386          broad_family=CPD org=Buchnera aphidicola subs
+    1.1e-79  258.6   0.4    1.8e-79  257.9   0.4    1.3  1  Q8QG61          broad_family=cryptochrome org=Gallus gallus l
+    2.7e-79  257.3   0.3    4.4e-79  256.6   0.3    1.4  1  Q6ZZY0          broad_family=cryptochrome org=Sylvia borin le
+      3e-79  257.2   0.3    4.4e-79  256.6   0.3    1.2  1  Q5IZC5          broad_family=cryptochrome org=Erithacus rubec
+    1.2e-78  255.3   0.2    1.9e-78  254.5   0.2    1.4  1  Q16526          broad_family=cryptochrome org=Homo sapiens le
+    1.2e-78  255.3   0.2      2e-78  254.5   0.2    1.4  1  Q32Q86          broad_family=cryptochrome org=Rattus norvegic
+    1.3e-78  255.2   0.2    2.1e-78  254.4   0.2    1.4  1  P97784          broad_family=cryptochrome org=Mus musculus le
+    1.6e-78  254.8   1.7    2.4e-78  254.2   1.7    1.3  1  Q89AJ9          broad_family=CPD org=Buchnera aphidicola subs
+    1.7e-78  254.7   0.2    2.9e-78  254.0   0.2    1.4  1  Q8WP19          broad_family=cryptochrome org=Macaca fascicul
+    5.2e-78  253.2   0.7    8.5e-78  252.4   0.7    1.3  1  O48652          broad_family=6-4 org=Arabidopsis thaliana len
+    5.5e-78  253.1   0.2    8.9e-78  252.4   0.2    1.3  1  Q70AD6          broad_family=cryptochrome org=Nannospalax jud
+      1e-77  252.2   0.1    1.5e-77  251.6   0.1    1.3  1  Q9R194          broad_family=cryptochrome org=Mus musculus le
+    1.2e-77  252.0   0.1    1.7e-77  251.5   0.1    1.3  1  Q923I8          broad_family=cryptochrome org=Rattus norvegic
+    1.5e-77  251.7   0.1    2.2e-77  251.1   0.1    1.3  1  Q8QG60          broad_family=cryptochrome org=Gallus gallus l
+      2e-77  251.2   0.1    2.9e-77  250.7   0.1    1.2  1  Q49AN0          broad_family=cryptochrome org=Homo sapiens le
+    1.8e-76  248.1   2.1    2.6e-76  247.6   2.1    1.1  1  P12768          broad_family=CPD org=Streptomyces griseus len
+    5.6e-76  246.5   3.9    8.5e-76  245.9   3.9    1.3  1  P05327          broad_family=CPD org=Synechococcus sp. (strai
+      7e-74  239.7   1.8    1.1e-73  239.0   1.8    1.3  1  Q7UJB1          broad_family=cryptochrome org=Rhodopirellula 
+    7.1e-74  239.6   0.0    2.8e-73  237.7   0.0    1.8  2  Q96524          broad_family=cryptochrome org=Arabidopsis tha
+      1e-72  235.8   0.1    1.6e-72  235.2   0.1    1.2  1  Q17DK5          broad_family=cryptochrome org=Aedes aegypti l
+    6.3e-72  233.3   0.0    9.7e-72  232.7   0.0    1.3  1  P40115          broad_family=cryptochrome org=Sinapis alba le
+      1e-71  232.6   1.2    1.5e-71  232.0   1.2    1.3  1  P77967          broad_family=cryptochrome org=Synechocystis s
+    1.7e-71  231.8   0.1    2.4e-71  231.4   0.1    1.1  1  B0WRR9          broad_family=cryptochrome org=Culex quinquefa
+    2.6e-71  231.3   0.3    4.2e-71  230.6   0.3    1.3  1  Q7NMD1          broad_family=cryptochrome org=Gloeobacter vio
+      3e-71  231.0   0.0    7.1e-71  229.8   0.0    1.6  1  Q43125          broad_family=cryptochrome org=Arabidopsis tha
+    1.2e-70  229.1   0.2    1.9e-70  228.5   0.2    1.3  1  Q7PYI7          broad_family=cryptochrome org=Anopheles gambi
+    7.6e-68  220.0   0.1    1.1e-67  219.4   0.1    1.2  1  Q293P8          broad_family=cryptochrome org=Drosophila pseu
+    2.7e-67  218.1   0.2      4e-67  217.6   0.2    1.2  1  O77059          broad_family=cryptochrome org=Drosophila mela
+    3.8e-67  217.7   1.0    5.9e-67  217.0   1.0    1.3  1  Q3IPX9          broad_family=cryptochrome org=Natronomonas ph
+    3.8e-67  217.7   5.2    2.1e-66  215.2   2.9    2.4  1  P05066          broad_family=CPD org=Saccharomyces cerevisiae
+    1.9e-64  208.8   0.3    2.9e-64  208.3   0.3    1.2  1  Q4KML2          broad_family=cryptochrome org=Danio rerio len
+    8.4e-64  206.7   0.1    1.5e-63  205.9   0.1    1.4  1  Q75WS4          broad_family=cryptochrome org=Xenopus laevis 
+    5.6e-63  204.1   1.2    1.4e-62  202.8   1.3    1.5  2  P61497          broad_family=CPD org=Thermus thermophilus (st
+    1.3e-62  202.9   1.0    3.1e-62  201.6   1.1    1.5  2  P61496          broad_family=CPD org=Thermus thermophilus (st
+    5.5e-58  187.8   0.1    9.1e-58  187.0   0.1    1.3  1  Q38JU2          broad_family=cryptochrome org=Solanum lycoper
+    1.5e-54  176.5   1.1    2.2e-54  176.0   1.1    1.2  1  Q5IFN2          broad_family=cryptochrome org=Ostreococcus ta
+    1.1e-53  173.7   0.1    1.7e-53  173.1   0.1    1.2  1  Q651U1          broad_family=cryptochrome org=Oryza sativa su
+      3e-51  165.8   0.2    5.2e-51  165.0   0.2    1.3  1  Q84KJ5          broad_family=cryptochrome org=Arabidopsis tha
+    5.5e-50  161.6   0.3    9.4e-50  160.9   0.3    1.3  1  Q7SI68          broad_family=cryptochrome org=Neurospora cras
+    1.6e-46  150.3   0.6    2.5e-46  149.7   0.6    1.2  1  Q5QXE0          broad_family=cryptochrome org=Idiomarina loih
+    2.9e-44  142.9   0.5    2.9e-44  142.9   0.5    1.6  1  Q4I1Q6          broad_family=cryptochrome org=Gibberella zeae
+    2.5e-43  139.9   3.6    2.5e-43  139.9   3.6    1.6  1  Q87JP5          broad_family=cryptochrome org=Vibrio parahaem
+    1.5e-10   32.9   5.8    4.8e-10   31.2   5.8    1.8  1  WP_032397095.1  broad_family=SPL org=Rhodococcoides fascians 
+    7.4e-10   30.6   7.4    1.3e-09   29.8   5.7    2.2  2  QCI56913.1      broad_family=SPL org=Rhodococcoides fascians 
+
+
+Domain annotation for each sequence (and alignments):
+>> A9CJC9  broad_family=CPD org=Agrobacterium fabrum (strain C58 / ATCC 33970) len=479 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  303.8   0.3   1.3e-93   1.6e-93       1     202 [.     274     473 ..     274     474 .. 0.98
+
+  Alignments for each domain:
+  == domain 1  score: 303.8 bits;  conditional E-value: 1.3e-93
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    f +e++wref+y+ll+++pel ekn++++fd+++w++de+  +++aW++G+TGyPivDA+mrqL+++G mhnr+RmivasFl+k+LlidWr+g+++
+         A9CJC9 274 FRKEIVWREFCYHLLFHFPELGEKNWNDSFDAFSWRDDEK--SFKAWTRGMTGYPIVDAGMRQLWQHGTMHNRVRMIVASFLIKHLLIDWRKGEKW 367
+                    6799*******************************88766..7***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+++lvDad+a+na++wqwvag+gada+p+frifnp+ qgekfD dg+y+rr+vPel+kl++kyih+p++a++++ kkagvelgk+Yp pivdh +
+         A9CJC9 368 FRDTLVDADPASNAANWQWVAGSGADASPFFRIFNPILQGEKFDGDGDYVRRFVPELEKLERKYIHKPFEAPKDALKKAGVELGKTYPLPIVDHGK 463
+                    ************************************************************************************************ PP
+
+  FAD_binding_7 193 arkralealk 202
+                    ar+ral+a++
+         A9CJC9 464 ARERALAAYA 473
+                    *******996 PP
+
+>> Q04449  broad_family=CPD org=Alkalihalophilus pseudofirmus (strain ATCC BAA-2126 / JCM 17055 / OF4) len=479 EC=4.1.99
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  301.0   0.4   9.6e-93   1.2e-92       1     202 [.     275     474 ..     275     475 .. 0.98
+
+  Alignments for each domain:
+  == domain 1  score: 301.0 bits;  conditional E-value: 9.6e-93
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    fl+el+wr+fy+++ + ep+++++++ e ++e++w++d++  +l+ Wk+G+TG+PivDA+mrqL ++GwmhnrlRmi+asFltkdLlidWr g+++
+         Q04449 275 FLKELAWRDFYRMVHFYEPDCKDREIMEGYRELNWSHDQD--DLTSWKRGETGFPIVDAGMRQLLNEGWMHNRLRMITASFLTKDLLIDWRLGERY 368
+                    789********************************77766..6***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+++l+D+d+++n ggwqw+a++g+da+pyfrifnpv+q+++fD++g+yir+++Pel+++p++yihepwk+++eeq k++++l++dYp pivdh++
+         Q04449 369 FERMLIDYDPSSNIGGWQWAASVGTDAVPYFRIFNPVTQSKRFDENGTYIRTYIPELNHVPDHYIHEPWKMSEEEQVKYKCRLDEDYPLPIVDHSK 464
+                    ************************************************************************************************ PP
+
+  FAD_binding_7 193 arkralealk 202
+                    +rk+al+ +k
+         Q04449 465 QRKKALSFFK 474
+                    *****98765 PP
+
+>> P00914  broad_family=CPD org=Escherichia coli (strain K12) len=472 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  292.7   3.9   3.2e-90   3.9e-90       1     202 [.     272     466 ..     272     467 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 292.7 bits;  conditional E-value: 3.2e-90
+  FAD_binding_7   1 flsellwrefyyqllaaepele.eknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregae 95 
+                    +l+el+wrefy++l++ +p+l+ ++++   +d+++w+++++  +l+aW+eG+TGyPivDAamrqL++tGwmhnrlRmi+asFl+kdLlidWreg++
+         P00914 272 WLNELIWREFYRHLITYHPSLCkHRPFIAWTDRVQWQSNPA--HLQAWQEGKTGYPIVDAAMRQLNSTGWMHNRLRMITASFLVKDLLIDWREGER 365
+                    899******************989************77655..8**************************************************** PP
+
+  FAD_binding_7  96 vfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    +f+++l+D+dla+n+ggwqw+a+tg+daapyfrifnp++qgekfD +ge+ir+w+Pel+++p k++hepwk  ++      + ++ dYp+piv+hk
+         P00914 366 YFMSQLIDGDLAANNGGWQWAASTGTDAAPYFRIFNPTTQGEKFDHEGEFIRQWLPELRDVPGKVVHEPWKWAQK------AGVTLDYPQPIVEHK 455
+                    **********************************************************************55533......46889********** PP
+
+  FAD_binding_7 192 earkralealk 202
+                    ear ++l+a++
+         P00914 456 EARVQTLAAYE 466
+                    ********997 PP
+
+>> E9EYW7  broad_family=CPD org=Metarhizium robertsii (strain ARSEF 23 / ATCC MYA-3075) len=587 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   -2.7   0.0       9.3        11     164     193 ..      33      61 ..      26      67 .. 0.68
+   2 !  285.8   0.2   4.2e-88   5.2e-88       1     203 []     385     581 ..     385     581 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: -2.7 bits;  conditional E-value: 9.3
+  FAD_binding_7 164 pwkaeaeeqkkagvelgkdYpkpivdhkea 193
+                    p+ + a+e+++ g++l+k Yp  + + +++
+         E9EYW7  33 PHPL-AAEAERHGIVLRKYYPPEMSNARAR 61 
+                    5532.3445568999999999988877665 PP
+
+  == domain 2  score: 285.8 bits;  conditional E-value: 4.2e-88
+  FAD_binding_7   1 flsellwrefyyqllaaepele.eknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregae 95 
+                    ++se++wr+fy ++l+++p ++ +k++k+e+++i+w+ +e  e+++aW+eGrTG+PivDAamrqL+++G+mhnr+RmivasFl+kdLlidWr+g++
+         E9EYW7 385 WISEVAWRDFYKHVLVHWPYVCmNKPYKPEYSNIAWSYNE--EHFKAWCEGRTGFPIVDAAMRQLNHNGYMHNRCRMIVASFLSKDLLIDWRKGER 478
+                    899******************99*************6664..58**************************************************** PP
+
+  FAD_binding_7  96 vfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    +f+e+l+D+d+a+n+ggw ++a++g+d +pyfrifnp+ q+ekfDp+g yir+wvPel++l++k ih+p+   a +      + +++Ypkpiv+hk
+         E9EYW7 479 YFMEHLIDGDFASNNGGWGFSASVGVDPQPYFRIFNPLLQSEKFDPEGVYIRKWVPELQDLDNKEIHDPYGRGAGA-----KARKAGYPKPIVNHK 569
+                    **********************************************************************544444.....367999********* PP
+
+  FAD_binding_7 192 earkralealka 203
+                    + r+ral+a+k+
+         E9EYW7 570 DCRDRALNAYKE 581
+                    *********985 PP
+
+>> J4KQS2  broad_family=CPD org=Beauveria bassiana (strain ARSEF 2860) len=587 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   -0.3   0.1       1.8       2.2     159     193 ..      31      64 ..      23      90 .. 0.74
+   2 !  286.1   0.3   3.4e-88   4.1e-88       1     202 [.     388     583 ..     388     584 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: -0.3 bits;  conditional E-value: 1.8
+  FAD_binding_7 159 kyihepwkaeaeeqkkagvelgkdYpkpivdhkea 193
+                    + + ep++a a+e++k g++l++ Yp  + + +++
+         J4KQS2  31 DELREPHHA-ADEAEKHGIVLRDYYPPEMSNTRAR 64 
+                    556778854.4555678999999999888776554 PP
+
+  == domain 2  score: 286.1 bits;  conditional E-value: 3.4e-88
+  FAD_binding_7   1 flsellwrefyyqllaaepele.eknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregae 95 
+                    ++se++wr+fy+++l+++p+++ +k++k+++ +i+w+ ++  e+++aW+eG+TG+PivDAamrqL++ G+mhnr Rm+vasFl+kdLlidWr+g++
+         J4KQS2 388 WISEIAWRDFYRHVLVRWPHICmNKPFKPDYADIEWSYNT--EHFNAWCEGKTGFPIVDAAMRQLNHMGYMHNRPRMVVASFLCKDLLIDWRMGEK 481
+                    899******************99*************5553..68**************************************************** PP
+
+  FAD_binding_7  96 vfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    +f+e+l+D+d+a+n+ggw ++a++g+d +pyfrifnp++q+e+fDpdg+yir+wvPel++l++k ih+p++  a ++     + +++Ypkpiv+h+
+         J4KQS2 482 YFMEHLIDGDFASNNGGWGFSASVGVDPQPYFRIFNPLRQSERFDPDGDYIRQWVPELKDLDNKQIHDPYNRGAGDK-----AKKNGYPKPIVEHS 572
+                    **********************************************************************6555554.....6799********** PP
+
+  FAD_binding_7 192 earkralealk 202
+                    e r+ral+a+k
+         J4KQS2 573 ECRERALAAYK 583
+                    *********98 PP
+
+>> P25078  broad_family=CPD org=Salmonella typhimurium (strain LT2 / SGSC1412 / ATCC 700720) len=473 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  283.6   5.1   2.1e-87   2.5e-87       1     202 [.     273     467 ..     273     468 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 283.6 bits;  conditional E-value: 2.1e-87
+  FAD_binding_7   1 flsellwrefyyqllaaepele.eknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregae 95 
+                    +l+el+wrefy++l++ +p l+ ++++ + +++++w+e+++   ++aW++G+TGyPivDAamrqL+atGwmhnrlRmi+asFl+kdLlidWr g++
+         P25078 273 WLNELIWREFYRHLMTWYPALCkHQPFIRWTKRVAWQENPH--YFQAWQKGETGYPIVDAAMRQLNATGWMHNRLRMITASFLVKDLLIDWRLGER 366
+                    899******************9899***********87766..7**************************************************** PP
+
+  FAD_binding_7  96 vfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    +f+++l+D+dla+n+ggwqw+a+tg+daapyfrifnp++qge+fD dge+ir+w+P l+++p k+ihepw+  ++      + +  dYp+piv+hk
+         P25078 367 YFMSQLIDGDLAANNGGWQWAASTGTDAAPYFRIFNPTTQGERFDRDGEFIRQWLPALRDIPGKAIHEPWRWAEK------AGVVLDYPRPIVEHK 456
+                    **********************************************************************54433......357789********* PP
+
+  FAD_binding_7 192 earkralealk 202
+                    +ar ++l+a++
+         P25078 457 QARIATLSAYE 467
+                    ******99997 PP
+
+>> P27526  broad_family=CPD org=Neurospora crassa (strain ATCC 24698 / 74-OR23-1A / CBS 708.71 / DSM 1257 / FGSC 987) le
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  264.4   0.0   1.5e-81   1.8e-81       1     202 [.     404     608 ..     404     609 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 264.4 bits;  conditional E-value: 1.5e-81
+  FAD_binding_7   1 flsellwrefyyqllaaepele.eknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregae 95 
+                    ++se++wr+fy ++l+++p ++ +k++k+ +++i+w+ +   ++++aW++GrTG+Pi+DAamrq  +tG+mhnrlRmivasFl+kdLl+dWr+g++
+         P27526 404 WISEVAWRDFYKHVLVHWPYVCmNKPFKPTYSNIEWSYNV--DHFHAWTQGRTGFPIIDAAMRQVLSTGYMHNRLRMIVASFLAKDLLVDWRMGER 497
+                    899******************99*************5543..69**************************************************** PP
+
+  FAD_binding_7  96 vfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpaky......ihepwkaeaeeqkkagvelgkdYpk 185
+                    +f+e+l+D+d+a+n+ggw ++a++g+d +pyfr+fnp+ q+ekfDpdg+yir+wv el++lp+        ih+p+   + ++k  +   +k+Yp+
+         P27526 498 YFMEHLIDGDFASNNGGWGFAASVGVDPQPYFRVFNPLLQSEKFDPDGDYIRKWVEELRDLPELKggkggeIHDPY--GRGSEKVKKKLEEKGYPR 591
+                    *******************************************************9999998643233333*****..55555566788899**** PP
+
+  FAD_binding_7 186 pivdhkearkralealk 202
+                    piv+h+ ar+ral+a+k
+         P27526 592 PIVEHSGARDRALDAYK 608
+                    ***************98 PP
+
+>> Q55081  broad_family=CPD org=Synechocystis sp. (strain ATCC 27184 / PCC 6803 / Kazusa) len=488 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  263.9   1.8   2.1e-81   2.6e-81       1     202 [.     294     485 ..     294     486 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 263.9 bits;  conditional E-value: 2.1e-81
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    +++el+wrefy+++l+++p l++ +++++f+e+pwee++  ++++aW+eGrTGyPi+DAam qL++tGwmhnr+RmivasFl+kdL+++W++g+ +
+         Q55081 294 WQQELAWREFYQHCLYSFPALAQGPYRSPFQEFPWEENQ--DHFQAWCEGRTGYPIIDAAMAQLNQTGWMHNRCRMIVASFLIKDLILNWQWGELY 387
+                    789********************************6664..58***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+++l D+dla+n+ggwqw+a++g+d +p+ rifnp +q++kfDp+geyir+w+P+la++++  + +   ++       g + + +Yp+pivdh++
+         Q55081 388 FMQTLYDGDLAANNGGWQWSASSGMDPKPL-RIFNPHTQAQKFDPEGEYIRTWLPQLARFDTGDLLTGKLTP-------GSRRSVNYPEPIVDHNQ 475
+                    ****************************97.******************************99999765333.......345789*********** PP
+
+  FAD_binding_7 193 arkralealk 202
+                    ++++++++++
+         Q55081 476 QQREFKRRYQ 485
+                    *****99986 PP
+
+>> Q9HQ46  broad_family=CPD org=Halobacterium salinarum (strain ATCC 700922 / JCM 11081 / NRC-1) len=481 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  263.4   2.8   3.2e-81   3.9e-81       1     202 [.     280     475 ..     280     476 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 263.4 bits;  conditional E-value: 3.2e-81
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    f+++l+wrefy+q+l+ ++++ ++n+k   + i+w++d++  +l+aWk+G+TGyPivDA+mrqLra+++mhnr+Rmiva FltkdLl+dWr g ++
+         Q9HQ46 280 FIGQLAWREFYAQVLYFNQNVVSENFKAYEHPIEWRDDPA--ALQAWKDGETGYPIVDAGMRQLRAEAYMHNRVRMIVAAFLTKDLLVDWRAGYDW 373
+                    689***********************999999***88866..6***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+e+l D+d+a+++ggwqw+a+tg+da+pyfr+fnp++qge++Dpd++yi ++vPel+++pa++ih+ ++++ +e+     + + +Yp+pivdh++
+         Q9HQ46 374 FREKLADHDTANDNGGWQWAASTGTDAQPYFRVFNPMTQGERYDPDADYITEFVPELRDVPADAIHSWHELSLSER----RRHAPEYPDPIVDHSQ 465
+                    ******************************************************************8666666654....5899************ PP
+
+  FAD_binding_7 193 arkralealk 202
+                    +r+ a+++++
+         Q9HQ46 466 RREDAIAMFE 475
+                    *****99886 PP
+
+>> Q0E2Y1  broad_family=6-4 org=Oryza sativa subsp. japonica len=551 EC=4.1.99.13
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   -0.3   0.0       1.8       2.2      88     132 ..     114     160 ..     108     167 .. 0.80
+   2 !  259.1   0.6   6.4e-80   7.9e-80       3     201 ..     308     504 ..     305     506 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: -0.3 bits;  conditional E-value: 1.8
+  FAD_binding_7  88 idWregaevfaellvDadlainaggwqwvagtgadaapyf..rifnp 132
+                     dW+ g+  f++    + la +   + ++a +g+d  + +   +f+p
+         Q0E2Y1 114 KDWNIGKLCFESDTEPYALARDKKVMDFAAASGIDVFSPVshTLFDP 160
+                    59*****************************9999765443455555 PP
+
+  == domain 2  score: 259.1 bits;  conditional E-value: 6.4e-80
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwr+f+y++++ +p++ +++  +++++ ipw+e+  +e + aW++GrTGyP++DA+m qLr+ Gwmh+++R+ va+Flt+ dL+i+W++g +v
+         Q0E2Y1 308 GQLLWRDFFYTVAFGTPNF-DQMKGNKICKqIPWTEN--EELFPAWRDGRTGYPWIDAIMIQLRKWGWMHHLARHSVACFLTRgDLFIHWEKGRDV 400
+                    79*****************.67777777776***655..469****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f++ll+D d+ain+g+w+w++++ +  + y ri++p+++g+k+Dp+g+yir+++P l+++p++yi+epw+a+ + qkka++ +gkdYpkp+vdh+ 
+         Q0E2Y1 401 FERLLIDSDWAINNGNWMWLSCSSFFYQ-YHRIYSPTSFGKKYDPNGNYIRHFIPVLKDMPKEYIYEPWTAPLSIQKKANCIIGKDYPKPVVDHAI 495
+                    **********************999888.99***************************************************************** PP
+
+  FAD_binding_7 193 arkraleal 201
+                    a+k++++++
+         Q0E2Y1 496 ASKECKKMM 504
+                    *****9987 PP
+
+>> P57386  broad_family=CPD org=Buchnera aphidicola subsp. Acyrthosiphon pisum (strain APS) len=483 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  258.8   0.3   7.7e-80   9.4e-80       1     202 [.     275     469 ..     275     470 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 258.8 bits;  conditional E-value: 7.7e-80
+  FAD_binding_7   1 flsellwrefyyqllaaepele.eknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregae 95 
+                    + +++lwrefyy+ll+ +p+++ +++l +  +ei+w ++   ++++aWkeG+TG+Pi+DA+mrqL++ GwmhnrlRmi++sFl+k+Lli+Wreg+e
+         P57386 275 WFDQILWREFYYHLLIGFPKISrSESLVTWEKEIHWINNI--KHFNAWKEGNTGFPIIDAGMRQLNELGWMHNRLRMITSSFLVKNLLINWREGEE 368
+                    6789*****************956666666666***5443..69**************************************************** PP
+
+  FAD_binding_7  96 vfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    +f ++l+D+dla n+ggwqw+a++g+d++py+rifnp++q++ fD++g++i++++Pel+++p+++ih+p+  e ++qk    + + dYp+pi++++
+         P57386 369 HFISNLIDGDLALNNGGWQWSASVGCDSVPYIRIFNPLHQSKTFDESGNFIKKFIPELKNVPNHHIHQPH--EWSKQK----NFKIDYPNPIINYS 458
+                    **********************************************************************..555554....6899********** PP
+
+  FAD_binding_7 192 earkralealk 202
+                    e+rk+ l+ +k
+         P57386 459 ESRKTSLSLFK 469
+                    *****999887 PP
+
+>> Q8QG61  broad_family=cryptochrome org=Gallus gallus len=621 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  257.9   0.4   1.5e-79   1.8e-79       3     203 .]     288     486 ..     285     486 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 257.9 bits;  conditional E-value: 1.5e-79
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +k+  ++++  ipw++++e  +l++W+eGrTG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+i+W+eg++v
+         Q8QG61 288 GQLLWREFFYTAATNNPRF-DKMEGNPICVqIPWDKNPE--ALAKWAEGRTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWISWEEGMKV 380
+                    79*****************.66666666666***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad+++nag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P l+ +pakyi++pw+a++++qk+a++++g +Ypkp+v+h+e
+         Q8QG61 381 FEELLLDADWSVNAGSWMWLSCSSFFQQ-FFHCYCPVGFGRRTDPNGDYIRRYLPVLRGFPAKYIYDPWNAPESVQKAAKCVIGVNYPKPMVNHAE 475
+                    **********************998888.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    a++ ++e++k+
+         Q8QG61 476 ASRLNIERMKQ 486
+                    ********986 PP
+
+>> Q6ZZY0  broad_family=cryptochrome org=Sylvia borin len=620 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  256.6   0.3   3.6e-79   4.4e-79       3     203 .]     288     486 ..     285     486 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 256.6 bits;  conditional E-value: 3.6e-79
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +k+  ++++  ipw++++e  +l++W+eGrTG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+i+W+eg++v
+         Q6ZZY0 288 GQLLWREFFYTAATNNPRF-DKMEGNPICVqIPWDKNPE--ALAKWAEGRTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWISWEEGMKV 380
+                    79*****************.66666666666***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad+++nag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P l+ +pakyi++pw+a+++ qk+a++ +g +Ypkp+v+h+e
+         Q6ZZY0 381 FEELLLDADWSVNAGSWMWLSCSSFFQQ-FFHCYCPVGFGRRTDPNGDYIRRYLPVLRGFPAKYIYDPWNAPESIQKAAKCIIGVNYPKPMVNHAE 475
+                    **********************998888.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    a++ ++e++k+
+         Q6ZZY0 476 ASRLNIERMKQ 486
+                    ********986 PP
+
+>> Q5IZC5  broad_family=cryptochrome org=Erithacus rubecula len=620 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  256.6   0.3   3.6e-79   4.4e-79       3     203 .]     288     486 ..     285     486 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 256.6 bits;  conditional E-value: 3.6e-79
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +k+  ++++  ipw++++e  +l++W+eGrTG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+i+W+eg++v
+         Q5IZC5 288 GQLLWREFFYTAATNNPRF-DKMEGNPICVqIPWDKNPE--ALAKWAEGRTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWISWEEGMKV 380
+                    79*****************.66666666666***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad+++nag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P l+ +pakyi++pw+a+++ qk+a++ +g +Ypkp+v+h+e
+         Q5IZC5 381 FEELLLDADWSVNAGSWMWLSCSSFFQQ-FFHCYCPVGFGRRTDPNGDYIRRYLPVLRGFPAKYIYDPWNAPESIQKAAKCIIGVNYPKPMVNHAE 475
+                    **********************998888.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    a++ ++e++k+
+         Q5IZC5 476 ASRLNIERMKQ 486
+                    ********986 PP
+
+>> Q16526  broad_family=cryptochrome org=Homo sapiens len=586 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  254.5   0.2   1.6e-78   1.9e-78       3     203 .]     288     486 ..     285     486 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 254.5 bits;  conditional E-value: 1.6e-78
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +k+  ++++  ipw++++e  +l++W+eGrTG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+i+W+eg++v
+         Q16526 288 GQLLWREFFYTAATNNPRF-DKMEGNPICVqIPWDKNPE--ALAKWAEGRTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWISWEEGMKV 380
+                    79*****************.66666666666***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad++inag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P l+ +pakyi++pw+a++  qk a++ +g +Ypkp+v+h+e
+         Q16526 381 FEELLLDADWSINAGSWMWLSCSSFFQQ-FFHCYCPVGFGRRTDPNGDYIRRYLPVLRGFPAKYIYDPWNAPEGIQKVAKCLIGVNYPKPMVNHAE 475
+                    **********************998888.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    a++ ++e++k+
+         Q16526 476 ASRLNIERMKQ 486
+                    ********986 PP
+
+>> Q32Q86  broad_family=cryptochrome org=Rattus norvegicus len=588 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  254.5   0.2   1.6e-78     2e-78       3     203 .]     288     486 ..     285     486 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 254.5 bits;  conditional E-value: 1.6e-78
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +k+  ++++  ipw++++e  +l++W+eGrTG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+i+W+eg++v
+         Q32Q86 288 GQLLWREFFYTAATNNPRF-DKMEGNPICVqIPWDKNPE--ALAKWAEGRTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWISWEEGMKV 380
+                    79*****************.66666666666***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad++inag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P l+ +pakyi++pw+a++  qk a++ +g +Ypkp+v+h+e
+         Q32Q86 381 FEELLLDADWSINAGSWMWLSCSSFFQQ-FFHCYCPVGFGRRTDPNGDYIRRYLPVLRGFPAKYIYDPWNAPEGIQKVAKCLIGVNYPKPMVNHAE 475
+                    **********************998888.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    a++ ++e++k+
+         Q32Q86 476 ASRLNIERMKQ 486
+                    ********986 PP
+
+>> P97784  broad_family=cryptochrome org=Mus musculus len=606 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  254.4   0.2   1.7e-78   2.1e-78       3     203 .]     288     486 ..     285     486 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 254.4 bits;  conditional E-value: 1.7e-78
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +k+  ++++  ipw++++e  +l++W+eGrTG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+i+W+eg++v
+         P97784 288 GQLLWREFFYTAATNNPRF-DKMEGNPICVqIPWDKNPE--ALAKWAEGRTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWISWEEGMKV 380
+                    79*****************.66666666666***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad++inag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P l+ +pakyi++pw+a++  qk a++ +g +Ypkp+v+h+e
+         P97784 381 FEELLLDADWSINAGSWMWLSCSSFFQQ-FFHCYCPVGFGRRTDPNGDYIRRYLPVLRGFPAKYIYDPWNAPEGIQKVAKCLIGVNYPKPMVNHAE 475
+                    **********************998888.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    a++ ++e++k+
+         P97784 476 ASRLNIERMKQ 486
+                    ********986 PP
+
+>> Q89AJ9  broad_family=CPD org=Buchnera aphidicola subsp. Baizongia pistaciae (strain Bp) len=478 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  254.2   1.7     2e-78   2.4e-78       1     201 [.     276     469 ..     276     471 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 254.2 bits;  conditional E-value: 2e-78
+  FAD_binding_7   1 flsellwrefyyqllaaepele.eknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregae 95 
+                    +++ellwrefy++ll+ +p++  +++l +  ++i+w+++     l+ Wk+G+TGyPi+DA+mrqL++ Gw++nrlRmi+asFl+k+LlidWr+g+e
+         Q89AJ9 276 WINELLWREFYQHLLYFYPNIGqNQSLYHWENRIKWDNNL--YYLNLWKQGNTGYPIIDAGMRQLKQLGWISNRLRMITASFLVKNLLIDWRKGEE 369
+                    789******************956666666666***5544..68**************************************************** PP
+
+  FAD_binding_7  96 vfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    +f+++l+D+d+a+n+g+wqw+a++g+d++pyfrifnp+ q++kfD ++++ir+++Pel+++++  ih+p + ++      + +++++Yp+pi+++ 
+         Q89AJ9 370 YFMSQLIDGDFASNNGNWQWIASVGTDSMPYFRIFNPMLQSKKFDINAKFIRKYIPELSNVSTYNIHNPCDNNK------TNKIHSKYPQPIINYY 459
+                    **********************************************************************4333......3479************ PP
+
+  FAD_binding_7 192 earkraleal 201
+                    +++k++l  +
+         Q89AJ9 460 HSKKKTLLVF 469
+                    **99988665 PP
+
+>> Q8WP19  broad_family=cryptochrome org=Macaca fascicularis len=586 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  254.0   0.2   2.4e-78   2.9e-78       3     203 .]     288     486 ..     285     486 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 254.0 bits;  conditional E-value: 2.4e-78
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +k+  ++++  ipw++++e  +l++W+eGrTG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+i+W+eg++v
+         Q8WP19 288 GQLLWREFFYTAATNNPRF-DKMEGNPICVqIPWDKNPE--ALAKWAEGRTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWISWEEGMKV 380
+                    79*****************.66666666666***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad++inag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P l+ +pakyi++pw+a++  qk a++ +g +Ypkp+v+h+e
+         Q8WP19 381 FEELLLDADWSINAGSWMWLSCSSFFQQ-FFHCYCPVGFGRRTDPNGDYIRRYLPVLRGFPAKYIYDPWNAPEGIQKVAKCLIGINYPKPMVNHAE 475
+                    **********************998888.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    a++ ++e++k+
+         Q8WP19 476 ASRLNIERMKQ 486
+                    ********986 PP
+
+>> O48652  broad_family=6-4 org=Arabidopsis thaliana len=556 EC=4.1.99.13
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  252.4   0.7     7e-78   8.5e-78       2     201 ..     315     512 ..     314     514 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 252.4 bits;  conditional E-value: 7e-78
+  FAD_binding_7   2 lsellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregae 95 
+                    l++llwref+y++++ +p++ +k+  +++++ ipw+ed  ++ l+aW++G+TGyP++DA+m qL + Gwmh+++R++va+Flt+ dL+i+W++g +
+         O48652 315 LGQLLWREFFYTTAFGTPNF-DKMKGNRICKqIPWNED--HAMLAAWRDGKTGYPWIDAIMVQLLKWGWMHHLARHCVACFLTRgDLFIHWEQGRD 407
+                    689*****************.66666666666***666..458***************************************************** PP
+
+  FAD_binding_7  96 vfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    vf++ll+D d+ain+g+w+w++++ +  + + ri++p+++g+k+Dpdg+yir+++P l+++p++yi+epw+a+ ++q+ka++ +gkdYpkp+v h+
+         O48652 408 VFERLLIDSDWAINNGNWMWLSCSSFFYQ-FNRIYSPISFGKKYDPDGKYIRHFLPVLKDMPKQYIYEPWTAPLSVQTKANCIVGKDYPKPMVLHD 502
+                    ***********************888887.67**************************************************************** PP
+
+  FAD_binding_7 192 earkraleal 201
+                    +a+k++++++
+         O48652 503 SASKECKRKM 512
+                    ******9998 PP
+
+>> Q70AD6  broad_family=cryptochrome org=Nannospalax judaei len=587 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  252.4   0.2   7.3e-78   8.9e-78       3     203 .]     288     486 ..     285     486 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 252.4 bits;  conditional E-value: 7.3e-78
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +k+  ++++  ipw++++e  +l++W+eGrTG+P++DA+m+qLr++Gw+h+++R++va+Flt  dL+i+W+eg++v
+         Q70AD6 288 GQLLWREFFYTAATNNPRF-DKMEGNPICVqIPWDKNPE--ALAKWAEGRTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTGsDLWISWEEGMKV 380
+                    79*****************.66666666666***66655..7****************************************99************ PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad++inag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P l+ +pakyi++pw+a++  qk a++ +g +Ypkp+v+h+e
+         Q70AD6 381 FEELLLDADWSINAGSWMWLSCSSFFQQ-FFHCYCPVGFGRRTDPNGDYIRRYLPVLRGFPAKYIYDPWNAPEGIQKVAKCLIGVNYPKPMVNHAE 475
+                    **********************998888.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    a++ ++e++k+
+         Q70AD6 476 ASRLNIERMKQ 486
+                    ********986 PP
+
+>> Q9R194  broad_family=cryptochrome org=Mus musculus len=592 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  251.6   0.1   1.3e-77   1.5e-77       3     203 .]     306     504 ..     303     504 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 251.6 bits;  conditional E-value: 1.3e-77
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +++  ++++  ipw++++e  +l++W+eG+TG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+++W+ g +v
+         Q9R194 306 GQLLWREFFYTAATNNPRF-DRMEGNPICIqIPWDRNPE--ALAKWAEGKTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWVSWESGVRV 398
+                    79*****************.77777777766***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad+++nag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P+l+ +p++yi+epw+a++++qk+a++ +g dYp+piv+h+e
+         Q9R194 399 FDELLLDADFSVNAGSWMWLSCSAFFQQ-FFHCYCPVGFGRRTDPSGDYIRRYLPKLKGFPSRYIYEPWNAPESVQKAAKCIIGVDYPRPIVNHAE 493
+                    **********************888887.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    +++ ++e++k+
+         Q9R194 494 TSRLNIERMKQ 504
+                    ********986 PP
+
+>> Q923I8  broad_family=cryptochrome org=Rattus norvegicus len=594 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  251.5   0.1   1.4e-77   1.7e-77       3     203 .]     306     504 ..     303     504 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 251.5 bits;  conditional E-value: 1.4e-77
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +++  ++++  ipw++++e  +l++W+eG+TG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+++W+ g +v
+         Q923I8 306 GQLLWREFFYTAATNNPRF-DRMEGNPICIqIPWDRNPE--ALAKWAEGKTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWVSWESGVRV 398
+                    79*****************.77777777766***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad+++nag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P+l+ +p++yi+epw+a++++qk+a++ +g dYp+piv+h+e
+         Q923I8 399 FDELLLDADFSVNAGSWMWLSCSAFFQQ-FFHCYCPVGFGRRTDPSGDYIRRYLPKLKGFPSRYIYEPWNAPESVQKAANCIIGVDYPRPIVNHAE 493
+                    **********************888887.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    +++ ++e++k+
+         Q923I8 494 TSRLNIERMKQ 504
+                    ********986 PP
+
+>> Q8QG60  broad_family=cryptochrome org=Gallus gallus len=582 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  251.1   0.1   1.8e-77   2.2e-77       3     203 .]     297     495 ..     294     495 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 251.1 bits;  conditional E-value: 1.8e-77
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +++  ++++  ipw++++e  +l++W+eG+TG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+i+W+ g +v
+         Q8QG60 297 GQLLWREFFYTAATNNPKF-DRMEGNPICIqIPWDKNPE--ALAKWAEGKTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWISWESGVRV 389
+                    79*****************.77777777766***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad+++nag+w+w++++ + ++ +f++++pv +g+++Dp+g+y++r++P+l+ +p++yi+epw+a++++qk+a++ +g dYpkp+v+h+e
+         Q8QG60 390 FDELLLDADFSVNAGSWMWLSCSAFFQQ-FFHCYCPVGFGRRTDPSGDYVKRYLPKLKGFPSRYIYEPWNAPESVQKAAKCIIGVDYPKPMVNHAE 484
+                    **********************888887.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    +++ ++e++k+
+         Q8QG60 485 TSRLNIERMKQ 495
+                    ********986 PP
+
+>> Q49AN0  broad_family=cryptochrome org=Homo sapiens len=593 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  250.7   0.1   2.4e-77   2.9e-77       3     203 .]     307     505 ..     304     505 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 250.7 bits;  conditional E-value: 2.4e-77
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++llwref+y++++++p++ +++  ++++  ipw++++e  +l++W+eG+TG+P++DA+m+qLr++Gw+h+++R++va+Flt+ dL+++W+ g +v
+         Q49AN0 307 GQLLWREFFYTAATNNPRF-DRMEGNPICIqIPWDRNPE--ALAKWAEGKTGFPWIDAIMTQLRQEGWIHHLARHAVACFLTRgDLWVSWESGVRV 399
+                    79*****************.77777777766***66655..7****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+ell+Dad+++nag+w+w++++ + ++ +f++++pv +g+++Dp+g+yirr++P+l+++p++yi+epw+a+++ qk+a++ +g dYp+piv+h+e
+         Q49AN0 400 FDELLLDADFSVNAGSWMWLSCSAFFQQ-FFHCYCPVGFGRRTDPSGDYIRRYLPKLKAFPSRYIYEPWNAPESIQKAAKCIIGVDYPRPIVNHAE 494
+                    **********************888887.9****************************************************************** PP
+
+  FAD_binding_7 193 arkralealka 203
+                    +++ ++e++k+
+         Q49AN0 495 TSRLNIERMKQ 505
+                    ********986 PP
+
+>> P12768  broad_family=CPD org=Streptomyces griseus len=455 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  247.6   2.1   2.1e-76   2.6e-76       1     198 [.     263     449 ..     263     452 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 247.6 bits;  conditional E-value: 2.1e-76
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    f+++l+wr+f +q+la++p+ + +++++++d+ +   d+  ++++aWk+G TGyP+vDAamrqL ++Gwmhnr+Rm++asFltk L++dWrega++
+         P12768 263 FVRQLAWRDFHHQVLADRPDASWSDYRPRHDRWRS--DA--DEMHAWKSGLTGYPLVDAAMRQLAHEGWMHNRARMLAASFLTKTLYVDWREGARH 354
+                    689**************************998554..53..479**************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f +llvD+d+a+n+ +wqwvagtg+d++p  r++npv qg++fD++g+y+r wvPela+++ ++ihepwk++  +      + g dYp+p+vd++e
+         P12768 355 FLDLLVDGDVANNQLNWQWVAGTGTDTRPN-RVLNPVIQGKRFDARGDYVRGWVPELAEVEGSAIHEPWKLQGLD------RAGLDYPDPVVDLAE 443
+                    ****************************97.**************************************666544......689************ PP
+
+  FAD_binding_7 193 arkral 198
+                    ar+r+ 
+         P12768 444 ARARFE 449
+                    **9986 PP
+
+>> P05327  broad_family=CPD org=Synechococcus sp. (strain ATCC 27144 / PCC 6301 / SAUG 1402/1) len=484 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  245.9   3.9     7e-76   8.5e-76       1     202 [.     280     469 ..     280     470 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 245.9 bits;  conditional E-value: 7e-76
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    +++el+wrefy+++l+++p+l++ ++++ ++++pwe++e  + ++aW++++TGyPivDAamrqL++tGwmhnr+ mivasFltkdL+idWr+g+++
+         P05327 280 WQQELAWREFYQHALYHFPSLADGPYRSLWQQFPWENRE--ALFTAWTQAQTGYPIVDAAMRQLTETGWMHNRCWMIVASFLTKDLIIDWRRGEQF 373
+                    789********************************6654..59***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+++lvD+dla+n+ggwqw+a++g+d +p+ rifnp +q++kfD++++yi+rw+Pel++++ k + +   ++           +++Yp+piv+h+ 
+         P05327 374 FMQHLVDGDLAANNGGWQWSASSGMDPKPL-RIFNPASQAKKFDATATYIKRWLPELRHVHPKDLISGEITP---------IGRRGYPAPIVNHNL 459
+                    ****************************97.*****************************988877655233.........45689********** PP
+
+  FAD_binding_7 193 arkralealk 202
+                    ++k++++ ++
+         P05327 460 RQKQFKALYN 469
+                    ***9999886 PP
+
+>> Q7UJB1  broad_family=cryptochrome org=Rhodopirellula baltica (strain DSM 10527 / NCIMB 13988 / SH1) len=488 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  239.0   1.8   9.2e-74   1.1e-73       3     199 ..     285     478 ..     282     482 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 239.0 bits;  conditional E-value: 9.2e-74
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevfa 98 
+                     ellwr++++++  ++  +  ++   +  +++w++d+  e +++W++G+TGyP+vDA mr+Lr+tG+m+nr R+ vasFltk+L idWr+ga++f+
+         Q7UJB1 285 FELLWRDYFRWISRKHGATLFRAGGLRGVNVDWKSDR--ELFRRWQDGTTGYPLVDANMRELRTTGYMSNRGRQNVASFLTKNLGIDWRWGARWFE 378
+                    79*******************************6664..59******************************************************* PP
+
+  FAD_binding_7  99 ellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhkear 194
+                    ++lvD+d+a+n+g+w+++ag+g da+  fr+fn +kq++++D++gey ++w+Pel++l+ + ihepwk++ e+q+++g++lgk+Yp+pivd+ +++
+         Q7UJB1 379 SQLVDYDVASNYGNWNYAAGVGNDAR-GFRFFNITKQSRDYDSQGEYAKHWLPELRDLDVTEIHEPWKMSPERQQEVGATLGKEYPHPIVDLFDSA 473
+                    *************************9.79***************************************************************9999 PP
+
+  FAD_binding_7 195 krale 199
+                    k++ +
+         Q7UJB1 474 KENET 478
+                    88766 PP
+
+>> Q96524  broad_family=cryptochrome org=Arabidopsis thaliana len=612 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   -0.9   0.0       2.7       3.3     119     189 ..      93     160 ..      86     165 .. 0.75
+   2 !  237.7   0.0   2.3e-73   2.8e-73       1     201 [.     287     485 ..     287     487 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: -0.9 bits;  conditional E-value: 2.7
+  FAD_binding_7 119 tgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivd 189
+                    tga ++ + ++++pv+  +++  + + ++r +  +++++ + ++epw++  e+ k   ++  ++Y k+++d
+         Q96524  93 TGATKVVFNHLYDPVSLVRDHTVKEKLVERGIS-VQSYNGDLLYEPWEIYCEKGK--PFTSFNSYWKKCLD 160
+                    667777666899999999999999999999986.78899999*****76665543..55666666666655 PP
+
+  == domain 2  score: 237.7 bits;  conditional E-value: 2.3e-73
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    fl+ +  re+ +++++++p ++e++l ++++ +pw+ d   +k++aW++GrTGyP+vDA+mr+L+atGwmhnr+R iv+sF++k Ll++W++g+++
+         Q96524 287 FLRGIGLREYSRYICFNFPFTHEQSLLSHLRFFPWDADV--DKFKAWRQGRTGYPLVDAGMRELWATGWMHNRIRVIVSSFAVKFLLLPWKWGMKY 380
+                    5778999****************************5554..58***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+++l+Dadl+++  gwq+++g+  d +++ r+ np  qg k+Dp+geyir+w+Pela+lp+++ih+pw+a+ ++ k+ gvelg++Y kpivd+++
+         Q96524 381 FWDTLLDADLECDILGWQYISGSIPDGHELDRLDNPALQGAKYDPEGEYIRQWLPELARLPTEWIHHPWDAPLTVLKASGVELGTNYAKPIVDIDT 476
+                    ************************************************************************************************ PP
+
+  FAD_binding_7 193 arkraleal 201
+                    ar+   +a+
+         Q96524 477 ARELLAKAI 485
+                    **9887776 PP
+
+>> Q17DK5  broad_family=cryptochrome org=Aedes aegypti len=545 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  235.2   0.1   1.3e-72   1.6e-72       3     202 ..     306     506 ..     304     507 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 235.2 bits;  conditional E-value: 1.3e-72
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaevf 97 
+                    ++l+wre++y++ +++p+++e + ++ + +ipw e ++ ++l++WkeGrTG+P++DAamrqL a+Gw+h+ lR i+a+Flt+  L+i+W+ g ++f
+         Q17DK5 306 GQLIWREYFYTMSVHNPHYAEMEANPICLNIPWYEPKD-DSLDRWKEGRTGFPMIDAAMRQLLAEGWLHHILRNITATFLTRgALWISWEAGVQHF 400
+                    79*****************88888888888***77655.69******************************************************* PP
+
+  FAD_binding_7  98 aellvDadlainaggwqwvagtgadaa.pyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                     ++l+Dad+++ ag+w+wv+++ +++      + +p++ ++++Dp+gey+rr++Pel++lp+ y+hepwka+ ++qk++g+ +g+dYp+p++d+++
+         Q17DK5 401 LKYLLDADWSVCAGNWMWVSSSAFEKLlDSSSCTSPIALARRLDPKGEYVRRYLPELKNLPTLYVHEPWKAPLDVQKECGCIVGRDYPAPMIDLAA 496
+                    *********************88866515569**************************************************************** PP
+
+  FAD_binding_7 193 arkralealk 202
+                    a++++ ++++
+         Q17DK5 497 ASRANANTMN 506
+                    **99998875 PP
+
+>> P40115  broad_family=cryptochrome org=Sinapis alba len=501 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  232.7   0.0   7.9e-72   9.7e-72       1     201 [.     286     484 ..     286     486 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 232.7 bits;  conditional E-value: 7.9e-72
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    fl+ +  r++ + +++++p ++e++l ++++ +pw+ d   +k++aW++GrTGyP+vDA+mr+L+atGwmhnr+R iv+sF++k Ll++W++g+++
+         P40115 286 FLRGIGLRDYSRIICFNFPFTHEQSLLSHLRFFPWDADV--DKFKAWRQGRTGYPLVDAGMRELWATGWMHNRIRVIVSSFAVKFLLLPWKWGMKY 379
+                    5778999****************************5554..58***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+++l+Dadl+++  gwq+++g+  d +++ r+ np  qg k+Dp+geyir+w+Pela+lp+++ih+pw+a+ ++ k+ gvelg++Y kpiv +++
+         P40115 380 FWDTLLDADLECDIIGWQYISGSLPDGHELDRLDNPAIQGAKYDPEGEYIRQWLPELARLPTEWIHHPWDAPLTVLKASGVELGTNYAKPIVVIDT 475
+                    ************************************************************************************************ PP
+
+  FAD_binding_7 193 arkraleal 201
+                    ar+   +a+
+         P40115 476 ARELLTKAI 484
+                    **9888776 PP
+
+>> P77967  broad_family=cryptochrome org=Synechocystis sp. (strain ATCC 27184 / PCC 6803 / Kazusa) len=489 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  232.0   1.2   1.3e-71   1.5e-71       3     196 ..     288     478 ..     285     485 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 232.0 bits;  conditional E-value: 1.3e-71
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevfa 98 
+                     ellwr+f++ ++ ++ +   +      +++pw+ed+   ++e W++G+TGyP+vDA mr+L+ tG+m+nr R+ vasFl+k+L idWr+gae+f+
+         P77967 288 FELLWRDFFRFVAQKYGNKLFNRGGLLNKNFPWQEDQV--RFELWRSGQTGYPLVDANMRELNLTGFMSNRGRQNVASFLCKNLGIDWRWGAEWFE 381
+                    79**************98888888888889***77755..7******************************************************* PP
+
+  FAD_binding_7  99 ellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhkear 194
+                    ++l+D+d+++n+g+w+++ag g da+  fr+fn  kq++++Dp+g+y r+w+Pel++lp + ih+pw ++a+eqk+ gv+lg dYp+p+v+++++ 
+         P77967 382 SCLIDYDVCSNWGNWNYTAGIGNDAR-DFRYFNIPKQSQQYDPQGTYLRHWLPELKNLPGDKIHQPWLLSATEQKQWGVQLGVDYPRPCVNFHQSV 476
+                    *************************9.58***************************************************************9987 PP
+
+  FAD_binding_7 195 kr 196
+                    ++
+         P77967 477 EA 478
+                    65 PP
+
+>> B0WRR9  broad_family=cryptochrome org=Culex quinquefasciatus len=499 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  231.4   0.1     2e-71   2.4e-71       3     202 ..     260     460 ..     258     461 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 231.4 bits;  conditional E-value: 2e-71
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaevf 97 
+                    ++l+wre++y++ +++p+++  +l++ + +ipw e ++ ++l++WkeGrTG+P++DAamrqL a+Gw+h+ lR i+a+Flt+  L+i+W+ g ++f
+         B0WRR9 260 GQLIWREYFYTMSVHNPHYAVMELNPICLNIPWYEAKD-DSLDRWKEGRTGFPLIDAAMRQLMAEGWLHHILRNITATFLTRgGLWISWEAGVQHF 354
+                    79******************9999999999***77755.69******************************************************* PP
+
+  FAD_binding_7  98 aellvDadlainaggwqwvagtgadaa.pyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                     ++l+Dad+++ ag+w+wv+++ +++      + +pv+ ++++Dp+gey++r++Pel+k+pa y+hepwka+ e q+++g+++gkdYp+p+v+++e
+         B0WRR9 355 LKYLLDADWSVCAGNWMWVSSSAFEKLlDSSSCTSPVALARRLDPKGEYVKRYLPELEKFPALYVHEPWKAPPELQEQYGCVIGKDYPAPMVNLAE 450
+                    *********************88866515569**************************************************************** PP
+
+  FAD_binding_7 193 arkralealk 202
+                     +k + ++++
+         B0WRR9 451 VNKCNANKMN 460
+                    *999988876 PP
+
+>> Q7NMD1  broad_family=cryptochrome org=Gloeobacter violaceus (strain ATCC 29082 / PCC 7421) len=500 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  230.6   0.3   3.4e-71   4.2e-71       3     201 ..     286     481 ..     283     483 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 230.6 bits;  conditional E-value: 3.4e-71
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevfa 98 
+                     ellwr++++ ++a++ +    +   +  +ipw+ed   e++e W++G+TG+P+vDA mr+L atG+m+nr R+ vasFltk+L i+W++gae+f+
+         Q7NMD1 286 FELLWRDYFRFIAAKHGDRLFYTAGLRGLDIPWKEDW--ERFELWRTGQTGFPLVDANMRELAATGFMSNRGRQNVASFLTKNLGIHWHMGAEWFE 379
+                    79**************99999999999999***6664..58******************************************************* PP
+
+  FAD_binding_7  99 ellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhkear 194
+                    + l+D+d+a+n+g+w+++ag+g da+  fr+fn +kq++++Dpdg+y+++w+Pela lp + +hepwk+   eqk+ gv+lg dYp+p+vd+ +++
+         Q7NMD1 380 SRLIDYDVASNWGNWNYTAGVGNDAR-GFRFFNILKQARDYDPDGAYVKHWLPELAGLPPARVHEPWKLLPVEQKRFGVRLGVDYPQPVVDLFQSA 474
+                    *************************9.79***************************************************************9999 PP
+
+  FAD_binding_7 195 kraleal 201
+                    +++ + +
+         Q7NMD1 475 AANEAIY 481
+                    8887766 PP
+
+>> Q43125  broad_family=cryptochrome org=Arabidopsis thaliana len=681 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  229.8   0.0   5.8e-71   7.1e-71       1     202 [.     290     489 ..     290     490 .. 0.98
+
+  Alignments for each domain:
+  == domain 1  score: 229.8 bits;  conditional E-value: 5.8e-71
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    fl+ +  re+ +++ +++p  +e++l  +++ +pw+ de+   ++aW++GrTGyP+vDA+mr+L+atGw+h r+R +v+sF++k L+++Wr+g+++
+         Q43125 290 FLKSIGLREYSRYISFNHPYSHERPLLGHLKFFPWAVDEN--YFKAWRQGRTGYPLVDAGMRELWATGWLHDRIRVVVSSFFVKVLQLPWRWGMKY 383
+                    688999*****************************88866..7***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhke 192
+                    f+++l+Dadl+++a gwq++ gt  d++++ ri np   g kfDp+gey+rrw+Pel++lp+++ih+pw+a++++ ++ag+elg++Yp piv ++e
+         Q43125 384 FWDTLLDADLESDALGWQYITGTLPDSREFDRIDNPQFEGYKFDPNGEYVRRWLPELSRLPTDWIHHPWNAPESVLQAAGIELGSNYPLPIVGLDE 479
+                    ************************************************************************************************ PP
+
+  FAD_binding_7 193 arkralealk 202
+                    a++r  eal+
+         Q43125 480 AKARLHEALS 489
+                    ***9998875 PP
+
+>> Q7PYI7  broad_family=cryptochrome org=Anopheles gambiae len=545 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  228.5   0.2   1.5e-70   1.9e-70       3     201 ..     307     506 ..     305     508 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 228.5 bits;  conditional E-value: 1.5e-70
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++l+wre++y++ +++p++  ++ +++++  ipw + e+ ++l++WkeGrTG+P++DAamrqL a+Gw+h+ lR i+a+Flt+  L+++W+eg ++
+         Q7PYI7 307 GQLIWREYFYTMSVQNPHY-GEMERNPICLnIPWYKPED-DSLTRWKEGRTGFPMIDAAMRQLLAEGWLHHILRNITATFLTRgGLWLSWEEGLQH 400
+                    79*****************.66666666666***77655.69****************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaa.pyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    f ++l+Dad+++ ag+w+wv+++ ++      ++ +p++ ++++Dp+g+y++r++Pela++pa+++hepwka++e+q ++g+++g++Yp+p+vd++
+         Q7PYI7 401 FLKYLLDADWSVCAGNWMWVSSSAFERLlDSSKCTCPIALARRLDPKGDYVKRYLPELANYPAQFVHEPWKASREQQIEYGCVIGEKYPAPMVDLA 496
+                    **********************8876641556**************************************************************** PP
+
+  FAD_binding_7 192 earkraleal 201
+                      +kr+ +++
+         Q7PYI7 497 IVSKRNAHTM 506
+                    9999998877 PP
+
+>> Q293P8  broad_family=cryptochrome org=Drosophila pseudoobscura pseudoobscura len=540 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  219.4   0.1   9.4e-68   1.1e-67       3     202 ..     310     510 ..     308     511 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 219.4 bits;  conditional E-value: 9.4e-68
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++l+wre++y++ +++p++ +++  +e++  ipw++ +e + l++W+ G+TG+P++D amrqL a+Gw+h+ lR  va+Flt+  L+++W+ g ++
+         Q293P8 310 GQLIWREYFYTMSVNNPNY-DRMEGNEICLtIPWAKPDE-NLLQRWRLGQTGFPLIDGAMRQLLAEGWLHHTLRNTVATFLTRgGLWQSWEPGLKH 403
+                    79*****************.89999999988***88766.6******************************************************* PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaa.pyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    f ++l+Dad+++ ag+w+wv+++ ++       + +pv+ ++++Dp+g yirr+vPel++lp++yihepw+++ae+q k ++ +g +Yp++i+d++
+         Q293P8 404 FLKYLLDADWSVCAGNWMWVSSSAFERLlDSSLVTCPVALAKRLDPEGVYIRRYVPELKNLPKEYIHEPWRLSAEQQVKFECLIGVHYPERIIDLS 499
+                    **********************888665145589************************************************************** PP
+
+  FAD_binding_7 192 earkralealk 202
+                    +a kr++ a+ 
+         Q293P8 500 KAVKRNMMAMT 510
+                    ******99885 PP
+
+>> O77059  broad_family=cryptochrome org=Drosophila melanogaster len=542 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  217.6   0.2   3.3e-67     4e-67       3     202 ..     310     510 ..     308     511 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 217.6 bits;  conditional E-value: 3.3e-67
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefde.ipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltk.dLlidWregaev 96 
+                    ++l+wre++y++ +++p++ +++  ++++  ipw++ +e + l+ W+ G+TG+P++D amrqL a+Gw+h+ lR  va+Flt+  L+++W++g ++
+         O77059 310 GQLIWREYFYTMSVNNPNY-DRMEGNDICLsIPWAKPNE-NLLQSWRLGQTGFPLIDGAMRQLLAEGWLHHTLRNTVATFLTRgGLWQSWEHGLQH 403
+                    79*****************.88899999888***87666.6******************************************************* PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaa.pyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    f ++l+Dad+++ ag+w+wv+++ ++       + +pv+ ++++Dpdg+yi+++vPel ++p++++hepw+++ae+q+++++ +g +Yp++i+d++
+         O77059 404 FLKYLLDADWSVCAGNWMWVSSSAFERLlDSSLVTCPVALAKRLDPDGTYIKQYVPELMNVPKEFVHEPWRMSAEQQEQYECLIGVHYPERIIDLS 499
+                    **********************888665145589************************************************************** PP
+
+  FAD_binding_7 192 earkralealk 202
+                     a kr++ a+k
+         O77059 500 MAVKRNMLAMK 510
+                    ******99887 PP
+
+>> Q3IPX9  broad_family=cryptochrome org=Natronomonas pharaonis (strain ATCC 35678 / DSM 2160 / CIP 103997 / JCM 8858 / 
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  217.0   1.0   4.9e-67   5.9e-67       3     195 ..     284     472 ..     281     474 .] 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 217.0 bits;  conditional E-value: 4.9e-67
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevfa 98 
+                     el+wr+f++ +++++  +  k+   + ++i+w++d  ++ +e+W++G+TG+P+vDA mr+L++tG+m+nr R+ vasFl+  L idWr+ga++f+
+         Q3IPX9 284 FELAWRDFFQFQFEKYGATFFKPGGIRERNIDWDRD--RALFERWADGETGVPFVDANMRELNRTGYMSNRGRQNVASFLAGVLGIDWRWGAAYFE 377
+                    79***************999*************555..469******************************************************* PP
+
+  FAD_binding_7  99 ellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhkear 194
+                      l+D+d+a+n+g+w ++ag+g d++   r+f++ +q+e++D+d+eyi +w+Pela+lpa+  h+pw+++++eq+++gvelg dYp+p+vd++++ 
+         Q3IPX9 378 ARLIDYDVASNWGNWAYQAGVGNDSR--DRYFDVRSQAERYDSDAEYITTWLPELAALPATIAHQPWQLSEAEQREYGVELGVDYPEPVVDIDARY 471
+                    **************************..5**************************************************************99876 PP
+
+  FAD_binding_7 195 k 195
+                    +
+         Q3IPX9 472 Q 472
+                    5 PP
+
+>> P05066  broad_family=CPD org=Saccharomyces cerevisiae (strain ATCC 204508 / S288c) len=565 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  215.2   2.9   1.7e-66   2.1e-66       1     202 [.     381     562 ..     381     563 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 215.2 bits;  conditional E-value: 1.7e-66
+  FAD_binding_7   1 flsellwrefyyqllaaepele.eknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregae 95 
+                    f++e++wr+fy+++++++p ++   +++ ++ +i+we+++   ++e+W++G+TG+PivDA+mr+L  tG+++nr Rmi+asFl+k+LlidWr+g++
+         P05066 381 FIKEVAWRDFYRHCMCNWPYTSmGMPYRLDTLDIKWENNPV--AFEKWCTGNTGIPIVDAIMRKLLYTGYINNRSRMITASFLSKNLLIDWRWGER 474
+                    789*****************998999999999****77766..7**************************************************** PP
+
+  FAD_binding_7  96 vfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    +f+++l+D+d ++n+ggw ++++tg+da+pyfr+fn+  q++k+Dp+  ++++wvPel + ++k    p                ++Ypkp+vd+k
+         P05066 475 WFMKHLIDGDSSSNVGGWGFCSSTGIDAQPYFRVFNMDIQAKKYDPQMIFVKQWVPELISSENKR---P----------------ENYPKPLVDLK 551
+                    **********************************************************8865543...3................48********* PP
+
+  FAD_binding_7 192 earkralealk 202
+                    ++r+ral+ +k
+         P05066 552 HSRERALKVYK 562
+                    *******9997 PP
+
+>> Q4KML2  broad_family=cryptochrome org=Danio rerio len=520 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  208.3   0.3   2.3e-64   2.9e-64       3     195 ..     291     480 ..     288     487 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 208.3 bits;  conditional E-value: 2.3e-64
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevfa 98 
+                     ellwr+++  ++ ++ +    +   + +++pw++d +   ++aWkeGrTG+P+vDA mr+L  tG+m+nr R+ vasFltkdL +dWr gae+f+
+         Q4KML2 291 FELLWRDYFKFVALKYGNRIFYMNGLQDKHVPWNTDMK--MFDAWKEGRTGVPFVDANMRELALTGFMSNRGRQNVASFLTKDLGLDWRLGAEWFE 384
+                    79**************99999999999999***76655..8******************************************************* PP
+
+  FAD_binding_7  99 ellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhkear 194
+                     llvD+d+++n+g+w ++ag g d ++  r fn++kqg ++D++g+y+r+wvPel+ ++   +h+pw++++++ ++a+v+l+++Yp pi+   e +
+         Q4KML2 385 YLLVDHDVCSNYGNWLYSAGIGNDPREN-RKFNMIKQGLDYDNNGDYVRQWVPELRGIKGGDVHTPWTLSNSALSHAQVSLNQTYPCPIITAPEWS 479
+                    **************************75.************************************************************9877665 PP
+
+  FAD_binding_7 195 k 195
+                    +
+         Q4KML2 480 R 480
+                    5 PP
+
+>> Q75WS4  broad_family=cryptochrome org=Xenopus laevis len=523 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  205.9   0.1   1.3e-63   1.5e-63       3     195 ..     292     481 ..     289     487 .. 0.93
+
+  Alignments for each domain:
+  == domain 1  score: 205.9 bits;  conditional E-value: 1.3e-63
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevfa 98 
+                     ellwr++++ ++ ++ +        + ++ipw++d++   ++aWkeGrTG+P+vDA mr+L  tG+m+nr R+ vasFltkdL idWr+gae+f+
+         Q75WS4 292 FELLWRDYFRFVALKYGRRIFFLRGLQDKDIPWKRDPK--LFDAWKEGRTGVPFVDANMRELAMTGFMSNRGRQNVASFLTKDLGIDWRMGAEWFE 385
+                    79**************98877777777788***77765..8******************************************************* PP
+
+  FAD_binding_7  99 ellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhkear 194
+                     llvD+d+++n+g+w ++ag g d ++  r fn++kqg ++D+ g+yir wvPel++++    h+pw +++++ ++a+++lg++Yp piv   e +
+         Q75WS4 386 YLLVDYDVCSNYGNWLYSAGIGNDPREN-RKFNMIKQGLDYDSGGDYIRLWVPELQQIKGGDAHTPWALSNASLAHANLSLGETYPYPIVMAPEWS 480
+                    **************************75.*************************************************************876655 PP
+
+  FAD_binding_7 195 k 195
+                    +
+         Q75WS4 481 R 481
+                    5 PP
+
+>> P61497  broad_family=CPD org=Thermus thermophilus (strain ATCC 27634 / DSM 579 / HB8) len=420 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  202.8   1.3   1.1e-62   1.4e-62       1     156 [.     241     394 ..     241     409 .. 0.95
+   2 ?   -1.8   0.0         5       6.1     185     199 ..     398     412 ..     395     415 .. 0.85
+
+  Alignments for each domain:
+  == domain 1  score: 202.8 bits;  conditional E-value: 1.1e-62
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    ++ ellwr+f y+ll+++p ++e++l+++f+++pw+ede  + ++aW eG+TG+P+vDAamr+L+atG+++nr+Rm +a F++k+Ll++W++ +e 
+         P61497 241 WVAELLWRDFSYHLLYHFPWMAERPLDPRFQAFPWQEDE--ALFQAWYEGKTGVPLVDAAMRELHATGFLSNRARMNAAQFAVKHLLLPWKRCEEA 334
+                    789********************************7764..59***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelakl 156
+                    f++ll+D+d a+n +gwqw+ g g+daapyfr+fnpv qge++Dp+g++ +rw Pe  ++
+         P61497 335 FRHLLLDGDRAVNLQGWQWAGGLGVDAAPYFRVFNPVLQGERHDPEGRWLKRWAPEYPSY 394
+                    ********************************************************8665 PP
+
+  == domain 2  score: -1.8 bits;  conditional E-value: 5
+  FAD_binding_7 185 kpivdhkearkrale 199
+                    +p+vd++ear+r l+
+         P61497 398 DPVVDLEEARRRYLR 412
+                    59*********9886 PP
+
+>> P61496  broad_family=CPD org=Thermus thermophilus (strain ATCC BAA-163 / DSM 7039 / HB27) len=420 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  201.6   1.1   2.5e-62   3.1e-62       1     156 [.     241     394 ..     241     409 .. 0.95
+   2 ?   -1.8   0.0         5       6.1     185     199 ..     398     412 ..     395     415 .. 0.85
+
+  Alignments for each domain:
+  == domain 1  score: 201.6 bits;  conditional E-value: 2.5e-62
+  FAD_binding_7   1 flsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                    ++ ellwr+f y+ll+++p ++e++l+++f+++pw+ede  + ++aW eGrTG+P+vDAamr+L+atG+++nr+Rm +a F++k+Ll++W++ +e 
+         P61496 241 WVAELLWRDFSYHLLYHFPWMAERPLDPRFQALPWQEDE--ALFRAWYEGRTGVPLVDAAMRELHATGFLSNRARMNAAQFAVKHLLLPWKRCEEA 334
+                    789********************************7764..59***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelakl 156
+                    f++ll+D+d a+n +gwqw+ g g+daapyfr+fnpv qge++Dp+g++ +rw Pe  ++
+         P61496 335 FRHLLLDGDRAVNLQGWQWAGGLGVDAAPYFRVFNPVLQGERHDPEGRWLKRWAPEYPSY 394
+                    ********************************************************8665 PP
+
+  == domain 2  score: -1.8 bits;  conditional E-value: 5
+  FAD_binding_7 185 kpivdhkearkrale 199
+                    +p+vd++ear+r l+
+         P61496 398 DPVVDLEEARRRYLR 412
+                    59*********9886 PP
+
+>> Q38JU2  broad_family=cryptochrome org=Solanum lycopersicum len=577 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  187.0   0.1   7.4e-58   9.1e-58       2     191 ..     375     557 ..     373     564 .. 0.92
+
+  Alignments for each domain:
+  == domain 1  score: 187.0 bits;  conditional E-value: 7.4e-58
+  FAD_binding_7   2 lsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevf 97 
+                    l el+wr++++ l ++  +l  ++  ++  +i+w++d++   ++aW++G+TGyP++DA m++L atG+m+nr R+iv sFl++d+ idWr+gae+f
+         Q38JU2 375 LFELIWRDYFRFLSIKLANLLFQAGGPQKVNINWSQDQT--MFDAWRRGQTGYPLIDANMKELAATGYMSNRGRQIVCSFLVRDMGIDWRMGAEWF 468
+                    479*******************************77655..8****************************************************** PP
+
+  FAD_binding_7  98 aellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkpivdhk 191
+                    +++l+D+d+++n+g+w + ag+g d ++  r+f+  kq++++Dp+ge++  w+Pel++lp++  h+p  +  +      v+l+++Y k+  d k
+         Q38JU2 469 ETCLLDYDPCSNYGNWTYGAGVGNDPRE-DRYFSIPKQAQNYDPEGEFVAYWLPELRALPREKRHSPGMMYLNP----IVALKHGYTKKTGDSK 557
+                    **************************96.5************************************99655544....3677777777666655 PP
+
+>> Q5IFN2  broad_family=cryptochrome org=Ostreococcus tauri len=546 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  176.0   1.1   1.8e-54   2.2e-54       3     186 ..     319     493 ..     316     500 .. 0.91
+
+  Alignments for each domain:
+  == domain 1  score: 176.0 bits;  conditional E-value: 1.8e-54
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevfa 98 
+                     el+wr+f+   + ++ +   +   ++ ++ +w++de+   l+aWk+G+TGyP++DA mr+L atG+m+nr R+ vas+l+ d  idWr+ga++f+
+         Q5IFN2 319 FELIWRDFFKFFALKHGNKIFHLDGTAGRRASWKRDEK--ILKAWKTGTTGYPLIDANMRELAATGFMSNRGRQNVASWLALDAGIDWRHGADWFE 412
+                    79*********9999988889999999999***77755..7******************************************************* PP
+
+  FAD_binding_7  99 ellvDadlainaggwqwvag.tgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepwkaeaeeqkkagvelgkdYpkp 186
+                    ++l+D+d+a+n+g+w  +ag tg         fn  kq +++Dp geyi++wv ela++pa+yi +p +a++e     + ++g +Yp++
+         Q5IFN2 413 HHLLDYDTASNWGNWCAAAGmTGGRI----NRFNIAKQTKDYDPAGEYIKTWVKELAEVPAAYIADPNQAPREL----RDRIGLNYPNK 493
+                    ****************9999444333....579***********************************888665....46899999986 PP
+
+>> Q651U1  broad_family=cryptochrome org=Oryza sativa subsp. japonica len=582 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  173.1   0.1   1.4e-53   1.7e-53       2     161 ..     385     541 ..     383     562 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 173.1 bits;  conditional E-value: 1.4e-53
+  FAD_binding_7   2 lsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevf 97 
+                    l el+wr++++ + a++ +   +   ++  e +w++d+  + +e W++GrTGyP++DA m++L atG+m+nr R+iv sFl++d+ idWr+gae+f
+         Q651U1 385 LFELIWRDYFRFISAKYGNSIFHLGGPRNVESKWSQDQ--ALFESWRDGRTGYPLIDANMKELLATGFMSNRGRQIVCSFLVRDMGIDWRMGAEWF 478
+                    479***************9999999999999***6664..59****************************************************** PP
+
+  FAD_binding_7  98 aellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyi 161
+                    +++l+D+d+a+n+g+w + ag+g d ++  r+f+  kq++ +Dpdgey+  w+Pel+++ ++  
+         Q651U1 479 ETCLLDYDPASNYGNWTYGAGVGNDPRE-DRYFSIPKQAKTYDPDGEYVAYWLPELRSIAKERR 541
+                    **************************96.5***************************9998765 PP
+
+>> Q84KJ5  broad_family=cryptochrome org=Arabidopsis thaliana len=569 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  165.0   0.2   4.2e-51   5.2e-51       2     165 ..     367     527 ..     365     538 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 165.0 bits;  conditional E-value: 4.2e-51
+  FAD_binding_7   2 lsellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevf 97 
+                    l el+wr++++ l ++  +   +   ++  + +w++d+  + +e W++++TGyP++DA m++L +tG+m+nr R+iv sFl++d+ +dWr+gae+f
+         Q84KJ5 367 LFELIWRDYFRFLSIKCGNSLFHLGGPRNVQGKWSQDQ--KLFESWRDAKTGYPLIDANMKELSTTGFMSNRGRQIVCSFLVRDMGLDWRMGAEWF 460
+                    479**************99999999999999***6664..59****************************************************** PP
+
+  FAD_binding_7  98 aellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpakyihepw 165
+                    +++l+D+d+++n+g+w + ag+g d ++  r+f+  kq++++Dp+gey+  w+ +l++lp++  h p 
+         Q84KJ5 461 ETCLLDYDPCSNYGNWTYGAGVGNDPRE-DRYFSIPKQAQNYDPEGEYVAFWLQQLRRLPKEKRHWPG 527
+                    **************************96.5********************************999775 PP
+
+>> Q7SI68  broad_family=cryptochrome org=Neurospora crassa (strain ATCC 24698 / 74-OR23-1A / CBS 708.71 / DSM 1257 / FGS
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  160.9   0.3   7.7e-50   9.4e-50       4     177 ..     352     549 ..     349     564 .. 0.84
+
+  Alignments for each domain:
+  == domain 1  score: 160.9 bits;  conditional E-value: 7.7e-50
+  FAD_binding_7   4 ellwrefyyqllaaepel.........eeknlkeefdeipweedeed..............ekleaWkeGrTGyPivDAamrqLratGwmhnrlRm 76 
+                    ellwr++++ +  ++ +          ++++++ e +++ w++ +++              e l+++++G+TG+ ++DA  r+L +tG+ +nr R+
+         Q7SI68 352 ELLWRDYMRLCHQKYGDKlfrvegfngKHTDYEGEDKKYGWRTANTSialpgqeptpekvsEILARFNAGTTGMGLIDASQRELIHTGYTSNRTRQ 447
+                    788888877666666444355555554455555555556665533335556666667778899********************************* PP
+
+  FAD_binding_7  77 ivasFltkdLlidWregaevfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklp.akyihepwkaeaee 171
+                     vasFl+k+L idWr gae+++ llvD+d+++n+++wq+vag+g d + + rifnpvkq+ ++D+dg+y+r+wvPe+ak++  + +++ w+a++e+
+         Q7SI68 448 NVASFLAKHLEIDWRYGAEWYEMLLVDYDVSSNWANWQYVAGVGNDPRGAARIFNPVKQAFDYDKDGTYVRTWVPEVAKFEnLENVFQAWTASKED 543
+                    ********************************************************************************966899****999988 PP
+
+  FAD_binding_7 172 qkkagv 177
+                     k+ag+
+         Q7SI68 544 LKTAGL 549
+                    887765 PP
+
+>> Q5QXE0  broad_family=cryptochrome org=Idiomarina loihiensis (strain ATCC BAA-735 / DSM 15497 / L2-TR) len=449 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  149.7   0.6     2e-46   2.5e-46       3     159 ..     286     439 ..     283     447 .. 0.85
+
+  Alignments for each domain:
+  == domain 1  score: 149.7 bits;  conditional E-value: 2e-46
+  FAD_binding_7   3 sellwrefyyqllaaepeleeknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaevfa 98 
+                     ellwre++++ + ++ +        + ++ +   +  +e++++W++G+T yPiv A+m+qL+atG+m+nr R++vas ++++L +dWr ga++f+
+         Q5QXE0 286 FELLWREYFFWYALKHGKRLFAFSGLSGKSPKT--SFYSERFQKWCSGNTPYPIVNACMKQLNATGYMSNRGRQLVASCFVHELSLDWRYGAAYFE 379
+                    69*****99988888866533333333222222..223378******************************************************* PP
+
+  FAD_binding_7  99 ellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklpak 159
+                    ++l+D+d+++n+g+wq++ag+gad +   r fn  kq e++Dpd e+i+rw   l+  p +
+         Q5QXE0 380 QQLIDYDVSSNWGNWQYLAGVGADPR-GHRQFNLEKQTERYDPDNEFIERWAGDLSGQPID 439
+                    *************************9.56**********************9999887755 PP
+
+>> Q4I1Q6  broad_family=cryptochrome org=Gibberella zeae (strain ATCC MYA-4620 / CBS 123657 / FGSC 9075 / NRRL 31084 / P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  142.9   0.5   2.4e-44   2.9e-44       4     174 ..     349     536 ..     346     557 .. 0.82
+
+  Alignments for each domain:
+  == domain 1  score: 142.9 bits;  conditional E-value: 2.4e-44
+  FAD_binding_7   4 ellwrefyyqllaaepel.........eeknlkeefdeipweedeed............ekleaWkeGrTGyPivDAamrqLratGwmhnrlRmiv 78 
+                    ellwr++++ + +++ +          ++ n+++++   + e+   +            + +++W +G+TG+ +vDA  r+L+ tG+ +nr+R+ v
+         Q4I1Q6 349 ELLWRDYMRLCTFKFRTRlfkidgfkgASGNYTKKWLTDREED---AepdqnptpaqvkDMIDRWIRGTTGMGLVDASQRELQLTGYTSNRARQNV 441
+                    8999999999999886654666666552333333332222222...023345666777789*********************************** PP
+
+  FAD_binding_7  79 asFltkdLlidWregaevfaellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvPelaklp.akyihepwkaeaeeqk 173
+                    as+ltk L idWr gae++++ l+D+d+ +n+g+wq++a++g d +   r fn vkq+ ++D+dg++ r+wv e+++++  +++++  +++++e +
+         Q4I1Q6 442 ASYLTKSLGIDWRLGAEYYEQSLIDYDTHSNWGNWQYQASCGNDPR--SRSFNQVKQAFDYDQDGRFTRTWVNEVKSIDrLEHVFQICTCPKQELE 535
+                    ********************************************99..6*****************************966778887766666665 PP
+
+  FAD_binding_7 174 k 174
+                    k
+         Q4I1Q6 536 K 536
+                    5 PP
+
+>> Q87JP5  broad_family=cryptochrome org=Vibrio parahaemolyticus serotype O3:K6 (strain RIMD 2210633) len=445 EC=
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  139.9   3.6   2.1e-43   2.5e-43       3     151 ..     274     419 ..     271     443 .. 0.83
+
+  Alignments for each domain:
+  == domain 1  score: 139.9 bits;  conditional E-value: 2.1e-43
+  FAD_binding_7   3 sellwrefyyqllaaepele..eknlkeefdeipweedeedekleaWkeGrTGyPivDAamrqLratGwmhnrlRmivasFltkdLlidWregaev 96 
+                     ellwre++y+ +  +++       ++++    +      ++++++Wk+G+T yPiv A+m qL++tG+m+nr R++vas l+++L +dWr ga++
+         Q87JP5 274 FELLWREYFYWYARCYQQRLfrFGGIRNQPPLTSF----YAHRFQQWKNGTTPYPIVNACMHQLNHTGYMSNRGRQLVASCLVHELGLDWRYGAAY 365
+                    69*****9998877665553123333333333222....2358***************************************************** PP
+
+  FAD_binding_7  97 faellvDadlainaggwqwvagtgadaapyfrifnpvkqgekfDpdgeyirrwvP 151
+                    f+++l+D+d+++n+g+wq++ag+gad +   r fn  kq + +Dp+ e+i+rw  
+         Q87JP5 366 FETQLIDYDVGSNWGNWQYLAGVGADPRG-SRQFNLEKQTQMYDPNHEFIERWQG 419
+                    ***************************95.6**********************65 PP
+
+>> WP_032397095.1  broad_family=SPL org=Rhodococcoides fascians len=406 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   31.2   5.8     4e-10   4.8e-10      61     124 ..     160     223 ..     109     235 .. 0.81
+
+  Alignments for each domain:
+  == domain 1  score: 31.2 bits;  conditional E-value: 4e-10
+   FAD_binding_7  61 mrqLratGwmhnrlRmivasFltkdLlidWregaevfaellvDadlainaggwqwvagtgadaa 124
+                     + +L++ Gw+ n+ Rm +as  +      Wr g++ +  +l+D+  a+n  gwqw+ gtg  ++
+  WP_032397095.1 160 VGELHQDGWLVNQTRMWLASQWAVRAGATWRDGEDEMFAHLLDGSRAANRLGWQWTVGTGSGKV 223
+                     669*******************************************************998766 PP
+
+>> QCI56913.1  broad_family=SPL org=Rhodococcoides fascians strain MCCC 1A03174 len=406 EC=4.1.99.3
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 ?   -2.7   0.0       9.6        12      54      73 ..      47      66 ..      44      69 .. 0.81
+   2 !   29.8   5.7   1.1e-09   1.3e-09      61     124 ..     160     223 ..     109     235 .. 0.81
+
+  Alignments for each domain:
+  == domain 1  score: -2.7 bits;  conditional E-value: 9.6
+  FAD_binding_7 54 yPivDAamrqLratGwmhnr 73
+                       DAa+  L  tG+   r
+     QCI56913.1 47 QSAADAALASLDITGYARDR 66
+                   5567***********98765 PP
+
+  == domain 2  score: 29.8 bits;  conditional E-value: 1.1e-09
+  FAD_binding_7  61 mrqLratGwmhnrlRmivasFltkdLlidWregaevfaellvDadlainaggwqwvagtgadaa 124
+                    + +L++ Gw+ n+ Rm +as  +      Wr g++ + ++l+D+  a+n  gwqw+ gtg  ++
+     QCI56913.1 160 VGELHSDGWLVNQTRMWLASQWAVRAGATWRDGEDEMFTHLLDGSRAANRLGWQWTVGTGSGKV 223
+                    5689******************************************************998665 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (203 nodes)
+Target sequences:                         66  (34359 residues searched)
+Passed MSV filter:                        61  (0.924242); expected 1.3 (0.02)
+Passed bias filter:                       61  (0.924242); expected 1.3 (0.02)
+Passed Vit filter:                        58  (0.878788); expected 0.1 (0.001)
+Passed Fwd filter:                        54  (0.818182); expected 0.0 (1e-05)
+Initial search space (Z):                 66  [actual number of targets]
+Domain search space  (domZ):              54  [number of targets reported over threshold]
+# CPU time: 0.04u 0.00s 00:00:00.04 Elapsed: 00:00:00.04
+# Mc/sec: 164.10
+//
+Query:       DPRP  [M=224]
+Accession:   PF04244.20
+Description: Deoxyribodipyrimidine photo-lyase-related protein
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence Description
+    ------- ------ -----    ------- ------ -----   ---- --  -------- -----------
+    1.3e-88  288.6   0.1      2e-87  284.7   0.0    2.2  3  A9CH39    broad_family=6-4 org=Agrobacterium fabrum (strain C
+
+
+Domain annotation for each sequence (and alignments):
+>> A9CH39  broad_family=6-4 org=Agrobacterium fabrum (strain C58 / ATCC 33970) len=507 EC=4.1.99.13
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !  284.7   0.0     3e-89     2e-87       1     224 []       5     227 ..       5     227 .. 0.99
+   2 ?   -4.3   0.1      0.68        45      34      45 ..     360     371 ..     345     372 .. 0.65
+   3 ?    1.4   0.1     0.013      0.86     173     195 ..     461     483 ..     458     502 .. 0.73
+
+  Alignments for each domain:
+  == domain 1  score: 284.7 bits;  conditional E-value: 3e-89
+    DPRP   1 vlilgdqLneehsaleeadkaedvvllaEvaeeatyvkhHkqKivlffaaMrhFaeeLrakglrveylklddaaneqslaeelaaaleelkieelvvtepgey 103
+             vlilgdqL+++++al+ +dk++d+++l+Ev++ea+yv hHk+Ki+++f+aMrhFaeeLr +g+rv+y+++dda+n++s+++e+++a++ l +++++vtepge+
+  A9CH39   5 VLILGDQLSPSIAALDGVDKKQDTIVLCEVMAEASYVGHHKKKIAFIFSAMRHFAEELRGEGYRVRYTRIDDADNAGSFTGEVKRAIDDLTPSRICVTEPGEW 107
+             69***************************************************************************************************** PP
+
+    DPRP 104 rleqrleelaekleleveivedehFltsreefkewakgrkqlrmesFYremRkrtgiLmdedgkPvGGkWnfDaeNRkklpkklevpeplrfepdaitkevle 206
+             r++++++ +a +++++v+i++d++Fl s+ ef++wa grk+l+me+FYremR++tg+Lm++++ PvGG+WnfDaeNR++++ +l  p+ + f+pd+itkev++
+  A9CH39 108 RVRSEMDGFAGAFGIQVDIRSDRRFLSSHGEFRNWAAGRKSLTMEYFYREMRRKTGLLMNGEQ-PVGGRWNFDAENRQPARPDLLRPKHPVFAPDKITKEVID 209
+             ***********************************************************8776.*************************************** PP
+
+    DPRP 207 lvekrfadhfGsldefdw 224
+             +ve+ f+d+fG+l++f +
+  A9CH39 210 TVERLFPDNFGKLENFGF 227
+             ***************975 PP
+
+  == domain 2  score: -4.3 bits;  conditional E-value: 0.68
+    DPRP  34 atyvkhHkqKiv 45 
+              + + hH q+++
+  A9CH39 360 ENAYAHHIQRLM 371
+             467888888876 PP
+
+  == domain 3  score: 1.4 bits;  conditional E-value: 0.013
+    DPRP 173 WnfDaeNRkklpkklevpeplrf 195
+             W f a NR+kl++++++ +p   
+  A9CH39 461 WDFLARNREKLKSNHRLAQPYAT 483
+             9999**********888776654 PP
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (224 nodes)
+Target sequences:                         66  (34359 residues searched)
+Passed MSV filter:                         4  (0.0606061); expected 1.3 (0.02)
+Passed bias filter:                        4  (0.0606061); expected 1.3 (0.02)
+Passed Vit filter:                         1  (0.0151515); expected 0.1 (0.001)
+Passed Fwd filter:                         1  (0.0151515); expected 0.0 (1e-05)
+Initial search space (Z):                 66  [actual number of targets]
+Domain search space  (domZ):               1  [number of targets reported over threshold]
+# CPU time: 0.00u 0.00s 00:00:00.00 Elapsed: 00:00:00.00
+# Mc/sec: 3177.36
+//
+[ok]

@@ -1,0 +1,23 @@
+For the paired region analysis, we searched all 2{,}838 qualified dark models and 3{,}013
+qualified controls as complete chains and as confidence-defined regions against the frozen
+PDB Foldseek database downloaded on 30 July 2026. A centred 15-residue moving average of
+per-residue pLDDT, shortened at chain ends, identified intervals at or above 0.70.
+We bridged gaps of at most five residues when their mean unsmoothed pLDDT was at least 0.55,
+then retained intervals of at least 50 residues. Each model contributed a positive crop outcome
+when any eligible region reached query-normalised TM-score 0.5. Models without eligible
+regions remained in the unconditional denominator. Both search arms used Foldseek
+\texttt{10-941cd33}, \texttt{--alignment-type 1 -e 10 -s 9.5 --max-seqs 1000}.
+Queries reaching the hit cap while remaining unmatched under any exclusion tier were rerun
+with \texttt{--max-seqs 5000}. The primary tier removed each control's source PDB entry;
+further tiers removed alignments at or above 30\%, 25\% and 20\% sequence identity.
+The GPU sensitivity used the same structures and padded frozen reference on ORIX, with
+\texttt{--gpu 1 --prefilter-mode 1 --max-seqs 1000}. This changes the retrieval algorithm to
+ungapped prefiltering. Supplementary Note S3 reports cap saturation and CPU--GPU disagreement.
+
+The paired analysis uses query-normalised scores throughout. An audit of the Foldseek build's
+alignment-normalised score found that its normalisation length omitted one residue from
+inclusive alignment spans. The same length also enters the distance scale and optimisation;
+exact correction requires rescoring the coordinates. Raw alignment-normalised values are
+preserved as software diagnostics. The whole-chain and crop endpoints and the pooled
+1{,}031-model dark group depend exclusively on query-normalised scores, whose normalisation
+uses the full query length in this implementation.

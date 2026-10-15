@@ -1,0 +1,1268 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "E9EYW7",
+  "uniProtkbId": "PHR1_METRA",
+  "entryAudit": {
+    "firstPublicDate": "2026-01-28",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2011-04-05",
+    "entryVersion": 54,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 4.0,
+  "organism": {
+    "scientificName": "Metarhizium robertsii (strain ARSEF 23 / ATCC MYA-3075)",
+    "commonName": "Metarhizium anisopliae (strain ARSEF 23)",
+    "taxonId": 655844,
+    "lineage": [
+      "Eukaryota",
+      "Fungi",
+      "Dikarya",
+      "Ascomycota",
+      "Pezizomycotina",
+      "Sordariomycetes",
+      "Hypocreomycetidae",
+      "Hypocreales",
+      "Clavicipitaceae",
+      "Metarhizium"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "33438355"
+          }
+        ],
+        "value": "Cyclobutane pyrimidine dimer photolyase"
+      },
+      "shortNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "33438355"
+            }
+          ],
+          "value": "CPD photolyase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "33438355"
+            }
+          ],
+          "value": "4.1.99.3"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "33438355"
+            }
+          ],
+          "value": "DNA photolyase 1"
+        }
+      },
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "33438355"
+            }
+          ],
+          "value": "Photoreactivating enzyme 1"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "33438355"
+          }
+        ],
+        "value": "PHR1"
+      },
+      "orfNames": [
+        {
+          "value": "MAA_05216"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "33438355"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "36441642"
+            }
+          ],
+          "value": "Photolyase that enables photorepair of fungal DNA lesions in the forms of UV-induced cyclobutane pyrimidine dimer (CPD) photoproducts (PubMed:33438355, PubMed:36441642). PHR1 and PHR2 are highly efficient in reactivation of UVB-inactivated conidia (PubMed:33438355, PubMed:36441642)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "cyclobutadipyrimidine (in DNA) = 2 pyrimidine residues (in DNA).",
+        "ecNumber": "4.1.99.3",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305",
+            "source": "PubMed",
+            "id": "33438355"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P27526"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:15636"
+          }
+        }
+      ]
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "FAD",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P27526"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:57692"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "P27526"
+              }
+            ],
+            "value": "Binds 1 FAD per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "33438355"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "36441642"
+            }
+          ],
+          "value": "Interacts with circadian oscillator components WC1 and WC2 (PubMed:33438355, PubMed:36441642). Interacts with RAD10 (PubMed:36441642)"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "33438355"
+            }
+          ],
+          "value": "Expression is positively regulated by the light-responsive transcription regulatory complex WCC formed by WC1 and WC2"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the DNA photolyase class-1 family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 587,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Cyclobutane pyrimidine dimer photolyase",
+      "featureId": "PRO_0000463126"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 93,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 230,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Photolyase/cryptochrome alpha/beta",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PROSITE-ProRule",
+          "id": "PRU00976"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 41,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 10,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 31,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 41,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic and acidic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 333,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 333,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PIRSR",
+          "id": "PIRSR602081-1"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 345,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 349,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PIRSR",
+          "id": "PIRSR602081-1"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 385,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 385,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PIRSR",
+          "id": "PIRSR602081-1"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 388,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 395,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PIRSR",
+          "id": "PIRSR602081-1"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 486,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 488,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PIRSR",
+          "id": "PIRSR602081-1"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 420,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 420,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PIRSR",
+          "id": "PIRSR602081-2"
+        }
+      ]
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 473,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 473,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PIRSR",
+          "id": "PIRSR602081-2"
+        }
+      ]
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 496,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 496,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PIRSR",
+          "id": "PIRSR602081-2"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0157",
+      "category": "Ligand",
+      "name": "Chromophore"
+    },
+    {
+      "id": "KW-0274",
+      "category": "Ligand",
+      "name": "FAD"
+    },
+    {
+      "id": "KW-0285",
+      "category": "Ligand",
+      "name": "Flavoprotein"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "21253567",
+        "citationType": "journal article",
+        "authors": [
+          "Gao Q.",
+          "Jin K.",
+          "Ying S.-H.",
+          "Zhang Y.",
+          "Xiao G.",
+          "Shang Y.",
+          "Duan Z.",
+          "Hu X.",
+          "Xie X.-Q.",
+          "Zhou G.",
+          "Peng G.",
+          "Luo Z.",
+          "Huang W.",
+          "Wang B.",
+          "Fang W.",
+          "Wang S.",
+          "Zhong Y.",
+          "Ma L.-J.",
+          "St Leger R.J.",
+          "Zhao G.-P.",
+          "Pei Y.",
+          "Feng M.-G.",
+          "Xia Y.",
+          "Wang C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "21253567"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1371/journal.pgen.1001264"
+          }
+        ],
+        "title": "Genome sequencing and comparative transcriptomics of the model entomopathogenic fungi Metarhizium anisopliae and M. acridum.",
+        "publicationDate": "2011",
+        "journal": "PLoS Genet.",
+        "firstPage": "E1001264",
+        "lastPage": "E1001264",
+        "volume": "7"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ARSEF 23 / ATCC MYA-3075",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "25368161",
+        "citationType": "journal article",
+        "authors": [
+          "Hu X.",
+          "Xiao G.",
+          "Zheng P.",
+          "Shang Y.",
+          "Su Y.",
+          "Zhang X.",
+          "Liu X.",
+          "Zhan S.",
+          "St Leger R.J.",
+          "Wang C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "25368161"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.1412662111"
+          }
+        ],
+        "title": "Trajectory and genomic determinants of fungal-pathogen speciation and host adaptation.",
+        "publicationDate": "2014",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "16796",
+        "lastPage": "16801",
+        "volume": "111"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ARSEF 23 / ATCC MYA-3075",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "33438355",
+        "citationType": "journal article",
+        "authors": [
+          "Peng H.",
+          "Guo C.T.",
+          "Tong S.M.",
+          "Ying S.H.",
+          "Feng M.G."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "33438355"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/1462-2920.15398"
+          }
+        ],
+        "title": "Two white collar proteins protect fungal cells from solar UV damage by their interactions with two photolyases in Metarhizium robertsii.",
+        "publicationDate": "2021",
+        "journal": "Environ. Microbiol.",
+        "firstPage": "4925",
+        "lastPage": "4938",
+        "volume": "23"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "INDUCTION",
+        "INTERACTION WITH WC1 AND WC2"
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "36441642",
+        "citationType": "journal article",
+        "authors": [
+          "Zhang Y.L.",
+          "Peng H.",
+          "Ying S.H.",
+          "Feng M.G."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "36441642"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/php.13752"
+          }
+        ],
+        "title": "Efficient Photoreactivation of Solar UV-Injured Metarhizium robertsii by Rad1 and Rad10 Linked to DNA Photorepair-Required Proteins.",
+        "publicationDate": "2023",
+        "journal": "Photochem. Photobiol.",
+        "firstPage": "1122",
+        "lastPage": "1130",
+        "volume": "99"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "INTERACTION WITH RAD10; WC1 AND WC2"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "ADNJ02000002",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "EFY99158.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "XP_007821405.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "XM_007823214.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "E9EYW7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "E9EYW7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "19259502",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "maj:MAA_05216",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_010348_2_1_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "435881at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000002498",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Unassembled WGS sequence"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005737",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005634",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleus"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003904",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:deoxyribodipyrimidine photo-lyase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003677",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:DNA binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0071949",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:FAD binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0032922",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:circadian regulation of gene expression"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0043153",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:entrainment of circadian clock by photoperiod"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006950",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:response to stress"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-ARBA"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.579.10:FF:000003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Deoxyribodipyrimidine photo-lyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.25.40.80",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.579.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA Cyclobutane Dipyrimidine Photolyase, subunit A, domain 3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.620",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HUPs"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036134",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_FAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036155",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005101",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochr/Photolyase_FAD-bd"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR002081",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/DNA_photolyase_1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR018394",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_1_CS_C"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006050",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014729",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rossmann-like_a/b/a_fold"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CRYPTOCHROME"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455:SF18",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SI:CH1073-390K14.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00875",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF03441",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "FAD_binding_7"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00147",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNAPHOTLYASE"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF48173",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase FAD-binding domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF52425",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00394",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_PHOTOLYASES_1_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00691",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_PHOTOLYASES_1_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51645",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHR_CRY_ALPHA_BETA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MARKSSKRKPSSPDHTNGNSAKRSRNANGLREPHPLAAEAERHGIVLRKYYPPEMSNARARAYNNNEIPRPMEDLVTALYNTTEQRQRVEAKDSVIHWFKTDLRCNDNRALALASEKAKETAVPLICMYIVSPQDFEAHLTSPVRVDFILRTLEILKRDLAKLDIPLYIETVERRKQIPDRVLELMEQWGSRHLFANMEYEVDELRREANMVHDLAENGKSFEVVHDTCVVPPGQLQSGSGNQYAVYSPWYRSWVAHIHADLDLLELFDPPNKNPGTARKRFKDLFDCAVPEAPSNKELTKEEKRRFHSLWPAGENAAKERLDKFCEERIGGYSDNRNIPAEDGTSSLSVHLASGSISSRTCVRTARDRNKTKKLDGGNEGIRVWISEVAWRDFYKHVLVHWPYVCMNKPYKPEYSNIAWSYNEEHFKAWCEGRTGFPIVDAAMRQLNHNGYMHNRCRMIVASFLSKDLLIDWRKGERYFMEHLIDGDFASNNGGWGFSASVGVDPQPYFRIFNPLLQSEKFDPEGVYIRKWVPELQDLDNKEIHDPYGRGAGAKARKAGYPKPIVNHKDCRDRALNAYKEGIANGM",
+    "length": 587,
+    "molWeight": 67477,
+    "crc64": "BD58CA8BFE85B2F0",
+    "md5": "2570FBF3B726177E4C00BDADBE526BF5"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 2,
+      "SUBUNIT": 1,
+      "INDUCTION": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 1,
+      "Region": 1,
+      "Compositional bias": 2,
+      "Binding site": 5,
+      "Site": 3
+    },
+    "uniParcId": "UPI0001FDF6F3"
+  }
+}

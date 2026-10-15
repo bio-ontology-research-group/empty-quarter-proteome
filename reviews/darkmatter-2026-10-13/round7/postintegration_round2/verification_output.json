@@ -1,0 +1,345 @@
+{
+  "manuscript_and_pdf_integrity": {
+    "main_tex_sha256": "845437b893ca1da1c38bce3ba790b62c096ddf6675136d4a597c2216de0bc10b",
+    "submitted_tex_sha256": "845437b893ca1da1c38bce3ba790b62c096ddf6675136d4a597c2216de0bc10b",
+    "tex_identical": true,
+    "submitted_pdf_sha256": "c8ea216f43eb045a167cf153d96690fdf3aa0820820aab5ac0437eec56c4d99f",
+    "submitted_fig4_sha256": "730647d2c7353339869810ef1f1407e9a497ba980910d31d62b3ccd9c8c82fab",
+    "pdf_integrity_scan_path": "reviews/darkmatter-2026-10-13/round7/manuscript/pdf_integrity_after_round1.txt",
+    "pdf_integrity_scan_text": "#### main.pdf\n  FLAG white-on-blank text:\n  p32 WHITE-on-blank size=6.6: 69\n  p32 WHITE-on-blank size=6.6: 90\n  p32 WHITE-on-blank size=6.6: 61",
+    "supplement_order_verified": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "round1_criticisms_closed_in_tex": 12,
+    "obsolete_alntm_phrases_found": []
+  },
+  "h1_verification": {
+    "status": "PASS",
+    "snapshot_files_verified": 67,
+    "n_genomes": 237,
+    "class_counts": {
+      "SW-10-69-26": 185,
+      "E2": 51,
+      "Thermoplasmata": 1
+    },
+    "single_thermoplasmata_genome": {
+      "genome": "F41Dr3__self_SemiBin_814",
+      "aai_nearest": "GCA_035541015.1",
+      "aai": 48.678,
+      "comparator_lineage": "d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__JACQPN01;f__JAIVGT01;g__DATLFM01;s__DATLFM01 sp035541015",
+      "same_class": false
+    },
+    "median_dark_fraction": 0.3096,
+    "unique_comparators": 32,
+    "comparator_pair_sources": {
+      "GTDB_r232_rep": 229,
+      "MGnify": 8
+    },
+    "env_pairs": {
+      "soil": 142,
+      "marine_sediment": 3,
+      "unknown": 92,
+      "known_total": 145
+    },
+    "tree_tips": {
+      "desert": 237,
+      "gtdb_thermoplasmatota": 1647,
+      "outgroup": 30,
+      "total": 1914
+    },
+    "lambda_ml": 0.915784,
+    "lambda_ci95": [
+      0.846303,
+      0.957823
+    ],
+    "r2_gls": 0.469051,
+    "aai_coef": 0.001704,
+    "aai_se": 0.000407,
+    "aai_p": 4.065008e-05,
+    "rbh_coef": -0.137484,
+    "rbh_se": 0.019456,
+    "rbh_p": 1.879206e-11,
+    "sensitivity_specs_count": 7,
+    "s6_same_class_n": 236,
+    "s7_gtdb_only_n": 232
+  },
+  "h2_verification": {
+    "status": "PASS",
+    "snapshot_files_verified": 27,
+    "h2_h4_cohort_identity_verified": true,
+    "attrition_funnel": {
+      "K": {
+        "gate0_confidence_qualified": 1031,
+        "gate1_refined_mag_binned": 917,
+        "gate2_drep_species_ge1": 898,
+        "gate3_multi_species_ge2": 570
+      },
+      "QnotK": {
+        "gate0_confidence_qualified": 1807,
+        "gate1_refined_mag_binned": 1509,
+        "gate2_drep_species_ge1": 1480,
+        "gate3_multi_species_ge2": 891
+      }
+    },
+    "tier1_counts": {
+      "total": 353,
+      "K": 173,
+      "QnotK": 180,
+      "loci": 877
+    },
+    "tier1_retention_pct": {
+      "total": 24.16,
+      "K": 30.35,
+      "QnotK": 20.2
+    },
+    "tier1_recurrence_pct": {
+      "K_obs": 40.46,
+      "K_exp": 8.71,
+      "K_excess": 31.75,
+      "Q_obs": 32.22,
+      "Q_exp": 6.56,
+      "Q_excess": 25.67
+    },
+    "tier1_16_strata_recomputed_mh_excess_diff": 0.035358,
+    "tier1_p_perm": 0.406859,
+    "strict_96_pairs": {
+      "k_pct": 31.25,
+      "q_pct": 31.25,
+      "excess_diff": -0.00544,
+      "p_perm": 0.922608
+    },
+    "tier2_counts": {
+      "total": 637,
+      "ineligible_missing": 824,
+      "K": 260,
+      "QnotK": 377
+    },
+    "tier2_mh_excess_diff": 0.018391,
+    "tier2_p_perm": 0.561844,
+    "species_disjoint_112": {
+      "K": 51,
+      "QnotK": 61,
+      "K_excess": 0.261855,
+      "QnotK_excess": 0.19843
+    },
+    "tier3_counts": {
+      "total": 1320,
+      "ineligible_missing": 141,
+      "K": 521,
+      "QnotK": 799
+    },
+    "bins_verified": {
+      "verified": 2041,
+      "missing": 85,
+      "total": 2126
+    }
+  },
+  "h3_verification": {
+    "status": "PASS",
+    "raw_audit_job": "53796328",
+    "raw_audit_status": "PASS",
+    "smag_frame": 40039,
+    "smag_sampled": 1500,
+    "gem_frame": 52515,
+    "gem_sampled_per_seed": 2055,
+    "zenodo_parts_verified": 373,
+    "primary_matched_proteins": 4210592,
+    "primary_matched_residues": 1295970055,
+    "pre_matching_shared_seqs": 25067,
+    "post_matching_shared_seqs": 22310,
+    "no_overlap_matched_proteins": 4185525,
+    "no_overlap_matched_residues": 1289129312,
+    "primary_dark": {
+      "smag_hits": 30064,
+      "gem_hits": 10399,
+      "both": 8015,
+      "smag_only": 22049,
+      "gem_only": 2384,
+      "neither": 73594,
+      "smag_pct": 28.35,
+      "gem_pct": 9.81,
+      "delta_pct": 18.54
+    },
+    "primary_control": {
+      "smag_hits": 99673,
+      "gem_hits": 96385,
+      "both": 94277,
+      "smag_only": 5396,
+      "gem_only": 2108,
+      "neither": 4261,
+      "smag_pct": 93.99,
+      "gem_pct": 90.89,
+      "delta_pct": 3.1
+    },
+    "harmonized_deltas": [
+      18.54,
+      16.83,
+      16.91
+    ],
+    "published_deltas": [
+      18.46,
+      16.87,
+      16.91
+    ],
+    "no_overlap_delta": 18.62,
+    "id30_delta": 18.14,
+    "all_40_dark_length_strata_positive": true
+  },
+  "h4_and_fig4_verification": {
+    "status": "PASS",
+    "total_models": 5851,
+    "total_regions": 7773,
+    "models_no_region": 161,
+    "cpu_pooled_k_tier1": {
+      "n": 1031,
+      "eligible": 984,
+      "wc_matched": 67,
+      "wc_matched_pct": 6.5,
+      "wc_unmatched": 964,
+      "crop_recovered": 714,
+      "crop_recovered_pct": 74.07,
+      "crop_matched_total": 775,
+      "crop_matched_total_pct": 75.17,
+      "transitions_unmatched": {
+        "recovered": 714,
+        "persistent_low_score": 167,
+        "raw_zero_retrieval": 38,
+        "post_exclusion_empty": 0,
+        "no_confident_region": 45
+      },
+      "transitions_matched": {
+        "retained": 61,
+        "lost_low_score": 4,
+        "lost_no_confident_region": 2
+      }
+    },
+    "cpu_other_dark_tier1": {
+      "n": 1807,
+      "wc_matched": 1408,
+      "wc_matched_pct": 77.92,
+      "crop_matched": 1578,
+      "crop_matched_pct": 87.33,
+      "q_not_k_pdb": {
+        "n": 1107,
+        "wc_matched": 1107,
+        "crop_matched": 1009
+      },
+      "q_not_k_afdb_only": {
+        "n": 700,
+        "wc_matched": 301,
+        "crop_matched": 569,
+        "wc_unmatched_recovered": 292
+      }
+    },
+    "cpu_controls": {
+      "n": 3013,
+      "wc_matched_tier1": 2878,
+      "wc_matched_tier1_pct": 95.52,
+      "crop_matched_by_tier": {
+        "0": 2902,
+        "1": 2889,
+        "2": 2842,
+        "3": 2823,
+        "4": 2796
+      },
+      "adaptive_expanded_wc": 39,
+      "adaptive_expanded_crop": 55,
+      "final_cap_saturated_unmatched_wc": [
+        "KF001671",
+        "KF001867",
+        "KF003576"
+      ],
+      "final_cap_saturated_unmatched_crop": [
+        "KF003576_reg1"
+      ]
+    },
+    "gpu_sensitivity": {
+      "job": "53796103",
+      "wc_rows": 2853102,
+      "crop_rows": 3228450,
+      "alntm_gt1_rows": 1708,
+      "pooled_k_tier1": {
+        "wc_unmatched": 961,
+        "crop_recovered": 731,
+        "crop_recovered_pct": 76.07,
+        "crop_matched_total": 794,
+        "crop_matched_total_pct": 77.01,
+        "wc_disagreements_vs_cpu": 41,
+        "crop_disagreements_vs_cpu": 43,
+        "cap_unmatched_dark": 0
+      },
+      "controls_by_tier": {
+        "0": {
+          "gpu_wc_unmatched": 93,
+          "gpu_crop_matched": 2911,
+          "gpu_wc_cap_unmatched": 2,
+          "gpu_crop_cap_unmatched": 0
+        },
+        "1": {
+          "gpu_wc_unmatched": 126,
+          "gpu_crop_matched": 2896,
+          "gpu_wc_cap_unmatched": 2,
+          "gpu_crop_cap_unmatched": 0
+        },
+        "2": {
+          "gpu_wc_unmatched": 220,
+          "gpu_crop_matched": 2816,
+          "gpu_wc_cap_unmatched": 18,
+          "gpu_crop_cap_unmatched": 35
+        },
+        "3": {
+          "gpu_wc_unmatched": 269,
+          "gpu_crop_matched": 2788,
+          "gpu_wc_cap_unmatched": 27,
+          "gpu_crop_cap_unmatched": 44
+        },
+        "4": {
+          "gpu_wc_unmatched": 329,
+          "gpu_crop_matched": 2753,
+          "gpu_wc_cap_unmatched": 38,
+          "gpu_crop_cap_unmatched": 53
+        }
+      }
+    },
+    "cpu_alntm_anomaly": {
+      "total_rows": 6845932,
+      "alntm_gt1_rows": 2194,
+      "row_exclusion_wc_models_changed_tiers2to4": 4,
+      "row_exclusion_crop_models_changed_tiers2to4": 9
+    }
+  },
+  "reproducibility_harness_checks": {
+    "status": "PASS",
+    "check_round7_registered_output": "PASS: 152 H1-H4 FROZEN claims from 27 checksum-pinned source files. No upstream rerun claimed.",
+    "current_revision_checks_output": "PASS: 49 revision claims and manuscript regression guards; historical whole-paper gates remain separate.",
+    "verify_py_quiet_output": "GATES: PASS (40 frozen artifacts; manuscript boundary language current)\nCOMPUTE: 62 pass | FROZEN: 216 pass | TABLE sources: 6 present | PROVENANCE: 25 ledger-pinned | FAIL: 0",
+    "h4_census_invariants_assertions": 118857,
+    "v7_closure_verification_removed_from_active_manifest": true,
+    "xrf_lab_table_present": true,
+    "rebuild_environment_py_present": true
+  },
+  "review_quote_verification": {
+    "status": "PASS",
+    "quotes_checked": 15,
+    "all_verbatim_in_submitted_main_tex": true,
+    "quotes": [
+      "Known phyla, unknown proteome: a controlled census of the Rub' al-Khali soil metagenome",
+      "The initial screen used both PDB and AlphaFold references; the paired experiment used a newer PDB snapshot and greater retrieval depth. These changes allow whole-chain classifications to differ between panels a and b.",
+      "Removing CPU rows with out-of-range alignment scores left the primary whole-chain and crop match classifications unchanged; stricter exclusion tiers changed whole-chain classifications for four distinct control models and crop classifications for nine distinct control models.",
+      "We selected one locus per family and species by descending complete-window eligibility, first for exact-coordinate windows and then for the same-strand stop-match sensitivity. Ties used descending counts of exact-mapped, exact-or-stop-mapped and present flanks, followed by contig length and gene count, then ascending member identifier.",
+      "Each stratum's weight was the product of its two group sizes divided by its total size",
+      "The same-class comparison retained 236 genomes, excluding the single Thermoplasmata representative whose primary comparator belonged to SW-10-69-26.",
+      "Cropping jointly changes sequence extent, score normalisation and search opportunity.",
+      "the public filereport returned zero runs on 13 October 2026. The recorded release date is 1 November 2026; public release or reviewer access remains to be confirmed before submission",
+      "A MAG deposition with MIMAG metadata and an archived release DOI are pending",
+      "complete raw-to-final reproduction is limited by 78 missing raw-file paths, 302 permission failures, unverified duplicate-run merge commands and incomplete historical claim-registry migration. These are documented submission prerequisites.",
+      "The complete analysis table rebuilds byte-for-byte from the preserved metadata, laboratory and climate summary tables; regenerating the original climate retrieval is a separate provenance gap",
+      "flanking annotation opportunity above versus at or below the pooled median",
+      "Reference database releases are named where they are used: UniRef50 2026\\_01, GTDB release 232, AlphaFold Database v6 on UniProt 2025\\_03, PDB release 250101, MGnify90 and MGnify90 2026\\_07, GEM, SPIRE, and the five desert studies listed in the Methods.",
+      "The comparator pool contained 218 GTDB R232 and 29 non-duplicate MGnify genomes in classes SW-10-69-26 and E2.",
+      "The same-class comparison retained 236 genomes, excluding the single Thermoplasmata representative whose primary comparator belonged to SW-10-69-26."
+    ]
+  }
+}

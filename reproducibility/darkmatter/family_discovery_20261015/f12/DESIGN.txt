@@ -1,0 +1,143 @@
+================================================================================
+PILOT FEASIBILITY STUDY DESIGN: HYPOTHESES F1 & F2 (EMPTY QUARTER MAGs)
+Version: 2.0 (Post-Root Intervention & Audit Correction, 2026-10-15)
+Original Version: DESIGN_v1.txt (Preserved)
+Author: agy Gemini Flash 3.8 High (Authorised Feasibility Execution)
+Governing Documents: CLAUDE.md, ROOT_ASSESSMENT.txt, ROOT_AUDIT.txt, ROOT_CORRECTION_REQUIRED.txt
+Local Directory:  reproducibility/darkmatter/family_discovery_20261015/f12/
+Remote Directory: /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/
+================================================================================
+
+PROSPECTIVE CORRECTION LOG (2026-10-15 Root Intervention):
+---------------------------------------------------------
+Following independent root audit of primary InterPro / UniProt metadata:
+1. PF00875 = DNA_photolyase (catalytic domain).
+2. PF03441 = FAD_binding_7, FAD binding domain of DNA photolyase (corrected from FAD_syn2).
+3. PF04244 = DPRP, Deoxyribodipyrimidine photo-lyase-related protein (family; corrected
+   from DNA_photolyase_C / universal N-terminal domain).
+4. PF00078 is RVT_1 reverse transcriptase and is COMPLETELY REMOVED; spore photoproduct
+   lyase (SplB outgroup) belongs to the Radical SAM family (PF04055).
+5. PF00702 = Hydrolase, generic haloacid dehalogenase-like hydrolase domain.
+6. PF13419 = HAD_2, HAD-superfamily subfamily IB phosphatase.
+7. TIGR01416 = Rieske_proteo (ubiquinol-cytochrome c reductase iron-sulfur subunit),
+   NOT MpgP; it is COMPLETELY EXCLUDED from compatible-solute phosphatase retrieval.
+8. EC Nomenclature disambiguation:
+   - EC 3.1.3.12 = trehalose-6-phosphate phosphatase (OtsB / TPP).
+   - EC 3.1.3.69 = glucosylglycerol-phosphate phosphatase (GgpP / StpA), NOT trehalose phosphatase.
+   - EC 3.1.3.70 = mannosyl-3-phosphoglycerate phosphatase (MpgP).
+   Each target and competing function is treated separately with authoritative, published references.
+9. Biological safety and benign scope:
+   No sequences from human pathogens or virulence-enhancement studies (e.g. M. tuberculosis)
+   are used. Reference targets are drawn exclusively from benign environmental bacteria,
+   archaea, and standard laboratory model organisms (e.g. Thermus thermophilus, Pyrococcus
+   horikoshii, Synechocystis sp. PCC 6803, E. coli K12, Thermoplasma acidophilum).
+
+1. EXECUTIVE MANDATE & SCIENTIFIC BOUNDARIES
+-------------------------------------------
+This pilot implements and executes empirical sequence-level feasibility analyses
+for additional biological hypotheses F1 and F2 approved in ROOT_ASSESSMENT.txt:
+- F1: Photolyase / cryptochrome family (CPF) identity, subfamily diversity, and coding completeness in the current 5,438-representative catalogue.
+- F2: Re-evaluation of historical 306 dark-orthogroup compatible-solute phosphatase predictions, specifically targeting the two named lead IDs from ROOT_ASSESSMENT (1PRr2__self_SemiBin_81::1PRr2_1391604_4 and S52PRr1__single_SemiBin_53::S52PRr1_477345_9) with current-catalogue remapping, coding integrity verification, competing-function discrimination against the HAD superfamily, and genomic context analysis.
+
+Strict constraints:
+- NO edits to the manuscript, references, claims registry, or H1-H4.
+- NO subagents or model delegation calls.
+- ALL remote parsing, fasta processing, alignment, search, and checksumming must run as real Slurm jobs on IBEX (account: pi-hohndor), guarded by require_slurm_worker.sh. Login nodes are strictly reserved for lightweight staging and scheduler submission.
+- NO bulk data transfer to the workstation; keep primary data remote and mirror only compact, verifiable evidence tables, manifests, logs, and summaries locally.
+- NO arbitrary thresholds or p-value-driven cherry-picking; feasibility passes when reliable loci and defensible family identity permit a nontrivial full comparison.
+
+2. TRACK F1: PHOTOLYASE / CRYPTOCHROME DIVERSITY PILOT
+------------------------------------------------------
+A. Primary Question:
+Does the current Empty Quarter MAG catalogue (5,438 ANI95 representatives) contain verifiable, complete photolyase/cryptochrome family (CPF) loci across established subfamilies, and does the sequence evidence establish genuine family membership, coding integrity, and candidate subfamily diversity?
+
+B. Literature Precedent & Domain Architecture:
+- Singh et al. 2009 (10.1128/JB.01084-08): Environmental photolyase/cryptochrome subgroup discovery from metagenomes and genomes.
+- Xu et al. 2021 (10.1093/molbev/msab191): Functional validation of short photolyase-likes (SPLs) that lack the N-terminal antenna domain and distal Trp triad residue. Short/domain-reduced proteins are established biological variants, NOT automatically truncated artifacts or novel classes.
+- Curated reference subfamilies (8 classes):
+  1. Class I CPD photolyases (CPD I) - e.g. E. coli PhrB (P00914), Synechococcus Phr (Q31N06)
+  2. Class II CPD photolyases (CPD II) - e.g. Arabidopsis UVR3 (Q9M3C5), Methanosarcina Phr (Q8TIR0), Drosophila Phr (Q9V827)
+  3. Class III CPD photolyases (CPD III) - e.g. Caulobacter crescentus Phr (Q9A9F0)
+  4. Cryptochrome DASH (CRY-DASH) - e.g. Vibrio cholerae CryD (Q9KRK1), Synechocystis CryD (P74435), Arabidopsis CRY3 (Q9M0S9)
+  5. Eukaryotic 6-4 photolyases (Eu6-4) - e.g. Drosophila Cry6-4 (Q9W2D2), Xenopus Phr6-4 (Q91660)
+  6. Plant Cryptochromes (pCry) - e.g. Arabidopsis CRY1 (Q43125), CRY2 (Q96524)
+  7. Animal Cryptochromes (aCry) - e.g. Drosophila CRY (O77059)
+  8. FeS-BCP (Iron-sulfur bacterial cryptochromes and photolyases) - e.g. Agrobacterium fabrum PhrB (Q7CYE6), Pseudomonas putida PhrB (Q88NT7)
+  9. Short photolyase-likes (SPL) - e.g. RfSPL (MK474076), SeSPL, CmSPL, RlSPL, CgSPL (Xu et al. 2021)
+- Competing & Outgroup Controls:
+  - Spore photoproduct lyase (SplB, radical SAM family; PF04055; e.g. Bacillus subtilis SplB P12695).
+
+C. Fixed Gates & Criteria:
+- Authoritative Profiles:
+  - Pfam PF00875 (DNA_photolyase, catalytic domain)
+  - Pfam PF03441 (FAD_binding_7, cryptochrome FAD-binding domain)
+  - Pfam PF04244 (DPRP, deoxyribodipyrimidine photo-lyase-related family)
+  - Outgroup: Pfam PF04055 (Radical_SAM)
+- Coding Completeness Gate:
+  - Prodigal partial flag must be evaluated: partial=00 denotes complete start and stop codons on the contig.
+  - Length distributions recorded: no universal minimum length cutoff that would artificially exclude genuine SPLs (~300-400 aa) while distinguishing genuine short forms from fragmented gene calls.
+- Subfamily Assignment Gate:
+  - Profile match E-value <= 1e-5; alignment coverage recorded.
+  - Reciprocal DIAMOND search against curated versioned reference sequences representing all subfamilies and competing outgroups.
+- Denominator:
+  - Full screen over the complete 5,438 ANI95 representative proteome catalogue (W/06_darkmatter/drep_rep_proteomes/*.faa.gz), explicitly recording total candidate count, carrier MAGs, and taxonomy.
+
+D. Negative Outcome & Stopping Conditions:
+- FAIL: Zero complete candidate loci match CPF profiles at standard thresholds, or all matches are radical SAM SplB / non-photolyase flavoprotein false positives.
+- INCONCLUSIVE: Hits are exclusively edge-truncated fragments or low-confidence profile matches without conserved FAD-binding residues.
+- PASS: Identified candidate loci have intact coding sequences (partial=00), defensible CPF domain profiles, clear subfamily discrimination, and include well-resolved taxonomic and ecological distributions.
+
+3. TRACK F2: COMPATIBLE-SOLUTE PHOSPHATASE PILOT
+------------------------------------------------
+A. Primary Question:
+Do historical 306 dark-orthogroup compatible-solute phosphatase predictions—specifically the two named lead IDs in ROOT_ASSESSMENT—remap to intact loci in the current catalogue, and does sequence/profile evidence support specific mannosyl-3-phosphoglycerate phosphatase (MpgP, EC 3.1.3.70) or glucosylglycerol-phosphate phosphatase (GgpP, EC 3.1.3.69) or trehalose-6-phosphate phosphatase (TPP, EC 3.1.3.12) activity over competing HAD-superfamily functions?
+
+B. Lead Identifiers from ROOT_ASSESSMENT:
+- Lead 1: 1PRr2__self_SemiBin_81::1PRr2_1391604_4
+  Historical annotation: EC 3.1.3.70 (MpgP), 127 members across 85 samples.
+- Lead 2: S52PRr1__single_SemiBin_53::S52PRr1_477345_9
+  Historical annotation: EC 3.1.3.70 (MpgP), 37 members across 34 samples, attributed to Thermoplasmatota SW-10-69-26.
+
+C. Fixed Gates & Analysis Hierarchy:
+1. Current-Catalogue Remapping & Integrity:
+   - Remap historical protein IDs to current 14,426 refined bins and 5,438 ANI95 representatives via contig_to_bin_refined.tsv.gz and drep Wdb/Cdb.
+   - Evaluate Prodigal coding completeness (partial=00), internal stop codons, and contig length.
+2. Competing HAD-Superfamily Discrimination:
+   - MpgP, GgpP, and TPP belong to the HAD (haloacid dehalogenase) superfamily. Generic HAD fold similarity is insufficient to assign substrate specificity.
+   - Reference comparator sets (benign environmental / model organisms):
+     * MpgP (EC 3.1.3.70) validated sequences: Thermus thermophilus HB27 (Q72K29), Pyrococcus horikoshii (O58690), Pyrococcus furiosus (Q8U381), Pyrococcus abyssi (Q9UZC0), Methanococcoides burtonii (Q12XX5), Escherichia coli K12 YedP (P76329), Persephonella marina GpgP (C0QRP9).
+     * GgpP (EC 3.1.3.69) validated sequences: Synechocystis sp. PCC 6803 StpA (Q55034).
+     * TPP (EC 3.1.3.12) validated sequences: Escherichia coli K12 OtsB (P31678), Thermoplasma acidophilum Ta1209 (Q9HIW7), Thermoproteus tenax TPSP (G4RK44).
+     * Competing HAD enzymes: phosphoglycolate phosphatase (PGP, EC 3.1.3.18; E. coli Gph P0A6B7, T. acidophilum Ta0488 Q9HLN4), sucrose-6-phosphatase (SPP, EC 3.1.3.24; Synechocystis Q55610), histidinol-phosphatase (HisP, EC 3.1.3.15; Bacillus subtilis P17897), beta-phosphoglucomutase (beta-PGM, EC 5.4.2.6; Lactococcus lactis P71447), phosphopentomutase (DeoB, EC 5.4.2.7; Bacillus subtilis P39708), generic phosphatase (Haemophilus influenzae YrbI P44664).
+   - Profile match: PF00702 (Hydrolase), PF13419 (HAD_2). Evaluate relative bit scores and alignment coverage.
+   - Conserved catalytic motifs: Verify HAD signature motifs (Motif I: DXDX(T/V), Motif II: [S/T], Motif III: K, Motif IV: [G/E]DXXXD).
+3. Genomic Context & Pathway Co-occurrence:
+   - Extract +/- 5 flanking genes from the verified contig assembly and Bakta/eggNOG annotations.
+   - Test for co-localization or co-occurrence with compatible-solute biosynthetic enzymes:
+     * MpgP pathway: mannosyl-3-phosphoglycerate synthase (MpgS, EC 2.4.1.217).
+     * GgpP pathway: glucosylglycerol-phosphate synthase (GgpS, EC 2.4.1.213).
+     * Trehalose pathway: trehalose-6-phosphate synthase (OtsA, EC 2.4.1.15).
+   - Test whether apparent pathway absence in a MAG reflects genuine biological independence versus contig edge truncation or genome incompleteness.
+4. Broader Historical Census Remapping:
+   - Assess how many of the top 306 historical osmolyte-phosphatase families map into current representative bins, their dark vs annotated status, and their dominant EC annotations (3.1.3.70 vs 3.1.3.69).
+
+D. Negative Outcome & Stopping Conditions:
+- FAIL: Historical leads do not exist in current assemblies, are pseudogenes/frameshifted fragments, or align with higher similarity to generic housekeeping HAD phosphatases (e.g. PGP, sugar phosphatase) than to MpgP/GgpP/TPP, with zero compatible-solute context.
+- INCONCLUSIVE: Leads are genuine HAD-family phosphatases but lack active-site pocket specificity or conserved pathway context to discriminate MpgP from competing substrates.
+- PASS: Candidate loci are complete (partial=00), remap to current catalogue, exhibit clear sequence/profile alignment preference for MpgP or GgpP or TPP over competing HAD enzymes, and/or demonstrate conserved genomic association with osmolyte biosynthetic partners.
+
+4. HOLDOUT PLAN & INFERENCE GUARD
+---------------------------------
+- Past explored samples (e.g., initial 44 paired sites or preliminary screening subsets) are designated internal validation / exploration only.
+- Any subsequent ecological association or differential carriage analyses must evaluate newly partitioned holdout samples / expeditions.
+- No hypothesis will be accepted or rejected based on p-value cherry-picking. A null finding under rigorous controls is a scientifically valid outcome.
+
+5. AUDIT & PROVENANCE REQUIREMENTS
+----------------------------------
+- Scripts, inputs, outputs, and job logs will be preserved in:
+  Local:  reproducibility/darkmatter/family_discovery_20261015/f12/
+  Remote: /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/
+- All raw jobs run under Slurm with job receipts, execution host, start/end timestamps, and exit codes.
+- Every read input and generated output will be checksummed (SHA-256) and recorded in INPUTS.tsv and outputs_sha256.txt.
+- RESULTS_PILOT.txt will formally synthesize F1 and F2 feasibility verdicts (PASS / FAIL / INCONCLUSIVE).
+================================================================================

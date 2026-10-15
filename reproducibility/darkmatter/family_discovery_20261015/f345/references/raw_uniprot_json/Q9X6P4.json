@@ -1,0 +1,974 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q9X6P4",
+  "uniProtkbId": "LPXA_PSEAE",
+  "entryAudit": {
+    "firstPublicDate": "2001-06-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1999-11-01",
+    "entryVersion": 141,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Pseudomonas aeruginosa (strain ATCC 15692 / DSM 22644 / CIP 104116 / JCM 14847 / LMG 12228 / 1C / PRS 101 / PAO1)",
+    "taxonId": 208964,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Pseudomonadales",
+      "Pseudomonadaceae",
+      "Pseudomonas"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_00387"
+          }
+        ],
+        "value": "Acyl-[acyl-carrier-protein]--UDP-N-acetylglucosamine O-acyltransferase"
+      },
+      "shortNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00387"
+            }
+          ],
+          "value": "UDP-N-acetylglucosamine acyltransferase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00387"
+            }
+          ],
+          "value": "2.3.1.129"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_00387"
+          }
+        ],
+        "value": "lpxA"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "PA3644"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00387"
+            }
+          ],
+          "value": "Involved in the biosynthesis of lipid A, a phosphorylated glycolipid that anchors the lipopolysaccharide to the outer membrane of the cell"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "a (3R)-hydroxyacyl-[ACP] + UDP-N-acetyl-alpha-D-glucosamine = a UDP-3-O-[(3R)-3-hydroxyacyl]-N-acetyl-alpha-D-glucosamine + holo-[ACP]",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:67812"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:9685"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:9945"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57705"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:64479"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:78827"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:173225"
+          }
+        ],
+        "ecNumber": "2.3.1.129",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_00387"
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00387"
+            }
+          ],
+          "value": "Glycolipid biosynthesis; lipid IV(A) biosynthesis; lipid IV(A) from (3R)-3-hydroxytetradecanoyl-[acyl-carrier-protein] and UDP-N-acetyl-alpha-D-glucosamine: step 1/6"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00387"
+            }
+          ],
+          "value": "Homotrimer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000255",
+                "source": "HAMAP-Rule",
+                "id": "MF_00387"
+              }
+            ],
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00387"
+            }
+          ],
+          "value": "Belongs to the transferase hexapeptide repeat family. LpxA subfamily"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 258,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Acyl-[acyl-carrier-protein]--UDP-N-acetylglucosamine O-acyltransferase",
+      "featureId": "PRO_0000188058"
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0012",
+      "category": "Molecular function",
+      "name": "Acyltransferase"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0441",
+      "category": "Biological process",
+      "name": "Lipid A biosynthesis"
+    },
+    {
+      "id": "KW-0444",
+      "category": "Biological process",
+      "name": "Lipid biosynthesis"
+    },
+    {
+      "id": "KW-0443",
+      "category": "Biological process",
+      "name": "Lipid metabolism"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0677",
+      "category": "Domain",
+      "name": "Repeat"
+    },
+    {
+      "id": "KW-0808",
+      "category": "Molecular function",
+      "name": "Transferase"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "9440522",
+        "citationType": "journal article",
+        "authors": [
+          "Dotson G.D.",
+          "Kaltashov I.A.",
+          "Cotter R.J.",
+          "Raetz C.R.H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9440522"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.180.2.330-337.1998"
+          }
+        ],
+        "title": "Expression cloning of a Pseudomonas gene encoding a hydroxydecanoyl-acyl carrier protein-dependent UDP-GlcNAc acyltransferase.",
+        "publicationDate": "1998",
+        "journal": "J. Bacteriol.",
+        "firstPage": "330",
+        "lastPage": "337",
+        "volume": "180"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 15692 / DSM 22644 / CIP 104116 / JCM 14847 / LMG 12228 / 1C / PRS 101 / PAO1",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "10984043",
+        "citationType": "journal article",
+        "authors": [
+          "Stover C.K.",
+          "Pham X.-Q.T.",
+          "Erwin A.L.",
+          "Mizoguchi S.D.",
+          "Warrener P.",
+          "Hickey M.J.",
+          "Brinkman F.S.L.",
+          "Hufnagle W.O.",
+          "Kowalik D.J.",
+          "Lagrou M.",
+          "Garber R.L.",
+          "Goltry L.",
+          "Tolentino E.",
+          "Westbrock-Wadman S.",
+          "Yuan Y.",
+          "Brody L.L.",
+          "Coulter S.N.",
+          "Folger K.R.",
+          "Kas A.",
+          "Larbig K.",
+          "Lim R.M.",
+          "Smith K.A.",
+          "Spencer D.H.",
+          "Wong G.K.-S.",
+          "Wu Z.",
+          "Paulsen I.T.",
+          "Reizer J.",
+          "Saier M.H. Jr.",
+          "Hancock R.E.W.",
+          "Lory S.",
+          "Olson M.V."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "10984043"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/35023079"
+          }
+        ],
+        "title": "Complete genome sequence of Pseudomonas aeruginosa PAO1, an opportunistic pathogen.",
+        "publicationDate": "2000",
+        "journal": "Nature",
+        "firstPage": "959",
+        "lastPage": "964",
+        "volume": "406"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 15692 / DSM 22644 / CIP 104116 / JCM 14847 / LMG 12228 / 1C / PRS 101 / PAO1",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AF142597",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAD30149.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AE004091",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAG07032.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "D83190",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "D83190"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_252334.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_002516.2"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_003092373.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_002516.2"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q9X6P4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q9X6P4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "Q9X6P4",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "514"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "208964.PA3644",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "208964-PA3644",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "880493",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "pae:PA3644",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|208964.12.peg.3813",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PseudoCAP",
+      "id": "PA3644",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_061249_0_0_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q9X6P4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9807278at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "Q9X6P4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "PAER208964:G1FZ6-3714-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00359",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00477"
+        }
+      ]
+    },
+    {
+      "database": "PHI-base",
+      "id": "PHI:3785",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000002438",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "Q9X6P4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008780",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:acyl-[acyl-carrier-protein]-UDP-N-acetylglucosamine O-acyltransferase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009245",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:lipid A biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009103",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:lipopolysaccharide biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:PseudoCAP"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "1904818"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd03351",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "LbH_UDP-GlcNAc_AT"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.20.1180.10:FF:000001",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acyl-[acyl-carrier-protein]--UDP-N-acetylglucosamine O-acyltransferase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "2.160.10.10:FF:000003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acyl-[acyl-carrier-protein]--UDP-N-acetylglucosamine O-acyltransferase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.160.10.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapeptide repeat proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.20.1180.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Udp N-acetylglucosamine O-acyltransferase, C-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "HAMAP",
+      "id": "MF_00387",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "LpxA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR029098",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acetyltransf_C"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR037157",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acetyltransf_C_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001451",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapep"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR018357",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapep_transf_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR010137",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Lipid_A_LpxA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011004",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trimer_LpxA-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01852",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "lipid_A_lpxA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF003657",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK05289.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43480",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ACYL-[ACYL-CARRIER-PROTEIN]--UDP-N-ACETYLGLUCOSAMINE O-ACYLTRANSFERASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43480:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ACYL-[ACYL-CARRIER-PROTEIN]--UDP-N-ACETYLGLUCOSAMINE O-ACYLTRANSFERASE, MITOCHONDRIAL-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF13720",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acetyltransf_11"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00132",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapep"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF000456",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "UDP-GlcNAc_acltr"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51161",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trimeric LpxA-like enzymes"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00101",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HEXAPEP_TRANSFERASES"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MSLIDPRAIIDPSARLAADVQVGPWSIVGAEVEIGEGTVIGPHVVLKGPTKIGKHNRIYQFSSVGEDTPDLKYKGEPTRLVIGDHNVIREGVTIHRGTVQDRAETTIGDHNLIMAYAHIGHDSVIGNHCILVNNTALAGHVHVDDWAILSGYTLVHQYCRIGAHSFSGMGSAIGKDVPAYVTVFGNPAEARSMNFEGMRRRGFSSEAIHALRRAYKVVYRQGHTVEEALAELAESAAQFPEVAVFRDSIQSATRGITR",
+    "length": 258,
+    "molWeight": 28010,
+    "crc64": "B40E9923058E259E",
+    "md5": "2FB60058C7EBE8ACF0B077AE3A64E0A1"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "PATHWAY": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1
+    },
+    "uniParcId": "UPI000012E8B4"
+  }
+}

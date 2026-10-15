@@ -1,0 +1,523 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q87NZ6",
+  "uniProtkbId": "ECTA_VIBPA",
+  "entryAudit": {
+    "firstPublicDate": "2005-02-01",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2003-06-01",
+    "entryVersion": 101,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Vibrio parahaemolyticus serotype O3:K6 (strain RIMD 2210633)",
+    "taxonId": 223926,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Vibrionales",
+      "Vibrionaceae",
+      "Vibrio"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "L-2,4-diaminobutyric acid acetyltransferase"
+      },
+      "shortNames": [
+        {
+          "value": "DABA acetyltransferase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "value": "2.3.1.178"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "ectA"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "VP1722"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Catalyzes the acetylation of L-2,4-diaminobutyrate (DABA) to gamma-N-acetyl-alpha,gamma-diaminobutyric acid (ADABA) with acetyl coenzyme A"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "L-2,4-diaminobutanoate + acetyl-CoA = (2S)-4-acetamido-2-aminobutanoate + CoA + H(+)",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:16901"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57287"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57288"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58761"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58929"
+          }
+        ],
+        "ecNumber": "2.3.1.178"
+      }
+    },
+    {
+      "texts": [
+        {
+          "value": "Amine and polyamine biosynthesis; ectoine biosynthesis; L-ectoine from L-aspartate 4-semialdehyde: step 2/3"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the acetyltransferase family. EctA subfamily"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 181,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "L-2,4-diaminobutyric acid acetyltransferase",
+      "featureId": "PRO_0000220094"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 25,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 181,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "N-acetyltransferase",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "PROSITE-ProRule",
+          "id": "PRU00532"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0012",
+      "category": "Molecular function",
+      "name": "Acyltransferase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0808",
+      "category": "Molecular function",
+      "name": "Transferase"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "12620739",
+        "citationType": "journal article",
+        "authors": [
+          "Makino K.",
+          "Oshima K.",
+          "Kurokawa K.",
+          "Yokoyama K.",
+          "Uda T.",
+          "Tagomori K.",
+          "Iijima Y.",
+          "Najima M.",
+          "Nakano M.",
+          "Yamashita A.",
+          "Kubota Y.",
+          "Kimura S.",
+          "Yasunaga T.",
+          "Honda T.",
+          "Shinagawa H.",
+          "Hattori M.",
+          "Iida T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12620739"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s0140-6736(03)12659-1"
+          }
+        ],
+        "title": "Genome sequence of Vibrio parahaemolyticus: a pathogenic mechanism distinct from that of V. cholerae.",
+        "publicationDate": "2003",
+        "journal": "Lancet",
+        "firstPage": "743",
+        "lastPage": "749",
+        "volume": "361"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "RIMD 2210633",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "BA000031",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAC59985.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q87NZ6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q87NZ6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "vpa:VP1722",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|223926.6.peg.1642",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0456",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_111896_0_0_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00067",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00122"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000002493",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome 1"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0033816",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:diaminobutyrate acetyltransferase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0019491",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:ectoine biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniPathway"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd04301",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "NAT_SF"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.630.30",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR016181",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acyl_CoA_acyltransferase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR012772",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ectoine_EctA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR000182",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GNAT_dom"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR02406",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ectoine_EctA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43072",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "N-ACETYLTRANSFERASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43072:SF23",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "UPF0039 PROTEIN C11D3.02C"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00583",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acetyltransf_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF55729",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acyl-CoA N-acyltransferases (Nat)"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51186",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GNAT"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MYFKMITSAPWVLYPEIGEDPSKKWIFREPKISDGDGIYSLIADCPPLDMNSSYCNFLQSTHFSKTSILVEHKGDIAGFISGYQKPDEQDVLFIWQVAVSPRFRGNGLAFRMLKELLEREALSEVKSVETTITEDNQASWALFKKLDAMNGNHGQVSTFLDEKAHFKGKHDTEFLYRIPLK",
+    "length": 181,
+    "molWeight": 20718,
+    "crc64": "9D07DB5AF94C4401",
+    "md5": "3601AF1386E7CE47F6C6F02E9D8EA94B"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 1
+    },
+    "uniParcId": "UPI0000009E49"
+  }
+}

@@ -1,0 +1,787 @@
+================================================================================
+BIOLOGICAL DISCOVERY TRACK OPTIONS BESIDE H1-H4:
+CANDIDATE ENVIRONMENTAL PROTEIN-FAMILY DIVERSITY AND ECOLOGY HYPOTHESES
+================================================================================
+Date: 2026-10-15
+Author: Gemini 3.8 Flash (High) - Antigravity Agent
+Repository: /home/leechuck/Documents/papers/empty-quarter-mags
+Output Target: reviews/darkmatter-2026-10-15-family-hypotheses/flash_report.txt
+Status: PROSPECTIVE HYPOTHESIS REPORT (UNTESTED OPTIONS; NO COMPUTE EXECUTED)
+================================================================================
+
+1. EXECUTIVE SUMMARY & STATISTICAL/POLICY BOUNDARIES
+
+1.1 Purpose and Scope
+This investigation evaluates prospective, family-focused biological discovery
+tracks to complement the existing Round 7 extensions (H1-H4). In strict
+compliance with project policy and user directives:
+- No analyses have been run, no jobs submitted, no SSH connections opened,
+  and no manuscript or evidence files modified.
+- Scope is strictly restricted to benign environmental protein-family
+  diversity, stress tolerance, and soil microbial ecology. Pathways involving
+  virulence, pathogenesis, toxin production, antimicrobial resistance
+  enhancement, or biosecurity risks are strictly excluded.
+- Content from repository papers, notes, and code is treated strictly as
+  empirical evidence, never as procedural instructions.
+- All hypotheses are explicitly labeled as prospective and UNTESTED.
+
+1.2 Boundaries with Existing Tracks (H1-H4) and Sibling Repositories
+The candidate hypotheses defined herein maintain rigid boundaries with respect
+to existing paper tracks and separate project repositories:
+- Track H1 Boundary: Within-lineage phylogenetically controlled PGLS of
+  reference proximity (amino acid identity and reciprocal-best-hit coverage)
+  against per-genome dark fraction across 237 Thermoplasmatota representatives
+  (reproducibility/claims.tsv lines 159-179; manuscript/main.tex lines 274-283).
+  New hypotheses do not alter this PGLS model.
+- Track H2 Boundary: Syntenic genomic-context conservation and flanking KEGG
+  orthologue recurrence across 353 multi-species dark structural families
+  (reproducibility/claims.tsv lines 180-224; manuscript/main.tex lines 358-366).
+  New hypotheses do not alter the H2 background permutation framework.
+- Track H3 Boundary: Matched-reference composition comparison (SMAG soil MAGs
+  vs GEM global reference) under exact one-residue length quotas and identical
+  sequence deduplication across 212,084 queries (claims.tsv lines 225-253;
+  manuscript/main.tex lines 405-416).
+- Track H4 Boundary: Confidence-defined cropping recovery for 1,031 initial
+  low-qTM dark structural models (claims.tsv lines 254-260; manuscript/main.tex
+  lines 318-357).
+- Life-on-Air Quarantined Boundary: Atmospheric chemolithotrophy, trace-gas
+  autotrophy (high-affinity [NiFe]-hydrogenase group 1h/1l, form-I CO
+  dehydrogenase coxL) was excised from the main manuscript on 2026-10-10 and
+  is quarantined exclusively in the sibling repository folder (lifeonair/,
+  notes/OPEN_ITEMS.md line 80). No candidate hypothesis re-opens or overlaps
+  with trace-gas metabolism.
+- Defensome / Mobilome Boundary: Phage defense, viral elements, plasmids,
+  CRISPR-Cas, retrons, and mobilome biology belong exclusively to
+  ../empty-quarter-phages/ (CLAUDE.md lines 7-10).
+- Amplicon Ecology Boundary: 16S rRNA primer-based profiling belongs to
+  ../empty-quarter-amplicon/ (CLAUDE.md lines 7-10).
+
+1.3 Core Epistemological and Methodological Principles
+To avoid common pitfalls in computational metagenomics, all candidate
+hypotheses enforce the following standards:
+1. Sequence Diversity != Novel Enzymatic Function: As established by the
+   catalogue-wide decode audit (RQ/A5/result.md), sequence-dark proteins
+   predominantly represent divergent folds or sequences performing conventional,
+   canonical chemistry (oxidoreductases, transferases, hydrolases), rather than
+   novel reaction chemistry. No candidate hypothesis posits unverified "exotic"
+   enzymology without direct structural or active-site evidence.
+2. Full-Dimensional ProstT5 Embedding Novelty: In accordance with Wu et al.
+   (2025) and Heinzinger et al. (2024), structural embeddings from protein
+   language models must be evaluated quantitatively in full-dimensional vector
+   space (1024-dimensional per-protein or pooled embeddings) using rigorous
+   nearest-neighbour cosine and Euclidean distance distributions against
+   curated reference sets. Low-dimensional visualizations (t-SNE, UMAP) are
+   strictly descriptive and cannot serve as inferential proof of novelty.
+3. Pre-Training Exposure Caveat: Absence of a sequence from current public
+   databases does NOT prove that a foundation protein language model (ProstT5,
+   ESM) was never exposed to homologous sequences during self-supervised
+   pre-training. Any embedding-derived distance must be paired with orthogonal
+   evidence (coordinate modeling, MSAs, catalytic site geometry).
+4. Environmental Data and Confounding: Geochemical covariates (XRF total
+   elements) originate from the verified laboratory matrix, but absolute units
+   remain unresolved (manuscript/main.tex line 500; notes/CORRECTIONS.md).
+   All environmental associations must use non-parametric rank metrics
+   (Spearman, partial Spearman controlling for ranked latitude/longitude) and
+   site-blocked permutation tests to account for the spatial transect (59 sites)
+   and temporal sampling (5 expeditions over 31 months).
+5. Terrestrial Provenance != Intrinsic Thermostability: Isolation from a desert
+   soil does not warrant an automatic claim of hyperthermostability or novel
+   biocatalytic efficiency. Every hypothesis separates ecological occurrence
+   from biophysical properties.
+
+
+================================================================================
+2. LITERATURE AUDIT & PRIMARY SOURCE VERIFICATION
+================================================================================
+
+To ensure strict provenance, all referenced primary literature has been
+independently verified against archived records in:
+resources/literature/darkmatter-2026-10-15-family-hypotheses/manifest.json.
+Below is the explicit verification of each source, distinguishing verified
+full text from abstract-only records, and clarifying author identities.
+
+2.1 Literature Direction 1: Photolyase and Cryptochrome Environmental Diversity
+- Primary Reference: Singh AH, Doerks T, Letunic I, Raes J, Bork P. (2009).
+  "Discovering functional novelty in metagenomes: examples from light-mediated
+  processes." Journal of Bacteriology, 191(1): 32-41.
+  DOI: 10.1128/JB.01084-08. PMCID: PMC2612456.
+  * Authorship / Citation Clarification: The prompt references "Harrington 2009
+    J Bacteriology 10.1128/JB.01084-08". Verification confirms that the exact
+    article for DOI 10.1128/JB.01084-08 is Singh et al. (2009), published from
+    Peer Bork's group at EMBL. E. D. Harrington is a primary collaborator who
+    co-authored the foundational companion method paper: Harrington ED,
+    Singh AH, Doerks T, Letunic I, von Mering C, Jensen LJ, Raes J, Bork P.
+    (2007) "Quantitative assessment of protein function prediction from
+    metagenomics shotgun sequences", PNAS 104(35): 13913-13918. Both papers
+    establish the computational framework for discovering divergent light-driven
+    families.
+  * Status: Full-text author PDF verified and retained on disk
+    (resources/literature/.../singh_pdf.pdf, SHA256: d60c7bd...).
+  * Core Empirical Findings: Metagenomic sequences from sun-exposed environments
+    reveal deep-branching, previously unannotated subfamilies within the
+    photolyase/cryptochrome superfamily (including novel FeS-BCP clades and
+    divergent (6-4) photolyases) that possess conserved flavin adenine
+    dinucleotide (FAD) binding motifs but diverge beyond standard sequence-match
+    thresholds.
+
+2.2 Literature Direction 2: Microbial and Heliorhodopsin Diversity
+- Primary Reference A: Pushkarev A, Inoue K, Larom S, Flores-Uribe J, Singh M,
+  Konno M, Tomida S, Ito S, Nakamura R, Tsunoda SP, Philosof A, Sharon I,
+  Yutin N, Koonin EV, Kandori H, Beja O. (2018). "A distinct abundant group
+  of microbial rhodopsins discovered using functional metagenomics." Nature,
+  558(7711): 595-599. DOI: 10.1038/s41586-018-0225-9. PMCID: PMC11128463.
+  * Status: Verified via PubMed Central metadata.
+  * Core Empirical Findings: Discovery of heliorhodopsins (HeRs), a phylogenetically
+    distinct family of 7-transmembrane retinylidene proteins characterized by an
+    inverted membrane topology (N-terminus inside, C-terminus outside) and <15%
+    sequence identity to canonical Type-1 microbial rhodopsins.
+- Primary Reference B: Bulzu PA, Kavagutti VS, Chiriac MC, Vavourakis CD,
+  Inoue K, Kandori H, Andrei AS, Ghai R. (2021). "Heliorhodopsin evolution is
+  driven by photosensory promiscuity in monoderms." mSphere, 6(6): e00661-21.
+  DOI: 10.1128/msphere.00661-21. PMCID: PMC8612252.
+  * Status: Retained full-text XML verified on disk (SHA256: 0c46065...).
+  * Core Empirical Findings: HeRs in monoderms (specifically Actinobacteria) do
+    not operate as light-driven proton pumps but function as sensory photoreceptors.
+    They frequently occur in conserved operonic contexts with DegV family lipid-
+    binding proteins, implicating them in light-regulated membrane modification.
+- Primary Reference C: Bulzu PA, Kavagutti VS, Andrei AS, Ghai R. (2022).
+  "The evolutionary kaleidoscope of rhodopsins." mSystems, 7(5): e00405-22.
+  DOI: 10.1128/msystems.00405-22. PMCID: PMC9601134.
+  * Status: Retained full-text XML verified on disk (SHA256: dcb8769...).
+
+2.3 Literature Direction 3: Benign Compatible-Solute Enzymes (Ectoine & Trehalose)
+- Primary Reference A: Czech L, Hoppner A, Kobus S, Seubert A, Riclea R,
+  Dickschat JS, Heider J, Smits SHJ, Bremer E. (2019). "Illuminating the
+  catalytic core of ectoine synthase through structural and biochemical analysis."
+  Scientific Reports, 9: 364. DOI: 10.1038/s41598-018-36247-w. PMCID: PMC6344544.
+  * Status: Retained full-text XML verified on disk (SHA256: f51d5b2...).
+  * Core Empirical Findings: EctC (ectoine synthase, EC 4.2.1.98) adopts a
+    characteristic cupin fold with an essential iron-binding triad (His-X-His/Glu)
+    catalyzing the intramolecular cyclization of N-gamma-acetyldiaminobutyrate.
+    EctD (ectoine hydroxylase, EC 1.14.11.55) confers desiccation and heat
+    protection by converting ectoine to hydroxyectoine.
+- Primary Reference B: Rao KN, Kumaran D, Seetharaman J, Bonanno JB, Burley SK,
+  Swaminathan S. (2006). "Crystal structure of trehalose-6-phosphate
+  phosphatase-related protein: biochemical and biological implications."
+  Protein Science, 15(7): 1735-1744. DOI: 10.1110/ps.062096606. PMCID: PMC2242562.
+  * Status: Verified via PubMed Central metadata.
+  * Core Empirical Findings: Structural characterization of trehalose-6-phosphate
+    phosphatase (TPP / OtsB, EC 3.1.3.12) as a member of the haloacid
+    dehalogenase (HAD) superfamily containing the conserved DXDX(T/V) catalytic
+    loop and core alpha/beta domain.
+- Primary Reference C: Jiang L, Lin M, Zhang Y, Li Y, Xu X, Li S, Huang H. (2013).
+  "Identification and characterization of a novel trehalose synthase gene derived
+  from saline-alkali soil metagenomes." PLoS ONE, 8(11): e77437.
+  DOI: 10.1371/journal.pone.0077437. PMCID: PMC3797794.
+  * Status: Retained full-text XML verified on disk (SHA256: 13769b4...).
+- Primary Reference D: Imminger S, Meier DV, Schintlmeister A, Legin A, Schnecker J,
+  Richter A, Gillor O, Eichorst SA, Woebken D. (2024). "Survival and rapid
+  resuscitation permit limited productivity in desert microbial communities."
+  Nature Communications, 15: 3180. DOI: 10.1038/s41467-024-46920-6. PMCID: PMC11519504.
+  * Status: Retained full-text XML verified on disk (SHA256: 027f38f...).
+  * Core Empirical Findings: Demonstrates in situ dormancy, desiccation survival,
+    and compatible solute cycling during hyperarid desert soil resuscitation.
+
+2.4 Literature Direction 4: Environmental Hydrolases and Carbonic Anhydrases
+- Primary Reference A: Wu B, Zhong B, Zheng L, Huang R, Jiang S, Li M, Hong L,
+  Tan P. (2025). "Harnessing protein language model for structure-based discovery
+  of highly efficient and robust PET hydrolases." Nature Communications, 16: 6211.
+  DOI: 10.1038/s41598-025-61599-z [10.1038/s41467-025-61599-z]. PMCID: PMC12228687.
+  * Status: Retained full-text XML verified on disk (SHA256: 2f06149...).
+  * Core Empirical Findings: Presents VenusMine, utilizing ProstT5 bilingual
+    protein language model embeddings in full-dimensional space paired with
+    representation tree clustering to navigate sequence space, identifying
+    remote structural homologs of alpha/beta hydrolases from metagenomes with
+    subsequent biochemical validation.
+- Primary Reference B: Heinzinger M, Weissenow K, Sanchez JG, Henkel A, Mirdita M,
+  Steinegger M, Rost B. (2024). "Bilingual language model for protein sequence
+  and structure." NAR Genomics and Bioinformatics, 6(4): lqae150.
+  DOI: 10.1093/nargab/lqae150. PMCID: PMC11616678.
+  * Status: Retained full-text XML verified on disk (SHA256: f6c2991...).
+  * Core Empirical Findings: Demonstrates that ProstT5 maps amino acid sequences
+    to structural 3Di tokens and outputs 1024-dimensional sequence embeddings
+    that capture fold similarity even in the "twilight zone" of sequence identity.
+- Primary Reference C: Pairoh S, Mhuantong W, Boonyapakron K, Yuvaniyama J,
+  Kanokratana P, Bunterngsook B, Lekakarn H, Arunrattanamook N, Laothanachareon T,
+  Champreda V. (2025). "Machine learning-guided discovery of thermophilic
+  carbonic anhydrases from environmental metagenomes." Scientific Reports,
+  15: 35848. DOI: 10.1038/s41598-025-24713-1. PMCID: PMC12635333.
+  * Status: Retained full-text XML verified on disk (SHA256: 2edac9f...).
+  * Core Empirical Findings: Combines metagenomic mining and machine learning
+    structural models to identify divergent alpha-, beta-, and gamma-carbonic
+    anhydrases from environmental metagenomes that mediate inorganic carbon
+    hydration under extreme physical conditions.
+
+
+================================================================================
+3. REPOSITORY EVIDENCE AUDIT & FEASIBILITY BASIS
+================================================================================
+
+Inspection of existing project files verifies the feasibility of a family-
+focused biological discovery track without requiring any new sequencing or
+heavy compute:
+
+1. The dereplicated 5,438 MAG catalogue (GTDB release 232) and the 106,042
+   recurrent dark families (admitted at >=3 samples and >=2 sites across 536,437
+   member genes; manuscript/main.tex lines 134-142).
+2. The 2,838 gate-passing ESMFold predicted coordinates (mean pLDDT >= 0.70,
+   length >= 100 residues) and 3,013 matched blinded PDB controls co-processed
+   under the same Foldseek parameters (manuscript/main.tex lines 320-337).
+3. The 22 long-read cultured genome pairs from the same basin (manuscript/main.tex
+   lines 190-228, 644-678), providing long-read, circularized, contamination-free
+   ground truth for gene calls, CDS boundaries, and codon integrity.
+4. The 28-orthologue DNA-damage repair panel and the 13-orthologue compatible-
+   solute synthesis panel (manuscript/main.tex lines 882-897; results/uv_survival/
+   and code/uv_survival_analysis.py).
+5. The 306 dark families confidently decoded to osmolyte phosphatases (EC 3.1.3.69,
+   3.1.3.70, 3.1.3.12) profiled across compartments, plant hosts, and space-partial
+   salinity correlations (results/darkmatter_ecology/indicators/osmolyte_families.tsv
+   and code/phase_e_partial_osmolyte.py).
+6. The existing Type-1 rhodopsin survey (RQ-D6: results/06_metabolism/rhodopsin/
+   and RQ/D6/methods.md, result.md), which evaluated 391 microbial opsins in
+   337 MAGs (2.18% prevalence) and explicitly noted that heliorhodopsins (PF18761)
+   and divergent soil opsins remained unassessed by the PF01036-restricted screen.
+7. The catalogue-wide enzyme decode landscape (RQ/A5/result.md and
+   results/darkmatter_ecology/family_ec.tsv), establishing that the 5,418
+   confident dark enzyme decodes are dominated by oxidoreductases (31.5%),
+   transferases (30.7%), and hydrolases (24.7%, 1,340 families).
+
+
+================================================================================
+4. RANKED, FALSIFIABLE HYPOTHESES (CANDIDATE TRACK 5 OPTIONS)
+================================================================================
+
+--------------------------------------------------------------------------------
+HYPOTHESIS 1 (RANK 1 — TOP CANDIDATE)
+Divergent Photolyase/Cryptochrome Structural Diversity and Vertical Light-Niche
+Partitioning in Hyperarid Surface Soils
+--------------------------------------------------------------------------------
+
+- Biological Question:
+  Does the sequence-dark and low-homology proteome of Rub' al-Khali soil MAGs
+  harbor structurally conserved, unannotated photolyase/cryptochrome families
+  (FAD-binding photoreactivation enzymes) that explain residual light-dependent
+  DNA repair, and do these families replicate the strong surface-over-deep
+  niche partitioning observed for canonical photolyases while evolving under
+  purifying selection?
+
+- Target Family & Orthogonal Definition:
+  Photolyase/cryptochrome superfamily (deoxyribodipyrimidine photolyase,
+  EC 4.1.99.3; cryptochrome DASH, (6-4) photolyase, or FeS-BCP clades).
+  Orthogonal definition requires:
+  (a) Presence of the FAD-binding alpha/beta domain fold (Pfam PF00875 /
+      PF04244 / PF03441; CATH 3.40.50.360);
+  (b) Query-normalised TM-score >= 0.50 against experimental photolyase
+      crystal structures (e.g. PDB 1TEZ, 2BPR, 3CVU) in ESMFold coordinates;
+  (c) Conservation of the characteristic active-site electron-transfer aromatic
+      triad (three Trp/Tyr residues mediating flavin photoreduction);
+  (d) Absence of canonical EggNOG KO assignment (K01669) in the sequence search.
+
+- Feasibility Basis & Exact Existing Evidence:
+  1. manuscript/main.tex (lines 1181-1185): Canonical photolyase (K01669) is one
+     of the sharpest vertical ecological markers in the transect: 24.3% in
+     surface mapped community vs 12.1% in subsurface across 44 paired sites
+     (Wilcoxon signed-rank p < 1e-6), replicating independently within all three
+     major phyla with sufficient paired coverage (Actinomycetota, Pseudomonadota,
+     Bacteroidota), while being null within-species (p > 0.17).
+  2. results/uv_survival/UV.md & compartment.tsv: Surface MAGs carry 22.4%
+     photolyase carriage vs 13.1% in Deep (MWU p = 1.12e-14), whereas NHEJ
+     (desiccation/dormancy repair) reverses (Deep 81.1% > Surface 73.0%),
+     proving a clean, mechanistically decoupled light niche.
+  3. Singh et al. (2009) J Bacteriol (DOI 10.1128/JB.01084-08; PMC2612456):
+     Demonstrated that high-UV environmental metagenomes harbor deep-branching,
+     unannotated photolyase/cryptochrome subfamilies that evade standard BLAST/HMM
+     cutoffs but preserve core functional folds.
+  4. manuscript/main.tex (lines 320-337): 2,838 dark models have ESMFold coordinates
+     with pLDDT >= 0.70; 1,031 are low-qTM dual-reference candidates available
+     for structural domain re-classification.
+
+- Data Missing & Analytical Requirements:
+  - Foldseek coordinate search of the 2,838 confident dark ESMFold models (and
+    106,042 dark families via ProstT5 3Di translation) against a curated PDB
+    photolyase/cryptochrome reference set.
+  - Coordinate alignment to verify the spatial arrangement of the active-site
+    flavin-binding cavity and the conserved Trp/Tyr electron-transfer triad.
+  - Read-recruitment mapping (TPM) across the 44 paired surface/subsurface sites
+    for candidate families.
+
+- Primary Effect & Quantitative Prediction:
+  Candidate dark photolyase-fold families will exhibit a statistically significant
+  surface-over-subsurface abundance enrichment across the 44 paired sites
+  (Wilcoxon signed-rank test on site medians, Holm-adjusted p < 0.01), with a
+  median surface:deep ratio > 1.8. Furthermore, evaluable families will display
+  evidence of purifying selection (median pairwise dN/dS < 0.50, significantly
+  lower than the +1 frame-shifted null).
+
+- Appropriate Controls & Calibration:
+  1. Negative functional control: Candidate families tested against the NHEJ
+     (double-strand break) depth profile, which must show the opposite or null
+     gradient.
+  2. Negative structural control: Length-matched dark structural families with
+     non-light folds (e.g. standard ribosomal or metabolic folds).
+  3. Reading-frame control: Comparison of pairwise dN/dS against the +1 shifted
+     reading frame null (manuscript/main.tex line 619).
+  4. Geography/Batch control: Stratified permutations within the 159 site-by-
+     soil-position strata preserving expedition visit bundles (manuscript/main.tex
+     lines 632-633).
+  5. Sibling project boundary: Zero overlap with hydrogenase/carbon monoxide
+     dehydrogenase markers in lifeonair/.
+
+- Rejection / Falsification Outcome:
+  The hypothesis is empirically rejected if:
+  (a) Structural alignments fail to identify the FAD-binding fold (qTM < 0.50)
+      or disrupt the active-site catalytic triad; OR
+  (b) Candidate families show no significant surface abundance enrichment
+      (paired Wilcoxon p >= 0.10); OR
+  (c) Candidate families exhibit pairwise dN/dS indistinguishable from 1.0 or
+      the frame-shifted null, indicating non-coding or pseudogene artifacts.
+
+
+--------------------------------------------------------------------------------
+HYPOTHESIS 2 (RANK 2)
+Haloacid Dehalogenase (HAD)-Superfamily Compatible-Solute Phosphatases in Arid
+Rhizosphere and Saline Soils
+--------------------------------------------------------------------------------
+
+- Biological Question:
+  Do the 306 recurrent dark protein families computationally decoded to osmolyte
+  phosphatases represent authentic, sequence-divergent members of the haloacid
+  dehalogenase (HAD) superfamily that preserve the canonical Asp nucleophile
+  catalytic core, and do specific subfamilies provide specialized compatible-
+  solute dephosphorylation (mannosylglycerate, glucosylglycerol, trehalose)
+  coupled to plant-root microhabitats or soil salinity?
+
+- Target Family & Orthogonal Definition:
+  Compatible-solute phosphatases:
+  (a) Trehalose-6-phosphate phosphatase (EC 3.1.3.12 / OtsB, Pfam PF02358);
+  (b) Glucosylglycerol-phosphate phosphatase (EC 3.1.3.69 / GpgP);
+  (c) Mannosyl-3-phosphoglycerate phosphatase (EC 3.1.3.70 / MpgP, Pfam PF05402);
+  (d) Glucosyl-3-phosphoglycerate phosphatase (EC 3.1.3.85).
+  Orthogonal definition requires:
+  (1) Identification of the HAD superfamily fold (CATH 3.40.50.1000);
+  (2) Preservation of the DXDX(T/V) catalytic signature motif (where the first
+      Asp forms the phosphoaspartate intermediate);
+  (3) Full-dimensional ProstT5 embedding distance clustering with known OtsB/
+      GpgP/MpgP enzymes rather than non-solute HAD phosphatases.
+
+- Feasibility Basis & Exact Existing Evidence:
+  1. results/darkmatter_ecology/indicators/osmolyte_families.tsv & OSMOLYTE.md:
+     306 dark families decode to osmolyte phosphatases. Large, highly recurrent
+     families are already catalogued with complete gene calls and strong selection:
+     - 1PRr2__self_SemiBin_81::1PRr2_1391604_4: EC 3.1.3.70, 127 members in 85
+       samples, dN/dS = 0.4893, TPM ratio 55:20:32 (PlantRoot:Surface:Deep).
+     - S52PRr1__single_SemiBin_53::S52PRr1_477345_9: EC 3.1.3.70, 37 members in
+       34 samples, dN/dS = 0.5494, mapped to Thermoplasmatota SW-10-69-26.
+     - 36PRr3__self_SemiBin_1133::36PRr3_649266_103: EC 3.1.3.69, 35 members in
+       30 samples, dN/dS = 0.4059, TPM ratio 10:3:25.
+     - 36PRr1__self_SemiBin_364::36PRr1_503833_49: EC 3.1.3.12, 15 members in
+       14 samples, dN/dS = 0.3731, TPM ratio 44:20:30.
+  2. results/darkmatter_ecology/indicators/partial_salinity_proxy_top.tsv:
+     Family 24Dr2__single_SemiBin_50::24Dr2_1158_6 (EC 3.1.3.85, glucosyl-3-
+     phosphoglycerate phosphatase) is present in 155 samples, dN/dS = 0.5270,
+     and exhibits significant partial correlation with salinity (partial r = -0.342,
+     FDR q = 1.39e-05) after controlling for latitude and longitude.
+  3. code/phase_e_partial_osmolyte.py: Demonstrates that while osmolyte phosphatases
+     as an aggregate pooled group do not exceed the dark background in plant-root
+     enrichment (Mann-Whitney p = 0.11), specific individual lineages exhibit
+     dramatic compartment and salinity associations.
+  4. Rao et al. (2006) Protein Sci (PMC2242562) & Jiang et al. (2013) PLoS ONE
+     (PMC3797794): Provide structural and biochemical benchmarks for bacterial
+     and archaeal HAD-family osmolyte phosphatases.
+
+- Data Missing & Analytical Requirements:
+  - Extraction and multiple sequence alignment of candidate family member genes
+    to verify presence of the canonical DXDX(T/V) catalytic loop.
+  - Coordinate modeling (ESMFold) of representative sequences lacking PDB
+    structures and comparison against solved HAD phosphatase structures
+    (e.g. PDB 1U02, 2B40, 1GZ4).
+  - Quantitative 1024-dimensional ProstT5 embedding distance calculation to
+    determine whether candidate families cluster closer to verified osmolyte
+    phosphatases than to general sugar phosphatases or phosphohexomutases.
+
+- Primary Effect & Quantitative Prediction:
+  Candidate families will structurally align to the HAD superfamily fold (qTM >= 0.50)
+  with intact DXDX(T/V) catalytic motifs. In full ProstT5 embedding space, their
+  nearest neighbours among annotated proteins will be bona fide compatible-solute
+  phosphatases (cosine similarity > 0.75, empirical permutation p < 0.001 against
+  shuffled embeddings). Member abundance will correlate with specific soil
+  chemistry (salinity proxy Na+Cl+S or plant root proximity) under site-blocked
+  partial Spearman testing.
+
+- Appropriate Controls & Calibration:
+  1. HAD Superfamily Outgroup Control: Non-osmolyte HAD phosphatases (e.g.
+     phosphoserine phosphatase SerB, haloacid dehalogenases).
+  2. Chemical Negative Control: Correlating candidate abundances against the
+     vanadium (V) XRF axis (the established null axis in manuscript/main.tex
+     line 870, PERMANOVA p = 0.88).
+  3. Ground-Truth Isolates: Cross-referencing against the 22 long-read cultured
+     assemblies from the basin (manuscript/main.tex line 645).
+  4. Downsampling Benchmark: Testing candidate retrieval against size-matched
+     SMAG soil and GEM reference sets (following H3 protocol).
+
+- Rejection / Falsification Outcome:
+  Rejected if:
+  (a) Structural models fail to adopt the HAD fold or lack the catalytic Asp
+      nucleophile; OR
+  (b) Full-dimensional ProstT5 embeddings place candidates equidistant between
+      osmolyte phosphatases and non-catalytic HAD pseudoenzymes; OR
+  (c) Partial correlations with environmental stress axes collapse to null
+      (q >= 0.10) after spatial rank adjustment.
+
+
+--------------------------------------------------------------------------------
+HYPOTHESIS 3 (RANK 3)
+Heliorhodopsin Photoreceptor Diversity and Photosensory-Lipid Operon Synteny in
+Terrestrial Actinomycetota
+--------------------------------------------------------------------------------
+
+- Biological Question:
+  Does the Rub' al-Khali soil catalogue encode an overlooked repertoire of
+  heliorhodopsins (HeRs; Pfam PF18761)—which evade detection by standard Type-1
+  rhodopsin profiles (PF01036)—and do these monoderm HeRs function as non-pumping
+  sensory photoreceptors organized in conserved genomic operons with lipid-
+  modifying enzymes (DegV), explaining their flat vertical distribution across
+  sunlit and shielded soils?
+
+- Target Family & Orthogonal Definition:
+  Heliorhodopsin superfamily (HeR; Pfam PF18761 / IPR039403).
+  Orthogonal definition requires:
+  (a) Presence of 7 transmembrane alpha-helices with verified inverted membrane
+      topology (cytoplasmic N-terminus, extracellular C-terminus);
+  (b) Conservation of the retinylidene Schiff-base lysine residue in the 7th
+      transmembrane helix (equivalent to Lys238 in HeR 4ORJ / Pushkarev et al.);
+  (c) Query-normalised TM-score >= 0.50 against experimental heliorhodopsin
+      structures (e.g. PDB 6IS6);
+  (d) Distinctness from canonical Type-1 bacteriorhodopsins (PF01036) and
+      eukaryotic GPCR contaminants (Pfam 7tm_1, curated in RQ/D6).
+
+- Feasibility Basis & Exact Existing Evidence:
+  1. RQ/D6/methods.md & result.md: The existing repository census evaluated only
+     Type-1 rhodopsins (PF01036 / COG5524) and found 391 proteins in 337 MAGs
+     (2.18% prevalence), concluding that carriage is completely flat across
+     compartments (Surface 2.50% vs Deep 2.34%, Fisher exact p = 0.73). RQ-D6
+     explicitly stated: "EggNOG cannot separate light-driven proton-pump
+     proteorhodopsins from sensory rhodopsins at this resolution... no HMMER-
+     confirmed retinal-binding-lysine check and no phylogenetic placement...
+     very divergent soil opsins could be missed."
+  2. manuscript/main.tex (lines 311-313): Rhodopsin markers are completely absent
+     in all 237 Thermoplasmatota representatives, but present in 51 Halobacteriota.
+     Actinomycetota opsins remain unresolved by subtype.
+  3. Pushkarev et al. (2018) Nature (DOI 10.1038/s41586-018-0225-9) & Bulzu
+     et al. (2021) mSphere (PMC8612252): Established that HeRs are widely
+     distributed in terrestrial Actinobacteria, possess inverted topology, do not
+     pump protons, and reside adjacent to DegV fatty-acid binding proteins.
+
+- Data Missing & Analytical Requirements:
+  - HMMER search of Pfam PF18761 (Heliorhodopsin) across all 5,438 MAG
+    representatives and the 106,042 recurrent dark families.
+  - Verification of the TM7 retinal-binding Lys in multiple sequence alignments.
+  - Coordinate prediction (ESMFold) to confirm 7TM inverted bundle topology.
+  - Syntenic neighborhood analysis on MAG contigs to detect flanking DegV
+    (Pfam PF02645) or membrane-associated transferases within +/- 2 genes.
+
+- Primary Effect & Quantitative Prediction:
+  Targeted HMM screening will identify authentic HeR families primarily within
+  Actinomycetota MAGs (e.g. Geodermatophilaceae, Solirubrobacterales). In contrast
+  to light-harvesting ion pumps, HeR prevalence will be uniform across Surface,
+  Deep, and PlantRoot samples (Fisher exact p > 0.30 between Surface and Deep),
+  reflecting a regulatory or sensory role rather than light-energy capture.
+  At least 30% of identified HeR loci will exhibit syntenic adjacency to DegV
+  or lipid-metabolism genes.
+
+- Appropriate Controls & Calibration:
+  1. Eukaryotic Contaminant Filter: Explicit exclusion of eukaryotic GPCRs
+     (Pfam 7tm_1, Orexin_rec2, RDH12), which contaminated 4 PlantRoot MAGs in
+     the initial RQ-D6 scan (RQ/D6/methods.md line 27).
+  2. Positive Control for Retinal Binding: Canonical Halobacteriota bacteriorhodopsins
+     from the catalogue (51 MAGs, manuscript line 312).
+  3. Positive Control for Light Niche: Contrast against the photolyase light-niche
+     gradient (Surface 22.4% vs Deep 13.1%, MWU p < 1e-13).
+  4. Sequence vs Structure Separation: Testing whether ProstT5 embeddings
+     unambiguously distinguish HeRs from Type-1 rhodopsins in full-dimensional
+     space without relying on visual 2D clustering.
+
+- Rejection / Falsification Outcome:
+  Rejected if:
+  (a) PF18761 HMM search yields zero significant hits (E < 1e-5) across the
+      catalogue; OR
+  (b) Candidate proteins lack the essential Schiff-base lysine in TM7; OR
+  (c) Candidate genes show no operonic association with sensory/lipid partners
+      and display random genomic distribution.
+
+
+--------------------------------------------------------------------------------
+HYPOTHESIS 4 (RANK 4)
+Alpha/Beta Hydrolase Superfamily Diversity and Quantitative ProstT5 Embedding
+Novelty in Benign Soil Metabolic Pathways
+--------------------------------------------------------------------------------
+
+- Biological Question:
+  Can full-dimensional ProstT5 bilingual protein language model embeddings
+  quantitatively identify sequence-divergent alpha/beta hydrolases within the
+  genome-resolved dark proteome, and do these candidates preserve the canonical
+  catalytic triad (Ser-His-Asp/Glu) and oxyanion hole required for benign soil
+  ester/thioester turnover while exhibiting robust metric distance from known
+  reference enzymes?
+
+- Target Family & Orthogonal Definition:
+  Alpha/beta hydrolase fold superfamily (Pfam PF00561, PF12695; CATH 3.40.50.1820;
+  e.g. palmitoyl-[ACP] thioesterase EC 3.1.2.14, carboxylesterases EC 3.1.1.1,
+  haloalkane dehalogenases EC 3.8.1.5).
+  Orthogonal definition requires:
+  (a) Identification of the core alpha/beta hydrolase fold (central beta-sheet
+      flanked by alpha-helices with canonical strand order);
+  (b) Preservation of the nucleophilic elbow motif (Sm-X-Nu-X-Sm, typically
+      Gly-X-Ser-X-Gly) and intact Ser-His-Asp catalytic triad geometry;
+  (c) Nearest-neighbour distance in full 1024-dimensional ProstT5 embedding
+      space that places the candidate within the alpha/beta hydrolase manifold
+      while maintaining high sequence divergence (<25% amino acid identity).
+
+- Feasibility Basis & Exact Existing Evidence:
+  1. RQ/A5/result.md: Hydrolases (EC 3.x) represent 1,340 of the 5,418 confident
+     specific dark decodes (24.7%). Palmitoyl-[ACP] thioesterase (EC 3.1.2.14,
+     PWY-5994: fatty acid biosynthesis termination) is among the single most
+     frequent confident decodes:
+     - V30PRr1…825193_17: EC 3.1.2.14, C_confidence = 0.776.
+     - V24Dr1…1034307_7: EC 3.1.2.14, C_confidence = 0.730.
+  2. results/darkmatter_ecology/indicators/partial_salinity_proxy_top.tsv:
+     Family 24Dr2__self_SemiBin_62::24Dr2_840497_13 (EC 3.1.2.14, RXN-9548)
+     is present in 203 samples, dN/dS = 0.3627, and shows strong partial
+     correlation with salinity (partial r = -0.413, FDR q = 6.44e-08).
+  3. results/darkmatter_ecology/indicators/partial_aridity_index_top.tsv:
+     Family 25PRr1__self_SemiBin_1258::25PRr1_262260_5 (EC 3.1.2.14) is present
+     in 97 samples, dN/dS = 0.3912, partial r = -0.279 (FDR q = 1.88e-06).
+  4. Wu et al. (2025) Nat Commun (PMC12228687 / DOI 10.1038/s41467-025-61599-z):
+     Demonstrated that ProstT5 embeddings in full-dimensional vector space
+     enable representation tree discovery of environmental alpha/beta hydrolases
+     from metagenomic data, bridging wide sequence gaps to recover robust enzymes.
+  5. Heinzinger et al. (2024) NAR Genom Bioinform (PMC11616678): Validated
+     ProstT5 bilingual language modeling for structure extraction directly from
+     sequence.
+
+- Data Missing & Analytical Requirements:
+  - Extraction of 1024-dimensional sequence embeddings from ProstT5 for the
+    top confident dark hydrolase candidates and a curated reference set of
+    PDB alpha/beta hydrolases.
+  - Computation of full-dimensional Euclidean and cosine distance distributions
+    to quantify structural proximity without dimensionality reduction artifacts.
+  - Coordinate modeling (ESMFold) to verify the geometric spatial configuration
+    of the catalytic triad (nucleophile-acid-base distances <= 3.5 Angstroms).
+  - Explicit documentation of language model pre-training exposure limits.
+
+- Primary Effect & Quantitative Prediction:
+  Candidate dark families will fall within the quantitative distribution of
+  known alpha/beta hydrolases in full-dimensional ProstT5 embedding space
+  (nearest-neighbour cosine similarity > 0.70 vs < 0.40 for non-hydrolase
+  controls), while maintaining pairwise sequence identity < 25% against all
+  PDB references. Predicted coordinates will show root-mean-square deviation
+  (RMSD) < 2.5 Angstroms across the catalytic core with intact triad geometry.
+
+- Appropriate Controls & Calibration:
+  1. Negative Structural Controls: Non-hydrolase alpha/beta proteins (e.g.
+     flavodoxin-like folds, Rossmann folds).
+  2. Downsampled Reference Arm: Matched comparison against downsampled GEM
+     and SMAG soil references following the H3 protocol to control for database
+     growth effects.
+  3. Active-Site Scrambled Null: Shuffling catalytic residue positions to verify
+     that triad convergence is not an artifact of model smoothing.
+  4. Frame-Shift Selection Null: dN/dS comparison against the +1 shifted frame
+     to confirm protein-coding constraint.
+
+- Rejection / Falsification Outcome:
+  Rejected if:
+  (a) Nearest-neighbour distances in full-dimensional ProstT5 space are
+      statistically indistinguishable from random sequences or non-hydrolase folds; OR
+  (b) Coordinate models fail to reconstruct the nucleophilic elbow or displace
+      catalytic triad residues beyond hydrogen-bonding distance (> 4.0 Angstroms); OR
+  (c) Purifying selection is absent (dN/dS >= 1.0).
+
+
+--------------------------------------------------------------------------------
+HYPOTHESIS 5 (RANK 5)
+Deep-Branching Environmental Carbonic Anhydrases and Carbonate Geochemistry
+Associations in Arid Soils
+--------------------------------------------------------------------------------
+
+- Biological Question:
+  Do hyperarid soil MAGs encode divergent, unannotated carbonic anhydrases
+  (specifically beta- and gamma-classes; EC 4.2.1.1) that catalyze inorganic
+  carbon hydration for anaplerotic carbon fixation and pH homeostasis, and does
+  their genomic carriage track total soil calcium and sulfate minerals
+  (calcite/gypsum biomineralization proxies) across the transect?
+
+- Target Family & Orthogonal Definition:
+  Carbonic anhydrase classes:
+  (a) Beta-carbonic anhydrase (Pfam PF00484 / CATH 3.30.290.10);
+  (b) Gamma-carbonic anhydrase (Pfam PF00132 / CATH 2.140.10.10, left-handed
+      beta-helix fold);
+  (c) Alpha-carbonic anhydrase (Pfam PF00194).
+  Orthogonal definition requires:
+  (1) Identification of the characteristic fold (beta-CA dimer/tetramer or
+      gamma-CA trimeric prism);
+  (2) Preservation of the invariant zinc-coordinating residues (Cys-His-Cys in
+      beta-CA; three His residues in alpha- and gamma-CA);
+  (3) Full-dimensional ProstT5 embedding proximity to validated environmental
+      carbonic anhydrases.
+
+- Feasibility Basis & Exact Existing Evidence:
+  1. results/darkmatter_ecology/family_ec.tsv: Contains recurrent families
+     decoded to carbonic anhydrase (EC 4.2.1.1):
+     - 33PRr3__self_SemiBin_430::33PRr3_1679848_2: EC 4.2.1.1, C_confidence = 0.2572.
+     - 16PRr3__self_SemiBin_160::16PRr3_1527214_2: EC 4.2.1.1, C_confidence = 0.3101.
+  2. manuscript/main.tex (lines 496-506, 860-880): The transect is characterized
+     by total elemental geochemistry from laboratory XRF (Ca, S, Na, Cl, Si, Ti)
+     across 248-251 profiled samples. Ca and S represent dominant mineral axes
+     associated with pedogenic carbonates and gypsum dunes.
+  3. Pairoh et al. (2025) Sci Rep (PMC12635333 / DOI 10.1038/s41598-025-24713-1):
+     Established machine learning and structural discovery of divergent,
+     thermophilic carbonic anhydrases from environmental metagenomes, showing
+     that environmental CAs frequently diverge beyond sequence profile gates.
+
+- Data Missing & Analytical Requirements:
+  - Extraction and coordinate modeling (ESMFold) of dark and low-identity
+    candidate families decoded to EC 4.2.1.1.
+  - Verification of the coordinated zinc-binding pocket geometry.
+  - Partial Spearman rank correlation of candidate family abundances against
+    XRF calcium (Ca) and sulfur (S), controlling for ranked spatial coordinates
+    (latitude, longitude) across the 248 chemistry samples.
+
+- Primary Effect & Quantitative Prediction:
+  Identified candidate families will adopt authentic beta- or gamma-CA folds
+  (qTM >= 0.50) with tetrahedral zinc-coordination geometry. In ecological
+  modeling, their abundance will show positive partial Spearman correlation
+  with soil Ca (partial r > 0.20, Benjamini-Hochberg FDR q < 0.05) controlling
+  for spatial position, consistent with an active role in carbonate equilibrium
+  in alkaline arid soils.
+
+- Appropriate Controls & Calibration:
+  1. Geochemical Negative Control: Correlation against the vanadium (V) XRF
+     axis (the established inert environmental control, PERMANOVA p = 0.88).
+  2. Non-Zinc Metalloenzyme Control: Testing whether Ca associations are
+     specific to carbonic anhydrases versus unrelated metallochaperones.
+  3. Site-Restricted Permutation: 999 permutations restricted within the 59
+     transect sites (following manuscript line 868).
+  4. Defensome & Lifeonair Isolation: Zero overlap with phage defense nucleases
+     or atmospheric carbon monoxide dehydrogenase (coxL).
+
+- Rejection / Falsification Outcome:
+  Rejected if:
+  (a) Predicted structures fail to coordinate a central metal ion or disrupt the
+      invariant zinc-binding histidine/cysteine triad; OR
+  (b) Geochemical correlations fail under site-restricted permutations (p >= 0.10)
+      or correlate equally with the vanadium negative control; OR
+  (c) Candidate genes are restricted to plasmid/phage contigs (re-allocated to
+      defensome repo).
+
+
+--------------------------------------------------------------------------------
+HYPOTHESIS 6 (RANK 6)
+EctC/EctD Ectoine and Hydroxyectoine Biosynthetic Novelty and Salinity Adaptation
+in Desert Actinomycetota and Archaea
+--------------------------------------------------------------------------------
+
+- Biological Question:
+  Do sequence-divergent or unannotated members of the cupin superfamily (EctC
+  analogues) and 2-oxoglutarate-dependent oxygenases (EctD analogues) expand the
+  known machinery for ectoine and hydroxyectoine synthesis beyond canonical
+  pathway annotations, and does their presence correlate with soil salinity
+  gradients across the sand sea?
+
+- Target Family & Orthogonal Definition:
+  Ectoine/hydroxyectoine biosynthesis:
+  (a) Ectoine synthase (EctC, EC 4.2.1.98, Pfam PF06339 / Cupin fold);
+  (b) Ectoine hydroxylase (EctD, EC 1.14.11.55, Pfam PF03171 / 2OG-FeII_Oxy).
+  Orthogonal definition requires:
+  (1) Identification of the double-stranded beta-helix cupin barrel (EctC);
+  (2) Preservation of the iron-binding catalytic triad (His-X-His, Glu) in EctC
+      and the 2-His-1-carboxylate facial triad in EctD;
+  (3) Verification of syntenic operonic association with diaminobutyrate
+      transaminase (EctB) or acetyltransferase (EctA).
+
+- Feasibility Basis & Exact Existing Evidence:
+  1. manuscript/main.tex (lines 882-885): Ectoine carriage via K06720 (EctC) and
+     hydroxyectoine via K10674 (EctD) were profiled across all 5,438 representatives
+     in the 13-orthologue compatible-solute panel.
+  2. results/darkmatter_ecology/family_ec.tsv: Ectoine hydrolase (EC 3.5.4.44,
+     e.g. V39PRr2__self_SemiBin_3487::V39PRr2_1258003_17, PWY-7855) is present
+     in the decoded dark set, establishing active ectoine utilization/recycling
+     in the desert microbiome.
+  3. Czech et al. (2019) Sci Rep (PMC6344544 / DOI 10.1038/s41598-018-36247-w):
+     Provided crystal structures (PDB 5BXX, 6H87) establishing the exact
+     active-site geometry and metal-binding residues of EctC.
+
+- Data Missing & Analytical Requirements:
+  - Profile HMM search of Pfam PF06339 and PF03171 across dark families and
+    unannotated MAG proteins.
+  - Multiple sequence alignment and structural modeling to inspect the iron-
+    coordinating catalytic triad.
+  - Synteny inspection across MAG contigs for clustering with ectA and ectB.
+  - Partial Spearman rank correlation against XRF salinity (Na, Cl, S) across
+    the 248 chemistry samples.
+
+- Primary Effect & Quantitative Prediction:
+  Candidate families will adopt the cupin fold with intact Fe(II)-binding
+  geometry (qTM >= 0.50). In MAG contigs, candidate EctC genes will demonstrate
+  conserved operonic linkage with ectA and ectB in at least two distinct phyla.
+  Carriage will track soil salinity proxies (partial r > 0.25, FDR q < 0.05).
+
+- Appropriate Controls & Calibration:
+  1. Non-Ectoine Cupin Control: Other cupin-fold enzymes (e.g. pirin, oxalate
+     decarboxylase, gentisate 1,2-dioxygenase).
+  2. Known-Genome Ground Truth: Verification against the 22 long-read cultured
+     isolates from the basin.
+  3. Environmental Null: Correlation against latitude/longitude and vanadium.
+
+- Rejection / Falsification Outcome:
+  Rejected if:
+  (a) Structural models fail to form the cupin fold or lack iron-coordinating
+      residues; OR
+  (b) Candidate loci occur exclusively as isolated singletons without syntenic
+      linkage to compatible solute pathways; OR
+  (c) Salinity correlation is non-significant after controlling for geography.
+
+
+================================================================================
+5. SYNTHESIS, COMPARATIVE RANKING & RECOMMENDATION
+================================================================================
+
+Below is the comparative matrix summarizing the candidate hypotheses alongside
+the existing Round 7 extensions (H1-H4):
+
+Track / Hypothesis | Target Superfamily | Biological Question | Primary Signal / Niche | Key Control | Falsification Gate
+-------------------|-------------------|---------------------|------------------------|-------------|-------------------
+H1 (Existing)      | Lineage Genome    | PGLS reference proximity | Dark fraction vs RBH   | Assembly covariates | p >= 0.05 in PGLS
+H2 (Existing)      | Dark Flanks       | Syntenic recurrence      | Flanking KEGG orthologues | Pseudo-focal background | Excess recurrence <= 0
+H3 (Existing)      | Soil vs Global    | Reference composition    | Dark recovery SMAG vs GEM | Length quotas & deduplication | Recovery diff <= 0
+H4 (Existing)      | Confident Crops   | Sub-chain fold recovery  | Dual-reference qTM     | PDB blinded controls | Crop recovery <= whole chain
+-------------------|-------------------|---------------------|------------------------|-------------|-------------------
+H5.1 (Rank 1)      | Photolyase/Crypto | Light DNA repair diversity | Surface-over-Deep ratio| NHEJ (dormancy) & PDB controls | Surface:Deep <= 1; FAD triad lost
+H5.2 (Rank 2)      | HAD Solute Phosph | Compatible-solute HADs   | Rhizosphere / Salinity | Non-solute HADs & Vanadium | DXDX(T/V) motif absent; ProstT5 outlier
+H5.3 (Rank 3)      | Heliorhodopsin    | Monoderm photosensory HeRs | Flat depth distribution| Type-1 rhodopsins & photolyase | TM7 Lys absent; PF18761 HMM null
+H5.4 (Rank 4)      | Alpha/Beta Hydro  | ProstT5 embedding novelty| Soil ester/thioester   | Non-hydrolase folds & GEM quotas | Triad disrupted; ProstT5 distance null
+H5.5 (Rank 5)      | Carbonic Anhydr   | Biomineralization & C-fix| Ca / S elemental axes  | Vanadium control & site permutation | Zn-binding site lost; Ca partial r null
+H5.6 (Rank 6)      | EctC Cupin Synth  | Ectoine/hydroxyectoine   | Salinity (Na+Cl+S)     | Non-ectoine cupins & synteny | Fe-binding triad lost; synteny absent
+
+5.1 Ranking Rationale:
+- Hypothesis 1 is ranked #1 because the existing repository evidence is
+  exceptionally strong (the canonical photolyase light niche is already verified
+  in the manuscript across 44 paired sites and 3 phyla; ESMFold coordinates
+  already exist for 2,838 dark models; and the Singh et al. literature provides
+  an established precedent).
+- Hypothesis 2 is ranked #2 because 306 dark families are already catalogued
+  with high recurrence and low dN/dS in osmolyte_families.tsv, connecting directly
+  to the Thermoplasmatota and Actinomycetota lineages.
+- Hypothesis 3 is ranked #3 because it directly resolves an audited blind spot
+  in the existing RQ-D6 rhodopsin census, testing a mechanistically grounded
+  sensory hypothesis supported by recent literature (Pushkarev 2018; Bulzu 2021).
+- Hypotheses 4, 5, and 6 provide valuable alternative directions if the project
+  prioritizes enzyme biophysics (Wu et al. 2025 ProstT5 validation) or elemental
+  biogeochemistry (Ca/salinity mineralization).
+
+5.2 Next Steps:
+No analyses have been launched. The user may review this report and select
+which hypothesis (or subset) to advance into formal pre-registration, protocol
+definition, and Slurm workbench execution.
+================================================================================
+END OF REPORT
+================================================================================

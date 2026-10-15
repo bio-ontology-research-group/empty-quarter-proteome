@@ -1,0 +1,1662 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P0A9D8",
+  "secondaryAccessions": [
+    "P03948"
+  ],
+  "uniProtkbId": "DAPD_ECOLI",
+  "entryAudit": {
+    "firstPublicDate": "1986-10-23",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2005-07-19",
+    "entryVersion": 146,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Escherichia coli (strain K12)",
+    "taxonId": 83333,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-succinyltransferase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "6365916"
+            }
+          ],
+          "value": "2.3.1.117"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "6365916"
+            }
+          ],
+          "value": "Succinyl-CoA: tetrahydrodipicolinate N-succinyltransferase"
+        }
+      },
+      {
+        "fullName": {
+          "value": "Tetrahydrodipicolinate N-succinyltransferase"
+        },
+        "shortNames": [
+          {
+            "value": "THDP succinyltransferase"
+          },
+          {
+            "value": "THP succinyltransferase"
+          },
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000303",
+                "source": "PubMed",
+                "id": "6365916"
+              }
+            ],
+            "value": "Tetrahydropicolinate succinylase"
+          }
+        ]
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "dapD"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "b0166"
+        },
+        {
+          "value": "JW0161"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "6365916"
+            }
+          ],
+          "value": "Catalyzes the formation of N-succinyl-2-amino-6-oxo-L-pimelate from succinyl-CoA and tetrahydrodipicolinate, a key step in lysine biosynthesis via diaminopimelate pathway"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "(S)-2,3,4,5-tetrahydrodipicolinate + succinyl-CoA + H2O = (S)-2-succinylamino-6-oxoheptanedioate + CoA",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:17325"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15685"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16845"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57287"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57292"
+          }
+        ],
+        "ecNumber": "2.3.1.117",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "6365916"
+          }
+        ]
+      },
+      "physiologicalReactions": [
+        {
+          "directionType": "left-to-right",
+          "reactionCrossReference": {
+            "database": "Rhea",
+            "id": "RHEA:17326"
+          },
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "6365916"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "6365916"
+            }
+          ],
+          "value": "Inhibited by N-ethylmaleimide, p-chloromercuriphenyl sulfonate, cobalt and copper ions"
+        }
+      ],
+      "commentType": "ACTIVITY REGULATION"
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "michaelisConstants": [
+          {
+            "constant": 15.0,
+            "unit": "uM",
+            "substrate": "succinyl-CoA (at pH 7.4)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "6365916"
+              }
+            ]
+          },
+          {
+            "constant": 22.0,
+            "unit": "uM",
+            "substrate": "tetrahydrodipicolinate (THDPA) (at pH 7.4)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "6365916"
+              }
+            ]
+          }
+        ],
+        "note": {
+          "texts": [
+            {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000269",
+                  "source": "PubMed",
+                  "id": "6365916"
+                }
+              ],
+              "value": "kcat is 2600 min(-1)."
+            }
+          ]
+        }
+      },
+      "phDependence": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "6365916"
+              }
+            ],
+            "value": "Optimum pH is 8.2."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "6365916"
+            }
+          ],
+          "value": "Amino-acid biosynthesis; L-lysine biosynthesis via DAP pathway; LL-2,6-diaminopimelate from (S)-tetrahydrodipicolinate (succinylase route): step 1/3"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "6365916"
+            },
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Was originally thought to be a homodimer, but is rather a homotrimer as shown in orthologs"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the transferase hexapeptide repeat family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 274,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-succinyltransferase",
+      "featureId": "PRO_0000196933"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 104,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 104,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 141,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 141,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 31,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 31,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; AAA23667",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "V",
+        "alternativeSequences": [
+          "D"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 163,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 163,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; AAA23667",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "G",
+        "alternativeSequences": [
+          "R"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 177,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 177,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; AAA23667",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "I",
+        "alternativeSequences": [
+          "M"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 190,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 190,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; AAA23667",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "V",
+        "alternativeSequences": [
+          "L"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0012",
+      "category": "Molecular function",
+      "name": "Acyltransferase"
+    },
+    {
+      "id": "KW-0028",
+      "category": "Biological process",
+      "name": "Amino-acid biosynthesis"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0220",
+      "category": "Biological process",
+      "name": "Diaminopimelate biosynthesis"
+    },
+    {
+      "id": "KW-0903",
+      "category": "Technical term",
+      "name": "Direct protein sequencing"
+    },
+    {
+      "id": "KW-0457",
+      "category": "Biological process",
+      "name": "Lysine biosynthesis"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0677",
+      "category": "Domain",
+      "name": "Repeat"
+    },
+    {
+      "id": "KW-0808",
+      "category": "Molecular function",
+      "name": "Transferase"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "6094577",
+        "citationType": "journal article",
+        "authors": [
+          "Richaud C.",
+          "Richaud F.",
+          "Martin C.",
+          "Haziza C.",
+          "Patte J.-C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "6094577"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s0021-9258(17)42677-9"
+          }
+        ],
+        "title": "Regulation of expression and nucleotide sequence of the Escherichia coli dapD gene.",
+        "publicationDate": "1984",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "14824",
+        "lastPage": "14828",
+        "volume": "259"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "8202364",
+        "citationType": "journal article",
+        "authors": [
+          "Fujita N.",
+          "Mori H.",
+          "Yura T.",
+          "Ishihama A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8202364"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/nar/22.9.1637"
+          }
+        ],
+        "title": "Systematic sequencing of the Escherichia coli genome: analysis of the 2.4-4.1 min (110,917-193,643 bp) region.",
+        "publicationDate": "1994",
+        "journal": "Nucleic Acids Res.",
+        "firstPage": "1637",
+        "lastPage": "1639",
+        "volume": "22"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "CI-B1UJ6TNQ0SAS1",
+        "citationType": "submission",
+        "authors": [
+          "Chung E.",
+          "Allen E.",
+          "Araujo R.",
+          "Aparicio A.M.",
+          "Davis K.",
+          "Duncan M.",
+          "Federspiel N.",
+          "Hyman R.",
+          "Kalman S.",
+          "Komp C.",
+          "Kurdi O.",
+          "Lew H.",
+          "Lin D.",
+          "Namath A.",
+          "Oefner P.",
+          "Roberts D.",
+          "Schramm S.",
+          "Davis R.W."
+        ],
+        "title": "Sequence of minutes 4-25 of Escherichia coli.",
+        "publicationDate": "JAN-1997",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / MG1655 / ATCC 47076",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "9278503",
+        "citationType": "journal article",
+        "authors": [
+          "Blattner F.R.",
+          "Plunkett G. III",
+          "Bloch C.A.",
+          "Perna N.T.",
+          "Burland V.",
+          "Riley M.",
+          "Collado-Vides J.",
+          "Glasner J.D.",
+          "Rode C.K.",
+          "Mayhew G.F.",
+          "Gregor J.",
+          "Davis N.W.",
+          "Kirkpatrick H.A.",
+          "Goeden M.A.",
+          "Rose D.J.",
+          "Mau B.",
+          "Shao Y."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9278503"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.277.5331.1453"
+          }
+        ],
+        "title": "The complete genome sequence of Escherichia coli K-12.",
+        "publicationDate": "1997",
+        "journal": "Science",
+        "firstPage": "1453",
+        "lastPage": "1462",
+        "volume": "277"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / MG1655 / ATCC 47076",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "16738553",
+        "citationType": "journal article",
+        "authors": [
+          "Hayashi K.",
+          "Morooka N.",
+          "Yamamoto Y.",
+          "Fujita K.",
+          "Isono K.",
+          "Choi S.",
+          "Ohtsubo E.",
+          "Baba T.",
+          "Wanner B.L.",
+          "Mori H.",
+          "Horiuchi T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16738553"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/msb4100049"
+          }
+        ],
+        "title": "Highly accurate genome sequences of Escherichia coli K-12 strains MG1655 and W3110.",
+        "publicationDate": "2006",
+        "journal": "Mol. Syst. Biol.",
+        "firstPage": "E1",
+        "lastPage": "E5",
+        "volume": "2"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "8412694",
+        "citationType": "journal article",
+        "authors": [
+          "van Heeswijk W.C.",
+          "Rabenberg M.",
+          "Westerhoff H.V.",
+          "Kahn D.D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8412694"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/j.1365-2958.1993.tb01706.x"
+          }
+        ],
+        "title": "The genes of the glutamine synthetase adenylylation cascade are not regulated by nitrogen in Escherichia coli.",
+        "publicationDate": "1993",
+        "journal": "Mol. Microbiol.",
+        "firstPage": "443",
+        "lastPage": "458",
+        "volume": "9"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 1-15"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 7,
+      "citation": {
+        "id": "CI-72L6FDRKDTIQ0",
+        "citationType": "submission",
+        "authors": [
+          "Pasquali C.",
+          "Sanchez J.-C.",
+          "Ravier F.",
+          "Golaz O.",
+          "Hughes G.J.",
+          "Frutiger S.",
+          "Paquet N.",
+          "Wilkins M.",
+          "Appel R.D.",
+          "Bairoch A.",
+          "Hochstrasser D.F."
+        ],
+        "publicationDate": "SEP-1994",
+        "submissionDatabase": "UniProtKB"
+      },
+      "referencePositions": [
+        "PROTEIN SEQUENCE OF 1-11"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 8,
+      "citation": {
+        "id": "9298646",
+        "citationType": "journal article",
+        "authors": [
+          "Link A.J.",
+          "Robison K.",
+          "Church G.M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9298646"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1002/elps.1150180807"
+          }
+        ],
+        "title": "Comparing the predicted and observed properties of proteins encoded in the genome of Escherichia coli K-12.",
+        "publicationDate": "1997",
+        "journal": "Electrophoresis",
+        "firstPage": "1259",
+        "lastPage": "1313",
+        "volume": "18"
+      },
+      "referencePositions": [
+        "PROTEIN SEQUENCE OF 1-12"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / EMG2",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 9,
+      "citation": {
+        "id": "6365916",
+        "citationType": "journal article",
+        "authors": [
+          "Simms S.A.",
+          "Voige W.H.",
+          "Gilvarg C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "6365916"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s0021-9258(17)43207-8"
+          }
+        ],
+        "title": "Purification and characterization of succinyl-CoA: tetrahydrodipicolinate N-succinyltransferase from Escherichia coli.",
+        "publicationDate": "1984",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "2734",
+        "lastPage": "2741",
+        "volume": "259"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "ACTIVITY REGULATION",
+        "SUBUNIT",
+        "PATHWAY"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "K02970",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAA23667.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "U70214",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAB08595.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "U00096",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC73277.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AP009048",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAB96742.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "Z21842",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA79888.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "F64740",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "XNECSD"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_414708.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_000913.3"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_001186650.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NZ_CP009789.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P0A9D8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P0A9D8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "4259746",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "14"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "849262",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-31866N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "P0A9D8",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "354"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "P0A9D8",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "5"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "511145.b0166",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "jPOST",
+      "id": "P0A9D8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "511145-b0166",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "AAC73277",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC73277"
+        },
+        {
+          "key": "GeneId",
+          "value": "b0166"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "93777259",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "944862",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecj:JW0161",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "eco:b0166",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecoc:C3026_00755",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|1411691.4.peg.2115",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EchoBASE",
+      "id": "EB0203",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG2171",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_050859_0_1_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "P0A9D8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "YFPIQKM",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9775362at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "P0A9D8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "EcoCyc:MONOMER0-2001",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:MONOMER0-2001",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SABIO-RK",
+      "id": "P0A9D8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00034",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00019"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:P0A9D8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000625",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "P0A9D8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:EcoCyc"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "15911532"
+        },
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "18304323"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008666",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-succinyltransferase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:EcoCyc"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "6365916"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016779",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:nucleotidyltransferase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009085",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:L-lysine biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:EcoCyc"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "6365916"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd03350",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "LbH_THP_succinylT"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.166.10:FF:000001",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-succinyltransferase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "2.160.10.10:FF:000004",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-succinyltransferase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.160.10.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapeptide repeat proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.166.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Tetrahydrodipicolinate-N-succinyltransferase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "HAMAP",
+      "id": "MF_00811",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DapD"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005664",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DapD_Trfase_Hexpep_rpt_fam"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001451",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapep"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR018357",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapep_transf_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023180",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "THP_succinylTrfase_dom1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR037133",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "THP_succinylTrfase_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011004",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trimer_LpxA-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR00965",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "dapD"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF008808",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK11830.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR19136:SF52",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "2,3,4,5-TETRAHYDROPYRIDINE-2,6-DICARBOXYLATE N-SUCCINYLTRANSFERASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR19136",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "MOLYBDENUM COFACTOR GUANYLYLTRANSFERASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF14602",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapep_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF14805",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "THDPS_N_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51161",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trimeric LpxA-like enzymes"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00101",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HEXAPEP_TRANSFERASES"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MQQLQNIIETAFERRAEITPANADTVTREAVNQVIALLDSGALRVAEKIDGQWVTHQWLKKAVLLSFRINDNQVIEGAESRYFDKVPMKFADYDEARFQKEGFRVVPPAAVRQGAFIARNTVLMPSYVNIGAYVDEGTMVDTWATVGSCAQIGKNVHLSGGVGIGGVLEPLQANPTIIEDNCFIGARSEVVEGVIVEEGSVISMGVYIGQSTRIYDRETGEIHYGRVPAGSVVVSGNLPSKDGKYSLYCAVIVKKVDAKTRGKVGINELLRTID",
+    "length": 274,
+    "molWeight": 29892,
+    "crc64": "42D7A38610DD3AF6",
+    "md5": "456634840ECC8C243E1FFA2773CA7012"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "ACTIVITY REGULATION": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "PATHWAY": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 2,
+      "Sequence conflict": 4
+    },
+    "uniParcId": "UPI0000128EA1"
+  }
+}

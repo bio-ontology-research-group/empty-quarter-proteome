@@ -1,0 +1,712 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q9XBR7",
+  "secondaryAccessions": [
+    "Q5NMU9"
+  ],
+  "uniProtkbId": "Y1337_ZYMMO",
+  "entryAudit": {
+    "firstPublicDate": "2001-06-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1999-11-01",
+    "entryVersion": 117,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Zymomonas mobilis subsp. mobilis (strain ATCC 31821 / ZM4 / CP4)",
+    "taxonId": 264203,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Alphaproteobacteria",
+      "Sphingomonadales",
+      "Zymomonadaceae",
+      "Zymomonas"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Putative quercetin 2,3-dioxygenase ZMO1337"
+      },
+      "shortNames": [
+        {
+          "value": "Putative quercetinase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "value": "1.13.11.24"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Pirin-like protein ZMO1337"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "orderedLocusNames": [
+        {
+          "value": "ZMO1337"
+        }
+      ],
+      "orfNames": [
+        {
+          "value": "zm10orf8"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Putative quercetin 2,3-dioxygenase"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "quercetin + O2 = 2-(3,4-dihydroxybenzoyloxy)-4,6-dihydroxybenzoate + CO",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:15381"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15379"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:17245"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57628"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57694"
+          }
+        ],
+        "ecNumber": "1.13.11.24"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "a divalent metal cation",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:60240"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250"
+              }
+            ],
+            "value": "Binds 1 divalent metal cation."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "value": "Flavonoid metabolism; quercetin degradation"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the pirin family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 235,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Putative quercetin 2,3-dioxygenase ZMO1337",
+      "featureId": "PRO_0000214074"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 57,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 57,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:60240"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "a divalent metal cation",
+        "id": "ChEBI:CHEBI:60240"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 59,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 59,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:60240"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "a divalent metal cation",
+        "id": "ChEBI:CHEBI:60240"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 101,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 101,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:60240"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "a divalent metal cation",
+        "id": "ChEBI:CHEBI:60240"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 103,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 103,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:60240"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "a divalent metal cation",
+        "id": "ChEBI:CHEBI:60240"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0223",
+      "category": "Molecular function",
+      "name": "Dioxygenase"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0560",
+      "category": "Molecular function",
+      "name": "Oxidoreductase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "CI-DHN6V872FCDAI",
+        "citationType": "submission",
+        "authors": [
+          "Um H.W.",
+          "Kang H.S."
+        ],
+        "publicationDate": "JUN-1999",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 31821 / ZM4 / CP4",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "15592456",
+        "citationType": "journal article",
+        "authors": [
+          "Seo J.-S.",
+          "Chong H.",
+          "Park H.S.",
+          "Yoon K.-O.",
+          "Jung C.",
+          "Kim J.J.",
+          "Hong J.H.",
+          "Kim H.",
+          "Kim J.-H.",
+          "Kil J.-I.",
+          "Park C.J.",
+          "Oh H.-M.",
+          "Lee J.-S.",
+          "Jin S.-J.",
+          "Um H.-W.",
+          "Lee H.-J.",
+          "Oh S.-J.",
+          "Kim J.Y.",
+          "Kang H.L.",
+          "Lee S.Y.",
+          "Lee K.J.",
+          "Kang H.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15592456"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nbt1045"
+          }
+        ],
+        "title": "The genome sequence of the ethanologenic bacterium Zymomonas mobilis ZM4.",
+        "publicationDate": "2005",
+        "journal": "Nat. Biotechnol.",
+        "firstPage": "63",
+        "lastPage": "68",
+        "volume": "23"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 31821 / ZM4 / CP4",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AF157493",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAD42408.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AE008692",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAV89961.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_011241135.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_006526.2"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q9XBR7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q9XBR7",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "zmo:ZMO1337",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG1741",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_064194_2_2_5",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00724",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001173",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008127",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:quercetin 2,3-dioxygenase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd02910",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "cupin_Yhhw_N"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.60.120.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Jelly Rolls"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR012093",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR003829",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin_N_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR041602",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Quercetinase_C"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014710",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC-like_jellyroll"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011051",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC_Cupin_sf"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43212",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "QUERCETIN 2,3-DIOXYGENASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43212:SF3",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "QUERCETIN 2,3-DIOXYGENASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02678",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF17954",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin_C_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF006232",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51182",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC-like cupins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MIVKRPYKNLGFADHGWLQARHHFSFARYFDPDRINWGAVRVWNDDRIAPDTGFGMHPHKDMEIVTYIREGALTHEDSLGNKGRIEAGDVQVMSAGTGIVHSEYNREASDTRLFQIWIMPNQSGHKPSWGSRSFPKKDHAGRFVVLASGYPEDKEALPIHADAAVLGATLNKGDVINYPLEEQRYGYLVVSKGIIAIENCTLQEGDAAGLAEVETISIEAKEDSEIVMVVTGAKI",
+    "length": 235,
+    "molWeight": 26119,
+    "crc64": "94B108881DBCEC43",
+    "md5": "567FDD21ABE8CA6FC2B0DE51D1FCC6FC"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 4
+    },
+    "uniParcId": "UPI0000139297"
+  }
+}

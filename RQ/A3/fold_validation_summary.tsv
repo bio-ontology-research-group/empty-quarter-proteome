@@ -1,0 +1,43 @@
+metric	value
+analysis_status	SUPERSEDED_HISTORICAL_ALIGNMENT_NORMALISED_SNAPSHOT
+superseded_by	reproducibility/current_structure_metric_sensitivity_summary.json
+# RQ-A3 confidence/length sensitivity for candidate novel-fold representatives
+# source: best_afdb_tm.tsv + best_pdb_tm.tsv + plddt_shard*.tsv
+# dual-novel = best TM < 0.5 against AFDB AND PDB; no hit counts as novel
+n_plddt_records	63935
+n_plddt_ok	63654
+n_plddt_too_long	281
+dual_novel_plddt_ge_0.00_n	15248
+dual_novel_plddt_ge_0.00_denominator	63654
+dual_novel_plddt_ge_0.00_pct	24.0
+dual_novel_plddt_ge_0.40_n	9258
+dual_novel_plddt_ge_0.40_denominator	50154
+dual_novel_plddt_ge_0.40_pct	18.5
+dual_novel_plddt_ge_0.50_n	5514
+dual_novel_plddt_ge_0.50_denominator	33524
+dual_novel_plddt_ge_0.50_pct	16.4
+dual_novel_plddt_ge_0.60_n	2836
+dual_novel_plddt_ge_0.60_denominator	17196
+dual_novel_plddt_ge_0.60_pct	16.5
+dual_novel_plddt_ge_0.70_n	1164
+dual_novel_plddt_ge_0.70_denominator	5709
+dual_novel_plddt_ge_0.70_pct	20.4
+dual_novel_plddt_ge_0.80_n	15
+dual_novel_plddt_ge_0.80_denominator	187
+dual_novel_plddt_ge_0.80_pct	8.0
+dual_novel_median_plddt	0.440
+matched_median_plddt	0.520
+dual_novel_median_length_aa	182
+matched_median_length_aa	153
+plddt_ge_0.60_length_lt100_n	9660
+plddt_ge_0.60_length_lt100_dual_novel_pct	26.3
+plddt_ge_0.60_length_100_150_n	1839
+plddt_ge_0.60_length_100_150_dual_novel_pct	5.4
+plddt_ge_0.60_length_150_250_n	3421
+plddt_ge_0.60_length_150_250_dual_novel_pct	2.7
+plddt_ge_0.60_length_250_400_n	1831
+plddt_ge_0.60_length_250_400_dual_novel_pct	4.8
+plddt_ge_0.60_length_ge400_n	445
+plddt_ge_0.60_length_ge400_dual_novel_pct	4.9
+plddt_ge_0.60_length_ge100_dual_novel_n	300
+known_fold_matched_false_novelty_control	NOT_RUN

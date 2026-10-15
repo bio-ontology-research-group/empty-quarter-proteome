@@ -1,0 +1,188 @@
+{
+  "status": "PASSED",
+  "output_dir": "/mnt/data/u/hohndor/eq-family-followup-20261015/expanded_embeddings",
+  "fasta_path": "/mnt/data/u/hohndor/eq-family-followup-20261015/inputs/expanded_helio.faa",
+  "checks": {
+    "files_present": {
+      "passed": true
+    },
+    "checksums": {
+      "passed": true,
+      "errors": []
+    },
+    "npy_npz_identical": {
+      "passed": true
+    },
+    "dimensionality": {
+      "passed": true,
+      "actual_shape": [
+        1744,
+        1024
+      ],
+      "expected_shape": [
+        1744,
+        1024
+      ]
+    },
+    "finiteness": {
+      "passed": true,
+      "has_nans": false,
+      "has_infs": false
+    },
+    "id_order_preserved": {
+      "passed": true,
+      "num_ids": 1744
+    },
+    "lengths_match": {
+      "passed": true
+    },
+    "raw_sequence_shas_match": {
+      "passed": true
+    },
+    "clean_sequence_shas_match": {
+      "passed": true
+    },
+    "manifest_integrity": {
+      "passed": true
+    },
+    "duplicate_equivalence": {
+      "passed": true,
+      "checks": [
+        {
+          "id1": "Helio__EQ__F21PRr1__self_SemiBin_2438::F21PRr1_351040_15",
+          "id2": "Helio__EQ__F21Sr2__self_SemiBin_119::F21Sr2_347368_1",
+          "clean_sha256": "e7b3dbbec73c187e1ef97c8e53af841f1cff0485c104c2a1b79ba7c8e116a741",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__GEM__3300025702_19::3300025702_19_1692",
+          "id2": "BULZU_1102",
+          "clean_sha256": "1d00363b276404e94a2b973952b91195df05dce75d1dbb48d00baf22b9c43c16",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__GEM__3300001096_18::3300001096_18_818",
+          "id2": "Helio__GEM__3300025408_15::3300025408_15_1042",
+          "clean_sha256": "e1eaddc669182a63b36ccc4b813fa56064188d6560c8cef078c6145e25658b31",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__GEM__3300025161_29::3300025161_29_14",
+          "id2": "BULZU_1335",
+          "clean_sha256": "3b03ec904a95186988a11179de5dab8ed413a3ade1305c0a8be8a43cb6527f44",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__GEM__3300026703_7::3300026703_7_631",
+          "id2": "BULZU_1477",
+          "clean_sha256": "ecd1fd62049f1acf4709e87d33c4643531ecc60a7b4e090ee7ba2364fe3c7248",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__GEM__3300025632_35::3300025632_35_464",
+          "id2": "BULZU_1382",
+          "clean_sha256": "318679618977072c8cf723fa1a126d43c861b6cd4abc0f2b374c663afe9d29e5",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__GEM__3300020057_49::3300020057_49_793",
+          "id2": "Helio__GEM__3300020195_59::3300020195_59_273",
+          "clean_sha256": "7fe1ba5d6b5e28e94d0844a16caab222e328189250996448d6dc1acf47b7ad6d",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__GEM__3300020057_49::3300020057_49_793",
+          "id2": "BULZU_1579",
+          "clean_sha256": "7fe1ba5d6b5e28e94d0844a16caab222e328189250996448d6dc1acf47b7ad6d",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__GEM__3300026660_1::3300026660_1_1007",
+          "id2": "BULZU_30",
+          "clean_sha256": "873657548e393f896c87ecc81c7fd176845f96de3d9f73ee22dc1bc6d20fa285",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__GEM__3300025393_24::3300025393_24_1631",
+          "id2": "BULZU_1080",
+          "clean_sha256": "a79788e5d97cc55b88c9ef80cfe251bebe846cade7d68b5ae5242db2995022d9",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__curated_reference__A0A0W0GG67",
+          "id2": "BULZU_29",
+          "clean_sha256": "6e9e674dd388407328f2ca21a4d096616594e855bd74d1421590708cf31f7229",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__curated_reference__A0A143YUX7",
+          "id2": "BULZU_36",
+          "clean_sha256": "00de9629212703363ad174eec8c0a444113c72948767a64bbf64c91bf195b7e5",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__curated_reference__A0A1A9GKZ5",
+          "id2": "BULZU_43",
+          "clean_sha256": "d9bc1b9e2095fbe8cf88c8c6fbe5191ff67e8a9988f364a392202c7865d98c23",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__curated_reference__A0A1D3TU92",
+          "id2": "BULZU_45",
+          "clean_sha256": "e00435d9dbbd4cc449660e74b5ab0fa708e518628e9ab73555354d81a872d948",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__curated_reference__A0A1I0PGP5",
+          "id2": "BULZU_67",
+          "clean_sha256": "873e6832aeab89b339491f53162e2bd11be6a10d378b812d846166c838afd69d",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__curated_reference__A0A1I3XUN6",
+          "id2": "BULZU_70",
+          "clean_sha256": "a727ae86f0596a676d61c180c11e28ef44e2600e142550925ff1a3d609b1f01d",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__curated_reference__A0A3N5A4N3",
+          "id2": "BULZU_174",
+          "clean_sha256": "21db85fd5b06f3043db05b82e4767a8f8b71702d84024d02892af9670d448520",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "Helio__curated_reference__A0A4R8UU61",
+          "id2": "BULZU_675",
+          "clean_sha256": "3ef2f2b9f04ed0ec3cd74aa1868652037ca6e40622e1ba2dc5e4416ca2c0a941",
+          "max_abs_diff": 0.0,
+          "passed": true
+        }
+      ]
+    },
+    "provenance_valid": {
+      "passed": true,
+      "run_signature": "2bdbc01b4b79fccfc2e36e00ce43be057aa895be98eb9ff75053b76817c90155",
+      "runner_code_sha256": "f47516cb37d07e6fb298a6f1e78c7ab6900d925121317cfa4d77757108c6df95",
+      "gpu_device": "NVIDIA H200",
+      "peak_vram_gb": 2.9782,
+      "single_vs_batched_consistency": null
+    }
+  }
+}

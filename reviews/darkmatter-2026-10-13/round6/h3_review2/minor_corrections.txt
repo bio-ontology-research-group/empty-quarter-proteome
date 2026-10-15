@@ -1,0 +1,75 @@
+ROUND 6 H3 REVIEW 2 — NON-BLOCKING DOCUMENTATION & PROVENANCE CORRECTIONS RECORD
+================================================================================
+Date: 2026-10-13
+Reviewer: Gemini 4 Argon (High)
+Target Working Package: reproducibility/darkmatter/round6_hypotheses/h3_references/
+Immutable Snapshot Untouched: reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/ (all 67 files verified)
+Original Review2 Untouched:
+  - reviews/darkmatter-2026-10-13/round6/h3_review2/review.txt
+    (SHA-256: f50339171fb1ddc8e2b191c51327b427f2bdf1dd7a81b72b20aaf9ae2732cd93, 12,392 bytes)
+  - reviews/darkmatter-2026-10-13/round6/h3_review2/verdicts.json
+    (SHA-256: 713104e37ed0d3c9f238f277a3b40d73306262e666a242b7de02fbf32f8a2660, 6,419 bytes)
+Scientific Code & Results Untouched:
+  - No script (`scripts/01`–`10`) or result/log artifact (`results/*`, `logs/*`) was modified or re-executed.
+
+--------------------------------------------------------------------------------
+1. REVISED DOCUMENT CHECKSUMS
+--------------------------------------------------------------------------------
+* reproducibility/darkmatter/round6_hypotheses/h3_references/DOSSIER.md
+  - Previous (h3_v3 snapshot) SHA-256: 2dd7c934039d644794c84f2523cb64750dcfa3f6800b8a87be815e9a8bc4b1b6 (19,668 bytes)
+  - Final Revised SHA-256:             5ad6f42904ffd8753e75c71b17a60682913ed163f2a55940b732018d9c3eb1ea (20,893 bytes)
+
+* reproducibility/darkmatter/round6_hypotheses/h3_references/DESIGN.md
+  - Previous (h3_v3 snapshot) SHA-256: a04201572730c1786aa9f8be5c32c328e367f56b76c2ac96eb20ea2318583b6a (14,620 bytes)
+  - Final Revised SHA-256:             e2aeac834f346bd4e85bb256a4e38f6fc7cad1245b5ff06bb627279003dc347c (15,305 bytes)
+
+* reproducibility/darkmatter/round6_hypotheses/h3_references/response.txt
+  - Previous (h3_v3 snapshot) SHA-256: 649d9fb995a7823cda8af5599ba43a812ba654cbf05db2fcf43000bfcaab5848 (10,420 bytes)
+  - Final Revised SHA-256:             ed42385b0e415d69aaae378823ec859c36f1f004a16d5ed402e12dda2d86a50f (11,119 bytes)
+
+* reproducibility/darkmatter/round6_hypotheses/h3_references/INPUTS.tsv
+  - Previous (h3_v3 snapshot) SHA-256: bdfe6ee69fe0a8a659f33f9487ca1cb8c3482641b34c3dfabe4f687f43fbc682 (12,317 bytes)
+  - Final Revised SHA-256:             480db8f145f5d8d850e253a40e894f428b5e7947aa0d16709846e832fbc4f7d6 (12,433 bytes)
+
+--------------------------------------------------------------------------------
+2. EXACT CORRECTED TEXT AND SOURCE VERIFICATION
+--------------------------------------------------------------------------------
+
+A. Correction 1 — Label Protein-Count E-Value Split as a Rough Heuristic Threshold Diagnostic and State Explicit Caveat on Legacy TSV Column Names
+- Verified Source Files:
+  * reproducibility/darkmatter/round6_hypotheses/h3_references/results/v3_top1_vs_dbsize_decomposition.tsv
+  * reproducibility/darkmatter/round6_hypotheses/h3_references/results/pilot_query_comparison_details.tsv
+  * reproducibility/darkmatter/round6_hypotheses/h3_references/logs/pilot_53700569.err (lines 22-23: 5,815,177 sequences, 1,834,739,150 database letters)
+  * reproducibility/darkmatter/round6_hypotheses/h3_references/scripts/09_v3_match_gem_and_search.py (lines 601-650)
+- Exact Edits Applied:
+  * DOSSIER.md (§3, lines 60-66): Renamed section to "Rough Heuristic Threshold Diagnostic for Post-Hoc Subsampling vs. Fresh Subset Search (`results/v3_top1_vs_dbsize_decomposition.tsv`)" and added an explicit Methodological Caveat stating that partitioning empirical subset hits at $E_{\text{sub}} \le 10^{-3} / (122,978,191 / 5,815,177) = 4.73 \times 10^{-5}$ is a rough heuristic threshold diagnostic rather than an exact attribution to `-k 1` masking vs. database size, cannot identify the causal mechanism for individual queries because Karlin-Altschul / DIAMOND E-values depend on effective searched amino-acid residue space ($n' = N_{\text{letters}} - N_{\text{seqs}} \cdot l_{\text{eff}}(m)$), composition-based adjustments/masking, and block/seed search heuristics, and that existing TSV column names (`strict_top1_masked_e_le_4p73e5`, `borderline_dbsize_rescaled_e_gt_4p73e5`, `strict_top1_masked_share_pct`, `borderline_dbsize_rescaled_share_pct`) are retained historical diagnostic labels rather than validated mechanism classifications. Also updated line 49 assertion line reference to `09_v3_match_gem_and_search.py:329-338`.
+  * DESIGN.md (§1.2 item 4, line 25): Updated heading and text to label the $4.73 \times 10^{-5}$ split in `results/v3_top1_vs_dbsize_decomposition.tsv` as a rough heuristic threshold diagnostic with the same caveat on effective residue space, composition, heuristics, and legacy TSV column names.
+  * response.txt (§4 item 4, line 59): Updated text and line citations (`09_v3_match_gem_and_search.py:408-598` and `601-650`) to label the $4.73 \times 10^{-5}$ split as an ancillary rough heuristic threshold diagnostic with the explicit legacy TSV column-name caveat.
+
+B. Correction 2 — Correct Tar Archive First Member (`MAG/SRR5579859rbin.24.fa`) vs. Alphabetical Manifest Ordering (`MAG/D3rbin.13.fa`) and Rejected Partial Observed Byte Count (`6,946,816`)
+- Verified Source Files:
+  * reproducibility/darkmatter/round6_hypotheses/h3_references/results/v3_smag_tar_extraction_audit.tsv
+    - Line 2 (member 1): `1	MAG/SRR5579859rbin.24.fa	SRR5579859rbin.24	4213826	4213826	490591984961f88916f4bc54b022addc3e5bb25edb19eb280b567454796a7ca7	True	True	704	4135172	COMPLETE_RETAINED	OK`
+    - Line 93 (member 92): `92	MAG/D3rbin.13.fa	D3rbin.13	8293617	8293617	830c5ffc1ce91a435a847071987dec64fbc06b6decfca190396c7b46663f5787	True	True	895	8145222	COMPLETE_RETAINED	OK`
+    - Line 213 (member 212): `212	MAG/SRR5437667rbin.15.fa	SRR5437667rbin.15	2690434	2690434	03a17490ae29bc472a8b0c2c2140ca73616e6e81ccc6299b22577c9130d95124	True	True	416	2640540	COMPLETE_RETAINED	OK`
+    - Line 214 (member 213): `213	MAG/SRR5855438rbin.1.fa	SRR5855438rbin.1	12783848	6946816	ce0de439fa2a20809c53c895940a1a593145ca3dda4cd5dcc79c99b6fe289663	True	False	0	0	REJECTED_TRUNCATED_STREAM_END	ReadError: unexpected end of data`
+  * reproducibility/darkmatter/round6_hypotheses/h3_references/results/v3_smag_genome_manifest.tsv (line 2: sorted alphabetically by `mag_id`, starting at `D3rbin.13` with `member_order_idx = 92`)
+- Exact Edits Applied:
+  * DOSSIER.md (§2.1, line 36): Corrected `Members 1–212 (MAG/D3rbin.13.fa through MAG/SRR5437667rbin.15.fa)` to `Members 1–212 (MAG/SRR5579859rbin.24.fa [member 1] through MAG/SRR5437667rbin.15.fa [member 212] in tar stream order in results/v3_smag_tar_extraction_audit.tsv; sorted alphabetically starting at MAG/D3rbin.13.fa [member 92] in results/v3_smag_genome_manifest.tsv)`.
+  * DESIGN.md (§2.1 item 2, line 37): Corrected the mistyped `observed_bytes = 6,995,968` for rejected member 213 `MAG/SRR5855438rbin.1.fa` to the actual audit value `observed_bytes = 6,946,816` (`declared_bytes = 12,783,848`) and noted complete members 1–212 (`MAG/SRR5579859rbin.24.fa` through `MAG/SRR5437667rbin.15.fa`).
+  * response.txt (§3 items 3 & 5, lines 46, 48): Recorded tar stream order (`MAG/SRR5579859rbin.24.fa` [member 1] through `MAG/SRR5437667rbin.15.fa` [member 212]) vs. alphabetical manifest order (`MAG/D3rbin.13.fa` [member 92]), verified `observed_bytes = 6,946,816` for rejected member 213, and corrected the sorting line reference in `08_v3_extract_and_call_smag.py` to `lines 326,359-375`.
+
+C. Correction 3 — Full Verification and Correction of `INPUTS.tsv` (All Accessible Local and Remote Entries)
+- Full Audit of All 45 Entries in `reproducibility/darkmatter/round6_hypotheses/h3_references/INPUTS.tsv`:
+  * Row 2 (`FAMILIES_FINAL.txt`, remote): Corrected `bytes` from `2591285` to verified `2561278` (SHA-256 `d3f082f9da305fe11c7ac99f5c7570a45d5066fcca191326c4a5eb019b4b5331` verified on IBEX).
+  * Row 3 (`CONTROL_FAMILIES.txt`, remote): Corrected `bytes` from `2592036` to verified `2561748` (SHA-256 `59c572a8a942336bd3117a95994ba66102d370267f94c952f5a671f7f46e9dc1` verified on IBEX).
+  * Row 14 (`smag_supplementary_data_2.xlsx`, remote): Corrected `sha256` from `1f822a1ce0caae23beab5d70b620a2327599723ec0b2184d0b17865cbb6db5ea` to verified `7ed0a60b27ba2baf0fdef434215803e7dc4eb994ade303b23effc6f622f861ea` (`18,691,101` bytes verified on IBEX).
+  * Row 16 (`reviews/darkmatter-2026-10-13/round6/public_source_checks/zenodo_8223844.json`, local): Corrected `sha256` from `9728cb11ba3ec19323c3167bcfad35bc6c39f1591f421e4ea5ea7310574f7626` to verified `16e609c57e1c3965f6694c52ca9c150cf0937b540f90007f8d3b8ac08d854fb0` (`116,029` bytes verified locally).
+  * Row 42 (`reproducibility/darkmatter/round6_hypotheses/h3_references/results/v3_top1_vs_dbsize_decomposition.tsv`, both): Updated `description` to `Rough heuristic protein-count E-value threshold diagnostic for post-hoc subsampling vs fresh subset search (legacy column names strict_top1_masked/etc are diagnostic labels, not validated mechanism classifications)` (`381` bytes, SHA-256 `b9fe00b7fe89a2721f0296b4e9ad5cb12a161b99b5c04aa215a8a0432111d2cc` verified).
+  * Row 43 (`reproducibility/darkmatter/round6_hypotheses/h3_references/results/v3_artifact_checksums.tsv`, both): Corrected `sha256` from `6cf58237645e98bc69870215362fa1df6c1f1a0608128a5d89588b3145150096` to verified `ffb8ad86be1c3927036faa252a9c599d8b93397b3b12ff424fe6c35247787b04` (`5,302` bytes verified locally and on IBEX).
+  * All 18 accessible `local`/`both` entries and all 26 accessible `remote` entries in `INPUTS.tsv` now match their exact byte sizes and SHA-256 digests on disk and IBEX.
+
+--------------------------------------------------------------------------------
+3. EXPLICIT VIABILITY CONFIRMATION
+--------------------------------------------------------------------------------
+Bounded Hypothesis 3 (H3 v3) remains explicitly VIABLE after these final documentation and provenance corrections. All underlying scripts, statistical tables, alignment outputs, and frozen snapshot files (`snapshots/h3_v3/`) remain unchanged and verified.

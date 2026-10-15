@@ -1,0 +1,314 @@
+
+==============================================================================
+1. FIND ALL ECOLOGY, STRUCTURE & METABOLISM FILES IN REPO
+==============================================================================
+FOUND: inputs/06_darkmatter/lineage_darkness_clean/results/v2_thermo_ecology_summary.tsv.gz
+FOUND: source_snapshot/04_structure/pfam_candidates_clean/results/duf_share.tsv
+FOUND: source_snapshot/04_structure/pfam_candidates_clean/results/hit_rate_by_length.tsv
+FOUND: source_snapshot/04_structure/pfam_candidates_clean/results/k_family_summary.json
+FOUND: source_snapshot/04_structure/pfam_candidates_clean/results/set_summary.tsv
+FOUND: source_snapshot/04_structure/pfam_candidates_clean/results/top_pfam_K_members.tsv
+FOUND: source_snapshot/06_darkmatter/cultured_comparison_clean/results/step3_cultured_dark_rate_summary.tsv
+FOUND: source_snapshot/06_darkmatter/cultured_comparison_clean/results/step3_dark_with_cultured_homolog.tsv
+FOUND: source_snapshot/06_darkmatter/darkfam_ecology_clean/results/INDICATORS.md
+FOUND: source_snapshot/06_darkmatter/darkfam_ecology_clean/results/PARTIAL.md
+FOUND: source_snapshot/06_darkmatter/darkfam_ecology_clean/results/community_summary.txt
+FOUND: source_snapshot/06_darkmatter/darkfam_ecology_clean/results/compartment_families_by_phylum.tsv
+FOUND: source_snapshot/06_darkmatter/darkfam_ecology_clean/results/compartment_families_summary.tsv
+FOUND: source_snapshot/06_darkmatter/darkfam_ecology_clean/results/indicators_summary.tsv
+FOUND: source_snapshot/06_darkmatter/darkfam_ecology_clean/results/partial_summary.tsv
+FOUND: source_snapshot/06_darkmatter/darkfam_ecology_clean/results/permanova_blocks.tsv
+FOUND: source_snapshot/06_darkmatter/darkfam_ecology_clean/results/varpart.tsv
+FOUND: source_snapshot/06_darkmatter/lineage_darkness_clean/results/v2_matched_null_summary.txt
+FOUND: source_snapshot/06_darkmatter/lineage_darkness_clean/results/v2_model_report.txt
+FOUND: source_snapshot/06_darkmatter/lineage_darkness_clean/results/v2_thermo_ecology_summary.tsv
+FOUND: source_snapshot/06_darkmatter/lineage_darkness_clean/results/v2_thermo_metabolism_report.txt
+FOUND: source_snapshot/06_darkmatter/lineage_darkness_clean/results/v2_thermo_metabolism_summary.tsv
+
+--- source_snapshot/04_structure/pfam_candidates_clean/results/duf_share.tsv ---
+set	n_hit	n_hit_all_duf	pct_of_hits_all_duf	n_hit_any_named	pct_of_set_any_named
+K_members	427	124	29.04	303	6.21
+QnotK_reps	101	25	24.75	76	4.21
+controls	2732	10	0.37	2722	90.34
+
+
+--- source_snapshot/04_structure/pfam_candidates_clean/results/hit_rate_by_length.tsv ---
+length_bin	set	n	n_with_hit	pct_with_hit	n_hit_and_gap80	pct_hit_and_gap80
+100-149	K_members	188	5	2.66	1	0.53
+100-149	QnotK_reps	427	32	7.49	3	0.70
+100-149	controls	472	397	84.11	2	0.42
+150-199	K_members	864	70	8.10	46	5.32
+150-199	QnotK_reps	554	31	5.60	10	1.81
+150-199	controls	498	424	85.14	22	4.42
+200-299	K_members	2121	198	9.34	186	8.77
+200-299	QnotK_reps	598	27	4.52	20	3.34
+200-299	controls	658	603	91.64	55	8.36
+300-399	K_members	1133	121	10.68	116	10.24
+300-399	QnotK_reps	140	8	5.71	6	4.29
+300-399	controls	675	628	93.04	126	18.67
+400-599	K_members	455	29	6.37	29	6.37
+400-599	QnotK_reps	72	1	1.39	1	1.39
+400-599	controls	506	485	95.85	166	32.81
+600-inf	K_members	118	4	3.39	4	3.39
+600-inf	QnotK_reps	16	2	12.50	2	12.50
+600-inf	controls	204	195	95.59	106	51.96
+
+
+--- source_snapshot/04_structure/pfam_candidates_clean/results/k_family_summary.json ---
+{
+ "n_k_families": 1031,
+ "n_families_with_any_pfam_member": 144,
+ "pct_families_with_any_pfam_member": 13.97,
+ "families_wilson95": [
+  11.98,
+  16.22
+ ],
+ "n_families_with_pfam_member_and_gap80": 130,
+ "pct_families_with_pfam_member_and_gap80": 12.61,
+ "n_modelled_reps_with_pfam": 93,
+ "pct_modelled_reps_with_pfam": 9.02
+}
+
+--- source_snapshot/04_structure/pfam_candidates_clean/results/set_summary.tsv ---
+set	n	median_length	mean_length	n_with_hit	pct_with_hit	hit_wilson95	n_no_hit	n_hit_and_gap80	pct_hit_and_gap80	hitgap_wilson95	pct_of_hits_with_gap80	covfrac_hits_median	covfrac_hits_q1	covfrac_hits_q3	covfrac_hits_mean	pct_hits_covfrac_ge_0_8	pct_hits_covfrac_lt_0_5	median_max_gap_hits	dom0	dom1	dom2	dom3plus	pct_multidomain_of_hits
+K_members	4880	256.0000	287.2920	427	8.7500	[7.99, 9.58]	4453	382	7.8279	[7.11, 8.62]	89.4614	0.2529	0.1600	0.3647	0.2852	1.4052	90.3981	159.0000	4453	388	36	3	9.1335
+QnotK_reps	1807	193.0000	216.0266	101	5.5894	[4.62, 6.75]	1706	42	2.3243	[1.72, 3.13]	41.5842	0.5592	0.3043	0.8182	0.5507	28.7129	42.5743	65.0000	1706	98	2	1	2.9703
+controls	3013	279.0000	308.2745	2732	90.6737	[89.58, 91.66]	281	477	15.8314	[14.57, 17.18]	17.4597	0.8851	0.7500	0.9540	0.8219	67.7160	8.0893	22.0000	281	1510	740	482	44.7291
+K_reps_only	1031	265.0000	302.9418	93	9.0204	[7.42, 10.92]	938	83	8.0504	[6.54, 9.87]	89.2473	0.2233	0.1297	0.3379	0.2683	1.0753	90.3226	164.0000	938	84	7	2	9.6774
+
+
+--- source_snapshot/04_structure/pfam_candidates_clean/results/top_pfam_K_members.tsv ---
+rank	pfam_acc	pfam_id	clan	n_proteins	pct_of_hit_proteins	description
+1	PF05305	DUF732	-	43	10.07	Protein of unknown function (DUF732)
+2	PF14018	DUF4234	-	38	8.90	Domain of unknown function (DUF4234)
+3	PF13202	EF-hand_5	CL0220	28	6.56	EF hand
+4	PF13490	zf-HC2	CL0645	25	5.85	Putative zinc-finger
+5	PF14520	HHH_5	CL0198	21	4.92	SAM-like Helix-hairpin-helix tandem
+6	PF12728	HTH_17	CL0123	20	4.68	Helix-turn-helix domain
+7	PF05103	DivIVA	-	19	4.45	DivIVA protein
+8	PF20901	Sf6_terminase	CL0123	13	3.04	Bacteriophage Sf6, terminase small subunit-like
+9	PF01391	Collagen	-	13	3.04	Collagen triple helix repeat (20 copies)
+10	PF13240	Zn_Ribbon_1	CL0167	12	2.81	zinc-ribbon domain
+11	PF27063	RsmA_C	-	11	2.58	Anti-sigma factor RsmA, C-terminal extracellular domain
+12	PF12836	HHH_3	CL0198	11	2.58	Helix-hairpin-helix motif
+13	PF13559	DUF4129	-	10	2.34	Domain of unknown function (DUF4129)
+14	PF21983	NikA-like	CL0057	10	2.34	Mobilization protein NikA
+15	PF06568	YjiS-like	-	7	1.64	YjiS-like domain
+16	PF07411	DUF1508	-	7	1.64	Domain of unknown function (DUF1508)
+17	PF19102	DUF5789	CL0896	6	1.41	Family of unknown function (DUF5789)
+18	PF04659	Arch_fla_DE	-	6	1.41	Archaeal flagella protein
+19	PF02517	Rce1-like	CL0472	5	1.17	Type II CAAX prenyl endopeptidase Rce1-like
+20	PF12802	MarR_2	CL0123	5	1.17	MarR family
+
+
+--- source_snapshot/06_darkmatter/cultured_comparison_clean/results/step3_cultured_dark_rate_summary.tsv ---
+set	n_genomes	n_proteins	n_dark	dark_fraction
+all_cultured	722	3024784	48741	0.016114
+shares_species_with_MAG	189	777916	6713	0.008629
+no_shared_species	533	2246868	42028	0.018705
+hypotheticals_only	722	288520	48128	0.166810
+matched_MAG_reps_pseudorep	189	NA	NA	0.010260
+matched_MAG_reps_distinct	23	87381	1513	0.017315
+matched_MAG_reps_distinct_median	23	NA	NA	0.012873
+paired_by_species_cultured_lower	18	23	NA	-0.003258
+paired_by_species_wilcoxon_p	23	NA	NA	0.02137
+paired_by_species_sign_test_p	23	NA	NA	0.01062
+paired_by_species_ge10_strains_median	5	NA	NA	-0.001924
+paired_by_species_single_strain_median	9	NA	NA	-0.006193
+shared_genome_dark_proteins_recovered_as_MAG_dark	189	6713	2746	0.409057
+
+
+--- source_snapshot/06_darkmatter/cultured_comparison_clean/results/step3_dark_with_cultured_homolog.tsv ---
+metric	n	denominator	fraction
+mag_dark_reps_total	4292446	4292446	1.000000
+with_cultured_homolog	4226	4292446	0.000985
+with_cultured_hit_any_coverage	25403	4292446	0.005918
+best_identity_lt30	513	4292446	0.000120
+best_identity_30_50	1216	4292446	0.000283
+best_identity_50_70	795	4292446	0.000185
+best_identity_70_90	660	4292446	0.000154
+best_identity_ge90	1042	4292446	0.000243
+homolog_in_shared_species_genome	1300	4292446	0.000303
+homolog_in_shared_species_genome_ge90pct	679	4292446	0.000158
+homolog_only_in_unshared_genome	2926	4292446	0.000682
+dark_reps_ge100aa	1466943	1466943	1.000000
+ge100aa_with_cultured_homolog	1552	1466943	0.001058
+cultured_genomes_contributing	722	722	1.000000
+control_dark_family_reps_with_homolog	187	106042	0.001763
+control_annotated_family_reps_with_homolog	49170	106042	0.463684
+
+
+--- source_snapshot/06_darkmatter/darkfam_ecology_clean/results/PARTIAL.md ---
+# Space-partial per-family associations (control lat+lon)
+
+Marginal vs partial-Spearman significant-family counts (BH q<0.05), 106,042 universe.
+
+| axis | n | marginal q<0.05 | partial q<0.05 | retained % | median |Dr| |
+|---|---|---|---|---|---|
+| salinity_proxy | 251 | 37280 | 20055 | 41% | 0.055 |
+| S | 251 | 54227 | 48713 | 82% | 0.035 |
+| Cl | 251 | 46972 | 42042 | 83% | 0.028 |
+| Ca | 251 | 47174 | 39094 | 71% | 0.045 |
+| aridity_index | 456 | 23031 | 22510 | 86% | 0.015 |
+| plantroot_vs_other | 547 | 61182 | 59820 | 94% | 0.011 |
+
+
+--- source_snapshot/06_darkmatter/darkfam_ecology_clean/results/community_summary.txt ---
+loaded matrix: 106042 families x 551 samples
+samples with community+env: 547
+families kept (prev>=5): 105977 of 106042
+sites (permutation strata): 59 over 547 samples
+[depth] log10 bases after filtering: min 5.26 median 10.33 max 11.68
+
+=== PERMANOVA (adonis) per environmental block ===
+block                            n      R2   pseudoF       p  p_within_site
+compartment                    547   0.044     12.61   0.001          0.001
+space(latlon)                  547   0.079     23.27   0.001          1.000
+climate                        456   0.058      9.31   0.001          0.001
+climate|space                  456   0.030      4.98   0.001          0.001
+geochem                        251   0.132      3.31   0.001          0.002
+geochem|space                  251   0.089      2.34   0.001          0.001
+geochem|space+compartment      251   0.092      2.53   0.001          0.001
+geochem[v1_no_salt]            251   0.123      4.25   0.001          0.001
+geochem[v1_no_salt]|space      251   0.080      2.90   0.001          0.001
+vanadium                       251   0.003      0.77   0.780          0.884
+compartment[core]              547   0.046     13.19   0.001          0.001
+geochem|space[core]            547   0.091      2.41   0.001          0.001
+climate|space[core]            547   0.030      5.13   0.001          0.001
+depth(log10)                   547   0.011      6.24   0.001          0.001
+geochem|space+depth            251   0.089      2.38   0.001          0.001
+aridity|space                  456   0.006      3.17   0.001          0.001
+aridity|space+depth            456   0.006      3.01   0.001          0.001
+climate|space+depth            456   0.030      5.04   0.001          0.001
+
+=== variance partitioning (unique R2 | conditioned on other blocks) ===
+  compartment    alone R2=0.049 (p=0.002, within-site p=0.002)  unique R2=0.057 (p=0.002, within-site p=0.002)
+  space          alone R2=0.090 (p=0.002, within-site p=1.000)  unique R2=0.055 (p=0.002, within-site p=0.576)
+  geochem        alone R2=0.132 (p=0.002, within-site p=0.004)  unique R2=0.106 (p=0.002, within-site p=0.002)
+
+=== distance-decay (Mantel community vs geography) ===
+  r=+0.341 p=0.001
+
+[gate] HEADLINE holds if >=1 env block has p<0.05 with non-trivial R2 above the spatial term.
+
+
+--- source_snapshot/06_darkmatter/darkfam_ecology_clean/results/compartment_families_summary.tsv ---
+section	metric	value
+counts	n_tested	102005
+counts	n_significant_q05	60313
+counts	n_root_enriched	19818
+counts	n_root_depleted	40495
+counts	pct_root_depleted_of_significant	67.1
+counts	n_root_enriched_phylum_attributable	13954
+counts	n_root_depleted_phylum_attributable	26993
+counts	n_all_phylum_attributable	77069
+effect_size	rho_root_enriched_q25	0.1210
+effect_size	rho_root_enriched_median	0.1539
+effect_size	rho_root_enriched_q75	0.1996
+effect_size	rho_root_depleted_q25	-0.2352
+effect_size	rho_root_depleted_median	-0.1862
+effect_size	rho_root_depleted_q75	-0.1396
+phylum_share_root_enriched_pct	Pseudomonadota	19.2
+phylum_share_root_enriched_pct	Actinomycetota	16.8
+phylum_share_root_enriched_pct	Myxococcota_A	11.3
+phylum_share_root_enriched_pct	Thermoplasmatota	11.2
+phylum_share_root_enriched_pct	Planctomycetota	8.3
+phylum_share_root_enriched_pct	Bacteroidota	5.5
+phylum_share_root_enriched_pct	Chloroflexota	5.1
+phylum_share_root_enriched_pct	Myxococcota	4.5
+phylum_share_root_enriched_pct	Bdellovibrionota	4.2
+phylum_share_root_enriched_pct	Gemmatimonadota	3.5
+phylum_share_root_enriched_pct	Cyanobacteriota	2.9
+phylum_share_root_enriched_pct	Bacillota	2.7
+phylum_share_root_depleted_pct	Actinomycetota	52.7
+phylum_share_root_depleted_pct	Chloroflexota	13.2
+phylum_share_root_depleted_pct	Thermoplasmatota	11.3
+phylum_share_root_depleted_pct	Gemmatimonadota	7.5
+phylum_share_root_depleted_pct	Pseudomonadota	4.2
+phylum_share_root_depleted_pct	Thermoproteota	2.8
+phylum_share_root_depleted_pct	Acidobacteriota	2.2
+phylum_share_all_attributable_pct	Actinomycetota	32.8
+phylum_share_all_attributable_pct	Thermoplasmatota	19.8
+phylum_share_all_attributable_pct	Pseudomonadota	9.6
+phylum_share_all_attributable_pct	Chloroflexota	8.1
+phylum_share_all_attributable_pct	Gemmatimonadota	5.4
+phylum_share_all_attributable_pct	Myxococcota_A	4.9
+phylum_share_all_attributable_pct	Acidobacteriota	3.1
+phylum_share_all_attributable_pct	Bacteroidota	3.0
+phylum_share_all_attributable_pct	Myxococcota	2.6
+phylum_share_all_attributable_pct	Planctomycetota	2.4
+over_representation_root_enriched	Bacillota	3.62
+over_representation_root_enriched	Planctomycetota	3.41
+over_representation_root_enriched	Bdellovibrionota	3.27
+over_representation_root_enriched	Cyanobacteriota	2.98
+over_representation_root_enriched	Verrucomicrobiota	2.94
+over_representation_root_enriched	Myxococcota_A	2.32
+over_representation_root_enriched	Pseudomonadota	2.01
+over_representation_root_enriched	Armatimonadota	1.89
+over_representation_root_enriched	Bacteroidota	1.82
+over_representation_root_enriched	Myxococcota	1.75
+over_representation_root_enriched	Patescibacteriota	1.74
+persistence	pct_all_five_expeditions_baseline	79.4
+persistence	pct_all_five_expeditions_root_enriched	86.8
+persistence	pct_all_five_expeditions_root_depleted	89.8
+persistence	n_families_in_presence_matrix	106042
+
+
+--- source_snapshot/06_darkmatter/darkfam_ecology_clean/results/indicators_summary.tsv ---
+axis	n_samples	n_tested	n_q05	n_q10	n_q05_negative	pct_negative_q05
+V	251	94568	0	0	0	nan
+Mo	251	94568	0	0	0	nan
+Ni	251	94568	0	0	0	nan
+Fe	251	94568	24110	34138	22897	95.0
+Cu	251	94568	1	1	0	0.0
+Co	251	94568	0	0	0	nan
+Mn	251	94568	0	0	0	nan
+Zn	251	94568	0	0	0	nan
+S	251	94568	54227	60779	49706	91.7
+Cl	251	94568	46972	54242	42450	90.4
+Na	251	94568	4603	8921	3563	77.4
+Ca	251	94568	47174	54144	43635	92.5
+K	251	94568	11935	18756	6946	58.2
+salinity_proxy	251	94568	37280	46315	32384	86.9
+aridity_index	456	100293	23031	29609	22090	95.9
+plantroot_vs_other	266	102005	60313	66225	40495	67.1
+
+
+--- source_snapshot/06_darkmatter/darkfam_ecology_clean/results/partial_summary.tsv ---
+axis	n_samples	n_marginal_q05	n_partial_q05	retained_pct	median_abs_dr
+salinity_proxy	251	37280	20055	41.4	0.0551
+S	251	54227	48713	82.0	0.0347
+Cl	251	46972	42042	82.6	0.0280
+Ca	251	47174	39094	71.1	0.0452
+aridity_index	456	23031	22510	85.6	0.0150
+plantroot_vs_other	547	61182	59820	94.1	0.0109
+
+
+--- source_snapshot/06_darkmatter/darkfam_ecology_clean/results/permanova_blocks.tsv ---
+block	n	R2_marginal	R2_partial	pseudoF	p	n_fam	p_within_site
+compartment	547	0.0443	0.0443	12.614	0.0010		0.0010
+space(latlon)	547	0.0788	0.0788	23.270	0.0010		1.0000
+climate	456	0.0582	0.0582	9.307	0.0010		0.0010
+climate|space	456	0.0296	0.0321	4.981	0.0010		0.0010
+geochem	251	0.1322	0.1322	3.310	0.0010		0.0020
+geochem|space	251	0.0893	0.0981	2.343	0.0010		0.0010
+geochem|space+compartment	251	0.0916	0.1058	2.527	0.0010		0.0010
+geochem[v1_no_salt]	251	0.1231	0.1231	4.246	0.0010		0.0010
+geochem[v1_no_salt]|space	251	0.0802	0.0881	2.898	0.0010		0.0010
+vanadium	251	0.0031	0.0031	0.770	0.7800		0.8840
+compartment[core]	547	0.0462	0.0462	13.186	0.0010	76496	0.0010
+geochem|space[core]	547	0.0915	0.1007	2.413	0.0010	76496	0.0010
+climate|space[core]	547	0.0305	0.0331	5.130	0.0010	76496	0.0010
+depth(log10)	547	0.0113	0.0113	6.244	0.0010		0.0010
+geochem|space+depth	251	0.0889	0.0997	2.377	0.0010		0.0010
+aridity|space	456	0.0064	0.0070	3.172	0.0010		0.0010
+aridity|space+depth	456	0.0060	0.0066	3.013	0.0010		0.0010
+climate|space+depth	456	0.0297	0.0326	5.042	0.0010		0.0010
+
+
+--- source_snapshot/06_darkmatter/darkfam_ecology_clean/results/varpart.tsv ---
+block	R2_alone	p_alone	R2_unique	p_unique	p_alone_within_site	p_unique_within_site
+compartment	0.0491	0.0020	0.0571	0.0020	0.0020	0.0020
+space	0.0899	0.0020	0.0548	0.0020	1.0000	0.5760
+geochem	0.1322	0.0020	0.1058	0.0020	0.0040	0.0020
+

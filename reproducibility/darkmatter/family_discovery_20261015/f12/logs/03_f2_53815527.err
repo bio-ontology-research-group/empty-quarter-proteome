@@ -1,0 +1,15 @@
+GNU 12.2.0 is now loaded
+Loading module for HMMER version 3.3.2
+HMMER 3.3.2 is now loaded
+
+Loading hmmer/3.3.2
+  Loading requirement: gcc/12.2.0
+Compute allocation verified: job=53815527 host=gpu510-32
+Traceback (most recent call last):
+  File "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/scripts/03_f2_remapping_and_test.py", line 629, in <module>
+    main()
+  File "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/scripts/03_f2_remapping_and_test.py", line 419, in main
+    motifs = check_had_catalytic_motifs(target_rec["seq"])
+  File "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/scripts/03_f2_remapping_and_test.py", line 223, in check_had_catalytic_motifs
+    "has_had_motif1": 1 if has_had_motif1 else 0,
+NameError: name 'has_had_motif1' is not defined. Did you mean: 'has_motif1'?

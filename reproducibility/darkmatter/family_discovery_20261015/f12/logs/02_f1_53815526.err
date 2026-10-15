@@ -1,0 +1,16 @@
+GNU 12.2.0 is now loaded
+Loading module for HMMER version 3.3.2
+HMMER 3.3.2 is now loaded
+
+Loading hmmer/3.3.2
+  Loading requirement: gcc/12.2.0
+Compute allocation verified: job=53815526 host=gpu510-32
+Error: Error detecting input file format. First line seems to be blank.
+Traceback (most recent call last):
+  File "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/scripts/02_f1_screen.py", line 515, in <module>
+    main()
+  File "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/scripts/02_f1_screen.py", line 282, in main
+    subprocess.run(cmd, check=True)
+  File "/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/ibex/scratch/projects/c2014/rob/miniconda3/envs/eggnog/bin/diamond', 'blastp', '-d', '/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/references/cpf_references.dmnd', '-q', '/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/results/f1_all_candidates_raw.faa', '-o', '/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/results/f1_diamond_hits.tsv', '--max-target-seqs', '5', '--evalue', '1e-5', '--outfmt', '6', 'qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'gapopen', 'qstart', 'qend', 'sstart', 'send', 'evalue', 'bitscore', '--threads', '16', '--quiet']' returned non-zero exit status 1.

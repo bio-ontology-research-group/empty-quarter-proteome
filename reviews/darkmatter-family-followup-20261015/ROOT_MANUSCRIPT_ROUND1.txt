@@ -1,0 +1,13 @@
+Root manuscript review and refinement, round 1
+
+The new F3 subsection reports known-family sequence coverage and never infers the candidates' membership in the separate UniRef50-dark set. The Patescibacteriota identity summary is attributed to its24loci, not conflated with the22unique Saccharimonadia sequences. The expanded-reference and reference-free counts are separate, and both50% and80% reference-free results are reported. The zero GEM addition is explicitly conditioned on reference overlap.
+
+The new F1/F4 supplement separates mean decomposition from the median/Wilcoxon test. It discloses fixed traits, shared metagenomes, unclassified-genus singleton grouping, the609+7A/B distinction and the singleFEYH EctCD prediction. It does not use the mean bootstrap to claim F4 enrichment.
+
+I checked the new figure within the rendered PDF and the result/supplement pages: text and labels are legible, the figure and caption fit one page, no cropped panels or overlapping labels were found. The curated-panel legend replaces the inaccurate implication that every curated record is an experimental anchor. The PDF builds with resolved citations/references and no overfull boxes.
+
+The full repository harness passed:62 COMPUTE and279 FROZEN claims, six TABLE sources present,25 provenance-ledger entries, zero failures. One additional source-contig translation claim is being registered before the final run. This is compact manuscript reproduction, not a claim to rerun upstream databases and model prediction locally.
+
+The public manuscript build had an unconditional comparison to the private submodule that would reject any authorised public-source update. I made that optional via EQ_CHECK_PRIVATE_COPY=1, preserving an explicit synchronization check while allowing the authoritative public manuscript to build independently. No private manuscript files were overwritten.
+
+Remaining refinement depends on Argon's manuscript round1. Final closure will rehash the accepted upstream results, scripts and manuscript snapshot; the existing whole-paper historical raw-data/deposition limitations remain stated.

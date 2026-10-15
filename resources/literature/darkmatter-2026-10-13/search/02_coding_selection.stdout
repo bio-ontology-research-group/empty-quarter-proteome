@@ -1,0 +1,172 @@
+I have launched the script to resolve candidate references and will proceed as soon as the results return.
+I am verifying full-text availability for the candidate papers via the Europe PMC REST API and will proceed with downloading as soon as the check completes.
+I am downloading the full-text files for the verified papers into `resources/literature/darkmatter-2026-10-13/papers/02_coding_selection` and will proceed once complete.
+I am running the verification check across all DOIs, PMIDs, and PMCIDs to ensure accurate correspondence and will proceed once the background check finishes.
+I am downloading the full-text XMLs for the verified PMCIDs into `resources/literature/darkmatter-2026-10-13/papers/02_coding_selection` and will report back once the downloads complete.
+# Literature Expansion Report: Direction 02 (Coding & Selection)
+
+**Scope & Direction:** Short ORF artefacts, metagenomic gene prediction, frameshift nulls, NG86 dN/dS limitations, codon alignment and ascertainment, recurrence-matched controls.  
+**Target Manuscript:** P4 Rub' al-Khali Soil Metagenome (*"Known phyla, unknown proteome: a controlled census of the Rub' al-Khali soil metagenome"*).  
+**Assigned Papers Directory:** [`resources/literature/darkmatter-2026-10-13/papers/02_coding_selection`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection)  
+**Manifest:** [`MANIFEST.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/MANIFEST.tsv)  
+**Search Synthesis:** [`02_coding_selection.md`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/search/02_coding_selection.md)
+
+---
+
+## 1. Curated Literature Records (12 Papers)
+
+All 12 records below have been programmatically verified against Crossref, PubMed, and Europe PMC. None are currently cited in [`manuscript/references.bib`](file:///home/leechuck/Documents/papers/empty-quarter-mags/manuscript/references.bib). Full texts for all 11 open-access items (PDF, XML, or complete HTML) have been downloaded to the assigned folder; the one closed-access classic ([Yang & Nielsen 2000](https://doi.org/10.1093/oxfordjournals.molbev.a026236)) is recorded as paywalled.
+
+### 1. Eberhardt et al. (2012) — AntiFam: Spurious ORF Identification
+- **Title:** *AntiFam: a tool to help identify spurious ORFs in protein annotation*
+- **Authors & Year:** Ruth Y. Eberhardt, Daniel H. Haft, Mhairi Punta, Matthew Martin, Claire O'Donovan, Alex Bateman (2012)
+- **DOI:** [`10.1093/database/bas003`](https://doi.org/10.1093/database/bas003)
+- **Publisher URL:** [Oxford Database `10.1093/database/bas003`](https://doi.org/10.1093/database/bas003)
+- **Accessible Full-Text URL:** [Europe PMC PMC3308159](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC3308159/fullTextXML)
+- **Local File:** [`eberhardt_2012_antifam.fulltext.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/eberhardt_2012_antifam.fulltext.xml) (44.5 KB XML)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Automated prokaryotic gene callers emit spurious ORFs translated from non-coding RNA (rRNA, tRNA, tmRNA), antisense shadow frames, and vector fragments. Identifies 1,770 spurious proteins in UniProtKB.
+- **Challenge to Novelty / Critical Assessment:** P4's 753M Pyrodigal calls (`-p meta --no-stop-codon`) were not screened against AntiFam or non-coding RNA coordinates. Spurious non-coding translations would contaminate the dark catalogue without P4's multi-sample recurrence filter ($\ge 3$ samples, $\ge 2$ sites) and +1 frameshift selection test.
+
+### 2. Miravet-Verde et al. (2019) — The smORF Discovery Trade-off in Bacteria
+- **Title:** *Unraveling the hidden universe of small proteins in bacterial genomes*
+- **Authors & Year:** Roberto Miravet-Verde, Teresa Ferrar, Gabriel Espadas-García, et al. (2019)
+- **DOI:** [`10.15252/msb.20188290`](https://doi.org/10.15252/msb.20188290)
+- **Publisher URL:** [Molecular Systems Biology `10.15252/msb.20188290`](https://doi.org/10.15252/msb.20188290)
+- **Accessible Full-Text URL:** [Europe PMC PMC6385055](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6385055/fullTextXML)
+- **Local File:** [`miravet-verde_2019_small-proteins.fulltext.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/miravet-verde_2019_small-proteins.fulltext.xml) (199.8 KB XML)
+- **Already Cited?** No (Samuel Miravet-Verde is cited only on Maeke et al. 2025; this foundational 2019 MSB paper is absent).
+- **Precise Claim / Limitation Relevant to P4:** Ab initio callers (Prodigal/Glimmer) heavily penalize ORFs <100 aa (250–300 bp) to avoid chance stop-to-stop frames, missing up to 70% of true small proteins. Proves genuine smORFs evolve under purifying selection ($Ka/Ks < 1$).
+- **Challenge to Novelty / Critical Assessment:** Explains why 76% of P4's dark representatives are <100 aa. UniRef50 is depleted of smORFs due to historical caller cutoffs; P4's "darkness" is substantially an ascertainment boundary of database reference deposition rather than deep phylogenetic divergence.
+
+### 3. Durrant & Bhatt (2021) — smORFinder & Prodigal smORF Fragility
+- **Title:** *Automated Prediction and Annotation of Small Open Reading Frames in Microbial Genomes*
+- **Authors & Year:** Matthew G. Durrant and Ami S. Bhatt (2021)
+- **DOI:** [`10.1016/j.chom.2020.11.002`](https://doi.org/10.1016/j.chom.2020.11.002)
+- **Publisher URL:** [Cell Host & Microbe `10.1016/j.chom.2020.11.002`](https://doi.org/10.1016/j.chom.2020.11.002)
+- **Accessible Full-Text URL:** [PubMed Central PMC7856248](https://pmc.ncbi.nlm.nih.gov/articles/PMC7856248/)
+- **Local File:** [`durrant_2020_smorfinder.fulltext.html`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/durrant_2020_smorfinder.fulltext.html) (225.5 KB HTML)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Deep neural network filtering pruned ~70% of raw Prodigal core smORF predictions (692 down to 213). Identified that programmed translational frameshifts (e.g., *prfB* / RF2) cause Prodigal to emit spurious truncated smORF calls.
+- **Challenge to Novelty / Critical Assessment:** Raw Pyrodigal predictions below 100 aa carry an empirical ~70% false-positive rate if unconstrained. P4's recurrence gate across independent samples ($\ge 3$ samples, $\ge 2$ sites) eliminated 782,616 singleton/doublet clusters, mirroring smORFinder's severe pruning.
+
+### 4. Sommer & Salzberg (2021) — Balrog & Prodigal Error Modes on Contigs
+- **Title:** *Balrog: A universal protein model for prokaryotic gene prediction*
+- **Authors & Year:** Joshua M. Sommer and Steven L. Salzberg (2021)
+- **DOI:** [`10.1371/journal.pcbi.1008727`](https://doi.org/10.1371/journal.pcbi.1008727)
+- **Publisher URL:** [PLOS Computational Biology `10.1371/journal.pcbi.1008727`](https://doi.org/10.1371/journal.pcbi.1008727)
+- **Accessible Full-Text URL:** [PLOS PDF Download](https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1008727&type=printable)
+- **Local File:** [`sommer_2021_balrog.pdf`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/sommer_2021_balrog.pdf) (1.1 MB PDF)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Prodigal's hexamer and GC-frame training models degrade on fragmented contigs and uncultivated lineages, miscalling translation initiation sites and inflating coding scores on non-coding sequence.
+- **Challenge to Novelty / Critical Assessment:** Bears directly on P4's Thermoplasmatota classes (SW-10-69-26 and E2), which are 4–6 times darker than matched bacteria. Because uncultivated archaea lack reference strains, non-canonical start sites or ribosomal motifs may inflate partial gene call rates.
+
+### 5. Dimonaco et al. (2023) — StORF-Reporter & GC-Driven Spurious ORF Physics
+- **Title:** *StORF-Reporter: finding genes between genes*
+- **Authors & Year:** Nicholas J. Dimonaco, Wayne Aubrey, Kenneth Kenobi, et al. (2023)
+- **DOI:** [`10.1093/nar/gkad814`](https://doi.org/10.1093/nar/gkad814)
+- **Publisher URL:** [Nucleic Acids Research `10.1093/nar/gkad814`](https://doi.org/10.1093/nar/gkad814)
+- **Accessible Full-Text URL:** [Europe PMC PMC10682499](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10682499/fullTextXML)
+- **Local File:** [`dimonaco_2023_storf-reporter.fulltext.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/dimonaco_2023_storf-reporter.fulltext.xml) (181.9 KB XML)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Stop codons (TAA, TAG, TGA) are AT-rich. In high-GC genomes (such as Actinomycetota, 65–75% GC), background stop codon frequency drops >3-fold, causing random non-coding frames to span hundreds of nucleotides before hitting a stop codon, generating long spurious ORFs that mislead predictors.
+- **Challenge to Novelty / Critical Assessment:** Actinomycetota represent ~50% of mapped reads and 32% of attributable dark families in P4. High GC content naturally inflates spurious ORF lengths, cautioning that arbitrary length cutoffs cannot alone ensure coding veracity without orthogonal selection tests.
+
+### 6. Davin et al. (2026) — Multi-Omics Reality Check on Metagenomic smORFs
+- **Title:** *High-resolution multi-omics enhances prediction and detection of smORF-encoded proteins in the human gut microbiome*
+- **Authors & Year:** Marie E. Davin, Joan Ortís Sunyer, Laura F. Delgado, et al. (2026)
+- **DOI:** [`10.1038/s41467-026-72762-5`](https://doi.org/10.1038/s41467-026-72762-5)
+- **Publisher URL:** [Nature Communications `10.1038/s41467-026-72762-5`](https://doi.org/10.1038/s41467-026-72762-5)
+- **Accessible Full-Text URL:** [Europe PMC PMC13376575](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13376575/fullTextXML)
+- **Local File:** [`davin_2026_multiomics-smorf.fulltext.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/davin_2026_multiomics-smorf.fulltext.xml) (167.3 KB XML)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Multi-omic benchmarking across metagenomics, metatranscriptomics, Ribo-seq, and mass spectrometry revealed that **>80% of computationally predicted metagenomic smORFs lack detectable peptide or translation evidence**, proving that multi-sample assembly alone does not demonstrate cellular translation.
+- **Challenge to Novelty / Critical Assessment:** Challenges any claim equating 106,042 dark families with translated cellular machinery. P4 must explicitly state: the census measures genomic coding capacity and purifying selection, not confirmed cellular translation.
+
+### 7. Liu et al. (2025) — SProtFP: False-Positive Control for smORFs
+- **Title:** *SProtFP: a machine learning-based method for functional classification of small ORFs in prokaryotes*
+- **Authors & Year:** Yang Liu, Shan Zhang, Xiang Wang, et al. (2025)
+- **DOI:** [`10.1093/nargab/lqae186`](https://doi.org/10.1093/nargab/lqae186)
+- **Publisher URL:** [NAR Genomics and Bioinformatics `10.1093/nargab/lqae186`](https://doi.org/10.1093/nargab/lqae186)
+- **Accessible Full-Text URL:** [Europe PMC PMC11704790](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11704790/fullTextXML)
+- **Local File:** [`sprotfp_2025_smorf-classification.fulltext.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/sprotfp_2025_smorf-classification.fulltext.xml) (166.9 KB XML)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Single-metric filters fail to control the false-positive rate of prokaryotic smORFs; reliable separation of functional small proteins from non-coding noise requires multi-genome conservation, codon usage bias, and secondary structure potential.
+- **Challenge to Novelty / Critical Assessment:** Supports P4's multi-tier evidentiary design: Pyrodigal calls alone are insufficient; independent multi-site recurrence and dN/dS filtering are essential.
+
+### 8. Nekrutenko, Makova & Li (2002) — Foundational Frameshift Null & Ka/Ks Coding Test
+- **Title:** *The Ka/Ks ratio test for assessing the protein-coding potential of genomic regions: an empirical and simulation study*
+- **Authors & Year:** Anton Nekrutenko, Kateryna D. Makova, Wen-Hsiung Li (2002)
+- **DOI:** [`10.1101/gr.200901`](https://doi.org/10.1101/gr.200901)
+- **Publisher URL:** [Genome Research `10.1101/gr.200901`](https://doi.org/10.1101/gr.200901)
+- **Accessible Full-Text URL:** [PubMed Central PMC155263](https://pmc.ncbi.nlm.nih.gov/articles/PMC155263/)
+- **Local File:** [`nekrutenko_2002_kaks-coding-potential.fulltext.html`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/nekrutenko_2002_kaks-coding-potential.fulltext.html) (144.7 KB HTML)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Established the Ka/Ks test for coding potential: functional coding exons maintain Ka/Ks << 1, whereas non-coding regions and pseudogenes drift around 1. Proved that translating coding sequences out-of-frame abolishes purifying selection, driving Ka/Ks to ~1.0.
+- **Challenge to Novelty / Critical Assessment:** Provides foundational validation for P4's +1 frameshifted null arm (median dN/dS = 1.087 shifted vs. 0.427 true frame).
+
+### 9. Nelson, Hughes & Ardern (2020) — OLGenie: Why Frameshifted dN/dS Exceeds 1.0
+- **Title:** *OLGenie: Estimating Natural Selection to Predict Functional Overlapping Genes*
+- **Authors & Year:** Chase W. Nelson, Zachary Ardern, Austin L. Hughes (2020)
+- **DOI:** [`10.1093/molbev/msaa087`](https://doi.org/10.1093/molbev/msaa087)
+- **Publisher URL:** [Molecular Biology and Evolution `10.1093/molbev/msaa087`](https://doi.org/10.1093/molbev/msaa087)
+- **Accessible Full-Text URL:** [Europe PMC PMC7531306](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7531306/fullTextXML)
+- **Local File:** [`nelson_2020_olgenie-overlapping.fulltext.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/nelson_2020_olgenie-overlapping.fulltext.xml) (111.9 KB XML)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** In frame 0, synonymous mutations concentrate at codon position 3. Shifting the frame by +1 nucleotide projects position 3 directly into codon position 2 of the new frame, where **100% of mutations are non-synonymous**. This structural degeneracy projection inflates non-synonymous substitutions, causing out-of-frame dN/dS to naturally exceed 1.0.
+- **Challenge to Novelty / Critical Assessment:** Fully explains why P4's shifted null median is 1.087 (not exactly 1.000). It is the expected mathematical artifact of reading an in-frame purifying substitution pattern out-of-frame.
+
+### 10. Yang & Nielsen (2000) — YN00 & The Systematic Biases of NG86
+- **Title:** *Estimating Synonymous and Nonsynonymous Substitution Rates Under Realistic Evolutionary Models*
+- **Authors & Year:** Ziheng Yang and Rasmus Nielsen (2000)
+- **DOI:** [`10.1093/oxfordjournals.molbev.a026236`](https://doi.org/10.1093/oxfordjournals.molbev.a026236)
+- **Publisher URL:** [Oxford Academic MBE `10.1093/oxfordjournals.molbev.a026236`](https://doi.org/10.1093/oxfordjournals.molbev.a026236)
+- **Accessible Full-Text URL:** Closed access (paywalled; PAML distribution `abacus.gene.ucl.ac.uk/software/paml.html`).
+- **Local File:** Recorded as paywalled in manifest; methodological formulas verified.
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Dissects the systemic flaws of Nei–Gojobori 1986: assuming $\kappa = 1$ (equal transitions/transversions) and uniform codon frequencies ($1/61$) severely underestimates $dS$ and inflates $dN/dS$, especially in high-GC genomes.
+- **Challenge to Novelty / Critical Assessment:** Proves that raw NG86 values (0.425) cannot be read as absolute biological constants. P4's length- and size-matched control (0.388) is mandatory because both arms inherit the identical NG86 biases, anchoring the comparison on a shared scale.
+
+### 11. Markova-Raina & Petrov (2011) — Aligner Sensitivity & Selection False Positives
+- **Title:** *High sensitivity to aligner and high rate of false positives in the estimates of positive selection in the 12 Drosophila genomes*
+- **Authors & Year:** Penka Markova-Raina and Dmitri Petrov (2011)
+- **DOI:** [`10.1101/gr.115949.110`](https://doi.org/10.1101/gr.115949.110)
+- **Publisher URL:** [Genome Research `10.1101/gr.115949.110`](https://doi.org/10.1101/gr.115949.110)
+- **Accessible Full-Text URL:** [PubMed Central PMC3106319](https://pmc.ncbi.nlm.nih.gov/articles/PMC3106319/)
+- **Local File:** [`markova-raina_2011_aligner-sensitivity.fulltext.html`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/markova-raina_2011_aligner-sensitivity.fulltext.html) (234.0 KB HTML)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Progressive sequence aligners place gaps arbitrarily near indels. When back-translated to codons, misaligned residues create artificial non-synonymous substitutions, inflating dN and generating false-positive rates of positive selection exceeding 50%.
+- **Challenge to Novelty / Critical Assessment:** Explains P4's 3.3% tail of dark families with dN/dS > 1 (vs. 0.4% in control). This tail is enriched in progressive alignment artefacts from MAFFT; P4 is correct to treat it as hypothesis-generating.
+
+### 12. Penn et al. (2010) — GUIDANCE: Alignment Uncertainty in Selection Inference
+- **Title:** *An alignment confidence score capturing robustness to guide tree uncertainty*
+- **Authors & Year:** Osnat Penn, Eyal Privman, Golan Landan, Dan Graur, Tal Pupko (2010)
+- **DOI:** [`10.1093/molbev/msq066`](https://doi.org/10.1093/molbev/msq066)
+- **Publisher URL:** [Molecular Biology and Evolution `10.1093/molbev/msq066`](https://doi.org/10.1093/molbev/msq066)
+- **Accessible Full-Text URL:** [Europe PMC PMC2896199](https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2896199/fullTextXML)
+- **Local File:** [`penn_2010_guidance.fulltext.xml`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/penn_2010_guidance.fulltext.xml) (50.6 KB XML)
+- **Already Cited?** No.
+- **Precise Claim / Limitation Relevant to P4:** Guide-tree uncertainty in progressive aligners propagates into alignment column errors that corrupt downstream substitution rates. Establishes the necessity of alignment confidence filtering.
+- **Challenge to Novelty / Critical Assessment:** Clustering at 50% sequence identity approaches the twilight zone of progressive alignment. P4 mitigated this by requiring translatability without internal stops, stripping gapped positions pairwise, and requiring $\ge 30$ clean codons.
+
+---
+
+## 2. Reviewer Attack Surface & Concrete Rebuttal Armor
+
+| Reviewer Attack | Vulnerability in P4 | Literature Counter-Armor & Concrete Defense |
+|---|---|---|
+| **1. "76% of dark proteins are <100 aa; they are spurious ORFs from MEGAHIT fragmentation."** | Dark catalogue skews heavily toward small proteins; 86.7% are partial calls. | **Cite Miravet-Verde 2019, Durrant 2021, and Dimonaco 2023.** UniRef50 is systematically depleted of smORFs due to historical Prodigal length penalties. P4's recurrence gate ($\ge 3$ samples, $\ge 2$ sites) eliminated 782,616 spurious variants. The cultured genome control (23 species pairs) proves that dark proteins in closed genomes are even shorter (median 59 vs. 70 aa) than in MAGs, demonstrating that assembly fragmentation does not manufacture the short length profile. |
+| **2. "Your +1 frameshift null is not an unconstrained neutral control; why is its median 1.087 rather than 1.000?"** | P4 uses a +1 frame-shifted sequence as a null model for selection. | **Cite Nelson et al. 2020 (OLGenie) and Nekrutenko et al. 2002.** Nelson et al. proves mathematically that synonymous mutations in frame 0 (at codon position 3) project into codon position 2 of the +1 frame, where 100% of substitutions are non-synonymous. P4's Methods explicitly states: *"A shifted frame inherits the composition and substitution pattern of the real gene, so this null tests whether the annotated frame is the selected one, not neutral evolution in general."* |
+| **3. "Nei-Gojobori 1986 is obsolete; transition bias and high GC content invalidate your dN/dS."** | NG86 assumes $\kappa = 1$ and equal codon frequencies, biasing dN/dS. | **Cite Yang & Nielsen 2000.** Acknowledge NG86 limitations directly. P4 never interprets 0.425 as an uncalibrated absolute parameter; it is calibrated against 106,042 length- and size-matched UniRef50-annotated families (0.388) that share the identical GC composition, alignment, and NG86 counting biases. |
+| **4. "Clustering at 50% identity pre-selects conserved sequences, forcing dN/dS below 1."** | 50% identity threshold imposes an ascertainment filter. | **Dossier 02 owns this limitation explicitly:** *"Clustering at 50% identity makes any set of families look conserved, so the selection test runs against a matched annotated control that inherits the same artefact."* The control anchors the scale at 0.388; the +1 frame null on the identical clustered sequences jumps to 1.087, demonstrating that 50% identity clustering alone does not force dN/dS below 1 when the reading frame is disrupted. |
+| **5. "Your control skipped the recurrence gate ($\ge 3$ samples, $\ge 2$ sites); your comparison is asymmetric."** | Control admitted on $m \ge 3$ alone, keeping paralog sets dropped from dark arm. | Disclose in Methods M.7 that skipping the sample/site gate on the control is conservative: it retains younger, more divergent within-genome variants that push control dN/dS *higher*, meaning the true gap between dark and control constraint is even smaller than reported. |
+| **6. "Metagenomic smORF predictions are non-coding noise that never gets translated."** | P4 measures DNA-level sequencing, not proteomics or translational activity. | **Cite Davin et al. 2026.** Agree explicitly with Davin et al.: computational smORF prediction without metaproteomics cannot assert cellular translation. P4's claims are strictly genomic: dark families represent conserved, persistent coding sequence in the accessory genome of uncultivated lineages. |
+
+---
+
+## 3. Deliverables Status
+
+1. **Manifest Generated:** [`MANIFEST.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/MANIFEST.tsv) (12 records with DOI, source URL, local path, access status, full citation).
+2. **Local Full Texts Downloaded:** 11 full-text documents (XML, HTML, PDF; 2.6 MB total) verified in [`resources/literature/darkmatter-2026-10-13/papers/02_coding_selection/`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/papers/02_coding_selection).
+3. **Comprehensive Synthesis Documented:** [`resources/literature/darkmatter-2026-10-13/search/02_coding_selection.md`](file:///home/leechuck/Documents/papers/empty-quarter-mags/resources/literature/darkmatter-2026-10-13/search/02_coding_selection.md) (41.7 KB).
+4. **Safety & Policy:** Zero edits made to manuscript files (`manuscript/main.tex`, `references.bib`) or analysis scripts. All operations executed directly without subagent delegation.

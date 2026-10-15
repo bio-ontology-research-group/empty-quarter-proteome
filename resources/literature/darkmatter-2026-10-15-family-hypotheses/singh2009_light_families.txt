@@ -1,0 +1,668 @@
+JOURNAL OF BACTERIOLOGY, Jan. 2009, p. 32–41                                                                                 Vol. 191, No. 1
+0021-9193/09/$08.00⫹0 doi:10.1128/JB.01084-08
+Copyright © 2009, American Society for Microbiology. All Rights Reserved.
+
+
+
+      Discovering Functional Novelty in Metagenomes: Examples from
+                        Light-Mediated Processes䌤
+                Amoolya H. Singh, Tobias Doerks, Ivica Letunic, Jeroen Raes, and Peer Bork*
+  Structural and Computational Biology Unit, European Molecular Biology Laboratory, Meyerhofstrasse 1, 69117 Heidelberg, Germany
+                                             Received 5 August 2008/Accepted 1 October 2008
+
+             The emerging coverage of diverse habitats by metagenomic shotgun data opens new avenues of discovering
+          functional novelty using computational tools. Here, we apply three different concepts for predicting novel
+          functions within light-mediated microbial pathways in five diverse environments. Using phylogenetic ap-
+          proaches, we discovered two novel deep-branching subfamilies of photolyases (involved in light-mediated
+          repair) distributed abundantly in high-UV environments. Using neighborhood approaches, we were able to
+          assign seven novel functional partners in luciferase synthesis, nitrogen metabolism, and quorum sensing to
+
+
+
+
+                                                                                                                                               Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+          BLUF domain-containing proteins (involved in light sensing). Finally, by domain analysis, for RcaE proteins
+          (involved in chromatic adaptation), we predict 16 novel domain architectures that indicate novel functionalities
+          in habitats with little or no light. Quantification of protein abundance in the various environments supports
+          our findings that bacteria utilize light for sensing, repair, and adaptation far more widely than previously
+          thought. While the discoveries illustrate the opportunities in function discovery, we also discuss the immense
+          conceptual and practical challenges that come along with this new type of data.
+
+
+   One of the central questions in biology, starting from the              assume that if multiple genes are adjacent on a chromosome or
+time of Charles Darwin, has been the extent and distribution of            contig, they are more likely to participate in the same cellular
+biological diversity (68). The recent sequencing of several hun-           function (19, 48). The neighborhood approach is especially
+dred bacterial and archaeal genomes and metagenomes, along                 suitable when homology-based methods fail to detect se-
+with the discovery of large-scale lateral gene transfer (10) and           quences below the threshold for similarity (30). Domain-based
+recombination (25) in bacterial evolution, has not only re-                methods infer the functions of similar segments within other-
+newed interest in the question of diversity but also confounded            wise different sequences and are currently utilized by curated
+it. The sequencing projects reveal that contrary to previous               databases of known domains (see, e.g., reference 18). This
+estimates, it is microbes that account for the vast majority of            approach is useful for the analysis of multidomain proteins that
+diversity in phenotype and genotype on earth (44, 47). Under-              evolve in a modular fashion such that each domain may have
+lying this dazzling diversity in species and habitat is molecular          high sequence similarity to a different gene and its evolution
+diversity. Indeed, we are just beginning to scratch the surface            cannot be traced by homology alone (55). Finally, subfamilies
+of this molecular diversity (50). Even though our understand-              can be identified within a family of homologous sequences by
+ing of how the living world functions at the molecular level is            abstracting the information from the family’s multiple se-
+far from complete, the discovery of novel molecules has im-                quence alignment into a generalized statistical profile (e.g.,
+portant applications to medicine, agriculture, industry, and               using hidden Markov models or support vector machines) (11)
+environmental conservation and remediation.                                and then searching for shared properties (e.g., amino acids and
+   But how are we to discover functional novelty in the expo-              hydrophobicity). This technique has been successful at identi-
+nentially increasing amounts of sequenced genes and habitats               fying novel biological function (2, 29, 36) and even novel spe-
+(Fig. 1)? The naïve method, which is to search for homology to             cies (13).
+known molecules and mark everything else as novel, is prone                   Although these methods are conceptually straightforward,
+to errors due to the existence of paralogous sequences, i.e.,              identifying novelty from environmental data remains difficult.
+homologs with likely different functionalities, as well as paralo-         The primary reason is the sheer volume of data, for which
+gous domains within an otherwise homologous sequence that                  there is no centralized repository or standardized reporting of
+may lead to divergent function (17). To address these chal-                sampling conditions. The size of the data sets is further exac-
+lenges, three major, nonexclusive concepts have been success-              erbated by problems with the data itself, such as the presence
+fully used to establish functional similarity and, conversely, to          of incomplete gene fragments, the uniformity of sequence cov-
+identify functional novelty: (i) operons and conserved gene
+                                                                           erage, and the use of shotgun sequencing. Incomplete gene
+neighborhoods, (ii) protein domain architectures, and (iii) pro-
+                                                                           fragments, an artifact of current environmental sequencing
+tein subfamilies. Operon and gene neighborhood methods
+                                                                           methodologies, limit the ability to correctly predict open read-
+                                                                           ing frames (ORFs) and assign function. Uniform sequence
+                                                                           coverage implies that if a protein family is rare in a particular
+   * Corresponding author. Mailing address: Structural and Computa-        environment, or belongs to a rare species, it might not be seen
+tional Biology Unit, European Molecular Biology Laboratory, Meyer-
+hofstrasse 1, 69117 Heidelberg, Germany. Phone: 49-6221-387-8526.
+                                                                           at all. Since functional novelty seems to be contributed primar-
+Fax: 49-6221-387517. E-mail: bork@embl.de.                                 ily by rare families (30, 51, 70) that mediate unusual niche-
+   䌤
+     Published ahead of print on 10 October 2008.                          specific adaptations, the inability to detect rare proteins fun-
+
+                                                                      32
+VOL. 191, 2009                                           NOVEL FUNCTION IN LIGHT-MEDIATED MICROBIAL PROCESSES                                           33
+
+
+
+
+                                                                                                                                                              Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+  FIG. 1. Trends in the increase of genomic data and represented habitats. The number of sequenced ORFs continues to increase exponentially,
+accompanied by an increase in the number and complexity of represented habitats. In 1995, two sequenced organisms (Haemophilus influenzae and
+Mycoplasma pneumoniae) contributed just a few thousand genes to the public databases and represented a single habitat (organism associated).
+By 2008, well over 10 million genes from over 150 distinct habitats have been sequenced. Raw habitat and sequence data were collected from the
+Genomes Online database (43), and habitats were classified into the categories mentioned above using the Habitat-Lite terms of Environment
+Ontology (32). When an organism was reported to have multiple habitats, the primary one was used. “Extreme environment” corresponds to the
+Environment Ontology categories “hot spring,” “hydrothermal vent,” and “extreme environment.” “Sediment/sludge” corresponds to the Envi-
+ronment Ontology categories “sediment,” “sludge,” and “biofilm.” Note that (i) dates reported for each sequence are publication dates, even if
+the genome was released to the public earlier in database form, and (ii) the numbers for 2008 represent the available data until June 2008.
+
+
+
+damentally limits our ability to discover novelty, although this         maining challenges are conceptual by nature. For example, the
+may change as technical advances enable targeted deep se-                identification of orthology is already extremely difficult with
+quencing in high-diversity environments. Finally, the use of             complete genomes in hand due to chromosomal inversions,
+shotgun sequencing techniques (as opposed to, for example,               gene fusions, alternative splicing, retrotranscription, and a va-
+single-cell sequencing) makes it tricky to unite species and             riety of genetic processes that dilute the necessary information.
+function identification. The existing protocols to map taxon-            This genetic uncertainty is matched by a functional one: be-
+omy are either limited to querying against a small number (e.g.,         cause the term “function” remains in use with an operational
+30 to 40) of marker genes (66) or falling back on error-prone            rather than absolute definition (8, 9, 30), annotation processes
+annotation transfer from homology (33).                                  will remain of insufficient depth for quite some time.
+   In addition to problems with the size and nature of meta-                Despite these limitations, the benefits of “bioprospecting”
+genomic data, computational tools must be adapted for repro-             for natural and naturally derived products are considerable,
+ducibly handling gigabytes or terabytes of data, leading to              with potential to cure genetic and infectious diseases, arrest
+constraints in memory, central processing unit (CPU), and                environmental destruction, and offset global energy shortages.
+network bandwidth at every level of analysis. Tools must be              Here, we hope to raise awareness of the potentials and pitfalls
+adapted to process, filter, assemble, and align the sequence             of using environmental sequence data to discover novelty and
+data; identify genes; annotate the genes with function; map              illustrate the promise of our methods to discover novelty in
+genes or sequences to taxonomy; estimate species evenness                light-mediated microbial pathways functioning in sensing, re-
+and richness; construct phylogenetic trees; perform multivari-           pair, and adaptation.
+ate analyses against ecological metrics; build and validate pop-
+ulation or metabolic models where time series data are avail-
+                                                                                                 MATERIALS AND METHODS
+able; and visualize the results. Even as computational
+biologists adapt standard tools to complete these tasks, math-              Collecting genome, metagenome, and habitat data. We collected raw data on
+                                                                         habitat and number of sequenced ORFs (Fig. 1) from the Genomes Online
+ematicians and statisticians must rigorously reassess the suit-
+                                                                         database (43) on 12 June 2008, consisting of 802 genomes (669 species of
+abilities of different methods to large data sets, identify sources      bacteria, 53 archaea, and 80 eukaryotes) and 25 metagenomes. The date of
+of analytical and numerical errors, and revise estimates of              publication was used as the sequencing date for a genome or metagenome. We
+sensitivity and specificity.                                             classified the 86 distinct annotated habitats for these 827 genomes/metagenomes
+   Even if novel techniques such as single-cell sequencing re-           into 10 categories using the Habitat-Lite subset of terms (32) from the Environ-
+                                                                         mental Ontology database (www.environmentontology.org). When an organism
+duce some of above-described problems in the future, certain             was reported to have multiple habitats, the primary one was used as input for
+challenges will remain unless our entire planet has been ge-             data in Fig. 1. Primary habitats were checked against Bergey’s Manual of System-
+netically explored in sufficient depth. This is because the re-          atic Bacteriology (6), the online catalogs of the American Type Culture Collection
+34        SINGH ET AL.                                                                                                                                J. BACTERIOL.
+
+
+                                                      TABLE 1. Query genes used in metagenome searchesa
+                                                 GenBank accession                            COG or NOG
+           Function                  Gene                                    Locus tag                                                Description
+                                                     number                                   assignment(s)
+
+Growth: photosynthesis and          psa                16330029             slr1834       NOG04762                 P700 apoprotein subunit Ia; psaA
+ circadian rhythms                                     16330030             slr1835       NOG04763                 P700 apoprotein subunit Ib; psaB
+                                                       16331238             ssl0563       COG1145                  Photosystem I iron-sulfur center; psaC
+                                    psb                16332289             slr1181                                Photosystem II D1 protein; psbA1
+                                                       16329178             slr1311       NOG06868                 Photosystem II D1 protein; psbA2
+                                                       16330822             sll1867       NOG06868                 Photosystem II D1 protein; psbA3
+                                    pet                16331429             sll0199       COG3794                  Plastocyanin; petE
+                                                       16330840             sll1382       COG0633                  Ferredoxin; petF
+                                                       16331144             slr0150       COG0633                  Ferredoxin
+                                                       16330020             slr1828       COG0633                  Ferredoxin
+                                                       16331399             ssl0020       COG0633                  Ferredoxin
+                                                       16331051             slr1643       COG0369                  Ferredoxin-NADP oxidoreductase; petH
+                                                       16329946             sll1796       COG2010                  Cytochrome c6 precursor; petJ
+                                    apc                16330466             slr2067       NOG09444                 Allophycocyanin a chain; apcA
+                                                       16330467             slr1986       NOG08465                 Allophycocyanin b chain; apcB
+                                                       16330468             ssr3383       NOG13001                 Phycobilisome LC linker polypeptide; apcC
+                                                       16329478             sll0928       NOG10841                 Allophycocyanin-B; apcD
+                                                       16331244             slr0335       NOG04733                 Phycobilisome LCM core membrane linker; apcE
+                                                       16332118             slr1459       NOG09429                 Phycobilisome core component; apcF
+
+
+
+
+                                                                                                                                                                      Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+                                    cpc                16329823             sll1578       NOG09446                 Phycocyanin a subunit; cpcA
+                                                       16329824             sll1577       NOG09445                 Phycocyanin b subunit; cpcB
+                                                       16329822             sll1579       NOG09475                 Phycocyanin-associated linker protein; cpcC
+                                                       16329821             sll1580       NOG07680                 Phycocyanin-associated linker protein
+                                                       16329820             ssl3093       COG0369                  Phycocyanin-associated linker protein; cpcD
+                                                       16330275             slr1878       COG1413                  Phycocyanin alpha phycocyanobilin lyase; cpcE
+                                                       16329246             sll1051       COG1413                  Phycocyanin alpha phycocyanobilin lyase; cpcF
+                                                       16332194             sll1471       NOG10782                 Phycobilisome rod-core linker polypeptide; cpcG
+                                                       16329710             slr2051       NOG09477                 Phycobilisome rod-core linker polypeptide
+                                    kaiA               16332220             slr0756       NOG10854                 Circadian clock protein; kaiA
+                                    kaiB               16332221             slr0757       COG0526                  Circadian clock protein; kaiB
+                                    puc                90422812             RPC_1301      COG2204                  Putative PAS-PAC sensor protein
+                                                       90422813             RPC_1302      COG0382                  Bacteriochlorophyll/chlorophyll a synthase
+                                                       90422814             RPC_1303      COG0477                  Formation of the LHII complex
+                                                       90422815             RPC_1304      COG0644                  Geranylgeranyl reductase
+                                                       90422816             RPC_1305      COG3476                  TspO- and MBR-like proteins
+                                    puf                77463830             RSP_0259                               Protein pufQ
+                                                       77463829             RSP_6109                               Transcriptional regulatory protein; pufK
+                                                       77463828             RSP_6108                               LHI beta, light-harvesting B875 subunit
+                                                       77463827             RSP_0258                               LHI alpha, light-harvesting B875 protein
+                                                       77463826             RSP_0257                               PufL, photosynthetic reaction center L subunit
+                                                       77463825             RSP_0256                               PufM, photosynthetic reaction center M subunit
+                                                       77463824             RSP_0255                               Intrinsic membrane pufX protein
+
+Sensing                             bluf               16330981             slr1694       NOG16599                 FAD-binding domain protein (blue)
+                                    slr0359            16331282             slr0359       COG2199, COG2200         Uncharacterized signaling protein (blue)
+                                    plpA               16329960             sll1124       COG0642, COG2202         Sensory transduction histidine kinase; plpA
+                                    cph1               16331509             slr0473       COG4251                  Bacteriophytochrome (red/far red); cph1
+                                    cph2               16331738             sll0821       COG2199, COG2200,        Bacteriophytochrome (red/far red); cph2
+                                                                                           COG2203
+                                    taxD1              16331988             sll0041       COG0840, COG2203         Photoreceptor also known as pixJ1 (blue); taxD1
+
+Defense and repair                  cry                                                   COG0415, COG3046,        Photolyase/cryptochrome families
+                                                                                           COG4338,
+                                                                                           NOG16378
+                                    carot              16330780             slr1963       NOG04725                 Water-soluble carotenoid
+                                                       17230641             all3149       NOG04725                 Orange carotenoid-binding protein
+                                                       75910047             Ava_3843      NOG04725                 Orange carotenoid-binding protein
+                                                       33865901             SYNW1367      NOG04725                 Carotenoid binding protein
+                                                       33865435             SYNW0901      COG1233                  Carotenoid isomerase; crtH
+                                                       37519619             glr0050       NOG04725                 Carotenoid isomerase
+                                                       37523504             glr3935       NOG04725                 Water-soluble carotenoid protein
+                                    scyto              17227918             all0422       COG3391                  Hypothetical protein (scytonemin synthesis)
+                                                       17227919             all0423       NOG19292                 Hypothetical protein (scytonemin synthesis)
+                                                       17227920             all0424       NOG19292                 Hypothetical protein (scytonemin synthesis)
+                                                       17227921             all0425                                Hypothetical protein (scytonemin synthesis)
+                                                       17227922             all0426       COG0334                  Leucine dehydrogenase
+                                                       17227923             all0427       COG0028                  Acetolactate synthase large subunit
+
+Adaptation                          taxP1              16331991             sll0038       COG0784                  Phototaxis putative regulatory element
+                                    taxY1              16331990             sll0039       COG0784                  Phototaxis CheY-like protein
+                                    taxAY1             16331987             sll0042       COG0840                  Phototaxis methyl-accepting protein; tar
+                                    rcaE               75908636             Q47897        COG5002                  Sensor hybrid histidine kinase (red/green)
+  a
+      Absolute and relative abundances of these genes in the environments are presented in Fig. 3.
+
+
+
+(www.atcc.org) and the German Collection of Microorganisms and Cell Cultures             “hydrothermal vent,” or “extreme environment.” “Sediment/sludge” corre-
+(www.dsmz.de), and a previous large-scale description of bacterial phenotype             sponds to the Habitat-Lite categories “sediment,” “sludge,” or “biofilm.”
+and habitat (57). In the interest of clarity, for Fig. 1, we grouped certain habitats:     Calculating homologs and protein abundances in metagenomes. Metagenome
+“extreme environment” corresponds to the Habitat-Lite categories “hot spring,”           sequence data from five metagenomes (6,109,937 ORFs from surface seawater
+VOL. 191, 2009                                                      NOVEL FUNCTION IN LIGHT-MEDIATED MICROBIAL PROCESSES                                     35
+
+from the Global Ocean Survey [70] including the Sargasso Sea [64], 46,771 ORFs
+from northern California acidic mine drainage [63], 121,927 ORFs from deep-sea
+Pacific whalefall [62], 183,159 ORFs from Minnesota farm soil [62], and 135,756
+ORFs from a Mexican hypersaline microbial mat [39]) were BLASTed against
+the entire set of 1,510,991 proteins (representing 373 sequenced organisms) in
+the STRING 7.0 database (67) using wu-blastall with the parameters: ⫺a 1 ⫺p
+blastp ⫺mformat 2 ⫺filter seg ⫺E 1 ⫺V 17000000 ⫺B 17000000. From this data
+set, the number of hits for each of the 20 query light-mediated proteins (Table
+1) were counted, discarding hits less than 60 bits, which has been previously
+estimated to correspond roughly to an E value of ⬍108 (30). The abundances of
+genome orthologs were counted based on the size of clusters of orthologous
+groups and nonsupervised orthologous groups previously identified by the
+STRING database. Because each data set has a different total number of ORFs,
+protein abundances were normalized with Matlab (The Mathworks, Natick, MA)
+as follows. For each row (genome or metagenome) of Fig. 3, the absolute number
+of hits to each query protein was divided by the total number of predicted ORFs
+in that data set. This percentage is reported in Fig. 3B.
+   Construction of alignments and phylogenetic trees. All metagenome hits were
+then filtered for length (⬎250 amino acids) and diversity (⬍80% identity to any
+other hit in the orthologous family). Amino acid sequences were aligned using
+
+
+
+
+                                                                                                                                                                   Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+MUSCLE (21) with clustal-strict output, and the alignments were manually spot
+checked. Furthermore, 100 bootstrap replicates of each alignment were gener-
+ated using seqboot from the Phylip package (23) with default parameters, and
+these replicates were used to estimate phylogenetic trees with PHYML (27)
+using eight gamma-estimated rate categories and the Jones-Taylor-Thornton
+rate matrix. A consensus of the 100 resulting trees was obtained with the con-
+                                                                                        FIG. 2. Overview of light-mediated processes in biology. Organ-
+sense package of Phylip (extended majority rule), and branch lengths for the
+                                                                                     isms sense visible and UV light that they use for growth, adaptation,
+consensus were calculated using tree-puzzle (54) with eight gamma-estimated
+                                                                                     and defense/repair. Light sensing is carried out by antenna molecules
+rate categories and the Jones-Taylor-Thornton rate matrix. To check the taxo-
+                                                                                     with a photoactive pigment, such as carotenoids, phycocyanin, phyco-
+nomic diversity of the metagenome hits and exclude the possibility that novel
+                                                                                     erythrin, or rhodopsins. Photosynthetic bacteria can process the light
+discoveries were the result of errors in sequence assembly, the phylogenetic
+                                                                                     energy through a reaction center and store it as ATP via a proton
+placement of each of the metagenome fragments was calculated as follows.
+                                                                                     gradient. Bacteria living in high-light environments must also protect
+Metagenome fragments were used as query proteins and BLASTed against all
+                                                                                     against and repair UV damage. Extracellular and intracellular UV-
+STRING 7.0 genome proteins with a bit score cutoff of 60 bits. All hits within 5%
+                                                                                     absorbing compounds such as scytonemin and mycosporine-like amino
+of the maximum bit score were retained and then mapped to a phylogenetic tree
+                                                                                     acids act as a natural sunscreen, while photolyase enzymes reverse
+of sequenced genomes (16) as previously described (66). Not all best hits were
+                                                                                     point mutations in UV-damaged DNA by using a photon of blue light
+for genomes; some were at internal nodes of the tree. For cases where metage-
+                                                                                     to catalyze the repair reaction. Finally, bacteria living in variable-light
+nome hits originated from closely related species, each gene was mapped to the
+                                                                                     environments can adapt to the changing light conditions in a number
+assembled reads to conclusively exclude the possibility of assembly errors. All
+                                                                                     of ways, e.g., by moving to a more favorable environment via photo-
+phylogenetic trees were visualized with iTOL (40).
+                                                                                     taxis, reconfiguring the wavelength specificity of light-sensing antennae
+   Search for neighborhoods and domains. Gene neighborhoods for each of the
+                                                                                     via adaptation proteins, or providing their own light via luminescence.
+metagenome hits to the 20 query proteins were calculated as previously de-
+scribed (30), counting genes as neighbors only if they were adjacent on the contig
+in the same transcription direction. We used cotranscribed gene neighbors (as
+opposed to bidirectional or convergently transcribed gene neighbors) because         conducted a literature search (1, 3, 14, 15, 20, 22, 45, 46, 58–60,
+their existence was previously established to be most predictive of related func-    65) to identify representative bacterial proteins and their or-
+tion (38). Protein domains for metagenome hits were obtained by searching
+against the SMART, version 5, database (41) with default parameters.
+                                                                                     thologs involved in those processes. We searched this candi-
+   All analyses were carried out on a dedicated 256-node supercomputing cluster      date list of 20 proteins (Table 1) in five environmental met-
+with 1,320 CPU cores communicating via a Gigabit-Ethernet network, each              agenomes comprising 59 sample sites of surface seawater (64,
+running a 64-bit Linux operating system with 1 G of memory.                          70), acidic mine runoff from an abandoned gold mine in north-
+                                                                                     ern California (63), three sample sites of deep-sea Pacific and
+                                  RESULTS                                            Antarctic whalefall carcass (62), 5 g of Minnesota farm topsoil
+                                                                                     (62), and 10 layers of a 41.5-mm-thick Mexican hypersaline
+   To illustrate the application of methods for discovering func-                    microbial mat (39). For the purpose of analysis, we denoted
+tional novelty, we focused on light-mediated microbial path-                         the surface seawater and top two layers of the microbial mat to
+ways. Although light is an important abiotic factor impacting                        be “high-light” environments and the others to be “variable-
+all the major biological processes (growth, sensing, mainte-                         light” environments. We note here that our choice of proteins
+nance, and reproduction), its utilization by microbes remains                        is by no means an exhaustive survey of all light-mediated pro-
+poorly understood. We began by constructing a taxonomy of                            teins and pathways in bacteria but rather a selected list to
+light-mediated processes (Fig. 2) guided by the Gene Ontology                        illustrate metagenomic data-mining techniques.
+biological process ontology (31) with the broad categories                              Quantitative estimate of light-related proteins in the envi-
+growth (photosynthesis and circadian rhythms), sensing (phy-                         ronment. We first counted both the absolute and relative
+tochromes), maintenance (DNA repair and pigment synthe-                              amounts of 20 metagenome proteins (Fig. 3) functioning in
+sis), and adaptation (phototaxis, chromatic adaptation, and                          light-mediated growth (seven protein families participating in
+bioluminescence). We omitted photosynthetic bacterial path-                          photosynthesis and the circadian clock), sensing (six protein
+ways, whose evolution and variation were described extensively                       families of blue- and red-light sensors), repair and defense
+elsewhere previously (5, 14, 52, 69), from further analyses and                      (three protein families consisting of photolyases, water-soluble
+instead focused on sensing, repair, and adaptation. Next, we                         carotenoids as intracellular UV sunscreens, and scytonemin as
+36     SINGH ET AL.                                                                                                                 J. BACTERIOL.
+
+
+
+
+                                                                                                                                                      Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+   FIG. 3. Abundances of light-sensing proteins in metagenomes. (A) Total number of proteins orthologous to 20 query proteins (columns) in 373
+sequenced genomes (top row) and five metagenomes (remaining rows). (B) Number of proteins as a percentage of the total number of predicted
+proteins per environment. Rows labeled in gray are subsamples. Columns are labeled as follows (see Table 1 for details): psa, photosystem I
+subunits ABC; psb, photosystem II subunits ABDEHIJKLF; pet, photosynthetic electron transfer subunits A123; apc, allophycocyanin; cpc,
+phycocyanin; kaiAB, circadian clock regulators; bluf, blue-light flavin adenine dinucleotide-binding domain-containing proteins; slr0359/plpA,
+blue-light-absorbing phototropins; cph1 and cph2, red- and far-red-absorbing phytochromes; taxD1, photoreceptor for phototaxis; cry, DNA
+photolyase and cryptochrome families; carot, water-soluble carotenoids as intracellular UV sunscreen; scyto, scytonemin as extracellular sunscreen;
+taxP1, phototaxis putative regulatory element; taxY1, phototaxis CheY-like protein; taxAY1, phototaxis histidine kinase; rcaE, complementary
+chromatic adaptation protein. Growth and repair proteins are more abundant in high-light environments than invariable-light ones, whereas
+sensing and adaptation proteins are more abundant in variable-light environments than in high-light ones. In particular, photolyase DNA repair
+proteins are overrepresented in the high-UV environment of surface seawater compared to all other environments. BLUF domain blue-light-
+sensing proteins are extremely rare in both genomes and environments, although the majority are found in surface rather than deep water. The
+red-light sensors Cph1 and Cph2 are overrepresented in deep water rather than primarily blue surface water. RcaE chromatic adaptation proteins
+are overrepresented in variable-light environments, such as the deep sea and lower (darker) layers of the microbial mat.
+
+
+
+an extracellular sunscreen), and adaptation (four protein fam-              tion. BLUF domain proteins are part of the larger family of
+ilies participating in phototaxis and complementary chromatic               blue-light photosensors that use flavin chromophores, which
+adaptation). As expected, light-mediated growth and repair                  together with the phytochromes, rhodopsins, and UV recep-
+proteins are found predominantly in high-light environments                 tors make up the four major classes of bacterial light-sensing
+in both absolute and relative terms (30,435, or 94%, of all                 proteins (14). Proteins containing a BLUF domain have been
+growth-, defense-, or repair-related proteins) rather than vari-            shown to function as sensors upstream of phototaxis (24),
+able-light environments (2,021 proteins, or 6% of all proteins).            nucleotide metabolism (35), and repression of anoxygenic pho-
+Interestingly, sensing and adaptation proteins are overrepre-               tosynthesis (28). The domain is extremely well conserved
+sented in variable-light environments (13,786 proteins, or 57%              among the Proteobacteria and Cyanobacteria, absent from the
+of all sensing proteins, and 17,960 proteins, or 60% of all                 Archaea, and absent from eukaryotes except for the protist
+adaptation proteins) compared to high-light environments                    Euglena gracilis. As expected, BLUF domain-containing pro-
+(10,273 proteins, or 43% of all sensing proteins, and 11,736                teins are relatively rare not only in the genomes (34 instances,
+proteins, or 40% of all adaptation proteins). Furthermore,                  or 0.002% of all proteins) (Fig. 3) but also in the metagenomes
+unlike sensing proteins, adaptation proteins are present in                 (73 instances, 46 of which are from surface seawater, account-
+large amounts even in deeper (darker) layers of the salt mat.               ing for 0.0008% of that data set) (Fig. 3).
+Below, we discuss three examples of novel light-mediated func-                 The vast majority of BLUF-containing proteins in the met-
+tion in each of these categories discovered using analysis of               agenomes do not contain additional domains, which precludes
+gene neighborhood, protein domains, and protein subfamilies,                a domain-based analysis as described above. Furthermore, the
+respectively.                                                               BLUF domain is short (98 amino acids) and highly conserved
+   Novel light-mediated sensing. (i) Neighborhood approach.                 in sequence (70% identity of the multiple sequence alignment)
+For a candidate sensing process mediated by light, we chose                 so that constructing phylogenetic trees with robust statistical
+proteins containing the blue-light flavin adenine dinucleotide              support is practically impossible. Thus, a tree- or subfamily-
+binding (BLUF) domain (26, 45), as it is rather rare in ge-                 based analysis is ruled out as well. However, since BLUF
+nomes, and we expected a limited variety in operon organiza-                domain proteins are known to function in sensing and the
+VOL. 191, 2009                                           NOVEL FUNCTION IN LIGHT-MEDIATED MICROBIAL PROCESSES                          37
+
+
+                                                                        are overrepresented in variable-light environments (723 pro-
+                                                                        teins, or 0.53%, in the microbial mat and 1,155 proteins, or
+                                                                        0.97%, in deep-sea whalefall) (Fig. 3) and underrepresented in
+                                                                        high-light environments (5,434 proteins, or 0.08%, in surface
+                                                                        seawater) (Fig. 3). Because the known cyanobacterial ho-
+                                                                        mologs of this protein have an unusual domain composition
+                                                                        (GAF–PAS-PAC–HisKA-HATPase–REC) that has been
+                                                                        modified among plants and nonphotosynthetic bacteria (Fig.
+                                                                        5), we hypothesized that additional modular arrangements of
+                                                                        this protein must exist in the wild. Furthermore, we expected
+                                                                        that these novel domain arrangements, especially the associ-
+                                                                        ated receiver/output domains, would provide clues as to the
+                                                                        downstream cellular function being adapted.
+                                                                           Finding “true” domain hits within the metagenomes, how-
+                                                                        ever, proved to be less than straightforward. Several of RcaE’s
+                                                                        domains, such as the kinase (HisKA-HAPTase), redox-sensing
+
+
+
+
+                                                                                                                                             Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+                                                                        (PAS-PAC) (61), and response regulator receiver (REC) (49)
+                                                                        domains, are extremely widespread and promiscuous, and the
+                                                                        metagenome data sets typically contain fragments of genes
+                                                                        without the key light-sensing GAF domain, together leading to
+                                                                        many spurious hits. Of the 11,456 environmental sequences
+                                                                        initially obtained at a ⬎60-bit BLAST score (corresponding
+  FIG. 4. BLUF operons from genomes and metagenomes. BLUF
+domain proteins are shown in blue (center), with none containing        roughly to a stringent E value of ⬍10⫺8) (30), only 762 se-
+additional domains. Genome neighbors include genes that function in     quences were longer than 250 amino acids and less than 80%
+phototaxis, nucleotide metabolism, repression of anoxygenic photosyn-   identical to one another. Of these sequences, 112 contained
+thesis, and virulence, primarily from the Alphaproteobacteria (Rhodo-   the GAF domain and aligned to the query at greater than 60%
+pseudomonas and Rhodobacter), Betaproteobacteria (Ralstonia and
+Chromobacterium), and Gammaproteobacteria (Shewanella and Psy-
+                                                                        of their length, a typical cutoff for excluding single-domain hits
+chrobacter). Novel metagenome neighbors include genes that function     (34). However, since this cutoff entirely eliminated proteins
+in luciferase synthesis, nitrate metabolism, and quorum sensing, pri-   from the hypersaline microbial mat, we relaxed it to 40%
+marily from Rhodopseudomonas and Comamonaceae.                          alignment length, which yielded 650 environmental sequences
+                                                                        (632 surface seawater, 18 deep-sea whalefall, 26 soil, 11 salt
+                                                                        mat, and 2 acid mine sequences).
+stress response, we surmised that either their expression or the           This sample of 650 environmental sequences contained 50
+expression of their functional partners would be inducible              unique domain arrangements, 16 of which were novel and not
+and thus correlated with the expression of nearby genes on              seen before in any genome. All 16 novel arrangements pre-
+the chromosome. This made it a good candidate for gene                  serve the pattern of “specific sensing domain(s)–PAS-PAC–
+neighborhood analysis.                                                  kinase–receiver” but vary in the numbers and types of domain
+   For the 73 environmental BLUF domain proteins, we iden-              repeats. Two arrangements include repeats in PBPb (periplas-
+tified 36 functionally characterizable neighborhoods (32 neigh-         mic solute binding) as one of the sensing domains and another
+borhoods from surface seawater and 4 from deep-sea whale-               has PBPp with PAS repeats without a PAC domain. Another
+fall) (Fig. 4). We rediscovered the known functions of BLUF in          seven arrangements include three to six repeats of PAS-PAC;
+phototaxis (two neighborhoods), nucleotide metabolism (five             three arrangements have duplicated REC domains. This is a
+neighborhoods), and the repression of anoxygenic photosyn-              surprising result because domain repeats are generally less
+thesis (five neighborhoods). Interestingly, we also discovered          common in bacteria than in eukaryotes, where they are
+neighborhoods of BLUF with novel function, including lucif-             thought to encode increased variability to compensate for
+erase synthesis (four neighborhoods), nitrate metabolism                longer eukaryotic generation times (4). However, the conser-
+(three neighborhoods), and quorum sensing (three neighbor-              vation of the overall domain pattern of the protein, together
+hoods). These neighbors are promising candidates for the ex-            with the remarkable number of PAS-PAC repeats, allows us to
+perimental elucidation of BLUF’s cellular role.                         speculate that this domain architecture provides increased sub-
+   (ii) Domain approach. For a candidate adaptation process             strate affinity and a tuning switch for the sensitivity of the
+mediated by light, we chose the RcaE (regulator of chromatic            response.
+adaptation) protein, which is best characterized in the filamen-           (iii) Subfamily approach. For a candidate repair process
+tous cyanobacterium Fremyella diplosiphon (7, 37). This pro-            mediated by light, we focused on photolyases, an intriguing
+tein regulates the ability to radically alter cell pigmentation in      family of light-activated DNA repair enzymes that are virtually
+response to changes in ambient-light wavelength, particularly           ubiquitous in bacterial species. Photolyases reverse T⬍⬎T cy-
+across the green-red range, and has been shown to optimize              clobutane dipyrimidine dimers (CPDs) formed by UV damage
+light antennae for photosynthesis (65). In the sequenced ge-            to DNA using a photon of light to transfer electrons from a
+nomes, RcaE is a relatively rare protein (212 homologs, pri-            catalytic flavin chromophore to the damaged DNA (53). While
+marily in cyanobacteria and plants, accounting for 0.01% of             the structure and function of photolyases were being charac-
+total proteins). In the metagenomes, however, RcaE orthologs            terized, an additional family of homologs, the cryptochromes,
+38     SINGH ET AL.                                                                                                      J. BACTERIOL.
+
+
+
+
+                                                                                                                                          Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+
+
+
+  FIG. 5. RcaE domain variations in sequenced bacteria and plants. Whereas the majority of bacterial proteins have the conserved domain
+architecture of GAF–PAS-PAC–HisKA-HATPase–REC, many additional architectures with different signal transduction domains, multiple
+sensing domains, and multiple receiver domains exist.
+
+
+
+were discovered (12, 42, 53, 56). Cryptochromes are similar to       cystis, and Homo). Thus, the photolyase-cryptochrome family
+photolyases in sequence and three-dimensional structure but          in sequenced genomes is quite large, spanning the inclusive
+lack catalytic activity for DNA repair and have unclear func-        gene family COG0415 (328 proteins in 209 species) but also
+tion. To date, two kinds of photolyases (CPD-I and CPD-II)           including COG3046 (56 genes in 53 species), COG4338 (35
+and three kinds of cryptochromes have been identified (plant         genes in 33 species), and NOG16378 (22 proteins in 19 spe-
+cryptochromes, animal cryptochromes, and CRY-DASH pro-               cies). In the metagenomes, the photolyase-cryptochrome ho-
+teins, which are named after the representative four genera in       mologs are overrepresented in surface seawater (9,703 pro-
+which they were identified, Drosophila, Arabidopsis, Synecho-        teins, or 0.1% of the total) and the top two layers of the
+VOL. 191, 2009                                           NOVEL FUNCTION IN LIGHT-MEDIATED MICROBIAL PROCESSES                             39
+
+
+
+
+                                                                                                                                                Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+  FIG. 6. Photolyase/cryptochrome subfamilies representing 1,196 sequences from sequenced genomes and four metagenomes. The tree recovers
+the known groupings of CPD-I and CPD-II photolyases and animal and DASH cryptochromes (plant cryptochromes, the fifth known group, are
+not shown here). In addition, we discovered two novel subfamilies of photolyases with 38 (family I) and 54 members (family II) that appear to
+originate from diverse members of the Alphaproteobacteria and Cyanobacteria.
+
+
+
+
+microbial mat (8 proteins, or 0.6% of the total) compared to all         Finally, we combined the genomic and metagenomic se-
+other environments together (84 proteins). This is consistent            quences, constructed trees again, and checked whether the
+with the large amount of UV radiation incident on surface                same groupings resulted.
+waters of the open ocean or the top layers of the microbial mat             Because bootstraps on the photolyase trees could not be
+but does not account for the other possible functions of cryp-           calculated for the entire data set of approximately 10,000 se-
+tochromes in remaining niches.                                           quences, we report here 1,196 photolyase-cryptochrome or-
+   To tease apart the functional diversity of this protein family,       thologs from the sequenced genomes and four metagenomes:
+we undertook a subfamily analysis by constructing high-quality           surface seawater from Sargasso sea samples 1 to 4, farm soil,
+alignments, feeding them into a hidden Markov model, and                 acidic mine runoff, and deep-sea whalefall (Fig. 6). Although
+using the resulting hidden Markov model profile to refine the            the bootstrap at the deeper branches is somewhat low (⬍25%),
+alignment and construct a phylogenetic tree. Although this               it is consistently high near the leaves (⬎80%), indicating that
+approach is now standard practice when small gene families               the relationships between the subfamilies are poorly resolved
+are analyzed, it foundered when fed with roughly 10,000 se-              but that the clustering within subfamilies is strong. Most no-
+quences, and our phylogenetic tools of choice (phyml [27 and             tably, our tree recovers the four known groups of photolyases
+tree-puzzle [54]) often took weeks to estimate a tree when               (CPD-I, CPD-II, DASH cryptochromes, and animal crypto-
+running on dedicated supercomputing clusters, even without               chromes) and additionally identifies two novel deep-branching
+statistical bootstraps. We therefore added several filtering             groups of photolyases/cryptochromes. The deepest-branching
+steps to our protocol. First, we removed sequences shorter               “novel family I” represents a new family of 34 photolyases/
+than 250 amino acids as well as sequences that were ⬎80%                 cryptochromes of unknown function never seen before in the
+identical to any other sequence in the data set. This approxi-           genomes. Because the tree covers photolyases from all known
+mately halved the number of photolyase hits from 9,703 to                species from all three domains of life, the novel family must
+4,828. Next, we constructed phylogenetic trees by randomly               include newly detected enzymes of unknown function related
+subsampling the 4,828 sequences in batches of 1,000 sequences            to the cryptochrome superfamily. The taxonomic origins of
+and compared the resulting trees for topology and grouping.              these enzymes are a mixture of Pelagibacter/SAR11-like species
+40     SINGH ET AL.                                                                                                                     J. BACTERIOL.
+
+
+and other Alphaproteobacteria (69%) and Cyanobacteria dom-            discover functional novelty, although various challenges ham-
+inated by Prochlorococcus (31%). “Novel family II,” which is          per the analysis considerably and will continue to do so as more
+clearly grouped between CPD-II photolyases and animal                 data are generated in the future.
+DASH cryptochromes, is an additional uncharacterized di-
+verse subfamily with 54 sequences from Alphaproteobacteria                                      ACKNOWLEDGMENTS
+(80%) and Cyanobacteria (20%). The species compositions are             We thank Chris Creevey and Jean Muller for suggesting alternate
+as expected, since both Alphaproteobacteria and Cyanobacteria         phylogenetic analysis methods when the existing tools crashed, Mani
+are the dominant marine microbial species. Both newly discov-         Arumugam for helping with domain analysis, and Yan Yuan for ex-
+ered photolyase/cryptochrome families are exciting candidates         cellent technical assistance. We thank members of the Bork group for
+                                                                      useful discussions and feedback.
+for further computational and experimental characterization.
+                                                                                                       REFERENCES
+                                                                       1. Ashby, M. K., and J. Houmard. 2006. Cyanobacterial two-component pro-
+                         DISCUSSION                                       teins: structure, diversity, distribution, and evolution. Microbiol. Mol. Biol.
+                                                                          Rev. 70:472–509.
+   We have analyzed the distribution and molecular diversity of        2. Beja, O., L. Aravind, E. V. Koonin, M. T. Suzuki, A. Hadd, L. P. Nguyen,
+light-mediated proteins from five diverse environments receiv-            S. B. Jovanovich, C. M. Gates, R. A. Feldman, J. L. Spudich, E. N. Spudich,
+                                                                          and E. F. DeLong. 2000. Bacterial rhodopsin: evidence for a new type of
+ing varying ambient light. Instead of assigning genes to func-            phototrophy in the sea. Science 289:1902–1906.
+
+
+
+
+                                                                                                                                                            Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+tions as is usually done with current metagenomics data sets           3. Bhaya, D. 2004. Light matters: phototaxis and signal transduction in unicel-
+using BLAST-like procedures, we sought to identify novel pro-             lular cyanobacteria. Mol. Microbiol. 53:745–754.
+                                                                       4. Bjorklund, A. K., D. Ekman, and A. Elofsson. 2006. Expansion of protein
+tein functions. Using gene neighborhood, domain, and subfam-              domain repeats. PLoS Comput. Biol. 2:e114.
+ily analyses, we have attempted to characterize functional nov-        5. Blankenship, R. E. 1992. Origin and early evolution of photosynthesis. Pho-
+elty in proteins sensing light, adapting to changes in light color,       tosynth. Res. 33:91–111.
+                                                                       6. Boone, D. R., R. W. Castenholz, and G. M. Garrity. 2001. Bergey’s manual
+and repairing UV-damaged DNA. We found new functional                     of systematic bacteriology, 2nd ed. Springer, New York, NY.
+partners for blue-light sensors, new domain architectures of           7. Bordowitz, J. R., and B. L. Montgomery. 2008. Photoregulation of cellular
+                                                                          morphology during complementary chromatic adaptation requires sensor-
+chromatic adaptation proteins, and new subfamilies of DNA                 kinase-class protein RcaE in Fremyella diplosiphon. J. Bacteriol. 190:4069–
+repair enzymes. Our results represent the first quantification of         4074.
+these cellular processes and provide an early insight into their       8. Bork, P., T. Dandekar, Y. Diaz-Lazcoz, F. Eisenhaber, M. Huynen, and Y.
+                                                                          Yuan. 1998. Predicting function: from genes to genomes and back. J. Mol.
+spectacular diversity.                                                    Biol. 283:707–725.
+   While these results serve as a proof of principle for the           9. Bork, P., and L. Serrano. 2005. Towards cellular systems in 4D. Cell 121:
+possibility to infer novel functionality by using the three dif-          507–509.
+                                                                      10. Boucher, Y., C. J. Douady, R. T. Papke, D. A. Walsh, M. E. Boudreau, C. L.
+ferent concepts described above and represent the opportuni-              Nesbo, R. J. Case, and W. F. Doolittle. 2003. Lateral gene transfer and the
+ties inherent in those huge data sets, they also implicitly illus-        origins of prokaryotic groups. Annu. Rev. Genet. 37:283–328.
+                                                                      11. Brown, D. P., N. Krishnamurthy, and K. Sjolander. 2007. Automated pro-
+trate the challenges of mining environmental sequence data to             tein subfamily identification and classification. PLoS Comput. Biol. 3:e160.
+discover novel functions. The difficulty is due to the nature of      12. Brudler, R., K. Hitomi, H. Daiyasu, H. Toh, K. Kucho, M. Ishiura, M.
+the data itself (vast amount, fragmented, uniform coverage,               Kanehisa, V. A. Roberts, T. Todo, J. A. Tainer, and E. D. Getzoff. 2003.
+                                                                          Identification of a new cryptochrome class. Structure, function, and evolu-
+and shotgun sequence); the lack of appropriate methods and                tion. Mol. Cell 11:59–67.
+analysis tools together with bottlenecks in CPU, memory, and          13. Bryant, D. A., A. M. Costas, J. A. Maresca, A. G. Chew, C. G. Klatt, M. M.
+network bandwidth; and ongoing conceptual difficulties with               Bateson, L. J. Tallon, J. Hostetler, W. C. Nelson, J. F. Heidelberg, and D. M.
+                                                                          Ward. 2007. Candidatus Chloracidobacterium thermophilum: an aerobic
+defining homology/paralogy and novel function. Indeed, while              phototrophic acidobacterium. Science 317:523–526.
+the sequencing of environment after environment continues to          14. Bryant, D. A., and N. U. Frigaard. 2006. Prokaryotic photosynthesis and
+                                                                          phototrophy illuminated. Trends Microbiol. 14:488–496.
+generate gigabytes of data, there has been little corresponding       15. Buchanan, B. B., and Y. Balmer. 2005. Redox regulation: a broadening
+investment in the analysis of these data, pointing to an urgent           horizon. Annu. Rev. Plant Biol. 56:187–220.
+and immediate need for methods and tool development. For              16. Ciccarelli, F. D., T. Doerks, C. von Mering, C. J. Creevey, B. Snel, and P.
+                                                                          Bork. 2006. Toward automatic reconstruction of a highly resolved tree of life.
+example, we would have been unable to derive bootstrap val-               Science 311:1283–1287.
+ues for some of the phylogenetic trees had we included more           17. Ciccarelli, F. D., C. von Mering, M. Suyama, E. D. Harrington, E. Izaur-
+environments, not to mention the enormous challenges for the              ralde, and P. Bork. 2005. Complex genomic rearrangements lead to novel
+                                                                          primate gene function. Genome Res. 15:343–351.
+CPU to compute all the data. Our previous work demonstrated           18. Copley, R. R., T. Doerks, I. Letunic, and P. Bork. 2002. Protein domain
+that even a slightly better function assignment protocol could            analysis in the era of complete genomes. FEBS Lett. 513:129–134.
+                                                                      19. Dandekar, T., B. Snel, M. Huynen, and P. Bork. 1998. Conservation of gene
+lead to a near doubling of the number of functional annota-               order: a fingerprint of proteins that physically interact. Trends Biochem. Sci.
+tions for gene fragments, from 40% to 70% (30), suggesting                23:324–328.
+that with improved analysis, perhaps only half the sequence           20. Dvornyk, V., O. Vinogradova, and E. Nevo. 2003. Origin and evolution of
+                                                                          circadian clock genes in prokaryotes. Proc. Natl. Acad. Sci. USA 100:2495–
+data are really needed. The saved effort could be redirected at           2500.
+gathering time series and spatial data, which would help to inter-    21. Edgar, R. C. 2004. MUSCLE: multiple sequence alignment with high accu-
+pret functional novelty and allow the development of dynamic              racy and high throughput. Nucleic Acids Res. 32:1792–1797.
+                                                                      22. Ehling-Schulz, M., W. Bilger, and S. Scherer. 1997. UV-B-induced synthesis
+models to explore larger concepts in ecology and evolution such           of photoprotective pigments and extracellular polysaccharides in the terres-
+as species succession, pathway evolution, or metabolic flux.              trial cyanobacterium Nostoc commune. J. Bacteriol. 179:1940–1945.
+                                                                      23. Felsenstein, J. 1993. PHYLIP—Phylogeny Inference Package version 3.2.
+   In summary, we have demonstrated the use of computa-                   Cladistics 5:164–166.
+tional analysis techniques for discovering molecular functional       24. Fiedler, B., T. Borner, and A. Wilde. 2005. Phototaxis in the cyanobacterium
+novelty in environmental snapshots of bacterial communities.              Synechocystis sp. PCC 6803: role of different photoreceptors. Photochem.
+                                                                          Photobiol. 81:1481–1488.
+Our results indicate that information on gene neighborhood,           25. Fraser, C., W. P. Hanage, and B. G. Spratt. 2007. Recombination and the
+protein domains, and subfamilies can be successfully used to              nature of bacterial speciation. Science 315:476–480.
+VOL. 191, 2009                                                       NOVEL FUNCTION IN LIGHT-MEDIATED MICROBIAL PROCESSES                                              41
+
+26. Gomelsky, M., and G. Klug. 2002. BLUF: a novel FAD-binding domain                 49. Pao, G. M., and M. H. Saier, Jr. 1995. Response regulators of bacterial signal
+    involved in sensory transduction in microorganisms. Trends Biochem. Sci.              transduction systems: selective domain shuffling during evolution. J. Mol.
+    27:497–500.                                                                           Evol. 40:136–154.
+27. Guindon, S., and O. Gascuel. 2003. A simple, fast, and accurate algorithm to      50. Pignatelli, M., G. Aparicio, I. Blanquer, V. Hernandez, A. Moya, and J.
+    estimate large phylogenies by maximum likelihood. Syst. Biol. 52:696–704.             Tamames. 2008. Metagenomics reveals our incomplete knowledge of global
+28. Han, Y., S. Braatsch, L. Osterloh, and G. Klug. 2004. A eukaryotic BLUF               diversity. Bioinformatics 24:2124–2125.
+    domain mediates light-dependent gene expression in the purple bacterium           51. Raes, J., E. D. Harrington, A. H. Singh, and P. Bork. 2007. Protein function
+    Rhodobacter sphaeroides 2.4.1. Proc. Natl. Acad. Sci. USA 101:12306–12311.            space: viewing the limits or limited by our view? Curr. Opin. Struct. Biol.
+29. Hannenhalli, S. S., and R. B. Russell. 2000. Analysis and prediction of               17:362–369.
+    functional sub-types from protein sequence alignments. J. Mol. Biol. 303:         52. Raymond, J., O. Zhaxybayeva, J. P. Gogarten, S. Y. Gerdes, and R. E.
+    61–76.                                                                                Blankenship. 2002. Whole-genome analysis of photosynthetic prokaryotes.
+30. Harrington, E. D., A. H. Singh, T. Doerks, I. Letunic, C. von Mering, L. J.           Science 298:1616–1620.
+    Jensen, J. Raes, and P. Bork. 2007. Quantitative assessment of protein            53. Sancar, A. 2004. Photolyase and cryptochrome blue-light photoreceptors.
+    function prediction from metagenomics shotgun sequences. Proc. Natl.                  Adv. Protein Chem. 69:73–100.
+    Acad. Sci. USA 104:13913–13918.                                                   54. Schmidt, H. A., K. Strimmer, M. Vingron, and A. von Haeseler. 2002.
+31. Harris, M. A., J. Clark, A. Ireland, J. Lomax, M. Ashburner, R. Foulger, K.           TREE-PUZZLE: maximum likelihood phylogenetic analysis using quartets
+    Eilbeck, S. Lewis, B. Marshall, C. Mungall, J. Richter, G. M. Rubin, J. A.            and parallel computing. Bioinformatics 18:502–504.
+    Blake, C. Bult, M. Dolan, H. Drabkin, J. T. Eppig, D. P. Hill, L. Ni, M.          55. Schultz, J., F. Milpetz, P. Bork, and C. P. Ponting. 1998. SMART, a simple
+    Ringwald, R. Balakrishnan, J. M. Cherry, K. R. Christie, M. C. Costanzo,              modular architecture research tool: identification of signaling domains. Proc.
+    S. S. Dwight, S. Engel, D. G. Fisk, J. E. Hirschman, E. L. Hong, R. S. Nash,          Natl. Acad. Sci. USA 95:5857–5864.
+    A. Sethuraman, C. L. Theesfeld, D. Botstein, K. Dolinski, B. Feierbach, T.        56. Selby, C. P., and A. Sancar. 2006. A cryptochrome/photolyase class of en-
+    Berardini, S. Mundodi, S. Y. Rhee, R. Apweiler, D. Barrell, E. Camon, E.              zymes with single-stranded DNA-specific photolyase activity. Proc. Natl.
+
+
+
+
+                                                                                                                                                                             Downloaded from jb.asm.org at EMBL- EUROPAISCHES LAB on January 5, 2009
+    Dimmer, V. Lee, R. Chisholm, P. Gaudet, W. Kibbe, R. Kishore, E. M.                   Acad. Sci. USA 103:17696–17700.
+    Schwarz, P. Sternberg, M. Gwinn, L. Hannick, J. Wortman, M. Berriman, V.          57. Singh, A. H., D. M. Wolf, P. Wang, and A. P. Arkin. 2008. Modularity of
+    Wood, N. de la Cruz, P. Tonellato, P. Jaiswal, T. Seigfried, R. White, et al.         stress response evolution. Proc. Natl. Acad. Sci. USA 107:7500–7505.
+    2004. The Gene Ontology (GO) database and informatics resource. Nucleic           58. Singh, S. P., M. Klisch, R. P. Sinha, and D. P. Häder. 13 June 2008, posting
+    Acids Res. 32:D258.                                                                   date. Effects of abiotic stressors on synthesis of the mycosporine-like amino
+32. Hirschman, L., C. Clark, K. B. Cohen, S. Mardis, J. Luciano, R. Kottmann,             acid shinorine in the cyanobacterium Anabaena variabilis PCC 7937. Pho-
+    J. Cole, V. Markowitz, N. Kyrpides, and D. Field. 2008. Habitat-Lite: a GSC           tochem. Photobiol. [Epub ahead of print.]
+    case study based on free text terms for environmental metadata. Omics
+                                                                                      59. Sinha, R. P., N. K. Ambasht, J. P. Sinha, M. Klisch, and D. P. Hader. 2003.
+    12:129–136.
+                                                                                          UV-B-induced synthesis of mycosporine-like amino acids in three strains of
+33. Huson, D. H., A. F. Auch, J. Qi, and S. C. Schuster. 2007. MEGAN analysis
+                                                                                          Nodularia (cyanobacteria). J. Photochem. Photobiol. B 71:51–58.
+    of metagenomic data. Genome Res. 17:377–386.
+                                                                                      60. Soule, T., V. Stout, W. D. Swingley, J. C. Meeks, and F. Garcia-Pichel. 2007.
+34. Huynen, M., T. Dandekar, and P. Bork. 1998. Differential genome analysis
+                                                                                          Molecular genetics and genomic analysis of scytonemin biosynthesis in Nos-
+    applied to the species-specific features of Helicobacter pylori. FEBS Lett.
+                                                                                          toc punctiforme ATCC 29133. J. Bacteriol. 189:4465–4472.
+    426:1–5.
+35. Jung, A., T. Domratcheva, M. Tarutina, Q. Wu, W. H. Ko, R. L. Shoeman,            61. Taylor, B. L., and I. B. Zhulin. 1999. PAS domains: internal sensors of
+    M. Gomelsky, K. H. Gardner, and I. Schlichting. 2005. Structure of a bac-             oxygen, redox potential, and light. Microbiol. Mol. Biol. Rev. 63:479–506.
+    terial BLUF photoreceptor: insights into blue light-mediated signal trans-        62. Tringe, S. G., C. von Mering, A. Kobayashi, A. A. Salamov, K. Chen, H. W.
+    duction. Proc. Natl. Acad. Sci. USA 102:12350–12355.                                  Chang, M. Podar, J. M. Short, E. J. Mathur, J. C. Detter, P. Bork, P.
+36. Kannan, N., S. S. Taylor, Y. Zhai, J. C. Venter, and G. Manning. 2007.                Hugenholtz, and E. M. Rubin. 2005. Comparative metagenomics of micro-
+    Structural and functional diversity of the microbial kinome. PLoS Biol.               bial communities. Science 308:554–557.
+    5:e17.                                                                            63. Tyson, G. W., J. Chapman, P. Hugenholtz, E. E. Allen, R. J. Ram, P. M.
+37. Kehoe, D. M., and A. R. Grossman. 1996. Similarity of a chromatic adapta-             Richardson, V. V. Solovyev, E. M. Rubin, D. S. Rokhsar, and J. F. Banfield.
+    tion sensor to phytochrome and ethylene receptors. Science 273:1409–1412.             2004. Community structure and metabolism through reconstruction of mi-
+38. Korbel, J. O., L. J. Jensen, C. von Mering, and P. Bork. 2004. Analysis of            crobial genomes from the environment. Nature 428:37–43.
+    genomic context: prediction of functional associations from conserved bidi-       64. Venter, J. C., K. Remington, J. F. Heidelberg, A. L. Halpern, D. Rusch, J. A.
+    rectionally transcribed gene pairs. Nat. Biotechnol. 22:911.                          Eisen, D. Wu, I. Paulsen, K. E. Nelson, W. Nelson, D. E. Fouts, S. Levy, A. H.
+39. Kunin, V., J. Raes, J. K. Harris, J. R. Spear, J. J. Walker, N. Ivanova, C. von       Knap, M. W. Lomas, K. Nealson, O. White, J. Peterson, J. Hoffman, R.
+    Mering, B. M. Bebout, N. R. Pace, P. Bork, and P. Hugenholtz. 2008.                   Parsons, H. Baden-Tillson, C. Pfannkoch, Y. H. Rogers, and H. O. Smith.
+    Millimeter-scale genetic gradients and community-level molecular conver-              2004. Environmental genome shotgun sequencing of the Sargasso Sea. Sci-
+    gence in a hypersaline microbial mat. Mol. Syst. Biol. 4:198.                         ence 304:66–74.
+40. Letunic, I., and P. Bork. 2007. Interactive Tree Of Life (iTOL): an online        65. Vierstra, R. D., and S. J. Davis. 2000. Bacteriophytochromes: new tools for
+    tool for phylogenetic tree display and annotation. Bioinformatics 23:127–             understanding phytochrome signal transduction. Semin. Cell Dev. Biol. 11:
+    128.                                                                                  511–521.
+41. Letunic, I., R. R. Copley, B. Pils, S. Pinkert, J. Schultz, and P. Bork. 2006.    66. von Mering, C., P. Hugenholtz, J. Raes, S. G. Tringe, T. Doerks, L. J. Jensen,
+    SMART 5: domains in the context of genomes and networks. Nucleic Acids                N. Ward, and P. Bork. 2007. Quantitative phylogenetic assessment of mi-
+    Res. 34:D257–D260.                                                                    crobial communities in diverse environments. Science 315:1126–1130.
+42. Lin, C., and T. Todo. 2005. The cryptochromes. Genome Biol. 6:220.                67. von Mering, C., L. J. Jensen, M. Kuhn, S. Chaffron, T. Doerks, B. Kruger,
+43. Liolios, K., K. Mavromatis, N. Tavernarakis, and N. C. Kyrpides. 2008. The            B. Snel, and P. Bork. 2007. STRING 7—recent developments in the inte-
+    Genomes On Line Database (GOLD) in 2007: status of genomic and met-                   gration and prediction of protein interactions. Nucleic Acids Res. 35:D358–
+    agenomic projects and their associated metadata. Nucleic Acids Res. 36:               D362.
+    D475–D479.                                                                        68. Wilson, E. O. 1999. The diversity of life. W. W. Norton, New York, NY.
+44. Lozupone, C. A., and R. Knight. 2007. Global patterns in bacterial diversity.     69. Xiong, J., K. Inoue, and C. E. Bauer. 1998. Tracking molecular evolution of
+    Proc. Natl. Acad. Sci. USA 104:11436–11440.                                           photosynthesis by characterization of a major photosynthesis gene cluster
+45. Montgomery, B. L. 2007. Sensing the light: photoreceptive systems and signal          from Heliobacillus mobilis. Proc. Natl. Acad. Sci. USA 95:14851–14856.
+    transduction in cyanobacteria. Mol. Microbiol. 64:16–27.                          70. Yooseph, S., G. Sutton, D. B. Rusch, A. L. Halpern, S. J. Williamson, K.
+46. Moran, M. A., and W. L. Miller. 2007. Resourceful heterotrophs make the               Remington, J. A. Eisen, K. B. Heidelberg, G. Manning, W. Li, L. Jarosze-
+    most of light in the coastal ocean. Nat. Rev. Microbiol. 5:792–800.                   wski, P. Cieplak, C. S. Miller, H. Li, S. T. Mashiyama, M. P. Joachimiak, C.
+47. Oren, A. 2004. Prokaryote diversity and taxonomy: current status and future           van Belle, J. M. Chandonia, D. A. Soergel, Y. Zhai, K. Natarajan, S. Lee,
+    challenges. Philos. Trans. R. Soc. Lond. B Biol. Sci. 359:623–638.                    B. J. Raphael, V. Bafna, R. Friedman, S. E. Brenner, A. Godzik, D. Eisen-
+48. Overbeek, R., M. Fonstein, M. D’Souza, G. D. Pusch, and N. Maltsev. 1999.             berg, J. E. Dixon, S. S. Taylor, R. L. Strausberg, M. Frazier, and J. C. Venter.
+    The use of gene clusters to infer functional coupling. Proc. Natl. Acad. Sci.         2007. The Sorcerer II Global Ocean Sampling expedition: expanding the
+    USA 96:2896–2901.                                                                     universe of protein families. PLoS Biol. 5:e16.
+

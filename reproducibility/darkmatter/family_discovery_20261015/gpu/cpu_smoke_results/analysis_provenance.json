@@ -1,0 +1,87 @@
+{
+  "script": {
+    "name": "family_embedding_analysis.py",
+    "sha256": "089b217f92a55828e93d4d8b4afe56350fc84d4d78610d4a2fc42a14e2abf59c"
+  },
+  "execution": {
+    "timestamp_utc": "2026-10-15T06:18:55.085313+00:00",
+    "elapsed_seconds": 3.019,
+    "hostname": "cn511-18",
+    "platform": "Linux-5.14.0-427.20.1.el9_4.0.1.x86_64-x86_64-with-glibc2.34",
+    "python_version": "3.11.5 (main, Sep 11 2023, 13:23:44) [GCC 11.2.0]",
+    "library_versions": {
+      "numpy": "2.4.3",
+      "scipy": "1.17.1",
+      "sklearn": "1.8.0",
+      "matplotlib": "3.10.9"
+    }
+  },
+  "inputs": {
+    "embeddings": {
+      "path": "/home/hohndor/eq-family-discovery-20261015/cpu/embeddings.npz",
+      "sha256": "e6b3e880f7571521b806a0ea8015a9b4ebbf4d1b0f72a0c4c02185b963a8459c",
+      "n_samples": 7,
+      "dimensions": 1024
+    },
+    "metadata": {
+      "path": "/home/hohndor/eq-family-discovery-20261015/cpu/smoke_test_metadata.tsv",
+      "sha256": "0f9414c1a507571326d00d9149ccf70ad27f30bd437b3c468a688219efd49615",
+      "n_records": 7
+    }
+  },
+  "parameters": {
+    "seeds": [
+      42,
+      123,
+      20261015
+    ],
+    "candidate_perplexities": [
+      5.0,
+      30.0,
+      50.0
+    ],
+    "tsne_max_iter": 1000,
+    "tsne_init": "pca",
+    "distance_metric": "cosine"
+  },
+  "scientific_caveats": [
+    "Quantitative high-dimensional cosine distances are descriptive metrics and do NOT prove functional novelty or classification.",
+    "Distance distributions are strictly bounded by reference database density, sequence length disparities, and taxonomic sampling.",
+    "t-SNE coordinates are descriptive manifold visualizations; do NOT use 2D cluster area or spacing to quantify biological novelty.",
+    "Unrelated protein folds/classes must not be pooled together to avoid manufactured separation artifacts."
+  ],
+  "families": {
+    "EctC_family": {
+      "n_samples": 5,
+      "n_curated_references": 2,
+      "n_queries": 3,
+      "n_duplicate_instances": 3,
+      "perplexities_run": [
+        2.0
+      ],
+      "trustworthiness": {
+        "perp_2.0_seed_42": 0.6,
+        "perp_2.0_seed_123": 0.9333333333333333,
+        "perp_2.0_seed_20261015": 0.9333333333333333
+      },
+      "mean_reference_leave_one_out_cosine_distance": 0.020198702812194824,
+      "mean_query_nearest_reference_cosine_distance": 0.005061487356821696
+    },
+    "Phosphatase_family": {
+      "n_samples": 2,
+      "n_curated_references": 2,
+      "n_queries": 0,
+      "n_duplicate_instances": 0,
+      "perplexities_run": [
+        1.0
+      ],
+      "trustworthiness": {
+        "perp_1.0_seed_42": null,
+        "perp_1.0_seed_123": null,
+        "perp_1.0_seed_20261015": null
+      },
+      "mean_reference_leave_one_out_cosine_distance": 0.14211034774780273,
+      "mean_query_nearest_reference_cosine_distance": null
+    }
+  }
+}

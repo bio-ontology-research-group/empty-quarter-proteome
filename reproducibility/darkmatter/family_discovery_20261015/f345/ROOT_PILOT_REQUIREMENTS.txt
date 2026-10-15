@@ -1,0 +1,15 @@
+Root pilot/full separation and runtime audit (2026-10-15)
+
+DO NOT run all5438 as firstpilot. F1pilot deterministic256 subset is SHA256(genome filename fromWdb) rankedfirst256; use identicalfixedsubset forF3-F5pilot. Keeppilot outputseparatefromfull.
+
+Do not load allproteins and headers into Python dictionaries across5438genomes. Streamconcatenate, search, then secondpass extractonlycandidateIDs and contextneeded. Allmemory/CPU onworker allocations.
+
+03,04,05 currently eachwrite RESULTS_DIR/rep_proteomes_all.faa. If concurrentjobs this is a race/corruptinput. Createone immutable cohortinput in prep and jobsread-only, or uniquetrackpaths. Freezeexecutedcode/inputmanifest perjob. Separate pilot/fulldirectories and correctcountsactualnotliteral5438.
+
+Rootconfirmed verifiedprofiles names via primary API in reviews/.../reference_checks/*.json. Alloriginalmanualanchors rejected per anchors/checks.json. Newsourcebasedreferencebuildneeds final audit.
+
+Argon preflight section4 concretefixesmustpass; do not count genewidepresence as operon, motifregexnotbiochemistry. Candidatecompleteandprofileconfident -> permits fullcomparison, not provesnovelty/adaptation. Negative results valid.
+
+F1/F2pilotstillfirst. Root will release F3-F5when actualF12pilot outcomes exist.
+Root primarysourcecheck of newF4anchor: your YP_003245677.1 is EctC fromPaenibacillus sp.Y412MC10, but NOT establishedCzech2019P.lautus5ONNanchor. Official https://www.rcsb.org/structure/5ONN maps UniProt A0A385TEI2,138aadepositedchain, whereas yourYPsequence130aa. RCSB APIrawmetadata retained reviews/.../reference_checks/5ONN_entity1.json. UseactualPDBchain/sourceUniProt forlitanchor; downgradeYP toannotatedhomologunlessexplicitsequenceidentityproven. Q1GNW6 correctlymatches5BXX perofficialRCSB (raw5BXX_entity1.json). Pilotprofilemembershipcanremainvalid, but do not citeYP as experimentallyvalidatedCzechprotein nor transfernumberedactivesiteswithoutverifiedalignment.
+Follow-up exactsequencecheck: currentUniProtA0A385TEI2 is130aa (PDB138includesconstructextension); YP_003245677.1 also130aa but NOTidentical,129/130samepositions. Therefore closehomolog, notidenticalexperimentalsequence. RawA0A385TEI2JSON retained. Usecorrectanchor for exactresiduevalidation.

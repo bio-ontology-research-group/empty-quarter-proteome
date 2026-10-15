@@ -1,0 +1,714 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q73U90",
+  "uniProtkbId": "OTSB_MYCPA",
+  "entryAudit": {
+    "firstPublicDate": "2009-05-05",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2004-07-05",
+    "entryVersion": 106,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Mycolicibacterium paratuberculosis (strain ATCC BAA-968 / K-10)",
+    "commonName": "Mycobacterium paratuberculosis",
+    "taxonId": 262316,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Actinomycetota",
+      "Actinomycetes",
+      "Mycobacteriales",
+      "Mycobacteriaceae",
+      "Mycobacterium",
+      "Mycobacterium avium complex (MAC)"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Trehalose-phosphate phosphatase"
+      },
+      "shortNames": [
+        {
+          "value": "TPP"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "value": "3.1.3.12"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Trehalose-6-phosphate phosphatase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "otsB"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "MAP_3478"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Removes the phosphate from trehalose 6-phosphate to produce free trehalose"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha,alpha-trehalose 6-phosphate + H2O = alpha,alpha-trehalose + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:23420"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16551"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58429"
+          }
+        ],
+        "ecNumber": "3.1.3.12"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "value": "Glycan biosynthesis; trehalose biosynthesis"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the trehalose phosphatase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 391,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Trehalose-phosphate phosphatase",
+      "featureId": "PRO_0000370705"
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 147,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 147,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Nucleophile",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 147,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 149,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 147,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 147,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 149,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 149,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 330,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 330,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "16116077",
+        "citationType": "journal article",
+        "authors": [
+          "Li L.",
+          "Bannantine J.P.",
+          "Zhang Q.",
+          "Amonsin A.",
+          "May B.J.",
+          "Alt D.",
+          "Banerji N.",
+          "Kanjilal S.",
+          "Kapur V."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16116077"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.0505662102"
+          }
+        ],
+        "title": "The complete genome sequence of Mycobacterium avium subspecies paratuberculosis.",
+        "publicationDate": "2005",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "12344",
+        "lastPage": "12349",
+        "volume": "102"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC BAA-968 / K-10",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AE016958",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAS06028.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_010949975.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_002944.2"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q73U90",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q73U90",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "262316.MAP_3478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "mpa:MAP_3478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|262316.17.peg.3699",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0637",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG1877",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_037265_4_1_11",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00299",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004805",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:trehalose-phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005992",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:trehalose biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniPathway"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd01627",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_TPP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.30.70.1020:FF:000007",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose 6-phosphate phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.70.1020",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose-6-phosphate phosphatase related protein, domain 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006379",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IIB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR044651",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "OTSB-like"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR003337",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IIB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR00685",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "T6PP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43768",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TREHALOSE 6-PHOSPHATE PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43768:SF3",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TREHALOSE 6-PHOSPHATE PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02358",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MGESGPVVIDPRRHDAVLFGVGDALGSALASQLGQIGVGTAAFAADGPAAAADRLRVRPGRCVVVAGDPAAVEAARTAGFALVIGLAPVGRDGDGLRGAGADAVVAELEQITVRTGDRRMSQLPDASQALTGGADGLAGRHPAVFFDFDGTLSDIVDDPDAARPVAGATAALTRLAARCPVAVLSGRDLADVTKRVGVLGIWYAGSHGFELTAPDGSHHQNDDAAAAIPVLAQAAGRLRDELGAIPGVVVEHKRFGVAVHYRNAARDRVGEVAAAVRAAGRHDALRVTTGREVIELRPDLDWDKGKTLHWVIEHLRRSGSGALTPVYLGDDITDEDAFDAVRGGPVQGVPILVRHNDDGDRATAALFALDSPARAAEFTERLADQLERGEG",
+    "length": 391,
+    "molWeight": 40426,
+    "crc64": "C5E87D14599CC028",
+    "md5": "9B50C60922E5B3CB2D77F44FBB0795B3"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Active site": 1,
+      "Binding site": 4
+    },
+    "uniParcId": "UPI0000238C66"
+  }
+}

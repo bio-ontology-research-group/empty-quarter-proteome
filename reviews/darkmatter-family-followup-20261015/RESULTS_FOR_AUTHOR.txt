@@ -1,0 +1,32 @@
+FAMILY FOLLOW-UP: RESULTS AND MANUSCRIPT DECISIONS
+15 October 2026 — completed after root and Argon review
+
+F3 — heliorhodopsins: included in the main Results and Figure 6.
+The catalogue contains 45 complete candidates retaining the reference-aligned retinal-binding lysine ; 43 have original-read depth/breadth support. All 45 have published homologues and predicted compatibility with an experimental heliorhodopsin fold. The strongest sequence divergence lies in Patescibacteriota (median 39.4% identity to the highest-scoring qualifying published hit).
+Within Saccharimonadia, the expanded-reference comparison adds a mean 7.33 profile-core clusters per ten EQ sequences at 50% identity; the read-supported sensitivity gives 7.31. GEM overlaps that reference directly. A genuinely reference-free comparison gives 8.04 EQ versus 4 GEM core clusters at 50% identity, but 9.605 versus 10 at 80%. The paper reports both thresholds and the reference dependence. The ProstT5 t-SNE illustrates the wider family representation; it does not test absence from model training.
+Root judgement: strongest addition, useful biological case study of sequence coverage and credible candidates. Argon judgement: ready for bounded main-text inclusion, reaffirmed in both manuscript rounds. No novel-function, new-fold or endemism claim.
+
+F1 — cryptochrome/photolyase family: included in Supplementary Note S4.
+The strict profile screen gives 914 complete genes in 775 MAGs. Across 37 sites and 69 paired visits, the median surface carrier excess is 8.47 percentage points (Holm p=.00131). A separate exact mean decomposition totals 8.71 points: 5.31 between shared genus groups, 2.38 from groups observed in only one position, and 1.03 within shared groups. Bootstrap intervals are printed. Genus-unclassified singleton groups account for 25.7% of abundance, limiting genus-resolved attribution.
+Root and Argon agree: useful interpretation of an existing association, not independent replication or evidence of within-strain adaptation.
+
+F4 — ectoine-associated neighbourhoods: included in Supplementary Note S4.
+There are 616 qualifying EctABC neighbourhoods in 608 MAGs: 609 have distinct A/B ORFs and 7 have non-overlapping A/B domains in one neighbouring ORF. These seven are explicitly putative EctAB fusions. Five separate EctCD fusion predictions have original-read support and 4–19 junction-spanning templates. One has FEYH rather than WEYH and lies outside the residue-conserving subset. The surface/deep carrier contrast is unresolved (median +0.56 percentage points; raw p=.0974, Holm p=.389).
+Root and Argon agree: supporting architecture/resource result; no positive new ecological enrichment or biochemical-function claim.
+
+F5 — carbonic anhydrases: remains archived after the previous negative novelty assessment. No additional full run was justified.
+
+Deliverables
+- manuscript/main.tex and manuscript/main.pdf: main F3 subsection, detailed Methods, Supplementary Note S4, Discussion bridge and updated data/code statement.
+- manuscript/figures/fig_helio_expanded.pdf and .png: expanded-panel ProstT5, reference-dependent cluster additions, structure comparison and read support.
+- reproducibility/darkmatter/family_followup_20261015/REPRODUCIBILITY.txt: source paths, exact parameters, software, accepted jobs, failure dispositions and rerun order.
+- reviews/darkmatter-family-followup-20261015/: root judgements, Argon design/results review and two manuscript reviews, dispositions and execution receipts.
+
+Checks and storage
+CPU analyses ran on IBEX Slurm; ESMFold and ProstT5 ran on ORIX H200 allocations. Final IBEX audit 53827347 passed twelve groups and closed 1,170 artifacts. All 350 numerical checks in the manuscript harness passed, with the separate TABLE/provenance gates also passing. All 72 family claims are registered. The PDF builds cleanly at 40 pages. Forty-six local manuscript/code/figure/document files match the IBEX snapshot exactly.
+Authoritative new root: /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_followup_20261015_clean
+Earlier family inputs: /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean
+The new bundle retains numerical embeddings, 175 unique predicted structures, 50 regional BAMs, published reference data, scripts and checksums. Existing whole-paper raw-data access and deposition prerequisites remain; the follow-up does not remove them.
+
+Nature Communications judgement
+The additions strengthen biological specificity and candidate credibility. F3 fits the current paper; F1/F4 provide supporting context. They do not establish a new physiological mechanism or experimental function, and do not by themselves settle the journal's likely novelty threshold.

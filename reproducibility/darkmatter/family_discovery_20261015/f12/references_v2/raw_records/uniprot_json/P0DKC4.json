@@ -1,0 +1,1479 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P0DKC4",
+  "secondaryAccessions": [
+    "Q8L3U4",
+    "Q9LTH1"
+  ],
+  "uniProtkbId": "PGP1B_ARATH",
+  "entryAudit": {
+    "firstPublicDate": "2013-05-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2013-05-01",
+    "entryVersion": 72,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Arabidopsis thaliana",
+    "commonName": "Mouse-ear cress",
+    "taxonId": 3702,
+    "lineage": [
+      "Eukaryota",
+      "Viridiplantae",
+      "Streptophyta",
+      "Embryophyta",
+      "Tracheophyta",
+      "Spermatophyta",
+      "Magnoliopsida",
+      "eudicotyledons",
+      "Gunneridae",
+      "Pentapetalae",
+      "rosids",
+      "malvids",
+      "Brassicales",
+      "Brassicaceae",
+      "Camelineae",
+      "Arabidopsis"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Phosphoglycolate phosphatase 1B, chloroplastic"
+      },
+      "ecNumbers": [
+        {
+          "value": "3.1.3.18"
+        }
+      ]
+    },
+    "flag": "Precursor"
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "PGLP1B"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "At5g36790"
+        }
+      ],
+      "orfNames": [
+        {
+          "value": "F5H8.20"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Photorespiratory enzyme that dephosphorylates the 2-phosphoglycolate produced by the RuBisCO oxygenation reaction"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "2-phosphoglycolate + H2O = glycolate + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:14369"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29805"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58033"
+          }
+        ],
+        "ecNumber": "3.1.3.18"
+      }
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000255"
+              }
+            ],
+            "value": "Plastid, chloroplast",
+            "id": "SL-0049"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the HAD-like hydrolase superfamily. CbbY/CbbZ/Gph/YieH family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Erroneous gene model prediction",
+      "sequence": "BAA98057.1",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Erroneous initiation",
+      "sequence": "BAC42546.1",
+      "note": "Truncated N-terminus.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "type": "Transit peptide",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 54,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Chloroplast",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PubMed",
+          "id": "22223895"
+        }
+      ]
+    },
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 55,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 362,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphoglycolate phosphatase 1B, chloroplastic",
+      "featureId": "PRO_0000422098"
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 80,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 80,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Nucleophile",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 55,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 55,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "N-acetylthreonine",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PubMed",
+          "id": "22223895"
+        }
+      ]
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 356,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 356,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphoserine",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007744",
+          "source": "PubMed",
+          "id": "19376835"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0007",
+      "category": "PTM",
+      "name": "Acetylation"
+    },
+    {
+      "id": "KW-0150",
+      "category": "Cellular component",
+      "name": "Chloroplast"
+    },
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-0597",
+      "category": "PTM",
+      "name": "Phosphoprotein"
+    },
+    {
+      "id": "KW-0601",
+      "category": "Biological process",
+      "name": "Photorespiration"
+    },
+    {
+      "id": "KW-0934",
+      "category": "Cellular component",
+      "name": "Plastid"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0809",
+      "category": "Domain",
+      "name": "Transit peptide"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "CI-3U82GPCJ71R80",
+        "citationType": "submission",
+        "authors": [
+          "Kaneko T.",
+          "Katoh T.",
+          "Asamizu E.",
+          "Sato S.",
+          "Nakamura Y.",
+          "Kotani H.",
+          "Tabata S."
+        ],
+        "title": "Structural analysis of Arabidopsis thaliana chromosome 5. XI.",
+        "publicationDate": "APR-1999",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Columbia",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "27862469",
+        "citationType": "journal article",
+        "authors": [
+          "Cheng C.Y.",
+          "Krishnakumar V.",
+          "Chan A.P.",
+          "Thibaud-Nissen F.",
+          "Schobel S.",
+          "Town C.D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "27862469"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/tpj.13415"
+          }
+        ],
+        "title": "Araport11: a complete reannotation of the Arabidopsis thaliana reference genome.",
+        "publicationDate": "2017",
+        "journal": "Plant J.",
+        "firstPage": "789",
+        "lastPage": "804",
+        "volume": "89"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Columbia",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "CI-CI4AM1G71UC0S",
+        "citationType": "submission",
+        "authoringGroup": [
+          "The Arabidopsis Information Resource (TAIR)"
+        ],
+        "title": "Community-consensus reference genome of Arabidopsis thaliana Col-0.",
+        "publicationDate": "FEB-2026",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Columbia",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "14593172",
+        "citationType": "journal article",
+        "authors": [
+          "Yamada K.",
+          "Lim J.",
+          "Dale J.M.",
+          "Chen H.",
+          "Shinn P.",
+          "Palm C.J.",
+          "Southwick A.M.",
+          "Wu H.C.",
+          "Kim C.J.",
+          "Nguyen M.",
+          "Pham P.K.",
+          "Cheuk R.F.",
+          "Karlin-Newmann G.",
+          "Liu S.X.",
+          "Lam B.",
+          "Sakano H.",
+          "Wu T.",
+          "Yu G.",
+          "Miranda M.",
+          "Quach H.L.",
+          "Tripp M.",
+          "Chang C.H.",
+          "Lee J.M.",
+          "Toriumi M.J.",
+          "Chan M.M.",
+          "Tang C.C.",
+          "Onodera C.S.",
+          "Deng J.M.",
+          "Akiyama K.",
+          "Ansari Y.",
+          "Arakawa T.",
+          "Banh J.",
+          "Banno F.",
+          "Bowser L.",
+          "Brooks S.Y.",
+          "Carninci P.",
+          "Chao Q.",
+          "Choy N.",
+          "Enju A.",
+          "Goldsmith A.D.",
+          "Gurjal M.",
+          "Hansen N.F.",
+          "Hayashizaki Y.",
+          "Johnson-Hopson C.",
+          "Hsuan V.W.",
+          "Iida K.",
+          "Karnes M.",
+          "Khan S.",
+          "Koesema E.",
+          "Ishida J.",
+          "Jiang P.X.",
+          "Jones T.",
+          "Kawai J.",
+          "Kamiya A.",
+          "Meyers C.",
+          "Nakajima M.",
+          "Narusaka M.",
+          "Seki M.",
+          "Sakurai T.",
+          "Satou M.",
+          "Tamse R.",
+          "Vaysberg M.",
+          "Wallender E.K.",
+          "Wong C.",
+          "Yamamura Y.",
+          "Yuan S.",
+          "Shinozaki K.",
+          "Davis R.W.",
+          "Theologis A.",
+          "Ecker J.R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "14593172"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.1088305"
+          }
+        ],
+        "title": "Empirical analysis of transcriptional activity in the Arabidopsis genome.",
+        "publicationDate": "2003",
+        "journal": "Science",
+        "firstPage": "842",
+        "lastPage": "846",
+        "volume": "302"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Columbia",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "11910074",
+        "citationType": "journal article",
+        "authors": [
+          "Seki M.",
+          "Narusaka M.",
+          "Kamiya A.",
+          "Ishida J.",
+          "Satou M.",
+          "Sakurai T.",
+          "Nakajima M.",
+          "Enju A.",
+          "Akiyama K.",
+          "Oono Y.",
+          "Muramatsu M.",
+          "Hayashizaki Y.",
+          "Kawai J.",
+          "Carninci P.",
+          "Itoh M.",
+          "Ishii Y.",
+          "Arakawa T.",
+          "Shibata K.",
+          "Shinagawa A.",
+          "Shinozaki K."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11910074"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.1071006"
+          }
+        ],
+        "title": "Functional annotation of a full-length Arabidopsis cDNA collection.",
+        "publicationDate": "2002",
+        "journal": "Science",
+        "firstPage": "141",
+        "lastPage": "145",
+        "volume": "296"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA] OF 15-362"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Columbia",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "19376835",
+        "citationType": "journal article",
+        "authors": [
+          "Reiland S.",
+          "Messerli G.",
+          "Baerenfaller K.",
+          "Gerrits B.",
+          "Endler A.",
+          "Grossmann J.",
+          "Gruissem W.",
+          "Baginsky S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "19376835"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1104/pp.109.138677"
+          }
+        ],
+        "title": "Large-scale Arabidopsis phosphoproteome profiling reveals novel chloroplast kinase substrates and phosphorylation networks.",
+        "publicationDate": "2009",
+        "journal": "Plant Physiol.",
+        "firstPage": "889",
+        "lastPage": "903",
+        "volume": "150"
+      },
+      "referencePositions": [
+        "PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-356",
+        "IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS]"
+      ]
+    },
+    {
+      "referenceNumber": 7,
+      "citation": {
+        "id": "22092075",
+        "citationType": "journal article",
+        "authors": [
+          "Aryal U.K.",
+          "Krochko J.E.",
+          "Ross A.R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "22092075"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/pr200917t"
+          }
+        ],
+        "title": "Identification of phosphoproteins in Arabidopsis thaliana leaves using polyethylene glycol fractionation, immobilized metal-ion affinity chromatography, two-dimensional gel electrophoresis and mass spectrometry.",
+        "publicationDate": "2012",
+        "journal": "J. Proteome Res.",
+        "firstPage": "425",
+        "lastPage": "437",
+        "volume": "11"
+      },
+      "referencePositions": [
+        "IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS]"
+      ]
+    },
+    {
+      "referenceNumber": 8,
+      "citation": {
+        "id": "22223895",
+        "citationType": "journal article",
+        "authors": [
+          "Bienvenut W.V.",
+          "Sumpton D.",
+          "Martinez A.",
+          "Lilla S.",
+          "Espagne C.",
+          "Meinnel T.",
+          "Giglione C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "22223895"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/mcp.m111.015131"
+          }
+        ],
+        "title": "Comparative large-scale characterisation of plant vs. mammal proteins reveals similar and idiosyncratic N-alpha acetylation features.",
+        "publicationDate": "2012",
+        "journal": "Mol. Cell. Proteomics",
+        "firstPage": "M111.015131",
+        "lastPage": "M111.015131",
+        "volume": "11"
+      },
+      "referencePositions": [
+        "ACETYLATION [LARGE SCALE ANALYSIS] AT THR-55",
+        "CLEAVAGE OF TRANSIT PEPTIDE [LARGE SCALE ANALYSIS] AFTER MET-54",
+        "IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS]"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AB025605",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA98057.1"
+        },
+        {
+          "key": "Status",
+          "value": "ALT_SEQ"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CP002688",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AED94112.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CP002688",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AED94113.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CP002688",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AED94114.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "OZ408687",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "-"
+        },
+        {
+          "key": "Status",
+          "value": "NOT_ANNOTATED_CDS"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AY094446",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAM19818.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AY122899",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAM67432.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AK117908",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAC42546.1"
+        },
+        {
+          "key": "Status",
+          "value": "ALT_INIT"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P0DKC4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P0DKC4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "18897",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "P0DKC4",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "1475"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "3702.P0DKC4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GlyGen",
+      "id": "P0DKC4",
+      "properties": [
+        {
+          "key": "glycosylation",
+          "value": "1 site"
+        }
+      ]
+    },
+    {
+      "database": "iPTMnet",
+      "id": "P0DKC4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "3702-P0DKC4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "DNASU",
+      "id": "833635",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "833646",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ath:AT5G36700",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ath:AT5G36790",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Araport",
+      "id": "AT5G36790",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "TAIR",
+      "id": "AT5G36790",
+      "properties": [
+        {
+          "key": "GeneName",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_043473_0_0_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "P0DKC4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "PPMHRET",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "413953at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "P0DKC4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:AT5G36790-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "CD-CODE",
+      "id": "4299E36E",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Nucleolus"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:P0DKC4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000006548",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome 5"
+        }
+      ]
+    },
+    {
+      "database": "ExpressionAtlas",
+      "id": "P0DKC4",
+      "properties": [
+        {
+          "key": "ExpressionPatterns",
+          "value": "baseline and differential"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0048046",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:apoplast"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "18538804"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009507",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:chloroplast"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISM:TAIR"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009570",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:chloroplast stroma"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "16207701"
+        },
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "18633119"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005737",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "15610358"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005634",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleus"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "15610358"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000325",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:plant-type vacuole"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "15539469"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009536",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:plastid"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:TAIR"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "28887381"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008967",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphoglycolate phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd07510",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_Pase_UmpH-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.1000:FF:000447",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.1000:FF:000039",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphoglycolate phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006357",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IIA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006349",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGP_euk"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01460",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IIA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01452",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGP_euk"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR19288",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "4-NITROPHENYLPHOSPHATASE-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR19288:SF46",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HALOACID DEHALOGENASE-LIKE HYDROLASE DOMAIN-CONTAINING PROTEIN 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF13344",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hydrolase_6"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF13242",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hydrolase_like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF000915",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGP-type_phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDG01139",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "C2.A:_Pyridoxal_Phosphate_Phos"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDS00003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Haloacid_Dehalogenase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SFLD",
+      "id": "SFLDF00039",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "phosphoglycolate_phosphatase_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MLSRSVASAVTPVSSSSLLPNSKPIFCLKTLSGYRSSSFCGGCIRKINHKPLRMTSSNITPRAMATQQLENADQLIDSVETFIFDCDGVIWKGDKLIEGVPETLDMLRAKGKRLVFVTNNSTKSRKQYGKKFETLGLNVNEEEIFASSFAAAAYLQSINFPKDKKVYVIGEEGILKELELAGFQYLGGPDDGKRQIELKPGFLMEHDHDVGAVVVGFDRYFNYYKIQYGTLCIRENPGCLFIATNRDAVTHLTDAQEWAGGGSMVGALVGSTQREPLVVGKPSTFMMDYLADKFGIQKSQICMVGDRLDTDILFGQNGGCKTLLVLSGVTSISMLESPENKIQPDFYTSKISDFLSPKAATV",
+    "length": 362,
+    "molWeight": 39762,
+    "crc64": "E95B32C0D232DC29",
+    "md5": "051720D9E80668A62AD9DD0AF904ED6D"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 1,
+      "SEQUENCE CAUTION": 2
+    },
+    "countByFeatureType": {
+      "Transit peptide": 1,
+      "Chain": 1,
+      "Active site": 1,
+      "Modified residue": 2
+    },
+    "uniParcId": "UPI00000A2218"
+  }
+}

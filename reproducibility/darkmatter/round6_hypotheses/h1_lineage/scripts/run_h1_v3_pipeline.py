@@ -1,0 +1,50 @@
+#!/usr/bin/env python3
+"""run_h1_v3_pipeline.py - Master runner for Hypothesis 1 v3 repaired ancestry-aware pipeline."""
+
+import os
+import sys
+import subprocess
+import time
+
+
+def run_step(step_name, cmd):
+    print(f"\n{'='*78}\nSTARTING: {step_name}\nCMD: {' '.join(cmd)}\n{'='*78}", flush=True)
+    t0 = time.time()
+    res = subprocess.run(cmd)
+    dt = time.time() - t0
+    if res.returncode != 0:
+        print(f"FAILED: {step_name} exited with code {res.returncode} in {dt:.2f}s", flush=True)
+        sys.exit(res.returncode)
+    print(f"COMPLETED: {step_name} in {dt:.2f}s", flush=True)
+
+
+def main():
+    here = os.path.dirname(os.path.abspath(__file__))
+
+    py_drep = "/ibex/scratch/projects/c2014/rob/miniconda3/envs/drep/bin/python"
+    py_meta = "/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/bin/python"
+
+    if not os.path.exists(py_drep):
+        py_drep = sys.executable
+    if not os.path.exists(py_meta):
+        py_meta = sys.executable
+
+    steps = [
+        ("Step 1 (v3): Enumerate & Checksum Raw Inputs + Validate Midpoint vs Outgroup Rooting (DendroPy)",
+         [py_drep, os.path.join(here, "01_v3_input_manifest_and_phylo_audit.py")]),
+        ("Step 2 (v3): Fit Repaired PGLS Models, Unbiased Student-t CIs, Lambda Profile CI & Statsmodels Verification",
+         [py_meta, os.path.join(here, "02_v3_pgls_ancestry_models.py")]),
+        ("Step 3 (v3): Matched-Denominator Coupling Audit, Comparator Metadata & Programmatic Closure Verification",
+         [py_meta, os.path.join(here, "03_v3_coupling_and_comparator_audit.py")]),
+    ]
+
+    t_start = time.time()
+    for name, cmd in steps:
+        run_step(name, cmd)
+
+    total_time = time.time() - t_start
+    print(f"\n{'='*78}\nH1 V3 PIPELINE COMPLETED SUCCESSFULLY in {total_time:.2f}s\n{'='*78}", flush=True)
+
+
+if __name__ == "__main__":
+    main()

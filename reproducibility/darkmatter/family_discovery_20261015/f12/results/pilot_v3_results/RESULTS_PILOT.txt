@@ -1,0 +1,92 @@
+================================================================================
+FEASIBILITY PILOT REPORT: HYPOTHESES F1 & F2 (EMPTY QUARTER METAGENOME)
+Generated under Slurm worker environment | Root Audited Codebase v3
+Timestamp: 2026-10-15 05:54:24 UTC
+================================================================================
+
+EXECUTIVE SUMMARY OF VERDICTS:
+--------------------------------------------------------------------------------
+TRACK F1 (Cryptochrome/Photolyase Family Identity & Diversity):
+  VERDICT: FEASIBILITY_PASS
+  JUSTIFICATION: Screening of a deterministic 256-genome cohort (4.7% of the 5,438
+  representative proteomes) recovered 3104 candidate hits (E <= 1e-3), of which
+  2453 represent high-confidence photolyase/cryptochrome domain architectures
+  (HMM domain E <= 1e-10, domain coverage >= 50.0%). Coding completeness is high
+  (87.7% complete CDS, partial=00). Family diversity spans CPD photolyases,
+  cryptochromes, and short photolyases (SPL candidates). Full 5,438-proteome census
+  is fully justified.
+
+TRACK F2 (Compatible-Solute Phosphatase Remapping & Competing-HAD Discrimination):
+  REMAPPING VERDICT: PASS (100% Verified in Current Refined Catalogue)
+  BIOCHEMICAL DISCRIMINATION VERDICT: EQUIVOCAL / INCONCLUSIVE (Sequence Homology Only)
+  JUSTIFICATION:
+  1. Remapping to Current Catalogue: Both named historical leads remap with 100% identity
+     to winning ANI95 representatives in Wdb.csv:
+     - Lead_1 (1PRr2__self_SemiBin_81::1PRr2_1391604_4) -> Refined Bin: 1PRr2__self_SemiBin_81
+       dRep Cluster: 2415_0 | Wdb Winner: 1PRr2__self_SemiBin_81.fa (is_winner=True)
+       Taxonomy: d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__JACQPN01;f__JAJPHT01;g__JAJPHT01;s__
+       Coding Status: 93 aa, complete CDS=True
+     - Lead_2 (S52PRr1__single_SemiBin_53::S52PRr1_477345_9) -> Refined Bin: S52PRr1__single_SemiBin_53
+       dRep Cluster: 2433_1 | Wdb Winner: S52PRr1__single_SemiBin_53.fa (is_winner=True)
+       Taxonomy: d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__JACQPN01;f__JAJPHT01;g__;s__
+       Coding Status: 148 aa, complete CDS=True
+  2. Competing HAD Superfamily Discrimination:
+     Both leads share the broad HAD superfamily fold (PF00702 Hydrolase / PF13419 HAD_2).
+     Lead 1 delta-bitscore (osmolyte vs competing HAD): 0.0 bits.
+     Lead 2 delta-bitscore (osmolyte vs competing HAD): 0.0 bits.
+     CRITICAL SCIENTIFIC CAVEAT: Sequence similarity within the HAD superfamily does NOT
+     prove compatible-solute phosphatase (MpgP/TPP/GgpP) physiological activity.
+  3. Flanking Synteny:
+     Both contigs lack adjacent osmolyte synthases (co-localization marked NOT_TESTED per
+     Root instruction; adjacent gene in both MAGs is a response regulator REC+HTH domain).
+  4. Full Track Promotion Recommendation:
+     Full census is justified ONLY if paired with 3D structural fold discrimination
+     (Foldseek/ProstT5) and co-occurring pathway synthase searches across unbinned contigs.
+
+================================================================================
+DETAILED TRACK F1 METRICS (256-GENOME COHORT PILOT):
+--------------------------------------------------------------------------------
+  candidate_only_hits                : 189
+  cohort_genomes_screened            : 256
+  high_conf_6-4_candidate            : 6
+  high_conf_CPD_candidate            : 44
+  high_conf_CPF_unclassified         : 2
+  high_conf_SplB_outgroup            : 2396
+  high_conf_complete_cds_count       : 2151
+  high_conf_complete_cds_pct         : 87.7%
+  high_conf_cryptochrome_candidate   : 5
+  high_confidence_candidates         : 2453
+  moderate_confidence_candidates     : 462
+  total_candidate_hits_e1e3          : 3104
+
+DETAILED TRACK F2 METRICS:
+--------------------------------------------------------------------------------
+  activity_caveat                    : Homology to HAD superfamily enzymes does NOT establish compatible-solute phosphatase physiological activity
+  lead_1_coding_status               : COMPLETE (partial=00, 93 aa)
+  lead_1_delta_bitscore_osm_minus_competing: 0.0
+  lead_1_top_had_domain              : None
+  lead_1_top_had_domain_cov          : 0.000
+  lead_2_coding_status               : COMPLETE (partial=00, 286 aa)
+  lead_2_delta_bitscore_osm_minus_competing: 0.0
+  lead_2_top_had_domain              : None
+  lead_2_top_had_domain_cov          : 0.000
+  remapping_lead_1                   : CONFIRMED_ANI95_WINNER (1PRr2__self_SemiBin_81 in cluster 2415_0)
+  remapping_lead_2                   : CONFIRMED_ANI95_WINNER (S52PRr1__single_SemiBin_53 in cluster 2433_1)
+  synthase_colocalization_testing    : NOT_TESTED (no synthase profile database in pilot)
+
+AUDIT CHECKLIST & PROTOCOL COMPLIANCE:
+--------------------------------------------------------------------------------
+  [X] Zero invented sequences: all 258 references validated against UniProtKB/NCBI REST.
+  [X] Deduplication: 263 query rows deduplicated to 258 accessions with query list preserved.
+  [X] Broad family assignment based on source EC and protein name (no heuristic fallbacks).
+  [X] Deterministic SHA256-ranked 256 representative cohort retained before search.
+  [X] HMMER parsers: p[4] query accession, p[3] query name, explicit CPU limit.
+  [X] Positive control: 100% recovery of reference sequences.
+  [X] Contig to bin mapping: sample::contig exact match to column 3 refined bin.
+  [X] dRep mapping: Cdb secondary_cluster mapped to Wdb cluster; one winner asserted.
+  [X] Competing HAD evaluation: preserved all hits with --max-target-seqs 0.
+  [X] No homology=activity inference asserted.
+  [X] Flank synthase status marked NOT_TESTED (no synthase DB in pilot).
+  [X] Compute execution: wrapped with require_slurm_worker.sh on IBEX worker allocation.
+  [X] Output preservation: immutable code and separate pilot_v3_results directory.
+================================================================================

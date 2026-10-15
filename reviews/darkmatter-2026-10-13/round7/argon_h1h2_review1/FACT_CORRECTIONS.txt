@@ -1,0 +1,79 @@
+FACT CORRECTIONS LEDGER FOR ARGON ROUND 7 H1/H2 REVIEW
+Reviewer: Argon (Gemini 4 Argon High via agy)
+Date: 2026-10-14
+Archived original files:
+- reviews/darkmatter-2026-10-13/round7/argon_h1h2_review1/review_original.txt
+- reviews/darkmatter-2026-10-13/round7/argon_h1h2_review1/verdicts_original.json
+Corrected files:
+- reviews/darkmatter-2026-10-13/round7/argon_h1h2_review1/review.txt
+- reviews/darkmatter-2026-10-13/round7/argon_h1h2_review1/verdicts.json
+Saved local verification script and output:
+- reviews/darkmatter-2026-10-13/round7/argon_h1h2_review1/verify_h1_h2_facts.py
+- reviews/darkmatter-2026-10-13/round7/argon_h1h2_review1/verify_h1_h2_facts.json
+
+1. Manuscript catalogue and sample counts (REVIEW1_FACT_AUDIT.md Item 1)
+- Original draft claim: "522 soil and hypolithic samples ... 4,768 quality-filtered metagenome-assembled genomes (1,622 dereplicated species clusters across 32 phyla) and 17.5 million protein clusters", plus line references 239-279 and 281-319.
+- Authoritative source: manuscript/main.tex lines 35-38, 77-80, 91-100, 120-127, 252-306, 307-351, and CLAUDE.md lines 18-20.
+- Correction in review.txt and verdicts.json: Updated to 551 soil samples from 61 locations, 14,426 refined bins dereplicated at 95% ANI into 5,438 species-level genome representatives across 51 GTDB release 232 phyla, 43,423,322 genome-linked protein cluster representatives (4,292,446 or 9.89% sequence-dark; 106,042 recurrent dark families), and 2,838 confidence-qualified monomer ESMFold models. Updated main.tex section line numbers to lines 252-306 (Thermoplasmatota) and lines 307-351 (structural).
+
+2. Definition of K versus Q\K in H2 (REVIEW1_FACT_AUDIT.md Item 2)
+- Original draft claim: Inverted K and Q\K in the second paragraph and verdicts_original.json as "known-fold (K) and novel-fold candidate (Q\K)".
+- Authoritative source: manuscript/main.tex lines 321-343, reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/scripts/01_select_cohort.py lines 55-63, and RESULTS.md line 16.
+- Correction in review.txt and verdicts.json: Stated throughout that K (1,031 at Gate 0; 570 at Gate 3) is the low-whole-query-TM group (conf_qualified_dual_novel == 1, query-normalized TM-score < 0.5 against both PDB and AFDB) and Q\K (QnotK, 1,807 at Gate 0; 891 at Gate 3) is the fold-matched sequence-dark comparator group (query-normalized TM-score >= 0.5), and explicitly prohibited labeling either arm as proven novel folds.
+
+3. Paraphrase vs verbatim quote of h2_initial/H1_COMPLETENESS.md and resolution in h2_v2/H1_COMPLETENESS.md (REVIEW1_FACT_AUDIT.md Item 3)
+- Original draft claim: Formatted a non-verbatim multi-column quote with t-statistics and CIs not present in the 4-column table of h2_initial/H1_COMPLETENESS.md (lines 68-80) and with inaccurate OLS SE/p values for Intercept, completeness, contamination, log_len, log_n50, and frac_rbh_desert.
+- Authoritative source: reviews/darkmatter-2026-10-13/round7/snapshots/h2_initial/H1_COMPLETENESS.md lines 68-80, reviews/darkmatter-2026-10-13/round7/root_checks/generate_h1_summary.py, reviews/darkmatter-2026-10-13/round7/snapshots/h2_v2/H1_COMPLETENESS.md lines 1-55, and round6/snapshots/h1_final/results/v3_pgls_model_summary.tsv.
+- Correction in review.txt and verdicts.json: Explicitly paraphrased the exact values in the 4-column table of h2_initial/H1_COMPLETENESS.md (lines 70-79), verified programmatic regeneration in h2_v2/H1_COMPLETENESS.md via root_checks/generate_h1_summary.py (verified in verify_h1_h2_facts.py), and marked H1-MAJ-1 as RESOLVED_IN_H2_V2.
+
+4. H1 sensitivity specifications S2-S7 descriptions, values, and profile-likelihood union intervals (REVIEW1_FACT_AUDIT.md Item 4)
+- Original draft claim: Misdescribed S2-S7 in verdicts_original.json ("S2 raw counts, S3 logit-transformed f_novel ... S5 class-fixed-effects n=236 ... S7 CheckM2-harmonized denominator") and reported wrong coefficients/p-values for S6 (beta_AAI = +0.001711, p = 3.87e-5; beta_RBH = -0.137574, p = 1.94e-11), S7 (beta_AAI = +0.001432, p = 6.95e-4; beta_RBH = -0.145859, p = 7.72e-11), and profile-likelihood union intervals ([+0.000836, +0.002534] and [-0.176359, -0.095479]).
+- Authoritative source: reviews/darkmatter-2026-10-13/round6/snapshots/h1_final/results/v3_pgls_sensitivity.tsv and v3_pgls_lambda_profile.tsv (and DOSSIER.md lines 88-112).
+- Correction in review.txt and verdicts.json: Reported exact specifications and values from v3_pgls_sensitivity.tsv:
+  * S2_Unnormalized_Brownian_VCV_237 (n = 237): lambda_ML = 0.916132, R^2_GLS = 0.475264, beta_AAI = +0.001744 +/- 0.000407 (p = 2.694748e-5), beta_RBH = -0.140505 +/- 0.019533 (p = 8.831619e-12).
+  * S3_Catalogue_Denominator_RBH_237 (n = 237, shared catalogue denominator for RBH): lambda_ML = 0.915415, R^2_GLS = 0.468174, beta_AAI = +0.001693 +/- 0.000407 (p = 4.499514e-5), beta_RBH = -0.136591 +/- 0.019416 (p = 2.265112e-11).
+  * S4_Restricted_c__SW-10-69-26_185 (n = 185): lambda_ML = 0.900804, R^2_GLS = 0.500906, beta_AAI = +0.001921 +/- 0.000491 (p = 1.285632e-4), beta_RBH = -0.180441 +/- 0.022624 (p = 1.776834e-13).
+  * S5_Dominant_Family_JAJPHT01_Omitted_97 (n = 97): lambda_ML = 0.901145, R^2_GLS = 0.444105, beta_AAI = +0.001494 +/- 0.000513 (p = 4.526286e-3), beta_RBH = -0.102379 +/- 0.030547 (p = 1.176333e-3).
+  * S6_Same_Class_Comparators_SW_plus_E2_236 (n = 236): lambda_ML = 0.893376, R^2_GLS = 0.475040, beta_AAI = +0.001568 +/- 0.000392 (p = 8.387793e-5), beta_RBH = -0.145879 +/- 0.019191 (p = 7.485088e-13).
+  * S7_With_Caller_Complete_Proxy_232 (n = 232, complete-gene proxy adding CheckM2 frac_complete): lambda_ML = 0.913489, R^2_GLS = 0.483091, beta_AAI = +0.001550 +/- 0.000452 (p = 7.245799e-4), beta_RBH = -0.104756 +/- 0.026891 (p = 1.293680e-4).
+  * Profile-likelihood union 95% Student-t intervals across lambda in [0.846303, 0.957823]: [+0.000758, +0.002550] for beta_AAI and [-0.178736, -0.095753] for beta_RBH.
+
+5. Five missing CheckM2 .faa genome identifiers in H1 (REVIEW1_FACT_AUDIT.md Item 5)
+- Original draft claim: Listed 48PRr1__SemiBin_020, 062, 095, 111, and 112 (plus non-existent JSON keys unique_comparators_n, max_comparator_share_pct, missing_faa_n, and bin_id = 35174).
+- Authoritative source: reviews/darkmatter-2026-10-13/round6/snapshots/h1_final/results/v3_closure_verification.json lines 5-11.
+- Correction in review.txt and verdicts.json: Replaced with the exact list in v3_closure_verification.json (missing_checkm2_faa_genomes): 48PRr1__SemiBin_112, 48PRr1__SemiBin_141, 48PRr1__SemiBin_510, 48PRr1__SemiBin_539, and 48PRr1__SemiBin_849, and cited the exact JSON/TSV field names.
+
+6. H2 Tier 2 Mantel-Haenszel raw recurrence difference and OLS/HC3 and Fisher statistics (REVIEW1_FACT_AUDIT.md Item 6)
+- Original draft claim: Reported Tier 2 Delta_MH(C_fam) = +0.0258, p = 0.5067; Tier 1 differential survival Fisher p = 1.15e-5; OLS/HC3 on raw C_fam beta_is_k = +0.0428 +/- 0.0472, p = 0.3646; and OLS/HC3 phylum_group_multi = -0.1597 +/- 0.0556 on E_fam and -0.3125 +/- 0.0623, p = 8.4e-7 on C_fam.
+- Authoritative source: reviews/darkmatter-2026-10-13/round7/snapshots/h2_v2/results/pilot_conservation_summary.json lines 212-220, 280-353, 362-435, and verify_h1_h2_facts.json.
+- Correction in review.txt and verdicts.json: Corrected Tier 2 Delta_MH(C_fam) to +0.043859 (null SD 0.034337, p = 0.232277) alongside Tier 2 Delta_MH(E_fam) = +0.018391 (null SD 0.031223, p = 0.561844); corrected Tier 1 survival Fisher p (173/570 vs 180/891) to p = 1.46e-5 (1.4587e-5); corrected OLS/HC3 on raw C_fam beta_is_k to +0.049661 +/- 0.046674 (p = 0.287330); and corrected OLS/HC3 phylum_group_multi to -0.160060 +/- 0.056174 (p = 0.004381) on E_fam and -0.198166 +/- 0.060164 (p = 0.000989) on raw C_fam.
+
+7. H2 cross-family dependence counts (REVIEW1_FACT_AUDIT.md Item 7)
+- Original draft claim: Reported 846 unique (bin, contig) pairs and 30 contigs shared across multiple families.
+- Authoritative source: reviews/darkmatter-2026-10-13/round7/snapshots/h2_v2/results/pilot_conservation_summary.json lines 647-661 and verify_h1_h2_facts.json.
+- Correction in review.txt and verdicts.json: Corrected to 877 Tier 1 evaluable primary loci across 869 unique (bin, contig) pairs, 8 contigs shared across multiple families (0 overlapping 4-flank windows), 617 unique refined bins (145 shared across multiple families), and 568 unique dRep species clusters (153 shared across multiple families).
+
+8. H2 species-disjoint subset sensitivity (REVIEW1_FACT_AUDIT.md Item 8)
+- Original draft claim: Reported 76 families (31 K, 45 Q\K) with mean E_fam +0.2896 in K vs +0.3052 in Q\K, difference -0.0156.
+- Authoritative source: reviews/darkmatter-2026-10-13/round7/snapshots/h2_v2/results/pilot_conservation_summary.json lines 662-669 and verify_h1_h2_facts.json.
+- Correction in review.txt and verdicts.json: Corrected to 112 families with zero shared species (51 K, 61 QnotK), mean excess recurrence E_fam = +0.261855 in K vs +0.198430 in QnotK, difference +0.063425.
+
+9. Overinterpretation of KO mobilome keyword screen and non-disjointness of N_dark and N_RBH (REVIEW1_FACT_AUDIT.md Item 9)
+- Original draft claim: Claimed H2 demonstrated "conserved non-mobilome neighborhood synteny" and described H1 dark genes as a disjoint "remaining accessory proteome" (along with unverified Pearson correlations r = -0.088, -0.351, +0.493 and VIFs 1.70, 1.54).
+- Authoritative source: reviews/darkmatter-2026-10-13/round7/snapshots/h2_v2/RESULTS.md Section 8 and round6/snapshots/h1_final/DOSSIER.md Section 6.2.
+- Correction in review.txt and verdicts.json: Removed all claims of "non-mobilome" neighborhoods and added an explicit bound stating that the 11-keyword screen on the single top recurrent KO (0/128 flagged) does not establish non-mobilome context or exclude mobile elements (given 62.68% of Tier 1 flanks are mapped_noKO). Removed all references to a disjoint "remaining accessory proteome" and unverified Pearson r/VIF values, and explicitly stated that N_dark and N_RBH come from different callers and non-mutually-exclusive criteria and are not disjoint.
+
+10. Interpretation of Pagel's lambda in H1 (REVIEW1_FACT_AUDIT.md Item 10)
+- Original draft claim: Stated that "lineage structure dominates species-level sequence novelty (lambda_ML = 0.9158)".
+- Authoritative source: reviews/darkmatter-2026-10-13/round7/snapshots/h2_v2/H1_COMPLETENESS.md line 45.
+- Correction in review.txt and verdicts.json: Replaced with the exact statistical interpretation that lambda_ML = 0.915784 quantifies residual phylogenetic covariance under the fitted Brownian-motion PGLS model on the selected FastTree, not a percentage of darkness explained or proof that vertical lineage history dominates all other causes.
+
+11. Current Data and code availability text and line numbers in manuscript/main.tex (REVIEW1_FACT_AUDIT.md Item 11)
+- Original draft claim: Cited lines 696-700 and stale placeholder strings ("[ accession to be added upon acceptance ]", etc.) and asserted Nature Communications editorial policy requirements.
+- Authoritative source: manuscript/main.tex lines 947-963.
+- Correction in review.txt and verdicts.json: Quoted and summarized the actual Data and code availability section at manuscript/main.tex lines 947-963 (private ENA receipts mapping 554 runs from 551 soil samples to PRJEB125153 with zero public filereport runs on 13 October 2026 and release date 1 November 2026; pending MAG deposition with MIMAG metadata and archived DOI; unpublished review revision tables/figures at https://github.com/bio-ontology-research-group/empty-quarter-mags; and 78 missing raw-file paths and 302 permission failures limiting complete raw-to-final reproduction) without asserting external editorial policy verification.
+
+12. Transparency of verification provenance vs blanket independent re-execution (REVIEW1_FACT_AUDIT.md Item 12)
+- Original draft claim: Claimed blanket independent re-execution of every estimator in H1 and H2 without saving an audit script or distinguishing table cross-checks from local recomputation.
+- Authoritative source: reviews/darkmatter-2026-10-13/round7/argon_h1h2_review1/verify_h1_h2_facts.py and verify_h1_h2_facts.json.
+- Correction in review.txt and verdicts.json: Saved verify_h1_h2_facts.py and verify_h1_h2_facts.json in the review directory and explicitly distinguished SHA-256 manifest verification, read-only code/log inspection, retained statsmodels.GLS and root-check audit tables, and targeted local recomputation of H2 attrition Fisher tests, Mantel-Haenszel weighted point differences, OLS/HC3 and logistic regressions, and cross-family dependence counts.

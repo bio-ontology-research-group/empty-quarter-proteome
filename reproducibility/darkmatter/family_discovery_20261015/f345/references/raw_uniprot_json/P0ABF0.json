@@ -1,0 +1,924 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P0ABF0",
+  "secondaryAccessions": [
+    "P17582",
+    "P78278"
+  ],
+  "uniProtkbId": "CYNT_ECO57",
+  "entryAudit": {
+    "firstPublicDate": "2005-10-25",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2005-10-25",
+    "entryVersion": 106,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Escherichia coli O157:H7",
+    "taxonId": 83334,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "P0ABE9"
+          }
+        ],
+        "value": "Carbonic anhydrase 1"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P0ABE9"
+            }
+          ],
+          "value": "4.2.1.1"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P0ABE9"
+            }
+          ],
+          "value": "Carbonate dehydratase 1"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "cynT"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "Z0435"
+        },
+        {
+          "value": "ECs0392"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P0ABE9"
+            }
+          ],
+          "value": "Reversible hydration of carbon dioxide. Carbon dioxide formed in the bicarbonate-dependent decomposition of cyanate by cyanase (CynS) diffuses out of the cell faster than it would be hydrated to bicarbonate, so the apparent function of this enzyme is to catalyze the hydration of carbon dioxide and thus prevent depletion of cellular bicarbonate"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "hydrogencarbonate + H(+) = CO2 + H2O",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:10748"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16526"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:17544"
+          }
+        ],
+        "ecNumber": "4.2.1.1",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "P0ABE9"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Zn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P0ABE9"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29105"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "P0ABE9"
+              }
+            ],
+            "value": "Binds 1 zinc ion per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P0ABE9"
+            }
+          ],
+          "value": "Oligomer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the beta-class carbonic anhydrase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 219,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Carbonic anhydrase 1",
+      "featureId": "PRO_0000077460"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 39,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 39,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P9WPJ7"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 41,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 41,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P9WPJ7"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 98,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 98,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P9WPJ7"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 101,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 101,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P9WPJ7"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0862",
+      "category": "Ligand",
+      "name": "Zinc"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "11206551",
+        "citationType": "journal article",
+        "authors": [
+          "Perna N.T.",
+          "Plunkett G. III",
+          "Burland V.",
+          "Mau B.",
+          "Glasner J.D.",
+          "Rose D.J.",
+          "Mayhew G.F.",
+          "Evans P.S.",
+          "Gregor J.",
+          "Kirkpatrick H.A.",
+          "Posfai G.",
+          "Hackett J.",
+          "Klink S.",
+          "Boutin A.",
+          "Shao Y.",
+          "Miller L.",
+          "Grotbeck E.J.",
+          "Davis N.W.",
+          "Lim A.",
+          "Dimalanta E.T.",
+          "Potamousis K.",
+          "Apodaca J.",
+          "Anantharaman T.S.",
+          "Lin J.",
+          "Yen G.",
+          "Schwartz D.C.",
+          "Welch R.A.",
+          "Blattner F.R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11206551"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/35054089"
+          }
+        ],
+        "title": "Genome sequence of enterohaemorrhagic Escherichia coli O157:H7.",
+        "publicationDate": "2001",
+        "journal": "Nature",
+        "firstPage": "529",
+        "lastPage": "533",
+        "volume": "409"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "O157:H7 / EDL933 / ATCC 700927 / EHEC",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "11258796",
+        "citationType": "journal article",
+        "authors": [
+          "Hayashi T.",
+          "Makino K.",
+          "Ohnishi M.",
+          "Kurokawa K.",
+          "Ishii K.",
+          "Yokoyama K.",
+          "Han C.-G.",
+          "Ohtsubo E.",
+          "Nakayama K.",
+          "Murata T.",
+          "Tanaka M.",
+          "Tobe T.",
+          "Iida T.",
+          "Takami H.",
+          "Honda T.",
+          "Sasakawa C.",
+          "Ogasawara N.",
+          "Yasunaga T.",
+          "Kuhara S.",
+          "Shiba T.",
+          "Hattori M.",
+          "Shinagawa H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11258796"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/8.1.11"
+          }
+        ],
+        "title": "Complete genome sequence of enterohemorrhagic Escherichia coli O157:H7 and genomic comparison with a laboratory strain K-12.",
+        "publicationDate": "2001",
+        "journal": "DNA Res.",
+        "firstPage": "11",
+        "lastPage": "22",
+        "volume": "8"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "O157:H7 / Sakai / RIMD 0509952 / EHEC",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AE005174",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAG54688.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "BA000007",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAB33815.2"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "D85528",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "D85528"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "H90677",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H90677"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_308419.2",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_002695.2"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_000658652.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NZ_AP018488.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P0ABF0",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P0ABF0",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "155864.Z0435",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "75202502",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "914494",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ece:Z0435",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecs:ECs_0392",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|386585.9.peg.487",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0288",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_053879_5_3_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "MPNVAAW",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000558",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004089",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:carbonate dehydratase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008270",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:zinc ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0015976",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:carbon utilization"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00884",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta_CA_cladeB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.1050.10:FF:000004",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic anhydrase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.1050.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic anhydrase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR045066",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Beta_CA_cladeB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001765",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015892",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036874",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase_sf"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11002",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBONIC ANHYDRASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11002:SF42",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBONIC ANHYDRASE 1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pro_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00947",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pro_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53056",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta-carbonic anhydrase, cab"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00704",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PROK_CO2_ANHYDRASE_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00705",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PROK_CO2_ANHYDRASE_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MKEIIDGFLKFQREAFPKREALFKQLATQQSPRTLFISCSDSRLVPELVTQREPGDLFVIRNAGNIVPSYGPEPGGVSASVEYAVAALRVSDIVICGHSNCGAMTAIASCQCMDHMPAVSHWLRYADSARVVNEARPHSDLPSKAAAMVRENVIAQLANLQTHPSVRLALEEGRIALHGWVYDIESGSIAAFDGATRQFVPLAANPRVCAIPLRQPTAA",
+    "length": 219,
+    "molWeight": 23764,
+    "crc64": "5EB41F125EC4D731",
+    "md5": "A309CDB0FB30AFB9F46C21965E99A2C6"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SUBUNIT": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 4
+    },
+    "uniParcId": "UPI0000128C44"
+  }
+}

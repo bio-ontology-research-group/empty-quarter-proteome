@@ -1,0 +1,128 @@
+{
+  "task": "Execute four agy feasibility investigations; Argon review/refine until all four bounded hypotheses explicitly viable",
+  "target": "Nature Communications",
+  "stage": "COMPLETE: all four finalized VIABLE, local and IBEX package verification passed",
+  "flash_model": "gemini-3.8-flash-high",
+  "argon_model": "gemini-4-argon-high",
+  "sessions": {},
+  "review_rounds": [
+    {
+      "hypothesis": "H1",
+      "round": 1,
+      "snapshot": "snapshots/h1_v2",
+      "status": "REVISE",
+      "outputs": "h1_review1",
+      "runner_status": "SUCCESS"
+    },
+    {
+      "hypothesis": "H2",
+      "round": 1,
+      "snapshot": "snapshots/h2_v2",
+      "status": "REVISE",
+      "outputs": "h2_review1",
+      "runner_status": "ERROR503_after_report_saved"
+    },
+    {
+      "hypothesis": "H3",
+      "round": 1,
+      "snapshot": "snapshots/h3_v2",
+      "status": "REVISE",
+      "outputs": "h3_review1",
+      "runner_status": "SUCCESS"
+    },
+    {
+      "hypothesis": "H4",
+      "round": 1,
+      "snapshot": "snapshots/h4_v2",
+      "status": "REVISE",
+      "outputs": "h4_review1",
+      "runner_status": "SUCCESS"
+    },
+    {
+      "hypothesis": "H1",
+      "round": 2,
+      "snapshot": "snapshots/h1_v3",
+      "status": "VIABLE",
+      "outputs": "h1_review2",
+      "runner_status": "SUCCESS"
+    },
+    {
+      "hypothesis": "H4",
+      "round": 2,
+      "snapshot": "snapshots/h4_v3",
+      "status": "VIABLE",
+      "outputs": "h4_review2",
+      "runner_status": "SUCCESS"
+    },
+    {
+      "hypothesis": "H3",
+      "round": 2,
+      "snapshot": "snapshots/h3_v3",
+      "status": "VIABLE",
+      "outputs": "h3_review2",
+      "runner_status": "SUCCESS"
+    },
+    {
+      "hypothesis": "H2",
+      "round": 2,
+      "snapshot": "snapshots/h2_v3",
+      "status": "VIABLE",
+      "outputs": "h2_review2",
+      "runner_status": "SUCCESS"
+    }
+  ],
+  "acceptance": "REVIEW_CONTRACT.md",
+  "manuscript_state": "unchanged from round5; hypotheses not yet promoted",
+  "initial_work": "All four initial agy Flash pilots executed; all four were repaired after independent audits",
+  "repair_model": "gemini-4-argon-high; fresh independent conversations performed all second reviews",
+  "accepted": {
+    "H1": {
+      "status": "VIABLE",
+      "review": "h1_review2",
+      "snapshot": "snapshots/h1_final",
+      "minor_doc_corrections": "complete; final verdict VIABLE"
+    },
+    "H4": {
+      "status": "VIABLE",
+      "review": "h4_review2",
+      "snapshot": "snapshots/h4_final",
+      "minor_doc_corrections": "complete"
+    },
+    "H3": {
+      "status": "VIABLE",
+      "review": "h3_review2",
+      "snapshot": "snapshots/h3_final",
+      "minor_doc_corrections": "complete"
+    },
+    "H2": {
+      "status": "VIABLE",
+      "review": "h2_review2",
+      "snapshot": "snapshots/h2_final",
+      "minor_doc_corrections": "complete"
+    }
+  },
+  "h4_compute": {
+    "full_attempt": 53704591,
+    "status": "cancelled_after_16m18s_for_resource_scaling",
+    "full_crop_census": "5851 models,7773 confident regions,161 models with no eligible region",
+    "matched_search": "weighted300model_pilot_job53706771",
+    "full_alignment_estimate_minutes": 183
+  },
+  "root_pdb_reference_audit": {
+    "job": 53709618,
+    "status": "32 actual components verified; historical self-checksum excluded; current manifest pinned"
+  },
+  "h2_compute": {
+    "corrected_run": 53710523,
+    "final_consistency_rerun": 53712511
+  },
+  "completed_utc": "2026-10-13T21:06:19.961730+00:00",
+  "verification": {
+    "local": "root_checks/final_package_verification.json",
+    "ibex": "root_checks/ibex_final_package_verification.json",
+    "ibex_job": 53716667,
+    "verified_package_files": 265,
+    "passed": true
+  },
+  "ibex_review_package": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p6_hypotheses_clean/review_package/round6"
+}

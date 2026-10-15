@@ -1,0 +1,320 @@
+{
+  "cohort_admission": {
+    "total_families_selected": 100,
+    "total_primary_evaluable": 56,
+    "primary_attrition_ineligible": 44,
+    "primary_evaluable_by_arm": {
+      "K": 32,
+      "QnotK": 24
+    },
+    "total_sensitivity_evaluable": 100,
+    "sensitivity_evaluable_by_arm": {
+      "K": 50,
+      "QnotK": 50
+    }
+  },
+  "primary_gate_results": {
+    "definition": ">=2 distinct species with complete four-flank observable windows",
+    "K_conserved": {
+      "n": 10,
+      "total": 32,
+      "rate": 0.3125
+    },
+    "QnotK_conserved": {
+      "n": 14,
+      "total": 24,
+      "rate": 0.5833
+    },
+    "risk_difference": -0.2708,
+    "odds_ratio": 0.3247,
+    "p_fisher_exact": 0.058123,
+    "p_mann_whitney_r_fam": 0.078416
+  },
+  "sensitivity_gate_results": {
+    "definition": ">=2 distinct species with >=1 callable flank",
+    "K_conserved": {
+      "n": 12,
+      "total": 50,
+      "rate": 0.24
+    },
+    "QnotK_conserved": {
+      "n": 16,
+      "total": 50,
+      "rate": 0.32
+    },
+    "risk_difference": -0.08,
+    "odds_ratio": 0.6711,
+    "p_fisher_exact": 0.504479
+  },
+  "host_contig_preserving_permutation_null": {
+    "iterations": 1000,
+    "sampling_unit": "uniform random pseudo-focal locus on same contig",
+    "null_diff_mean": 0.0235,
+    "null_diff_std": 0.0681,
+    "p_permutation_plus_one": 0.001
+  },
+  "multivariable_logistic_regression": {
+    "converged": false,
+    "pseudo_r2": 0.4307,
+    "parameters": {
+      "is_k": {
+        "coef": -1.6381,
+        "se": 1.007,
+        "p_value": 0.1038,
+        "odds_ratio": 0.1943,
+        "ci_95": [
+          0.027,
+          1.3989
+        ]
+      },
+      "n_species_complete_window": {
+        "coef": 1.6843,
+        "se": 0.7408,
+        "p_value": 0.023,
+        "odds_ratio": 5.3887,
+        "ci_95": [
+          1.2616,
+          23.0171
+        ]
+      },
+      "n_members": {
+        "coef": -0.0329,
+        "se": 0.194,
+        "p_value": 0.8655,
+        "odds_ratio": 0.9677,
+        "ci_95": [
+          0.6616,
+          1.4153
+        ]
+      },
+      "length": {
+        "coef": 0.0001,
+        "se": 0.0036,
+        "p_value": 0.9825,
+        "odds_ratio": 1.0001,
+        "ci_95": [
+          0.993,
+          1.0072
+        ]
+      },
+      "mean_plddt": {
+        "coef": -9.9377,
+        "se": 7.3228,
+        "p_value": 0.1747,
+        "odds_ratio": 0.0,
+        "ci_95": [
+          0.0,
+          82.675
+        ]
+      },
+      "ko_annotation_opportunity": {
+        "coef": 10.1922,
+        "se": 3.7111,
+        "p_value": 0.006,
+        "odds_ratio": 26694.6225,
+        "ci_95": [
+          18.514,
+          38489942.8506
+        ]
+      },
+      "phylum_unassigned": {
+        "coef": -14.7502,
+        "se": 424697.1168,
+        "p_value": 1.0,
+        "odds_ratio": 0.0,
+        "ci_95": [
+          0.0,
+          "Inf"
+        ]
+      }
+    }
+  },
+  "covariate_profiles_primary": {
+    "mean_species_breadth": {
+      "K": 2.84,
+      "QnotK": 2.83
+    },
+    "mean_length_aa": {
+      "K": 301.7,
+      "QnotK": 201.1
+    },
+    "mean_plddt": {
+      "K": 0.763,
+      "QnotK": 0.794
+    },
+    "mean_ko_annotation_opportunity": {
+      "K": 0.268,
+      "QnotK": 0.296
+    }
+  },
+  "recurrent_annotations_primary": [
+    {
+      "family": "36Dr3::36Dr3_500134_2",
+      "arm": "QnotK",
+      "best_ko": "K07282",
+      "species_count": 3,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "38PRr3::38PRr3_622317_3",
+      "arm": "QnotK",
+      "best_ko": "K01790",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "38Sr1::38Sr1_365825_9",
+      "arm": "K",
+      "best_ko": "K02275",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "41PRr1::41PRr1_266748_368",
+      "arm": "QnotK",
+      "best_ko": "K06965",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "43PRr3::43PRr3_701912_7",
+      "arm": "QnotK",
+      "best_ko": "K01724",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "4Dr3::4Dr3_2208420_5",
+      "arm": "K",
+      "best_ko": "K01167",
+      "species_count": 3,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "64PRr2::64PRr2_61434_59",
+      "arm": "QnotK",
+      "best_ko": "K03402",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "8PRr1::8PRr1_1249170_8",
+      "arm": "K",
+      "best_ko": "K01770",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F23PRr1::F23PRr1_943968_1",
+      "arm": "QnotK",
+      "best_ko": "K09736",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F25Dr2::F25Dr2_61875_4",
+      "arm": "K",
+      "best_ko": "K06883",
+      "species_count": 11,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F26Dr2::F26Dr2_46622_2",
+      "arm": "QnotK",
+      "best_ko": "K00001",
+      "species_count": 3,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F2Dr1::F2Dr1_2447321_2",
+      "arm": "K",
+      "best_ko": "K02557",
+      "species_count": 3,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F3PRr1::F3PRr1_1040849_23",
+      "arm": "QnotK",
+      "best_ko": "K01633",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F41Dr3::F41Dr3_561308_4",
+      "arm": "QnotK",
+      "best_ko": "K03924",
+      "species_count": 3,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F6Dr2::F6Dr2_196639_7",
+      "arm": "QnotK",
+      "best_ko": "K02454",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S2Dr1::S2Dr1_338147_7",
+      "arm": "K",
+      "best_ko": "K00826",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S52PRr1::S52PRr1_309397_2",
+      "arm": "K",
+      "best_ko": "K00873",
+      "species_count": 5,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S54PRr1::S54PRr1_472074_10",
+      "arm": "QnotK",
+      "best_ko": "K00567",
+      "species_count": 3,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "T1Dr3::T1Dr3_1954410_31",
+      "arm": "QnotK",
+      "best_ko": "K03118",
+      "species_count": 3,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V2PRr1::V2PRr1_1965096_2",
+      "arm": "K",
+      "best_ko": "K02003",
+      "species_count": 5,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V39Sr2::V39Sr2_267206_2",
+      "arm": "K",
+      "best_ko": "K06902",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V45Dr1::V45Dr1_764362_26",
+      "arm": "QnotK",
+      "best_ko": "K18244",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V54PRr1::V54PRr1_761827_7",
+      "arm": "K",
+      "best_ko": "K21029",
+      "species_count": 2,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V5PRr1::V5PRr1_986749_4",
+      "arm": "QnotK",
+      "best_ko": "K07156",
+      "species_count": 3,
+      "mobilome_flag": 0
+    }
+  ]
+}

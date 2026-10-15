@@ -1,0 +1,69 @@
+{
+  "id": "H3",
+  "status": "VIABLE",
+  "bounded_hypothesis": "Conditional on the MD5/SHA-256-verified public Zenodo Record 8223844 SMAG archive-order convenience pool (212 complete MAGs from mag.tar.gz.aa-ab, recalled with Pyrodigal v3.7.1 -p meta --no-stop-codon) and the staged 52,515 published GEM Prodigal v2.6.3 proteomes, after canonicalizing sequences (stripping trailing '*' and uppercasing), deduplicating exact canonical sequences within each reference pool, applying an explicit cross-release overlap rule, and enforcing exact integer-length (1 aa) common-support quota matching so that both arms have identical unique protein counts, identical total amino-acid residues, and identical exact length distributions, does the SMAG reference subset yield a different paired hit rate than matched GEM reference subsets for Empty Quarter dark protein families under identical DIAMOND blastp settings?",
+  "critical_issues": [],
+  "evidence_paths": [
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/SNAPSHOT_MANIFEST.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/LARGE_ARTIFACT_LOCATORS.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/DESIGN.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/DOSSIER.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/response.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/INPUTS.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/scripts/08_v3_extract_and_call_smag.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/scripts/09_v3_match_gem_and_search.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/scripts/10_run_v3_matched_pilot.sbatch",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/logs/pilot_v3_53707059.out",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/logs/pilot_v3_53707059.err",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_smag_zenodo_parts_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_smag_tar_extraction_audit.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_smag_genome_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_smag_duplicate_map.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_gem_genome_manifest_seed20261013.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_gem_genome_manifest_seed20261014.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_gem_genome_manifest_seed20261015.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_cross_release_shared_sequences.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_matching_closure_audit.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_matched_cohort_summary.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_matched_length_stratified_results.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_top1_vs_dbsize_decomposition.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_artifact_checksums.tsv",
+    "reviews/darkmatter-2026-10-13/round6/root_checks/h3_table_audit.json",
+    "reproducibility/darkmatter/round6_hypotheses/h3_references/DOSSIER.md",
+    "reproducibility/darkmatter/round6_hypotheses/h3_references/DESIGN.md",
+    "reproducibility/darkmatter/round6_hypotheses/h3_references/response.txt",
+    "reproducibility/darkmatter/round6_hypotheses/h3_references/INPUTS.tsv",
+    "reviews/darkmatter-2026-10-13/round6/h3_review2/minor_corrections.txt"
+  ],
+  "optional_improvements": [
+    "Run the full 212,084-query panel (106,042 dark + 106,042 control family representatives in query_all.faa) against the exact-length-matched reference databases to eliminate finite-query sampling variance.",
+    "Download all 373 Zenodo Record 8223844 archive parts (~39 GB) if extending inference beyond the 212-MAG archive-order convenience prefix (mag.tar.gz.aa-ab) to random whole-catalogue SMAG sampling, and fetch external GEM nucleotide assemblies if re-calling GEM with Pyrodigal v3.7.1."
+  ],
+  "scope_changes_from_original": [
+    "Narrowed from a full-catalogue, caller-harmonized soil-biome test (round5/EXTENSIONS.md H3) to a bounded reference-release comparison conditioned on the verified 212-MAG public Zenodo 8223844 archive-order convenience pool (mag.tar.gz.aa-ab, recalled with Pyrodigal v3.7.1) and published GEM Prodigal v2.6.3 proteomes, without generalizing to unexamined archive parts or claiming causal soil-biome adaptation.",
+    "Separated dark and annotated control cohorts strictly (reporting Horvitz-Thompson / stratified population-weighted marginal estimates with finite-population-corrected SEs) without pooling cohorts or using controls to calibrate technical vs biological shares, and framed the three deterministic GEM genome draws as reference-subsampling sensitivity analyses rather than biological replicates."
+  ],
+  "corrected_document_hashes": {
+    "reproducibility/darkmatter/round6_hypotheses/h3_references/DOSSIER.md": {
+      "sha256": "5ad6f42904ffd8753e75c71b17a60682913ed163f2a55940b732018d9c3eb1ea",
+      "bytes": 20893,
+      "snapshot_h3_v3_sha256": "2dd7c934039d644794c84f2523cb64750dcfa3f6800b8a87be815e9a8bc4b1b6"
+    },
+    "reproducibility/darkmatter/round6_hypotheses/h3_references/DESIGN.md": {
+      "sha256": "e2aeac834f346bd4e85bb256a4e38f6fc7cad1245b5ff06bb627279003dc347c",
+      "bytes": 15305,
+      "snapshot_h3_v3_sha256": "a04201572730c1786aa9f8be5c32c328e367f56b76c2ac96eb20ea2318583b6a"
+    },
+    "reproducibility/darkmatter/round6_hypotheses/h3_references/response.txt": {
+      "sha256": "ed42385b0e415d69aaae378823ec859c36f1f004a16d5ed402e12dda2d86a50f",
+      "bytes": 11119,
+      "snapshot_h3_v3_sha256": "649d9fb995a7823cda8af5599ba43a812ba654cbf05db2fcf43000bfcaab5848"
+    },
+    "reproducibility/darkmatter/round6_hypotheses/h3_references/INPUTS.tsv": {
+      "sha256": "480db8f145f5d8d850e253a40e894f428b5e7947aa0d16709846e832fbc4f7d6",
+      "bytes": 12433,
+      "snapshot_h3_v3_sha256": "bdfe6ee69fe0a8a659f33f9487ca1cb8c3482641b34c3dfabe4f687f43fbc682"
+    }
+  },
+  "reason": "H3 v3 was judged VIABLE in h3_review2/verdicts.json with all four prior critical issues resolved in executed code and verified artifacts (Slurm Job 53707059). The non-blocking documentation and provenance refinements—(1) labeling the protein-count E-value threshold split (E_sub <= 1e-3 / 21.15 = 4.73e-5) in DOSSIER.md Section 3, DESIGN.md Section 1.2, and response.txt Section 4 as a rough heuristic threshold diagnostic rather than an exact per-query attribution to '-k 1' masking vs database size, with an explicit caveat that legacy TSV column names (strict_top1_masked_*, borderline_dbsize_rescaled_*) are historical diagnostic labels rather than validated mechanism classifications, (2) correcting the first archive member in DOSSIER.md Section 2.1 and response.txt Section 3 from alphabetical row 1 (MAG/D3rbin.13.fa, member 92) to actual tar member 1 (MAG/SRR5579859rbin.24.fa) and correcting the mistyped rejected member 213 observed_bytes in DESIGN.md Section 2.1 from 6,995,968 to 6,946,816 to match v3_smag_tar_extraction_audit.tsv, and (3) updating INPUTS.tsv so every accessible local and remote entry matches its exact byte size and SHA-256 digest on disk and IBEX—have been applied to live reproducibility/darkmatter/round6_hypotheses/h3_references/{DOSSIER.md,DESIGN.md,response.txt,INPUTS.tsv} while keeping snapshots/h3_v3/ and original h3_review2/{review.txt,verdicts.json} untouched. H3 remains VIABLE."
+}

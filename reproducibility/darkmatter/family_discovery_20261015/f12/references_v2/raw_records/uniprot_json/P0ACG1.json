@@ -1,0 +1,1810 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P0ACG1",
+  "secondaryAccessions": [
+    "P30017"
+  ],
+  "uniProtkbId": "STPA_ECOLI",
+  "entryAudit": {
+    "firstPublicDate": "2005-11-22",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2005-11-22",
+    "entryVersion": 138,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Escherichia coli (strain K12)",
+    "taxonId": 83333,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "DNA-binding protein StpA"
+      }
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "H-NS homolog StpA"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "1480493"
+          }
+        ],
+        "value": "stpA"
+      },
+      "synonyms": [
+        {
+          "value": "hnsB"
+        }
+      ],
+      "orderedLocusNames": [
+        {
+          "value": "b2669"
+        },
+        {
+          "value": "JW2644"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "23543115"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "8755860"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "8890170"
+            }
+          ],
+          "value": "A DNA-binding protein that acts in a fashion similar to H-NS protein upon overexpression, represses a number of genes including the cryptic blg operon, hns, papB and the proU locus (PubMed:8890170). A subset of H-NS/StpA-regulated genes also require Hha for repression; Hha and Cnu (YdgT) increases the number of genes DNA bound by H-NS/StpA and may also modulate the oligomerization of the H-NS/StpA-complex (PubMed:23543115). Repression can be inhibited by dominant-negative mutants of StpA or H-NS (PubMed:8755860)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "1480493"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17267410"
+            }
+          ],
+          "value": "(Microbial infection) Originally isolated as a suppressor of a splicing defect of the thymidylate synthase (td) gene from bacteriophage T4 (PubMed:1480493). Acts as an RNA chaperone, accelerating splicing of viral pre-mRNA. Binds preferentially to unstructured over structured RNA; does not have a detectable high-affinity RNA-binding site in the pre-mRNA. There do not seem to be any specific RNA targets in transcribed E.coli DNA (PubMed:17267410)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "8755860"
+            },
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "When overexpressed forms homodimers, can interact with the N-terminus (residues 1-64) of H-NS (PubMed:8755860). May interact with Hha and/or Cnu"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "INTERACTION",
+      "interactions": [
+        {
+          "interactantOne": {
+            "uniProtKBAccession": "P0ACG1",
+            "intActId": "EBI-551928"
+          },
+          "interactantTwo": {
+            "uniProtKBAccession": "P0ACF8",
+            "geneName": "hns",
+            "intActId": "EBI-544934"
+          },
+          "numberOfExperiments": 4,
+          "organismDiffer": false
+        }
+      ]
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "21903814"
+              }
+            ],
+            "value": "Scattered throughout the nucleoid (PubMed:21903814)"
+          }
+        ]
+      },
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "21903814"
+              }
+            ],
+            "value": "Cytoplasm, nucleoid",
+            "id": "SL-0187"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "8890170"
+            }
+          ],
+          "value": "Expressed at low levels at 37 degrees Celsius, barely detectable at 26 degrees Celsius; expression is repressed by hns and partially activated by lrp (PubMed:8890170)"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17267410"
+            }
+          ],
+          "value": "Both the N-terminus (residues 1-76) and the C-terminus (residues 90-134) have RNA chaperone activity for splicing of td, a bacteriophage T4 pre-mRNA (PubMed:17267410)"
+        }
+      ],
+      "commentType": "DOMAIN"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "23543115"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "8890170"
+            }
+          ],
+          "value": "No visible phenotype in rich medium; double hns-stpA mutants grow slower and have reduced viable cell counts compared to single hns mutants in MC1029 and MC4100 backgrounds (PubMed:8890170). In 0.3M NaCl a double hns-stpA deletion up-regulates 583 and down-regulates 86 genes, 363 of which are thought to have been horizontally acquired; 131 are also up-regulated in a double cnu-hha deletion (PubMed:23543115)"
+        }
+      ],
+      "commentType": "DISRUPTION PHENOTYPE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the histone-like protein H-NS family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 134,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "DNA-binding protein StpA",
+      "featureId": "PRO_0000168513"
+    },
+    {
+      "type": "DNA binding",
+      "location": {
+        "start": {
+          "value": 112,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 117,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P0A1S2"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 73,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 94,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 26,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 26,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Partial loss of repressor function when overexpressed in the absence of hns.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "8755860"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "L",
+        "alternativeSequences": [
+          "P"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 65,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 134,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Partial loss of repressor function when overexpressed in the absence of hns.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "8755860"
+        }
+      ],
+      "alternativeSequence": {}
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 97,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 97,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Partial loss of repressor function when overexpressed in the absence of hns.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "8755860"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "Y",
+        "alternativeSequences": [
+          "C"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 116,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 116,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Partial loss of repressor function when overexpressed in the absence of hns.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "8755860"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "P",
+        "alternativeSequences": [
+          "S"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 126,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 126,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Higher RNA chaperone activity than wild-type, decreased ability to bind structured RNA.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "17267410"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "G",
+        "alternativeSequences": [
+          "V"
+        ]
+      }
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 117,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 124,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2LRX"
+        }
+      ]
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 129,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 131,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "2LRX"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-0143",
+      "category": "Molecular function",
+      "name": "Chaperone"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0238",
+      "category": "Molecular function",
+      "name": "DNA-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0694",
+      "category": "Molecular function",
+      "name": "RNA-binding"
+    },
+    {
+      "id": "KW-0804",
+      "category": "Biological process",
+      "name": "Transcription"
+    },
+    {
+      "id": "KW-0805",
+      "category": "Biological process",
+      "name": "Transcription regulation"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "1480493",
+        "citationType": "journal article",
+        "authors": [
+          "Zhang A.",
+          "Belfort M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "1480493"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/nar/20.24.6735"
+          }
+        ],
+        "title": "Nucleotide sequence of a newly-identified Escherichia coli gene, stpA, encoding an H-NS-like protein.",
+        "publicationDate": "1992",
+        "journal": "Nucleic Acids Res.",
+        "firstPage": "6735",
+        "lastPage": "6735",
+        "volume": "20"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]",
+        "FUNCTION"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "7961433",
+        "citationType": "journal article",
+        "authors": [
+          "Shi X.",
+          "Bennett G.N."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "7961433"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.176.21.6769-6775.1994"
+          }
+        ],
+        "title": "Plasmids bearing hfq and the hns-like gene stpA complement hns mutants in modulating arginine decarboxylase gene expression in Escherichia coli.",
+        "publicationDate": "1994",
+        "journal": "J. Bacteriol.",
+        "firstPage": "6769",
+        "lastPage": "6775",
+        "volume": "176"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "9205837",
+        "citationType": "journal article",
+        "authors": [
+          "Yamamoto Y.",
+          "Aiba H.",
+          "Baba T.",
+          "Hayashi K.",
+          "Inada T.",
+          "Isono K.",
+          "Itoh T.",
+          "Kimura S.",
+          "Kitagawa M.",
+          "Makino K.",
+          "Miki T.",
+          "Mitsuhashi N.",
+          "Mizobuchi K.",
+          "Mori H.",
+          "Nakade S.",
+          "Nakamura Y.",
+          "Nashimoto H.",
+          "Oshima T.",
+          "Oyama S.",
+          "Saito N.",
+          "Sampei G.",
+          "Satoh Y.",
+          "Sivasundaram S.",
+          "Tagami H.",
+          "Takahashi H.",
+          "Takeda J.",
+          "Takemoto K.",
+          "Uehara K.",
+          "Wada C.",
+          "Yamagata S.",
+          "Horiuchi T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9205837"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/4.2.91"
+          }
+        ],
+        "title": "Construction of a contiguous 874-kb sequence of the Escherichia coli-K12 genome corresponding to 50.0-68.8 min on the linkage map and analysis of its sequence features.",
+        "publicationDate": "1997",
+        "journal": "DNA Res.",
+        "firstPage": "91",
+        "lastPage": "113",
+        "volume": "4"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "9278503",
+        "citationType": "journal article",
+        "authors": [
+          "Blattner F.R.",
+          "Plunkett G. III",
+          "Bloch C.A.",
+          "Perna N.T.",
+          "Burland V.",
+          "Riley M.",
+          "Collado-Vides J.",
+          "Glasner J.D.",
+          "Rode C.K.",
+          "Mayhew G.F.",
+          "Gregor J.",
+          "Davis N.W.",
+          "Kirkpatrick H.A.",
+          "Goeden M.A.",
+          "Rose D.J.",
+          "Mau B.",
+          "Shao Y."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9278503"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.277.5331.1453"
+          }
+        ],
+        "title": "The complete genome sequence of Escherichia coli K-12.",
+        "publicationDate": "1997",
+        "journal": "Science",
+        "firstPage": "1453",
+        "lastPage": "1462",
+        "volume": "277"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / MG1655 / ATCC 47076",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "16738553",
+        "citationType": "journal article",
+        "authors": [
+          "Hayashi K.",
+          "Morooka N.",
+          "Yamamoto Y.",
+          "Fujita K.",
+          "Isono K.",
+          "Choi S.",
+          "Ohtsubo E.",
+          "Baba T.",
+          "Wanner B.L.",
+          "Mori H.",
+          "Horiuchi T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16738553"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/msb4100049"
+          }
+        ],
+        "title": "Highly accurate genome sequences of Escherichia coli K-12 strains MG1655 and W3110.",
+        "publicationDate": "2006",
+        "journal": "Mol. Syst. Biol.",
+        "firstPage": "E1",
+        "lastPage": "E5",
+        "volume": "2"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "8890170",
+        "citationType": "journal article",
+        "authors": [
+          "Sonden B.",
+          "Uhlin B.E."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8890170"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1002/j.1460-2075.1996.tb00877.x"
+          }
+        ],
+        "title": "Coordinated and differential expression of histone-like proteins in Escherichia coli: regulation and function of the H-NS analog StpA.",
+        "publicationDate": "1996",
+        "journal": "EMBO J.",
+        "firstPage": "4970",
+        "lastPage": "4980",
+        "volume": "15"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 1-21",
+        "FUNCTION",
+        "INDUCTION",
+        "DISRUPTION PHENOTYPE"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12",
+          "type": "STRAIN"
+        },
+        {
+          "value": "K12 / MC1029",
+          "type": "STRAIN"
+        },
+        {
+          "value": "K12 / MC4100 / ATCC 35695 / DSM 6574",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 7,
+      "citation": {
+        "id": "8755860",
+        "citationType": "journal article",
+        "authors": [
+          "Williams R.M.",
+          "Rimsky S.",
+          "Buc H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8755860"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.178.15.4335-4343.1996"
+          }
+        ],
+        "title": "Probing the structure, function, and interactions of the Escherichia coli H-NS and StpA proteins by using dominant negative derivatives.",
+        "publicationDate": "1996",
+        "journal": "J. Bacteriol.",
+        "firstPage": "4335",
+        "lastPage": "4343",
+        "volume": "178"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "SUBUNIT",
+        "MUTAGENESIS OF LEU-26; 65-MET--ILE-134; TYR-97 AND PRO-116"
+      ]
+    },
+    {
+      "referenceNumber": 8,
+      "citation": {
+        "id": "17267410",
+        "citationType": "journal article",
+        "authors": [
+          "Mayer O.",
+          "Rajkowitsch L.",
+          "Lorenz C.",
+          "Konrat R.",
+          "Schroeder R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17267410"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/nar/gkl1143"
+          }
+        ],
+        "title": "RNA chaperone activity and RNA-binding properties of the E. coli protein StpA.",
+        "publicationDate": "2007",
+        "journal": "Nucleic Acids Res.",
+        "firstPage": "1257",
+        "lastPage": "1269",
+        "volume": "35"
+      },
+      "referencePositions": [
+        "FUNCTION (MICROBIAL INFECTION)",
+        "DOMAIN",
+        "RNA-BINDING",
+        "MUTAGENESIS OF GLY-126"
+      ]
+    },
+    {
+      "referenceNumber": 9,
+      "citation": {
+        "id": "21903814",
+        "citationType": "journal article",
+        "authors": [
+          "Wang W.",
+          "Li G.W.",
+          "Chen C.",
+          "Xie X.S.",
+          "Zhuang X."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "21903814"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.1204697"
+          }
+        ],
+        "title": "Chromosome organization by a nucleoid-associated protein in live bacteria.",
+        "publicationDate": "2011",
+        "journal": "Science",
+        "firstPage": "1445",
+        "lastPage": "1449",
+        "volume": "333"
+      },
+      "referencePositions": [
+        "SUBCELLULAR LOCATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / BW25993",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 10,
+      "citation": {
+        "id": "23543115",
+        "citationType": "journal article",
+        "authors": [
+          "Ueda T.",
+          "Takahashi H.",
+          "Uyar E.",
+          "Ishikawa S.",
+          "Ogasawara N.",
+          "Oshima T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "23543115"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/dst008"
+          }
+        ],
+        "title": "Functions of the Hha and YdgT proteins in transcriptional silencing by the nucleoid proteins, H-NS and StpA, in Escherichia coli.",
+        "publicationDate": "2013",
+        "journal": "DNA Res.",
+        "firstPage": "263",
+        "lastPage": "271",
+        "volume": "20"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "REGULON",
+        "DISRUPTION PHENOTYPE"
+      ],
+      "referenceComments": [
+        {
+          "value": "K12 / W3110 / ATCC 27325 / DSM 5911",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 11,
+      "citation": {
+        "id": "CI-B0FO2UEGDA1RM",
+        "citationType": "submission",
+        "authors": [
+          "Fuertig B.",
+          "Doetsch M.",
+          "Stampfl S.",
+          "Kontaxis G.",
+          "Schroeder R."
+        ],
+        "title": "Chaperones modulate RNA structural dynamics through anti-folding.",
+        "publicationDate": "APR-2012",
+        "submissionDatabase": "PDB data bank"
+      },
+      "referencePositions": [
+        "STRUCTURE BY NMR OF 90-134"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "X69210",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA49146.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "U07823",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAA64940.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "U00096",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC75716.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AP009048",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA16535.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "JH0774",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "JH0774"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_417155.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_000913.3"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_000115383.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NZ_CP009789.1"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "2LRX",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "NMR"
+        },
+        {
+          "key": "Resolution",
+          "value": "-"
+        },
+        {
+          "key": "Chains",
+          "value": "A=90-134"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "2LRX",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BMRB",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "4262261",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "205"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "851464",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-35951N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "163"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "24"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "511145.b2669",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "jPOST",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "511145-b2669",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "AAC75716",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC75716"
+        },
+        {
+          "key": "GeneId",
+          "value": "b2669"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "93779342",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "947130",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecj:JW2644",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "eco:b2669",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecoc:C3026_14710",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|1411691.4.peg.4072",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EchoBASE",
+      "id": "EB1515",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG2916",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_117503_0_0_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "NTWLELM",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "6088948at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "EcoCyc:EG11554-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EvolutionaryTrace",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:P0ACG1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000625",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "AbasyAtlas",
+      "id": "P0ACG1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:EcoCyc"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "18304323"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009295",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleoid"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0032993",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:protein-DNA complex"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003681",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:bent DNA binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003677",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:DNA binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:EcoliWiki"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "10551881"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0001217",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:DNA-binding transcription repressor activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003680",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:minor groove of adenine-thymine-rich DNA binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0046983",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:protein dimerization activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0030527",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:structural constituent of chromatin"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000976",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:transcription cis-regulatory region binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "1.10.287.1050:FF:000001",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA-binding protein"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "4.10.430.10:FF:000001",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA-binding protein"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.287.1050",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS histone-like proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "4.10.430.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone-like protein H-NS, C-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR054180",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS-like_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR027444",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS_C_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR037150",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS_C_dom_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001801",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone_HNS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR027454",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone_HNS_N"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF007656",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK10328.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR38097",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR38097:SF2",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA-BINDING PROTEIN STPA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00816",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone_HNS"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF22470",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Histone_HNS_N"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF002096",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HnS"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00528",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HNS"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF81273",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H-NS histone-like proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MSVMLQSLNNIRTLRAMAREFSIDVLEEMLEKFRVVTKERREEEEQQQRELAERQEKISTWLELMKADGINPEELLGNSSAAAPRAGKKRQPRPAKYKFTDVNGETKTWTGQGRTPKPIAQALAEGKSLDDFLI",
+    "length": 134,
+    "molWeight": 15348,
+    "crc64": "5870BD95F144CE6A",
+    "md5": "A8CAA264B5687BAD9E7A13FB2C1EB459"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 2,
+      "SUBUNIT": 1,
+      "INTERACTION": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "INDUCTION": 1,
+      "DOMAIN": 1,
+      "DISRUPTION PHENOTYPE": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "DNA binding": 1,
+      "Region": 1,
+      "Mutagenesis": 5,
+      "Helix": 2
+    },
+    "uniParcId": "UPI0000136130"
+  }
+}

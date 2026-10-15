@@ -1,0 +1,66 @@
+{
+  "candidate_sensitivity": {
+    "alignment_normalized": {
+      "confidence_length_eligible": 1875,
+      "confidence_length_gated_dual_nohit_rate": 0.05173333333333333,
+      "confidence_length_gated_dual_nohits": 97,
+      "confidence_length_gated_dual_nohits_neither_reference_reported_a_row": 74,
+      "confidence_length_gated_dual_nohits_some_row_reported_but_both_scores_below_threshold": 23,
+      "unfiltered_dual_nohits": 16386,
+      "unfiltered_dual_nohits_neither_reference_reported_a_row": 6097,
+      "unfiltered_dual_nohits_some_row_reported_but_both_scores_below_threshold": 10289
+    },
+    "query_normalized": {
+      "confidence_length_eligible": 1875,
+      "confidence_length_gated_dual_nohit_rate": 0.32426666666666665,
+      "confidence_length_gated_dual_nohits": 608,
+      "confidence_length_gated_dual_nohits_neither_reference_reported_a_row": 74,
+      "confidence_length_gated_dual_nohits_some_row_reported_but_both_scores_below_threshold": 534,
+      "unfiltered_dual_nohits": 41127,
+      "unfiltered_dual_nohits_neither_reference_reported_a_row": 6097,
+      "unfiltered_dual_nohits_some_row_reported_but_both_scores_below_threshold": 35030
+    }
+  },
+  "candidate_structures": 68527,
+  "interpretation": "Query-normalized TM score asks whether a structural analogue covers the full query; alignment-normalized TM score asks whether any aligned region has the same fold. Both are reported because the former penalizes partial/domain matches. A no-hit by either metric is reference-relative and is not proof of a new fold.",
+  "known_fold_sensitivity": {
+    "alignment_normalized": {
+      "all": {
+        "controls": 3684,
+        "false_dual_nohit_rate": 0.06406080347448426,
+        "false_dual_nohits": 236,
+        "false_dual_nohits_neither_reference_reported_a_row": 110,
+        "false_dual_nohits_some_row_reported_but_both_scores_below_threshold": 126
+      },
+      "confidence_length_qualified": {
+        "controls": 3013,
+        "false_dual_nohit_rate": 0.022568868237636906,
+        "false_dual_nohits": 68,
+        "false_dual_nohits_neither_reference_reported_a_row": 66,
+        "false_dual_nohits_some_row_reported_but_both_scores_below_threshold": 2
+      }
+    },
+    "query_normalized": {
+      "all": {
+        "controls": 3684,
+        "false_dual_nohit_rate": 0.11943539630836048,
+        "false_dual_nohits": 440,
+        "false_dual_nohits_neither_reference_reported_a_row": 110,
+        "false_dual_nohits_some_row_reported_but_both_scores_below_threshold": 330
+      },
+      "confidence_length_qualified": {
+        "controls": 3013,
+        "false_dual_nohit_rate": 0.03352140723531364,
+        "false_dual_nohits": 101,
+        "false_dual_nohits_neither_reference_reported_a_row": 66,
+        "false_dual_nohits_some_row_reported_but_both_scores_below_threshold": 35
+      }
+    }
+  },
+  "missing_row_rule": "A reference with no reported Foldseek row contributes score zero. The candidate and known-fold breakdowns separate dual failures with no row in either reference from failures where at least one row was retrieved but both scores for the named normalization remained below threshold.",
+  "thresholds": {
+    "length_aa": 100,
+    "mean_plddt": 0.7,
+    "tm_score": 0.5
+  }
+}

@@ -1,0 +1,984 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q0D6F4",
+  "secondaryAccessions": [
+    "A0A0P0X675"
+  ],
+  "uniProtkbId": "TPP10_ORYSJ",
+  "entryAudit": {
+    "firstPublicDate": "2012-06-13",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2006-10-17",
+    "entryVersion": 103,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Oryza sativa subsp. japonica",
+    "commonName": "Rice",
+    "taxonId": 39947,
+    "lineage": [
+      "Eukaryota",
+      "Viridiplantae",
+      "Streptophyta",
+      "Embryophyta",
+      "Tracheophyta",
+      "Spermatophyta",
+      "Magnoliopsida",
+      "Liliopsida",
+      "Poales",
+      "Poaceae",
+      "BOP clade",
+      "Oryzoideae",
+      "Oryzeae",
+      "Oryzinae",
+      "Oryza",
+      "Oryza sativa"
+    ]
+  },
+  "proteinExistence": "2: Evidence at transcript level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Probable trehalose-phosphate phosphatase 10"
+      },
+      "shortNames": [
+        {
+          "value": "OsTPP10"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "value": "3.1.3.12"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Trehalose 6-phosphate phosphatase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "TPP10"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "Os07g0485000"
+        },
+        {
+          "value": "LOC_Os07g30160"
+        }
+      ],
+      "orfNames": [
+        {
+          "value": "OsJ_24268"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Removes the phosphate from trehalose 6-phosphate to produce free trehalose. Trehalose accumulation in plant may improve abiotic stress tolerance (By similarity)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha,alpha-trehalose 6-phosphate + H2O = alpha,alpha-trehalose + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:23420"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16551"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58429"
+          }
+        ],
+        "ecNumber": "3.1.3.12"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "a divalent metal cation",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:60240"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "value": "Glycan biosynthesis; trehalose biosynthesis"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the trehalose phosphatase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 359,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Probable trehalose-phosphate phosphatase 10",
+      "featureId": "PRO_0000417662"
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0346",
+      "category": "Biological process",
+      "name": "Stress response"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "16100779",
+        "citationType": "journal article",
+        "authoringGroup": [
+          "International rice genome sequencing project (IRGSP)"
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16100779"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nature03895"
+          }
+        ],
+        "title": "The map-based sequence of the rice genome.",
+        "publicationDate": "2005",
+        "journal": "Nature",
+        "firstPage": "793",
+        "lastPage": "800",
+        "volume": "436"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Nipponbare",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "18089549",
+        "citationType": "journal article",
+        "authoringGroup": [
+          "The rice annotation project (RAP)"
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18089549"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/nar/gkm978"
+          }
+        ],
+        "title": "The rice annotation project database (RAP-DB): 2008 update.",
+        "publicationDate": "2008",
+        "journal": "Nucleic Acids Res.",
+        "firstPage": "D1028",
+        "lastPage": "D1033",
+        "volume": "36"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Nipponbare",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "24280374",
+        "citationType": "journal article",
+        "authors": [
+          "Kawahara Y.",
+          "de la Bastide M.",
+          "Hamilton J.P.",
+          "Kanamori H.",
+          "McCombie W.R.",
+          "Ouyang S.",
+          "Schwartz D.C.",
+          "Tanaka T.",
+          "Wu J.",
+          "Zhou S.",
+          "Childs K.L.",
+          "Davidson R.M.",
+          "Lin H.",
+          "Quesada-Ocampo L.",
+          "Vaillancourt B.",
+          "Sakai H.",
+          "Lee S.S.",
+          "Kim J.",
+          "Numa H.",
+          "Itoh T.",
+          "Buell C.R.",
+          "Matsumoto T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "24280374"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1186/1939-8433-6-4"
+          }
+        ],
+        "title": "Improvement of the Oryza sativa Nipponbare reference genome using next generation sequence and optical map data.",
+        "publicationDate": "2013",
+        "journal": "Rice",
+        "firstPage": "4",
+        "lastPage": "4",
+        "volume": "6"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Nipponbare",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "15685292",
+        "citationType": "journal article",
+        "authors": [
+          "Yu J.",
+          "Wang J.",
+          "Lin W.",
+          "Li S.",
+          "Li H.",
+          "Zhou J.",
+          "Ni P.",
+          "Dong W.",
+          "Hu S.",
+          "Zeng C.",
+          "Zhang J.",
+          "Zhang Y.",
+          "Li R.",
+          "Xu Z.",
+          "Li S.",
+          "Li X.",
+          "Zheng H.",
+          "Cong L.",
+          "Lin L.",
+          "Yin J.",
+          "Geng J.",
+          "Li G.",
+          "Shi J.",
+          "Liu J.",
+          "Lv H.",
+          "Li J.",
+          "Wang J.",
+          "Deng Y.",
+          "Ran L.",
+          "Shi X.",
+          "Wang X.",
+          "Wu Q.",
+          "Li C.",
+          "Ren X.",
+          "Wang J.",
+          "Wang X.",
+          "Li D.",
+          "Liu D.",
+          "Zhang X.",
+          "Ji Z.",
+          "Zhao W.",
+          "Sun Y.",
+          "Zhang Z.",
+          "Bao J.",
+          "Han Y.",
+          "Dong L.",
+          "Ji J.",
+          "Chen P.",
+          "Wu S.",
+          "Liu J.",
+          "Xiao Y.",
+          "Bu D.",
+          "Tan J.",
+          "Yang L.",
+          "Ye C.",
+          "Zhang J.",
+          "Xu J.",
+          "Zhou Y.",
+          "Yu Y.",
+          "Zhang B.",
+          "Zhuang S.",
+          "Wei H.",
+          "Liu B.",
+          "Lei M.",
+          "Yu H.",
+          "Li Y.",
+          "Xu H.",
+          "Wei S.",
+          "He X.",
+          "Fang L.",
+          "Zhang Z.",
+          "Zhang Y.",
+          "Huang X.",
+          "Su Z.",
+          "Tong W.",
+          "Li J.",
+          "Tong Z.",
+          "Li S.",
+          "Ye J.",
+          "Wang L.",
+          "Fang L.",
+          "Lei T.",
+          "Chen C.-S.",
+          "Chen H.-C.",
+          "Xu Z.",
+          "Li H.",
+          "Huang H.",
+          "Zhang F.",
+          "Xu H.",
+          "Li N.",
+          "Zhao C.",
+          "Li S.",
+          "Dong L.",
+          "Huang Y.",
+          "Li L.",
+          "Xi Y.",
+          "Qi Q.",
+          "Li W.",
+          "Zhang B.",
+          "Hu W.",
+          "Zhang Y.",
+          "Tian X.",
+          "Jiao Y.",
+          "Liang X.",
+          "Jin J.",
+          "Gao L.",
+          "Zheng W.",
+          "Hao B.",
+          "Liu S.-M.",
+          "Wang W.",
+          "Yuan L.",
+          "Cao M.",
+          "McDermott J.",
+          "Samudrala R.",
+          "Wang J.",
+          "Wong G.K.-S.",
+          "Yang H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15685292"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1371/journal.pbio.0030038"
+          }
+        ],
+        "title": "The genomes of Oryza sativa: a history of duplications.",
+        "publicationDate": "2005",
+        "journal": "PLoS Biol.",
+        "firstPage": "266",
+        "lastPage": "281",
+        "volume": "3"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Nipponbare",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "12869764",
+        "citationType": "journal article",
+        "authoringGroup": [
+          "The rice full-length cDNA consortium"
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12869764"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.1081288"
+          }
+        ],
+        "title": "Collection, mapping, and annotation of over 28,000 cDNA clones from japonica rice.",
+        "publicationDate": "2003",
+        "journal": "Science",
+        "firstPage": "376",
+        "lastPage": "379",
+        "volume": "301"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "cv. Nipponbare",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AP008213",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAF21569.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AP014963",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAT01513.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CM000144",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "EEE67179.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "AK070085",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAG91762.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q0D6F4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q0D6F4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "Q0D6F4",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "141"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "39947.Q0D6F4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "39947-Q0D6F4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblPlants",
+      "id": "Os07t0485000-01",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Os07t0485000-01"
+        },
+        {
+          "key": "GeneId",
+          "value": "Os07g0485000"
+        }
+      ]
+    },
+    {
+      "database": "Gramene",
+      "id": "Os07t0485000-01",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "Os07t0485000-01"
+        },
+        {
+          "key": "GeneId",
+          "value": "Os07g0485000"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "dosa:Os07g0485000",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG1050",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_037265_1_0_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q0D6F4",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "VSQCTND",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "411251at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00299",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000059680",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome 7"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004805",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:trehalose-phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005992",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:trehalose biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniPathway"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd01627",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_TPP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.1000:FF:000073",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose 6-phosphate phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.1000:FF:000122",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose 6-phosphate phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006379",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IIB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR044651",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "OTSB-like"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR003337",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IIB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR00685",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "T6PP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43768",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TREHALOSE 6-PHOSPHATE PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43768:SF54",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TREHALOSE-PHOSPHATE PHOSPHATASE 10-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02358",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MGSCGNGRSSEYDDPASLEKMEELVLPLKLMPLHTNGRLYDMRLSSPTATCVINSSSGSFDPIYRAWTKKYPSALNAFDHIVAYGKGKKIALFLDYDGTLSPIVDEPDNAIMSDQMREVVRNAALHLPTAIISGRSRDKVFDFVKLTELYYAGSHGMDIMGPVGEHDSVTNHRSSINSNRKQGKGVKIFQAGTEFLPMINEVFRLLIDKTKAIDGVKIENNKFCVSVHYRNVEEKNWQLVSQCTNDVLKVYPRLRLTHGRKVLEIRPVIDWNKGKAVEFLLDSLDLASCKNVLPIYIGDDCTDEDAFKVLRDDKRGFGILVSSVPKDSHALYSLIDPSEVMEFLKRLVMWKNEEASHNK",
+    "length": 359,
+    "molWeight": 40436,
+    "crc64": "64703B0DB72799C4",
+    "md5": "076987B549058EC933B6558FFDF87355"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1
+    },
+    "uniParcId": "UPI0000E12B10"
+  }
+}

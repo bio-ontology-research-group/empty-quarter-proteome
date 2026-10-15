@@ -1,0 +1,7 @@
+metric	value	upstream_source	upstream_sha256	derivation
+current_hq_mq_bins	12434	workbench/results/rebuild_20260729/canonical_manifest_v1/refined_mag_manifest.tsv	613e060a8c4cfe6e9add4168e9b9bc762262adf22b07210bc48454224213caad	unique mag_id where quality_tier is HQ or MQ
+historical_drep_members	12433	/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/_drep/out/data_tables/Cdb.csv	43f0625a9c3b80c94b5eb4ab10de687d5bec56b26bb678ef7d39f1a00a5d61c9	unique genome after stripping terminal .fa
+historical_drep_representatives	5438	/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/_drep/out/data_tables/Wdb.csv	393238e1499051f94cc9928436c72661e83d6e84033c1aa6b53ffdbf593a787a	unique genome after stripping terminal .fa
+current_only_count	1	set comparison of the two sources above	NA	current HQ/MQ mag_id set minus historical Cdb genome set
+current_only_mag_id	25PRr2__self_SemiBin_2_sub	set comparison of the two sources above	NA	the sole current-only identifier
+historical_only_count	0	set comparison of the two sources above	NA	historical Cdb genome set minus current HQ/MQ mag_id set

@@ -1,0 +1,345 @@
+================================================================================
+INDEPENDENT FINAL AUDIT: TRACKS F1 & F2 (ACTIVE ROOT OUTPUTS & REPRODUCIBILITY)
+Target: Environmental Protein Family Discovery & Functional Dark Matter (F1 & F2)
+Output File: reviews/darkmatter-family-analysis-20261015/argon_f12_final.txt
+Audit Timestamp: 2026-10-15T10:09:30+03:00
+Requested Reviewer Persona: Gemini 4 Argon High (Independent Scientific & Code Auditor)
+Actual Runtime Identity: Antigravity agentic coding assistant (Google DeepMind)
+Scope: Strictly bounded to active Root F1/F2 outputs and independent audit artifacts
+       under reproducibility/darkmatter/family_discovery_20261015/root_audit/,
+       gpu/, and ecology/results_root_v3/. Discarded f12/ full scripts excluded.
+       Tracks F3-F5 full runs are being repaired separately and will be reviewed
+       in a subsequent packet.
+Manuscript Status: UNTOUCHED (manuscript/main.tex SHA-256 verified unchanged:
+       2fcc918baaf344de6ef96915b060e4b8ce0ee6fefa7a26168475766b281b0a8b)
+================================================================================
+
+1. EXECUTIVE DECISIONS & FIT-FOR-PAPER SUMMARY
+--------------------------------------------------------------------------------
+1.1 Per-Hypothesis Scientific & Reproducibility Verdicts:
+
+| Hypothesis / Sub-Claim | Scientific Verdict | Reproducibility Audit | Fit-for-Paper Recommendation |
+| :--- | :--- | :--- | :--- |
+| **F1 Core Census & Environmental Homology** (`root_audit/f1_full` job `53816424`, `f1_comparators` `53816466`, `f1_comparison` `53816576`, `f1_complete_panel` `53817327`, `f1_spl_sensitivity` `53817185`) | **PARTIAL / CONDITIONAL SUPPORT** (`1,154` profile candidates, `914` complete `partial=00` across `775` complete-carrier MAGs / `935` total carrier MAGs out of `5,438`; `883/914` match curated refs at median `43.8%` identity vs `903/914` complete SMAG at `55.8%` and `904/914` complete GEM at `57.75%`) | **PASS WITH DOCUMENTED SENSITIVITY LIMITATION** (100% SHA-256 & coordinate closure verified on `20,451,986` EQ proteins and `1,695` SMAG/GEM candidates in `f1_final_audit/audit.json` job `53818551`; core 3-profile `>=0.70` coverage gate misses known SPL positive control `QCI56913.1`, recovered only by separate `--ultra-sensitive` DIAMOND search) | **FIT FOR PAPER AS DESCRIPTIVE / COMPARATIVE SUPPORT** (Present as a rigorous profile-defined CPF census showing sequence divergence from Swiss-Prot references (`43.8%` median) bridged by environmental MAGs (`55.8-57.75%`); explicitly state that the 3-profile screen is not exhaustive across short SPL-like subfamilies) |
+| **F1 Comparative Phylogenetic & Embedding Breadth** (`root_audit/f1_phylogeny` job `53817031`, `f1_final_audit/audit.json` `53818551`, `f1_embeddings` ORIX `316862`, `f1_plots` `53817033`) | **NOT ESTABLISHED / REJECT EXCEPTIONAL EQ BREADTH OR NOVELTY CLAIM** (Equal-size `n=200` added branch length on fixed joint domain trees is lower in EQ than GEM: `PF00875` `113.26` vs `138.00`, `PF03441` `80.31` vs `98.65`; 1024-d nearest-ref cosine distance median `EQ = 0.01197` vs `GEM = 0.01407` unfiltered / `0.01314` complete) | **PASS WITH RESOLVED FRAGMENT-SENSITIVITY CHECK** (`f1_final_audit/audit.json` and `f1_complete_panel` remove partial SMAG/GEM fragments; joint tree topology fitted prior to fragment pruning is an exploratory limitation; complete-only plot job `53818392` still finishing and not yet on disk) | **FIT FOR SUPPLEMENT / MODEST COMPARATIVE TEXT ONLY** (Report that EQ CPF diversity is comparable to—and not broader than—global GEM metagenomes; use ProstT5 t-SNE strictly as an illustrative visualization of family space, never as proof of functional novelty) |
+| **F1 Ecological Light-Niche Partitioning** (`ecology/results_root_v3` job `53818389`, `root_audit/f1_final_audit/audit.json` & `within_phylum_multiplicity.tsv` `53818551`) | **PARTIAL SUPPORT** (Primary `cpf_complete` Surface vs Deep enrichment is supported across `37` paired sites / `69` visits: $\Delta = +8.4726$ percentage points, `95%` CI `[+2.2993, +13.5544]`, Holm $p = 0.0019587$; **HOWEVER**, `cpf_complete_exclusive` lacking prior `K01669` annotation is **INCONCLUSIVE / NULL**: $\Delta = +0.0045\%$, `95%` CI `[-0.0149, +0.0447]`, $p = 0.53261$) | **PASS WITH MANDATORY TEXT & MULTIPLICITY CORRECTIONS** (Independent recompute in `f1_final_audit/audit.json` matches to `<3e-4`; across all 21 within-phylum tests in `within_phylum_multiplicity.tsv`, only `Actinomycetota` survives Holm correction for `cpf_complete` at $p_{\text{Holm}} = 0.00669$; reject provenance phrase `"indicates ecological selection"`) | **FIT FOR PAPER WITH STRICT CAVEATS** (Supports community-level surface association of complete CPF carriers consistent with the manuscript's `K01669` photolyase baseline, plus within-`Actinomycetota` persistence; do NOT claim ecological enrichment of `K01669`-negative complete CPF genes or control for intra-phylum species turnover) |
+| **F2 Historical Compatible-Solute Phosphatase Leads (`MpgP` / `GgpP`)** (`root_audit/f2_identity` job `53816465`, `f12/references_v2/had_all.hmm`) | **NOT ESTABLISHED / REJECT SPECIFIC PHOSPHATASE ASSIGNMENT (STOP AT PILOT)** (`0` HMM hits to `PF00702`/`PF13419` and `0` `--ultra-sensitive` DIAMOND hits at `e <= 1e-3` for the verified `93 aa` and `148 aa` `partial=00` `Thermoplasmatota` proteins) | **PASS** (100% sequence and SHA-256 identity verified across `orthogroups_rep_seq.fasta`, `all_rep_proteins.faa`, `drep_rep_proteomes`, and `f2_leads.faa`) | **DO NOT INCLUDE AS POSITIVE FINDING; CITE ONLY AS NEGATIVE AUDIT / QUALITY CONTROL IF NEEDED** (Refutes the historical compatible-solute phosphatase label without disproving all biological function of the two short archaeal ORFs; flanking synthases `NOT_TESTED`) |
+
+1.2 Corrections to Prior Auditor Report (`argon_results_initial.txt`):
+    1. **F2 HAD Profile Count Correction**: In `argon_results_initial.txt`, I erroneously listed
+       four Pfam profiles (`PF00702`, `PF13419`, `PF08282`, `PF13344`) for the F2 pilot HMM scan.
+       Direct inspection of the actual combined HMM file on disk
+       (`reproducibility/darkmatter/family_discovery_20261015/f12/references_v2/had_all.hmm`)
+       confirms it contains **only two profiles**: `PF00702.33` (`Hydrolase`) and `PF13419.13`
+       (`HAD_2`). `PF08282` and `PF13344` were never present in `had_all.hmm` and are withdrawn.
+    2. **CheckM Completeness Terminology Correction**: In `argon_results_initial.txt`, I referred
+       to a MAG with `CheckM = 100.0%` as a "100%-complete MAG / complete genome." A CheckM score
+       of `100%` reflects detection of the single-copy marker gene set in a metagenome-assembled
+       bin, **not** a closed/finished complete chromosome; unlinked or absent genes in any MAG
+       remain subject to assembly fragmentation and binning boundaries.
+    3. **GPU Smoke v3/v4 and Production F1 Hardware Receipt Verification**:
+       - `gpu/smoke_results_v3/slurm_execution.txt`: ORIX jobs `316812` & `316813` on
+         `orix-worker-h200-7` (`NVIDIA H200`).
+       - `gpu/smoke_results_v4/provenance.json` (`0ed9ad6a...`): `prostt5_embed.py`
+         (`f47516cb...`) on `NVIDIA H200` (`max_abs_diff = 0.00048828125`, duplicate exact and
+         trailing-stop `max_abs_diff = 0.0`).
+       - `root_audit/f1_embeddings/slurm_execution.txt` & `provenance.json` (`dd59078c...`):
+         ORIX job `316862` on `orix-worker-h200-7` (`NVIDIA H200`, `2,668` sequences / `2,600`
+         unique clean sequences, peak VRAM `3.3864 GB`).
+
+================================================================================
+2. PINNED ARTIFACT INVENTORY & SHA-256 CHECKSUMS
+--------------------------------------------------------------------------------
+All paths below are relative to `/home/leechuck/Documents/papers/empty-quarter-mags/`:
+- `2fcc918baaf344de6ef96915b060e4b8ce0ee6fefa7a26168475766b281b0a8b`  `manuscript/main.tex`
+- `154ae0331a524ec72a2cae863ea5f8572832c50e2379dfad35aa5a3a19c480aa`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_full/summary.json` (job `53816424`)
+- `ba916558c669b21ec5b09777d57ce032ec68fc55b5f022f9609e9039f2b2b5f5`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_comparators/environmental_comparators_summary.json` (job `53816466`)
+- `d8fd40f4c4a079ce3ea505933e8906ab5f7c879a7c1f6e1b32b6eacef6f9d85a`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_comparison/summary.json` (job `53816576`)
+- `39f8a5f588224ddd1eadd05de7da3a5246186d5536c5305800683a9ace0ab544`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_complete_panel/summary.json` (job `53817327`)
+- `dd59078c131180b3909d8372e6c4fd874c7ca347c97288b0136dc324aaca70bd`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_embeddings/provenance.json` (ORIX job `316862`)
+- `dea7d51d85d72736a7839eea0346e1fb250fd08f4df3ea155894944d1616de4d`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_embeddings/verification_report.json`
+- `ea21c416845943217f3ebbb47498de8a04608304b3457266a06d2d97be7a3b30`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_phylogeny/summary.json` (job `53817031`)
+- `50169b4cd7b134bfc1bac3ceb8246a22c31d399da81737d5dad20ef372295ffb`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_spl_sensitivity/summary.json` (job `53817185`)
+- `1d185810cd2a4cf55680dd977afe958eda189d7b30adf175432f94cfaa96c47f`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_spl_sensitivity/passing.tsv`
+- `ca1f6631be97fc33529b2bfa0f7fd4aecf99345e05e3f3eb7523a4c857ebb156`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_plots/analysis_provenance.json` (job `53817033`)
+- `7500133726d2f35f3535981b31221dd83f73c0ccf22856b406688aa6bea965d9`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_plots/distances.tsv`
+- `5db1c734d84500a93afc4cd8e9baf541934895d4e8d0af83d8df6b9035507244`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_final_audit/audit.json` (job `53818551`)
+- `154ab06a896ff680d11fc6c2b9594cb5ddd3c30153d3b6050821b1544a6bd5a4`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_final_audit/within_phylum_multiplicity.tsv`
+- `4100b60f33b0d95d5860cb7cf32c3e4f1b2c3f6b4fd36f2cfcb7b391f8b76cef`  `reproducibility/darkmatter/family_discovery_20261015/ecology/f1_ecology_root_v3.py`
+- `71b95f929e446d2ec828419f5aa27b714b27ec0826c9ba29ddbd9090473670b4`  `reproducibility/darkmatter/family_discovery_20261015/ecology/results_root_v3/f1_ecology_provenance.json` (job `53818389`)
+- `d50fde2d89e03b311d702b98d2fa58f0286590435a8ce7c0495dec02175ea277`  `reproducibility/darkmatter/family_discovery_20261015/ecology/results_root_v3/f1_compartment_tests.tsv`
+- `f7731a8d8b0c85040f41945e8eab9e32c59b6543353a1bbfa34bb420cf24a22a`  `reproducibility/darkmatter/family_discovery_20261015/ecology/results_root_v3/f1_within_phylum_tests.tsv`
+- `bb5beab0ea93027304ccf9ae44d97dc3c4a3bb947dd835db0aa5c09751dfade3`  `reproducibility/darkmatter/family_discovery_20261015/ecology/results_root_v3/f1_expedition_sensitivity.tsv`
+- `8cdddbce51401f7391bbd4d24804882efdf155169a2dd48f179a80f57b432414`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f2_identity/summary.json` (job `53816465`)
+- `04ac41a3c9f41b831c158f61701259ecad3c906d7a33516433771f7a15b937b8`  `reproducibility/darkmatter/family_discovery_20261015/root_audit/f2_identity/identity_records.json`
+
+================================================================================
+3. DETAILED SCIENTIFIC & REPRODUCIBILITY AUDIT: TRACK F1 (CPF)
+--------------------------------------------------------------------------------
+3.1 Core Catalogue Census & Independent Gate Verification
+    (`root_audit/f1_full/summary.json` [job `53816424`], `root_audit/f1_final_audit/audit.json` [job `53818551`]):
+    - **Denominator & Input Integrity**: All `5,438` `Wdb.csv` ANI95 species-representative MAG
+      proteomes (`20,451,986` proteins in `cohort.faa`) were scanned with `hmmsearch` (`--domE 1e-3 -E 1e-3`)
+      against `cpf.hmm` (`PF00875.25` DNA_photolyase, `PF03441.20` FAD_binding_7, `PF04244.20`
+      DPRP/Cryptochrome_C), excluding generic Radical SAM (`PF04055`).
+    - **Independent Recompute (`f1_final_audit.py` L16-25)**: Root's worker job `53818551`
+      verified SHA-256 checksums for all 8 full-census files (`candidates.faa`, `candidates.tsv`,
+      `cohort.faa` [20.45M proteins], `cohort.tsv`, `cpf.hmm`, `domains.tsv`, `hmm_report.txt`,
+      `summary.json`) and independently reparsed `domains.tsv` at `dom_ievalue <= 1e-5` and
+      `(hmm_to - hmm_from + 1) / hmm_len >= 0.70`, confirming exact set identity:
+      * **`1,154` profile-supported CPF candidate proteins** across **`935` carrier MAGs (`17.19%` of 5,438)**;
+      * **`914` complete coding sequences (`partial=00`, `79.20%`)** across **`775` complete-carrier MAGs (`14.25%` of 5,438)**
+        (verified in `ecology/results_root_v3/f1_ecology_provenance.json` L21-23).
+
+3.2 Harmonized Complete-Gene Environmental Panel & Homology Comparisons
+    (`root_audit/f1_comparators/environmental_comparators_summary.json` [job `53816466`],
+     `root_audit/f1_comparison/summary.json` [job `53816576`],
+     `root_audit/f1_complete_panel/summary.json` & `closest_hits_complete.tsv` [job `53817327`]):
+    - **Why Harmonization Was Required**: In the initial comparison (`f1_comparison/summary.json`,
+      job `53816576`), EQ queries were restricted to complete `partial=00` genes (`914` proteins,
+      `912` unique sequences), whereas the external comparator hits from `f1_comparators` (`503`
+      SMAG from `4,778,910` proteins; `1,192` GEM from `4,824,709` proteins) included partial
+      genes (`partial != 00`).
+    - **Coordinate & Hash Closure (`f1_complete_panel.py` L7-18, `f1_complete_panel/summary.json`)**:
+      Job `53817327` joined all `1,695` external comparator candidates against the canonical
+      coordinate mapping tables (`smag_protein_coordinate_mapping.tsv` and
+      `gem_harmonized_protein_coordinate_mapping_seed20261014.tsv`), asserting 100% ID, length,
+      and SHA-256 closure:
+      * **SMAG**: `503 / 503` exact coordinate/hash joins -> **`398` complete (`partial=00`)**
+        and `105` incomplete (`20.87%` partial).
+      * **GEM**: `1,192 / 1,192` exact coordinate/hash joins -> **`1,079` complete (`partial=00`)**
+        and `113` incomplete (`9.48%` partial).
+      * **Complete-Only Panel (`metadata_complete.tsv` & `embeddings_complete.npz`)**: **`2,450`
+        sequences** (`914` EQ + `398` SMAG + `1,079` GEM + `59` curated references; curated
+        references are full-length database records exempt from Prodigal `partial` flags).
+    - **Bidirectional Coverage-Passing (`>= 0.70` query & target span) Alignment Results for `914` Complete EQ Queries**:
+      * **vs. Curated References (`59`)**: **`883 / 914` (`96.61%`)** have a coverage-passing hit
+        (`31` without); **median amino-acid identity = `43.8%`**, with **`652 / 883` (`73.84%`)
+        below `50%` identity** (identical in both `f1_complete_panel/summary.json` and
+        `f1_comparison/summary.json`).
+      * **vs. SMAG**:
+        - Primary complete-only panel (`398` SMAG targets, `f1_complete_panel/summary.json`):
+          **`903 / 914` (`98.80%`)** with hit (`11` without), **median identity = `55.8%`**,
+          `292` below `50%` identity.
+        - All-quality sensitivity panel (`503` SMAG targets, `f1_comparison/summary.json`):
+          `910 / 914` (`99.56%`) with hit (`4` without), median identity = `55.9%`, `284` below `50%`.
+      * **vs. GEM**:
+        - Primary complete-only panel (`1,079` GEM targets, `f1_complete_panel/summary.json`):
+          **`904 / 914` (`98.91%`)** with hit (`10` without), **median identity = `57.75%`**,
+          `170` below `50%` identity.
+        - All-quality sensitivity panel (`1,192` GEM targets, `f1_comparison/summary.json`):
+          `911 / 914` (`99.67%`) with hit (`3` without), median identity = `57.7%`, `175` below `50%`.
+    - **Scientific Interpretation**: Complete EQ CPF candidates are well-anchored within known
+      CPF domain architectures (`96.6%` align over `>=70%` bidirectional span to curated
+      references), yet exhibit substantial primary sequence divergence from experimentally
+      characterized references (`43.8%` median identity) while matching uncultured environmental
+      SMAG (`55.8%`) and GEM (`57.75%`) homologs much more closely.
+
+3.3 Positive-Control Blindspot & Sensitivity Limit (`root_audit/f1_spl_sensitivity/`, job `53817185`):
+    - **Empirical Finding (`f1_spl_sensitivity/summary.json` & `passing.tsv`)**:
+      The literature-anchored positive control `QCI56913.1` (`MK474076`, Xu et al. 2021,
+      *Mol. Biol. Evol.*, actual `doi:10.1093/molbev/msab191`) is missed by the core 3-profile
+      CPF screen because its best `PF03441` domain alignment covers only `64 / 203` profile
+      positions (`0.315 < 0.70` coverage threshold) despite a significant domain E-value
+      (`iE = 1.3e-9`).
+    - Running a standalone `diamond blastp --ultra-sensitive --max-target-seqs 0 --evalue 1e-5`
+      search of `QCI56913.1` against all `20,451,986` EQ proteins (`passing.tsv`, bidirectional
+      span coverage `>= 0.70`) identified **`3` coverage-passing EQ homologs**:
+      1. `54PRr2__self_SemiBin_439::54PRr2_1415427_46`: **`59.6%` identity**, `qcov = 0.995`,
+         `tcov = 0.990`, `e = 3.59e-159`, `bitscore = 461.0`, **`in_profile_census = 0`** (missed
+         by core profile screen).
+      2. `F25Sr1__single_SemiBin_91_sub::F25Sr1_2259281_5`: **`27.1%` identity**, `qcov = 0.786`,
+         `tcov = 0.787`, `e = 1.75e-10`, `bitscore = 70.5`, **`in_profile_census = 0`** (missed
+         by core profile screen).
+      3. `41PRr2__self_SemiBin_2608::41PRr2_933218_23`: **`23.5%` identity**, `qcov = 0.736`,
+         `tcov = 0.720`, `e = 9.39e-08`, `bitscore = 62.0`, **`in_profile_census = 1`**.
+    - **Required Manuscript Framing**: The `PF00875`/`PF03441`/`PF04244` (`cov >= 0.70`) census
+      is a high-specificity core-domain survey, **not** an exhaustive enumeration of all divergent
+      or short CPF/SPL-like subfamilies; conversely, the 2 additional `QCI56913.1` sequence hits
+      are unverified sequence leads, not proven enzymatic activities.
+
+3.4 Comparative Phylogenetic Breadth & High-Dimensional Embedding Analysis
+    (`root_audit/f1_phylogeny/summary.json` [job `53817031`], `root_audit/f1_final_audit/audit.json` [job `53818551`],
+     `root_audit/f1_embeddings/` [ORIX job `316862`], `root_audit/f1_plots/` [job `53817033`]):
+    - **Equal-Size Reference-Conditioned Phylogenetic Breadth (`n = 200`, 100 seeds)**:
+      * Across both unfiltered joint FastTree domain trees (`f1_phylogeny/summary.json`) and
+        complete-gene-only tip subsets (`f1_final_audit/audit.json` L32-101), **EQ adds less
+        branch length to the curated reference scaffold than GEM**:
+        - **`PF00875` (`164` match columns, `57` reference tips, `n = 200` per draw)**:
+          * Complete-only (`753` EQ, `339` SMAG, `736` GEM): mean added branch length is
+            **`EQ = 113.26` (`2.5-97.5%` draw interval `[107.13, 118.56]`)** vs
+            **`SMAG = 114.62` (`[109.24, 118.75]`)** vs **`GEM = 138.00` (`[131.20, 145.13]`)**.
+          * Unfiltered (`753` EQ, `390` SMAG, `795` GEM): mean added branch length is
+            `EQ = 113.26` vs `SMAG = 116.15` vs `GEM = 137.95`.
+        - **`PF03441` (`203` match columns, `52` reference tips, `n = 200` per draw)**:
+          * Complete-only (`725` EQ, `293` SMAG, `681` GEM): mean added branch length is
+            **`EQ = 80.31` (`[75.54, 85.10]`)** vs **`SMAG = 83.09` (`[77.88, 87.33]`)** vs
+            **`GEM = 98.65` (`[91.38, 106.64]`)**.
+          * Unfiltered (`725` EQ, `345` SMAG, `732` GEM): mean added branch length is
+            `EQ = 80.31` vs `SMAG = 85.43` vs `GEM = 97.28`.
+        - **`PF04244` (`224` match columns, `123` EQ / `44` complete SMAG / `262` complete GEM)**:
+          Only `1` curated reference sequence passes the `PF04244` `>=0.70` domain gate, so a
+          multi-tip reference scaffold span cannot be defined.
+      * **Unresolved Methodological Limitation**: As noted in `f1_final_audit/audit.json` L103,
+        the FastTree domain topologies (`PF00875.nwk`, `PF03441.nwk`) were estimated jointly on
+        the unfiltered set before excluding partial SMAG/GEM tips, and short single-domain
+        alignments (`164-203` columns) without taxonomic matching cannot define novel functional
+        clades.
+    - **1024-d ProstT5 Nearest-Reference Cosine Distances (`root_audit/f1_plots/distances.tsv`, job `53817033`)**:
+      * Production embeddings (`root_audit/f1_embeddings/embeddings.npz`, ORIX job `316862` on
+        `orix-worker-h200-7`, `NVIDIA H200`) passed all 11 verification checks in
+        `verification_report.json` (`dea7d51d...`), with `max_abs_diff = 0.0` across all 60
+        within- and cross-cohort exact sequence duplicate pairs.
+      * Note on Job `53818392`: As of `10:09+03:00`, the standalone complete-only plot job
+        (`53818392`) has not yet written a separate output directory on disk; however, because
+        1024-d nearest-reference cosine distance in `family_embedding_analysis.py` measures each
+        query's distance to the `59` `curated_reference` sequences (which are identical in both
+        the unfiltered `2,668` panel and the complete-only `2,450` panel in
+        `root_audit/f1_complete_panel/metadata_complete.tsv`), both distributions are exact from
+        `root_audit/f1_plots/distances.tsv`:
+        - **Unfiltered panel (`N = 2,668`, job `53817033`)**:
+          * `EQ` (`n = 914`, all `partial=00`): **median = `0.011968`**, mean = `0.018162`, max = `0.291721`
+          * `SMAG` (`n = 503`): **median = `0.013507`**, mean = `0.028446`, max = `0.257207`
+          * `GEM` (`n = 1,192`): **median = `0.014073`**, mean = `0.024680`, max = `0.386599`
+          * `curated_reference` (`n = 59`, leave-one-out): median = `0.005741`, mean = `0.009685`
+        - **Complete-gene-only panel (`N = 2,450`, filtering `distances.tsv` by `f1_complete_panel/metadata_complete.tsv`)**:
+          * `EQ` (`n = 914` complete): **median = `0.011968`**, mean = `0.018162`
+          * `SMAG` (`n = 398` complete): **median = `0.011408`**, mean = `0.016305` (confirming
+            that the `105` partial SMAG fragments had inflated unfiltered SMAG mean distance from
+            `0.016305` to `0.028446`)
+          * `GEM` (`n = 1,079` complete): **median = `0.013141`**, mean = `0.018913` (confirming
+            that the `113` partial GEM fragments had inflated unfiltered GEM mean distance from
+            `0.018913` to `0.024680`)
+      * **Conclusion**: Whether evaluated on the unfiltered panel (`EQ 0.01197` vs `GEM 0.01407`)
+        or the harmonized `partial=00` panel (`EQ 0.01197` vs `GEM 0.01314` and `SMAG 0.01141`),
+        EQ CPF candidates do **not** show greater high-dimensional embedding divergence from
+        curated references than global environmental comparators.
+
+3.5 Ecological Light-Niche Partitioning Audit
+    (`ecology/f1_ecology_root_v3.py`, `ecology/results_root_v3/` [job `53818389`],
+     `root_audit/f1_final_audit/audit.json` & `within_phylum_multiplicity.tsv` [job `53818551`]):
+    - **Denominator & Sample Accounting (`f1_ecology_provenance.json` L39-42)**:
+      * `samples_analyzed = 551` records the `551` canonical sample metadata profiles inspected;
+        `1` sample (`F5Dr1`) had zero mapped reads to the 5,438-species catalogue (`unmapped = 100.0%`)
+        and was excluded (`samples_skipped_zero_mapped = ["F5Dr1"]`), so **`550` samples
+        contribute community ratios**, yielding **`37` strictly paired sites across `69` paired
+        site-trip visits** (paired within the same expedition trip first, then aggregated to one
+        median per site across trips).
+    - **Primary & Secondary Compartment Contrasts (`f1_compartment_tests.tsv`, verified independently in `f1_final_audit/audit.json` L16-30)**:
+      1. **`cpf_complete` (`775` carrier MAGs, PRIMARY ENDPOINT)**:
+         - `abund_mapped_pct` (L2): Surface median `21.7398%` vs Deep `10.5600%`; **paired median
+           difference $\Delta = +8.4726\%$** (`95%` bootstrap CI `[+2.2993%, +13.5544%]`, cluster
+           bootstrap CI `[+4.0028%, +15.7925%]`), Surface > Deep in `28 / 37` sites, two-sided
+           Wilcoxon $p = 2.3364 \times 10^{-4}$, **Holm-adjusted $p = 0.0019587$**.
+         - `occurrence_pct` (L17): Surface median `13.2554%` vs Deep `9.4578%`; **$\Delta = +3.4849\%$**
+           (`95%` CI `[+1.5933%, +4.2654%]`), `29 / 37` sites, Wilcoxon $p = 2.3364 \times 10^{-4}$,
+           **Holm $p = 0.0021028$**.
+         - `abund_whole_pct` (L62): Surface median `9.5770%` vs Deep `4.7301%`; **$\Delta = +3.3647\%$**
+           (`95%` CI `[+0.8968%, +5.5339%]`), `29 / 37` sites, Wilcoxon $p = 5.2862 \times 10^{-4}$,
+           **Holm $p = 0.0050973$**.
+      2. **Paper Baseline Replication (`k01669_photolyase`, `975` carrier MAGs)**:
+         - `abund_mapped_pct` (L4): Surface `25.2710%` vs Deep `12.8180%`, **$\Delta = +8.7992\%$**
+           (`95%` CI `[+2.4283%, +19.0325%]`), `27 / 37` sites, Wilcoxon $p = 2.1763 \times 10^{-4}$,
+           **Holm $p = 0.0019587$**.
+      3. **CRITICAL NULL FINDING — `cpf_complete_exclusive` (Complete CPF Carriers Lacking `K01669`)**:
+         - `abund_mapped_pct` (L6, independently verified in `f1_final_audit/audit.json` L25-30):
+           Surface median `0.0760%` vs Deep `0.0420%`; **paired median $\Delta = +0.0045\%$**,
+           **`95%` bootstrap CI `[-0.0149%, +0.0447%]` (crosses zero; cluster CI `[-0.0009%, +0.0377%]`,
+           mean $\Delta = -0.0041\%$)**, `20` Surface > Deep vs `14` Deep > Surface (`3` ties),
+           **Wilcoxon $p = 0.53261$, Holm $p = 0.53261$ (INCONCLUSIVE / NULL)**.
+         - `occurrence_pct` (L21): $\Delta = +0.0650\%$, `95%` CI `[0.0000%, +0.1536%]`, mean
+           $\Delta = +0.0531\%$ (`95%` CI `[-0.0668%, +0.1839%]`), **Wilcoxon $p = 0.13109$,
+           Holm $p = 0.13109$ (INCONCLUSIVE / NULL)**.
+         - **Scientific Consequence**: While `cpf_broad` (`935` MAGs) and `cpf_exclusive` (`96`
+           all-quality MAGs lacking `K01669`, L5) show nominal surface differences, the contrast
+           for **complete (`partial=00`) CPF genes outside `K01669`** (`cpf_complete_exclusive`)
+           is null ($p = 0.53261$). Thus, F1 ecological partitioning reinforces the `K01669`
+           photolyase signal using profile-verified complete genes, but does **not** establish an
+           independent ecological niche effect for `K01669`-negative complete CPF candidates.
+    - **Within-Phylum Multiplicity Correction (`root_audit/f1_final_audit/within_phylum_multiplicity.tsv`)**:
+      * `f1_within_phylum_tests.tsv` (`ecology/results_root_v3/`) reported unadjusted Wilcoxon
+        $p$-values across 21 tests (`3` traits $\times$ `7` phyla).
+      * Applying Holm-Bonferroni across all 21 tested phylum strata (`within_phylum_multiplicity.tsv`
+        L2-22) shows that for `cpf_complete`:
+        - **`Actinomycetota` (`n = 36` paired sites)**: Surface `13.900%` vs Deep `9.6715%`,
+          **$\Delta = +3.215\%$ (`95%` CI `[+1.277%, +4.387%]`), `29/36` sites, raw $p = 3.3473 \times 10^{-4}$,
+          $p_{\text{Holm,all21}} = 0.0066946$ (SIGNIFICANT)**.
+        - **`Pseudomonadota` (`n = 36` paired sites)**: Surface `20.897%` vs Deep `19.017%`,
+          $\Delta = +2.759\%$ (`95%` CI `[+0.769%, +3.966%]`), `25/36` sites, raw $p = 4.8524 \times 10^{-3}$,
+          **$p_{\text{Holm,all21}} = 0.0824908$ (NOT SIGNIFICANT after 21-test Holm correction;
+          significant only for `cpf_broad` at $p_{\text{Holm,all21}} = 0.02603$)**.
+        - All other tested phyla (`Bacteroidota`, `Chloroflexota`, `Thermoplasmatota`,
+          `Planctomycetota`, `Bacillota`) have $p_{\text{Holm,all21}} \ge 0.717$.
+      * Furthermore, within-phylum stratification bounds phylum-level compositional shifts but
+        **does NOT adjust for within-phylum species or strain turnover**.
+    - **Mandatory Rejection of Overclaimed Provenance Text**:
+      * `ecology/results_root_v3/f1_ecology_provenance.json` line 55 contains the generated
+        caveat string `"Light-niche partitioning between surface and subsurface communities
+        indicates ecological selection, not enzymatic repair mechanism."`
+      * Per `root_audit/f1_final_audit/audit.json` line 108, the phrase `"indicates ecological
+        selection"` is **rejected**: cross-sectional metagenomic compartment contrasts establish
+        **ecological association / light-niche partitioning only**, not causal selection.
+
+================================================================================
+4. DETAILED SCIENTIFIC & REPRODUCIBILITY AUDIT: TRACK F2 (PHOSPHATASE LEADS)
+--------------------------------------------------------------------------------
+4.1 Immutable Source Identity Verification (`root_audit/f2_identity/identity_records.json` & `summary.json`, job `53816465`):
+    - Both historical leads were extracted directly from `06_darkmatter/orthogroups/orthogroups_rep_seq.fasta`,
+      `06_darkmatter/orthogroups/all_rep_proteins.faa`, `06_darkmatter/drep_rep_proteomes/{mag}.faa.gz`,
+      and `f12/results/pilot_v3_results/f2_leads.faa`, confirming **100% sequence and SHA-256
+      identity (`identity_by_id = true`) across all four sources**:
+      1. **`1PRr2__self_SemiBin_81::1PRr2_1391604_4`** (`d__Archaea;p__Thermoplasmatota;c__SW-10-69-26`,
+         dRep cluster `2415_0` winner): **`93 aa`**, Prodigal `partial=00` (`2782..3063` bp, `-1`),
+         `sha256 = 0277d3ff4690636db8d69f4c3043a3623b23a5e991da2241b9d2352627ce7665`.
+      2. **`S52PRr1__single_SemiBin_53::S52PRr1_477345_9`** (`d__Archaea;p__Thermoplasmatota;c__SW-10-69-26`,
+         dRep cluster `2433_1` winner): **`148 aa`**, Prodigal `partial=00` (`4449..4895` bp, `+1`),
+         `sha256 = da069f871144b777dbfb19496cd299a4d94361b5633fd736eeca59f60a61580d`.
+
+4.2 Profile & Ultra-Sensitive Alignment Evidence (`root_audit/f2_identity/summary.json`, `f12/references_v2/had_all.hmm`):
+    - **HMMER Scan**: `0` domain hits against `f12/references_v2/had_all.hmm` (which contains
+      the two HAD profiles `PF00702.33` `Hydrolase` and `PF13419.13` `HAD_2`).
+    - **DIAMOND `--ultra-sensitive` Scan (job `53816465`)**: `diamond blastp --query historical_leads.faa --db refs.dmnd --ultra-sensitive --max-target-seqs 0 --evalue 1e-3`
+      against `f12/references_v2/phosphatase_references_dedup.faa` (79 unique target
+      `MpgP`/`GgpP`/`OtsB` and competing housekeeping HAD phosphatase sequences) produced
+      **`0` alignments (`diamond_hit_rows = 0`, `diamond.tsv` = 0 bytes)**.
+    - **Final Disposition**: **STOP AT PILOT CONFIRMED.** The historical compatible-solute
+      phosphatase (`MpgP` / `GgpP`) assignment is unsupported by primary sequence or profile
+      evidence. Absence of alignment does not disprove all biological function for these two
+      short `Thermoplasmatota` proteins, and flanking osmolyte synthase genes (`MpgS`, `GgpS`,
+      `OtsA`) remain `NOT_TESTED`.
+
+================================================================================
+5. CHECKLIST OF UNRESOLVED LIMITATIONS & REQUIRED FRAMING FOR MANUSCRIPT / AUTHOR
+--------------------------------------------------------------------------------
+No blocking code re-execution is required for F1 or F2 (`root_audit/` and `ecology/results_root_v3/`
+pass independent reproducibility verification; job `53818392` complete-only plots may be collected
+when finished without altering any numeric metric). Before any F1/F2 results are transferred to
+author-facing text, enforce the following six guardrails:
+1. **Core CPF Census (`914` complete / `1,154` total in `775` / `935` MAGs)**: State explicitly
+   that the 3-profile (`PF00875`, `PF03441`, `PF04244`, `cov >= 0.70`) screen is not exhaustive
+   across all CPF/SPL subfamilies because it misses the positive control `QCI56913.1` (Xu et al.
+   2021, `doi:10.1093/molbev/msab191`; `PF03441` cov `64/203 < 0.70`), which has `3`
+   coverage-passing `--ultra-sensitive` DIAMOND homologs in EQ (`2` outside the profile census).
+2. **No Exceptional EQ Breadth or Novelty Claim**: Cite the harmonized complete-gene panel
+   (`root_audit/f1_complete_panel/summary.json`: `914` EQ, `398` SMAG, `1,079` GEM, `59` curated
+   refs) and complete-gene phylogenetic sensitivity (`root_audit/f1_final_audit/audit.json`:
+   equal-size `n=200` mean added branch length `EQ 113.26` vs `GEM 138.00` on `PF00875`;
+   `EQ 80.31` vs `GEM 98.65` on `PF03441`), as well as 1024-d nearest-reference cosine distance
+   (`EQ` median `0.01197` vs `GEM` `0.01407` unfiltered / `0.01314` complete), to show that EQ
+   diversity is comparable to—not broader than—global environmental metagenomes.
+3. **Inconclusive `cpf_complete_exclusive` Ecology**: Report the primary `cpf_complete` surface
+   association ($\Delta = +8.4726\%$, `95%` CI `[+2.2993%, +13.5544%]`, $p_{\text{Holm}} = 0.0019587$
+   across `37` paired sites / `69` visits from `550` non-zero-mapped samples out of `551`
+   profiles inspected), alongside the null result for `cpf_complete_exclusive` ($\Delta = +0.0045\%$,
+   `95%` CI `[-0.0149%, +0.0447%]`, $p = 0.53261$).
+4. **Within-Phylum Multiplicity & Turnover Caveat**: Cite `within_phylum_multiplicity.tsv`
+   (`Actinomycetota` $\Delta = +3.215\%$, $p_{\text{Holm,all21}} = 0.0066946$; `Pseudomonadota`
+   $p_{\text{Holm,all21}} = 0.0824908$ for `cpf_complete`) and state that phylum stratification
+   does not control for intra-phylum species/strain turnover.
+5. **Association Only**: Never use the phrase `"indicates ecological selection"` from
+   `f1_ecology_provenance.json` L55; describe compartment contrasts strictly as ecological
+   association / niche partitioning.
+6. **F2 Negative Disposition**: Keep F2 stopped; if mentioned, state only that the two `93 aa`
+   and `148 aa` `Thermoplasmatota` proteins have `0` hits to `PF00702`/`PF13419` and `0`
+   `--ultra-sensitive` DIAMOND alignments to compatible-solute or housekeeping HAD phosphatases.
+================================================================================

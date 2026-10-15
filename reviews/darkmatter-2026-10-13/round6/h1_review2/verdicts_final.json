@@ -1,0 +1,46 @@
+{
+  "id": "H1",
+  "status": "VIABLE",
+  "bounded_hypothesis": "Across the n = 237 Rub' al-Khali desert Thermoplasmatota species-representative MAGs conditioned on continuous branch-length phylogenetic covariance from the 1,914-taxon GTDB-Tk r232 ar53 reference tree (Pagel's lambda PGLS) and genome assembly quality covariates (CheckM2 completeness, contamination, log10 assembly length, and log10 contig N50), how does the per-genome catalogue dark proteome fraction (N_dark / N_proteins_cat) vary in two-sided tests with amino acid identity (aai, spanning 48.678-80.041% across all 237 representatives and 50.389-80.041% across the 236 c__SW-10-69-26 and c__E2 representatives) to the nearest external GTDB r232 or MGnify reference genome and with desert-normalized shared reciprocal-best-hit gene coverage (frac_rbh_desert = N_RBH / N_prot_aai), alongside matched-denominator correlation and count-scaling audits and descriptive dark-family occupancy summaries without causal expansion, isolate-cultivation, or disjoint proteome-partition assumptions?",
+  "critical_issues": [],
+  "evidence_paths": [
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/SNAPSHOT_MANIFEST.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/DESIGN.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/DOSSIER.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/response.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/INPUTS.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/scripts/01_v3_input_manifest_and_phylo_audit.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/scripts/02_v3_pgls_ancestry_models.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/scripts/03_v3_coupling_and_comparator_audit.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_phylo_vcv_validation.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_pgls_model_summary.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_pgls_lambda_profile.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_pgls_sensitivity.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_pgls_statsmodels_verification.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_comparator_metadata_summary.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_coupling_and_comparator_audit.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h1_v3/results/v3_closure_verification.json",
+    "reproducibility/darkmatter/round6_hypotheses/h1_lineage/DOSSIER.md",
+    "reproducibility/darkmatter/round6_hypotheses/h1_lineage/DESIGN.md",
+    "reviews/darkmatter-2026-10-13/round6/h1_review2/minor_corrections.txt"
+  ],
+  "optional_improvements": [],
+  "scope_changes_from_original": [
+    "Narrows H1 from macroevolutionary claims of 'accessory proteome expansion' vs 'core dilution' between two classes (c__SW-10-69-26 vs c__E2) to a finite-cohort, two-sided continuous branch-length PGLS association study across the 237 desert Thermoplasmatota species representatives.",
+    "Replaces invalid few-cluster taxonomic sandwich standard errors (7 named families; f__JAJPHT01 holds 140/237 genomes) with Pagel's lambda PGLS on the 1,914-taxon ar53 FastTree, accompanied by 95% profile-likelihood bounds on lambda and seven pre-specified covariance, denominator, and cohort sensitivity models (S1-S7).",
+    "Reconciles the RBH denominator from min(N_A, N_B) to the desert genome's own protein count (tested under both single-genome Pyrodigal N_prot_aai and catalogue N_proteins_cat), documents the dual gene-caller basis and non-disjointness of N_dark and N_RBH, and places directional ancestral gene-gain/loss reconstructions outside the bounded scope as optional future work."
+  ],
+  "corrected_document_hashes": {
+    "reproducibility/darkmatter/round6_hypotheses/h1_lineage/DOSSIER.md": {
+      "sha256": "02ee99ee1c98fbd7e8aef78420aea9d8b0a41117c16a87261e58cf2cd9e110f2",
+      "bytes": 39053,
+      "snapshot_h1_v3_sha256": "e80a257a72cf8854d830f23f9f42e53172a345ec294607a28640743a61dd3333"
+    },
+    "reproducibility/darkmatter/round6_hypotheses/h1_lineage/DESIGN.md": {
+      "sha256": "b7fa9ccaf31e4fe7f68cb2a592a25fce50b6bb8585fe2938549083b90045c343",
+      "bytes": 17527,
+      "snapshot_h1_v3_sha256": "5278fae57e7cd60d4d58c5cd3a22c215cf85181df9a546f242ec83c745165764"
+    }
+  },
+  "reason": "H1 v3 was already judged VIABLE in h1_review2/verdicts.json with all five prior critical issues (C1-C5) resolved and verified against statsmodels.GLS and upstream source data. The non-blocking documentation refinements—(1) labeling reported AIC/BIC as fixed-lambda criteria (k = p + 1 = 8) alongside full profiled-ML criteria (k = p + 2 = 9), (2) aligning DOSSIER.md Section 3 root-to-tip distances and eigenvalues with results/v3_phylo_vcv_validation.json and phylo_vcv.tsv.gz/phylo_correlation.tsv.gz, (3) correcting the single-genome Pyrodigal call description in DOSSIER.md Section 6.2 to pyrodigal.GeneFinder(meta=False) as verified in v2_thermo_relatives_aai.py, and (4) refining Section 6.2 prose so it states that the external comparator set includes environmental MAGs containing uncharacterized proteins (with 92 pairs lacking cultivation metadata) and that disjointness of N_dark and N_RBH is neither established nor assumed—have been applied to reproducibility/darkmatter/round6_hypotheses/h1_lineage/DOSSIER.md and DESIGN.md, while keeping snapshots/h1_v3/ and the original h1_review2 files untouched. H1 remains VIABLE."
+}

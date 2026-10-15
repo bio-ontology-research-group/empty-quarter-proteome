@@ -1,0 +1,153 @@
+{
+  "job_id": "53820266",
+  "raw_gates": {
+    "f3": {
+      "EQ_MAG": {
+        "raw_gate_recount": 211,
+        "complete": 205,
+        "classes": {
+          "Type-1_Microbial_Rhodopsin": 144,
+          "Heliorhodopsin_Type-3": 67
+        }
+      },
+      "Environmental_SMAG": {
+        "raw_gate_recount": 51,
+        "complete": 47,
+        "classes": {
+          "Type-1_Microbial_Rhodopsin": 12,
+          "Heliorhodopsin_Type-3": 39
+        }
+      },
+      "Environmental_GEM": {
+        "raw_gate_recount": 243,
+        "complete": 238,
+        "classes": {
+          "Type-1_Microbial_Rhodopsin": 163,
+          "Heliorhodopsin_Type-3": 80
+        }
+      }
+    },
+    "f4": {
+      "EQ_MAG": {
+        "raw_gate_recount": 966,
+        "complete": 940,
+        "classes": {
+          "Ectoine_Synthase_EctC": 966
+        }
+      },
+      "Environmental_SMAG": {
+        "raw_gate_recount": 56,
+        "complete": 56,
+        "classes": {
+          "Ectoine_Synthase_EctC": 56
+        }
+      },
+      "Environmental_GEM": {
+        "raw_gate_recount": 63,
+        "complete": 63,
+        "classes": {
+          "Ectoine_Synthase_EctC": 63
+        }
+      }
+    },
+    "f5": {
+      "EQ_MAG": {
+        "raw_gate_recount": 8724,
+        "complete": 8327,
+        "classes": {
+          "Gamma-Carbonic_Anhydrase": 4381,
+          "Carboxysome_Shell_CA_CsoSCA": 42,
+          "Beta-Carbonic_Anhydrase": 4301
+        }
+      },
+      "Environmental_SMAG": {
+        "raw_gate_recount": 2065,
+        "complete": 1921,
+        "classes": {
+          "Gamma-Carbonic_Anhydrase": 1051,
+          "Carboxysome_Shell_CA_CsoSCA": 3,
+          "Beta-Carbonic_Anhydrase": 1011
+        }
+      },
+      "Environmental_GEM": {
+        "raw_gate_recount": 2289,
+        "complete": 2236,
+        "classes": {
+          "Gamma-Carbonic_Anhydrase": 1236,
+          "Carboxysome_Shell_CA_CsoSCA": 14,
+          "Beta-Carbonic_Anhydrase": 1039
+        }
+      }
+    }
+  },
+  "source_closure": {
+    "EQ_MAG": {
+      "source_fasta": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/cohort.faa",
+      "source_fasta_sha256": "a7d8c8292addf306dcb29a0e5921579cdd6f66475bf83da5820d32365bc4d64e",
+      "proteins_streamed": 20451986,
+      "candidates_verified": 9901,
+      "candidate_and_marker_coordinates": 39480
+    },
+    "Environmental_SMAG": {
+      "source_fasta": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h3_references/results/smag_pool_canonical.faa",
+      "source_fasta_sha256": "8ed326fce254d3a8c4c2090483f4a9ef13eddbf174164640c78749b11dbd665f",
+      "proteins_streamed": 4778910,
+      "candidates_verified": 2172,
+      "candidate_and_marker_coordinates": 9123
+    },
+    "Environmental_GEM": {
+      "source_fasta": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h3_references/results/gem_harmonized_pool_canonical_seed20261014.faa",
+      "source_fasta_sha256": "a88a5da4c8149de2c232fed0e8bf14fe5ad725a58f894ae413c52756e5f95edc",
+      "proteins_streamed": 4824709,
+      "candidates_verified": 2595,
+      "candidate_and_marker_coordinates": 8584
+    }
+  },
+  "ectc_complete_context": {
+    "EQ_MAG": {
+      "complete_EctC": 940,
+      "ABC_neighborhood": 666,
+      "ABC_same_strand": 664,
+      "ABCD_neighborhood": 450,
+      "same_orf_EctCD": 5
+    },
+    "Environmental_SMAG": {
+      "complete_EctC": 56,
+      "ABC_neighborhood": 33,
+      "ABC_same_strand": 33,
+      "ABCD_neighborhood": 26,
+      "same_orf_EctCD": 0
+    },
+    "Environmental_GEM": {
+      "complete_EctC": 63,
+      "ABC_neighborhood": 48,
+      "ABC_same_strand": 47,
+      "ABCD_neighborhood": 25,
+      "same_orf_EctCD": 0
+    }
+  },
+  "input_checksums": {
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/f3_rhodopsin/f3_domtbl_EQ_MAG.tsv": "48715ad91a210465c6d5f7a6f249eb1a17ceff6d602e260404764a4034a6b43a",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/f3_rhodopsin/f3_domtbl_Environmental_SMAG.tsv": "3023b3218628c80fc4806385a79bf2cd5e4c0dd1e44efada3d8b17d587d6c5b3",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/f3_rhodopsin/f3_domtbl_Environmental_GEM.tsv": "2bc27f99cbbc3910da8a9404e91452b0c2022b9f52897a5dcc63effe0e83feff",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/f4_ectc/f4_domtbl_EQ_MAG.tsv": "86d32b64743b29e6e1e1e1f3da92145f283a47d256eb8d062a1b374bc8966ddf",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/f4_ectc/f4_domtbl_Environmental_SMAG.tsv": "da51a8803cdfb7de3bb3a1c3b06d1d5aa7aae7d33436bc38ce3581b9305e48ee",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/f4_ectc/f4_domtbl_Environmental_GEM.tsv": "05297a62f13da1b2d3c96d855d661a5be8ef0e78c7b7fd490e011312ef2dce99",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/f5_carbonic_anhydrase/f5_domtbl_EQ_MAG.tsv": "eaee534ad04e17bf546f7185673785409879c8ec4e4c8cc2e0fa88156cd2475c",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/f5_carbonic_anhydrase/f5_domtbl_Environmental_SMAG.tsv": "ecec7fad4549042e037a0412eae5698bc5ca335ffa64ed617dc23e419e33be8a",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/f5_carbonic_anhydrase/f5_domtbl_Environmental_GEM.tsv": "9e8698f06a878e4f8fad88b64e7222ace8fbd1a280f08c5425ffd4814583a1d7",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h3_references/results/smag_protein_coordinate_mapping.tsv": "437501a440a0658494f3002541f39dc78faffa866c240efc8c28357b789a07b8",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h3_references/results/gem_harmonized_protein_coordinate_mapping_seed20261014.tsv": "7634af7ab56dcaa95922b865e23b5f63667e6c187599cd94f32a87e9527c27bb",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/frozen_code/executed_08_f3_full.py": "bfe9a4e75ea89406907f9f1bc52ee6ed6d649f2ae840855ffb6d9cd623337de3",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/frozen_code/executed_09_f4_full.py": "9b0c5152a72f367de326c61917bc45df80f04f833688a935953dea3377811f6c",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/frozen_code/executed_11_full_audit.py": "0b89bd5d7ec1dbc56dec894298b6af22f132de051735b0208287aa5fe8bf43dd",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/frozen_code/executed_07_prepare_full_cohorts.py": "e3642d346af2e48989c6f7634cabd0f7e4d6b575af0fe009e922ea464cd8a1ea",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/frozen_code/executed_10_f5_full.py": "94e0f3e2b07708f78a4b60424f07ebb0230cc8d0407f959fdbbf84dc84724112"
+  },
+  "limits": [
+    "Complete means Prodigal partial=00, not complete genome or experimentally validated ORF.",
+    "Neighborhoods within 5kb are not demonstrated operons; opposite strands separately checked.",
+    "Profile thresholds are operational and class selection can miss fusions/multidomain proteins.",
+    "No catalytic activity, sensory function or exceptional EQ novelty follows from census alone."
+  ]
+}

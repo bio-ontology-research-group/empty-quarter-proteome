@@ -1,0 +1,75 @@
+{
+  "id": "H2",
+  "status": "VIABLE",
+  "bounded_hypothesis": "Among confidence-qualified monomer structural families (`mean_plddt >= 0.70`, `length >= 100` aa) whose 90%-sequence-cluster representative members (`04_cluster/clusters.tsv`, derived from `mag_dark_rep_ids.txt.gz`) occur in `>= 2` distinct refined-MAG dRep 95% ANI species clusters (`Cdb.csv`) with complete 4-gene (`+-2`) exact-coordinate Bakta-mapped flanking windows (`eligible_locus_primary == 1`, Tier 1 primary gate; `72 / 300` stratified pilot families: `43` in `K`, `29` in `Q \\ K`) or complete 4-gene exact/3'-stop-verified windows (`eligible_locus_stop3_sens == 1`, Tier 2 sensitivity gate; `133 / 300` families: `67` in `K`, `66` in `Q \\ K`), we test two separated questions on one deterministically selected, outcome-independent primary locus per `(family, species)`: (a) within each structural arm (`K`: `qTM < 0.5` vs. PDB and AFDB; `Q \\ K`: `qTM >= 0.5`), whether cross-species flanking KEGG KO recurrence (`C_fam^obs = 1` iff `>= 2` distinct eligible species share an identical KEGG KO within their `+-2` flanks) exceeds the expectation `mu_fam^pos` under random eligible internal positions on the exact same contigs that satisfy the identical complete-window eligibility gate (`B = 5,000` Monte Carlo draws); and (b) between arms (`K` vs. `Q \\ K`), whether background-adjusted positional excess `E_fam = C_fam^obs - mu_fam^pos` (or raw recurrence `C_fam^obs`) differs after conditioning on `species_breadth_bin`, verified GTDB-Tk R232 `phylum_group`, and `ko_annotation_opportunity`.",
+  "critical_issues": [],
+  "evidence_paths": [
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/SNAPSHOT_MANIFEST.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/DESIGN.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/DOSSIER.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/response.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/INPUTS.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/scripts/01_select_cohort.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/scripts/02_extract_neighbourhoods.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/scripts/03_analyse_conservation.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/scripts/04_verify_outputs.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/scripts/run_h2_ibex.sh",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/all_evaluable_families.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/pilot_cohort.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/pilot_candidates.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/bin_contig_verification.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/member_loci.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/flanking_genes.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/family_conservation.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/matched_pairs.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/summary_stats.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/regression_results.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/top_conserved_loci.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/executed_inputs_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/results/outputs_sha256.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/logs/slurm_job_53710523.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/logs/slurm_job_53712511.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/logs/slurm_job_53713357.txt",
+    "reproducibility/darkmatter/round6_hypotheses/h2_context/DESIGN.md",
+    "reproducibility/darkmatter/round6_hypotheses/h2_context/DOSSIER.md",
+    "reproducibility/darkmatter/round6_hypotheses/h2_context/response.txt",
+    "reviews/darkmatter-2026-10-13/round6/h2_review1/review.txt",
+    "reviews/darkmatter-2026-10-13/round6/h2_review1/verdicts.json",
+    "reviews/darkmatter-2026-10-13/round6/h2_review2/review.txt",
+    "reviews/darkmatter-2026-10-13/round6/h2_review2/verdicts.json",
+    "reviews/darkmatter-2026-10-13/round6/h2_review2/minor_corrections.txt",
+    "reviews/darkmatter-2026-10-13/round6/ROOT_AUDIT_NOTES.md"
+  ],
+  "optional_improvements": [],
+  "scope_changes_from_original": [
+    "Narrowed from the broad Round 5 extension prompt ('Operon and genomic context conservation of novel folds: examine genomic neighbourhoods (+-5 genes) across MAGs; test whether novel fold families sit in conserved operons, suggesting regulated functional roles, or are associated with mobile elements (transposases, integrases, phage genes), suggesting horizontal acquisition and accessory function') to a strictly bounded observational comparison of +-2 gene flanking KEGG KO cross-species recurrence between low-qTM (`K`, `qTM < 0.5` vs. PDB and AFDB) and fold-matched sequence-dark (`Q \\ K`, `qTM >= 0.5`) monomer structural families.",
+    "Explicitly restricted the analyzed member population to the 12,556 90%-sequence-cluster representative proteins (`mag_dark_rep_ids.txt.gz`) in `04_cluster/clusters.tsv` mapped onto refined MAG contigs (`contig_to_bin_refined.tsv.gz`) and dRep 95% ANI species clusters (`Cdb.csv`), with zero unverified extrapolation to unbinned contigs (`50.43%` of representative contigs) or unexpanded non-representative `all_cluster90.tsv` members.",
+    "Restricted primary family-level inference to families with `>= 2` distinct dRep 95% ANI species carrying complete 4-flank (`+-2`) exact-coordinate Bakta-mapped windows (`eligible_locus_primary == 1`; Tier 1: `72 / 300` pilot families; Tier 2 3'-stop sensitivity: `133 / 300` families), coding all families with `< 2` eligible species as `-1` (`INELIGIBLE / MISSING`).",
+    "Separated inference into (a) within-arm excess recurrence over a matched same-contig eligible-position reference (`E_fam = C_fam^obs - mu_fam^pos`, where both `K` [`+35.97` pp, `p = 0.0002`] and `Q \\ K` [`+26.08` pp, `p = 0.0002`] show strong local syntactic clustering above random contig positions) and (b) between-arm covariate-adjusted contrasts on `E_fam` and `C_fam^obs` across `species_breadth_bin`, GTDB-Tk R232 `phylum_group`, and `ko_annotation_opportunity`, which are null across all primary and sensitivity estimators (`Delta_MH(E_fam) = -0.0648`, `p = 0.4907`).",
+    "Replaced operon, cotranscription, regulatory mechanism, and broad mobile-element/HGT claims with bounded descriptive reporting of recurrent flanking KEGG KOs (`top_conserved_loci.tsv`), explicitly retaining hypothetical/DUF flank prevalence and treating conditional exchangeability across coarse R232 phylum groups as an identifying assumption."
+  ],
+  "corrected_document_hashes": {
+    "reproducibility/darkmatter/round6_hypotheses/h2_context/DESIGN.md": {
+      "pre_edit_snapshot_path": "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/DESIGN.md",
+      "pre_edit_size_bytes": 17985,
+      "pre_edit_sha256": "73ee38f1fc1099dd62f24824e98923ad434c0eeff40d4b0efaf6e8723a901719",
+      "post_edit_size_bytes": 18401,
+      "post_edit_sha256": "4ecb4c00613f1534dc1d9af716a4e4026627c613cc8906b5a6c4e6add2bc6acb"
+    },
+    "reproducibility/darkmatter/round6_hypotheses/h2_context/DOSSIER.md": {
+      "pre_edit_snapshot_path": "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/DOSSIER.md",
+      "pre_edit_size_bytes": 37869,
+      "pre_edit_sha256": "5a6fa7d7f4132f2f2446af015b62afa4395582226dfe72b6470637eedb56f50f",
+      "post_edit_size_bytes": 41290,
+      "post_edit_sha256": "4e3854eebacd0d0b4c96ce8c69106b78ceaa1f415f7563fe0da1285d50497d33"
+    },
+    "reproducibility/darkmatter/round6_hypotheses/h2_context/response.txt": {
+      "pre_edit_snapshot_path": "reviews/darkmatter-2026-10-13/round6/snapshots/h2_v3/response.txt",
+      "pre_edit_size_bytes": 19406,
+      "pre_edit_sha256": "aa2301ae0be4f27d5d94246c84b2872e2cb69ba929484b3f0295cf2923205d17",
+      "post_edit_size_bytes": 20256,
+      "post_edit_sha256": "29b0b7fe3bfad2fb762611b0144a8273d5fad02e254c8a9312e9f3c0a423f93e"
+    }
+  },
+  "reason": "H2 v3 resolves all five prior critical findings (C1-C5) from h2_review1 in executed code and verified IBEX Slurm runs (`53710523`, `53712511`, `53713357`), and all four non-blocking documentation caveats (O1-O4) from h2_review2 have now been closed in the live working documents (`DESIGN.md`, `DOSSIER.md`, `response.txt`) without altering any code, numerical results, old reviews, or frozen snapshots: (O1) conditional exchangeability and cross-family independence are stated as identifying assumptions under coarse 4-bin R232 phylum conditioning, and the species-cluster bootstrap (`SE = 0.0730`) and zero-shared-species subset check (`p = 0.5452`) are explicitly labeled as fixed-family-outcome sensitivity checks on the unstratified arm difference; (O2) the uncomputed `>= 80%` power claim is removed while retaining projected Gate 3 evaluable counts (`~336-351` Tier 1, `~648` Tier 2) as pilot-based sample-size planning estimates; (O3) the `0 / 30` `best_ko_mobilome_flag` result is strictly scoped to the 11-keyword screen on selected `best_recurrent_ko` strings while explicitly preserving hypothetical/DUF flank prevalence (`47.6%` `mapped_noKO`, `58.1%` Bakta `'hypothetical protein'`, `8/30` top recurrent KOs `'hypothetical protein'`, `6/30` COG `'S'`, `K00590` `DNA methylase`, and an adjacent `RTX toxin` flank) and making no absence-of-MGE, chromosomal-residence, or core-housekeeping claims; and (O4) the written primary-locus tie-breaker tuple matches the exact 8-tuple in `scripts/02_extract_neighbourhoods.py:838-847`."
+}

@@ -1,0 +1,78 @@
+INDEPENDENT VIABILITY REVIEW — HYPOTHESIS 1 (H1, SNAPSHOT h1_v2)
+Reviewer: Gemini 4 Argon (High)
+Target Snapshot: reviews/darkmatter-2026-10-13/round6/snapshots/h1_v2/
+Verdict: REVISE
+
+================================================================================
+1. EXECUTIVE VERDICT, BOUNDED HYPOTHESIS, AND SCOPE CHANGES
+================================================================================
+
+Status: REVISE
+
+Bounded Hypothesis (Identifiable Finite-Cohort Estimand):
+Across the n = 237 Rub' al-Khali desert Thermoplasmatota species-representative MAGs in the GTDB-Tk r232 ar53 phylogeny (thermo_tree.nwk), does the per-genome dark proteome fraction (Y_i = N_dark,i / N_prot,cat,i) vary conditionally with amino acid identity to the nearest external GTDB r232 or MGnify reference genome (beta_AAI) and with desert-normalized shared reciprocal-best-hit coverage (beta_frac_rbh_desert = N_RBH,i / N_prot,aai,i), controlling for CheckM2 completeness, contamination, log10(assembly length), log10(contig N50), and branch-length covariance via Pagel's lambda in Phylogenetic Generalized Least Squares (PGLS)? Secondary descriptive aims evaluate raw-count vs ratio scaling of N_dark and N_RBH against an independent-numerator common-denominator permutation baseline and occupancy of 14,645 admitted dark families across the 237 representatives without inferring evolutionary gain/loss polarity.
+
+Scope Changes from Original (round5/EXTENSIONS.md H1):
+1. Narrows H1 from macroevolutionary "accessory expansion" vs "core dilution" between c__SW-10-69-26 and c__E2 to a finite-cohort branch-length PGLS association model across the 237 representatives.
+2. Replaces invalid few-cluster sandwich standard errors (G = 3 orders or 7 families; f__JAJPHT01 holds 140/237 genomes) with Pagel's lambda PGLS on the 1,914-taxon ar53 FastTree plus JAJPHT01-omission and within-SW-10-69-26 sensitivities.
+3. Reconciles the RBH denominator from min(N_a, N_b) (which used the external comparator's size in 177/237 = 74.7% of pairs) to the desert MAG's protein count, and retracts the v1 sign error on the independent-count common-denominator permutation null (true positive null mean rho = +0.3017, 95% CI [+0.1789, +0.4194]).
+
+Viability Assessment:
+The bounded experiment is identifiable, falsifiable in both directions, resource-feasible (24.19s runtime on IBEX Job 53701040), and grounded in verified inputs with 100% tip mapping (237/237 tips in thermo_tree.nwk). However, independent verification of the code and outputs identifies five critical issues requiring revision before H1 can be marked VIABLE.
+
+================================================================================
+2. CRITICAL ISSUES (MUST BE RESOLVED FOR VIABILITY)
+================================================================================
+
+CRITICAL ISSUE 1: Corrupted GLS and OLS R-Squared via 1D-to-2D Array Broadcasting
+- Source Evidence: snapshots/h1_v2/scripts/02_pgls_ancestry_models.py (lines 49, 76–80); results/pgls_lambda_profile.tsv (lines 2–7), pgls_sensitivity.tsv (lines 2–5), pgls_ancestry_summary.txt (line 10); DOSSIER.md (lines 93, 116–121, 131–134).
+- Finding & Impact:
+  In fit_pgls(), y_tilde has shape (n,), whereas ones = np.ones((n, 1)) makes ones_tilde shape (n, 1) and mu_null shape (1, 1). On line 79, (y_tilde - ones_tilde * mu_null) broadcasts (n,) against (n, 1) into an (n, n) matrix of n^2 = 56,169 elements, inflating rss_null by a factor of n = 237. Consequently, every model R^2 reported in the dossier and TSV outputs is ~0.999 instead of the true variance explained:
+  * Primary PGLS (n = 237, lambda = 0.9158): reported R^2 = 0.99916; true GLS R^2 = 0.46905.
+  * Non-phylogenetic OLS (n = 237, lambda = 0.0): reported R^2 = 0.99787; true OLS R^2 = 0.49579.
+  * Restricted c__SW-10-69-26 (n = 185, lambda = 0.9008): reported R^2 = 0.99884; true GLS R^2 = 0.50091.
+  * Dominant family JAJPHT01 omitted (n = 97, lambda = 0.9011): reported R^2 = 0.99879; true GLS R^2 = 0.44408.
+  * With caller proxy frac_complete (n = 232, lambda = 0.9135): reported R^2 = 0.99917; true GLS R^2 = 0.48306.
+- Concrete Repair:
+  Flatten ones_tilde to 1D (`ones_tilde = linalg.solve_triangular(L, np.ones(n), lower=True)`) and compute scalar `mu_null = float(np.dot(ones_tilde, y_tilde) / np.dot(ones_tilde, ones_tilde))` before `rss_null = float(np.sum((y_tilde - ones_tilde * mu_null) ** 2))`. Re-run 02_pgls_ancestry_models.py and update all tables and prose.
+
+CRITICAL ISSUE 2: Biased ML Variance (RSS/n) in Finite-Sample Wald t-Tests, Normal-Quantile CIs, and Unsaved/Mismatched Dossier p-Values
+- Source Evidence: snapshots/h1_v2/scripts/02_pgls_ancestry_models.py (lines 60–68, 181, 196–197, 204, 311); results/pgls_model_summary.tsv (lines 2–8); DOSSIER.md (lines 49, 54–55, 95–108, 114–121, 129–134).
+- Finding & Impact:
+  1. Concentrated ML variance `sigma2_ml = rss / n` belongs in the profile log-likelihood (line 71), but fixed-lambda Wald t-tests with `df = n - p` require the unbiased residual variance estimator `sigma2_unb = rss / (n - p)`. Using `rss / n` underestimates standard errors by `sqrt((n - p) / n)` (by 1.5% at n = 237, p = 7, and by 3.7% at n = 97, p = 7) and inflates |t|. Lines 196–197 also use 1.96 instead of `t_{0.975, n-p}`.
+  2. Because pgls_model_summary.tsv, pgls_lambda_profile.tsv, and pgls_sensitivity.tsv format p-values with `%.6f` or `%.5f` (truncating small values to `0.000000`), DOSSIER.md (lines 55, 103, 107, 116–121, 131–132) cites scientific-notation p-values absent from the saved TSVs that come from normal approximations rather than the script's Student-t formula (e.g., primary `frac_rbh_desert` reported as p = 7.50e-13 from `2*norm.sf(7.17)`, whereas `t_{230}` gives 9.96e-12 under ML SE and 1.88e-11 under unbiased SE; OLS `aai` reported as 9.88e-7 vs `t_{230}` 6.52e-7 ML / 9.35e-7 unbiased).
+  3. Uncertainty in profiled Pagel's lambda (0.9158) is not reported alongside model-conditional intervals.
+- Concrete Repair:
+  Keep `sigma2_ml = rss / n` exclusively in `loglik`, use `sigma2_unb = rss / (n - p)` and `t_{0.975, n-p}` for `var_beta`, `se`, `t_val`, and 95% CIs (yielding primary AAI beta = +0.001704, SE = 0.000407, t = +4.18, p = 4.07e-5; primary `frac_rbh_desert` beta = -0.137484, SE = 0.019456, t = -7.07, p = 1.88e-11; JAJPHT01-omitted AAI SE = 0.000511, p = 0.00453), format TSV p-values with `%.4e`, and report the 95% profile-likelihood CI for lambda ([0.8466, 0.9568]).
+
+CRITICAL ISSUE 3: Post-Hoc One-Sided Confirmatory Hypothesis Framing for beta_AAI
+- Source Evidence: snapshots/h1_v2/DOSSIER.md, Section 3 Table (line 54) vs DESIGN.md (line 49) and round5/EXTENSIONS.md (lines 12–14, 25–27, 33–36).
+- Finding & Impact:
+  Classical reference-divergence dilution predicts lower darkness at higher AAI (beta_AAI < 0), and DESIGN.md (line 49) pre-specifies two-sided Wald t-tests. After observing a positive slope (beta_AAI = +0.00170), DOSSIER.md line 54 formulates a one-sided test `H_0: beta_AAI <= 0` vs `H_1: beta_AAI > 0` while reporting the two-sided p-value, conflating rejection of negative dilution with confirmation of a post-hoc positive AAI effect.
+- Concrete Repair:
+  State the primary hypothesis test two-sided (`H_0: beta_AAI = 0` vs `H_1: beta_AAI != 0`), explicitly concluding that negative reference-proximity dilution (`beta_AAI < 0`) is rejected within the sampled range and labelling the small positive slope (+0.00170 per 1% AAI) as an empirical observation.
+
+CRITICAL ISSUE 4: Unverified Disjoint Partition Claim (N_dark + N_RBH <= N_prot) Across Different Callers and Non-Exclusive Criteria
+- Source Evidence: snapshots/h1_v2/DESIGN.md (lines 17, 81), DOSSIER.md (lines 67–68, 152, 207), scripts/03_reconciled_coupling_and_accessory.py (lines 52, 68–69, 124); v2_thermo_relatives_aai.py (lines 48–60, 142–153).
+- Finding & Impact:
+  The dossier and script assert that dark genes and RBH genes are "mutually exclusive subsets constrained by the total proteome (N_dark + N_RBH <= N_prot)". This is unverified because: (1) `N_dark` and `n_proteins_cat` come from metagenomic catalogue calls mapped to 90/80 cluster reps (`v2_scan_cluster90.py`), whereas `aai_n_rbh` comes from single-genome Pyrodigal 3.7.1 (`meta=False`) calls (`n_prot_aai`, differing by -13 to +93 proteins per genome); and (2) lacking a `UniRef50 2026_01` or annotation hit on a 90/80 cluster rep does not preclude having a DIAMOND RBH (>= 30% identity, >= 70% coverage) to an unannotated protein in a recent GTDB r232 or MGnify MAG. Moreover, `03_reconciled_coupling_and_accessory.py` correlates `n_dark / n_proteins_cat` with `aai_n_rbh / n_prot_aai` (line 52) but divides permuted `aai_n_rbh` by `n_proteins_cat` (line 69).
+- Concrete Repair:
+  Remove the unverified theorem that `N_dark` and `N_RBH` are proven disjoint subsets obeying `N_dark + N_RBH <= N_prot`, explain the negative ratio correlation (rho = -0.3942 vs positive independent-permutation null mean +0.3017) via differential scaling with genome size (rho = +0.9457 for N_dark vs +0.3294 for N_RBH), and use a matched denominator in `03_reconciled_coupling_and_accessory.py`.
+
+CRITICAL ISSUE 5: Mischaracterization of Uncultured GTDB/MGnify Comparators as "Known Isolate Genomes" and Inaccurate AAI Range
+- Source Evidence: snapshots/h1_v2/DESIGN.md (line 19), DOSSIER.md (lines 106, 179); v2_thermo_relatives_pairs.tsv (lines 2–238); v2_thermo_relatives_report.txt (lines 7, 18–29, 32–42).
+- Finding & Impact:
+  DESIGN.md and DOSSIER.md refer to the nearest external comparators as "known isolate genomes" / "known isolates" with AAI "55–72%". In fact, the 237 nearest comparators (229 GTDB r232 species reps, 8 MGnify genomes) are predominantly uncultured environmental (mostly soil/sediment) MAGs, and the empirical AAI range in `denominator_caller_audit.tsv` is 48.68%–80.04% across all 237 representatives (52.91%–80.04% across SW-10-69-26 and E2, median 64.77%).
+- Concrete Repair:
+  Replace "known isolate genomes" / "known isolates" with "external GTDB r232 and MGnify reference genomes (predominantly uncultured environmental MAGs)" and report the exact empirical AAI range (48.68%–80.04%; 52.91%–80.04% within SW-10-69-26 and E2).
+
+================================================================================
+3. OPTIONAL IMPROVEMENTS (NON-BLOCKING)
+================================================================================
+
+1. Document VCV Normalization and Outgroup Rooting Checks:
+   `phylo_correlation.tsv.gz` is strictly positive-definite (eigenvalues 0.00494 to 101.47), midpoint rooting of the 1,914-taxon tree places the ingroup root identically to outgroup rooting on the 30 Halobacteriota/Thermoproteota outgroups (`thermo_tree_taxa.tsv`), and unnormalized Brownian VCV (mean-diagonal scaled) yields virtually identical PGLS estimates (lambda_ML = 0.9161, R^2 = 0.4753, beta_AAI = +0.00174, beta_RBH = -0.14050).
+2. Recover the 5 Missing 48PRr1 Genomes in `frac_complete` Sensitivity:
+   Parse `partial=00` rates from single-genome Pyrodigal calls for `48PRr1__SemiBin_112`, `_141`, `_510`, `_539`, and `_849` if full n = 237 coverage is desired.
+3. Frame Section 7's Unexecuted Ancestral Reconstructions as Future Work:
+   The bounded finite-cohort PGLS and descriptive accessory sharing analyses are already complete on all 237 representatives; Dollo parsimony / Count reconstructions are not needed for bounded viability.

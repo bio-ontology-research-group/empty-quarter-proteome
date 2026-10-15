@@ -1,0 +1,943 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P56160",
+  "uniProtkbId": "HISN_CHLP8",
+  "entryAudit": {
+    "firstPublicDate": "1997-11-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2008-10-14",
+    "entryVersion": 99,
+    "sequenceVersion": 2
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Chlorobaculum parvum (strain DSM 263 / NCIMB 8327)",
+    "commonName": "Chlorobium vibrioforme subsp. thiosulfatophilum",
+    "taxonId": 517417,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Chlorobiota",
+      "Chlorobiia",
+      "Chlorobiales",
+      "Chlorobiaceae",
+      "Chlorobaculum"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Histidinol-phosphatase"
+      },
+      "shortNames": [
+        {
+          "value": "HolPase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "value": "3.1.3.15"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Histidinol-phosphate phosphatase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "hisN"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "Cpar_0733"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Catalyzes the dephosphorylation of histidinol-phosphate to histidinol, the direct precursor of histidine"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "L-histidinol phosphate + H2O = L-histidinol + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:14465"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57699"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57980"
+          }
+        ],
+        "ecNumber": "3.1.3.15"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "value": "Amino-acid biosynthesis; L-histidine biosynthesis; L-histidine from 5-phospho-alpha-D-ribose 1-diphosphate: step 8/9"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the inositol monophosphatase superfamily"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Frameshift",
+      "sequence": "CP001099",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 259,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Histidinol-phosphatase",
+      "featureId": "PRO_0000142584"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 66,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 66,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 66,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 66,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 82,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 82,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 82,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 82,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 84,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 87,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 84,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 84,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 85,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 85,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 207,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 207,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 207,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 207,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 9,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 9,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; U38348",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "L",
+        "alternativeSequences": [
+          "LAL"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0028",
+      "category": "Biological process",
+      "name": "Amino-acid biosynthesis"
+    },
+    {
+      "id": "KW-0368",
+      "category": "Biological process",
+      "name": "Histidine biosynthesis"
+    },
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "8626508",
+        "citationType": "journal article",
+        "authors": [
+          "Rhie G.-E.",
+          "Avissar Y.J.",
+          "Beale S.I."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8626508"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.271.14.8176"
+          }
+        ],
+        "title": "Structure and expression of the Chlorobium vibrioforme hemB gene and characterization of its encoded enzyme, porphobilinogen synthase.",
+        "publicationDate": "1996",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "8176",
+        "lastPage": "8182",
+        "volume": "271"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "CI-15EG8SDM4E60",
+        "citationType": "submission",
+        "authoringGroup": [
+          "US DOE Joint Genome Institute"
+        ],
+        "authors": [
+          "Lucas S.",
+          "Copeland A.",
+          "Lapidus A.",
+          "Glavina del Rio T.",
+          "Dalin E.",
+          "Tice H.",
+          "Bruce D.",
+          "Goodwin L.",
+          "Pitluck S.",
+          "Schmutz J.",
+          "Larimer F.",
+          "Land M.",
+          "Hauser L.",
+          "Kyrpides N.",
+          "Mikhailova N.",
+          "Zhao F.",
+          "Li T.",
+          "Liu Z.",
+          "Overmann J.",
+          "Bryant D.A.",
+          "Richardson P."
+        ],
+        "title": "Complete sequence of Chlorobaculum parvum NCIB 8327.",
+        "publicationDate": "JUN-2008",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "DSM 263 / NCIMB 8327",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "U38348",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "-"
+        },
+        {
+          "key": "Status",
+          "value": "NOT_ANNOTATED_CDS"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CP001099",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "-"
+        },
+        {
+          "key": "Status",
+          "value": "NOT_ANNOTATED_CDS"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P56160",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P56160",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00031",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00013"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000008811",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004401",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:histidinol-phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008934",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:inositol monophosphate 1-phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006020",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:inositol metabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000105",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:L-histidine biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniPathway"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0046854",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:phosphatidylinositol phosphate biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0007165",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:signal transduction"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd01641",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Bacterial_IMPase_like_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.30.540.10:FF:000003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Inositol-1-monophosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.190.80",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.540.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Fructose-1,6-Bisphosphatase, subunit A, domain 1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011809",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "His_9_proposed"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR020583",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Inositol_monoP_metal-BS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR000760",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Inositol_monophosphatase-like"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR020550",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Inositol_monophosphatase_CS"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR02067",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "his_9_HisN"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR20854",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "INOSITOL MONOPHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR20854:SF4",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "INOSITOL-1-MONOPHOSPHATASE-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00459",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Inositol_P"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00377",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IMPHPHTASES"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56655",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbohydrate phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00629",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IMP_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00630",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "IMP_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MTPDLQLALELAEKAGKLTLDYFGRRSLQVFSKRDDTPVTEADRNAEELIRQGISAKFPDDGLFGEEFDEHPSGNGRRWIIDPIDGTRSFIHGVPLYGVMIALEVEGAMQLGVINFPALGELYQAERGSGAFMNGSPVQVSAIAENSASTVVFTEKEYLLDPPSNHPVDQLRIDAGLVRGWGDCYGHMLVASGRAEVAVDKIMSPWDCAAVIPIVEEAGGCCFDYRGRQSIIDGEGLVSANNAMGRNLIAAIGNGERDR",
+    "length": 259,
+    "molWeight": 28059,
+    "crc64": "44EEEE19A48232B2",
+    "md5": "403AE60EED86DC1E61FAB2CA00FD5B0A"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "PATHWAY": 1,
+      "SIMILARITY": 1,
+      "SEQUENCE CAUTION": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 9,
+      "Sequence conflict": 1
+    },
+    "uniParcId": "UPI0001813357"
+  }
+}

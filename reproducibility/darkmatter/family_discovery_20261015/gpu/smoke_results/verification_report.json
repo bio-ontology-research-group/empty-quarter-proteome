@@ -1,0 +1,68 @@
+{
+  "status": "PASSED",
+  "output_dir": "/mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/smoke_results/.work_316765_0",
+  "fasta_path": "/mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/smoke_references.fasta",
+  "checks": {
+    "files_present": {
+      "passed": true
+    },
+    "checksums": {
+      "passed": true,
+      "errors": []
+    },
+    "npy_npz_identical": {
+      "passed": true
+    },
+    "dimensionality": {
+      "passed": true,
+      "actual_shape": [
+        6,
+        1024
+      ],
+      "expected_shape": [
+        6,
+        1024
+      ]
+    },
+    "finiteness": {
+      "passed": true,
+      "has_nans": false,
+      "has_infs": false
+    },
+    "id_order_preserved": {
+      "passed": true,
+      "num_ids": 6
+    },
+    "lengths_match": {
+      "passed": true
+    },
+    "sequence_shas_match": {
+      "passed": true
+    },
+    "duplicate_equivalence": {
+      "passed": true,
+      "checks": [
+        {
+          "id1": "O52251",
+          "id2": "O52251_dup",
+          "sha256": "a7ad43e3311956bf69d772b5c8227c62f03673ef83ec125d1630fba7487ffa03",
+          "max_abs_diff": 0.0,
+          "passed": true
+        }
+      ]
+    },
+    "provenance_valid": {
+      "passed": true,
+      "run_signature": "a1b729348c4af6b82b3c530677375a7acfc88b3ec2850cd6feaafe9e031c90ff",
+      "gpu_device": "NVIDIA H200",
+      "peak_vram_gb": 3.1197,
+      "single_vs_batched_consistency": {
+        "max_abs_diff": 0.00048828125,
+        "mean_abs_diff": 2.2087120669311844e-05,
+        "min_cos_sim": 0.9999997615814209,
+        "tolerance_threshold": 0.005,
+        "verified": true
+      }
+    }
+  }
+}

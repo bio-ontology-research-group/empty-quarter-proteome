@@ -1,0 +1,113 @@
+ROUND 6 H1 IMPLEMENTATION RESPONSE (v3)
+================================================================================
+Target Directory (Local): reproducibility/darkmatter/round6_hypotheses/h1_lineage/
+Target Directory (IBEX):  /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p6_hypotheses_clean/h1_lineage/
+Slurm Execution Record:   Job ID 53704703 (partition=debug, node=gpu510-32, 8 CPUs, 32 GB RAM, elapsed=42.65s, exit=0:0)
+Immutable Paths Untouched: reviews/darkmatter-2026-10-13/round6/h1_review1/ and reviews/darkmatter-2026-10-13/round6/snapshots/h1_v2/
+Superseded v2 Preserved:  DESIGN_v2_superseded.md, DOSSIER_v2_superseded.md, INPUTS_v2_superseded.tsv, and all v1/v2 scripts and results.
+
+Below is the point-by-point mapping of every Critical Finding (C1-C5), Optional Enhancement (O1-O2), and Root Audit Note to the executed v3 code and output evidence.
+
+--------------------------------------------------------------------------------
+C1. Fix numpy 2D broadcasting bug in GLS R-squared and verify against statsmodels.GLS
+--------------------------------------------------------------------------------
+* Defect in v2:
+  In `scripts/02_pgls_ancestry_models.py` (lines 72-76), `y_mean_gls` had shape `(1, 1)` while `Ly` and `L_ones` had shape `(n,)`. Evaluating `Ly - L_ones * y_mean_gls` broadcast `Ly_centered` into an `(n, n)` matrix, inflating `tss = np.sum(Ly_centered ** 2)` by a factor of `n` and producing invalid R^2 values of `0.99708` (PGLS) and `0.99787` (OLS).
+
+* Executed v3 Repair:
+  1. In `scripts/02_v3_pgls_ancestry_models.py` (lines 71-118), `y` is explicitly flattened via `y_vec = np.asarray(y, dtype=np.float64).reshape(-1)`, `y_mean_gls` is extracted as a Python `float`, and `Ly_centered = Ly - L_ones * y_mean_gls` is explicitly asserted to be 1D with shape `(n,)` before computing `tss_gls = float(np.dot(Ly_centered, Ly_centered))` and `r2_gls = 1.0 - (rss / tss_gls)`.
+  2. In `scripts/02_v3_pgls_ancestry_models.py` (lines 125-171), `verify_with_statsmodels()` cross-checks `beta`, `SE_unb`, `t_unb`, `p_unb`, `r2_gls`, `sigma2_unb`, and `loglik` against `statsmodels.api.GLS(y, X, sigma=Sigma)` at fixed `lambda in {0.0, 0.5, 0.91578426, 0.91580000}`.
+
+* Verified v3 Evidence:
+  - `results/v3_pgls_model_summary.tsv` & `results/v3_pgls_ancestry_summary.txt`:
+    * Primary PGLS (`S1_Primary_All_237`, n=237, p=7, df=230, lambda_ML=0.915784): `RSS = 0.243540`, `TSS_GLS = 0.458687`, `R^2_GLS = 0.469051` (at rounded `lambda = 0.9158`, `R^2_GLS = 0.46905148`, matching `reviews/darkmatter-2026-10-13/round6/root_checks/h1_v2_gls_audit.json` to 1e-15).
+    * Non-phylogenetic OLS (`lambda = 0.0`): `RSS = 0.163665`, `TSS_GLS = 0.324595`, `R^2 = 0.495786`.
+  - `results/v3_pgls_sensitivity.tsv`:
+    * `S2_Unnormalized_Brownian_VCV_237` (n=237, lambda_ML=0.916132): `R^2_GLS = 0.475264`
+    * `S3_Catalogue_Denominator_RBH_237` (n=237, lambda_ML=0.915415): `R^2_GLS = 0.468174`
+    * `S4_Restricted_c__SW-10-69-26_185` (n=185, lambda_ML=0.900804): `R^2_GLS = 0.500906`
+    * `S5_Dominant_Family_JAJPHT01_Omitted_97` (n=97, lambda_ML=0.901145): `R^2_GLS = 0.444105`
+    * `S6_Same_Class_Comparators_SW_plus_E2_236` (n=236, lambda_ML=0.893376): `R^2_GLS = 0.475040`
+    * `S7_With_Caller_Complete_Proxy_232` (n=232, lambda_ML=0.913489): `R^2_GLS = 0.483091`
+  - `results/v3_pgls_statsmodels_verification.tsv`:
+    * Maximum absolute discrepancies between custom Cholesky GLS and `statsmodels.GLS`: `max_abs_diff_beta = 5.16e-12`, `max_abs_diff_se = 3.15e-13`, `max_abs_diff_r2 = 4.44e-15`.
+
+--------------------------------------------------------------------------------
+C2. Separate ML vs unbiased residual variance, use exact Student-t CIs and scientific-notation p-values, and report profile-likelihood CI for Pagel's lambda
+--------------------------------------------------------------------------------
+* Defect in v2:
+  `02_pgls_ancestry_models.py` used ML variance `sigma2 = rss / n` for standard errors, combined Student-t p-values (`df = n - p`) with normal `1.96 * se` confidence intervals, formatted small p-values as `0.000000`, and reported `lambda_ML = 0.9158` as a point estimate without its profile-likelihood confidence interval or conditioning statement.
+
+* Executed v3 Repair:
+  1. In `scripts/02_v3_pgls_ancestry_models.py` (lines 89-118), `sigma2_ml = rss / n` is used strictly inside the Gaussian profile log-likelihood `loglik`, whereas `sigma2_unb = rss / (n - p)` (`df_resid = n - p`) is used for `se_unb`, `t_unb = beta / se_unb`, two-sided `p_unb = 2 * scipy.stats.t.sf(|t_unb|, df=n-p)` formatted in scientific notation (`:.6e`), and exact 95% Student-t confidence intervals `beta +/- t_{0.975, n-p} * se_unb` (`t_crit = 1.970332` for `df = 230`). Both `se_unb` and `se_ml` are tabulated side-by-side.
+  2. In `scripts/02_v3_pgls_ancestry_models.py` (lines 174-224), `profile_pagel_lambda()` computes the 95% profile-likelihood confidence interval for `lambda` (`{lambda : 2 * [logL(lambda_ML) - logL(lambda)] <= chi2_{1, 0.95} = 3.841459}`) via root-finding (`brentq`) and evaluates fixed-lambda GLS models across `lambda in {0.0, 0.25, 0.50, 0.75, lambda_ci_low, lambda_ML, lambda_ci_high, 1.0}`.
+  3. `DESIGN.md` (Section 3.3) and `DOSSIER.md` (Sections 4.2-4.3) explicitly state that standard errors and Student-t confidence intervals are conditional on fixed `lambda = lambda_ML` and do not propagate `lambda` estimation uncertainty, alongside the full trajectory of estimates across the 95% profile-likelihood interval for `lambda`.
+
+* Verified v3 Evidence:
+  - `results/v3_pgls_model_summary.tsv`, `results/v3_pgls_lambda_profile.tsv`, `results/v3_pgls_sensitivity.tsv`:
+    * Primary model (`S1_Primary_All_237`, n=237, p=7, df=230):
+      - `lambda_ML = 0.915784`, 95% profile-likelihood CI `[0.846303, 0.957823]`, LRT vs `lambda=0`: `2*Delta_logL = 229.5585` (`p = 7.4411e-52`).
+      - `sigma2_unb = 0.00105887` vs `sigma2_ml = 0.00102759`.
+      - `aai`: `beta = +0.001704`, `SE_unb = 0.000407` (`SE_ML = 0.000401`), `t_unb = +4.1847`, two-sided `p_unb = 4.065008e-05`, conditional 95% Student-t CI `[+0.000902, +0.002506]`. Across the 95% profile CI for `lambda` (`[0.846303, 0.957823]`), `beta_AAI` ranges from `+0.001790` (`p = 5.848901e-06`, CI `[+0.001030, +0.002550]`) to `+0.001613` (`p = 2.511684e-04`, CI `[+0.000758, +0.002467]`).
+      - `frac_rbh_desert`: `beta = -0.137484`, `SE_unb = 0.019456` (`SE_ML = 0.019167`), `t_unb = -7.0664`, two-sided `p_unb = 1.879206e-11`, conditional 95% Student-t CI `[-0.175819, -0.099149]`. Across `lambda in [0.846303, 0.957823]`, `beta_RBH` ranges from `-0.139789` (`p = 1.820232e-11`, CI `[-0.178736, -0.100841]`) to `-0.133697` (`p = 3.898294e-11`, CI `[-0.171642, -0.095753]`).
+
+--------------------------------------------------------------------------------
+C3. Replace post-hoc one-sided hypothesis framing with two-sided exploratory tests
+--------------------------------------------------------------------------------
+* Defect in v2:
+  `DESIGN.md` and `DOSSIER.md` framed `beta_AAI > 0` as a confirmatory directional expectation after observing `r = +0.292` in Round 5, while computing two-sided p-values.
+
+* Executed v3 Repair:
+  `DESIGN.md` (Section 1, rewritten before v3 computation), `DOSSIER.md` (Sections 1 & 4), and `scripts/02_v3_pgls_ancestry_models.py` state two-sided exploratory hypotheses (`H0: beta_AAI = 0 vs H1: beta_AAI != 0` and `H0: beta_RBH = 0 vs H1: beta_RBH != 0`), with explicit falsification criteria and no post-hoc confirmatory directional claim.
+
+--------------------------------------------------------------------------------
+C4. Match denominators in the algebraic permutation illustration, remove disjoint-set claims, and frame count scaling descriptively
+--------------------------------------------------------------------------------
+* Defect in v2:
+  1. `03_reconciled_coupling_and_accessory.py` compared an observed correlation using mixed denominators (`n_dark / n_proteins_cat` vs `aai_n_rbh / n_prot_aai`, `rho = -0.3942`) against a permutation dividing both permuted numerators by `n_proteins_cat`.
+  2. `DESIGN.md` and `DOSSIER.md` claimed that `N_dark` and `N_RBH` form a disjoint partition (`N_dark + N_RBH <= N_prot`) and treated differential count scaling (`rho = +0.946` vs `+0.329`) as a proven cause of the negative ratio correlation.
+
+* Executed v3 Repair:
+  1. In `scripts/03_v3_coupling_and_comparator_audit.py` (lines 79-185), observed and permuted ratio correlations (`10,000` independent numerator permutations, `seed = 42`, plus-one empirical p-value `(k + 1) / (B + 1)`) are computed on **strictly identical denominators**:
+     - Both divided by `n_proteins_cat` (`n_dark / n_proteins_cat` vs `aai_n_rbh / n_proteins_cat`), AND
+     - Both divided by `n_prot_aai` (`n_dark / n_prot_aai` vs `aai_n_rbh / n_prot_aai`).
+  2. All disjoint-set claims (`N_dark + N_RBH <= N_prot`) are removed from `DESIGN.md`, `DOSSIER.md`, and v3 scripts. `DESIGN.md` (Section 2.2) and `DOSSIER.md` (Section 6.2) explicitly explain why a gene can be counted in both `N_dark` (catalogue call lacking UniRef50/functional annotation) and `N_RBH` (single-genome Pyrodigal call with a DIAMOND RBH to an uncharacterized protein in an external GTDB/MGnify MAG).
+  3. The independent-numerator permutation is explicitly labeled strictly as an algebraic illustration of dividing by a common variable denominator (not a biological null), and count-scaling correlations with `n_proteins_cat` / `n_prot_aai` are framed strictly as descriptive empirical associations.
+
+* Verified v3 Evidence:
+  - `results/v3_coupling_and_comparator_audit.tsv` & `results/v3_coupling_and_comparator_summary.txt`:
+    * In `c__SW-10-69-26` (n=185):
+      - Shared catalogue denominator (`n_proteins_cat`): observed `rho = -0.395303` (`p = 2.565575e-08`) vs algebraic permutation mean `rho = +0.301737` (95% interval `[+0.1789, +0.4194]`, plus-one `p = 9.999000e-05`).
+      - Shared Pyrodigal denominator (`n_prot_aai`): observed `rho = -0.381418` (`p = 8.481197e-08`) vs algebraic permutation mean `rho = +0.302959` (95% interval `[+0.1807, +0.4199]`, plus-one `p = 9.999000e-05`).
+    * In `All Thermoplasmatota` (n=237):
+      - Shared catalogue denominator (`n_proteins_cat`): observed `rho = -0.248353` (`p = 1.116208e-04`) vs algebraic permutation mean `rho = +0.305434` (95% interval `[+0.1966, +0.4114]`, plus-one `p = 9.999000e-05`).
+      - Shared Pyrodigal denominator (`n_prot_aai`): observed `rho = -0.234877` (`p = 2.643639e-04`) vs algebraic permutation mean `rho = +0.305432` (95% interval `[+0.1956, +0.4118]`, plus-one `p = 9.999000e-05`).
+
+--------------------------------------------------------------------------------
+C5. Correct comparator provenance ("external GTDB/MGnify reference genomes") and report exact empirical AAI ranges
+--------------------------------------------------------------------------------
+* Defect in v2:
+  `DESIGN.md` and `DOSSIER.md` referred to nearest AAI comparators as "non-desert isolates" and stated an AAI range of `50.9%-80.0%`, whereas the 237 nearest comparators are `229` `GTDB_r232_rep` and `8` `MGnify` genomes (`142` soil MAGs, `3` marine sediment MAGs, `92` unannotated GTDB-only) and the empirical AAI range is `48.678%-80.041%` across all 237 reps (`50.389%-80.041%` across the 236 `c__SW-10-69-26 + c__E2` reps).
+
+* Executed v3 Repair:
+  In `scripts/03_v3_coupling_and_comparator_audit.py` (lines 48-77), `DESIGN.md` (Section 2.1), and `DOSSIER.md` (Section 6.1), we cross-referenced `thermo_aai_summary.tsv` with `thermo_tree_taxa.tsv`, replaced all "non-desert isolate" claims with exact source-verified terminology ("external GTDB r232 and MGnify reference genomes, predominantly uncultured environmental MAGs"), and tabulated exact empirical AAI quantiles across every taxonomic stratum. Furthermore, sensitivity model `S6_Same_Class_Comparators_SW_plus_E2_236` (`n=236`) explicitly verifies that excluding the single `c__Thermoplasmata` genome (`AAI = 48.678%`, matched to a between-class comparator) leaves primary PGLS conclusions unchanged (`beta_AAI = +0.001568, p = 8.387793e-05`; `beta_RBH = -0.145879, p = 7.485088e-13`).
+
+* Verified v3 Evidence:
+  - `results/v3_comparator_metadata_summary.tsv`:
+    * `All_Thermoplasmatota_237` (n=237): `229` `GTDB_r232_rep`, `8` `MGnify` (`32` unique accessions; `142` soil, `3` marine sediment, `92` unannotated GTDB-only); AAI min `48.678%`, Q25 `58.763%`, median `64.774%`, mean `63.727%`, Q75 `66.392%`, max `80.041%`.
+    * `Same_Class_Comparators_SW_plus_E2_236` (n=236): AAI min `50.389%`, median `64.781%`, max `80.041%`.
+    * `Class_c__SW-10-69-26_185` (n=185): AAI min `50.389%`, median `64.794%`, max `80.041%`.
+    * `Class_c__E2_51` (n=51): AAI min `58.763%`, median `64.185%`, max `76.964%`.
+    * `Class_c__Thermoplasmata_1` (n=1): AAI `48.678%`.
+
+--------------------------------------------------------------------------------
+O1, O2, and Additional Reproducibility / Closure Audits
+--------------------------------------------------------------------------------
+1. Outgroup Rooting Equivalence (`O1`):
+   `scripts/01_v3_input_manifest_and_phylo_audit.py` (lines 118-235) compared midpoint rooting against explicit outgroup rooting at the MRCA of the `30` `Halobacteriota` (`17`) and `Thermoproteota` (`13`) outgroup tips defined in `thermo_tree_taxa.tsv`. Because the basal split in `thermo_tree.nwk` separates those 30 outgroup tips from the 1,884 `Thermoplasmatota` ingroup tips, both rootings produce identical 237-tip VCV and correlation matrices (`max_abs_diff_vcv = 0.000e+00`, `max_abs_diff_corr = 0.000e+00`; `results/v3_phylo_vcv_validation.json`).
+2. Enumerated SHA-256 Input Checksum Manifest (`O2`):
+   `scripts/01_v3_input_manifest_and_phylo_audit.py` (lines 38-115) generated `INPUTS.tsv` and `results/v3_input_file_manifest.tsv` enumerating all `247` raw input entries (`10` core tables/trees/scripts + `232` readable CheckM2 `.faa` files with exact SHA-256 hashes and byte sizes + `5` missing `48PRr1__SemiBin_*` `.faa` entries explicitly documented with status `missing_in_checkm2_protein_files`), eliminating all `DYNAMIC` placeholders.
+3. Mann-Whitney U Statistic Correction (`O2`):
+   `scripts/03_v3_coupling_and_comparator_audit.py` (lines 198-221) reports the exact `scipy.stats.mannwhitneyu` statistic `U = 8292.5` (`U_min = 1142.5`, two-sided `p = 1.224554e-16`) comparing distinct dark family counts in `c__SW-10-69-26` (median `244.0`, IQR `153.0-363.0`) vs `c__E2` (median `77.0`, IQR `53.0-115.0`), correcting the v2 transcription error (`1,180.5`).
+4. Programmatic Closure Assertions:
+   `results/v3_closure_verification.json` records programmatic pass/fail checks confirming `n=237` cohort coverage, VCV symmetry and positive eigenvalues, `statsmodels.GLS` agreement, CI ordering (`ci_low < beta < ci_high`), valid p-values (`0 < p <= 1`), and matched-denominator permutation verification.

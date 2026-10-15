@@ -1,0 +1,1 @@
+The white text flagged on page 25 consists of legitimate sample counts on the Figure 1 heatmap. The tiny text on page 26 consists of Figure 2 numerical denominators; these warrant a readability correction. Neither contains instructions. See pdf_integrity.txt.

@@ -1,0 +1,41 @@
+{
+  "cluster": "ORIX",
+  "login_host": "orix-login.kaust.edu.sa",
+  "partition": "freecycle-h200",
+  "qos": "freecycle",
+  "gres": "nvidia_h200:1",
+  "worker_type": "NVIDIA H200 (141 GiB SXM5)",
+  "driver_version": "580 branch (DKMS)",
+  "pixi_environment": {
+    "path": "/home/hohndor/pixi-envs/gspa-glm",
+    "python_executable": "/home/hohndor/pixi-envs/gspa-glm/.pixi/envs/default/bin/python",
+    "python_version": "3.10",
+    "torch_version": "2.10.0",
+    "cuda_compiled": "12.x",
+    "transformers_version": "4.57.6",
+    "sentencepiece_version": "0.2.1",
+    "safetensors_version": "0.7.0"
+  },
+  "prostt5_model": {
+    "huggingface_repo": "Rostlab/ProstT5",
+    "raw_cache_path": "/mnt/data/u/hohndor/hf_cache/hub/models--Rostlab--ProstT5",
+    "staged_model_path": "/mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/model",
+    "snapshots": {
+      "main_ref": "d7d097d5bf9a993ab8f68488b4681d6ca70db9e5",
+      "pr2_safetensors_ref": "af1c8468b4d20bd4e5ea99babdaab08dc941b791"
+    },
+    "architecture": "T5EncoderModel",
+    "direction": "AA2fold",
+    "prefix": "<AA2fold>",
+    "hidden_dim": 1024,
+    "pooling": "mean_pooling_excluding_special_tokens"
+  },
+  "guard": {
+    "script": "require_slurm_worker.sh",
+    "enforces": [
+      "rejection of login hosts",
+      "active running Slurm allocation requirement",
+      "execution host verified against allocated node list"
+    ]
+  }
+}

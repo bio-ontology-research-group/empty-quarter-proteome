@@ -1,0 +1,790 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P0C0E9",
+  "secondaryAccessions": [
+    "O87533",
+    "Q99XI1"
+  ],
+  "uniProtkbId": "ECFA_STRPY",
+  "entryAudit": {
+    "firstPublicDate": "2005-09-13",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2005-09-13",
+    "entryVersion": 95,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Streptococcus pyogenes",
+    "taxonId": 1314,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Bacillota",
+      "Bacilli",
+      "Lactobacillales",
+      "Streptococcaceae",
+      "Streptococcus"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01710"
+          }
+        ],
+        "value": "Energy-coupling factor transporter ATP-binding protein EcfA"
+      },
+      "shortNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01710"
+            }
+          ],
+          "value": "ECF transporter A component EcfA"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01710"
+            }
+          ],
+          "value": "7.-.-.-"
+        }
+      ]
+    }
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_01710"
+          }
+        ],
+        "value": "ecfA"
+      },
+      "synonyms": [
+        {
+          "value": "cbiO"
+        },
+        {
+          "value": "stpA"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01710"
+            }
+          ],
+          "value": "ATP-binding (A) component of a common energy-coupling factor (ECF) ABC-transporter complex. Unlike classic ABC transporters this ECF transporter provides the energy necessary to transport a number of different substrates"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01710"
+            }
+          ],
+          "value": "Forms a stable energy-coupling factor (ECF) transporter complex composed of 2 membrane-embedded substrate-binding proteins (S component), 2 ATP-binding proteins (A component) and 2 transmembrane proteins (T component)"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000255",
+                "source": "HAMAP-Rule",
+                "id": "MF_01710"
+              }
+            ],
+            "value": "Cell membrane",
+            "id": "SL-0039"
+          },
+          "topology": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000255",
+                "source": "HAMAP-Rule",
+                "id": "MF_01710"
+              }
+            ],
+            "value": "Peripheral membrane protein",
+            "id": "SL-9903"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_01710"
+            }
+          ],
+          "value": "Belongs to the ABC transporter superfamily. Energy-coupling factor EcfA family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Erroneous initiation",
+      "sequence": "AAC61484.1",
+      "note": "Extended N-terminus.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 279,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Energy-coupling factor transporter ATP-binding protein EcfA",
+      "featureId": "PRO_0000092104"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 5,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 240,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "ABC transporter",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01710"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 40,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 47,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:30616"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_01710"
+        }
+      ],
+      "ligand": {
+        "name": "ATP",
+        "id": "ChEBI:CHEBI:30616"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0067",
+      "category": "Ligand",
+      "name": "ATP-binding"
+    },
+    {
+      "id": "KW-1003",
+      "category": "Cellular component",
+      "name": "Cell membrane"
+    },
+    {
+      "id": "KW-0472",
+      "category": "Cellular component",
+      "name": "Membrane"
+    },
+    {
+      "id": "KW-0547",
+      "category": "Ligand",
+      "name": "Nucleotide-binding"
+    },
+    {
+      "id": "KW-1278",
+      "category": "Molecular function",
+      "name": "Translocase"
+    },
+    {
+      "id": "KW-0813",
+      "category": "Biological process",
+      "name": "Transport"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "9733702",
+        "citationType": "journal article",
+        "authors": [
+          "Ashbaugh C.D.",
+          "Alberti S.",
+          "Wessels M.R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9733702"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.180.18.4955-4959.1998"
+          }
+        ],
+        "title": "Molecular analysis of the capsule gene region of group A Streptococcus: the hasAB genes are sufficient for capsule expression.",
+        "publicationDate": "1998",
+        "journal": "J. Bacteriol.",
+        "firstPage": "4955",
+        "lastPage": "4959",
+        "volume": "180"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "282",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AF082738",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAC61484.1"
+        },
+        {
+          "key": "Status",
+          "value": "ALT_INIT"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_002992388.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NZ_AP014596.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P0C0E9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P0C0E9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "1314.SD89_09570",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "1314-SD89_09570",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "69901613",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|1314.168.peg.1021",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG1122",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0043190",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:ATP-binding cassette (ABC) transporter complex"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005524",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:ATP binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0016887",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:ATP hydrolysis activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0042626",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:ATPase-coupled transmembrane transporter activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0032217",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:riboflavin transmembrane transporter activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-ARBA"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd03225",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ABC_cobalt_CbiO_domain1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.300:FF:000224",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Energy-coupling factor transporter ATP-binding protein EcfA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.300",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "P-loop containing nucleotide triphosphate hydrolases"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR003593",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "AAA+_ATPase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR003439",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ABC_transporter-like_ATP-bd"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR017871",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ABC_transporter-like_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015856",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ABC_transpr_CbiO/EcfA_su"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR050095",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ECF_ABC_transporter_ATP-bd"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR030947",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EcfA_1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR027417",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "P-loop_NTPase"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR04520",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ECF_ATPase_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF010156",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK13635.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF010167",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK13648.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43553:SF24",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ENERGY-COUPLING FACTOR TRANSPORTER ATP-BINDING PROTEIN ECFA1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43553",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HEAVY METAL TRANSPORTER"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00005",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ABC_tran"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF27471",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "EcfA1_C"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00382",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "AAA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF52540",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "P-loop containing nucleoside triphosphate hydrolases"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00211",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ABC_TRANSPORTER_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS50893",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "ABC_TRANSPORTER_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51246",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CBIO"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MSAIIELKKVTFNYHKDQEKPTLDGVSFHVKQGEWLSIIGHNGSGKSTTIRLIDGLLEPESGSIIVDGDLLTITNVWEIRHKIGMVFQNPDNQFVGATVEDDVAFGLENKGIAHEDIKERVNHALELVGMQNFKEKEPARLSGGQKQRVAIAGAVAMKPKIIILDEATSMLDPKGRLELIKTIKNIRDDYQLTVISITHDLDEVALSDRVLVMKDGQVESTSTPEQLFARGDELLQLGLDIPFTTSVVQMLQEEGYPIDYGYLTEKELENQLCQLISKM",
+    "length": 279,
+    "molWeight": 31113,
+    "crc64": "D52BA8B68FD32166",
+    "md5": "4867DDCF5321409FF92205B6180FA659"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 1,
+      "SEQUENCE CAUTION": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 1,
+      "Binding site": 1
+    },
+    "uniParcId": "UPI00000DAAEC"
+  }
+}

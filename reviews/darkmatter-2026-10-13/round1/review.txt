@@ -1,0 +1,458 @@
+I've finished all the read-only checks; writing the report now.
+
+P4 DARK PROTEOME — ROUND 1 INDEPENDENT REFEREE REPORT
+Manuscript: manuscript/main.tex (identical to paper/main.tex), "Known phyla, unknown proteome: a controlled census of the Rub' al-Khali soil metagenome"
+Reviewer role: independent critical scientific reviewer, round 1 of 3. Review only: no manuscript, code or data was edited and no job was submitted.
+
+======================================================================
+SUMMARY
+======================================================================
+
+The manuscript describes a genome-resolved catalogue from a hyperarid sand sea: 551 samples, 5 expeditions, 5,438 species representatives. It makes five claims about the sequence-dark fraction:
+(i) 9.89% of genome-resolved clusters are dark, and these clusters behave as coding sequence (recurrence, persistence, dN/dS against a matched control and a +1-frame null, reappearance in cultured genomes);
+(ii) dark proteins are strain-variable accessory content (80% vs 16% reciprocal sharing between cultured and MAG genomes of the same species);
+(iii) lineage, not genome quality, sets darkness, and a Thermoplasmatota radiation is 4.5 to 6.5 times darker than matched genomes;
+(iv) structural novelty is "architectural, not local" against a blinded known-fold floor;
+(v) biome-matched references explain more of the dark proteome than generic depth.
+
+The design is unusually well controlled for this literature. Many disclosures are honest: the frame-null caveat, the TM normalisation dependence, and the control asymmetries. Most headline numbers reproduce exactly from the snapshot tables.
+
+The problems are in scope and inference. Several headline claims are stated more broadly than the analyses license:
+- The coding tests apply to 12.5% of dark representatives, not to "the unknown tenth".
+- The length and partiality statistics quoted for the genome-resolved census are assembly-wide values.
+- The cultured-genome result that carries the abstract and Discussion comes from an analysis its own README marks "EXPLORATORY, NOT REGISTERED". One of its 23 pairs is the E. coli genome that the authors' own no-template control identifies as a reagent contaminant.
+- The dN/dS control is not matched on divergence. At matched divergence the dark families are markedly less constrained.
+- The structural floor uses PDB-derived controls searched against references that contain them, with no self-hit exclusion. It does not calibrate the near-threshold failure mode the candidates show.
+- "Architectural not local" is not demonstrated; the Pfam data point the other way.
+
+None of these is fatal to a solid paper. Most can be fixed with re-scoping and a small set of targeted analyses that use data already on IBEX. Figures 2 and 3 are placeholders and Figure 1 is the v1 illustration; I treat them as incomplete, not as evidence.
+
+Evidence levels used below:
+- [SOURCE]: code or README inspected.
+- [TABLE]: I recomputed the value from a snapshot table.
+- [CONFIRMED]: a manuscript statement contradicts the code or data.
+- [PLAUSIBLE]: needs a test.
+
+======================================================================
+MAJOR COMMENTS
+======================================================================
+
+R1-01 — CRITICAL — CONFIRMED. The "coding" evidence covers 12.5% of the dark set, but the abstract and Discussion generalise it to all dark clusters.
+
+Manuscript text:
+- Abstract: "A tenth of their protein clusters (9.89%) have no reference homolog. These form 106,042 families, 79.4% recurring in all five expeditions, under purifying selection."
+- Discussion: "The unknown tenth of this soil proteome is the accessory genome ... The same 106,042 families return in every expedition ... so they are biology."
+
+Evidence:
+- darkfam_basis_clean/results/family_size_hist.txt: of the 4,292,446 genome-resolved dark representatives, 3,353,521 are singletons and 196,450 are in two-member clusters at 50%/80%. Only 108,826 clusters have three or more members.
+- After the sample/site gate (fam_2_recurrence.sh lines 92–98), the admitted families hold 536,437 members, 12.5% of dark representatives.
+- The manuscript names only "the 782,616 clusters with one or two variants and the 2,784 within-genome paralog sets". It omits roughly 2.77 million non-recurrent singletons and doubletons that were never tested.
+
+Two further scope problems:
+- "Their protein clusters" implies the 5,438 genomes. The 9.89% denominator is clusters with any member on any of the 37,949 unrefined HQ/MQ bins of both binnings (darkclean_5_mag.sh). The per-representative instance rate is 7.85% (1,600,067/20,379,930; lineage v2_scan_report). SOURCE_AUDIT.md flags the same conflation in a Flash summary; the abstract repeats it.
+- Persistence is measured on families admitted for being recurrent (≥3 samples, ≥2 sites), so it is partly conditioned on its own outcome.
+
+Fix: re-scope the abstract, results and Discussion to "the recurrent dark families". Add the full admission funnel to Fig 2a, at representative, protein-instance and family level. Report what share of dark protein instances, and of per-genome darkness, the admitted families represent. For the non-admitted 87.5%, either test a subset (dN/dS is impossible for singletons, but shadow-ORF and coding-potential screens are not; see R1-03) or state that it is untested.
+
+R1-02 — CRITICAL — CONFIRMED. The length and partiality figures come from a different scope from the census they are attached to.
+
+Manuscript text:
+- "Restricting to clusters ... gives the genome-resolved census ... Length, not assembly completeness, separates dark from annotated clusters: 76% of dark representatives are shorter than 100 residues against 30% of all representatives, while partial gene calls are equally common in both (86.7% and 87.5%)."
+- Also: "(the 76% of dark representatives under 100 residues are outside this test)".
+
+Evidence:
+- darkmatter_clean/06_dark_lengths/SUMMARY.txt and all_reps_length_summary.txt give the assembly-wide figures: 52,967,341/69,938,628 = 75.7% under 100 aa; 29.7% of all 449M representatives; 60,612,661/69,938,628 = 86.7% partial; 393,114,691/449,265,306 = 87.5% partial.
+- The genome-resolved dark set (mag_dark_length_summary.txt; cultured step3_length_summary; current_table_checks.json) is 65.83% under 100 aa and 56.40% incomplete.
+- The genome-resolved denominator of all 43.4M representatives was never profiled, so "equally common in both" is untested at that scope.
+- The comparator is "all representatives", which includes the dark ones, not annotated representatives.
+- The structural screen covers 1,466,943/4,292,446 = 34.2% of the genome-resolved set, so the excluded share is 65.8%, not 76%.
+
+Fix: run the darkclean_7 profile on the 43.4M genome-resolved representatives, split dark vs non-dark. Report dark rate by length × partial stratum (complete calls ≥100 aa at minimum). Correct both sentences.
+
+R1-03 — MAJOR — CONFIRMED (logic) / PLAUSIBLE (magnitude). Three of the four "coding" tests test the DNA, not the reading frame. The frame null does not exclude shadow ORFs.
+
+Manuscript text: "Four tests separate encoded biology from spurious open reading frames", and in the Discussion: "spurious open reading frames do not recur in most samples, persist across five expeditions, sit under purifying selection ... or reappear in closed cultured genomes."
+
+Problems:
+- A spurious ORF called on a real, persistent genome recurs, persists and reappears wherever that genome does. Recurrence, persistence and cultured reappearance establish that the DNA is real, not that it is coding. Only the dN/dS legs bear on coding status.
+- A +1-shift null distinguishes the annotated frame from one alternative frame only. An antisense shadow ORF lying in the phase where its third positions coincide with the third positions of a real gene on the other strand inherits low dN/dS by projection. This is the overlapping-gene problem analysed by Nelson et al. 2020 (OLGenie; full text verified). Long antisense ORFs are common in high-GC genomes, and Actinomycetota carry 32.8% of attributable dark families.
+- 7.6% of evaluable families have shifted-frame dN/dS at or below the annotated frame [TABLE: 1 − 0.9239 over 9,029 pairs]. 37.7% of families have null dN/dS below 1.
+
+Smallest decisive analysis:
+(a) Search the other five frames, at least the reverse complement, of admitted-family member CDS against UniRef50. Any hit marks a shadow of a known gene.
+(b) Run AntiFam on the admitted families.
+(c) Check opposite-strand overlap with non-dark gene calls on the same contigs.
+(d) Report a family-level frame-specificity flag (real < null) and carry it into downstream statistics.
+(e) Remove "spurious ORFs do not recur/persist" from the Discussion.
+
+R1-04 — MAJOR — CONFIRMED by recomputation. The dN/dS "matched control" is not matched on divergence. At matched divergence, dark families are much less constrained.
+
+Manuscript text: "under purifying selection of the same kind and order as known genes measured on the same instrument", and Methods: "Both push the control toward more reference absence and lower dN/dS, so both comparisons ... are conservative."
+
+Evidence:
+- fam_5_control.sh lines 102–148 draw a length-stratified random sample of about 4.29M from roughly 39M non-dark genome-resolved representatives, then cluster that subsample. The dark arm clusters all dark representatives. Subsampling removes close relatives, so control families are more divergent.
+- [TABLE, dnds.tsv]: median family mean_dS is 0.607 dark vs 0.863 control; median mean_pid is 0.735 vs 0.674.
+- Stratified medians of the family median dN/dS:
+  dS ≤ 0.10: dark 0.582 (n=9,201) vs control 0.321 (n=690)
+  dS 0.10–0.25: 0.540 vs 0.332
+  dS 0.25–0.50: 0.496 vs 0.463
+  dS 0.50–1.0: 0.435 vs 0.452
+  dS 1–2: 0.254 vs 0.293
+  pid > 0.95: 0.428 vs 0.162 (7,213 vs 774 families)
+  pid 0.90–0.95: 0.528 vs 0.234
+- The pooled 0.425 vs 0.388 therefore reflects a composition difference. Among closely related sequences, dark families sit at roughly 1.7 to 2.6 times the control's dN/dS. That fits a mixture of weakly constrained or non-coding members, or of recent accessory genes (the time-dependence of dN/dS).
+- The "conservative" claim is asserted, not shown. The missing sample/site gate on the control retains within-sample sets of unknown dN/dS behaviour.
+
+Fix:
+- Rebuild the control from the full non-dark pool, with identical sample/site admission.
+- Match or stratify on dS (or pid), phylum and GC.
+- Report stratified medians in the main text and drop the "conservative" sentence unless it is demonstrated.
+
+R1-05 — MODERATE — CONFIRMED. The frame-null denominators are unstated, and the mechanism needs disclosure.
+
+Manuscript text: "on a seeded subset of 10,000 dark families ... give a median pairwise dN/dS of 1.087 (37.7% below one) ... 0.427 (97.0% below one), and the shifted frame is the higher of the two in 92.4% of families."
+
+Evidence:
+- The subset was drawn from families with ≥3 CDS in the index (fam_6c_dnds.sh lines 47–56), not from the 97,200 evaluable families.
+- Outputs: 9,148 null, 9,182 annotated, 9,029 paired (current_table_checks.json; reproduced). Methods says "10,000 evaluable dark families".
+- [TABLE] Paired, null dS is 0.53 times the annotated-frame dS and null dN is 1.34 times. The value above 1 is largely a mechanical rotation of the codon-position substitution pattern; the README says so, the manuscript does not.
+- Only 94.2% of subset families reproduce the shipped full-arm value exactly. In the masked true-frame arm, members with internal stops are retained instead of dropped. That means some annotated-frame CDS contain internal stops, which should not happen for Pyrodigal calls. This points to excision/phase problems for some members (slice_cds.py takes coordinates verbatim, including for partial genes).
+
+Fix:
+- State n for each statistic.
+- Report the fraction of member CDS with internal stops in the annotated frame and why.
+- Soften "A set dominated by spurious calls would not behave this way" to the specific alternative excluded.
+
+R1-06 — CRITICAL — CONFIRMED. The cultured-vs-MAG accessory claim rests on an unregistered exploratory analysis that includes a known contaminant, and alternative explanations are untested.
+
+Manuscript text:
+- Abstract: "cultured and metagenome genomes share 80% of their annotated proteins but 16% of their dark ones: dark proteins are strain-variable content".
+- Discussion: "... reappear in closed cultured genomes."
+
+Evidence:
+- cultured_comparison_clean/README.md, section 3.6: "EXPLORATORY, NOT REGISTERED ... nothing in the paper rests on them." The paper's abstract rests on them.
+- The method is RBH at ≥50% identity and ≥50% coverage of both proteins, with -k 5. The Methods instead describe a -k 500 reciprocal-coverage search for a different analysis. The pair anatomy is not described in Methods at all.
+- One of the 23 pairs is V42PRr2__single_SemiBin_33, Escherichia coli (step3_paired_by_species.tsv; mag_meta.tsv). contamination_clean/README.md line 59 identifies exactly this representative as the reagent contaminant: half of the assigned no-template-control reads, present in 316/550 samples, anti-correlated with input DNA. Pairs also include Acinetobacter baumannii, Enterococcus_B lactis and the Bacillus_A anthracis group (README caveat). The phrase "species also cultured from these soils" is therefore not safe.
+- Statistical weight is small: 1,513 dark MAG proteins pooled over 23 pairs (6 to 162 per pair). "Unchanged on complete calls ≥100 residues" rests on n = 166 dark proteins.
+- The gene callers differ. MAGs use Pyrodigal -p meta; Bakta uses Pyrodigal in single mode plus sORF and spurious-ORF filtering. A dark MAG ORF without a protein partner may simply not have been called in the culture, even though its DNA is present.
+- The MAG-unique remainder is 45.4% partial and 50.8% contig-edge, which also fits fragmentation or misbinning.
+- "Closed cultured genomes" is wrong: the median is 2 contigs and 49% are single-contig (README caveat).
+
+Smallest decisive analyses, all on existing data:
+(a) Drop E. coli and other contaminant or human-associated pairs; report n and CI.
+(b) Nucleotide-level test: align MAG dark CDS and their contigs to the paired cultured assemblies (minimap2/blastn) to separate "DNA absent" from "not called".
+(c) Re-call cultured genomes with the identical Pyrodigal -p meta and repeat.
+(d) A direct, MAG-free test of "strain-variable accessory content": five species have 9 to 49 cultured strains. Within each culture-only pangenome, classify dark vs annotated proteins as core or accessory.
+(e) Register the analysis and describe it in Methods.
+Until (b) to (d) are done, the abstract sentence should be conditional.
+
+R1-07 — MAJOR — CONFIRMED. "Named" means two different things in the paper, which creates internal contradictions.
+
+Manuscript text: abstract "all in named phyla"; Results "Every representative was placed to class rank ... The first rank without a named taxon was order for 11"; lineage section "the median dark fraction falls from 0.217 for genomes unnamed at phylum".
+
+Evidence: lineage_darkness_clean README and v2_reps.tsv [TABLE] give first_unnamed_rank = phylum for 10 genomes and class for 560 (236 of them Thermoplasmatota). The lineage section uses a "placeholder contains a digit" rule; the taxonomy section uses "empty rank".
+
+Fix: define "empty rank" vs "placeholder (alphanumeric) name" once, use the right term everywhere, and report both distributions.
+
+R1-08 — MAJOR — CONFIRMED (framing) / PLAUSIBLE (mechanism). The Thermoplasmatota contrast is matched on the wrong axis, and its mechanism is untested even though the data exist.
+
+Manuscript text:
+- Abstract: "237 species in two Thermoplasmatota classes are four to six times darker than matched genomes and carry a fifth of the dark families."
+- Results: "Matching enlarges the contrast, because the unmatched comparators of similar novelty were themselves unusually dark."
+
+Evidence:
+- The matched null (v2_matched_null.py; summary) matches on quality, abundance and prevalence, not on novelty or reference proximity, so the "similar novelty" explanation does not follow from the design.
+- At matched first-unnamed rank (class), Thermoplasmatota are 0.310 vs 0.125 for 324 other class-level genomes (README; [TABLE] reproduced). That is about 2.5×. Other class-novel phyla sit at 0.21 to 0.25 (Planctomycetota 0.210, Patescibacteriota 0.222, Bdellovibrionota 0.248).
+- The 237 pairs are one clade, so "darker in 237 of 237" is not 237 independent observations.
+- "Two classes": one representative is Thermoplasmata, so there are three classes.
+- "A fifth of the dark families" is 19.84% of 77,069 single-phylum attributable families. Attributable families are 74% of the 106,042, so the share of all families is about 14.6%.
+
+Positive check: protein density does not suggest gene fragmentation from a recoded stop codon. Thermoplasmatota have 1,070 proteins/Mb vs 1,079 for Halobacteriota and 1,008 for Actinomycetota [TABLE].
+
+Decisive analyses on existing data:
+(a) Search the 237 genomes' dark proteins against the already Pyrodigal-called 218 GTDB R232 and 29 distinct MGnify genomes of these classes (v2_thermo_relatives, unregistered). This directly measures "dark = absent from UniProt but present in known relatives".
+(b) Compute the UniRef50 dark fraction of those GTDB genomes themselves. If they are also about 30% dark, darkness is a class/reference property, not a desert property.
+(c) Report the novelty-matched contrast in the abstract alongside, or instead of, 4.5 to 6.5×.
+(d) Optionally run Codetta on a subset to close the genetic-code question cheaply.
+
+R1-09 — MAJOR — CONFIRMED (code) / PLAUSIBLE (size of bias). The structural "blinded floor" is not matched in difficulty to the candidates.
+
+Manuscript text: "Standardised to the candidates' confidence distribution, the candidate rate is 6.6 times the floor ...", and "calibrated against a 3.35% error rate on known folds".
+
+Evidence and problems:
+(a) No homolog exclusion. Controls are PDB chains and crops. 05_integrate.py best_scores takes the maximum over all hits against PDB 250101 and AFDB v6, which contain the source chain or near-identical UniProt entries. The floor therefore measures failure to retrieve one's own or a near-identical structure; the candidates by construction have no sequence homolog. ESMFold was also trained on PDB, so control models are likely memorised. Standardising on pLDDT does not fix either problem.
+(b) Selection asymmetry. Candidates were pre-selected for failing the 3Di triage against the same references; controls were not.
+(c) The failure modes differ. [TABLE, per_rep/per_control_structures.tsv]: 66 of the 101 control failures return no row at all; only 22 of the 1,031 candidates do. Candidate failures are scored rows near threshold: maximum qTM median 0.392, and 487 of 1,031 (47%) lie between 0.40 and 0.50. The headline count is highly threshold-sensitive (roughly 780 at 0.45, roughly 545 at 0.40), and the floor does not calibrate that regime.
+(d) The validation search used -e 10 with no alignment-length gate (05c_afdb.sh), so "96.7% contain a region that aligns to a known structure" is ungated.
+
+CLAUDE.md requires retrieval decomposition; the current text does not report it. The superseded version did ("74 have no row ... 534 have a retrieved row").
+
+Fix:
+- Re-score controls excluding hits at ≥30% sequence identity, or the same CATH superfamily/Pfam clan (a held-out remote-homology floor).
+- Pass controls through the same 3Di triage and condition on triage failure.
+- Report K and the floor at qTM 0.40, 0.45 and 0.50, plus the no-row/below-threshold decomposition.
+- Require minimum aligned length and E-value for the alnTM statement.
+
+R1-10 — MAJOR — CONFIRMED (overinterpretation). "Novelty is architectural, not local" is not demonstrated, and the Pfam data argue against it.
+
+Manuscript text: "what remains unmatched is the whole-protein arrangement rather than its parts"; section title "Structural novelty is architectural, not local".
+
+Evidence (pfam_candidates_clean/results/set_summary.tsv):
+- Only 8.75% of K members carry any Pfam domain.
+- Where a domain exists it covers a median 25% and leaves a median 159-residue uncovered stretch. That is enough for a domain that has no model, which is local novelty.
+- [TABLE] 65.5% of K have target-normalised TM ≥0.5. The query contains a whole known fold plus unexplained sequence, which can be a known domain with a novel domain, a known domain with a disordered or low-confidence extension, or a genuine new combination.
+- The 90.7% Pfam rate in controls is circular: PDB chains are Pfam-rich, and candidates are UniRef50-dark by construction. Q-not-K models (structurally covered) also have only 5.6% Pfam, so Pfam does not discriminate here.
+- SOURCE_AUDIT.md flags the same overreach in the Flash synthesis; the manuscript shares it.
+
+Fix: segment the 2,838 confident models into domains (Chainsaw or Merizo, both in the verified literature set) and search each domain separately. Classify the 1,031 as (i) all domains known (architectural), (ii) at least one confident domain with no match (local candidate), or (iii) unmatched region of low pLDDT or disorder. Retitle according to the result.
+
+R1-11 — MAJOR — PLAUSIBLE. Persistence by read mapping is permissive and has no null model.
+
+Manuscript text: "79.4% of families are detected in all five expeditions (94.8% in at least four)".
+
+Evidence:
+- fam_4_coverm_array.sh runs coverm contig against only the 536,437 member CDS (-p minimap2-sr -m tpm covered_fraction), with no identity, aligned-fraction or minimum-read filter set in the command. Presence is any member with covered fraction ≥0.5, about one to two reads for a 200-nt gene. Reads from homologs outside the index have nowhere else to go.
+- The README audit already shows this rule reverses the length–occupancy relation.
+- There is no null. Trip 2 has 37 samples and the others 85 to 210 (lineage ecology README). A family present in the median 98 of 551 samples, placed at random, would almost always hit all five expeditions. "All five" therefore largely restates prevalence.
+
+Fix:
+- Competitive mapping against all genome-resolved CDS or contigs, with ≥95% identity and ≥2 reads or an aligned-fraction gate.
+- A permutation null shuffling expedition labels (within site), preserving family prevalence.
+- Sequencing batch as covariate (R1-12).
+
+R1-12 — MAJOR — CONFIRMED. The sequencing platform is misstated, and platform/kit is partly confounded with expedition.
+
+Manuscript text: "sequenced on an Illumina NovaSeq 6000".
+
+Evidence:
+- code/ena_deposit/wgs_runs.tsv and ena_summary.json: 554 runs (551 samples), 333 NovaSeq X and 221 NovaSeq 6000.
+- [TABLE] trip × platform × kit:
+  trip5: 91/91 NovaSeq X with QIAseq
+  NEBNext only in trips 1 and 3
+  trip4: 69 NovaSeq 6000 with QIAseq and 16 NovaSeq X
+  Four sequencing batches (A_2024, B_20251127, C_20251230, D_20260308), with trip-1 samples spread over three of them, so storage time differs.
+- Three samples (F2Dr1, F5Sr2, F9PRr2) have two runs; the manuscript does not say how they were combined.
+- The public ENA filereport returns 0 runs; receipts are private.
+
+Fix:
+- Correct the platform and kit description per sample (keep 551 samples as the unit; do not replace it with 554 runs).
+- State how duplicated runs were merged.
+- Add batch/platform sensitivity to the expedition, position and environment analyses.
+- Make data available for review.
+
+R1-13 — MAJOR — CONFIRMED (overclaim) / PLAUSIBLE (confound). The rarefaction does not isolate "biome-matched" content.
+
+Manuscript text: "a rarefaction model that reproduces the observed MGnify90 absence to 0.15 percentage points"; Discussion "biome-matched references explain 24 points more ... Per sequence added, soil references grow faster in coverage by sampling under-sampled biomes".
+
+Evidence (specificity_clean/README.md):
+- At p = 1 the expectation is computed from the same MGnify90 search, so the 0.15-point agreement is a consistency check, not validation of the p < 1 extrapolation.
+- The non-desert, genome-level SPIRE (all biomes) gains +21.30 points and SMAG (soil MAGs, unregistered) +27.69, close to the desert union's +24.33. The advantage may be soil/assembled-genome content, or MGnify90 dilution by non-soil clusters, rather than "biome-matched (desert)".
+- The desert catalogues are raw, unclustered per-study gene calls (redundant, fragment-rich); MGnify90 is 90%-clustered.
+- The control's large negative Atacama gap (−29.97) shows the random-slice assumption fails for narrow catalogues.
+- Occupancy of absent families uses the biased presence matrix of R1-11.
+
+Fix:
+- Validate the model with two or three real random subsamples of MGnify90.
+- Compare against a size-matched non-desert soil catalogue (e.g. a soil-biome MGnify subset or SMAG minus arid MAGs) to isolate "desert" from "soil".
+- Decide on SMAG registration.
+- Restate the claim as "catalogues assembled from soils/genomes explain more than a random MGnify90 slice" unless the desert-specific comparison holds.
+
+R1-14 — MAJOR — CONFIRMED (data handling) / PLAUSIBLE (inflation). The environmental statistics have censoring, pseudo-replication and compositional problems, and climate provenance is missing.
+
+Evidence:
+- results/darkmatter_ecology/env_matrix.tsv [TABLE]: XRF non-detects are recorded as 0.0 in the 251-sample cohort (Mn 197/251, V 88, S 29, Cl 32). eco_3_community.py z-scores them as measured values.
+- "Vanadium, molybdenum, nickel, cobalt, manganese and zinc associate with no family" is largely a statement about censored, low-information axes, not biology.
+- The vanadium "negative control" is 35% censored and is itself a member of the 11-axis block. It shows that a weak axis is null, not that the design cannot manufacture signal.
+- Family-level Spearman/BH tests (54,227 sulfur associations) treat samples as independent despite three replicates per position per visit and repeated visits.
+- TPM is compositional. A salt-associated lineage bloom depresses every other family, which by itself could produce "90 to 96% negative ... chemistry acts by exclusion".
+- The reanalysis climate product and years are unnamed (\todo), and XRF units and instrument are unconfirmed.
+
+Fix:
+- Treat non-detects as censored (indicator plus value, or Tobit/rank with ties), or drop axes with >50% non-detects.
+- Use a permuted-axis negative control with matched spatial structure.
+- Aggregate to site-visit or use mixed models with a site random effect.
+- Recheck the exclusion asymmetry under CLR, or under normalisation to total mapped or total genome-resolved reads.
+- Name the climate source.
+
+R1-15 — MAJOR — CONFIRMED. Public reproducibility is not yet in place for the current claims.
+
+Evidence:
+- reviews/.../baseline/verify.log: 30 FAILs, all gates referencing the superseded manuscript ("608/1,875", "21.4%", "median 0.391").
+- claims.tsv contains none of the current headline numbers (9.89, 106,042, 0.425, 1.087, 1,031).
+- Several manuscript-bearing analyses are explicitly "NOT REGISTERED": the cultured pair anatomy, the Thermoplasmatota metabolism and relatives, the stratified structural floor, the SMAG leg, and the corrected geochemistry block.
+- Scripts hard-code IBEX paths, and eco_3 reads its environment table from another clone (/ibex/project/c2014/alelopezv/repos/...).
+- Fig 2 and Fig 3 are placeholders, Fig 1 is the v1 illustration, and the Fig 6b \todo says it shows the superseded block.
+- Reads are not public, genome deposition is \todo, and the companion survey is uncited.
+- The cultured README notes that MMseqs2 prefilter results are not bit-reproducible.
+
+Fix: rebuild claims.tsv and verify.py for the current text, with each claim pinned to a file and checksum. Register or remove unregistered numbers. Build the figures from registered tables. Archive environments and parameters.
+
+======================================================================
+MODERATE COMMENTS
+======================================================================
+
+R1-16 — MODERATE — CONFIRMED. The contamination statements are overstated.
+- "The positive control ... places no read on any representative": the zero is after CoverM's 10% breadth gate. Ungated, 4.1% of Hafnia reads align (contamination_clean README, step 09).
+- There is a single no-template control (335k pairs), sequenced with trip 4 only.
+- E. coli (316/550 samples) and C. acnes (290/550) remain among the 5,438 and enter the lineage, cultured-pair and ecology analyses. Ten representatives carry ColE1 vector sequence.
+- Fix: rephrase, state exclusions, and give sensitivity analyses with these representatives removed.
+
+R1-17 — MODERATE. The lineage model is descriptive and the authors say so. A phylogenetic GLS or a nested random-effects model (phylum/class/order/genus) on the GTDB tree would turn the 72%/2% variance partition into a defensible statement. A logit or beta model is preferable to OLS for a proportion.
+
+R1-18 — MODERATE — CONFIRMED (unregistered). The Thermoplasmatota metabolic portrait (from v2_thermo_metabolism, "NOT REGISTERED") relies on the DRAM 2/3 rule, where single-subunit complexes count as present.
+- The rhodopsin absence uses only KEGG K04641–K04643; proteorhodopsin-type proteins may be missed. Use a PF01036 HMM.
+- "0 of 237" statements sit awkwardly beside "absences are floors".
+- Move this to a supplement or register it, and add HMM-level checks for key absences.
+
+R1-19 — MODERATE — CONFIRMED. Citation fidelity.
+- Maeke et al. 2025 (full text verified) tested whether rarity correlates with unknown-gene share. "Genome quality" was not their explanation, so revise "rarity and genome quality, the explanation offered".
+- aplakidou2025quadrupling is now NAR 2026 (10.1093/nar/gkag938). The 63.4% of 608,258 is verified in the full text.
+- The companion Tawfiq et al. citation is missing.
+
+======================================================================
+MINOR COMMENTS
+======================================================================
+
+1. Figure references do not match the captions:
+   - The text cites Fig 5c for the rarefaction gap; caption 5c is occupancy.
+   - The text cites Fig 4b for the standardisation; caption 4b is the qTM/alnTM scatter.
+   - Fig 6 caption panels d and e are never cited.
+2. Cohort counts vary without explanation: 551, 549, 548, 547, 251/248, 456/453, and 52/53/45/44/37 sites. Add a cohort table.
+3. Methods "seeded random subset of 10,000 evaluable dark families": "evaluable" means ≥3 CDS in the index, not ≥1 usable pair.
+4. SPIRE expectation read at the 271M anchor vs 269.5M (README note); footnote it.
+5. "Fewer together than this one sand sea" compares 218 GTDB species to 236 representatives in those two classes; state that it is two classes, not three.
+6. The salinity proxy (Na+Cl+S) sits in the same block as S, Cl and Na (collinear), and V is both in the block and the "null control".
+7. "Median weighted nearest-taxon index 0.159 ... recall 86.0%": PICRUSt2 not inspected by me (see checklist).
+8. Report the dark/control Mann–Whitney comparison and the effect size rather than p < 1e-300.
+9. "Long-read genomes of 722 strains": 520 are enrichment cultures, not isolates; say so.
+10. "Every value is genomic capacity" is good. Add explicitly that recurrence and dN/dS are compatible with relic DNA from once-living populations (the Flash synthesis's claim that dN/dS "requires active replication" is wrong and should not be adopted).
+
+======================================================================
+OPTIONAL EXTENSIONS (not required for a sound paper)
+======================================================================
+
+- Long-read or Hi-C metagenomics on a few samples to place dark families in genomic context (islands, prophages), directly testing "accessory".
+- Metaproteomics or metatranscriptomics evidence of expression for a subset of families (cf. Davin et al. 2026, full text verified).
+- Cultivation or single-cell genomes of SW-10-69-26/E2.
+- Experimental structures or AF3 multi-sequence models for a handful of domain-segmented local-novelty candidates.
+
+======================================================================
+POSITIVE EVIDENCE (checks that passed)
+======================================================================
+
+- Census reproduced from dark_summary.tsv and mag_dark_summary.tsv: 69,938,628/449,265,306 = 15.57%; 4,292,446/43,423,322 = 9.885%.
+- dN/dS reproduced exactly from dnds.tsv: dark 97,200, median 0.4253, 96.69% below 1; control 95,647, 0.3884, 99.61%.
+- Frame null reproduced: 1.0865 null / 0.427 annotated / 92.39% null-higher on 9,029 pairs.
+- Lineage medians reproduced: 0.0631 overall; Thermoplasmatota 0.3096. The matched-null tables are as described; residual SMD after bacterial matching is ≤0.05.
+- Structural counts reproduced: Q 2,838, K 1,031, controls 3,013/101, alnTM 95/68. The standardised ratios 6.56 (4.97–9.08) and 8.09 (5.96–11.49) match stratified_floor.txt, and the alnTM 1.38 (0.87–2.41) is correctly reported as crossing one.
+- Within-site restricted permutations are implemented (eco_stats strata) and reproduce free-permutation p-values.
+- No sign of genetic-code-driven gene fragmentation in Thermoplasmatota (protein density).
+- The no-template-control identification (plasmid by UniRef50, contaminant representatives by CoverM) is careful and well documented.
+- The deeper MGnify90 2026_07 robustness check behaves as described.
+- The literature claim "63.4% of 608,258" (Aplakidou) is verified in the full text.
+- Honest disclosures already in the text: shifted-frame caveat, TM normalisation dependence, reused-model rate difference, PICRUSt2 reference-vintage gap, capacity not activity.
+
+======================================================================
+LITERATURE AND STRONGEST SUPPORTED CONTRIBUTION
+======================================================================
+
+Against the downloaded literature, the generic dark-proteome conclusions are not new:
+- FESNov (Rodríguez del Río 2024, full text verified): purifying selection, lineage restriction.
+- Pavlopoulos 2023 and Aplakidou 2026: ecosystem restriction.
+- TED (Lau 2024) and AFESM (Yeo 2025): fold space near saturation.
+
+What is distinctive and currently well supported:
+(1) The first genome-resolved, repeatedly sampled catalogue of a hyperarid sand sea: 5,438 species, all placed in GTDB phyla; a 237-species Thermoplasmatota radiation exceeding GTDB's representation of those classes; and a subsurface association of that radiation (40/45 sites).
+(2) An explicitly controlled census, with matched annotated families, a known-fold floor, and a size-corrected reference-absence analysis. These controls are rare in this literature even with the fixes above.
+
+The "dark proteins are the accessory genome of lineages without reference strains" thesis is the potentially high-impact contribution. It is not yet supported (R1-06, R1-08).
+
+Source caveats:
+- verified_sources.tsv: 42 DOI-verified full texts, 20 metadata-only, 2 unresolved (Rinke 2019; Borges 2022).
+- Beyond the exclusions in SOURCE_AUDIT, source_identity.tsv shows further mislabeled local files whose embedded titles are unrelated: the Hellewell PDF, Majernik PDF, Austin PDF, Santos-Júnior XML, both Monzon files, the Fesenko PDF and the Liu PDF. Flash claims attributed to Monzon 2022 and the Santos-Júnior XML therefore have no valid local full text. Use the verified/ copies only.
+- The Flash syntheses contain errors that should not enter the paper: "lineage explains 72% of dark-family composition, environment 11%" (11.5% is assembly quality); "dN/dS requires active replication"; "proves"-language about smORFs; and conflation of the census denominator.
+
+======================================================================
+JOURNAL ASSESSMENT
+======================================================================
+
+Stretch submission with current findings, after the re-scoping and analyses R1-01 to R1-15, which need no new experiments: Nature Communications.
+- Case: a novel biome resource, a longitudinal design, a controlled census, the Thermoplasmatota radiation, and a defensible reference-coverage argument.
+- Nature-family policies require data available to reviewers, so ENA and genome release must precede submission.
+
+Primary realistic targets: Microbiome or The ISME Journal.
+- Microbiome suits the resource-plus-controlled-analysis framing and is where Maeke et al. 2025 appeared.
+- ISME Journal suits it if the ecology (depth niche of Thermoplasmatota, position-dependent function) is strengthened with mixed models.
+
+Further fallback: ISME Communications or mSystems.
+
+Nature Microbiology: not credible on current evidence. It would need new experiments that convert the main claims into demonstrated biology:
+- expression evidence (metaproteomics or metatranscriptomics) for dark families;
+- long-read/strain-resolved evidence that dark families sit in variable genomic regions;
+- genomes from cultivation or single cells for the Thermoplasmatota classes;
+- domain-resolved, experimentally supported structural novelty for a subset.
+
+I do not estimate acceptance probabilities.
+
+======================================================================
+ACCEPTANCE CHECKLIST (for round 2)
+======================================================================
+
+[ ] Abstract, Results and Discussion scoped to the recurrent families; full admission funnel reported (R1-01)
+[ ] Genome-resolved length/partial profile for dark vs non-dark; corrected 76%/86.7% sentences (R1-02)
+[ ] Shadow-ORF/AntiFam/opposite-strand screen; family-level frame flag; Discussion logic fixed (R1-03)
+[ ] dN/dS control rebuilt or divergence-stratified; "conservative" claim shown or removed (R1-04)
+[ ] Frame-null denominators; internal-stop audit of member CDS (R1-05)
+[ ] Cultured pairs without contaminants; nucleotide-level and same-caller tests; culture-only pangenome test; registered and described (R1-06)
+[ ] Single, explicit definition of "named/placeholder/empty" rank (R1-07)
+[ ] Novelty-matched Thermoplasmatota contrast in abstract; dark proteins vs GTDB/MGnify relatives; dark fraction of GTDB members (R1-08)
+[ ] Homolog-excluded, triage-conditioned structural floor; threshold sweep; retrieval decomposition; alnTM gates (R1-09)
+[ ] Domain-segmented classification of the 1,031; section title matches result (R1-10)
+[ ] Competitive, filtered mapping; expedition permutation null; batch covariate (R1-11, R1-12)
+[ ] Platform/kit correctly described; duplicate runs handled; data released for review (R1-12)
+[ ] Real-subsample validation of rarefaction; desert vs non-desert soil comparison; SMAG decision (R1-13)
+[ ] Censored XRF handled; site-aware family tests; compositional check; climate source named (R1-14)
+[ ] verify.py/claims.tsv rebuilt on current claims; all cited numbers registered; Figs 1–3 and 6b rebuilt (R1-15)
+[ ] Contamination wording and sensitivity analyses (R1-16); citation fixes (R1-19)
+
+======================================================================
+WHAT I INSPECTED, RAN, AND DID NOT DO
+======================================================================
+
+Read:
+- CLAUDE.md
+- manuscript/main.tex (full)
+- references.bib (cite keys: all 62 resolve; aplakidou and maeke entries)
+- baseline verify.log and bibliography audit
+- reproducibility/darkmatter/README.md, current_table_checks.json, ena_summary.json, sample_input_summary.json
+- wgs_runs.tsv
+- SOURCE_AUDIT.md, verified_sources.tsv, source_identity.tsv
+- All five Flash syntheses (key sections)
+- Verified full-text XML for Aplakidou 2026 and Maeke 2025 (targeted passages)
+
+Source code inspected:
+- darkmatter_clean scripts 1–7
+- darkfam_basis_clean: fam_2, fam_4, fam_5, fam_6c, fam_7, fam_8, slice_cds.py and README
+- cultured_comparison_clean: README and result tables
+- contamination_clean: README
+- lineage_darkness_clean: README, reports, matched-null summary
+- 00_structure_clean: README, 05_integrate.py, 05c_afdb.sh, summaries
+- pfam_candidates_clean: README
+- specificity_clean: README
+- darkfam_ecology_clean: README and eco_3_community.py
+
+Local read-only recomputations on snapshot tables (pandas, outside the snapshot directory):
+- dN/dS stratified by dS and pid; frame-null pairing; subset reproduction
+- per-phylum protein density; novelty-matched dark fraction
+- structural retrieval decomposition and qTM distribution; target-TM coverage
+- XRF censoring by expedition
+- platform × kit × expedition table
+- census and length percentages from summary files
+
+Not done:
+- No ssh to IBEX and no reruns of any pipeline.
+- I did not open PDFs or the large quarantined files.
+- I did not inspect: 06_metabolism (differential function, UV, osmolyte, BGC, resistome), refbias/repko (PICRUSt2 and KO ceiling numbers), mimag_rrna_trna, the taxonomy/order-gap adjudication, GUNC/RED trees, the Thermoplasmatota tree, the CoverM per-sample outputs, or fam_presence/fam_abundance (not in the snapshot).
+- I did not verify the PICRUSt2, BGC, AMR or differential-function numbers, or the Thermoplasmatota depth statistics beyond the README.
+- Absent snapshot files are not treated as evidence that the originals are absent.
+- Figures 1–3 were not evaluated as evidence.

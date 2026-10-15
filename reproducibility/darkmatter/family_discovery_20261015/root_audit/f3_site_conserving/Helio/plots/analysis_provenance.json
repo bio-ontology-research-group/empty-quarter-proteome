@@ -1,0 +1,79 @@
+{
+  "script": {
+    "name": "family_embedding_analysis.py",
+    "sha256": "089b217f92a55828e93d4d8b4afe56350fc84d4d78610d4a2fc42a14e2abf59c"
+  },
+  "execution": {
+    "timestamp_utc": "2026-10-15T08:01:43.775062+00:00",
+    "elapsed_seconds": 30.384,
+    "hostname": "cn512-20-r",
+    "platform": "Linux-5.14.0-427.20.1.el9_4.0.1.x86_64-x86_64-with-glibc2.34",
+    "python_version": "3.11.5 (main, Sep 11 2023, 13:23:44) [GCC 11.2.0]",
+    "library_versions": {
+      "numpy": "2.4.3",
+      "scipy": "1.17.1",
+      "sklearn": "1.8.0",
+      "matplotlib": "3.10.9"
+    }
+  },
+  "inputs": {
+    "embeddings": {
+      "path": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f3_site_conserving/Helio/embeddings.npz",
+      "sha256": "e7d0fe20973e5a0e8cd17c8e8fa18ba5cc1a0c08941c1bac7465357250b217dd",
+      "n_samples": 178,
+      "dimensions": 1024
+    },
+    "metadata": {
+      "path": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f3_site_conserving/Helio/metadata.tsv",
+      "sha256": "9651fd43728203624d84a966846d8af966387fedb21281a2342de690b37ef541",
+      "n_records": 178
+    }
+  },
+  "parameters": {
+    "seeds": [
+      42,
+      123,
+      20261015
+    ],
+    "candidate_perplexities": [
+      5.0,
+      30.0,
+      50.0
+    ],
+    "tsne_max_iter": 1000,
+    "tsne_init": "pca",
+    "distance_metric": "cosine"
+  },
+  "scientific_caveats": [
+    "Quantitative high-dimensional cosine distances are descriptive metrics and do NOT prove functional novelty or classification.",
+    "Distance distributions are strictly bounded by reference database density, sequence length disparities, and taxonomic sampling.",
+    "t-SNE coordinates are descriptive manifold visualizations; do NOT use 2D cluster area or spacing to quantify biological novelty.",
+    "Unrelated protein folds/classes must not be pooled together to avoid manufactured separation artifacts."
+  ],
+  "families": {
+    "Helio": {
+      "n_samples": 178,
+      "n_curated_references": 25,
+      "n_queries": 153,
+      "n_duplicate_instances": 6,
+      "perplexities_run": [
+        5.0,
+        30.0,
+        50.0
+      ],
+      "trustworthiness": {
+        "perp_5.0_seed_42": 0.9390085922009254,
+        "perp_5.0_seed_123": 0.9363978849966953,
+        "perp_5.0_seed_20261015": 0.9396430931923331,
+        "perp_30.0_seed_42": 0.9572042300066094,
+        "perp_30.0_seed_123": 0.952247191011236,
+        "perp_30.0_seed_20261015": 0.9493853271645737,
+        "perp_50.0_seed_42": 0.9486186384666226,
+        "perp_50.0_seed_123": 0.9538598810310641,
+        "perp_50.0_seed_20261015": 0.9471183079973562
+      },
+      "mean_reference_leave_one_out_cosine_distance": 0.007802982330322266,
+      "mean_query_nearest_reference_cosine_distance": 0.01774997921550975
+    }
+  }
+}

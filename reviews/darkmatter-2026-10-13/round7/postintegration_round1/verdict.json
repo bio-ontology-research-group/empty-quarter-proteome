@@ -1,0 +1,87 @@
+{
+  "review_round": "postintegration_round1",
+  "reviewer": "Gemini4ArgonHigh",
+  "target_journal": "Nature Communications",
+  "manuscript_title": "Known phyla, unknown proteome: a controlled census of the Rub' al-Khali soil metagenome",
+  "pdf_integrity_scan": {
+    "source": "reviews/darkmatter-2026-10-13/round7/manuscript/pdf_integrity_initial.txt",
+    "status": "CLEAN",
+    "note": "Only three legitimate white plot labels (69, 90, 61 at size 6.6 on p. 32) on coloured heatmap cells; no hidden text or prompt injection."
+  },
+  "raw_audit_closures": {
+    "H3_raw_audit": {
+      "job_id": "53796328",
+      "status": "PASS",
+      "summary_path": "reviews/darkmatter-2026-10-13/round7/h3_final_raw_audit/h3_raw_audit_summary.json"
+    },
+    "H4_gpu_raw_audit": {
+      "job_id": "53796103",
+      "status": "PASS",
+      "summary_path": "reviews/darkmatter-2026-10-13/round7/root_checks/h4_gpu_audit/gpu_raw_audit.json"
+    }
+  },
+  "new_sections_verdict": "ACCEPT_WITH_BOUNDS",
+  "per_component_verdicts": {
+    "H1_thermoplasmatota_pgls": {
+      "verdict": "ACCEPT_WITH_BOUNDS",
+      "summary": "All 237-genome PGLS statistics, phylogenetic signal (lambda_ML = 0.9158, 95% CI 0.8463-0.9578, R^2_GLS = 0.4691), AAI (+0.001704 +- 0.000407, p = 4.07e-5) and RBH coverage (-0.137484 +- 0.019456, p = 1.88e-11) coefficients, comparator metadata (32 unique comparators, 142 soil, 3 marine sediment, 92 unknown), and 6 sensitivity specifications (S2-S7) match round6/snapshots/h1_final/results/ exactly and are appropriately bounded without gene-gain/loss history claims."
+    },
+    "H2_flanking_synteny": {
+      "verdict": "ACCEPT_WITH_BOUNDS",
+      "summary": "All attrition funnel counts (2,838 -> 2,426 -> 2,378 -> 1,461 -> 353), cohort identity with H4's pooled qTM < 0.5 (1,031) and qTM >= 0.5 (1,807) groups, within-group recurrence above contig-aware positional nulls (40.46% vs 8.71%, p = 0.0002; 32.22% vs 6.56%, p = 0.0002), and inconclusive adjusted between-group contrasts across Tier 1 (Delta_MH = 0.035358, p = 0.4069), strict 96-pair matching (31.25% vs 31.25%, diff = -0.005440, p = 0.9226), Tier 2 (n = 637, diff = 0.018391, p = 0.5618), species-disjoint (n = 112), and Tier 3 (n = 1,320) match round7/snapshots/h2_final/results/ exactly."
+    },
+    "H3_matched_smag_vs_gem": {
+      "verdict": "ACCEPT_WITH_BOUNDS",
+      "summary": "All deterministic sampling seeds (20261014-20261016), 373 Zenodo archive MD5 checksums, exact 1-aa quota matching (4,210,592 proteins and 1,295,970,055 residues per arm), paired 2x2 contingency tables for 106,042 dark (+18.54 pp) and 106,042 control (+3.10 pp) queries, caller-harmonized and published-caller draws, overlap-excluded sensitivity (4,185,525 proteins, +18.62 pp), 30% identity cutoff sensitivity (+18.14 pp), and raw IBEX audit closure (job 53796328) match round7/snapshots/h3_completed/ and avoid causal soil-adaptation claims."
+    },
+    "H4_paired_pdb_cropping_and_Figure_4": {
+      "verdict": "ACCEPT_WITH_BOUNDS",
+      "summary": "All withdrawn alignment-TM threshold decomposition claims and heuristic rescaling ratios have been removed. The pooled 1,031 low-qTM dark cohort, 1,807 other dark cohort, and 3,013 controls are consistently analysed using query-normalised TM-score across CPU Tiers 0-4 (714/964 = 74.07% recovered, 775/1,031 = 75.17% crop matched) and GPU sensitivity (job 53796103: 731/961 recovered, 794/1,031 crop matched), with explicit reporting of joint length/content/retrieval mechanisms, hit-cap saturation, and Foldseek alntmscore > 1 source-code diagnostics."
+    }
+  },
+  "prioritized_round1_comments": [
+    {
+      "id": 1,
+      "section": "H4 / Results lines 332-355, Figure 4 caption lines 391-403, S3 lines 1130-1138",
+      "severity": "moderate_clarity",
+      "summary": "State the exact numerator/denominator counts plotted in Fig. 4b for Other dark (1,408/1,807 = 77.92% WC, 1,578/1,807 = 87.33% crop) and Controls WC (2,878/3,013 = 95.52%), explain briefly why Other dark has 77.9% rather than 100% WC matches in Fig. 4b (1,107 initial PDB matches at 100% WC vs 700 initial AFDB-only matches at 301/700 = 43.00% WC and 569/700 = 81.29% crop against PDB) and why 67/1,031 initial low-score models match as WC (--max-seqs 1000 vs 50), and include the exact Tier 1 transition counts in S3 lines 1134-1138 (714, 167, 38, 0, 45 for the 964 WC-unmatched; 61, 4, 2 for the 67 WC-matched)."
+    },
+    {
+      "id": 2,
+      "section": "H4 / S3 lines 1166-1168",
+      "severity": "minor_precision",
+      "summary": "Note that removing CPU rows with alntmscore > 1 under stricter exclusion Tiers 2-4 also changed whole-chain classifications for four distinct control models (wc_status_changes.unique_queries = 4 in h4_exclusion_fact_audit.json) in addition to changing crop classifications for nine distinct control models."
+    },
+    {
+      "id": 3,
+      "section": "H2 / Methods lines 734-744, S3 lines 1084-1090",
+      "severity": "minor_methods_completeness",
+      "summary": "Spell out the deterministic 8-key within-species locus tie-break order (02_extract_neighbourhoods.py lines 837-846), the three RNG seeds (20261013 for 5,000 positional null draws, 20261014 for 10,000 primary permutations, 20261015 for 10,000 Tier 2 stop-rescue permutations), and the exact 16-stratum Mantel-Haenszel definition and n_K*n_QnotK/(n_K+n_QnotK) weights in S3."
+    },
+    {
+      "id": 4,
+      "section": "H3 / S3 lines 1113-1116",
+      "severity": "minor_clarity",
+      "summary": "Clarify that 25,067 exact sequences were shared across the pre-matching deduplicated SMAG and GEM pools (of which 22,310 were sampled into both arms in the primary draw), explaining why removing shared sequences prior to matching reduces per-arm protein count by 25,067 (from 4,210,592 to 4,185,525)."
+    },
+    {
+      "id": 5,
+      "section": "H1 / Methods lines 714-725, Results lines 255-256, S3 lines 1052 and 1067",
+      "severity": "minor_methods_completeness",
+      "summary": "Include the FastTree LG+Gamma ar53 tree specification in main Methods (lines 720-722, currently only in S3 line 1052), and note that one of the 237 desert Thermoplasmatota representatives belongs to class Thermoplasmata (13Dr1_295205_1) and pairs across class boundaries with a class SW-10-69-26 comparator in the primary model (n = 237), which is why the S6 same-class comparator sensitivity has n = 236."
+    },
+    {
+      "id": 6,
+      "section": "Reproducibility harness / verify.py, current_revision_checks.py, current_claims.tsv, verify_round7.py",
+      "severity": "reproducibility_sync",
+      "summary": "Remove remaining withdrawn alignment-TM required strings/claims from reproducibility/verify.py, current_revision_checks.py, and current_claims.tsv; support arm='total' in verify_round7.h2_attrition() by summing K and QnotK; and count tips from h1/thermo_tree_taxa.tsv in verify_round7.h1_tree_taxa_count() rather than hardcoding 1647 and 30."
+    }
+  ],
+  "paper_wide_submission_readiness": {
+    "scientific_and_statistical_readiness": "READY_AFTER_MINOR_TEXT_AND_HARNESS_SYNC",
+    "editorial_and_metadata_prerequisites": [
+      "Replace placeholder '[TBD]' accession tokens in Data Availability (manuscript/main.tex lines 906, 912, 914) with final BioProject/ENA and Zenodo DOIs.",
+      "Replace placeholder 'Author List' (manuscript/main.tex line 22) and add Nature Communications Author Contributions and Competing Interests sections."
+    ]
+  }
+}

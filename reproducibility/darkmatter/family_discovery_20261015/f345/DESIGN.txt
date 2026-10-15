@@ -1,0 +1,253 @@
+================================================================================
+PILOT FEASIBILITY STUDY DESIGN: HYPOTHESES F3, F4 & F5 (EMPTY QUARTER MAGs)
+Version: 2.0 (Post-Root Intervention & Provenance Repair, 2026-10-15)
+Original Version: Preserved in Git history / preparation log
+Author: agy Gemini Flash 3.8 High (Authorised F3-F5 Preparation)
+Governing Documents: CLAUDE.md, reviews/darkmatter-family-analysis-20261015/prompts/f345_pilot.txt,
+                     ROOT_ASSESSMENT.txt, ROOT_AUDIT.txt, ROOT_CORRECTION_REQUIRED.txt,
+                     ROOT_BLOCKING_CODE_AUDIT.txt, AUDIT_PLAN.txt
+Local Directory:  reproducibility/darkmatter/family_discovery_20261015/f345/
+Remote Directory: /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/
+Execution Guard:  require_slurm_worker.sh (CPU-only Slurm worker on IBEX, pi-hohndor account)
+================================================================================
+
+1. PROSPECTIVE RESOLUTION OF ROOT BLOCKING AUDIT (2026-10-15)
+------------------------------------------------------------
+Following independent root audit of candidate accession lists (checks.json):
+1. UNVERIFIED ANCHOR DICTIONARIES COMPLETELY REMOVED:
+   - Handcrafted / manually labelled dictionaries with unverified accessions are eliminated.
+   - All 22 audited false or obsolete accessions (e.g. P15644 secretin PulD, Q9FAF7 cucumopine
+     synthase, Q84FT3 SusC, O34707 curcumene synthase, Q4FM61 FabZ, P52626 PatH, P52627 FliZ,
+     Q9AQJ4 rubredoxin reductase, P49347 concanavalin B, Q72J87 UPF0145, Q183H0 cell wall cwp14,
+     Q03512 CcmL vertex protein, O59424 ribosomal protein uS3, P17890 yeast RNA pol III,
+     P9WN71 G6PD, P0A6B1 ACP, A0A2V0P0L8 uncharacterized algal protein, A0A2N8D7B0, P25964,
+     Q9AQ76, Q8YSC4, D9W3X4) are quarantined in references/rejected_references.tsv with exact reasons.
+   - Zero contaminated accessions enter reference fastas or databases.
+2. SOURCE-QUERY-DERIVED REFERENCES ONLY:
+   - Reference proteins are retrieved strictly via structured queries targeting verified
+     family annotations and EC numbers (e.g. ec:4.2.1.108 / xref:pfam-PF06339 for EctC;
+     xref:pfam-PF01036 for Type-1 rhodopsins; xref:pfam-PF18761 / xref:interpro-IPR041113 for
+     heliorhodopsins; xref:pfam-PF00484 for Beta-CA; IPR052265 / NF050158 for Gamma-CA).
+   - All metadata (protein name, organism, lineage, gene, EC numbers) are parsed 100%
+     from returned authoritative JSON records, not manually written.
+3. EXACT LITERATURE ANCHOR VERIFICATION:
+   - Pushkarev et al. 2018 (Nature): heliorhodopsin 48C12 directly fetched from GenBank
+     MF737519.1 -> NCBI protein AVZ43932.1 (256 aa, uncultured Actinomycetes bacterium).
+   - Czech et al. 2019 (Sci Rep): SaEctC mapped from PDB 5BXX to UniProt Q1GNW6
+     (Sphingopyxis alaskensis RB2256); PlEctC mapped from PDB 5ONN to NCBI RefSeq YP_003245677.1
+     (Paenibacillus lautus); Halomonas elongata operon (EctC O52251, EctA O52249, EctB O52250, EctD E1VA04);
+     orphan cupin control DddK mapped from PDB 5TFZ to UniProt Q4FNM4.
+   - Pairoh et al. 2025 (Sci Rep): TtCA (PV553289 -> YEH58108.1), CrCA (PV553290 -> YEH58109.1),
+     ToCA (PV553291 -> YEH58110.1); canonical Cam mapped from PDB 1QRG to UniProt P40881.
+4. STRICT DISCRIMINATION OF CARBOXYSOME CLASSES:
+   - Carboxysome carbonic anhydrases (CsoSCA / CcmM / TIGR02701 / IPR017156) are kept strictly
+     separate from Gamma-CA and Beta-CA, classified as Carboxysome_CA.
+5. FUNCTION-SPECIFIC EXPERIMENTAL EVIDENCE:
+   - ECO evidence codes anywhere in a record do not establish function-specific validation.
+   - True experimental evidence (ECO:0000269, ECO:0000314, ECO:0000353) is parsed specifically
+     from FUNCTION / CATALYTIC ACTIVITY comments and active-site features.
+6. DREP ANI95 SPECIES CLUSTER:
+   - Match dRep secondary_cluster (fastANI 95% ANI), NOT primary_cluster (90% MASH cluster).
+7. MANDATE TO REMAIN GATED:
+   - PREPARATION ONLY. Reference retrieval and input schema inspection executed on IBEX under
+     CPU-only Slurm. Zero biological search scripts submitted until root gives gate.
+
+2. EXECUTIVE MANDATE & SCIENTIFIC BOUNDARIES
+-------------------------------------------
+This pilot implements and executes empirical sequence-level feasibility analyses
+for additional biological discovery tracks F3, F4, and F5 in the current Empty Quarter
+(EQ) MAG catalogue:
+  - F3: Rhodopsins (Microbial Type-1 rhodopsins and Heliorhodopsins / Type-3)
+  - F4: Ectoine synthase (EctC) and ectoine biosynthesis pathway context
+  - F5: Carbonic anhydrases (Beta-CA and Gamma-CA evaluated separately)
+
+Strict constraints:
+- NO edits to manuscript (manuscript/main.tex), claim registries (claims.tsv), H1-H4, or f12/gpu.
+- ZERO invented or literal protein sequences; zero model-generated sequences.
+- CPU-only Slurm worker execution on IBEX (account: pi-hohndor), guarded by require_slurm_worker.sh.
+- Login nodes strictly reserved for lightweight staging and scheduler submission.
+- NO bulk data transfer to workstation; mirror only compact evidence tables, manifests, logs.
+- NO arbitrary thresholds or p-value-driven cherry-picking; feasibility passes when reliable
+  loci and defensible family identity permit a nontrivial full comparison.
+
+3. TRACK F3: RHODOPSIN & HELIORHODOPSIN DIVERSITY PILOT
+-------------------------------------------------------
+A. Primary Scientific Questions:
+1. Does the current 5,438 ANI95 representative catalogue contain verified, complete
+   rhodopsin loci belonging to established Type-1 microbial rhodopsin subfamilies
+   or Type-3 heliorhodopsins (HeRs)?
+2. Do EQ rhodopsins exhibit genuine reference-relative sequence divergence, and do
+   they partition into sensory vs energy-harvesting clades based on conserved motifs
+   and recurrent genomic contexts (e.g. histidine kinases, two-component systems)?
+3. Can terrestrial actinobacterial rhodopsins (e.g. in Geodermatophilaceae) be
+   distinguished from established terrestrial groups (Tarlachkov et al. 2024/2025)?
+
+B. Retained Literature Precedent & Domain Architectures:
+- Pushkarev et al. 2018 (Nature, 10.1038/s41586-018-0225-9): Discovery of
+  heliorhodopsins (HeRs, Type-3) from Lake Kinneret fosmid 48C12 (GenBank MF737519.1 -> AVZ43932.1).
+  HeRs adopt an inverted membrane orientation with conserved retinal-binding Lys in TM7.
+- Bulzu et al. 2021 (mSphere, 10.1128/msphere.00661-21): Evidence that monoderm HeRs
+  function as photosensory receptors coupled to two-component histidine kinases.
+- Bulzu et al. 2022 (mSystems, 10.1128/msystems.00405-22): Global rhodopsin survey
+  defining Alt-rhodopsins, diverse Type-1 and Type-3 clades.
+- Tarlachkov et al. 2024/2025 (J Photochem Photobiol / bioRxiv, 10.1016/j.jphotobiol.2024.113083):
+  Rhodopsins in arid Geodermatophilaceae (terrestrial actinobacteria). Desert occurrence
+  alone is NOT novel; reference-relative divergence and context are required.
+
+C. Authoritative Profiles & Competing Family Discrimination:
+- Target Family 1: Microbial Type-1 Rhodopsin
+  * Pfam: PF01036 (Bac_rhodopsin, Bacteriorhodopsin-like protein domain).
+  * InterPro: IPR001425.
+  * Active site hallmark: Retinal-binding Lysine in TM7 forming protonated Schiff base.
+- Target Family 2: Heliorhodopsin (Type-3)
+  * Pfam: PF18761 (Heliorhodopsin).
+  * NCBIFAM: NF038020 (heliorhodopsin HeR).
+  * InterPro: IPR041113.
+  * Structural hallmark: Inverted 7TM topology, retinal-binding Lysine in TM7.
+- Competing Outgroups & Negative Controls:
+  * Pfam PF00001 (7tm_1, Eukaryotic rhodopsin-like GPCR family).
+  * Pfam PF00002 (7tm_2, Secretin-like GPCR family).
+  * Rule: Avoid treating all 7-transmembrane proteins as rhodopsins. A candidate must
+    match PF01036 or PF18761/NF038020, possess 7 predicted transmembrane helices,
+    and retain the retinal-binding Lysine residue.
+
+D. Predetermined QC Gates & Classification:
+- Gate F3-1 (Coding Completeness): Prodigal partial=00 (complete start and stop codons).
+- Gate F3-2 (Domain Match): HMMER domtblout independent E-value <= 1e-5 to PF01036
+  or PF18761/NF038020; domain coverage >= 70% of profile HMM.
+- Gate F3-3 (Key Residue Conservation): Alignment to profile must confirm presence of
+  the conserved retinal-binding Lysine in the 7th transmembrane helix.
+- Gate F3-4 (Competing Discrimination): Bit score to target profile must exceed bit score
+  to GPCR/non-rhodopsin controls (PF00001, PF00002) by >= 20 bits.
+- Gate F3-5 (Genomic Context): Inspect flanking +/- 5 genes for phototrophic or sensory
+  markers (CRT operon / carotenoid genes, two-component histidine kinases, response regulators).
+
+4. TRACK F4: ECTOINE SYNTHASE (EctC) & PATHWAY CONTEXT PILOT
+-----------------------------------------------------------
+A. Primary Scientific Questions:
+1. Does the current catalogue encode genuine EctC ectoine synthases (EC 4.2.1.108),
+   and do candidate loci represent complete operons (ectABC / ectABCD) versus orphan
+   EctC-like genes (Czech et al. 2019)?
+2. Are candidate EctC loci distinguishable from competing cupin superfamily members?
+3. What is the true genomic context and taxonomic distribution across the 5,438 MAGs?
+
+B. Retained Literature Precedent & Domain Architecture:
+- Czech et al. 2019 (Sci Rep, 10.1038/s41598-018-36247-w): Structural and biochemical
+  characterisation of EctC enzymes and orphan EctC-like proteins. Establishes that EctC
+  belongs to the cupin superfamily with a conserved 2-His-1-carboxylate iron-binding triad
+  (Glu and two His residues) within cupin motifs.
+- Disambiguation from competing cupins: Generic cupins (PF00190, PF07883, Pirin PF02678)
+  perform diverse reactions (dioxygenases, epimerases, isomerases, oxalate oxidases).
+  Treating all cupins as EctC is invalid.
+
+C. Authoritative Profiles & Context Markers:
+- Target Family: Ectoine Synthase (EctC, EC 4.2.1.108)
+  * Pfam: PF06339 (Ectoine_synth, Ectoine synthase family).
+  * NCBIFAM: NF009806 (ectoine synthase).
+  * InterPro: IPR010462.
+  * CDD: cd06978 (L-ectoine synthase, cupin domain).
+- Competing Cupin Controls (Negative Controls):
+  * Pfam PF00190 (Cupin_1, generic cupin domain).
+  * Pfam PF07883 (Cupin_2, cupin domain 2).
+  * Pfam PF02678 (Pirin, iron-binding pirin cupin family).
+- Ectoine Biosynthetic Pathway Context Markers:
+  * EctA: L-2,4-diaminobutyrate acetyltransferase (EC 2.3.1.178) -> NCBIFAM TIGR02406.
+  * EctB: diaminobutyrate--2-oxoglutarate transaminase (EC 2.6.1.76) -> NCBIFAM TIGR02407.
+  * EctD: ectoine hydroxylase (EC 1.14.11.55) -> NCBIFAM TIGR02408.
+
+D. Predetermined QC Gates & Classification:
+- Gate F4-1 (Coding Completeness): Prodigal partial=00.
+- Gate F4-2 (EctC Specificity): Bit score to PF06339 / NF009806 must exceed bit score to
+  generic Cupin_1 (PF00190) and Pirin (PF02678) by >= 25 bits; E-value <= 1e-10.
+- Gate F4-3 (Catalytic Core Integrity): Czech et al. 2019 iron-binding triad (2-His-1-carboxylate)
+  must be conserved in multiple sequence alignment against Paenibacillus lautus EctC (YP_003245677.1).
+- Gate F4-4 (Context Classification):
+  * Class A: Intact operon (EctA, EctB, EctC co-localized within 5 kb).
+  * Class B: Unlinked pathway (EctC present, EctA/B present elsewhere in same MAG).
+  * Class C: Orphan EctC (EctC present, no EctA/B detected in MAG; verify MAG completeness).
+- Gate F4-5 (Environmental Caution): Elemental XRF ranks do not represent porewater salinity;
+  ecological models must account for MAG taxonomy, site, and expedition.
+
+5. TRACK F5: CARBONIC ANHYDRASE (Beta-CA and Gamma-CA) PILOT
+------------------------------------------------------------
+A. Primary Scientific Questions:
+1. Does the current catalogue encode distinct classes of carbonic anhydrases (EC 4.2.1.1),
+   specifically Beta-CA and Gamma-CA?
+2. Are Gamma-CA candidates distinguishable from competing left-handed parallel beta-helix
+   (LbH) enzymes (hexapeptide repeat transferases, LpxA-like acetyltransferases)?
+3. Which class(es) demonstrate verified family membership, non-redundant sequence diversity,
+   and conserved catalytic metal-coordination sites?
+
+B. Retained Literature Precedent & Domain Architectures:
+- Pairoh et al. 2025 (Sci Rep, 10.1038/s41598-025-24713-1): Metagenomic discovery and
+  biochemical validation of thermophilic Gamma-CAs (TtCA YEH58108.1, ToCA YEH58110.1, CrCA YEH58109.1).
+  Validates Gamma-CA only; does not validate Beta-CA or establish that fold similarity implies activity.
+- Structural distinction between classes:
+  * Beta-CA: Alpha/beta fold, coordinated by Cys-His-Cys triad (e.g. Cys42, His98, Cys101).
+  * Gamma-CA: Trimeric left-handed parallel beta-helix (LbH) fold, catalytic zinc coordinated
+    by three Histidines located at monomer interfaces (e.g. His81, His117, His122 in Cam).
+- Non-CA LbH Competing Enzymes:
+  * Hexapeptide repeat acetyltransferases (LpxA, DapD, etc.) share the identical LbH fold
+    (PF00132 Hexapep, PF00583 Acetyltransf_1) but lack the catalytic zinc-binding Histidines
+    and have zero carbonic anhydrase activity. Avoid treating all LbH structures as active CAs!
+- Carboxysome CAs Kept Strictly Separate:
+  * CsoSCA / CcmM (TIGR02701, IPR017156) represent specialized shell-associated enzymes
+    and must NOT be conflated with genuine Gamma-CA.
+
+C. Authoritative Profiles & Competing Discrimination:
+- Target Family 1: Gamma-Carbonic Anhydrase (γ-CA)
+  * NCBIFAM: NF050158 (gamma carbonic anhydrase, CarbAnhydGPos).
+  * NCBIFAM: NF040597 (Carbonic anhydrase, gamma-class, carb_anhyd).
+  * InterPro: IPR052265 (Gamma-class Carbonic Anhydrase), IPR047223 (CA_gamma_LbH).
+  * CDD: cd00710 (LbH_gamma_CA).
+- Target Family 2: Beta-Carbonic Anhydrase (β-CA)
+  * Pfam: PF00484 (Pro_CA, Carbonic anhydrase, prokaryotic beta-class).
+  * InterPro: IPR001788 (Carbonic anhydrase, beta-class).
+- Separate Class: Carboxysome Carbonic Anhydrase
+  * NCBIFAM: TIGR02701 (carboxysome shell carbonic anhydrase CsoSCA).
+  * InterPro: IPR017156 (Carboxysome assembly protein CcmM).
+- Competing Outgroups & Negative Controls:
+  * Pfam PF00194 (Carb_anhydrase, Eukaryotic Alpha-CA family).
+  * Pfam PF00132 (Hexapep, bacterial transferase hexapeptide repeat domain).
+  * Pfam PF00583 (Acetyltransf_1, GNAT acetyltransferase family).
+  * SSF51161 / IPR011004 (Trimeric LpxA-like superfamily).
+
+D. Predetermined QC Gates & Classification:
+- Separate Evaluation Mandate: Beta-CA and Gamma-CA must be evaluated separately;
+  no pooling into a single novelty endpoint.
+- Gate F5-1 (Coding Completeness): Prodigal partial=00.
+- Gate F5-2 (Class-Specific Match):
+  * For Gamma-CA: Independent E-value <= 1e-7 to NF050158 / NF040597 / cd00710;
+    bit score must exceed PF00132 (Hexapep) and PF00583 (Acetyltransf_1) by >= 20 bits.
+  * For Beta-CA: Independent E-value <= 1e-7 to PF00484; domain coverage >= 70%.
+- Gate F5-3 (Active-Site Metal Coordination):
+  * For Gamma-CA: Conservation of the three catalytic Histidine residues coordinating zinc.
+  * For Beta-CA: Conservation of the catalytic Cys-His-Cys triad.
+- Gate F5-4 (No Biochemical Overstatement): Sequence identification establishes genetic
+  capacity; NO claims of thermostability, extremophilic adaptation, or kinetic rate
+  follow from sequence origin. Direct assays are required for applied claims.
+
+6. DENOMINATOR, DREP CLUSTERING & SAMPLING STRATEGY
+---------------------------------------------------
+- Denominator Basis: Current 5,438 ANI95 species-representative MAGs from the 14,426 refined
+  bin catalogue.
+- dRep Cluster Mapping Rule:
+  * Wdb.csv contains exactly 5,438 rows (`genome,cluster,score`).
+  * `cluster` in Wdb.csv corresponds to `secondary_cluster` in Cdb.csv (fastANI 95% ANI species cluster).
+  * `primary_cluster` in Cdb.csv is the 90% MASH cluster and MUST NOT be used for species ANI95 joins.
+  * Exact matching: strip `.fa` / `.fasta` extension from `genome` to join with representative
+    proteome files in `W/06_darkmatter/drep_rep_proteomes/<genome>.faa.gz`.
+- Exclusion & Attrition Logging:
+  * Record exact total proteins scanned across all 5,438 representative proteomes.
+  * Record MAGs excluded due to low completeness or high contamination (if any).
+  * Record proteins excluded due to Prodigal partial flags (partial!=00).
+
+7. PROVENANCE, AUDIT & DELIVERABLE SPECIFICATIONS
+-------------------------------------------------
+- All reference sequences originate from live, recorded queries to UniProtKB/NCBI/EBI.
+- Raw API payloads persisted under references/raw_uniprot_json/, raw_uniprot_fasta/, and raw_ncbi/.
+- Rejected reference ledger maintained in references/rejected_references.tsv.
+- Every generated reference file and database has SHA-256 registered in references_manifest.tsv.
+- Status tracking in STATUS.json with timestamps, job IDs, execution host, and stage outcomes.
+- Ready for root audit once references, schemas, and runnable code are completed and verified.
+================================================================================

@@ -1,0 +1,584 @@
+================================================================================
+INDEPENDENT CODE, PROVENANCE, AND PILOT/INITIAL RESULTS AUDIT (ARGON RESULTS INITIAL)
+Target: Environmental Protein Family Discovery & Functional Dark Matter (Tracks F1-F5)
+Date: 2026-10-15
+Auditor Role Requested: Gemini 4 Argon High (Independent Scientific & Code Auditor)
+Actual Runtime Identity: Antigravity agentic coding assistant (Google DeepMind)
+Scope: Completed Pilot Results (F1-F5), Final F2 Pilot Disposition, Completed Root F1
+       Full/Comparator/Comparison/GPU-Embedding Runs, and Active Full-Run Code Audit
+       (root_audit/*.py, gpu/*.py, f345/scripts/07..11*.py) while downstream jobs finish.
+       Discarded f12/scripts/01-05 full pipeline (cancelled jobs 53816401, 53816634)
+       is excluded per scope correction.
+================================================================================
+
+1. EXECUTIVE SUMMARY & PER-TRACK VERDICTS
+--------------------------------------------------------------------------------
+1.1 Correction of Prior Preflight GPU Hardware / Metric Statement:
+    - In `argon_preflight.txt`, I cited an obsolete draft summary (`gpu/RESULTS_SUMMARY.txt`
+      from job `316766` on `NVIDIA L40S`, `max_abs_diff = 0.00024414`). Root rightly rejected
+      that citation in `ROOT_ARGON_PREFLIGHT_DISPOSITION.txt`.
+    - Verified directly from `gpu/smoke_results_v2/provenance.json` (`95842ac3...`),
+      `gpu/smoke_results_v3/provenance.json`, `gpu/smoke_results_v3/slurm_execution.txt`,
+      and `gpu/STATUS.json`:
+      * Smoke v2 ran under ORIX Slurm job `316783` on node `orix-worker-h200-6` (`NVIDIA H200`,
+        139.81 GB VRAM, CUDA 12.9, `torch 2.10.0`, `transformers 4.57.6`) on 6 sequences:
+        `max_abs_diff = 0.00048828125`, `min_cos_sim = 0.9999997615814209`,
+        `duplicate_max_abs_diff = 0.0`.
+      * Smoke v3 (`gpu/prostt5_embed_v3_preserved.py`, SHA-256 `d5e019d7e1fc2a22ce55668b8c36f73932607082f6fa53b2cb385f9c29729a81`)
+        ran under ORIX Slurm job `316812` (and idempotency check `316813`) on `orix-worker-h200-7`
+        (`NVIDIA H200`) on 7 sequences including `O52251_stop` (trailing `*`):
+        `max_abs_diff = 0.00048828125`, `min_cos_sim = 0.9999997615814209`,
+        `duplicate_exact_max_abs_diff = 0.0`, `duplicate_trailing_stop_max_abs_diff = 0.0`.
+      * Production v4 (`gpu/prostt5_embed.py`, SHA-256 `f47516cb37d07e6fb298a6f1e78c7ab6900d925121317cfa4d77757108c6df95`)
+        embeds each unique clean amino-acid sequence once (`embed_once_expand_all_original_ids`)
+        and expands embeddings to all original sequence IDs in exact input order, guaranteeing
+        `max_abs_diff = 0.0` across all within-cohort and cross-cohort exact sequence duplicates
+        regardless of batch position.
+
+1.2 Summary Table of Per-Track Judgments:
+    - Track F1 (Cryptochrome/Photolyase Family, CPF):
+      * Pilot Verdict: PROMOTE TO FULL RUN (56 profile-supported CPF candidates, 48 complete
+        `partial=00`, across 45/256 MAGs in Root pilot job `53816043`; generic Radical SAM
+        `PF04055` excluded).
+      * Active Full-Run Status (Root-owned `root_audit/f1_*.py`):
+        - Full EQ census (`53816424`), environmental comparator screen (`53816466`), cross-cohort
+          DIAMOND comparison (`53816576`), and ORIX H200 GPU ProstT5 embeddings (`316862`) are
+          COMPLETED and verified on disk (`root_audit/f1_full/`, `f1_comparators/`,
+          `f1_comparison/`, `f1_embeddings/`).
+        - Domain phylogeny (`53816876`, `root_audit/f1_phylogeny.py`) and CPU embedding analysis
+          plots (`53816919`, `gpu/family_embedding_analysis.py`) are PENDING/RUNNING and not
+          reviewed as complete.
+    - Track F2 (Historical Compatible-Solute Phosphatase Predictions MpgP / GgpP):
+      * Final Pilot Verdict: STOP AT PILOT — DO NOT PROMOTE TO FULL RUN.
+      * Scientific Disposition: Both historical leads (`1PRr2__self_SemiBin_81::1PRr2_1391604_4`,
+        93 aa; `S52PRr1__single_SemiBin_53::S52PRr1_477345_9`, 148 aa) are verified with 100%
+        sequence/SHA-256 identity across `orthogroups_rep_seq.fasta`, `all_rep_proteins.faa`,
+        `drep_rep_proteomes`, and `f2_leads.faa` (`root_audit/f2_identity/identity_records.json`,
+        job `53816465`). Both yield 0 HMMER hits to HAD profiles (`PF00702`, `PF13419`,
+        `PF08282`, `PF13344`) and 0 alignments under `diamond blastp --ultra-sensitive`
+        (`e <= 1e-3`) against the retained phosphatase reference panel. Compatible-solute
+        phosphatase assignment is unsupported (though general biological function of these short
+        archaeal proteins is not disproved).
+    - Track F3 (Microbial Rhodopsins & Heliorhodopsins):
+      * Pilot Verdict: PROMOTE TO FULL RUN (4 complete `partial=00` candidates in 4/256 MAGs:
+        2 Type-1 `PF01036`, 2 Heliorhodopsin `NF038020`/`PF18761`; 0 eukaryotic GPCR hits;
+        raw join audited in `root_audit/f345_pilot_reference_audit.json`).
+      * Active Full-Run Code Status (`f345/scripts/08_f3_rhodopsin_full.py`): Contains a
+        BLOCKING bug in ProstT5 reference packaging (`rr.get("family_name", "")` on a TSV whose
+        column is `category`, emitting 0 curated references and triggering `AssertionError` in
+        `11_full_audit_and_synthesis.py` L146) plus un-gated inclusion of `partial != 00`
+        fragments in `prostt5_*.faa`.
+    - Track F4 (Ectoine Synthase EctC & Biosynthetic Operon Synteny):
+      * Pilot Verdict: PROMOTE TO FULL RUN WITH MANDATORY SYNTENY RE-CLASSIFICATION (44 complete
+        `partial=00` EctC candidates across 39/256 MAGs; raw join audited).
+      * Critical Scientific Finding on Pilot Operon Claim: The pilot summary claim of "33
+        co-localized operons" (`f4_pilot_metrics.json`) is scientifically overstated. Only
+        27/33 contain the complete `EctA + EctB + EctC` pathway on the same contig (`15`
+        `ABCD` + `12` `ABC`). Six of the 33 lack `EctA` (`3` `BCD`, `2` `BC`, and `1` `CD`
+        which is actually a single-ORF `EctC-EctD` fusion `V60PRr2_211258_4` misclassified as a
+        two-gene operon due to a missing `g["prot_id"] != prot_id` self-exclusion check in
+        `04_f4_ectc_pilot.py` L437).
+      * Active Full-Run Code Status (`f345/scripts/09_f4_ectc_full.py`): Fixes the `ABCD`/`ABC`/
+        `BCD`/`BC`/`CD` labels and `TIGR02406`/`TIGR02407`/`TIGR02408` profile mapping, but
+        still has (a) the same blocking `rr.get("family_name", "")` ProstT5 reference filter bug
+        (0 curated refs emitted), (b) the same missing `g["prot_id"] != prot_id` self-hit check
+        (`L559-567`), and (c) un-gated `partial != 00` fragments in `prostt5_ectc.faa`.
+    - Track F5 (Beta- and Gamma-Carbonic Anhydrases):
+      * Pilot Verdict: PROMOTE TO FULL RUN WITH STRICT HOUSEKEEPING/CATALYTIC RESTRAINT (421
+        complete `partial=00` candidates across 203/256 MAGs: 216 Gamma-CA, 204 Beta-CA, 1
+        CsoSCA control; raw join audited).
+      * Active Full-Run Code Status (`f345/scripts/10_f5_carbonic_anhydrase_full.py`): Restores
+        verified pilot profiles (`NF050158`/`NF040597`, `PF00484`, `TIGR02701`), but shares the
+        blocking `rr.get("family_name", "")` ProstT5 reference filter bug (`L703-708`, emitting
+        0 curated refs) and un-gated `partial != 00` fragments in `prostt5_*.faa`.
+
+================================================================================
+2. FILE INVENTORY & SHA-256 PROVENANCE MANIFEST OF AUDITED ARTIFACTS
+--------------------------------------------------------------------------------
+2.1 Manuscript Integrity Check (Untouched):
+    - `2fcc918baaf344de6ef96915b060e4b8ce0ee6fefa7a26168475766b281b0a8b`  `manuscript/main.tex`
+
+2.2 Root Audit & Adjudication Records:
+    - `ROOT_ARGON_PREFLIGHT_DISPOSITION.txt` (`reviews/darkmatter-family-analysis-20261015/`)
+    - `ROOT_PILOT_ADJUDICATION.txt` (`reviews/darkmatter-family-analysis-20261015/`)
+    - `ROOT_PROGRESS.txt` (`reviews/darkmatter-family-analysis-20261015/`)
+    - `f345/ROOT_PILOT_REQUIREMENTS.txt` (`reproducibility/darkmatter/family_discovery_20261015/`)
+    - `f0d73246cca7097772396c11451f656d9ca98195a989984f04c938e55413537c`  `root_audit/audit_f345_pilots.py`
+    - `41d022ae55f53fa74587523f60255d3448c78a1ab65b6c88d771cfbf99b44cf5`  `root_audit/f345_pilot_reference_audit.json`
+    - `f679e2076e42e6b24e45ff656a105a5a674021d952dacb3e2677e69ad689c688`  `root_audit/f1_profile_pilot.py`
+    - `0cb3f9960390c425ce4e2b99b186613e1099d7344fa73851d7f55fc5efac222e`  `root_audit/f1_profile_summary.json`
+    - `b40df3895435f60e8eca053d8f881f4ba14b9a0e763beb427961f6323bf4d875`  `root_audit/f1_full.py`
+    - `154ae0331a524ec72a2cae863ea5f8572832c50e2379dfad35aa5a3a19c480aa`  `root_audit/f1_full/summary.json`
+    - `9eed61151dd553e28de760958cb7fe27bdcd4383cce93998c8ca06436d03cf63`  `root_audit/f1_comparators.py`
+    - `ba91655880550113d922854308ffcf7028aa78d4bf7e6b21a512cb73f9e857cb`  `root_audit/f1_comparators/environmental_comparators_summary.json`
+    - `2495c0033af37ae619fb44cc79c58048f6cc33ff2c351b7e8c9b60f8c9af37b5`  `root_audit/f1_compare.py`
+    - `d8fd40f4c4a079ce3ea505933e8906ab5f7c879a7c1f6e1b32b6eacef6f9d85a`  `root_audit/f1_comparison/summary.json`
+    - `8bca79689042b0b21b90ba6be641623a9cd4d92dd057ef914a851d7a16a0160e`  `root_audit/f1_phylogeny.py`
+    - `ebb9601fbce15e0caf8cecc0a4ebbc2125661d088bc1767bf0588244417854ee`  `root_audit/f2_identity.py`
+    - `04ac41a3f285ceef0a5257821242b8891807587849d622c553312894a6443188`  `root_audit/f2_identity/identity_records.json`
+    - `8cdddbce7e723d0d1370c71383192634bd20f72b1ccfd53907ff79e88c271739`  `root_audit/f2_identity/summary.json`
+
+2.3 GPU & Embedding Infrastructure (`reproducibility/darkmatter/family_discovery_20261015/gpu/` & `root_audit/f1_embeddings/`):
+    - `f47516cb37d07e6fb298a6f1e78c7ab6900d925121317cfa4d77757108c6df95`  `gpu/prostt5_embed.py` (v4)
+    - `d5e019d7e1fc2a22ce55668b8c36f73932607082f6fa53b2cb385f9c29729a81`  `gpu/prostt5_embed_v3_preserved.py` (v3)
+    - `c4e37f5ffe56883a55a4354659b1852cbd6070c559c8e926c7655274fa5e71d7`  `gpu/verify_embeddings.py`
+    - `089b217f92a55828e93d4d8b4afe56350fc84d4d78610d4a2fc42a14e2abf59c`  `gpu/family_embedding_analysis.py`
+    - `95842ac37010f67921ba13972c4b4e3866ab141b87d68d4109f70deba392abfc`  `gpu/smoke_results_v2/provenance.json`
+    - `dd59078c131180b3909d8372e6c4fd874c7ca347c97288b0136dc324aaca70bd`  `root_audit/f1_embeddings/provenance.json`
+    - `dea7d51d85d72736a7839eea0346e1fb250fd08f4df3ea155894944d1616de4d`  `root_audit/f1_embeddings/verification_report.json`
+    - `d522ae52ac38ee20be7300b46d7d6b26944cf3c4225280b2f84b3cdd379e963f`  `root_audit/f1_embeddings/slurm_execution.txt`
+
+2.4 F3-F5 Pilot & Active Full-Run Scripts (`reproducibility/darkmatter/family_discovery_20261015/f345/scripts/`):
+    - `fcf168fae14b1d83f906c6d15b9e5489c404f18553ebde7691deb17b866c53b0`  `01_fetch_references.py`
+    - `130b7325006b2807975a59d6527bf036cd18696bfd99c10d5b24707aa3f758c4`  `02_inspect_input_schemas.py`
+    - `c16d920038352121bf29ed803f2d02c8f268bae2c633a262ac62a736d3266ea6`  `03_f3_rhodopsin_pilot.py`
+    - `e183e7a9d4c8cfb58b90965e5f298f5be2f8a0bdccf4f5543a2ad3c1255798a0`  `04_f4_ectc_pilot.py`
+    - `2ff320e6b3d873f8160097b941545122d0233e4e9283a557471c78d1621409b6`  `05_f5_carbonic_anhydrase_pilot.py`
+    - `f93008c07fc1e0dadfc97da61d0a23a175ae1d5d4dab2db2f14ca4e68576f0dd`  `06_audit_and_summarize.py`
+    - `58698381f1b0c0b10deee4049aa0f5a4877d068c124911fe3b2f147cc7631d8e`  `recompute_pilot_summaries.py`
+    - `0a31e7da6f9e0868684210e1f31a21d5c27f9a1949f8a11cb9b7482ffd01d7b0`  `07_prepare_full_cohorts.py` (mtime `09:24:34`)
+    - `94f8e0f78594697e2c69da25778ac8597eb051961e8cb2ecc94344a38083bb07`  `08_f3_rhodopsin_full.py` (mtime `09:24:59`)
+    - `635764d2009fc7794050aa1974126fae41f2acfb121c35f622fd9029ab3bf024`  `09_f4_ectc_full.py` (mtime `09:25:29`)
+    - `269385b3e327ccd85d0ad65a53c22afa3824b33faf33e46319d9ad39eb973b85`  `10_f5_carbonic_anhydrase_full.py` (mtime `09:26:05`)
+    - `c1e1076f12b4c6007a1aa53a8d85babd813a84c002f6d1cf3129401f827c49e2`  `11_full_audit_and_synthesis.py` (mtime `09:26:26`)
+    - `f390c091cad50b4d27f09755ceecd7afc047aafc3316f329d2d73f70fb8e9daf`  `11_audit_and_synthesis_full.py` (mtime `09:18:55`, older unused copy)
+
+================================================================================
+3. TRACK F1: CRYPTOCHROME / PHOTOLYASE FAMILY (CPF) — PILOT & COMPLETED INITIAL FULL RUNS
+--------------------------------------------------------------------------------
+3.1 Completed Pilot Assessment (`root_audit/f1_profile_summary.json`, job `53816043`):
+    - Root's independent profile-first pilot screened the deterministic 256-genome `Wdb.csv`
+      subset (`956,344` proteins) with the three authentic core CPF HMM profiles (`PF00875`
+      DNA_photolyase, `PF03441` FAD_binding_7, `PF04244` Cryptochrome_C/DPRP) under audited
+      domain gates (`domain_ievalue <= 1e-5`, `profile_coverage >= 0.70`).
+    - Empirical Pilot Results:
+      * `56` profile-supported CPF candidates across `45` carrier MAGs (`17.6%` of the 256
+        species representatives), of which `48` (`85.7%`) are complete coding sequences
+        (`partial=00`).
+    - Why Flash's Pilot v3 Headline (`2,453` candidates in `f12/results/pilot_v3_results/f1_pilot_summary.tsv`) Was Rejected:
+      * Of the `2,453` rows in Flash's pilot, `2,396` (`97.7%`) were `high_conf_SplB_outgroup`
+        hits to `PF04055` (Radical_SAM). `PF04055` models the ubiquitous `[4Fe-4S]` Radical
+        SAM catalytic core (`CX3CX2C`) across dozens of unrelated anaerobic enzyme families;
+        authentic spore photoproduct lyase (SplB) requires the specific C-terminal domain
+        (`PF08713` / `TIGR03904`). Excluding `PF04055` left `57` non-outgroup CPF candidates
+        (`47` `partial=00` across `45` MAGs; 55 overlapping Root's 56), confirming that only the
+        core CPF profile set is scientifically valid.
+
+3.2 Audit of Completed Active Root F1 Full Runs (`root_audit/f1_full`, `f1_comparators`, `f1_comparison`, `f1_embeddings`):
+    - **Full Empty Quarter Representative Census (`root_audit/f1_full.py`, IBEX job `53816424`, `root_audit/f1_full/summary.json`)**:
+      * Scanned all `5,438` ANI95 `Wdb.csv` representative MAG proteomes (`20,451,986` proteins).
+      * Identified **`1,154` profile-supported CPF candidates** (`PF00875`, `PF03441`, `PF04244`
+        at `dom_ievalue <= 1e-5`, `profile_coverage >= 0.70`), of which **`914` (`79.2%`) are
+        complete (`partial=00`)** genes, distributed across **`935` carrier genomes (`17.2%` of
+        all 5,438 species representatives)**.
+      * Note how tightly the full catalogue prevalence (`935 / 5,438 = 17.19%` carrier genomes;
+        `1,154` candidates) matches the deterministic 256-genome pilot (`45 / 256 = 17.58%`
+        carrier genomes; `56` candidates).
+    - **External Environmental Comparator Screen (`root_audit/f1_comparators.py`, IBEX job `53816466`, `root_audit/f1_comparators/environmental_comparators_summary.json`)**:
+      * Applied the exact same `cpf.hmm` profiles and gates (`dom_ievalue <= 1e-5`,
+        `profile_coverage >= 0.70`) to the full `06_darkmatter/external_benchmarks/` pools:
+        - **SMAG** (`smag_all.faa`, `4,778,910` proteins): **`503` CPF candidates** (`0.0105%`
+          of proteins).
+        - **GEM** (`gem_all.faa`, `4,824,709` proteins): **`1,192` CPF candidates** (`0.0247%`
+          of proteins).
+        - For comparison, EQ (`20,451,986` proteins) yielded `1,154` total (`0.0056%`) and `914`
+          complete (`0.0045%`) CPF candidates.
+    - **Cross-Cohort Sequence & Homology Comparison (`root_audit/f1_compare.py`, IBEX job `53816576`, `root_audit/f1_comparison/summary.json`)**:
+      * Combined `914` complete (`partial=00`) EQ candidates (`912` unique sequences), `503`
+        SMAG candidates (`496` unique), `1,192` GEM candidates (`1,136` unique), and `59`
+        profile-verified curated CPF references (`59` unique) = **`2,668` total sequences**
+        (`2,600` unique clean amino-acid sequences across all cohorts).
+      * Ran `diamond blastp --ultra-sensitive --max-target-seqs 0 --evalue 1e-3` requiring
+        bidirectional alignment span coverage `>= 0.70` (`(qend-qstart+1)/qlen >= 0.7` and
+        `(send-sstart+1)/slen >= 0.7` in `root_audit/f1_compare.py` L69):
+        - **EQ (`914` queries) vs Curated References (`59`)**: `883 / 914` (`96.6%`) have a
+          coverage-passing reference hit; `31` have no coverage-passing hit; **median amino-acid
+          identity = `43.8%`**, with **`652 / 883` (`73.8%`) below `50%` identity**.
+        - **EQ (`914` queries) vs SMAG (`503`)**: `910 / 914` (`99.6%`) have a coverage-passing
+          SMAG hit; `4` without; **median identity = `55.9%`** (`284` below `50%` identity).
+        - **EQ (`914` queries) vs GEM (`1,192`)**: `911 / 914` (`99.7%`) have a coverage-passing
+          GEM hit; `3` without; **median identity = `57.7%`** (`175` below `50%` identity).
+      * **Scientific Interpretation of `f1_comparison`**:
+        1. Nearly all complete EQ CPF proteins (`883/914 = 96.6%` against curated references;
+           `910/914 = 99.6%` against SMAG; `911/914 = 99.7%` against GEM) share global domain
+           architecture (`>= 70%` bidirectional span coverage) with known CPF enzymes and
+           environmental homologs.
+        2. However, EQ CPF sequences are substantially divergent from biochemically characterized
+           Swiss-Prot references (median identity `43.8%`, with `652/883` below `50%` identity),
+           while showing appreciably higher sequence identity to uncultured soil/terrestrial and
+           global environmental MAGs (`55.9%` median vs SMAG; `57.7%` median vs GEM). This
+           directly supports the hypothesis that environmental metagenomes bridge sequence space
+           poorly covered by experimental reference databases, WITHOUT claiming novel protein
+           folds or unverified enzymatic mechanisms.
+    - **Completed Production GPU Embedding Run (`root_audit/f1_embeddings/`, ORIX job `316862`)**:
+      * Executed `prostt5_embed.py` (`f47516cb...`, v4) on `orix-worker-h200-7` (`NVIDIA H200`,
+        peak VRAM `3.3864 GB`, duration `18.63s` embedding / `30.87s` total) over all `2,668`
+        sequences (`2,600` unique clean sequences embedded once and expanded to all `2,668` IDs).
+      * `verification_report.json` (`dea7d51d...`) passed all 11 integrity checks: shape
+        `(2668, 1024)`, zero NaN/Inf, exact ID order preservation, and `max_abs_diff = 0.0` across
+        all 60 duplicate pairs (including cross-cohort exact matches such as
+        `SMAG__SRR6474979rbin.7::SRR6474979rbin.7_3638` == `GEM__3300012830_4::3300012830_4_1209`
+        and `GEM__3300024289_2::3300024289_2_1054` == `curated_reference__P61497`).
+    - **Code Review of Active Root F1 Scripts (`f1_full.py`, `f1_comparators.py`, `f1_compare.py`, `f1_phylogeny.py`, `gpu/family_embedding_analysis.py`)**:
+      * `f1_full.py` (`b40df389...`), `f1_comparators.py` (`9eed6115...`), and `f1_compare.py`
+        (`2495c003...`) are clean, deterministic, and free of join or coordinate bugs.
+      * `f1_phylogeny.py` (`8bca7968...`, running under job `53816876`) properly collapses
+        within-source exact sequence duplicates while retaining cross-source representatives
+        (`key = (meta[i]['source'], meta[i]['sequence_sha256'])`, L25), trims to HMM reference
+        match columns (`hmmalign --trim`, L28-29), and computes 100-seed equal-sized (`n = min(200, ...)`)
+        reference-conditioned PD additions (`span(refs | chosen) - span(refs)`, L36-42) with
+        explicit caveats (`limits` in L45).
+      * `gpu/family_embedding_analysis.py` (`089b217f...`, running under job `53816919`)
+        enforces ID closure and SHA-256 verification between `--embeddings` and `--metadata`,
+        computes 1024-d cosine nearest-reference distances in native embedding space, runs
+        multi-seed PCA-initialized t-SNE (`42, 123, 20261015`), and tracks duplicate multiplicities.
+
+================================================================================
+4. TRACK F2: COMPATIBLE-SOLUTE PHOSPHATASES (MpgP / GgpP) — FINAL PILOT DISPOSITION
+--------------------------------------------------------------------------------
+4.1 Completed Identity & Ultra-Sensitive Alignment Audit (`root_audit/f2_identity/`, job `53816465`):
+    - Root's `f2_identity.py` (`ebb9601f...`) resolved the two historical dark-matter leads
+      directly across four immutable/primary FASTA sources (`orthogroups_rep_seq.fasta`,
+      `all_rep_proteins.faa`, `drep_rep_proteomes/{mag}.faa.gz`, and `f2_leads.faa`):
+      1. `1PRr2__self_SemiBin_81::1PRr2_1391604_4` (`Thermoplasmatota`, `c__SW-10-69-26`,
+         dRep cluster `2415_0` winner):
+         - Exact length = **`93 aa`**, `partial=00` (`2782..3063` bp, strand `-1`),
+           `sha256 = 0277d3ff4690636db8d69f4c3043a3623b23a5e991da2241b9d2352627ce7665`
+           (identical across all 4 files).
+      2. `S52PRr1__single_SemiBin_53::S52PRr1_477345_9` (`Thermoplasmatota`, `c__SW-10-69-26`,
+         dRep cluster `2433_1` winner):
+         - Exact length = **`148 aa`**, `partial=00` (`4449..4895` bp, strand `+1`),
+           `sha256 = da069f871144b777dbfb19496cd299a4d94361b5633fd736eeca59f60a61580d`
+           (identical across all 4 files).
+    - Note on Flawed Pilot Summary Artifact (`f12/results/pilot_v3_results/f2_pilot_summary.tsv`):
+      * Flash's `03_f2_pilot_v3.py` hardcoded `286 aa` for Lead 2 in `f2_pilot_summary.tsv` L5
+        (contradicting the 148 aa sequence in its own `f2_leads.faa`) and reported
+        `delta_bitscore_osm_minus_competing = 0.0` by subtracting `0.0 - 0.0` when both target
+        and competing bitscores were zero (`no_hit`). A `0.0 - 0.0` difference from zero hits is
+        `NA` (undefined), not an equal-bitscore tie.
+    - Homology & Profile Evidence (`root_audit/f2_identity/summary.json`):
+      * HMMER search against HAD superfamily profiles (`PF00702`, `PF13419`, `PF08282`,
+        `PF13344`): **`0` hits**.
+      * `diamond blastp --ultra-sensitive --max-target-seqs 0 --evalue 1e-3` against the retained
+        compatible-solute phosphatase (`MpgP` `O33611`, `GgpP`, `OtsB`) and competing HAD
+        housekeeping phosphatase (`HisB`, `SerB`, `PgpA/B`) panel: **`0` hits** (`diamond_hit_rows = 0`).
+
+4.2 Final Scientific Judgment on F2:
+    - **CONCUR WITH ROOT DECISION: STOP F2 AT PILOT; DO NOT RUN FULL CENSUS.**
+    - **What Is Established vs Not Disproved**:
+      * The specific historical annotation of `1PRr2_1391604_4` (93 aa) and `S52PRr1_477345_9`
+        (148 aa) as mannosyl-3-phosphoglycerate phosphatase (`MpgP`, EC `3.1.3.70`) or
+        glucosylglycerol-phosphate phosphatase (`GgpP`, EC `3.1.3.69`) is **unsupported by any
+        detectable primary sequence or profile homology** (and at 93 aa and 148 aa, both proteins
+        are substantially shorter than canonical ~240–270 aa HAD-family compatible-solute
+        phosphatases).
+      * Conversely, the absence of sequence alignment does **not** disprove all biological
+        function for these two conserved complete (`partial=00`) `Thermoplasmatota` proteins,
+        nor can flanking pathway context be cited as negative because osmolyte synthase profiles
+        (`MpgS`, `GgpS`, `OtsA`) were `NOT_TESTED`.
+
+================================================================================
+5. TRACKS F3, F4, AND F5: COMPLETED PILOT RESULTS & SCIENTIFIC JUDGMENTS
+--------------------------------------------------------------------------------
+5.1 Verification of Root Reference-Join Correction (`root_audit/f345_pilot_reference_audit.json`):
+    - In the original pilot runs (`03_f3_rhodopsin_pilot.py` L417, `04_f4_ectc_pilot.py` L507,
+      `05_f5_carbonic_anhydrase_pilot.py` L507), candidate FASTA headers were written as
+      `>{protein_id}|{mag}|{class}|{cluster}`. DIAMOND therefore emitted the full pipe-delimited
+      string in `qseqid`, whereas the summary table builders looked up bare `protein_id`,
+      causing 100% of BLAST hits (`3/3` in F3, `43/43` in F4, `379/379` in F5) to be dropped as
+      false `NO_HIT` rows in `*_v0_brokenjoin.tsv`.
+    - Root's `audit_f345_pilots.py` (`f0d73246...`) and `recompute_pilot_summaries.py`
+      (`58698381...`) joined on `qseqid.split("|")[0]` directly from the raw `ref_blastp.tsv`
+      files on disk (`results/pilot_v1/f{3,4,5}_*/work/ref_blastp.tsv`), restoring the true
+      alignment metrics without re-running HMMER or DIAMOND.
+    - **Mandatory Novelty Rule**: No novelty claim may ever be derived from the broken `v0`
+      `NO_HIT` fields. Even after the join fix, the remaining true `NO_HIT` candidates against
+      the curated reference panel (`1/4` in F3, `1/44` in F4, `42/421` in F5) merely lack a
+      `diamond blastp --sensitive` alignment at `e <= 1e-5` against a small (`202`-sequence)
+      curated reference subset; they are profile-supported family members (`dom_ievalue <= 1e-9`
+      to `1e-28`), NOT novel protein families.
+
+5.2 Track F3 Pilot Judgment (Microbial Rhodopsins & Heliorhodopsins, job `53816161`):
+    - **Verified Pilot Numbers (`f3_candidates_summary.tsv`, `f3_pilot_metrics.json`, `f3_pilot_reference_join_audit.tsv`)**:
+      * Scanned `256` MAGs (`956,344` proteins) in `11.2s`.
+      * Identified **`4` complete (`partial=00`) candidates** across **`4` MAGs** (`1.56%` of
+        pilot MAGs), all with `0.0` bitscore against eukaryotic GPCR controls (`PF00001`,
+        `PF00002`):
+        1. `13PRr3__self_SemiBin_1035_sub::13PRr3_556862_5` (`Halobacteriota`, `g__Halopiger`,
+           248 aa): `Type-1_Microbial_Rhodopsin` (`PF01036`, `iE = 1.9e-32`, `cov = 0.909`),
+           best ref `P42196` (`39.8%` pident, `qcov = 0.891`, `e = 1.65e-35`).
+        2. `2PRr2__self_SemiBin_1592::2PRr2_1537660_7` (`Myxococcota_A`, 277 aa):
+           `Type-1_Microbial_Rhodopsin` (`PF01036`, `iE = 1.7e-25`, `cov = 0.914`), best ref
+           `Q9AFF7` (`30.1%` pident, `qcov = 0.870`, `e = 2.04e-18`).
+        3. `62PRr2__single_MetaBAT2_66_sub::62PRr2_1043523_5` (`Actinomycetota`,
+           `g__Rubrobacter`, 264 aa): `Heliorhodopsin_Type-3` (`NF038020`, `iE = 1.3e-89`,
+           `cov = 0.996`), best ref `A0A0W0GG67` (`60.7%` pident, `qcov = 0.917`, `e = 2.24e-105`).
+        4. `F21PRr1__single_MaxBin2_191_sub::F21PRr1_351040_15` (`Patescibacteriota`,
+           `c__Saccharimonadia`, 236 aa): `Heliorhodopsin_Type-3` (`NF038020`, `iE = 2.8e-28`,
+           `cov = 0.979`; `PF18761`, `iE = 3.2e-20`, `cov = 0.958`), `NO_HIT` at `e <= 1e-5`
+           against the 8-sequence curated Heliorhodopsin reference panel.
+    - **Decision & Testable Hypothesis**:
+      * **PROMOTE TO FULL RUN.** The separation between Type-1 (`PF01036`) and Type-3
+        Heliorhodopsin (`NF038020`/`PF18761`) is unambiguous, and the detection of a
+        `Saccharimonadia` (`Patescibacteriota`) Heliorhodopsin and a `Myxococcota_A` Type-1
+        rhodopsin in hyper-arid desert sands provides a concrete comparative hypothesis for the
+        full 5,438-MAG + SMAG/GEM census.
+      * **Scope Limits**: Neither the pilot nor the current full script (`08_f3_rhodopsin_full.py`)
+        tests retinal chromophore biosynthesis (`blh`/`crtEBIY`), sensory transducer (`Htr`)
+        co-localization, or explicit alignment-anchored TM7 Schiff-base lysine (`K216`/`K241`)
+        and proton-acceptor carboxylate motifs. Consequently, full-run claims must be limited to
+        profile-defined Type-1 vs Type-3 family distribution, taxonomic breadth, and sequence/
+        embedding divergence relative to SMAG/GEM/curated references—NOT ion-pumping vs sensory
+        phototrophy or chromophore sufficiency.
+
+5.3 Track F4 Pilot Judgment (Ectoine Synthase EctC & Operon Synteny, job `53816162`):
+    - **Verified Pilot Numbers (`f4_candidates_summary.tsv`, `f4_pilot_metrics.json`, `f4_pilot_reference_join_audit.tsv`)**:
+      * Scanned `256` MAGs in `14.1s`.
+      * Identified **`44` complete (`partial=00`) EctC candidates** across **`39` MAGs** (`15.2%`
+        of pilot MAGs), all hitting `PF06339`/`NF009806` with `dom_ievalue <= 6.7e-39`,
+        `profile_coverage >= 0.846`, and `delta_bitscore >= 24.4` bits above generic cupins
+        (`PF00190`, `PF07883`, `PF02678`).
+      * After Root's join fix, `43 / 44` (`97.7%`) match curated EctC references at `41.2%`–`95.5%`
+        amino-acid identity (median `69.5%`, `2` below `50%` identity); the sole `NO_HIT` row at
+        `e <= 1e-5` (`S16PRr1__single_SemiBin_32::S16PRr1_342732_13`, 125 aa, in `Actinokineospora`)
+        still has a strong `PF06339` domain hit (`iE = 6.7e-39`, `cov = 0.961`, `score = 123.3`)
+        and is a paralog in a genome that also carries a canonical `EctC` (`S16PRr1_150635_44`,
+        `67.7%` pident to `Q6QUY8`).
+    - **Critical Audit of the Pilot's "33 Co-Localized Operons" Claim**:
+      * `f4_pilot_metrics.json` reports `synteny_co_localized_operon = 33` and
+        `synteny_unlinked_pathway_carrier = 11` (`0` orphan).
+      * A granular audit of all 44 rows in `f4_candidates_summary.tsv` shows that **`04_f4_ectc_pilot.py`
+        L461-462 classified ANY EctC with ANY single `EctA`, `EctB`, OR `EctD` hit within 10 kb
+        as `Co_localized_Operon`**, inflating the true canonical operon count:
+        1. **True complete biosynthetic operons (`EctA + EctB + EctC` on same contig)**: **`27 / 44` (`61.4%`)**
+           - `15` `complete_operon_ABCD` (`EctA + EctB + EctC + EctD` co-localized);
+           - `12` `complete_operon_ABC` (`EctA + EctB + EctC` co-localized).
+        2. **Partial same-contig clusters lacking `EctA` (`TIGR02406`)**: **`5 / 44` (`11.4%`)**
+           - `3` `partial_cluster_BCD` (`62PRr2_478231_3`, `V54PRr1_981768_2`, `F58PRr1_642601_2`);
+           - `2` `partial_cluster_BC` (`S54PRr1_137889_2`, `F28PRr2_6173_136`).
+           (In `3` of these `5`, `EctA` is present on another contig in the MAG; in `2`—`62PRr2__self_SemiBin_138_sub`
+           and `S54PRr1__single_MaxBin2_100_sub`—`TIGR02406` is not detected in the MAG.)
+        3. **False "Co-Localized Operon" from Self-Hit on a Fused `EctC-EctD` Single ORF**: **`1 / 44` (`2.3%`)**
+           - Row 38 (`V60PRr2__single_SemiBin_127_sub::V60PRr2_211258_4`, `g__Conexibacter`,
+             `422 aa`, coordinates `3976..5244` bp) is a single fused two-domain ORF carrying
+             both an N-terminal `EctC` domain (`PF06339`, `127.0` bits) and a C-terminal `EctD`
+             domain (`TIGR02408`).
+           - Because `04_f4_ectc_pilot.py` L437-445 looped over `contig_genes` without checking
+             `g["prot_id"] != prot_id`, it computed `min(abs(3976 - 5244), abs(5244 - 3976))` =
+             `1268 bp` (the length of `V60PRr2_211258_4` itself!) and recorded
+             `nearby_pathway_genes_10kb = EctD:V60PRr2_211258_4(1268bp)` (`partial_cluster_CD`),
+             misclassifying a solitary fused `ectCD` gene as a multi-gene `Co_localized_Operon`!
+        4. **Unlinked Pathway Carriers (`11 / 44`, `25.0%`)**:
+           - Only `4 / 11` carry the complete `EctA + EctB + EctC (+ EctD)` set across unlinked
+             contigs in the MAG (`unlinked_carrier_mag_has_ABCD`).
+           - The other `7 / 11` (`unlinked_carrier_mag_missing_ectA`) carry `EctB` (or `EctB + EctD`)
+             elsewhere in the MAG but have **no `TIGR02406` (`EctA`) hit anywhere in the MAG**—
+             including in `S16PRr1__single_SemiBin_32` (`Actinokineospora`, CheckM completeness
+             **`100.0%`**), which encodes two solitary `EctC` paralogs (`S16PRr1_150635_44` and
+             `S16PRr1_342732_13`) and `EctB`/`EctD` without `TIGR02406`. These represent true
+             non-canonical/solitary `ectC` or alternative acetyltransferase architectures in
+             complete genomes, distinct from contig-break fragmentation in incomplete MAGs.
+      * **Reference Anchor Provenance (`ROOT_PILOT_REQUIREMENTS.txt` L14-15)**:
+        - Verified in `f345/references/verified_references_metadata.tsv` L3-4: the exact
+          *Paenibacillus lautus* PDB `5ONN` crystal structure sequence characterized by Czech
+          et al. (2019) is `A0A385TEI2` (`130 aa` core), whereas `YP_003245677.1`
+          (*Paenibacillus* sp. Y412MC10, `130 aa`) is a close RefSeq homolog (`129/130 aa`
+          identical, `has_function_experimental_evidence = 0`, `HOMOLOGY_TO_5ONN`). Both are now
+          accurately labeled in `verified_references_metadata.tsv`.
+    - **Decision & Testable Hypothesis**:
+      * **PROMOTE TO FULL RUN**, provided the full-run synthesis strictly separates:
+        (i) canonical `ectABC` / `ectABCD` operons (`27/44` in pilot),
+        (ii) partial `ectBC` / `ectBCD` clusters (`5/44`),
+        (iii) single-ORF `ectC-ectD` domain fusions (`1/44`, after fixing the self-hit bug),
+        (iv) unlinked complete `ABCD`/`ABC` carriers across contigs (`4/44`), and
+        (v) solitary `ectC` / `EctA`-lacking genomes stratified by CheckM completeness (`>= 90%`
+            vs `< 90%`).
+
+5.4 Track F5 Pilot Judgment (Beta- and Gamma-Carbonic Anhydrases, job `53816163`):
+    - **Verified Pilot Numbers (`f5_candidates_summary.tsv`, `f5_pilot_metrics.json`, `f5_pilot_reference_join_audit.tsv`)**:
+      * Scanned `256` MAGs in `17.3s`.
+      * Identified **`421` complete (`partial=00`) candidates** across **`203` MAGs (`79.3%` of
+        all 256 pilot MAGs)**:
+        - `216` `Gamma-Carbonic_Anhydrase` (`NF050158` / `NF040597`, requiring `delta_bitscore >= 20.0`
+          bits above non-CA left-handed beta-helix acyltransferases `PF00132` and `PF00583`;
+          `235` generic LbH proteins were properly rejected by the domain specificity gate).
+        - `204` `Beta-Carbonic_Anhydrase` (`PF00484` `Pro_CA`).
+        - `1` `Carboxysome_Shell_CA_CsoSCA` control (`TIGR02701`, in `F28PRr2__single_SemiBin_18::F28PRr2_202292_18`).
+      * After Root's join fix, `379 / 421` (`90.0%`) align to the curated CA reference panel at
+        `e <= 1e-5` (`26.9%`–`83.2%` identity, median `42.4%`, `286` below `50%` identity), and
+        `42 / 421` (`10.0%`) have `NO_HIT` at `e <= 1e-5` against the small curated reference panel.
+    - **Critical Scientific Audit of F5 Claims**:
+      1. **Ubiquitous Housekeeping Baseline (`79.3%` of MAGs)**: Because Beta-CA and Gamma-CA
+         supply bicarbonate (`HCO3-`) for universal anaplerotic carboxylation reactions (e.g.,
+         pyruvate carboxylase, PEP carboxylase, acetyl-CoA carboxylase) across nearly all
+         prokaryotic phyla, finding them in `203 / 256` (`79.3%`) of desert MAGs reflects
+         core metabolic housekeeping, NOT a specialized hyper-arid adaptation or autotrophic
+         carbon fixation pathway by itself.
+      2. **Gamma-CA Catalytic Caveat**: Many structural members of the Gamma-CA / CamH
+         trimeric LbH family lack measurable CO2 hydration activity in vitro or serve different
+         metabolic roles. Furthermore, the pilot heuristic (`has_zn_histidine_triad_heuristic = 1`
+         whenever total `seq.count("H") >= 3` across the entire protein, `05_f5_carbonic_anhydrase_pilot.py`
+         L476) is satisfied by `214 / 216` (`99.1%`) of Gamma-CA candidates because almost any
+         ~180 aa protein contains at least three histidines somewhere in its sequence; in the
+         gamma-CA trimer, the active site is formed by `His81`, `His117`, and `His122` at the
+         subunit interface. Total histidine count `>= 3` is a weak sanity check, NOT proof of
+         intact catalytic Zn/Co coordination.
+    - **Decision & Testable Hypothesis**:
+      * **PROMOTE TO FULL RUN**, restricting claims to comparative family prevalence (Beta-CA vs
+        Gamma-CA vs CsoSCA across EQ, SMAG, and GEM), taxonomic distribution, and sequence/
+        embedding divergence relative to experimentally validated references (including the
+        metagenomic Gamma-CA anchors `YEH58108.1` `TtCA`, `YEH58109.1` `CrCA`, `YEH58110.1` `ToCA`).
+
+================================================================================
+6. CONCRETE CODE-REVIEW FINDINGS IN ACTIVE FULL-RUN SCRIPTS (F3-F5)
+--------------------------------------------------------------------------------
+Note on Concurrent Edits: Between `09:24:34` and `09:26:26` local time on 2026-10-15, Flash
+rewrote `07_prepare_full_cohorts.py` (`0a31e7da...`), `08_f3_rhodopsin_full.py` (`94f8e0f7...`),
+`09_f4_ectc_full.py` (`635764d2...`), `10_f5_carbonic_anhydrase_full.py` (`269385b3...`), and
+`11_full_audit_and_synthesis.py` (`c1e1076f...`) in response to Root's
+`prompts/f345_full_gate_corrections.txt` and `prompts/f345_stop_hallucinated_profiles.txt`.
+Those rewrites successfully:
+  - Restored the verified pilot HMM profile sets (`references/profiles/f{3,4,5}_*.hmm`, fixing
+    the `TIGR02408` EctD-as-EctA swap and removing generic `PF00583`/`PF00202` from EctA/EctB);
+  - Loaded both Bacterial (`gtdbtk.bac120.summary.tsv`) and Archaeal (`gtdbtk.ar53.summary.tsv`)
+    GTDB-Tk R232 taxonomy tables;
+  - Computed BLAST alignment coverage from coordinate spans (`(abs(qend - qstart) + 1) / qlen`);
+  - Used `/ibex/scratch/projects/c2014/rob/miniconda3/envs/mmseqs2/bin/mmseqs` and checked the
+    actual `f"{prefix_path}_cluster.tsv"` output path;
+  - Stopped inferring `is_complete_gene = 1` from amino-acid length when `partial == "unknown"`;
+  - Synchronized directory names (`f3_rhodopsin`, `f4_ectc`, `f5_carbonic_anhydrase`) and cohort
+    labels (`EQ_MAG`, `Environmental_SMAG`, `Environmental_GEM`) between `08..10` and `11`.
+
+HOWEVER, four concrete bugs remain in the current (`09:26:26`) versions of `08_f3`, `09_f4`,
+`10_f5`, and `11_full_audit_and_synthesis.py`:
+
+6.1 [BLOCKING — WILL CRASH STEP 11 AND OMIT ALL CURATED REFERENCES FROM PROSTT5 INPUTS]
+    - **Location**:
+      * `f345/scripts/08_f3_rhodopsin_full.py` (`94f8e0f7...`), lines `618–623`
+      * `f345/scripts/09_f4_ectc_full.py` (`635764d2...`), line `752`
+      * `f345/scripts/10_f5_carbonic_anhydrase_full.py` (`269385b3...`), lines `703–708`
+      * `f345/scripts/11_full_audit_and_synthesis.py` (`c1e1076f...`), lines `142–146`
+    - **Mechanism**:
+      * In `08_f3`, `09_f4`, and `10_f5`, when building the ProstT5 family FASTA and manifest
+        files (`prostt5_*.faa` and `prostt5_*_manifest.tsv`), each script filters
+        `verified_references_metadata.tsv` using `rr.get("family_name", "").lower()`:
+        - `08_f3` L619/622: `if rr.get("track") == "F3" and "type-1" in rr.get("family_name", "").lower()`
+          and `if rr.get("track") == "F3" and "helio" in rr.get("family_name", "").lower()`
+        - `09_f4` L752: `if rr.get("track") == "F4" and "ectc" in rr.get("family_name", "").lower()`
+        - `10_f5` L704/706/708: `if rr.get("track") == "F5" and "gamma" in rr.get("family_name", "").lower()` (and `"beta"`, `"csosca"`).
+      * Inspecting `f345/references/verified_references_metadata.tsv` line 1 shows the actual
+        column header is:
+        `accession  source_db  uniprot_id  track  category  subcategory  organism  lineage  protein_name  gene_name ...`
+        **There is NO `family_name` column in `verified_references_metadata.tsv`!**
+      * Furthermore, in `verified_references_metadata.tsv`:
+        - For F3, `category` values are `"Type1_Microbial"` (no hyphen!) and `"Heliorhodopsin"`.
+        - For F4, `category` values are `"Ectoine_synthase"` (and `gene_name` is `"ectC"` /
+          `subcategory` contains `"EctC"`), while `"Cupin_Outgroup"` is the negative control.
+        - For F5, `category` values are `"Gamma_CA"`, `"Beta_CA"`, and `"CsoSCA_Outgroup"` (with
+          `"LbH_Outgroup"` as negative control).
+      * Because `rr.get("family_name", "")` always evaluates to `""`, `fam_refs` / `ectc_refs`
+        is empty (`[]`) in all three scripts. Every `prostt5_*.faa` and `prostt5_*_manifest.tsv`
+        file will be written with **`0` curated references**, and when `11_full_audit_and_synthesis.py`
+        reaches line 146 (`assert len(curated_refs) > 0, f"CRITICAL: {pkg} missing curated reference sequences!"`),
+        the pipeline will crash with an `AssertionError`.
+    - **Required Fix**:
+      * Filter `verified_references_metadata.tsv` on `rr.get("category")` (matching exact values:
+        `"Type1_Microbial"`, `"Heliorhodopsin"`, `"Ectoine_synthase"`, `"Gamma_CA"`, `"Beta_CA"`,
+        `"CsoSCA_Outgroup"`).
+
+6.2 [HIGH — SCIENTIFIC CONTAMINATION OF PROSTT5 MANIFOLDS BY TRUNCATED FRAGMENTS]
+    - **Location**:
+      * `f345/scripts/08_f3_rhodopsin_full.py` (`94f8e0f7...`), lines `448–499` and `595–601`
+      * `f345/scripts/09_f4_ectc_full.py` (`635764d2...`), lines `530–641` and `742–748`
+      * `f345/scripts/10_f5_carbonic_anhydrase_full.py` (`269385b3...`), lines `530–582` and `681–687`
+    - **Mechanism**:
+      * Unlike the pilot scripts (`03_f3` L376, `04_f4` L423, `05_f5` L464) and Root's active
+        F1 comparison (`root_audit/f1_compare.py` L16, which filters `if r['partial'] != '00': continue`
+        for EQ), the full F3–F5 scripts append **all** profile-passing candidates—including
+        contig-edge truncated genes (`prodigal_partial` in `{"10", "01", "11", "unknown"}`,
+        `is_complete_gene == 0`)—into `all_candidates` and then write all of them (without
+        filtering `c["is_complete_gene"] == 1`) into `prostt5_*.faa`!
+      * Embedding partial/truncated protein fragments alongside full-length proteins in ProstT5
+        distorts mean-pooled 1024-d cosine distances and t-SNE manifolds (creating artificial
+        "divergent" outliers driven by missing N/C-terminal domains rather than sequence evolution).
+    - **Required Fix**:
+      * Restrict `prostt5_*.faa` candidate staging (and primary complete-gene comparative tables)
+        to complete coding sequences (`c["is_complete_gene"] == 1` / `prodigal_partial == "00"`),
+        or explicitly filter out `is_complete_gene == 0` before ProstT5 embedding.
+
+6.3 [MEDIUM — F4 FUSED `EctC-EctD` SINGLE ORF SELF-HIT BUG PERSISTS IN `09_f4_ectc_full.py`]
+    - **Location**:
+      * `f345/scripts/09_f4_ectc_full.py` (`635764d2...`), lines `556–567` (inherited from
+        `04_f4_ectc_pilot.py` lines `437–445`).
+    - **Mechanism**:
+      * When scanning `c_genes = contig_genes.get((cohort_key, contig_id), [])` for pathway
+        neighbors around an `EctC` candidate `prot_id`, line 559 checks `for g in c_genes: role = g["pathway_role"]; if role and role != "EctC": ...`
+        without checking `if g["prot_id"] == prot_id: continue`.
+      * As proven in the pilot by `V60PRr2__single_SemiBin_127_sub::V60PRr2_211258_4` (422 aa
+        fused `EctC-EctD` ORF), `pathway_hits[prot_id]` is assigned `"EctD"` (because `TIGR02408`
+        on the longer C-terminal hydroxylase domain has a higher bitscore than `PF06339` on the
+        130 aa cupin domain), so `g["pathway_role"]` is `"EctD" != "EctC"`. The distance
+        calculation `min(abs(g["start"] - c_end), abs(c_start - g["end"]))` then measures
+        `c_end - c_start` (`1268 bp`, the length of the ORF itself!) and classifies a solitary
+        fused gene as a multi-gene `Partial_Operon_CD` (`is_colocalized_operon = 1`).
+    - **Required Fix**:
+      * Add `if g["prot_id"] == prot_id: continue` in the neighbor loop and explicitly record
+        same-ORF `EctC+EctD` domain fusions (`Fused_EctCD_ORF`) as a distinct architectural class.
+
+6.4 [LOW/INTERPRETIVE — `09_f4_ectc_full.py` APPLIES EQ CHECKM `< 90%` COMPLETENESS LABEL TO SMAG AND GEM]
+    - **Location**:
+      * `f345/scripts/09_f4_ectc_full.py` (`635764d2...`), lines `525` and `587–593`.
+    - **Mechanism**:
+      * `checkm_map` (`05_refine/consolidated_bin_Paths_checkM.tsv`) contains only Empty Quarter
+        bins. For `Environmental_SMAG` and `Environmental_GEM` candidates, `checkm_map.get(mag, (0.0, 0.0))`
+        returns `mag_comp = 0.0`. Lines 587–593 then test `if mag_comp < 90.0: mag_pathway_status = "Incomplete_MAG_cannot_exclude_unlinked_pathway"`,
+        which is true for 100% of SMAG and GEM bins because their CheckM completeness was not
+        loaded (`0.0 < 90.0`), not because those external MAGs are `< 90%` complete.
+    - **Required Fix**:
+      * For `cfg["type"] != "eq"` (where CheckM completeness is not loaded), label non-operon
+        status as `"External_Cohort_CheckM_Not_Loaded_cannot_exclude_unlinked_pathway"` and record
+        `mag_completeness = "NA"` instead of `0.0`.
+
+================================================================================
+7. SUMMARY OF TESTABLE BIOLOGICAL HYPOTHESES VS UNSUPPORTED CLAIMS FOR FINAL PACKET
+--------------------------------------------------------------------------------
+1. **Track F1 (CPF)**:
+   - *Testable & Supported*: Prevalence across the 5,438 EQ species catalogue (`935` carrier
+     genomes, `1,154` total / `914` complete `partial=00` CPF genes); quantitative sequence
+     divergence from Swiss-Prot references (`43.8%` median identity, `652/883` `< 50%` identity)
+     versus higher similarity to environmental SMAG (`55.9%`) and GEM (`57.7%`) homologs;
+     equal-sized reference-conditioned phylogenetic breadth (`f1_phylogeny.py`) and 1024-d
+     ProstT5 embedding neighborhood structure (`f1_embeddings`).
+   - *Must Not Claim*: Spore photoproduct lyase (`SplB`) expansion from generic `PF04055`
+     Radical SAM hits; verified DNA repair kinetics, photoreduction quantum yield, or novel
+     cryptochrome signaling mechanisms without biochemical assays.
+2. **Track F2 (Compatible-Solute Phosphatases)**:
+   - *Testable & Supported*: Negative finding—exact historical sequence verification (`93 aa`
+     and `148 aa`, `partial=00`) and complete absence of HAD profile or `--ultra-sensitive`
+     DIAMOND homology (`0` hits) to `MpgP`/`GgpP`/`OtsB` or housekeeping HAD phosphatases.
+   - *Must Not Claim*: That `1PRr2_1391604_4` or `S52PRr1_477345_9` are compatible-solute
+     phosphatases, OR that negative homology disproves all biological function of these genes.
+3. **Track F3 (Rhodopsins)**:
+   - *Testable & Supported*: Presence and taxonomic distribution of Type-1 Microbial Rhodopsins
+     (`PF01036`, e.g., `Halobacteriota`, `Myxococcota_A`) and Type-3 Heliorhodopsins (`NF038020`/
+     `PF18761`, e.g., `Actinomycetota`, `Patescibacteriota` `Saccharimonadia`) across EQ vs
+     SMAG/GEM.
+   - *Must Not Claim*: Proton/ion pumping vs sensory function, retinal chromophore sufficiency
+     (unless `blh`/`crtEBIY` synteny is explicitly tested), or novel rhodopsin families from
+     curated-subset `NO_HIT` rows.
+4. **Track F4 (Ectoine Synthase EctC)**:
+   - *Testable & Supported*: High conservation of `EctC` (`PF06339`/`NF009806`) across desert
+     Actinomycetota and Pseudomonadota, partitioned into canonical `ectABC`/`ectABCD` operons,
+     partial `ectBC`/`ectBCD` clusters, single-ORF `ectCD` fusions (`Conexibacter`), unlinked
+     multi-contig pathway carriers, and true solitary `ectC` genes in complete (`>= 90%` CheckM)
+     genomes vs unresolved incomplete MAGs.
+   - *Must Not Claim*: That partial `BC`/`BCD` clusters or self-hit `ectCD` fusions are complete
+     `ectABC` operons, or that unlinked `ectC` genes in fragmented MAGs are "orphan enzymes."
+5. **Track F5 (Carbonic Anhydrases)**:
+   - *Testable & Supported*: Comparative census of Beta-CA (`PF00484`), Gamma-CA (`NF050158`/
+     `NF040597`, gated `>= 20` bits above generic LbH acyltransferases), and CsoSCA (`TIGR02701`)
+     across EQ, SMAG, and GEM.
+   - *Must Not Claim*: That high Beta/Gamma-CA prevalence (`~79%` of MAGs) is an arid-specific
+     or autotrophic adaptation rather than core anaplerotic housekeeping metabolism, or that
+     `His >= 3` / Gamma-CA profile homology proves CO2 hydration catalysis or thermostability.
+================================================================================

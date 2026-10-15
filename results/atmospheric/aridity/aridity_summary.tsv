@@ -1,0 +1,35 @@
+question	statistic	value	p_permutation	n_sites
+Q1_1l_share_vs_precip	spearman	-0.1716	0.19610	58
+Q1_log2ratio_vs_precip	spearman	-0.1579	0.23280	58
+Q2_guild_size_vs_precip	spearman	0.0249	0.84910	58
+Q3_log2ratio_vs_precip_partial_dominant_phylum	spearman	0.0740	NA	58
+
+# Q3b: 1l vs 1h split within each phylum (enzyme shift or taxon shift?)
+phylum	n_1l	n_1h	frac_1l
+Actinomycetota	1894	361	0.8399
+Chloroflexota	293	13	0.9575
+Gemmatimonadota	209	52	0.8008
+Acidobacteriota	54	92	0.3699
+Myxococcota	29	105	0.2164
+Planctomycetota	11	118	0.0853
+Thermoproteota	0	46	0.0000
+Bacteroidota_A	13	29	0.3095
+Halobacteriota	40	0	1.0000
+Verrucomicrobiota	0	36	0.0000
+Desulfobacterota_D	16	16	0.5000
+Pseudomonadota	11	13	0.4583
+Thermoplasmatota	15	1	0.9375
+Bacteroidota	16	0	1.0000
+Armatimonadota	2	4	0.3333
+
+# by compartment (reported, not pooled)
+compartment	n_mags	n_1l	n_1h	frac_1l
+Deep	1916	1160	235	0.8315
+PlantRoot	3199	940	603	0.6092
+Surface	895	509	55	0.9025
+
+# biome-wide totals
+total_mags_1l	2602
+total_mags_1h	885
+biome_1l_over_1h	2.940
+precip_range_mm	15.7-52.6

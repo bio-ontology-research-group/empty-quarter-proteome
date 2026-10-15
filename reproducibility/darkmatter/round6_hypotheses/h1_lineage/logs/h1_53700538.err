@@ -1,0 +1,28 @@
+/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/genmod/generalized_linear_model.py:1923: FutureWarning: The bic value is computed using the deviance formula. After 0.13 this will change to the log-likelihood based formula. This change has no impact on the relative rank of models compared using BIC. You can directly access the log-likelihood version using the `bic_llf` attribute. You can suppress this message by calling statsmodels.genmod.generalized_linear_model.SET_USE_BIC_LLF with True to get the LLF-based version now or False to retainthe deviance version.
+  warnings.warn(
+/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/genmod/generalized_linear_model.py:1923: FutureWarning: The bic value is computed using the deviance formula. After 0.13 this will change to the log-likelihood based formula. This change has no impact on the relative rank of models compared using BIC. You can directly access the log-likelihood version using the `bic_llf` attribute. You can suppress this message by calling statsmodels.genmod.generalized_linear_model.SET_USE_BIC_LLF with True to get the LLF-based version now or False to retainthe deviance version.
+  warnings.warn(
+/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/genmod/generalized_linear_model.py:1923: FutureWarning: The bic value is computed using the deviance formula. After 0.13 this will change to the log-likelihood based formula. This change has no impact on the relative rank of models compared using BIC. You can directly access the log-likelihood version using the `bic_llf` attribute. You can suppress this message by calling statsmodels.genmod.generalized_linear_model.SET_USE_BIC_LLF with True to get the LLF-based version now or False to retainthe deviance version.
+  warnings.warn(
+/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/genmod/generalized_linear_model.py:1923: FutureWarning: The bic value is computed using the deviance formula. After 0.13 this will change to the log-likelihood based formula. This change has no impact on the relative rank of models compared using BIC. You can directly access the log-likelihood version using the `bic_llf` attribute. You can suppress this message by calling statsmodels.genmod.generalized_linear_model.SET_USE_BIC_LLF with True to get the LLF-based version now or False to retainthe deviance version.
+  warnings.warn(
+Traceback (most recent call last):
+  File "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p6_hypotheses_clean/h1_lineage/scripts/03_phylogenetic_ancestry_audit.py", line 190, in <module>
+    main()
+  File "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p6_hypotheses_clean/h1_lineage/scripts/03_phylogenetic_ancestry_audit.py", line 90, in main
+    m_df_full_fam = smf.ols("dark_fraction ~ is_sw + completeness + contamination + log_len + log_n50 + frac_complete", data=df).fit(cov_type="cluster", cov_kwds={"groups": df["fam_clean"]})
+  File "/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/regression/linear_model.py", line 371, in fit
+    lfit = OLSResults(
+  File "/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/regression/linear_model.py", line 1653, in __init__
+    self.get_robustcov_results(cov_type=cov_type, use_self=True,
+  File "/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/regression/linear_model.py", line 2601, in get_robustcov_results
+    res.cov_params_default = sw.cov_cluster(
+  File "/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/stats/sandwich_covariance.py", line 530, in cov_cluster
+    scale = S_crosssection(xu, group)
+  File "/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/stats/sandwich_covariance.py", line 484, in S_crosssection
+    x_group_sums = group_sums(x, group).T  #TODO: why transposed
+  File "/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/tools/grouputils.py", line 106, in group_sums
+    [
+  File "/ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/lib/python3.10/site-packages/statsmodels/tools/grouputils.py", line 107, in <listcomp>
+    np.bincount(group, weights=x[:, col])
+ValueError: The weights and list don't have the same length.

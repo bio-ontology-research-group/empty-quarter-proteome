@@ -1,0 +1,113 @@
+# Point-by-Point Response to Independent Review (`reviews/darkmatter-2026-10-13/round6/h2_review1/review.txt`) and Root Audit Notes (`reviews/darkmatter-2026-10-13/round6/ROOT_AUDIT_NOTES.md`)
+
+**Target Hypothesis:** H2 — Conserved Flanking Gene Neighbourhoods of Low-Query-TM ($K$, $\text{qTM} < 0.5$) vs. Fold-Matched Sequence-Dark ($Q \setminus K$, $\text{qTM} \geq 0.5$) Structural Families  
+**Protocol Version:** Version 3 (`v3`)  
+**IBEX Slurm Execution Provenance:**
+- `53710190`: Initial v3 diagnostic run (`logs/pilot_v3_53710190.out`, `.err`; identified comma-delimited `orig-id=<id>,` in Bakta `.log`, preserved).
+- `53710523`: First complete v3 300-family run (`logs/pilot_v3_53710523.out`, `.err`; preserved).
+- `53712511`: Full end-to-end v3 300-family run with explicit reading-frame/overlap verification on 3'-stop matches, identical `max_sp >= 2` positional-null $R_{\text{fam}}$ threshold, and complete 7-category flank closure (`logs/pilot_v3_53712511.out`, `.err`).
+- `53713357`: Slurm debug verification run adding `strict_exact_phylum_caliper_sensitivity` and `cross_family_locus_and_species_independence_tier1` to `results/pilot_conservation_summary.json` and updating `results/outputs_sha256.txt`.
+- Superseded versions preserved intact: `v1_superseded/` and `v2_superseded/` (plus frozen `reviews/darkmatter-2026-10-13/round6/snapshots/h2_v2/`).
+
+---
+
+## C1. Primary Locus Eligibility Gate Before KO Aggregation, Unmapped/Unavailable Flank Handling, 3'-Stop Sensitivity Tier, and Complete Flank Closure
+
+### Reviewer & Root Audit Finding
+In v2 (`v2_superseded/scripts/03_analyse_conservation.py:103-158`), KOs were aggregated across non-truncated flanks before checking locus window completeness, causing 4 families to have impossible $R_{\text{fam}} > 1.0$ (`1.1`, `1.5`, `1.25`, `1.5`) and 2 `QnotK` families to be false-positive $C_{\text{fam}} = 1$ calls, while `source_file_unavailable` and `coordinate_mismatch` flanks were left as callable (`is_complete = True`) negatives (`noKO`). Moreover, 60.3% of `coordinate_mismatch` flanks on binned contigs shared the exact 3' stop codon and strand with a Bakta CDS (5' start differences between meta-Pyrodigal and bin-trained Bakta).
+
+### Implemented Repair & Code Evidence
+1. **7-Category Mutually Exclusive Flank Classification (`scripts/02_extract_neighbourhoods.py:390-519`):**
+   - Every flanking slot ($\{-2, -1, +1, +2\}$) is classified into exactly one of 7 categories: `mapped_KO`, `mapped_noKO`, `stop3prime_matched_KO`, `stop3prime_matched_noKO`, `coordinate_mismatch_unmapped`, `source_file_unavailable`, or `contig_edge_truncated`.
+   - `source_file_unavailable`, `coordinate_mismatch_unmapped`, and `contig_edge_truncated` are strictly **missing/unmapped** and are never treated as observed `noKO` negatives or complete primary windows.
+   - `stop3prime_matched_{KO,noKO}` (`scripts/02_extract_neighbourhoods.py:338-347, 463-485`) requires a **unique** Bakta CDS on the same verified contig sharing the exact 3' stop coordinate (`stop` on `+`, `start` on `-`), identical strand, identical reading frame (`start % 3`), and positive nucleotide overlap (`min(stop_p, stop_b) - max(start_p, start_b) + 1 > 0`). It is evaluated strictly as an explicit sensitivity tier (**Tier 2**), never silently substituted into Tier 1.
+2. **Locus Eligibility Determined Prior to Any Family Aggregation (`scripts/02_extract_neighbourhoods.py:495-502`, `scripts/03_analyse_conservation.py:86-225`):**
+   - **Tier 1 Primary Gate (`eligible_locus_primary == 1`):** All 4 flanks (`-2, -1, +1, +2`) must be in `{"mapped_KO", "mapped_noKO"}`.
+   - **Tier 2 3'-Stop Sensitivity Gate (`eligible_locus_stop3_sens == 1`):** All 4 flanks in `{"mapped_KO", "mapped_noKO", "stop3prime_matched_KO", "stop3prime_matched_noKO"}`.
+   - **Tier 3 Partial-Window Sensitivity Gate (`eligible_locus_partial_sens == 1`):** $\geq 1$ flank in `{"mapped_KO", "mapped_noKO"}`.
+   - In `scripts/03_analyse_conservation.py:137-205`, primary KO counts (`ko_to_sp_t1`), `n_species_complete_window`, $C_{\text{fam}}^{\text{obs}}$, $R_{\text{fam}}^{\text{obs}}$, and `ko_annotation_opportunity` are computed **exclusively over the identical set of Tier 1 eligible primary loci (`t1_loci`)**. Ineligible primary loci never contribute to numerator, denominator, or annotation opportunity.
+
+### Saved Output Evidence
+- **`results/pilot_join_metrics.json:45-109`:**
+  - All candidate rows (`1,518` rows, `6,072` flanks): `mapped_KO = 878`, `mapped_noKO = 1,548`, `stop3prime_matched_KO = 145`, `stop3prime_matched_noKO = 287`, `coordinate_mismatch_unmapped = 261`, `source_file_unavailable = 1,285`, `contig_edge_truncated = 1,668` (sum $= 6,072$).
+  - Designated primary species loci (`900` rows, `3,600` flanks): `mapped_KO = 824`, `mapped_noKO = 1,456`, `stop3prime_matched_KO = 138`, `stop3prime_matched_noKO = 274`, `coordinate_mismatch_unmapped = 235`, `source_file_unavailable = 35`, `contig_edge_truncated = 638` (sum $= 3,600$).
+  - Non-primary rows (`618` rows, `2,472` flanks): `source_file_unavailable = 1,250`, `contig_edge_truncated = 1,030`, `mapped_noKO = 92`, `mapped_KO = 54`, `coordinate_mismatch_unmapped = 26`, `stop3prime_matched_noKO = 13`, `stop3prime_matched_KO = 7` (sum $= 2,472$).
+  - Tier 1 eligible primary loci (`278` rows, `1,112` flanks): `mapped_KO = 411`, `mapped_noKO = 701`, all other categories `0` (sum $= 1,112$).
+  - Tier 1 ineligible primary loci (`622` rows, `2,488` flanks): `mapped_noKO = 755`, `contig_edge_truncated = 638`, `mapped_KO = 413`, `stop3prime_matched_noKO = 274`, `coordinate_mismatch_unmapped = 235`, `stop3prime_matched_KO = 138`, `source_file_unavailable = 35` (sum $= 2,488$; $1,112 + 2,488 = 3,600$).
+- **`results/pilot_family_conservation.tsv` & `results/pilot_conservation_summary.json:668-680`:**
+  - `72 / 300` families are Tier 1 evaluable (`43 K`, `29 QnotK`); `228` are coded `c_fam_primary = -1`.
+  - `133 / 300` families are Tier 2 evaluable (`67 K`, `66 QnotK`); `167` are coded `c_fam_stop3_sens = -1`.
+  - All `300 / 300` families satisfy $0.0 \leq R_{\text{fam}} \leq 1.0$ (`c1_all_r_fam_within_0_1_bounds: true`) and `best_ko_species_count <= n_species_complete_window` (`c1_numerator_denominator_species_closure: true`). Specifically, the v2 contaminated families are cleanly resolved (e.g., `F25Dr2::F25Dr2_61875_4` has `4 / 4` eligible species, $R_{\text{fam}} = 1.0$; `F2Dr1::F2Dr1_2447321_2` has `2 / 2` eligible species, $R_{\text{fam}} = 1.0$).
+
+---
+
+## C2 & C4. Cryptographic Contig Sequence SHA-256 + Bakta Log Verification, Real Contig Lengths, Verified GTDB-Tk R232 Taxonomy, Converged Regressions, and Complete Input Checksum Manifest
+
+### Reviewer & Root Audit Finding
+In v2: (a) `contig_len` was parsed from column 2 (`"refined"`) of `contig_to_bin_refined.tsv.gz`, yielding `contig_len == 0` for `534 / 534` rows and breaking primary-locus tie-breaking; (b) taxonomy was read from unrefined `02_taxonomy/gtdbtk_out/`, leaving `99.4%` of families as `phylum = "unassigned"` and causing quasi-complete separation and non-convergence (`converged: false`, $\text{SE} = 424{,}697.1$) in logistic regression; (c) raw-bin to Bakta contigs were paired by FASTA order and length only (`209 / 293` bins had duplicate contig lengths), `14` missing bins were silently dropped, and `INPUTS.tsv` used `DYNAMIC` placeholders.
+
+### Implemented Repair & Code Evidence
+1. **Verified GTDB-Tk R232 Taxonomy Join (`scripts/01_select_cohort.py:100-185`):**
+   - Joins refined MAG bins to dRep 95% ANI species clusters via `05_refine/_drep/out/data_tables/Cdb.csv` (`12,433` bins across `5,438` species clusters), maps each species cluster to its representative winner in `Wdb.csv`, and resolves taxonomy from `05_refine/_gtdbtk_r232/gtdbtk.{bac120,ar53}.summary.tsv` and `05_refine/_gtdbtk_refined/gtdbtk.{bac120,ar53}.summary.tsv`.
+   - Resolves `5,438 / 5,438` (`100.0%`) species clusters and `1,461 / 1,461` (`100.0%`) multi-species families (`0` `unassigned` phyla).
+2. **Cryptographic Contig Sequence SHA-256 + Bakta `.log` `orig-id` Verification & Real Contig Lengths (`scripts/02_extract_neighbourhoods.py:247-588, 827-852`):**
+   - Reads raw bin FASTA (`03_binning/.../output_bins/{bin}.fa.gz`) and Bakta nucleotide FASTA (`07_annotation/.../bakta/{bin}/{bin}.fna`) plus `{bin}.log` (`qc: revised sequence: id=contig_N, orig-id=<raw_contig>`).
+   - Verifies exact forward-strand uppercase nucleotide SHA-256 identity and `.log` `orig-id` correspondence for every contig (`scripts/02_extract_neighbourhoods.py:411-494`), failing closed on any hash mismatch, reverse-complement mismatch, or unresolvable duplicate hash.
+   - Measures real nucleotide length `contig_len_bp` (`> 0` for all `996` binned rows) and window completeness **before** selecting one deterministic primary locus per `(family, species)` via the exact 8-element outcome-independent sort key `(-eligible_locus_primary, -eligible_locus_stop3_sens, -n_exact_mapped_flanks, -n_stop3_or_exact_mapped_flanks, -n_present_flanks, -contig_len_bp, -total_genes_on_contig, member)` (`scripts/02_extract_neighbourhoods.py:838-847`).
+3. **Complete 3,800-File Input SHA-256 Manifest (`scripts/02_extract_neighbourhoods.py:990-1029`):**
+   - Hashes all `11` fixed upstream tables, all `340` per-sample Pyrodigal `.faa.gz` files, all `709` refined bin `.fa.gz` files, and all `685 * 4 = 2,740` Bakta `.fna`/`.log`/`.tsv` and eggNOG `.emapper.annotations` files read during execution, writing all `3,800` verified entries to both `INPUTS.tsv` and `results/executed_inputs_manifest.tsv` with zero `DYNAMIC` placeholders.
+
+### Saved Output Evidence
+- **`results/bin_contig_verification.tsv` & `results/pilot_join_metrics.json:5-40`:**
+  - `685 / 709` refined bins have Bakta/eggNOG files and **100.0% (`685 / 685`)** passed both exact forward-strand nucleotide SHA-256 matching and Bakta `.log` `orig-id` verification (`verified_sha256_and_log: 685`, `n_contig_hash_mismatches: 0`, `n_contig_rc_mismatches: 0`, `n_bins_with_duplicate_contig_hashes: 0`, despite `521` bins having duplicate contig lengths).
+  - `24 / 709` refined bins lack Bakta/eggNOG files on IBEX (`annotation_files_missing: 24`) and are explicitly listed in `results/pilot_join_metrics.json:10-35` and `results/bin_contig_verification.tsv`.
+- **`INPUTS.tsv` & `results/executed_inputs_manifest.tsv`:** `3,800` file rows with exact `size_bytes` and `sha256` (`0` `DYNAMIC` entries).
+- **`results/pilot_conservation_summary.json:273-595, 673-677`:**
+  - `c2_zero_unassigned_r232_phylum_in_cohort: true` and `c2_all_binned_loci_have_positive_contig_len_bp: true`.
+  - All four multivariable regression models (`part_b_multivariable_ols_hc3_excess_c_fam`, `part_b_multivariable_ols_hc3_raw_c_fam`, `part_b_multivariable_logistic_regression_raw_c_fam`, `part_b_l2_penalized_logistic_sensitivity_raw_c_fam`) have `converged: true`, `full_rank: true` (`rank = 9 / 9`), and `all_se_finite_bounded: true` (maximum parameter SE across all models is `3.0922`).
+
+---
+
+## C3. Separation of Within-Arm Positional Enrichment vs. Between-Arm Covariate-Adjusted Contrast, Common Support, Caliper Matching Diagnostics, and Cross-Family Dependence Assumptions
+
+### Reviewer & Root Audit Finding
+In v2 (`v2_superseded/scripts/03_analyse_conservation.py:262-299`), the permutation null sampled across all `212` primary loci (including `53` edge-truncated loci) and drew `randint(0, n_cds - 1)` without requiring complete 4-flank windows, and then compared the observed between-arm risk difference $\Delta^{\text{obs}}$ against the lower-prevalence random-position difference distribution $\Delta^{\text{null}, b}$, artificially shrinking the null SD to `0.0681` ($p = 0.0010$). Furthermore, `ROOT_AUDIT_NOTES.md:232` noted that soft-caliper matching in small samples retains residual length/phylum imbalance (`SMD_length > 0.5`) and must not be described as balanced, and requested explicit inspection of conditional exchangeability and shared species/locus dependence.
+
+### Implemented Repair & Code Evidence
+1. **Part (a) Within-Arm Recurrence vs. Same-Contig Eligible-Position Reference (`scripts/02_extract_neighbourhoods.py:691-714`, `scripts/03_analyse_conservation.py:313-490`):**
+   - Precomputes on every contig the exact set of gene indices $\mathcal{I}_{\text{elig}}(\ell)$ whose 4 flanking positions $(j-2, j-1, j+1, j+2)$ all satisfy the exact same Tier 1 (`mapped_KO` or `mapped_noKO`) or Tier 2 complete-window gate as observed focal loci, saving per-locus counts `n_eligible_positions_primary` ($M_c^{\text{prim}}$) and `n_eligible_positions_stop3` in `results/pilot_neighbourhoods.tsv`.
+   - Draws $B = 5{,}000$ uniform random eligible positions $j^{(b)} \in \mathcal{I}_{\text{elig}}(\ell)$ on each eligible primary locus of each evaluable family, using the exact same `max_sp >= 2` threshold for both $C_{\text{fam}}^{\text{pos},(b)}$ and $R_{\text{fam}}^{\text{pos},(b)}$, to compute family-level positional expectations $\mu_{\text{fam}}^{\text{pos}}$, $\rho_{\text{fam}}^{\text{pos}}$ and background-adjusted excesses $E_{\text{fam}} = C_{\text{fam}}^{\text{obs}} - \mu_{\text{fam}}^{\text{pos}}$ and $E_{\text{fam}}^{(R)} = R_{\text{fam}}^{\text{obs}} - \rho_{\text{fam}}^{\text{pos}}$.
+2. **Part (b) Between-Arm Contrast on Background-Adjusted Excess & Observed Recurrence (`scripts/03_analyse_conservation.py:492-1068`):**
+   - **Primary Estimator — Covariate-Stratified Label Permutation (`scripts/03_analyse_conservation.py:498-650`):** Stratifies evaluable families by `(species_breadth_bin, phylum_group, ko_opportunity_bin)` (`results/pilot_common_support_strata.tsv`) and permutes arm labels $B = 10{,}000$ times strictly within common-support strata ($n_{s,K} \geq 1, n_{s,Q\setminus K} \geq 1$) under the identifying assumption of within-stratum conditional exchangeability (noting that 4-group R232 phylum classification provides coarse taxonomic conditioning rather than full phylogenetic covariance control).
+   - **Diagnostic Estimator — 1:1 Caliper Matching (`scripts/03_analyse_conservation.py:652-836`):** Reports both soft-caliper matching (`25` pairs, balancing `n_species_complete_window` $\text{SMD} = -0.0645$ and `ko_annotation_opportunity` $\text{SMD} = +0.0059$, while explicitly flagging residual `length` $\text{SMD} = +0.6209$ and `44.0%` exact phylum match in `balance_diagnostic_note`) AND strict exact-phylum + tight-length caliper sensitivity (`9` pairs with `100.0%` exact `phylum_group` match, `smd_n_species = 0.0000`, `smd_ko_opportunity = +0.0723`, `smd_length = +0.2879`).
+   - **Parametric & Penalized Regressions (`scripts/03_analyse_conservation.py:908-1068`):** Fits full-rank (`9 / 9`) OLS/HC3 on $E_{\text{fam}}$ and $C_{\text{fam}}$, MLE logistic regression on $C_{\text{fam}}$, and L2-penalized ridge logistic regression ($\lambda = 0.5$) on $C_{\text{fam}}$.
+   - **Cross-Family Contig/Bin/Species Dependence Audit & Fixed-Outcome Species-Reweighting Sensitivity (`scripts/03_analyse_conservation.py:838-906`):** Audits exact contig, bin, and dRep species overlap across all `72` Tier 1 evaluable families (`170` eligible primary loci) and performs a $B = 2{,}000$ fixed-family-outcome dRep species-cluster reweighting sensitivity check on the unstratified arm difference alongside a 40-family zero-shared-species unstratified sub-cohort check.
+
+### Saved Output Evidence
+- **`results/pilot_conservation_summary.json:126-169` (Part a):**
+  - Across `278` Tier 1 eligible loci, `274 / 278` (`98.56%`) have $M_c^{\text{prim}} \geq 2$ eligible windows (median $M_c^{\text{prim}} = 20.0$, mean $= 44.71$, max $= 472$).
+  - Arm $K$ ($n = 43$): observed $\bar{C}_K^{\text{obs}} = 0.488372$ vs. $\bar{\mu}_K^{\text{pos}} = 0.128637$ ($\text{SD} = 0.039287$), within-arm excess $+0.359735$ ($p = 0.0002$).
+  - Arm $Q \setminus K$ ($n = 29$): observed $\bar{C}_{Q\setminus K}^{\text{obs}} = 0.310345$ vs. $\bar{\mu}_{Q\setminus K}^{\text{pos}} = 0.049559$ ($\text{SD} = 0.036272$), within-arm excess $+0.260786$ ($p = 0.0002$).
+- **`results/pilot_conservation_summary.json:170-272` & `results/pilot_common_support_strata.tsv` (Part b):**
+  - Tier 1 stratified permutation (`13 / 15` strata with common support covering `42/43 K` [`97.67%`] and `28/29 QnotK` [`96.55%`]): $\Delta_{\text{MH}}(E_{\text{fam}}) = -0.064807$ ($p = 0.490651$); $\Delta_{\text{MH}}(C_{\text{fam}}) = -0.003371$ ($p = 1.0000$).
+  - Tier 2 stratified permutation (`16 / 16` strata with common support covering `67/67 K` [`100.0%`] and `66/66 QnotK` [`100.0%`]): $\Delta_{\text{MH}}(E_{\text{fam}}) = +0.011939$ ($p = 0.867813$).
+  - Caliper matching: soft caliper (`25` pairs) $\Delta_{\text{match}}(E_{\text{fam}}) = +0.019488$ ($p = 0.89661$); strict exact-phylum + tight-length caliper (`9` pairs) $\Delta_{\text{strict}}(E_{\text{fam}}) = +0.056311$ ($p = 0.586441$).
+  - Multivariable regressions ($n = 72$, `rank = 9/9`, `converged = true`): OLS/HC3 on $E_{\text{fam}}$ `is_k` $\hat{\beta} = +0.008259$ ($\text{SE} = 0.096108, p = 0.931523$); MLE Logit on $C_{\text{fam}}$ `is_k` $\hat{\beta} = +0.399870$ ($\text{SE} = 0.814692, \text{OR} = 1.491631, p = 0.623551$); L2-Penalized Logit `is_k` $\hat{\beta} = +0.549164$ ($\text{SE} = 0.577121, \text{OR} = 1.731804, p = 0.341321$).
+- **`results/pilot_conservation_summary.json:647-667` (Cross-Family Dependence Audit & Sensitivity):**
+  - `170 / 170` (`100.0%`) Tier 1 evaluable primary loci reside on distinct `(bin, contig)` pairs (`contigs_shared_across_multiple_families: 0`, `overlapping_4flank_windows_across_families: 0`), spanning `151` bins and `144` dRep species clusters (`21` shared across $\geq 2$ families, `8` across both arms; fixed-family-outcome species-reweighting $\text{SE}(\Delta E_{\text{fam}}) = 0.072972$ and 40-family zero-shared-species unstratified $\Delta E_{\text{fam}} = +0.1091$, reported as descriptive sensitivities rather than proof of no masking or full phylogenetic control).
+
+---
+
+## C5 & O1. Explicit 90%-Sequence-Cluster Representative Population Basis, Removal of Overclaimed Prose, and Descriptive Neighbourhood Context (`O1`)
+
+### Reviewer & Root Audit Finding
+In v2, `DESIGN.md` and `DOSSIER.md` did not document that `04_cluster/clusters.tsv` contains only **90%-sequence-cluster representatives** (`mag_dark_rep_ids.txt.gz`), leaving `50.4%` of member contigs unbinned (`412 / 2,838` families dropped at Gate 1), and `DOSSIER.md` retained `"candidate novel folds"` and `"operons"` phrasing. Optional enhancement `O1` requested reporting `same_strand_fraction` and intergenic distances (`_dist`) across eligible complete windows.
+
+### Implemented Repair & Saved Output Evidence
+1. **Explicit 90%-Cluster Representative Population Conditioning (`DESIGN.md:39-63`, `DOSSIER.md:45-68`, `scripts/01_select_cohort.py:67-115, 226-260`):**
+   - Explicitly documents and quantifies the 4-stage attrition funnel across all `2,838` confidence-qualified structural families in `results/pilot_conservation_summary.json:3-16` and `results/all_evaluable_families.tsv`: Gate 0 (`2,838`: `1,031 K, 1,807 QnotK`) $\to$ Gate 1 refined-MAG binned (`2,426`: `917 K, 1,509 QnotK`) $\to$ Gate 2 $\geq 1$ dRep species (`2,378`: `898 K, 1,480 QnotK`) $\to$ Gate 3 $\geq 2$ distinct dRep species (`1,461`: `570 K, 891 QnotK`).
+   - Conditions all v3 estimands explicitly on the verified 90%-representative member population without unverified extrapolation to unexpanded `all_cluster90.tsv` instances.
+2. **Complete Removal of Overclaimed Prose (`DESIGN.md`, `DOSSIER.md`):**
+   - All claims of "novel folds", "candidate novel folds", "operons", "operonic", "co-transcription", "expression", or "causal adaptation" have been removed from `DESIGN.md` and `DOSSIER.md`.
+3. **Descriptive Co-Orientation & Intergenic Distance Context (`O1`, `DOSSIER.md:187-194`, `results/pilot_neighbourhoods.tsv`, `results/pilot_family_conservation.tsv`):**
+   - Across `278` Tier 1 eligible primary loci (`151 K, 127 QnotK`), family-level mean `same_strand_fraction` is `0.6441` (median `0.6250`) in $K$ vs. `0.6174` (median `0.6667`) in $Q \setminus K$, and median intergenic distance to adjacent flanks (`-1, +1`) is `70.5` bp ($\text{IQR}: 14.2\text{--}171.8$ bp) in $K$ vs. `65.5` bp ($\text{IQR}: 10.5\text{--}137.5$ bp) in $Q \setminus K$.

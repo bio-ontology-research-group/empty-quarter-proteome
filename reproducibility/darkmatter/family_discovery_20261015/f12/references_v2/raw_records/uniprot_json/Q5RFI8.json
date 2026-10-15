@@ -1,0 +1,1401 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q5RFI8",
+  "uniProtkbId": "PGM2_PONAB",
+  "entryAudit": {
+    "firstPublicDate": "2005-07-19",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2007-01-23",
+    "entryVersion": 91,
+    "sequenceVersion": 3
+  },
+  "annotationScore": 4.0,
+  "organism": {
+    "scientificName": "Pongo abelii",
+    "commonName": "Sumatran orangutan",
+    "synonyms": [
+      "Pongo pygmaeus abelii"
+    ],
+    "taxonId": 9601,
+    "lineage": [
+      "Eukaryota",
+      "Metazoa",
+      "Chordata",
+      "Craniata",
+      "Vertebrata",
+      "Euteleostomi",
+      "Mammalia",
+      "Eutheria",
+      "Euarchontoglires",
+      "Primates",
+      "Haplorrhini",
+      "Catarrhini",
+      "Hominidae",
+      "Pongo"
+    ]
+  },
+  "proteinExistence": "2: Evidence at transcript level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305"
+          }
+        ],
+        "value": "Phosphopentomutase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q96G03"
+            }
+          ],
+          "value": "5.4.2.7"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Glucose phosphomutase 2"
+        }
+      },
+      {
+        "fullName": {
+          "value": "Phosphodeoxyribomutase"
+        }
+      },
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Phosphoglucomutase-2"
+        },
+        "shortNames": [
+          {
+            "value": "PGM 2"
+          }
+        ],
+        "ecNumbers": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "Q96G03"
+              }
+            ],
+            "value": "5.4.2.2"
+          }
+        ]
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "PGM2"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q96G03"
+            }
+          ],
+          "value": "Catalyzes the conversion of the nucleoside breakdown products ribose-1-phosphate and deoxyribose-1-phosphate to the corresponding 5-phosphopentoses (By similarity). Catalyzes the reversible isomerization of alpha-D-glucose 1-phosphate to alpha-D-glucose 6-phosphate but with a lower catalytic efficiency (By similarity). The mechanism proceeds via the intermediate compound alpha-D-glucose 1,6-bisphosphate (By similarity). In vitro, also has a low glucose 1,6-bisphosphate synthase activity which is most probably not physiologically relevant (By similarity)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha-D-ribose 1-phosphate = D-ribose 5-phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:18793"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57720"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:78346"
+          }
+        ],
+        "ecNumber": "5.4.2.7",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q96G03"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "2-deoxy-alpha-D-ribose 1-phosphate = 2-deoxy-D-ribose 5-phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:27658"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57259"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:62877"
+          }
+        ],
+        "ecNumber": "5.4.2.7",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q96G03"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha-D-glucose 1-phosphate = alpha-D-glucose 6-phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:23536"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58225"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58601"
+          }
+        ],
+        "ecNumber": "5.4.2.2",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q96G03"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "O-phospho-L-seryl-[protein] + alpha-D-glucose 1-phosphate = alpha-D-glucose 1,6-bisphosphate + L-seryl-[protein]",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:68748"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:9863"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:11604"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29999"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58392"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58601"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:83421"
+          }
+        ],
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q96G03"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha-D-glucose 1,6-bisphosphate + L-seryl-[protein] = O-phospho-L-seryl-[protein] + alpha-D-glucose 6-phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:68752"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:9863"
+          },
+          {
+            "database": "Rhea",
+            "id": "RHEA-COMP:11604"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:29999"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58225"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58392"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:83421"
+          }
+        ],
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q96G03"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P00949"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "P00949"
+              }
+            ],
+            "value": "Binds 1 Mg(2+) ion per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P00949"
+            }
+          ],
+          "value": "Monomer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "Q96G03"
+              }
+            ],
+            "value": "Cytoplasm, cytosol",
+            "id": "SL-0091"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the phosphohexose mutase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Initiator methionine",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 1,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Removed",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q96G03"
+        }
+      ]
+    },
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 2,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 612,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphopentomutase",
+      "featureId": "PRO_0000147783"
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 165,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 165,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphoserine intermediate",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 63,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 63,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58392"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "alpha-D-glucose 1,6-bisphosphate",
+        "id": "ChEBI:CHEBI:58392"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 165,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 165,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58392"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "alpha-D-glucose 1,6-bisphosphate",
+        "id": "ChEBI:CHEBI:58392"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 165,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 165,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "via phosphate group",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 322,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 322,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 324,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 324,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 326,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 326,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58392"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "alpha-D-glucose 1,6-bisphosphate",
+        "id": "ChEBI:CHEBI:58392"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 326,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 326,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 327,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 327,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58392"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "alpha-D-glucose 1,6-bisphosphate",
+        "id": "ChEBI:CHEBI:58392"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 400,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 400,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58392"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "alpha-D-glucose 1,6-bisphosphate",
+        "id": "ChEBI:CHEBI:58392"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 424,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 424,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58392"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "alpha-D-glucose 1,6-bisphosphate",
+        "id": "ChEBI:CHEBI:58392"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 438,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 438,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:58392"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "alpha-D-glucose 1,6-bisphosphate",
+        "id": "ChEBI:CHEBI:58392"
+      }
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 2,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 2,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "N-acetylalanine",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q96G03"
+        }
+      ]
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 165,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 165,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphoserine",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q96G03"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0007",
+      "category": "PTM",
+      "name": "Acetylation"
+    },
+    {
+      "id": "KW-0119",
+      "category": "Biological process",
+      "name": "Carbohydrate metabolism"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0313",
+      "category": "Biological process",
+      "name": "Glucose metabolism"
+    },
+    {
+      "id": "KW-0413",
+      "category": "Molecular function",
+      "name": "Isomerase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0597",
+      "category": "PTM",
+      "name": "Phosphoprotein"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "CI-2D862AHFT4AL7",
+        "citationType": "submission",
+        "authoringGroup": [
+          "The German cDNA consortium"
+        ],
+        "publicationDate": "NOV-2004",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE MRNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "Kidney",
+          "type": "TISSUE"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "CR857168",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAH89469.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_001128996.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NM_001135524.2"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q5RFI8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q5RFI8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "9601.ENSPPYP00000016381",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "100190836",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "pon:100190836",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "CTD",
+      "id": "55276",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG1220",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q5RFI8",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "8300170at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001595",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Unplaced"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005634",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleus"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000287",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:magnesium ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004614",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphoglucomutase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008973",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphopentomutase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005975",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:carbohydrate metabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006166",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:purine ribonucleoside salvage"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd05799",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.120.10:FF:000016",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glucose 1,6-bisphosphate synthase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.120.10:FF:000017",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "glucose 1,6-bisphosphate synthase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.120.10:FF:000030",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphoglucomutase 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.120.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Alpha-D-Glucose-1,6-Bisphosphate, subunit A, domain 3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005844",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_a/b/a-I"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR016055",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_a/b/a-I/II/III"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005845",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_a/b/a-II"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005846",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_a/b/a-III"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036900",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_C_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR016066",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005841",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Alpha-D-phosphohexomutase_SF"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR45745",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHOSPHOMANNOMUTASE 45A"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR45745:SF3",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHOSPHOPENTOMUTASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02878",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM_PMM_I"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02879",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM_PMM_II"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02880",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM_PMM_III"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00509",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGMPMM"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF55957",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphoglucomutase, C-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53738",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphoglucomutase, first 3 domains"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00710",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM_PMM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MAAPEGSGLGEDARLDQETAQWLHWDKNSLTLEAVKRLIAEGNEEELRKCFGARMEFGTAGLRAAMGPGISRMNDLTIIQTTQGFCRYLEKQFSDLKQKGIVISFDARAHPSSGGSSRRFARLAATTFISQGIPVYLFSDITPTPFVPFTVSRLKLCAGIMITASHNPKQDNGYKVYWDNGAQIISPHDKGISQAIEENLEPWPQAWDDSLIDSSPLLHNPSASINNDYFEDLKKYCFHRSVNRETKVKFVHTSVHGVGHSFVQSAFKAFDLVPPEAVPEQKDPDPEFPTVKYPNPEEGKGVLTLSFALADKTKARIVLANDPDADRLAVAEKQDSGEWRVFSGNELGALLGWWLFTSWKEKNQDRSALKDTYMLSSTVSSKILRAIALKEGFHFEETLTGFKWMGNRAKQLIDQGKTVLFAFEEAIGYMCCPFVLDKDGVSAAVISAELASFLATKNLSLSQQLKAIYVEYGYHITKASYFICHDQDTIKKLFENLRSYDGKNNYPKACGKFEISAIRDLTTGYDDNQPDKKAVLPTSKSSQMITFTFANGGVATMRTSGTEPKIKYYAELCAPPGNSDPEQLKKELNELVSAIEEHFFQPQKYNLQPKAD",
+    "length": 612,
+    "molWeight": 68270,
+    "crc64": "DD968C06E018FDB1",
+    "md5": "1D8C97DA9E5DC630EE9F24F93E608699"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 5,
+      "COFACTOR": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Initiator methionine": 1,
+      "Chain": 1,
+      "Active site": 1,
+      "Binding site": 11,
+      "Modified residue": 2
+    },
+    "uniParcId": "UPI00004696D8"
+  }
+}

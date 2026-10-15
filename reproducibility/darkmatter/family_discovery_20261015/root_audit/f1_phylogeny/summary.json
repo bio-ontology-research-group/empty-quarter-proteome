@@ -1,0 +1,110 @@
+{
+  "job_id": "53817031",
+  "profiles": {
+    "PF00875": {
+      "sequences": 1995,
+      "alignment_match_columns": 164,
+      "sources": {
+        "EQ": 753,
+        "SMAG": 390,
+        "GEM": 795,
+        "curated_reference": 57
+      },
+      "reference_scaffold_branch_length": 37.19023589099998,
+      "equal_addition_n": 200,
+      "mean_added_branch_length": {
+        "EQ": 113.26004516766987,
+        "SMAG": 116.15203553881992,
+        "GEM": 137.95119556968987
+      },
+      "limits": "exploratory domain tree; equal-size reference-conditioned breadth, not novel function or taxonomic clades; no taxonomic matching; topology estimated jointly; FastTree local supports, no resampled alignment bootstrap"
+    },
+    "PF03441": {
+      "sequences": 1854,
+      "alignment_match_columns": 203,
+      "sources": {
+        "EQ": 725,
+        "SMAG": 345,
+        "GEM": 732,
+        "curated_reference": 52
+      },
+      "reference_scaffold_branch_length": 24.17730500500002,
+      "equal_addition_n": 200,
+      "mean_added_branch_length": {
+        "EQ": 80.30863960503994,
+        "SMAG": 85.42611035003003,
+        "GEM": 97.27874590206979
+      },
+      "limits": "exploratory domain tree; equal-size reference-conditioned breadth, not novel function or taxonomic clades; no taxonomic matching; topology estimated jointly; FastTree local supports, no resampled alignment bootstrap"
+    },
+    "PF04244": {
+      "sequences": 463,
+      "alignment_match_columns": 224,
+      "sources": {
+        "EQ": 123,
+        "SMAG": 56,
+        "GEM": 283,
+        "curated_reference": 1
+      },
+      "reference_scaffold_branch_length": 0,
+      "equal_addition_n": 56,
+      "mean_added_branch_length": {},
+      "limits": "exploratory domain tree; equal-size reference-conditioned breadth, not novel function or taxonomic clades; no taxonomic matching; topology estimated jointly; FastTree local supports, no resampled alignment bootstrap"
+    }
+  },
+  "commands": [
+    [
+      "hmmsearch",
+      "--cpu",
+      "16",
+      "--domtblout",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_phylogeny/domains.tsv",
+      "-o",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_phylogeny/hmm.txt",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_profile_pilot/cpf.hmm",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/combined.faa"
+    ],
+    [
+      "hmmalign",
+      "--trim",
+      "--outformat",
+      "Stockholm",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/references_v2/PF00875.hmm",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_phylogeny/PF00875.faa"
+    ],
+    [
+      "/ibex/scratch/projects/c2014/rob/metagenomics/../miniconda3/envs/selection/bin/FastTree",
+      "-wag",
+      "-gamma",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_phylogeny/PF00875.aligned.faa"
+    ],
+    [
+      "hmmalign",
+      "--trim",
+      "--outformat",
+      "Stockholm",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/references_v2/PF03441.hmm",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_phylogeny/PF03441.faa"
+    ],
+    [
+      "/ibex/scratch/projects/c2014/rob/metagenomics/../miniconda3/envs/selection/bin/FastTree",
+      "-wag",
+      "-gamma",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_phylogeny/PF03441.aligned.faa"
+    ],
+    [
+      "hmmalign",
+      "--trim",
+      "--outformat",
+      "Stockholm",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/references_v2/PF04244.hmm",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_phylogeny/PF04244.faa"
+    ],
+    [
+      "/ibex/scratch/projects/c2014/rob/metagenomics/../miniconda3/envs/selection/bin/FastTree",
+      "-wag",
+      "-gamma",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_phylogeny/PF04244.aligned.faa"
+    ]
+  ]
+}

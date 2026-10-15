@@ -1,0 +1,1450 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "O74478",
+  "uniProtkbId": "PGM3_SCHPO",
+  "entryAudit": {
+    "firstPublicDate": "2008-01-15",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1998-11-01",
+    "entryVersion": 143,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Schizosaccharomyces pombe (strain 972 / ATCC 24843)",
+    "commonName": "Fission yeast",
+    "taxonId": 284812,
+    "lineage": [
+      "Eukaryota",
+      "Fungi",
+      "Dikarya",
+      "Ascomycota",
+      "Taphrinomycotina",
+      "Schizosaccharomycetes",
+      "Schizosaccharomycetales",
+      "Schizosaccharomycetaceae",
+      "Schizosaccharomyces"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q03262"
+          }
+        ],
+        "value": "Probable phosphoribomutase"
+      },
+      "shortNames": [
+        {
+          "value": "PRM"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03262"
+            }
+          ],
+          "value": "5.4.2.7"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03262"
+            }
+          ],
+          "value": "Phosphoglucomutase 3 homolog"
+        },
+        "shortNames": [
+          {
+            "value": "PGM 3 homolog"
+          }
+        ]
+      }
+    ]
+  },
+  "genes": [
+    {
+      "orfNames": [
+        {
+          "value": "SPCC1840.05c"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03262"
+            }
+          ],
+          "value": "Converts ribose 1-phosphate to ribose 5-phosphate. Involved in ribose salvage via the pentose phosphate pathway"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha-D-ribose 1-phosphate = D-ribose 5-phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:18793"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57720"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:78346"
+          }
+        ],
+        "ecNumber": "5.4.2.7",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q03262"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P00949"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "P00949"
+              }
+            ],
+            "value": "Binds 1 Mg(2+) ion per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "16823372"
+              }
+            ],
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        },
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "16823372"
+              }
+            ],
+            "value": "Nucleus",
+            "id": "SL-0191"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the phosphohexose mutase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 587,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Probable phosphoribomutase",
+      "featureId": "PRO_0000315630"
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 149,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 149,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphoserine intermediate",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 49,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 49,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 53,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 53,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 149,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 150,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 149,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 149,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "via phosphate group",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 306,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 306,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 308,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 308,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 310,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 311,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 310,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 310,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:18420"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "Mg(2+)",
+        "id": "ChEBI:CHEBI:18420"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 380,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 380,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 404,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 406,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 418,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 418,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P00949"
+        }
+      ],
+      "ligand": {
+        "name": "substrate"
+      }
+    },
+    {
+      "type": "Modified residue",
+      "location": {
+        "start": {
+          "value": 149,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 149,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphoserine",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "18257517"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0119",
+      "category": "Biological process",
+      "name": "Carbohydrate metabolism"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0313",
+      "category": "Biological process",
+      "name": "Glucose metabolism"
+    },
+    {
+      "id": "KW-0413",
+      "category": "Molecular function",
+      "name": "Isomerase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0539",
+      "category": "Cellular component",
+      "name": "Nucleus"
+    },
+    {
+      "id": "KW-0597",
+      "category": "PTM",
+      "name": "Phosphoprotein"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "11859360",
+        "citationType": "journal article",
+        "authors": [
+          "Wood V.",
+          "Gwilliam R.",
+          "Rajandream M.A.",
+          "Lyne M.H.",
+          "Lyne R.",
+          "Stewart A.",
+          "Sgouros J.G.",
+          "Peat N.",
+          "Hayles J.",
+          "Baker S.G.",
+          "Basham D.",
+          "Bowman S.",
+          "Brooks K.",
+          "Brown D.",
+          "Brown S.",
+          "Chillingworth T.",
+          "Churcher C.M.",
+          "Collins M.",
+          "Connor R.",
+          "Cronin A.",
+          "Davis P.",
+          "Feltwell T.",
+          "Fraser A.",
+          "Gentles S.",
+          "Goble A.",
+          "Hamlin N.",
+          "Harris D.E.",
+          "Hidalgo J.",
+          "Hodgson G.",
+          "Holroyd S.",
+          "Hornsby T.",
+          "Howarth S.",
+          "Huckle E.J.",
+          "Hunt S.",
+          "Jagels K.",
+          "James K.D.",
+          "Jones L.",
+          "Jones M.",
+          "Leather S.",
+          "McDonald S.",
+          "McLean J.",
+          "Mooney P.",
+          "Moule S.",
+          "Mungall K.L.",
+          "Murphy L.D.",
+          "Niblett D.",
+          "Odell C.",
+          "Oliver K.",
+          "O'Neil S.",
+          "Pearson D.",
+          "Quail M.A.",
+          "Rabbinowitsch E.",
+          "Rutherford K.M.",
+          "Rutter S.",
+          "Saunders D.",
+          "Seeger K.",
+          "Sharp S.",
+          "Skelton J.",
+          "Simmonds M.N.",
+          "Squares R.",
+          "Squares S.",
+          "Stevens K.",
+          "Taylor K.",
+          "Taylor R.G.",
+          "Tivey A.",
+          "Walsh S.V.",
+          "Warren T.",
+          "Whitehead S.",
+          "Woodward J.R.",
+          "Volckaert G.",
+          "Aert R.",
+          "Robben J.",
+          "Grymonprez B.",
+          "Weltjens I.",
+          "Vanstreels E.",
+          "Rieger M.",
+          "Schaefer M.",
+          "Mueller-Auer S.",
+          "Gabel C.",
+          "Fuchs M.",
+          "Duesterhoeft A.",
+          "Fritzc C.",
+          "Holzer E.",
+          "Moestl D.",
+          "Hilbert H.",
+          "Borzym K.",
+          "Langer I.",
+          "Beck A.",
+          "Lehrach H.",
+          "Reinhardt R.",
+          "Pohl T.M.",
+          "Eger P.",
+          "Zimmermann W.",
+          "Wedler H.",
+          "Wambutt R.",
+          "Purnelle B.",
+          "Goffeau A.",
+          "Cadieu E.",
+          "Dreano S.",
+          "Gloux S.",
+          "Lelaure V.",
+          "Mottier S.",
+          "Galibert F.",
+          "Aves S.J.",
+          "Xiang Z.",
+          "Hunt C.",
+          "Moore K.",
+          "Hurst S.M.",
+          "Lucas M.",
+          "Rochet M.",
+          "Gaillardin C.",
+          "Tallada V.A.",
+          "Garzon A.",
+          "Thode G.",
+          "Daga R.R.",
+          "Cruzado L.",
+          "Jimenez J.",
+          "Sanchez M.",
+          "del Rey F.",
+          "Benito J.",
+          "Dominguez A.",
+          "Revuelta J.L.",
+          "Moreno S.",
+          "Armstrong J.",
+          "Forsburg S.L.",
+          "Cerutti L.",
+          "Lowe T.",
+          "McCombie W.R.",
+          "Paulsen I.",
+          "Potashkin J.",
+          "Shpakovski G.V.",
+          "Ussery D.",
+          "Barrell B.G.",
+          "Nurse P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11859360"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nature724"
+          }
+        ],
+        "title": "The genome sequence of Schizosaccharomyces pombe.",
+        "publicationDate": "2002",
+        "journal": "Nature",
+        "firstPage": "871",
+        "lastPage": "880",
+        "volume": "415"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "972 / ATCC 24843",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "16823372",
+        "citationType": "journal article",
+        "authors": [
+          "Matsuyama A.",
+          "Arai R.",
+          "Yashiroda Y.",
+          "Shirai A.",
+          "Kamata A.",
+          "Sekido S.",
+          "Kobayashi Y.",
+          "Hashimoto A.",
+          "Hamamoto M.",
+          "Hiraoka Y.",
+          "Horinouchi S.",
+          "Yoshida M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "16823372"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nbt1222"
+          }
+        ],
+        "title": "ORFeome cloning and global analysis of protein localization in the fission yeast Schizosaccharomyces pombe.",
+        "publicationDate": "2006",
+        "journal": "Nat. Biotechnol.",
+        "firstPage": "841",
+        "lastPage": "847",
+        "volume": "24"
+      },
+      "referencePositions": [
+        "SUBCELLULAR LOCATION [LARGE SCALE ANALYSIS]"
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "18257517",
+        "citationType": "journal article",
+        "authors": [
+          "Wilson-Grady J.T.",
+          "Villen J.",
+          "Gygi S.P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18257517"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/pr7006335"
+          }
+        ],
+        "title": "Phosphoproteome analysis of fission yeast.",
+        "publicationDate": "2008",
+        "journal": "J. Proteome Res.",
+        "firstPage": "1088",
+        "lastPage": "1097",
+        "volume": "7"
+      },
+      "referencePositions": [
+        "PHOSPHORYLATION [LARGE SCALE ANALYSIS] AT SER-149",
+        "IDENTIFICATION BY MASS SPECTROMETRY"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "CU329672",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA20128.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "T41173",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "T41173"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "O74478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "O74478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "275497",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "16"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "O74478",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "232"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "284812.O74478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "iPTMnet",
+      "id": "O74478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "284812-O74478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "spo:2538920",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PomBase",
+      "id": "SPCC1840.05c",
+      "properties": [
+        {
+          "key": "GeneName",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "VEuPathDB",
+      "id": "FungiDB:SPCC1840.05c",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG1220",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_016950_0_1_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "O74478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "GYCVDPE",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "O74478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Reactome",
+      "id": "R-SPO-6798695",
+      "properties": [
+        {
+          "key": "PathwayName",
+          "value": "Neutrophil degranulation"
+        }
+      ]
+    },
+    {
+      "database": "Reactome",
+      "id": "R-SPO-70171",
+      "properties": [
+        {
+          "key": "PathwayName",
+          "value": "Glycolysis"
+        }
+      ]
+    },
+    {
+      "database": "Reactome",
+      "id": "R-SPO-71336",
+      "properties": [
+        {
+          "key": "PathwayName",
+          "value": "Pentose phosphate pathway"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:O74478",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000002485",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome III"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:PomBase"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "16823372"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005634",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleus"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:PomBase"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "16823372"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000287",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:magnesium ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008973",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphopentomutase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "ISS:UniProtKB"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005975",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:carbohydrate metabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006166",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:purine ribonucleoside salvage"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd05799",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.120.10:FF:000035",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pgm3p"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.120.10:FF:000037",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pgm3p"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.120.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Alpha-D-Glucose-1,6-Bisphosphate, subunit A, domain 3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005844",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_a/b/a-I"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR016055",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_a/b/a-I/II/III"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005845",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_a/b/a-II"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005846",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_a/b/a-III"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036900",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_C_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR016066",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "A-D-PHexomutase_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005841",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Alpha-D-phosphohexomutase_SF"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR45745:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHOSPHOGLUCOMUTASE 2B-RELATED"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR45745",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHOSPHOMANNOMUTASE 45A"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02878",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM_PMM_I"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02879",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM_PMM_II"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02880",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM_PMM_III"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00509",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGMPMM"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF55957",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphoglucomutase, C-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53738",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphoglucomutase, first 3 domains"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00710",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PGM_PMM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MDPILQELVDEWFKLDQDETTRNEVSQLIKAEDYATLKQIMHPRIGFGTSGLRAEIGAGFARMNCLTVIQASQGFAEYLLQTVPSAAKLGVVIGHDHRHKSNTFARLTAAVFLQKGFKTYFFDHLVHTPLVPFAVKTLGTAAGVMITASHNPAAYNGYKVYWGNGCAIIPPHDKGIAACIEKNLTPITWDKNLVENHKLADRDFAVGLLKNYWSQLHEFHSENNFSLEMKSLKFVYTPIHGVGLPFVTSALHLFGEQGDMISVPLQDSPNPDFPTVKFPNPEEEGALDLAYEQADANGISYVLATDPDADRFAFAEKINGAWRRFTGDEVGCILAYFIFQEYKNVGKPIDDFYVLSTTVSSAMVKSMAKVEGFHHVETLTGFKWLGNKALELEKQGKFIGLAYEEALGYMVGSIVRDKDGVNALITFLHLLKRLQLQNLSITEVFEQMSKKYGYYTTQNSYFLSRDTPKLRALVDALRHYDTKSGYPATLGSKKITNVRDLTTGYDSSSTDGKATLPVSKSSDNVTFELENGEVIMTIRTSGTEPKLKFYICARGHSLEDSIKNATEVKQAIKSEWFHPQQNGLEEP",
+    "length": 587,
+    "molWeight": 65494,
+    "crc64": "3A818C1C02CD5845",
+    "md5": "F806E7CD4CE2D36F706C804CFC59918F"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Active site": 1,
+      "Binding site": 11,
+      "Modified residue": 1
+    },
+    "uniParcId": "UPI000006B03C"
+  }
+}

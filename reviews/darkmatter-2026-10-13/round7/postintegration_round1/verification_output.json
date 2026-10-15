@@ -1,0 +1,304 @@
+{
+  "manuscript_and_pdf_integrity": {
+    "main_tex_sha256": "199da2d1dfc7ef711a42a7ce4c4bae09ed89f766b43cd696c284c25c1c1c9260",
+    "submitted_tex_sha256": "199da2d1dfc7ef711a42a7ce4c4bae09ed89f766b43cd696c284c25c1c1c9260",
+    "tex_identical": true,
+    "submitted_pdf_sha256": "f95bafeb59cf0a8f00ee58b5be4746a59d09ccbb4e25d9c001c8f23cb0666f7b",
+    "submitted_fig4_sha256": "730647d2c7353339869810ef1f1407e9a497ba980910d31d62b3ccd9c8c82fab",
+    "pdf_integrity_scan_path": "reviews/darkmatter-2026-10-13/round7/manuscript/pdf_integrity_initial.txt",
+    "pdf_integrity_scan_text": "#### main.pdf\n  FLAG white-on-blank text:\n  p32 WHITE-on-blank size=6.6: 69\n  p32 WHITE-on-blank size=6.6: 90\n  p32 WHITE-on-blank size=6.6: 61",
+    "obsolete_alntm_phrases_found": []
+  },
+  "h1_verification": {
+    "status": "PASS",
+    "snapshot_files_verified": 67,
+    "n_genomes": 237,
+    "class_counts": {
+      "SW-10-69-26": 185,
+      "E2": 51,
+      "Thermoplasmata": 1
+    },
+    "median_dark_fraction": 0.3096,
+    "unique_comparators": 32,
+    "comparator_pair_sources": {
+      "GTDB_r232_rep": 229,
+      "MGnify": 8
+    },
+    "env_pairs": {
+      "soil": 142,
+      "marine_sediment": 3,
+      "unknown": 92,
+      "known_total": 145
+    },
+    "tree_tips": 1914,
+    "lambda_ml": 0.915784,
+    "lambda_ci95": [
+      0.846303,
+      0.957823
+    ],
+    "r2_gls": 0.469051,
+    "aai_coef": 0.001704,
+    "aai_se": 0.000407,
+    "aai_p": 4.065008e-05,
+    "rbh_coef": -0.137484,
+    "rbh_se": 0.019456,
+    "rbh_p": 1.879206e-11,
+    "sensitivity_specs_count": 7,
+    "s7_n": 232
+  },
+  "h2_verification": {
+    "status": "PASS",
+    "snapshot_files_verified": 27,
+    "h2_h4_cohort_identity_verified": true,
+    "attrition_funnel": {
+      "K": {
+        "gate0_confidence_qualified": 1031,
+        "gate1_refined_mag_binned": 917,
+        "gate2_drep_species_ge1": 898,
+        "gate3_multi_species_ge2": 570
+      },
+      "QnotK": {
+        "gate0_confidence_qualified": 1807,
+        "gate1_refined_mag_binned": 1509,
+        "gate2_drep_species_ge1": 1480,
+        "gate3_multi_species_ge2": 891
+      }
+    },
+    "tier1_counts": {
+      "total": 353,
+      "K": 173,
+      "QnotK": 180
+    },
+    "tier1_retention_pct": {
+      "total": 24.16,
+      "K": 30.35,
+      "QnotK": 20.2
+    },
+    "tier1_recurrence_pct": {
+      "K_obs": 40.46,
+      "K_exp": 8.71,
+      "K_excess": 31.75,
+      "Q_obs": 32.22,
+      "Q_exp": 6.56,
+      "Q_excess": 25.67
+    },
+    "tier1_mh_excess_diff": 0.035358,
+    "tier1_p_perm": 0.406859,
+    "strict_96_pairs": {
+      "k_pct": 31.25,
+      "q_pct": 31.25,
+      "excess_diff": -0.00544,
+      "p_perm": 0.922608
+    },
+    "tier2_counts": {
+      "total": 637,
+      "ineligible_missing": 824,
+      "K": 260,
+      "QnotK": 377
+    },
+    "tier2_mh_excess_diff": 0.018391,
+    "tier2_p_perm": 0.561844,
+    "species_disjoint_112": {
+      "K": 51,
+      "QnotK": 61,
+      "K_excess": 0.261855,
+      "QnotK_excess": 0.19843
+    },
+    "tier3_counts": {
+      "total": 1320,
+      "ineligible_missing": 141,
+      "K": 521,
+      "QnotK": 799
+    },
+    "bins_verified": {
+      "verified": 2041,
+      "missing": 85,
+      "total": 2126
+    }
+  },
+  "h3_verification": {
+    "status": "PASS",
+    "raw_audit_job": "53796328",
+    "raw_audit_status": "PASS",
+    "smag_frame": 40039,
+    "smag_sampled": 1500,
+    "gem_frame": 52515,
+    "gem_sampled_per_seed": 2055,
+    "zenodo_parts_verified": 373,
+    "primary_matched_proteins": 4210592,
+    "primary_matched_residues": 1295970055,
+    "pre_matching_shared_seqs": 25067,
+    "post_matching_shared_seqs": 22310,
+    "no_overlap_matched_proteins": 4185525,
+    "no_overlap_matched_residues": 1289129312,
+    "primary_dark": {
+      "smag_hits": 30064,
+      "gem_hits": 10399,
+      "both": 8015,
+      "smag_only": 22049,
+      "gem_only": 2384,
+      "neither": 73594,
+      "smag_pct": 28.35,
+      "gem_pct": 9.81,
+      "delta_pct": 18.54
+    },
+    "primary_control": {
+      "smag_hits": 99673,
+      "gem_hits": 96385,
+      "both": 94277,
+      "smag_only": 5396,
+      "gem_only": 2108,
+      "neither": 4261,
+      "smag_pct": 93.99,
+      "gem_pct": 90.89,
+      "delta_pct": 3.1
+    },
+    "harmonized_deltas": [
+      18.54,
+      16.83,
+      16.91
+    ],
+    "published_deltas": [
+      18.46,
+      16.87,
+      16.91
+    ],
+    "no_overlap_delta": 18.62,
+    "id30_delta": 18.14,
+    "all_40_dark_length_strata_positive": true
+  },
+  "h4_and_fig4_verification": {
+    "status": "PASS",
+    "total_models": 5851,
+    "total_regions": 7773,
+    "models_no_region": 161,
+    "cpu_pooled_k_tier1": {
+      "n": 1031,
+      "eligible": 984,
+      "wc_matched": 67,
+      "wc_matched_pct": 6.5,
+      "wc_unmatched": 964,
+      "crop_recovered": 714,
+      "crop_recovered_pct": 74.07,
+      "crop_matched_total": 775,
+      "crop_matched_total_pct": 75.17,
+      "transitions_unmatched": {
+        "recovered": 714,
+        "persistent_low_score": 167,
+        "raw_zero_retrieval": 38,
+        "post_exclusion_empty": 0,
+        "no_confident_region": 45
+      },
+      "transitions_matched": {
+        "retained": 61,
+        "lost_low_score": 4,
+        "lost_no_confident_region": 2
+      }
+    },
+    "cpu_other_dark_tier1": {
+      "n": 1807,
+      "wc_matched": 1408,
+      "wc_matched_pct": 77.92,
+      "crop_matched": 1578,
+      "crop_matched_pct": 87.33,
+      "q_not_k_pdb": {
+        "n": 1107,
+        "wc_matched": 1107,
+        "crop_matched": 1009
+      },
+      "q_not_k_afdb_only": {
+        "n": 700,
+        "wc_matched": 301,
+        "crop_matched": 569,
+        "wc_unmatched_recovered": 292
+      }
+    },
+    "cpu_controls": {
+      "n": 3013,
+      "wc_matched_tier1": 2878,
+      "wc_matched_tier1_pct": 95.52,
+      "crop_matched_by_tier": {
+        "0": 2902,
+        "1": 2889,
+        "2": 2842,
+        "3": 2823,
+        "4": 2796
+      },
+      "adaptive_expanded_wc": 39,
+      "adaptive_expanded_crop": 55,
+      "final_cap_saturated_unmatched_wc": [
+        "KF001671",
+        "KF001867",
+        "KF003576"
+      ],
+      "final_cap_saturated_unmatched_crop": [
+        "KF003576_reg1"
+      ]
+    },
+    "gpu_sensitivity": {
+      "job": "53796103",
+      "wc_rows": 2853102,
+      "crop_rows": 3228450,
+      "alntm_gt1_rows": 1708,
+      "pooled_k_tier1": {
+        "wc_unmatched": 961,
+        "crop_recovered": 731,
+        "crop_recovered_pct": 76.07,
+        "crop_matched_total": 794,
+        "crop_matched_total_pct": 77.01,
+        "wc_disagreements_vs_cpu": 41,
+        "crop_disagreements_vs_cpu": 43,
+        "cap_unmatched_dark": 0
+      },
+      "controls_by_tier": {
+        "0": {
+          "gpu_wc_unmatched": 93,
+          "gpu_crop_matched": 2911,
+          "gpu_wc_cap_unmatched": 2,
+          "gpu_crop_cap_unmatched": 0
+        },
+        "1": {
+          "gpu_wc_unmatched": 126,
+          "gpu_crop_matched": 2896,
+          "gpu_wc_cap_unmatched": 2,
+          "gpu_crop_cap_unmatched": 0
+        },
+        "2": {
+          "gpu_wc_unmatched": 220,
+          "gpu_crop_matched": 2816,
+          "gpu_wc_cap_unmatched": 18,
+          "gpu_crop_cap_unmatched": 35
+        },
+        "3": {
+          "gpu_wc_unmatched": 269,
+          "gpu_crop_matched": 2788,
+          "gpu_wc_cap_unmatched": 27,
+          "gpu_crop_cap_unmatched": 44
+        },
+        "4": {
+          "gpu_wc_unmatched": 329,
+          "gpu_crop_matched": 2753,
+          "gpu_wc_cap_unmatched": 38,
+          "gpu_crop_cap_unmatched": 53
+        }
+      }
+    },
+    "cpu_alntm_anomaly": {
+      "total_rows": 6845932,
+      "alntm_gt1_rows": 2194,
+      "row_exclusion_wc_models_changed_tiers2to4": 4,
+      "row_exclusion_crop_models_changed_tiers2to4": 9
+    }
+  },
+  "reproducibility_harness_checks": {
+    "current_revision_checks_has_stale_797_guard": false,
+    "verify_py_has_stale_alntm_required_phrases": [
+      "97/1{,}875",
+      "68/3{,}013",
+      "16{,}386",
+      "split 74/23"
+    ],
+    "verify_round7_hardcodes_gtdb_outgroup_tips": false,
+    "verify_round7_h2_attrition_needs_total_sum_handler": true
+  }
+}

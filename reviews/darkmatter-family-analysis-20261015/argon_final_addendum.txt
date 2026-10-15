@@ -1,0 +1,144 @@
+================================================================================
+FINAL INDEPENDENT AUDIT ADDENDUM: F1-F5 COMPLETED SENSITIVITY, QC & DISPOSITION
+================================================================================
+Date: 2026-10-15
+Requested Reviewer Persona: Gemini 4 Argon High (Independent Scientific Auditor)
+Actual Runtime Identity: Antigravity Agentic AI Coding Assistant (Google DeepMind)
+Scope: Final addendum (<=1,200 words) auditing completed F3-F5 native-space
+       embedding distances, retinal-site calibration, source-symmetric
+       site-conserving sensitivity, F4 site-context intersection, final bundle
+       closure (Job 53822727), and Root dispositions (ROOT_F12_JUDGEMENT.txt,
+       ROOT_F345_JUDGEMENT.txt). Prior report argon_f345_results.txt and
+       manuscript/main.tex remain untouched.
+
+--------------------------------------------------------------------------------
+1. NEWLY AUDITED ARTIFACTS & SHA-256 PROVENANCE LEDGER
+--------------------------------------------------------------------------------
+- manuscript/main.tex (UNTOUCHED): 2fcc918baaf344de6ef96915b060e4b8ce0ee6fefa7a26168475766b281b0a8b
+- reviews/darkmatter-family-analysis-20261015/argon_f345_results.txt (RETAINED):
+  f70905c0145f7640b67b1db60aafbf32b174f4183dc4b5bf3ed9274c75dc77cb
+- reviews/darkmatter-family-analysis-20261015/ROOT_F12_JUDGEMENT.txt:
+  fdc85d287fcd696b2eaef09b205661590e10d6aeb5bee057ac89cbfe4d30b47f
+- reviews/darkmatter-family-analysis-20261015/ROOT_F345_JUDGEMENT.txt:
+  3d947403fb6a2deb327861d1b63fce2db85598db46f11e71f35f21cba9014b02
+- root_audit/f345_embedding_analysis.py (single-pass NPZ load, Job 53821447):
+  5b6d67f7d3b04bb4806f9ed74e9641c6f267c2a736e2542039370d05f53bb437
+- root_audit/f345_plots/full_distance_summary.json (Job 53821447, 7m12s; COMPLETE):
+  ece7db342bd86f3a1a8d4a3d4f25a1ab6bc698cfa0fb18ba001d3de59185c084
+- root_audit/f3_reference_sensitivity.py & summary.json (Job 53820973):
+  925dcbb7b111e18a18e19e75f8cbb7c64b8339911e59fd2a97dfe485d0023b86
+  2b0129e0aa1a23f054a3f605cc0475affb17608259273b46c56200a2f39cd9ee
+- root_audit/f3_site_conserving.py & summary.json (Job 53822479; COMPLETE):
+  d18235fb9563cd813599a6fc42cbee16c4c846beeb32d522712c39fcb1eda821
+  b2efbf5f627e4f1eed008660582d94a956d86d2013862aa3d59b2f698df2ba1c
+- root_audit/finalize_family_bundle.py & final_bundle/closure.json (Job 53822727; COMPLETE):
+  6479af3243a7e1391ddd931733f75de0e8800c07ee6f6fdd6118efdda54b02e2
+  2ec2ece106478d67efe3e4ae990f9929222ce2e5426dab6466160aa1bc6e2a8d
+
+--------------------------------------------------------------------------------
+2. EXPLICIT CORRECTIONS TO PRIOR REPORT (argon_f345_results.txt)
+--------------------------------------------------------------------------------
+Rather than rewriting `argon_f345_results.txt`, we record four explicit corrections:
+1. Exact HMM Profile Identifiers (F1 & F5):
+   - `argon_f345_results.txt` misattributed F5 $\gamma$-CA and `CsoSCA` to `PF00132`
+     and `PF08936`, and omitted `PF04244` from the F1 table. In
+     `10_f5_carbonic_anhydrase_full.py`, target models are `PF00484` ($\beta$-CA),
+     **`NF050158`/`NF040597`** ($\gamma$-CA), and **`TIGR02701`** (`CsoSCA`), whereas
+     **`PF00132` (`Hexapep`) and `PF00583` (`Acetyltransf_1`)** are competing
+     left-handed $\beta$-helix (LbH) negative controls (`margin >= 10.0` bits).
+     The F1 CPF census includes **`PF04244`** alongside `PF00875` and `PF03441`.
+2. Over-interpretation of F3 Taxonomic & Neighborhood Evidence:
+   - `argon_f345_results.txt` called the `40/42` `Halobacteriota` Type-1
+     transducer loci *"canonical haloarchaeal Sensory Rhodopsin I/II (`SR-I`/`SR-II`)
+     paired with cognate `Htr` transducers"*. In fact, `Halobacteriota` taxonomy
+     plus adjacent `MCP/HAMP/CheW` domains is **compatible with known haloarchaeal
+     sensory architecture**, not proof of canonical `SR/Htr` identity or phototaxis.
+     Marker absence in the remaining `98` Type-1 or `65` Heliorhodopsin loci does
+     not assign them as ion pumps or refute sensing. For the strict 1-per-MAG
+     all-profile Type-1 context test, two-class `Holm p = 0.012695` (raw `p = 0.006348`) governs.
+3. Precision on F4/F5 Cluster Means & Scope of Negative Claims:
+   - For F5 `GammaCA` equal-addition (`n = 100`) 50%-clusters, EQ (`34.07`) is
+     numerically **slightly higher** than SMAG (`32.36`) and GEM (`32.77`), not
+     *"no higher"*; this slight difference does not establish exceptional breadth
+     under taxonomic/architectural confounding. F5 biochemical/thermal properties
+     are **untested, not failed**. F4 results show cohort-wide exceptional `EctC`
+     divergence is not established (`median 68.3%` identity to curated refs), not
+     that zero individual divergent `EctC` candidates exist.
+4. Governance, Ecology & Synteny Terminology:
+   - Analyses followed a **prespecified analysis plan**, not formal preregistration.
+     F1 surface enrichment is an observational association, not selection or
+     causality. F4 `EctABC`/`EctABCD` clusters (`50%` profile-coverage gate on
+     `EctA`/`EctB`; neighbor completeness not enforced) are **predicted genomic
+     neighborhoods**, not verified intact operons.
+
+--------------------------------------------------------------------------------
+3. EVALUATION OF NEW COMPLETED AUDITS & CRITICAL F3 SENSITIVITY DOWNGRADE
+--------------------------------------------------------------------------------
+A. Full Native-Space ProstT5 Distances (`f345_plots`, Job 53821447)
+   - Caching ORIX Job `316940` embeddings (`14,111 x 1024`) once in RAM
+     (`f345_embedding_analysis.py:L11`) completed Job `53821447` in 7m12s (slow
+     Job `53820589` cancelled, unaccepted).
+   - Complete-gene median nearest-reference cosine distances (`EQ` vs `SMAG` /
+     `GEM`) show strong overlap for `BetaCA` (`0.02420` vs `0.02273` / `0.02088`),
+     `GammaCA` (`0.02610` vs `0.02421` / `0.02205`), `EctC` (`0.01529` vs
+     `0.01489` / `0.01541`), and `Type1` (`0.02590` vs `0.02342` / `0.02124`),
+     with a gap only in unfiltered `Helio` (`0.04363` vs `0.00903` / `0.00927`).
+
+B. F3 Retinal-Site Calibration & Source-Symmetric Filtering (`53820973` & `53822479`)
+   - Calibration (`53820973`): All `30/30` curated Type-1 retinal-Lys annotations
+     map to the exact HMM column (`P02945` `K229`). Global pairwise projection from
+     each query's best coverage-qualified (`>=70%`) reference agrees with HMM for
+     `134/135` EQ queries (`97` retain `K` pairwise vs `100/140` by HMM). Notably,
+     **`13/42` transducer-linked EQ Type-1 candidates lack aligned retinal `K`
+     (`29/42` retain `K`)**. For Heliorhodopsin (`AVZ43932.1` / `48C12` verified
+     against GenBank; `K241` from Pushkarev et al. 2018 Extended Data Fig. 1),
+     **`45/65 (69.2%)` EQ candidates retain `K241`**. Short `131 aa` reference
+     `A0A2C8YND9` (`20.25%` profile coverage, lacking `K241`) is excluded from
+     site-conserving sensitivity.
+   - Source-Symmetric Retinal-`K` Filtering (`53822479`): Requiring aligned `K`
+     across all sources retains `Type1` (`100` EQ, `12` SMAG, `158` GEM, `30` refs)
+     and `Helio` (`45` EQ, `35` SMAG, `73` GEM, `25` refs):
+     1. `Type1` site-conserving EQ median reference cosine distance (`0.01667`)
+        is **lower** than SMAG (`0.02342`) and GEM (`0.02112`).
+     2. `Helio` median reference cosine distance gap **shrinks by 69%**, from
+        `0.04363` to **`0.01338`** vs `0.00903` (SMAG) and `0.00918` (GEM), and
+        median reference identity rises from `34.7%` to `51.4%`. Equal-35 additions
+        on the frozen joint 50%-clustering yield mean `13.98` reference-external
+        clusters vs `5.00` (SMAG) and `4.79` (GEM)—an **exploratory,
+        taxonomy-confounded lead** (`43/65` EQ heliorhodopsins in `Patescibacteriota`),
+        not a novel family.
+     3. **Context Fragility**: Re-applying the matched test (`same_contig`,
+        `|n_neighbors - ctrl_n_neighbors| <= 2`, 1 SHA-ranked locus/MAG/class) to
+        retinal-`K`-conserving EQ genes yields **Type-1: `13/33` vs `6/33` controls
+        (discordants `8` vs `1`, exact `p = 0.0390625`, `Holm p = 0.078125`)**, and
+        **Helio: `5/18` vs `4/18` (`p = 1.0`, `Holm p = 1.0`)**. We **agree** with
+        Root's further downgrade of F3: losing 5% significance after the
+        plausibility filter (`Holm p = 0.0781`) makes F3 context a descriptive
+        architectural observation.
+
+C. F4 Site+Context Intersection & Final Bundle Closure (`53822727`)
+   - `final_bundle/closure.json` (`53822727`) closes `2,310` files (`9.64 GB`),
+     confirms `PASS` on ORIX embedding checksums, and shows `8` non-experimental
+     curated CA references (`7` `Gamma_CA`, `1` `Beta_CA`; `experimental_function_flag = 0`)
+     fail the combined F5 selector whereas `P40881` passes via `NF040597`.
+   - Among `940` complete EQ `EctC` (`822` `WEYH`; `666` `A+B` within 5 kb; `664`
+     same-strand), **`625` satisfy both `A+B` and `WEYH` (`623` same-strand `A+B`
+     and `WEYH`)**, and all `5` complete `EctCD` fusions align at all 4 sites (`4`
+     `WEYH`, `1` `FEYH`).
+
+
+--------------------------------------------------------------------------------
+4. FINAL F1-F5 SYNTHESIS: RESOURCE vs. HYPOTHESIS vs. MANUSCRIPT FIT
+--------------------------------------------------------------------------------
+Tracks F1–F5 **do not establish a novel molecular mechanism headline story** for
+*Nature Communications*, but F1/F4 provide rigorous supporting biology and
+F3/F5 provide transparent archival resources:
+
+| Track | Viable Candidate / Resource | Original Hypothesis Status | Final Manuscript Fit |
+|---|---|---|---|
+| **F1 (CPF)** | **YES** (914 complete genes in 775 MAGs; 550 CoverM ratios) | **PARTIAL**: Paired surface vs subsurface enrichment (+8.47 pp, Holm `p = 0.00196`), CPF-exclusive signal inconclusive (`p = 0.533`), breadth $\le$ GEM. | **SUPPORTING BIOLOGY**: Surface light/UV ecological association without novelty or selection claims. |
+| **F2 (HAD)** | **NO** (2 short ORFs, 93/148 aa; 0 alignments) | **UNSUPPORTED**: Compatible-solute phosphatase assignment unsupported (activity untested, not refuted). | **STOP / OMIT**: Omit from manuscript. |
+| **F3 (Rhodopsins)** | **YES** (205 complete; 100 Type-1 & 45 Helio site-conserving) | **NOT ESTABLISHED**: Helio context negative (`p = 1.0`); Type-1 strict context loses 5% significance after retinal-`K` filter (`Holm p = 0.0781`); Helio 50%-clusters taxonomy-confounded. | **EXPLORATORY RESOURCE / SUPPLEMENT**: Descriptive architectural context and reference-gap lead only; not headline biology. |
+| **F4 (EctC)** | **YES** (940 complete in 865 MAGs; 623 same-strand `EctABC` + `WEYH`; 5 `EctCD` fusions) | **PATHWAY SUPPORTED / NOVELTY NOT ESTABLISHED**: High conservation (`median 68.3%` curated, `71.0%` SMAG; 2.80 equal-53 50%-clusters vs 4.88 SMAG). | **SUPPORTING PATHWAY ARCHITECTURE**: Strengthens osmoprotection section via prevalence (15.9% of MAGs) and neighborhood architecture. |
+| **F5 (CA / CsoSCA)** | **YES** (4,081 $\beta$-CA, 4,212 $\gamma$-CA, 34 `CsoSCA` complete; 4,016 & 3,481 site-conserving) | **NOT ESTABLISHED**: Housekeeping prevalence (~0.020% across cohorts), >99% GEM/SMAG span overlap, no convincing exceptional cluster breadth (`39.18` $\beta$-CA, `34.07` $\gamma$-CA). | **STOP / ARCHIVE ONLY**: Omit from main text; retain audited catalogue in archive. |
+================================================================================

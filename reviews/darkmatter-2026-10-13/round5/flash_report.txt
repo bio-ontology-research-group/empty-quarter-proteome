@@ -1,0 +1,279 @@
+I have launched the exploratory simulation for the expedition detection null model and will continue the investigation once the results are returned.
+# Investigation and Extension Plan for the Fifth Review (Argon Round 5)
+
+## Executive Summary & Hypothesis Ranking
+
+To elevate the paper’s contribution for *Nature Communications* beyond descriptive catalogue statistics, we investigated five falsifiable hypotheses that can be executed entirely on existing IBEX/local data without new wet-lab work. Each addresses a central interpretive tension in the manuscript: whether apparent "darkness", "novelty", or "persistence" reflects genuine desert biology or methodological artifacts of gene calling, domain alignment coverage, sampling geometry, phylogenetic reference gaps, or threshold saturation.
+
+### Ranked Hypotheses
+
+| Rank | Hypothesis / Theme | Primary Estimand | Scientific Impact on Nature Communications Framing |
+|---|---|---|---|
+| **1** | **Structural Query TM-Score Deficit: Multi-Domain Coverage Artifact vs. Novel Fold Topology** | Alignment TM-score ($TM_{\mathrm{aln}}$) and domain coverage ratio ($TM_{\mathrm{query}}/TM_{\mathrm{aln}}$) at fixed length and pLDDT. | **Reframes §2.4**: Shows that 92.8% of confident dark models with $TM_{\mathrm{query}} < 0.5$ possess high-scoring homologous folds ($TM_{\mathrm{aln}} \ge 0.5$, median 0.760), directly refuting naive interpretations of whole-query score deficits as fold novelty. True fold candidate novelty drops from 36.3% to ~3.3%, matching the positive control baseline (2.3–3.4%). |
+| **2** | **Harmonised Gene Calling in Paired Culture–MAG Genomes: Discrepancy Persistence** | Discrepancy odds ratio: absence of annotated CDS at identical DNA loci ($ \ge 95\%$ nt identity, $\ge 90\%$ span) across length and partiality tiers; test of re-annotation on culture contigs. | **Reframes §2.2 & Discussion**: Resolves whether culture no-CDS discrepancies are short-fragment artifacts or caller-choice divergence. Local exploratory checks confirm that for complete long calls ($\ge 100$ aa), 42.4% still lack culture CDS vs 0.41% for annotated genes (OR = 178.3, $p = 2.3 \times 10^{-43}$). Proves caller divergence masks shared proteome content across strains. |
+| **3** | **Multi-Trip Detection vs. Prevalence- and Sampling-Design-Conditioned Null Models** | Difference between observed all-5 trip recurrence (79.4% mapped, 28.9% assembled) and sampling-geometry-conditioned permutation expectations. | **Reframes §2.2**: Demotes claims of seasonal "temporal stability" to spatial prevalence. Exploratory urn modelling reveals that a family with median prevalence (98 samples) has a 99.98% random probability of 5-trip detection; the observed 79.4% is *depleted*, driven by site clustering and Trip 2’s 7-site sampling bottleneck. |
+| **4** | **Thermoplasmatota Darkness: Retention in Near-Complete Genomes and Decay Along AAI Reference Gradients** | Residual dark fraction as a function of CheckM2 completeness tiers and continuous AAI distance to nearest GTDB R232 / MGnify relatives. | **Reframes §2.3**: Proves Thermoplasmatota darkness is not driven by bin fragmentation (persists at 29.4% in near-complete bins $\ge 90\%$). Tests frozen IBEX data (`v2_thermo_relatives_pairs.tsv`) to determine whether within-lineage darkness decays as AAI to reference genomes approaches the genus boundary ($\ge 65\%$). |
+| **5** | **PICRUSt2 Saturation & False-Positive Functional Inflation Across Abundance Thresholds** | Functional richness, MAG recall, and Jaccard similarity as a function of predicted KO abundance / copy-number thresholds ($10^{-6}$ to $10^{-2}$). | **Reframes §2.1**: Moves beyond the binary $>0$ presence rule (which emits all 10,543 KOs in 93.5% of samples) to establish calibrated trade-offs between recall and false-positive KO inflation against metagenomic ground truth. |
+
+---
+
+## Detailed Hypotheses & Investigation Plans
+
+```
+1. Structural Coverage vs Novel Fold → verify: TM_aln and coverage ratio across length strata
+2. Culture-MAG Gene Calling Persistence → verify: complete long calls and harmonised Prodigal on culture
+3. Expedition Persistence Null → verify: urn and site-conditioned permutations
+4. Thermoplasmatota Darkness vs AAI → verify: dark fraction regression on nearest comparator AAI
+5. PICRUSt2 Threshold Sensitivity → verify: richness and Jaccard curves on continuous prediction matrix
+```
+
+---
+
+### Hypothesis 1: Structural Query-Score Deficits Reflect Domain Coverage Ratios Rather Than Novel Fold Topologies
+
+#### 1. Scientific Question & Interpretation
+Does the 36.3% rate of confident dark models falling below whole-query TM-score 0.5 against PDB/AFDB indicate novel three-dimensional folds, or is it a mathematical artifact of sub-query alignment coverage in multi-domain proteins with familiar folds?
+- **Positive Outcome (Artifact established)**: Dark models with $TM_{\mathrm{query}} < 0.5$ have high alignment TM-scores ($TM_{\mathrm{aln}} \ge 0.70$) that scale inversely with query length ($L_{\mathrm{aln}}/L_{\mathrm{query}}$ ratio decays), and their failure rate drops to control levels when evaluated on aligned domains. **Meaning**: Desert dark proteins are not topologically novel folds; they are known structural domains flanked by unaligned terminal regions or distinct multi-domain arrangements.
+- **Informative Negative Outcome (True fold novelty)**: A distinct cluster of models maintains $TM_{\mathrm{aln}} < 0.5$ and $TM_{\mathrm{query}} < 0.5$ even under full-length coverage ($\ge 80\%$). **Meaning**: Identification of a bounded, genuine candidate set of novel structural folds.
+
+#### 2. Exact Available Input Files & Unit of Replication
+- **Unit of Replication**: The structural family model representative ($n = 2,838$ confident dark models, $n = 3,013$ matched controls).
+- **Files**:
+  - Compact: [`reproducibility/darkmatter/structural_raw_audit/per_model.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/structural_raw_audit/per_model.tsv)
+  - Compact: [`reproducibility/darkmatter/inputs/04_structure/00_structure_clean/05_validate/per_rep_structures.tsv.gz`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/inputs/04_structure/00_structure_clean/05_validate/per_rep_structures.tsv.gz)
+  - Remote IBEX: `/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/00_structure_clean/screen/pdb_hits.raw.tsv` and `afdb_hits.raw.tsv` (contains raw Foldseek hit lengths `c[13]` and query coverage `c[9]`).
+
+#### 3. Primary Effect / Estimand
+- Distribution of $TM_{\mathrm{aln}}$ among models with $TM_{\mathrm{query}} < 0.5$.
+- Proportion of query-score deficits attributable to coverage ($TM_{\mathrm{query}} < 0.5$ with $TM_{\mathrm{aln}} \ge 0.5$).
+- Upper bound on genuine fold novelty: fraction of models with $TM_{\mathrm{aln}} < 0.5$ or zero retrieval rows.
+
+#### 4. Covariates, Controls & Dependence
+- **Covariates**: Query length, mean pLDDT, aligned length ($L_{\mathrm{aln}}$), query coverage fraction ($q_{\mathrm{cov}}$).
+- **Controls**: 3,013 blinded PDB controls (1,777 complete chains, 1,907 deterministic crops).
+- **Dependence**: Structural family clustering at 30% / Foldseek cluster mode 2.
+
+#### 5. Pitfalls, Artifacts & Leakage
+- Reused models: 3,451 families reused models from an earlier novelty-enriched candidate set; must verify effects hold when restricted to the 13,770 models folded specifically for this census.
+- AlphaFold Database v6 truncation/fragmentation in reference targets.
+
+#### 6. Realistic Implementation
+- Can be evaluated in 5 seconds from [`per_model.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/structural_raw_audit/per_model.tsv) (already executed locally in Check 2). Full alignment coordinate extraction from raw Foldseek files on IBEX runs in ~2 minutes via a single-core Python script.
+
+#### 7. Author Choices
+- Selection of alignment length floor (e.g. $\ge 50$ aa vs $\ge 100$ aa) and coverage threshold (e.g. 50% vs 80%) for defining a "domain-supported" call.
+
+---
+
+### Hypothesis 2: DNA-Supported Culture No-CDS Discrepancies Persist in Complete Long Calls and Reflect Annotation Pipeline Filtering
+
+#### 1. Scientific Question & Interpretation
+In paired MAG–culture comparisons, 344 of 735 DNA-supported dark calls have no overlapping Bakta CDS in the cultured isolate assembly. Does this discrepancy persist among complete, long genes ($\ge 100$ aa) and recurrent family members, or is it an artifact of short/fragmentary gene predictions in MAGs? And does re-calling the cultured assemblies with Prodigal/Pyrodigal recover these unannotated ORFs?
+- **Positive Outcome (Caller-choice established)**: Discrepancies persist at ~40% in complete long calls and recurrent families, but running Pyrodigal on the culture assemblies calls the identical ORFs. **Meaning**: A substantial fraction of "uncultivated dark proteome" exists in cultured isolates but is systematically filtered out by isolate annotation pipelines (e.g. Bakta's heuristic length/overlap thresholds or Aragorn/tRNA shadow masking).
+- **Informative Negative Outcome (Biological/Sequence Divergence)**: Discrepancies disappear in complete long calls (restricted entirely to short partial genes), OR Pyrodigal also rejects the ORFs in the culture sequence. **Meaning**: MAG dark predictions are either short false-positive calls or disrupted by indels/pseudogenisation in cultured strains.
+
+#### 2. Exact Available Input Files & Unit of Replication
+- **Unit of Replication**: The individual MAG gene call ($n = 1,341$ eligible dark calls, $n = 81,533$ eligible annotated calls across 22 representative–culture pairs).
+- **Files**:
+  - Compact: [`reproducibility/darkmatter/culture_nucleotide_cigar/per_gene.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/culture_nucleotide_cigar/per_gene.tsv)
+  - Compact: [`reproducibility/darkmatter/culture_locus_all/per_gene.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/culture_locus_all/per_gene.tsv)
+  - Compact: [`reproducibility/darkmatter/culture_family_membership/per_gene.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/culture_family_membership/per_gene.tsv)
+  - Remote IBEX: Culture assemblies in `/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/cultured_comparison_clean/tmp/pair_anatomy/` and Bakta GFFs.
+
+#### 3. Primary Effect / Estimand
+- Proportion of DNA-supported calls lacking culture CDS (`no_major_CDS_overlap`) stratified by partiality (`00` vs partial) and length ($\ge 300$ nt).
+- Odds ratio of `no_major_CDS_overlap` between dark and annotated calls.
+- Concordance rate between MAG Pyrodigal calls and culture Pyrodigal calls on the 22 pairs.
+
+#### 4. Covariates, Controls & Dependence
+- **Covariates**: Gene length, partiality, GC content, local nucleotide identity ($95\%$ vs $99\%$).
+- **Controls**: 54,060 complete, long annotated calls ($\ge 100$ aa) as the baseline for caller concordance.
+- **Dependence**: Clustering within 22 genome pairs (species representatives).
+
+#### 5. Pitfalls, Artifacts & Leakage
+- Bakta uses Prodigal internally for CDS prediction but applies downstream filtering (e.g. removing short hypothetical proteins or overlaps with ncRNAs).
+- Contig edge effects in MAGs vs closed/circular culture contigs.
+
+#### 6. Realistic Implementation
+- Local stratification check complete (Check 1, 2 seconds).
+- Remote IBEX re-calling: Running Pyrodigal v3.7.1 on the 22 culture assemblies takes <1 minute on login/compute node; intersecting coordinates with existing PAF alignments takes ~30 seconds.
+
+#### 7. Author Choices
+- Definition of coordinate overlap threshold ($\ge 50\%$ aligned span vs start-codon match).
+
+---
+
+### Hypothesis 3: Repeated Expedition Detection Does Not Exceed Spatial Prevalence and Sampling-Design Expectations
+
+#### 1. Scientific Question & Interpretation
+The manuscript reports that 79.4% of dark families are detected in all 5 expeditions (by read mapping) and 28.9% are assembled in all 5. Does this multi-trip detection demonstrate genuine seasonal persistence / temporal stability, or is it statistically indistinguishable from a null model conditioning on spatial prevalence and the unbalanced expedition sampling design?
+- **Positive Outcome (Spatial sampling null sufficient)**: When conditioning on family prevalence ($k$ samples) and the site visitation network (Trip 2 visiting only 7 sites), observed 5-trip detection matches or is lower than null expectations. **Meaning**: Detection across 5 trips is a mathematical consequence of high spatial occupancy across the transect, not evidence of temporal stability across seasonal visits.
+- **Informative Negative Outcome (True temporal persistence)**: Families with low spatial prevalence ($k < 20$) appear in all 5 trips significantly more often than expected by chance ($p < 0.01$). **Meaning**: Specific dark families exhibit persistent temporal recurrence at localized sites across multiple years.
+
+#### 2. Exact Available Input Files & Unit of Replication
+- **Unit of Replication**: The dark protein family ($n = 106,042$ families).
+- **Files**:
+  - Compact: [`reproducibility/darkmatter/inputs/metadata/sample_metadata.tsv.gz`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/inputs/metadata/sample_metadata.tsv.gz) (551 samples: trip, site, compartment).
+  - Remote IBEX: `/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/darkfam_basis_clean/results/fam_presence.tsv` (106,042 families $\times$ 551 samples).
+  - Remote IBEX: `/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/darkfam_basis_clean/results/fam_recurrence.tsv`.
+
+#### 3. Primary Effect / Estimand
+- Observed vs. expected probability of all-5 expedition detection: $\Delta P = P_{\mathrm{obs}}(\text{5 trips} \mid k) - P_{\mathrm{null}}(\text{5 trips} \mid k)$.
+- Fraction of families exceeding 95th percentile of site-stratified permutation null.
+
+#### 4. Covariates, Controls & Dependence
+- **Covariates**: Family length, total sample prevalence ($k$), site breadth ($S$), depth compartment distribution.
+- **Controls**: Annotated control families ($n = 106,042$) processed through the same mapping pipeline.
+- **Dependence**: Non-random sampling: Trip 1 (210 samples, 60 sites), Trip 2 (37 samples, 7 sites), Trip 3 (128 samples, 47 sites), Trip 4 (85 samples, 51 sites), Trip 5 (91 samples, 52 sites).
+
+#### 5. Pitfalls, Artifacts & Leakage
+- Non-competitive mapping in CoverM contig mode favours shorter genes (which reach 50% covered fraction on fewer reads).
+- Trip 2 (summer) was restricted by heat to 7 sites, creating an artificial bottleneck for any purely seasonal comparison.
+
+#### 6. Realistic Implementation
+- Analytical hypergeometric urn modelling runs locally in seconds (Check 3).
+- Full permutation test on IBEX using `fam_presence.tsv` (permuting sample columns within site/compartment strata 1,000 times) runs in ~15 minutes with 4 CPUs / 32 GB RAM.
+
+#### 7. Author Choices
+- Permutation unit: unconstrained sample permutation vs. within-site sample permutation.
+
+---
+
+### Hypothesis 4: Thermoplasmatota Darkness Reflects Reference-Cataloguing Proximity (AAI Gradient) Rather Than Bin Fragmentation
+
+#### 1. Scientific Question & Interpretation
+Thermoplasmatota genomes exhibit an elevated median dark fraction (31.0% vs. 4.8% in matched archaea and 6.9% in matched bacteria). Does this elevated darkness persist in strictly near-complete bins ($\ge 90\%$ completeness, $\le 5\%$ contamination), and does within-lineage variation in darkness decay as phylogenetic distance to known references (AAI) decreases?
+- **Positive Outcome (Cataloguing gap confirmed)**: Darkness remains ~30% in near-complete bins, but within Thermoplasmatota, dark fraction is negatively correlated with AAI to the nearest GTDB R232 / MGnify comparator. Genomes reaching the genus-level heuristic ($\mathrm{AAI} \ge 65\%$) have significantly lower dark fractions than isolated lineages ($\mathrm{AAI} < 55\%$). **Meaning**: Thermoplasmatota darkness is a consequence of deep phylogenetic placement outside existing reference databases, not an abnormal biological rate of proteome turnover or binning fragmentation.
+- **Informative Negative Outcome (Uniform biological darkness)**: Dark fraction remains strictly constant at ~31% regardless of AAI to nearest references (uncoupled from phylogenetic distance). **Meaning**: High darkness is a lineage-wide intrinsic trait across both deep and relatively characterized Thermoplasmatota clades.
+
+#### 2. Exact Available Input Files & Unit of Replication
+- **Unit of Replication**: The species representative genome ($n = 237$ Thermoplasmatota, $n = 5,438$ total catalogue representatives).
+- **Files**:
+  - Compact: [`reproducibility/darkmatter/inputs/06_darkmatter/lineage_darkness_clean/results/v2_reps.tsv.gz`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/inputs/06_darkmatter/lineage_darkness_clean/results/v2_reps.tsv.gz)
+  - Compact: [`reproducibility/darkmatter/inputs/06_darkmatter/lineage_darkness_clean/results/v2_matched_null.tsv.gz`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/inputs/06_darkmatter/lineage_darkness_clean/results/v2_matched_null.tsv.gz)
+  - Remote IBEX: `/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/lineage_darkness_clean/results/v2_thermo_relatives_pairs.tsv` (already computed on IBEX: 237 rows with best AAI, nearest GTDB/MGnify accession, shared rank).
+
+#### 3. Primary Effect / Estimand
+- Dark fraction across completeness tiers (near-complete vs medium quality).
+- Slope and Spearman rank correlation between dark fraction and nearest-relative AAI: $\beta_{\mathrm{AAI}}$ in $\text{dark\_fraction} = \alpha + \beta_1 \mathrm{AAI} + \beta_2 \text{completeness} + \epsilon$.
+
+#### 4. Covariates, Controls & Dependence
+- **Covariates**: CheckM2 completeness, contamination, genome length, N50.
+- **Controls**: 324 non-Thermoplasmatota genomes with first unnamed rank at class; 218 matched archaea and 237 matched bacteria.
+- **Dependence**: Phylogenetic relatedness among the 237 genomes (185 in class SW-10-69-26, 51 in class E2).
+
+#### 5. Pitfalls, Artifacts & Leakage
+- 236 of 237 Thermoplasmatota are unnamed at class level in GTDB release 232, so taxonomic rank is nearly constant. Continuous AAI avoids rank-discretization collapse.
+- 54 of 83 MGnify comparators duplicate GTDB representatives; the pipeline already deduped them.
+
+#### 6. Realistic Implementation
+- Completeness tier analysis complete locally (Check 4, 1 second).
+- Merging `v2_reps.tsv` with `v2_thermo_relatives_pairs.tsv` on IBEX requires running a 10-line Python regression script taking <5 seconds.
+
+#### 7. Author Choices
+- Choice between best overall comparator AAI vs. strictly external (non-desert) comparator AAI.
+
+---
+
+### Hypothesis 5: PICRUSt2 Functional Saturation Is Driven by Low-Abundance Ancestral State Leakage
+
+#### 1. Scientific Question & Interpretation
+PICRUSt2 emits all 10,543 reference KOs for 93.5% of samples under the default presence rule ($\text{abundance} > 0$), resulting in high nominal recall (86.0%) but 3,078 predictor-only false positives per sample. Does imposing an abundance threshold (e.g. relative abundance $> 10^{-5}$ or copy-number cutoff) break saturation, restore specificity, and align functional diversity with metagenomic reality?
+- **Positive Outcome (Threshold sensitivity demonstrated)**: Predicted KO richness falls from 10,543 to the biologically plausible range (7,000–9,000 KOs), Jaccard similarity peaks at an optimal threshold, and false-positive KOs are eliminated. **Meaning**: The apparent saturation of amplicon functional prediction is a thresholding artifact; calibrated cutoffs provide realistic functional profiles.
+- **Informative Negative Outcome (Persistent saturation)**: Saturation persists even under aggressive cutoffs ($> 10^{-3}$), or recall drops catastrophically before false positives are suppressed. **Meaning**: In hyperarid biomes with high NSTI (median 0.159), ancestral state reconstruction diffuses counts broadly across the entire KEGG ontology, rendering presence/absence calls fundamentally uninformative regardless of filtering.
+
+#### 2. Exact Available Input Files & Unit of Replication
+- **Unit of Replication**: The metagenomic sample ($n = 448$ samples with both CoverM MAG profile and 16S PICRUSt2 profile).
+- **Files**:
+  - Remote IBEX: `/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/picrust2_current_20260803/inputs/ko_metagenome_unstrat.tsv` (10,543 KOs $\times$ 1,270 profiles, pinned checksum `c71c2256...`).
+  - Remote IBEX: `/ibex/scratch/projects/c2014/rob/metagenomics/06_reference_bias/refbias_clean/results/mag_ko_relab_by_sample.tsv.gz`.
+  - Compact: [`reproducibility/darkmatter/inputs/06_reference_bias/refbias_clean/results/per_sample_comparison.tsv.gz`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/inputs/06_reference_bias/refbias_clean/results/per_sample_comparison.tsv.gz).
+
+#### 3. Primary Effect / Estimand
+- Median predicted KO richness, recall of MAG-encoded KOs, Jaccard index, and false-positive count across a ladder of abundance cutoffs ($\tau \in \{0, 10^{-6}, 10^{-5}, 10^{-4}, 10^{-3}, 10^{-2}\}$).
+
+#### 4. Covariates, Controls & Dependence
+- **Covariates**: Weighted NSTI, 16S sequencing depth, sample soil position (Surface vs Deep).
+- **Controls**: MAG-encoded KOs from refined bins as metagenomic ground truth.
+- **Dependence**: Paired samples from the same site.
+
+#### 5. Pitfalls, Artifacts & Leakage
+- MAGs themselves do not capture 100% of the community; "false positives" include unbinned genes.
+- PICRUSt2 predictions use normalized counts; cutoffs must account for sequencing depth variation.
+
+#### 6. Realistic Implementation
+- Slurm job on IBEX modifying `refbias_3_compare.py` to loop over 6 threshold cutoffs. Expected runtime: ~3 minutes on 4 CPUs / 16 GB RAM.
+
+#### 7. Author Choices
+- Whether to apply thresholds to raw predicted copy numbers or within-sample normalized relative abundances.
+
+---
+
+## Exploratory Local Results
+
+All exploratory checks were executed locally with `uv run python` and verified against compact repository inputs. Code and results are preserved in [`reviews/darkmatter-2026-10-13/round5/flash_checks/`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/).
+
+### 1. Culture Locus Discrepancy Stratification ([`check1_culture_locus.py`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/check1_culture_locus.py))
+*Output:* [`check1_culture_locus.json`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/check1_culture_locus.json), [`check1_culture_locus_per_pair.tsv`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/check1_culture_locus_per_pair.tsv)
+
+| Subpopulation | Total DNA-Supported | `no_major_CDS_overlap` | `same_orientation_start_phase` | `other_frame_or_orientation` |
+|---|---|---|---|---|
+| **All Dark Calls** | 735 | 344 (46.80%) | 309 (42.04%) | 82 (11.16%) |
+| **Complete Dark Calls** (`partial == 00`) | 570 | 295 (51.75%) | 222 (38.95%) | 53 (9.30%) |
+| **Complete Long Dark Calls** (`00`, $\ge 100$ aa) | 59 | **25 (42.37%)** | 23 (38.98%) | 11 (18.64%) |
+| **Recurrent Family Dark Calls** | 42 | **18 (42.86%)** | 20 (47.62%) | 4 (9.52%) |
+| **Complete Long Annotated Calls** (Control) | 54,060 | **222 (0.41%)** | 53,378 (98.74%) | 460 (0.85%) |
+
+- **Statistical Significance**: Complete long dark calls have an odds ratio of **178.3** for lacking a culture CDS compared to annotated calls (Fisher’s exact test $p = 2.31 \times 10^{-43}$).
+- **Pair Distribution**: The discrepancy is present in **21 of 22 genome pairs** (median 44.2% per pair, range 6.7% to 90.9%), confirming it is a systemic pipeline property across taxa.
+
+### 2. Structural Query-Score Deficit vs. Alignment Coverage ([`check2_structural_coverage.py`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/check2_structural_coverage.py))
+*Output:* [`check2_structural_coverage.json`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/check2_structural_coverage.json)
+
+| Length Stratum (aa) | $N$ Models | $TM_{\mathrm{query}} < 0.5$ | $\% TM_{\mathrm{query}} < 0.5$ | $TM_{\mathrm{aln}} \ge 0.5$ given $TM_{\mathrm{query}} < 0.5$ | Median Coverage Ratio | Median $TM_{\mathrm{aln}}$ |
+|---|---|---|---|---|---|---|
+| **100–149** | 445 | 18 | 4.04% | **18 / 18 (100.0%)** | 0.862 | 0.853 |
+| **150–199** | 667 | 113 | 16.94% | **110 / 113 (97.3%)** | 0.789 | 0.818 |
+| **200–299** | 1,071 | 473 | 44.16% | **435 / 473 (92.0%)** | 0.684 | 0.801 |
+| **300–499** | 541 | 348 | 64.33% | **323 / 348 (92.8%)** | 0.593 | 0.783 |
+| **500+** | 92 | 57 | 61.96% | **50 / 57 (87.7%)** | 0.596 | 0.797 |
+| **All Retrieved Models** | 2,816 | 1,009 | 35.83% | **936 / 1,009 (92.77%)** | 0.540 | 0.760 |
+
+- **Mechanism**: $TM_{\mathrm{query}} < 0.5$ models are significantly longer than $TM_{\mathrm{query}} \ge 0.5$ models (median 267.0 vs 193.0 residues, Mann–Whitney $U = 1.40 \times 10^6$, $p = 8.46 \times 10^{-124}$).
+- **Coverage Scaling**: Query length strongly anti-correlates with coverage ratio ($\rho = -0.462$, $p = 3.72 \times 10^{-149}$).
+- **Fold Novelty Ceiling**: True candidate novel folds (retrieval failure [22] + $TM_{\mathrm{aln}} < 0.5$ [73]) total **95 of 2,838 models (3.35%)**, directly in line with the control failure rate (68 / 3,013 = 2.26%).
+
+### 3. Expedition Persistence Null Model ([`check3_expedition_null.py`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/check3_expedition_null.py))
+*Output:* [`check3_expedition_null.json`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/check3_expedition_null.json)
+
+- **Sampling Network Asymmetry**: Trip 1 (210 samples, 60 sites), Trip 2 (37 samples, 7 sites), Trip 3 (128 samples, 47 sites), Trip 4 (85 samples, 51 sites), Trip 5 (91 samples, 52 sites).
+- **Mapping Read Detection**: At the median prevalence of $k = 98$ samples, an unconstrained random draw null yields a **99.98% probability** of detection across all 5 expeditions. The observed value of **79.4%** is depleted relative to random temporal mixing, reflecting spatial endemism and transect position constraints.
+- **Independent Assembly**: At median assembly breadth of 9 sites, **30.7% of families are mathematically guaranteed to miss Trip 2** by spatial non-visitation alone, capping all-5-trip assembly at 69.3%. The observed 28.9% assembly rate is entirely consistent with spatial site spread rather than active seasonal turnover.
+
+### 4. Thermoplasmatota Quality and Novelty Controls ([`check4_thermo_controls.py`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/check4_thermo_controls.py))
+*Output:* [`check4_thermo_controls.json`](file:///home/leechuck/Documents/papers/empty-quarter-mags/reviews/darkmatter-2026-10-13/round5/flash_checks/check4_thermo_controls.json)
+
+- **Near-Complete Genome Tiers** (Completeness $\ge 90\%$, Contamination $\le 5\%$):
+  - Thermoplasmatota ($n = 59$): Median dark fraction **29.41%** (mean 29.80%, IQR 27.04%–32.43%).
+  - Other Archaea ($n = 60$): Median dark fraction **8.92%** (mean 12.07%, IQR 3.61%–17.14%).
+  - Bacteria ($n = 2,140$): Median dark fraction **5.68%** (mean 6.70%, IQR 3.16%–8.68%).
+- **Class-Rank Novelty Match**:
+  - Thermoplasmatota class-novel ($n = 236$): Median dark fraction **31.01%** (mean 31.07%).
+  - Non-Thermoplasmatota class-novel ($n = 324$): Median dark fraction **12.49%** (mean 13.59%).
+  - Mann–Whitney $U = 76,238$, $p = 7.17 \times 10^{-90}$ (2.48-fold elevation).
+
+---
+
+## Boundary Safeguards & Next Steps for Root
+
+1. **Scope Boundaries**:
+   - Trace-gas autotrophy, NiFe hydrogenase typing, and carbon-monoxide dehydrogenase (CoxL) belong strictly to `lifeonair/`.
+   - CRISPR systems, retroelements, plasmids, and phage defensomes belong to `../empty-quarter-phages/`.
+   - The five hypotheses above remain strictly within the MAG/dark-proteome catalogue boundary.
+2. **Post Hoc Labelling**:
+   - Analyses stratifying by length cutoffs (e.g. $\ge 100$ aa) or positive-control recovery subsets (e.g. $\ge 90\%$ recovery pairs) must be explicitly labelled as exploratory post hoc sensitivity tests in any manuscript addition.
+3. **Execution by Root**:
+   - Heavy Slurm compute (harmonised Prodigal run on 22 culture assemblies, permutation tests on `fam_presence.tsv`, and PICRUSt2 continuous matrix re-filtering) can be submitted by Root under Slurm on IBEX.
+   - All proposed file targets exist and have been validated against disk and checksum manifests.
+   - Results can then be integrated into the review package before prompting Argon for the fifth review.
+

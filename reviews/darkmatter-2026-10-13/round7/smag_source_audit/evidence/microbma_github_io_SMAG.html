@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>
+    Global Soil MAGs Project - microbma lab
+    
+  </title>
+
+  <meta name="description" content="exploring wired microbiomes">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/assets/vendor/fontawesome-free/css/all.min.css">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://microbma.github.io/project/SMAG.html">
+  <link rel="alternate" type="application/rss+xml" title="microbma lab" href="/feed.xml">
+
+</head>
+
+
+  <body>
+
+    <!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="/">microbma lab</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/members.html">Members</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/project.html">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/publications.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/posts">Posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact.html">Join Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <!-- Page Header -->
+
+<header class="masthead" style="background-image: url('/img/posts/01smag.jpg')">
+
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading">
+          <h1>Global Soil MAGs Project</h1>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+
+      <h2 id="overview">Overview</h2>
+
+<p>In Global Soil MAGs (SMAG) Project, we conducted the first large-scale excavation of soil microbial dark matter by reconstructing 40,039 metagenome-assembled genome bins (the SMAG catalog) from 3,304 soil metagenomes. We identified 16,530 of 21,077 species-level genome bins (SGBs) as unknown SGBs (uSGBs), which greatly expand archaeal and bacterial diversity across the tree of life. The uSGBs identified substantially increased the functional landscape and intra-species genome diversity of the soil microbiome, and provided large proportions of the 43,169 biosynthetic gene clusters and 8,545 CRISPR-Cas genes mined from the SMAG catalog.</p>
+
+<h2 id="dataset-download">Dataset Download</h2>
+
+<h3 id="genomes-download">Genomes Download</h3>
+<p>Due to the high cost of long-term maintenance, we have decided to discontinue the use of https://smag.microbmalab.cn/ for data access and downloads. We strongly recommend using the following download options instead:</p>
+
+<h4 id="download-from-zenodo-highly-recommended">Download from Zenodo (Highly recommended)</h4>
+
+<p>The SMAG catalog of the soil metagenomes, SNV catalogs and viruses predicted from SMAG for this publication are available at <a href="https://zenodo.org/records/8223844">Zenodo</a>.</p>
+
+<p>To facilitate systematic discovery and convenient access to high-quality MAG resources, Dr. Rui Li from the Beijing Institute of Genomics has created an open-source index project, <a href="https://github.com/inspirewind/awesome-mag">Awesome MAG</a>.</p>
+
+<p>SMAG has been included in this project, together with a detailed <a href="https://github.com/inspirewind/awesome-mag/blob/main/sources/smag/download.md">Download guide</a>.</p>
+
+<p>We thank Dr. Rui Li (lirui@big.ac.cn) for organizing and maintaining this helpful community resource.</p>
+
+<ul>
+  <li>All MAGs are estimated to be &gt;= 50% complete and &lt; 10% contaminated</li>
+  <li>The MAGs after dereplication meet or exceed the medium-quality level of the minimum information about a metagenome-assembled genome (MIMAG).</li>
+</ul>
+
+<h4 id="download-from-cyverse">Download from Cyverse</h4>
+<p>All the 21,077 MAGs were deposited at <a href="https://data.cyverse.org/dav-anon/iplant/home/lucyzju/Caiyu_SMAG_catalog_2023/MAGdrep.tar.gz">cyverse_21077</a>;
+All the 40,039 MAGs were deposited at <a href="https://data.cyverse.org/dav-anon/iplant/home/lucyzju/Caiyu_SMAG_catalog_2023/MAG.tar.gz">cyverse_40039</a></p>
+
+<h2 id="data-processing-coding">Data Processing Coding</h2>
+
+<p>The workflow used to generate the genomes, taxonomic analysis, and functional annotation, alongside the BGCs prediction, pan-genome, SNV annotations, and virus predictions can be found in github repository <a href="https://github.com/Caiyulu-818/SMAG/tree/main/Pipeline">Pipeline</a>.</p>
+
+<h2 id="figure-coding">Figure Coding</h2>
+
+<p>Scripts used to generate the figures are available at <a href="https://github.com/Caiyulu-818/SMAG/tree/main/scripts">Figure coding</a>.</p>
+
+<h2 id="figures-and-supplementary-table-files">Figures and Supplementary Table Files</h2>
+<p>The source data underlying Figs. 1–6 and Supplementary Figs. 1-6 are provided as Source Data files
+and have been deposited in the Figshare database <a href="https://doi.org/10.6084/m9.figshare.23298791">Data files</a>.</p>
+
+<h2 id="contacts">Contacts</h2>
+<p>The SMAG catalogue remain openly shared and available to all researchers and practitioners in relevant fields, please contact lucy20@zju.edu.cn for further questions or detailed inquiries.</p>
+
+<h2 id="publications">Publications</h2>
+<p>Ma, B., Lu, C., Wang, Y. et al. A genomic catalogue of soil microbiomes boosts mining of biodiversity and genetic resources. Nat Commun 14, 7318 (2023).</p>
+
+
+
+    </div>
+  </div>
+</div>
+
+
+    <!-- Footer -->
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          
+          
+          
+          
+          <li class="list-inline-item">
+            <a href="https://github.com/microbma">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          
+        </ul>
+        <p class="copyright text-muted">Copyright &copy; Bin Ma 2026</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+<script src="/assets/scripts.js"></script>
+
+
+
+
+  </body>
+
+</html>

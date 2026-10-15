@@ -1,0 +1,20 @@
+{
+  "updated_at": "2026-10-14T07:56:30+03:00",
+  "stage": "COMPLETED_DOCS_REPAIRED",
+  "task": "H2 full catalogue (1461 eligible >=2-species families: 570 K / 891 Q) + H1 completeness audit",
+  "local_dir": "reproducibility/darkmatter/round7_analyses/h2_context",
+  "remote_dir": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h2_context",
+  "slurm_job_id": 53738443,
+  "slurm_status": "COMPLETED",
+  "slurm_exit_code": "0:0",
+  "slurm_elapsed": "00:05:21",
+  "slurm_node": "cn603-16-l",
+  "slurm_partition": "batch",
+  "progress": {
+    "step1_cohort_selection": "COMPLETE (1461 families: 570 K / 891 QnotK, 7604 candidate loci)",
+    "step2_neighbourhood_extraction": "COMPLETE (7604/7604 matched in 204.3s, 2041/2126 bins verified by SHA256+log, 85 missing annotation bins, 10775 input hashes pinned)",
+    "step3_conservation_analysis": "COMPLETE (Part a within-arm reference B=5000, Part b stratified permutation B=10000, 1:1 matching, multivariable regressions, all 11 closure assertions PASSED)",
+    "step4_checksums": "COMPLETE (Outputs SHA-256 recorded excluding self, INPUTS.tsv pinned)",
+    "step5_documentation_repair": "COMPLETE (H1_COMPLETENESS.md, RESULTS.md, DOC_CORRECTIONS.md updated per ROOT_AUDIT_NOTES.md)"
+  }
+}

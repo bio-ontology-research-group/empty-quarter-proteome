@@ -1,0 +1,32 @@
+================================================================================
+DENOMINATOR AND CALLER AUDIT SUMMARY: 237 DESERT THERMOPLASMATOTA
+================================================================================
+
+1. TAXONOMIC BREAKDOWN
+Total representatives: 237
+  Class SW-10-69-26: n = 185 (78.1%)
+  Class E2: n = 51 (21.5%)
+  Class Thermoplasmata: n = 1 (0.4%)
+
+2. GENE-CALLER COMPARISON (Catalogue vs Single-Genome Pyrodigal)
+  Catalogue n_proteins: mean = 3259.7, median = 3302.0, range = [1481, 5388]
+  Single-genome n_prot_aai: mean = 3279.2, median = 3312.0, range = [1485, 5469]
+  Difference (AAI - Cat): mean = +19.5, median = +18.0, range = [-13, +93]
+  Ratio (AAI / Cat): mean = 1.0060, median = 1.0058
+  Pearson correlation between callers: r = 0.999752
+
+3. RBH FRACTION DENOMINATOR DISTORTION
+  Genomes where desert MAG is LARGER than nearest comparator: 177 / 237 (74.7%)
+  Published aai_frac_rbh (divided by min(N_a, N_b)): median = 0.4690, IQR = [0.4050, 0.5300]
+  Corrected frac_rbh_of_desert (divided by desert MAG N): median = 0.4092, IQR = [0.3409, 0.4934]
+  frac_rbh_of_nearest (divided by comparator N): median = 0.4564, IQR = [0.3935, 0.5245]
+
+4. CALLABLE GENE STRUCTURE AND FRAGMENTATION SENSITIVITY
+  Complete gene fraction (partial=00): mean = 0.750, median = 0.775, range = [0.351, 0.997]
+  Complete & >=100aa fraction: mean = 0.647, median = 0.671, range = [0.280, 0.899]
+  Median protein length: mean across genomes = 226.4 aa, median = 228.5 aa
+  By Class:
+    c__SW-10-69-26 (n=185): frac_complete median = 0.781, frac_complete_ge100aa median = 0.666
+    c__E2 (n=51): frac_complete median = 0.752, frac_complete_ge100aa median = 0.678
+
+================================================================================

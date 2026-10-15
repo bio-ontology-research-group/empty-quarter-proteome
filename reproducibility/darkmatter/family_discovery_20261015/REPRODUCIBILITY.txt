@@ -1,0 +1,52 @@
+FAMILY DISCOVERY ANALYSES — 2026-10-15
+
+Purpose
+Test the five author-approved family hypotheses in addition to H1-H4, with a pilot gate, full analyses for surviving families, and independent root/Argon review before manuscript inclusion. The manuscript and claims registry are unchanged by this track.
+
+Authoritative storage
+IBEX: /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/
+The /ibex/project/c2014/rob prefix resolves to the same project storage; some tool receipts report the resolved prefix.
+Local: reproducibility/darkmatter/family_discovery_20261015/
+Reviews: reviews/darkmatter-family-analysis-20261015/
+ORIX model and original GPU outputs: /mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/
+Retained literature: resources/literature/darkmatter-2026-10-15-family-hypotheses/ locally; literature_family_hypotheses/ in the IBEX analysis directory. Manifest and reading notes identify versions, downloaded full texts, and exceptions.
+
+Cohort and input closure
+- 5,438 current dRep representative MAGs, selected from Wdb.csv; 20,451,986 translated proteins. root_audit/f1_full/cohort.tsv records each original compressed FASTA and its hash. cohort.faa is the retained concatenation.
+- SMAG: 4,778,910 proteins from the retained H3 sampled panel. GEM: 4,824,709 proteins from the retained H3 harmonized seed20261014 panel. Original FASTAs and coordinate mappings remain in ../p7_analyses_clean/h3_references/results/. These are sampled reference panels, not exhaustive environmental catalogues.
+- root_audit/f345_final_audit/audit.json records whole-source hashes and candidate-level sequence/coordinate closure for every F3-F5 candidate. root_audit/f1_complete_panel/ records the F1 complete-gene mapping checks.
+- Ecology: the canonical 551 sample metadata records and current CoverM profiles; 550 non-zero mapped profiles contribute ratios. ecology/results_root_v3/profile_inputs.tsv retains all input paths/hashes. Site-trip pairing and site-level aggregation are in the retained script and output tables.
+- f345/references/ and f12/references_v2/ contain source records, sequences, HMMs, metadata and rejection decisions. Curated panels include annotated homologs as well as experimental anchors; not every reference is experimentally characterized.
+
+Execution environments
+CPU work ran on allocated IBEX Slurm workers through require_slurm_worker.sh, account pi-hohndor. Python scientific environment: /ibex/scratch/projects/c2014/rob/envs/gspa-neural/bin/python. The Flash full-search scripts use /ibex/scratch/projects/c2014/rob/miniconda3/envs/metabolism-env/bin/python. HMMER module hmmer/3.3.2; DIAMOND in envs/eggnog; MMseqs2 in envs/mmseqs2; FastTree in envs/selection. Exact commands, runtime versions and job logs are retained.
+GPU work ran on ORIX Slurm freecycle-h200, H200 GPU, using the retained Rostlab/ProstT5 checkpoint, AA2fold prefix, residue-only mean pooling and 1024-dimensional encoder embeddings. Model/cache hashes, tokenizer handling, runner code hash, GPU receipts and independent verification are stored with each embedding output. The v4 runner computes identical cleaned sequences once and restores all original source IDs. The model cache remains on ORIX; generated numerical outputs are copied to IBEX.
+
+Accepted execution chain
+F1 pilot: 53816043, 256 SHA-ranked MAGs / 956,344 proteins.
+F1 full census: 53816424; environmental screening 53816466; comparison 53816576.
+F1 complete-gene comparator: 53817327; phylogeny 53817031; SPL sensitivity 53817185.
+F1 ecology: 53818389; independent final audit 53818551.
+F1 GPU: ORIX316862; complete-gene plots IBEX53818392.
+F2 historical/current identity and ultrasensitive reference search: 53816465. The family did not pass the functional-assignment pilot gate, so no full run was promoted.
+F3-F5 pilots: 53816161, 53816162, 53816163. Root corrected the original identifier-join error before interpreting reference hits.
+F3-F5 full searches: 53818651 completed all family searches; its final reporting step failed on percent-formatted CheckM values and was repaired separately by Flash. Retained executed code and raw HMM results identify the analysis state.
+F3-F5 independent full source/gate/context audit: 53820266.
+F3-F5 complete-gene cross-panel comparison: 53820151.
+F3-F5 reference-anchored site checks: 53819747.
+F3 context pilot/full: Flash receipts in f3_context/audit and scripts; full job53820153. Root independent source/window/raw-domain and stricter matched audit: 53820546.
+F3 retinal-site/reference sensitivity: 53820973. Source-symmetric site-conserving analysis: 53822479.
+F3-F5 GPU: ORIX316940; full native-space distances and family plots: IBEX53821447.
+Final retained-artifact closure: see root_audit/final_bundle/closure.json and artifact_manifest.tsv for the actual final job and checksums.
+
+Rerunning
+Use the retained .sbatch scripts and job-specific executed Python copies under root_audit/. All source paths are explicit and assume this IBEX project layout. Keep originals immutable and use a fresh output directory or a separately restored project tree when recomputing. The Flash scripts derive their base directory from their location; restore their frozen copies into a scripts/ directory with the same relative project layout rather than executing them inside frozen_code/.
+For plots, first restore the accepted GPU embeddings and metadata with identical IDs/hashes. The CPU analysis scripts use these numerical arrays and do not regenerate embeddings. root_audit/f345_embedding_analysis.py creates the deterministic up-to-300-unique-sequences/source/family plot sample while retaining full native-space statistics. root_audit/f3_site_conserving.py applies the same reference-aligned lysine criterion to all sources as a sensitivity analysis.
+For the GPU, gpu/run_embed.sbatch accepts INPUT_FASTA and OUTPUT_DIR and validates the complete code/model/input signature. The retained v4 smoke test checks single-versus-batched numerical consistency; production verifies shape, finite values, sequence identities and duplicate restoration.
+Checksums in final_bundle close the retained analysis state. Some large inputs are represented by their verified source-file hashes and per-file manifests rather than duplicated into this local checkout. All original analysis data remain on IBEX, with the frozen model cache on ORIX.
+
+Interpretation boundaries
+Complete gene means Prodigal partial=00, not a closed genome, expression or experimentally established protein function. Genomic neighborhoods and reference-site conservation establish plausibility; they do not measure catalysis, sensing, product formation or stress tolerance. Reference no-hits and non-identical hashes do not prove global novelty or endemism. t-SNE is descriptive; sequence comparisons and full embedding-space statistics are the quantitative evidence. Cross-panel taxonomy and architecture remain potential confounders. No family-specific raw-read remapping or biochemical validation was performed.
+
+Author-facing decisions
+Use ROOT_F12_JUDGEMENT.txt and ROOT_F345_JUDGEMENT.txt together with Argon's final reports/addendum. Raw Flash reports and earlier Argon reports are retained for provenance but contain explicitly rejected interpretations (including endemism, unqualified operons, and incorrect profile names). They are not the source for manuscript claims.

@@ -1,0 +1,284 @@
+# Round 3 (final) independent review: P4 dark-proteome manuscript, Nature Communications
+
+**What this covers.** I reviewed the frozen `round3/submitted_main.tex`, `submitted_references.bib`, the PDF build log and the five current figure renders. I did not edit the manuscript, code or data, submitted no jobs, used no remote host and spawned no agents. The only file I wrote is one read-only check script, `round3/reviewer_checks/r3a.py`.
+
+Evidence labels:
+- **[RECOMPUTED]**: I calculated the value myself from local frozen tables.
+- **[SOURCE]**: I inspected the code or the retained full text.
+- **[CONFIRMED]**: the text is inconsistent with the data.
+
+---
+
+## Neutral summary
+
+The revision answers most of R2 with real analyses rather than rewording:
+- **Raw-hit structural decomposition:** `structural_raw_audit/summary.json` reproduces 22/66 no-row models, 1,009/2,816 vs 35/2,947, 73/2,816 vs 2/2,947, and 797 gated local matches.
+- **Stratum-level dN/dS:** the stratum bootstrap intervals and dark/control/overlap-weighted means (+0.012/−0.022/−0.018) match `selection_estimands/summary.json`, which root reproduced locally.
+- **Full MIMAG reporting:** 126 high-quality, 157 with all three rRNAs, 3,629 with at least 18 tRNA types.
+- **Two-rule taxonomy table:** both rows sum to 5,438.
+- **Culture nucleotide test redone with base-level alignment:** the `-c` rerun gives the four cells 516/1,105, 4,877/16,056, 219/236 and 62,925/65,477. These match `summary.json` and supersede my R2 numbers, which rested on approximate PAF identities. Root's discovery of the missing `-c` was correct.
+- **Gene-call screens:** AntiFam, an opposite-strand overlap screen (coordinates verified for 536,437/536,437 members across 550 samples, no read errors) and a Bakta locus diagnostic.
+- **Other repairs:**
+  - The environment table rebuilds byte-identically (`comparison.json`: SHA-256 equal).
+  - Ecology has moved to a qualified Supplementary Note.
+  - All 71 citation keys resolve.
+  - The abstract is 142 words.
+
+Three of the new analyses contain results that **change interpretation but are not yet drawn out in the text**:
+1. **Culture comparison.** Among dark calls whose DNA is present in the cultured genome, 45.6% have no culture CDS at that locus. The figure for annotated calls is 0.9%. The dark-vs-annotated protein-sharing gap is therefore mostly a gene-calling difference at shared DNA, not strain variation.
+2. **dN/dS below one does not exclude known spurious families.** Families flagged by AntiFam or the overlap screen have median dN/dS 0.76, and 77% are below one.
+3. **The opposite-strand overlap screen has low power by construction.** Prodigal limits opposite-strand overlaps to 200 bp and forces a choice between heavily overlapping ORFs.
+
+All three can be fixed with text and existing tables; no new computation is required. Remaining blockers are external: public data release, genome deposition and archive DOI, and three `\todo` markers.
+
+---
+
+## Findings
+
+### R3-01. Major. [RECOMPUTED] The locus audit shows dark protein-sharing loss is mostly gene-calling disagreement; the text does not say so
+
+**Location:**
+- Abstract: "Culture-derived assemblies revealed DNA support for many dark calls lacking a reciprocal protein match."
+- Results, l.213–218.
+- Discussion, l.396–399: "Its interpretation depends on gene prediction ... as well as strain variation."
+
+**Evidence** (`culture_nucleotide_cigar/per_gene.tsv` joined to `culture_locus/per_gene.tsv`, eligible calls ≥90 nt):
+
+| | Dark | Annotated |
+|---|---|---|
+| Protein-shared | 236/1,341 (17.6%) | 65,477/81,533 (80.3%) |
+| Protein-shared or DNA-supported | 752/1,341 (56.1%) | 70,354/81,533 (86.3%) |
+| DNA present but no culture Bakta CDS over ≥50% of the aligned span | 343/752 (45.6%) | 606/70,354 (0.86%) |
+
+- The 343 dark no-CDS calls are short: median 150 nt, 85.7% complete (partial code 00).
+- The 92 "same-orientation" dark calls are mostly partial (10.9% complete; median 126 nt). That points to contig-edge fragments failing the reciprocal-coverage rule.
+- Bakta predicts CDSs with Prodigal, then filters spurious CDSs and sORFs using AntiFam and overlap filters (Schwengers 2021, retained full text, verified passage). Identical DNA where Pyrodigal-meta calls a gene in the MAG but the culture annotation calls none therefore indicates caller- or filter-dependent ORFs. That is directly relevant to coding status.
+- **Scope caveat:** these are all dark calls in 22 well-referenced bacterial MAGs, not the 106,042 admitted families. I could not check membership locally.
+
+**Smallest remedy (existing artifacts):**
+- Report the DNA-level sharing rates (56.1% vs 86.3%) and the no-CDS contrast (45.6% vs 0.86%) in Results.
+- Replace the abstract sentence. Suggested wording: "In culture-derived genomes, many dark calls had identical DNA but no corresponding annotated gene."
+- Rewrite Discussion l.396–399 so that gene-call disagreement is the leading explanation and strain variation is secondary.
+- State how many of the 1,341 calls are members of admitted families (a coordinate join to `fam_cluster.tsv`, minutes of CPU).
+- Optional: list any non-CDS Bakta features (tRNA, ncRNA, CRISPR) at the 343 loci from the same GFF3 files.
+
+### R3-02. Major. [RECOMPUTED] Known-spurious families mostly pass the dN/dS < 1 criterion; this calibration is missing
+
+**Location:**
+- Results, l.183–188: removing 102 flagged families leaves median 0.4251.
+- Abstract: "frame-dependent constraint".
+- Discussion, l.384–386.
+
+**Evidence** (`dnds.tsv` × `antifam/flagged_families.txt` × `shadow_overlap/family_flags.tsv`):
+
+| Flag set | Evaluable families | Median dN/dS | IQR | Share below 1 |
+|---|---|---|---|---|
+| AntiFam | 47 | 0.831 | — | 76.6% |
+| Opposite-strand overlap | 44 | 0.675 | — | 77.3% |
+| Union | 91 | 0.762 | 0.53–0.97 | 76.9% |
+| All dark families | 97,200 | 0.425 | — | — |
+
+- The criterion separates flagged from unflagged families in part (median 0.76 vs 0.43), but most known-spurious families still fall below one.
+- This fits theory: changes that are synonymous in one frame of an overlapping pair can be nonsynonymous in the other, which distorts dN/dS in overlapping frames (Nelson 2020 OLGenie, retained, verified passage).
+- Removing the flagged families cannot change the overall median, so the reported sensitivity analysis is uninformative about whether the test discriminates.
+- **Caveats:** a family is flagged if any one member matches, and n is small.
+
+**Smallest remedy:**
+- Report the flagged-family distribution beside the exclusion result.
+- State that dN/dS < 1 is necessary but not sufficient for coding status.
+- Phrase the abstract and Discussion as "lower dN/dS in the annotated than in a +1-shifted frame", not as constraint establishing coding status.
+- Cite Nelson 2020 and Yooseph 2007; both are already retained.
+
+### R3-03. Moderate. [SOURCE, RECOMPUTED] The overlap screen's null result is largely structural
+
+**Location:** l.184–188 and Methods l.612–617.
+
+**Evidence:**
+- Hyatt 2010 (retained): Prodigal allows "200 bp overlap between 3' ends" on opposite strands and no 5'-end overlap. Its dynamic programming exists "to force the program to choose between two heavily overlapping ORFs".
+- In `overlaps.tsv`, the maximum observed overlap is 195 nt and the longest flagged dark member is 381 nt.
+- So the screen can flag only short calls in convergent arrangements. It cannot detect the main shadow-ORF case: the caller kept the dark ORF instead of the true gene on the other strand or frame.
+- The current caveat ("do not detect every uncalled alternative ORF") understates this.
+
+**Remedy:**
+- State the Prodigal overlap limits.
+- Describe the 70/46 counts as conditional on co-retention under those limits.
+- Optional extension (CPU, IBEX): translate the opposite-strand and other frames of the member loci and search them against UniRef50, as in the Yooseph 2007 shadow filter.
+
+### R3-04. Moderate. [CONFIRMED] Persistence is still used as evidence outside the abstract, and the Introduction's control description is inaccurate
+
+- **Discussion, l.382–383:** "Evidence is strongest for the recurrent subset ... 79.4% recruit reads in all five expeditions." Results (l.148) correctly says a prevalence-conditioned null is missing.
+- **Supplementary Note, l.919–922:** "persist more than the average dark family (86.8%, 89.8% vs 79.4%)", with no prevalence adjustment.
+- **Introduction, l.80:** "matched annotated families for recurrence". Control families were admitted without the sample/site gate (l.572), and no control persistence is reported.
+- **Remedy:** drop 79.4% from the Discussion lead or label it as prevalence-dependent detection; qualify the S1 comparison the same way; fix l.80.
+
+### R3-05. Moderate. [RECOMPUTED] The rarefaction claim is generalised beyond the per-catalogue data, and the control arm reveals calibration error
+
+**Location:**
+- Abstract: "Soil- and genome-derived catalogues recovered more dark families than ... expectation."
+- Discussion, l.413–416: "random MGnify90 subset"; "Comparable gains in other genome-derived catalogues".
+- Fig. 5b.
+
+**Evidence** (`content_vs_depth.tsv`; gap is expected minus observed absence, in points):
+
+| Catalogue | Dark gap | Control gap |
+|---|---|---|
+| Atacama | −4.67 | −29.97 |
+| Desert autotroph | +17.42 | — |
+| Arid | +28.38 | — |
+| Antarctic | +9.47 | −3.60 |
+| Mojave | +13.60 | — |
+| Five deserts combined | +24.33 | +0.93 |
+| GEM (genome-derived) | +4.27 | — |
+| SPIRE | +21.30 | +1.23 |
+
+- The Atacama control point sits 30 points off the diagonal, which shows the size-only model is poorly calibrated for small catalogues.
+- GEM's gain is small, which contradicts "comparable gains in other genome-derived catalogues".
+
+**Remedy:**
+- Name the catalogues in the abstract: the combined desert set and SPIRE.
+- Report control-arm residuals as the model's calibration and comment on the Atacama outlier in the Fig. 5b caption.
+- Replace "random MGnify90 subset" in l.413 with the analytic-expectation wording already used in Results.
+
+### R3-06. Minor. Selection wording
+
+- l.155 says "at most 0.10", but the bins are left-closed ("below 0.1", as l.160 says).
+- l.167 "medians 0.386 and 0.423": name the arms (dark 0.386, control 0.423).
+- The weighted means use all 553 common strata of the *unmatched* data (common support 93,220 dark / 95,541 control), but they sit in the matched-set paragraph. State the population.
+- Fig. 2b is never cited.
+
+### R3-07. Minor. [CONFIRMED] Figures
+
+- **Fig. 3c:** the x tick labels collide ("(n=218)(n=218)").
+- **Fig. 2e:** the title "Exact nucleotide support" is wrong; support means ≥95% identity. Use "Base-level".
+- **Fig. 3a and Fig. 5c** are never cited. Cite Fig. 5c at l.370.
+- **Fig. 5c** truncates the y-axis. The text calls the difference "small in every length stratum", but it is 44 vs 50 locations below 60 aa.
+- **Fig. 1** has no map. This is optional but conventional for Nature Communications.
+- The white heatmap labels (69/90/61) are legitimate.
+
+### R3-08. Minor. [RECOMPUTED] Thermoplasmatota family enrichment
+
+- l.271 states 4.6-fold. 19.8%/4.358% gives 4.53–4.55 from the rounded share, i.e. 4.5.
+- The protein-level enrichment of 4.0 reproduces (4.01).
+- Check against the source table.
+
+### R3-09. Minor text
+
+- l.437: the "25 soil species" include the *E. coli* contaminant; use 24.
+- l.565: "dropped as within-genome paralog sets" is unsupported; say "failed the spread gate".
+- l.433: the pH sentence is obsolete now that ecology is supplementary.
+- l.418–428: the Discussion discusses supplementary-only censuses (toolkit, BGC, resistance); trim them or flag them as such.
+- Cohort sizes conflict: 549 at l.274 vs 548 at l.543, and 45 vs 44 paired sites.
+- A stray space precedes the full stop at l.895, l.905 and l.930.
+
+### R3-10. Minor–moderate. Supplementary Note S1 keeps directional language
+
+- Phrases to qualify: "Where encoded function shifts, it shifts with soil position", "change owners", "Aridity is therefore not null", "noise spread at random".
+- The site-aggregated analysis finds *more* sulfur associations (59,120 at n = 59) than the sample-level analysis (54,227). That is consistent with between-site structure that geography could explain, so the aggregation is not a confound control. Say so.
+
+### R3-11. Submission blockers (external, not scientific)
+
+- Three `\todo` markers remain (l.465, 940, 945).
+- ENA is private (0 public runs).
+- No genome deposition with MIMAG fields and no archive DOI.
+- 78 missing raw paths and 302 permission failures.
+- Duplicate-run merges unverified.
+- XRF units and non-detect semantics unconfirmed.
+- Two companion manuscripts are cited as "in preparation" and must go to the editor.
+- `current_revision_checks.py` is a scoped ledger. The historical `verify.py` gates were not evaluated and must not be described as passing.
+- Hygiene: `current_revision_checks.py` writes derived outputs (the per-pair TSV and post hoc JSON) as a side effect of checking. Separate producing from verifying.
+
+### R3-12. Minor. Citations
+
+- Add Hyatt overlap limits (already cited as `hyatt2010prodigal`), Nelson 2020 and Yooseph 2007 where R3-02 and R3-03 are addressed.
+- Xu & Zhang 2010 is optional; its full text is not retained, so cite it only for TM-score 0.5 significance.
+- `yeo2025afesm` is still a bioRxiv DOI; check for a published version.
+
+---
+
+## Status of R2 findings
+
+| R2 | Status |
+|---|---|
+| 01 MIMAG | **Resolved** |
+| 02 Structural floor | **Resolved.** Retrieval and scoring are decomposed; the misleading ratio is removed. |
+| 03 1,031 whole-query no-hits | **Resolved by demotion.** Gated numbers reported; segmentation is optional. |
+| 04 dN/dS estimand | **Resolved**, minor wording (R3-06) |
+| 05 Culture nucleotide test | **Resolved technically**, and root's `-c` correction improved it. Interpretation is incomplete (R3-01). |
+| 06 Shadow/AntiFam | **Run.** Reporting and calibration are inadequate (R3-02, R3-03). |
+| 07 Persistence | **Partially resolved.** Removed from the abstract, still in the Discussion lead (R3-04). |
+| 08 Lineage sentence | **Resolved.** The relatives test is not run; acceptable while claims stay descriptive. |
+| 09 Figures | **Largely resolved**; residual issues in R3-07 |
+| 10 Taxonomy terms | **Resolved** |
+| 11 Environment | **Resolved by demotion**; residual language in R3-10 |
+| 12 Data availability | **Open**, external (R3-11) |
+| 13 Rarefaction abstract | **Partially resolved** (R3-05) |
+| 14 Citations | **Largely resolved** (R3-12) |
+| 15 Minor items | **Resolved**, except the rhodopsin HMM check, which is now appropriately qualified |
+
+---
+
+## Strongest defensible contribution
+
+1. **A resource:** the first genome-resolved, repeatedly sampled catalogue of a hyperarid sand sea.
+2. **A descriptive lineage result:** a robust, quality- and abundance-matched Thermoplasmatota darkness contrast, 236 of 237 above the bacterial 95th percentile.
+3. **A controlled demonstration** that dark-proteome inferences depend on gene calling, controls and estimands:
+   - DNA-present dark calls lack a culture gene about 50 times more often than annotated calls;
+   - known-spurious families still mostly show dN/dS < 1;
+   - structural "novelty" depends on normalisation and retrieval;
+   - constraint contrasts depend on divergence weighting.
+
+Point 3 is now a concrete, quantitative methodological message and is arguably the paper's most transferable result.
+
+---
+
+## Nature Communications readiness
+
+**Required correctness and interpretation fixes (existing artifacts only):** R3-01, R3-02, R3-03 (text), R3-04, R3-05, plus the minor fixes R3-06 to R3-10. With these, the claims would match the evidence.
+
+**Optional extensions (not required for this scope):**
+- other-frame and antisense homology search of member loci;
+- harmonised gene calling on the 22 pairs;
+- domain segmentation;
+- the GTDB-relatives dark fraction;
+- real MGnify90 random subsets.
+
+**External prerequisites:** R3-11.
+
+**Decision points for the authors:**
+- (a) Whether to make gene-call dependence a headline finding, which gives a stronger and more honest framing, or keep it as a caveat.
+- (b) Whether the resource-plus-controlled-census framing, with largely qualified results, meets the editors' significance bar. This is an editorial judgement; the science is sound once the fixes are made.
+- (c) Release timing for reads and genomes.
+
+Given the scope the author chose, I do not request further review rounds.
+
+---
+
+## What I read and recomputed, and limitations
+
+**Read:**
+- CLAUDE.md.
+- R1 and R2 reports, R2 response, root's round-3 follow-up and the nucleotide correction note.
+- The complete frozen tex and the cited bib entries.
+- The build log (28 pages, OK) and `pdf_integrity.txt`.
+- All five figure PNGs.
+- The listed scripts: `culture_nucleotide_check`, `culture_locus_audit`, `antifam_summary`, `shadow_overlap`, `overlap_sensitivity`, `selection_estimands`, `structural_raw_audit`, `current_revision_checks`, plus the relevant part of `make_review_figures` and `run_current.sh`.
+- All of their summary outputs.
+- The round-3 literature manifest, and targeted passages from the Hyatt 2010, Schwengers 2021, Nelson 2020 and Yooseph 2007 full texts.
+
+**Recomputed locally** (in `r3a.py` and inline checks):
+- dN/dS of flagged families;
+- the locus categories joined to call length and partial status;
+- DNA-level sharing rates;
+- overlap length bounds;
+- the per-catalogue rarefaction gaps;
+- Thermoplasmatota shares;
+- the completeness share;
+- table row sums and the arithmetic of the main percentages;
+- citation-key resolution and the `\todo` count.
+
+**Not done:**
+- I did not rerun minimap2, AntiFam, the overlap job or Foldseek, and used no remote access.
+- I did not run `run_current.sh`, because it overwrites tracked outputs.
+- I did not verify the culture Wilcoxon test, the ecology, PICRUSt2 or metabolism numbers, or the site-level job.
+- I did not check admitted-family membership of the culture dark calls.
+- The flagged-family dN/dS rests on small n and any-member flagging.

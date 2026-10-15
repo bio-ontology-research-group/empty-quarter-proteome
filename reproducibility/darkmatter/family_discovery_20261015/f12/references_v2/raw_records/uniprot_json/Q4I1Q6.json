@@ -1,0 +1,1055 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q4I1Q6",
+  "secondaryAccessions": [
+    "A0A098DEC3",
+    "A0A0E0S1C4",
+    "V6RR81"
+  ],
+  "uniProtkbId": "CRYD_GIBZE",
+  "entryAudit": {
+    "firstPublicDate": "2006-05-16",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "2016-09-07",
+    "entryVersion": 103,
+    "sequenceVersion": 2
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Gibberella zeae (strain ATCC MYA-4620 / CBS 123657 / FGSC 9075 / NRRL 31084 / PH-1)",
+    "commonName": "Wheat head blight fungus",
+    "synonyms": [
+      "Fusarium graminearum"
+    ],
+    "taxonId": 229533,
+    "lineage": [
+      "Eukaryota",
+      "Fungi",
+      "Dikarya",
+      "Ascomycota",
+      "Pezizomycotina",
+      "Sordariomycetes",
+      "Hypocreomycetidae",
+      "Hypocreales",
+      "Nectriaceae",
+      "Fusarium"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Putative cryptochrome DASH"
+      }
+    }
+  },
+  "genes": [
+    {
+      "orfNames": [
+        {
+          "value": "FGRRES_16955"
+        },
+        {
+          "value": "FGSG_08852"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "May have a photoreceptor function"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "FAD",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:57692"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250"
+              }
+            ],
+            "value": "Binds 1 FAD per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:15636"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250"
+              }
+            ],
+            "value": "Binds 1 5,10-methenyltetrahydrofolate (MTHF) per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the DNA photolyase class-1 family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "commentType": "SEQUENCE CAUTION",
+      "sequenceCautionType": "Erroneous gene model prediction",
+      "sequence": "ESU14435.1",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 697,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Putative cryptochrome DASH",
+      "featureId": "PRO_0000235323"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 5,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 164,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Photolyase/cryptochrome alpha/beta"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 170,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 215,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 554,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 697,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 188,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 198,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic and acidic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 560,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 569,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 578,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 590,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Gly residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 659,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 675,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Low complexity",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 683,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 697,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Low complexity",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0157",
+      "category": "Ligand",
+      "name": "Chromophore"
+    },
+    {
+      "id": "KW-0274",
+      "category": "Ligand",
+      "name": "FAD"
+    },
+    {
+      "id": "KW-0285",
+      "category": "Ligand",
+      "name": "Flavoprotein"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "17823352",
+        "citationType": "journal article",
+        "authors": [
+          "Cuomo C.A.",
+          "Gueldener U.",
+          "Xu J.-R.",
+          "Trail F.",
+          "Turgeon B.G.",
+          "Di Pietro A.",
+          "Walton J.D.",
+          "Ma L.-J.",
+          "Baker S.E.",
+          "Rep M.",
+          "Adam G.",
+          "Antoniw J.",
+          "Baldwin T.",
+          "Calvo S.E.",
+          "Chang Y.-L.",
+          "DeCaprio D.",
+          "Gale L.R.",
+          "Gnerre S.",
+          "Goswami R.S.",
+          "Hammond-Kosack K.",
+          "Harris L.J.",
+          "Hilburn K.",
+          "Kennell J.C.",
+          "Kroken S.",
+          "Magnuson J.K.",
+          "Mannhaupt G.",
+          "Mauceli E.W.",
+          "Mewes H.-W.",
+          "Mitterbauer R.",
+          "Muehlbauer G.",
+          "Muensterkoetter M.",
+          "Nelson D.",
+          "O'Donnell K.",
+          "Ouellet T.",
+          "Qi W.",
+          "Quesneville H.",
+          "Roncero M.I.G.",
+          "Seong K.-Y.",
+          "Tetko I.V.",
+          "Urban M.",
+          "Waalwijk C.",
+          "Ward T.J.",
+          "Yao J.",
+          "Birren B.W.",
+          "Kistler H.C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17823352"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1126/science.1143708"
+          }
+        ],
+        "title": "The Fusarium graminearum genome reveals a link between localized polymorphism and pathogen specialization.",
+        "publicationDate": "2007",
+        "journal": "Science",
+        "firstPage": "1400",
+        "lastPage": "1402",
+        "volume": "317"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC MYA-4620 / CBS 123657 / FGSC 9075 / NRRL 31084 / PH-1",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "20237561",
+        "citationType": "journal article",
+        "authors": [
+          "Ma L.-J.",
+          "van der Does H.C.",
+          "Borkovich K.A.",
+          "Coleman J.J.",
+          "Daboussi M.-J.",
+          "Di Pietro A.",
+          "Dufresne M.",
+          "Freitag M.",
+          "Grabherr M.",
+          "Henrissat B.",
+          "Houterman P.M.",
+          "Kang S.",
+          "Shim W.-B.",
+          "Woloshuk C.",
+          "Xie X.",
+          "Xu J.-R.",
+          "Antoniw J.",
+          "Baker S.E.",
+          "Bluhm B.H.",
+          "Breakspear A.",
+          "Brown D.W.",
+          "Butchko R.A.E.",
+          "Chapman S.",
+          "Coulson R.",
+          "Coutinho P.M.",
+          "Danchin E.G.J.",
+          "Diener A.",
+          "Gale L.R.",
+          "Gardiner D.M.",
+          "Goff S.",
+          "Hammond-Kosack K.E.",
+          "Hilburn K.",
+          "Hua-Van A.",
+          "Jonkers W.",
+          "Kazan K.",
+          "Kodira C.D.",
+          "Koehrsen M.",
+          "Kumar L.",
+          "Lee Y.-H.",
+          "Li L.",
+          "Manners J.M.",
+          "Miranda-Saavedra D.",
+          "Mukherjee M.",
+          "Park G.",
+          "Park J.",
+          "Park S.-Y.",
+          "Proctor R.H.",
+          "Regev A.",
+          "Ruiz-Roldan M.C.",
+          "Sain D.",
+          "Sakthikumar S.",
+          "Sykes S.",
+          "Schwartz D.C.",
+          "Turgeon B.G.",
+          "Wapinski I.",
+          "Yoder O.",
+          "Young S.",
+          "Zeng Q.",
+          "Zhou S.",
+          "Galagan J.",
+          "Cuomo C.A.",
+          "Kistler H.C.",
+          "Rep M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "20237561"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nature08850"
+          }
+        ],
+        "title": "Comparative genomics reveals mobile pathogenicity chromosomes in Fusarium.",
+        "publicationDate": "2010",
+        "journal": "Nature",
+        "firstPage": "367",
+        "lastPage": "373",
+        "volume": "464"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC MYA-4620 / CBS 123657 / FGSC 9075 / NRRL 31084 / PH-1",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "26198851",
+        "citationType": "journal article",
+        "authors": [
+          "King R.",
+          "Urban M.",
+          "Hammond-Kosack M.C.U.",
+          "Hassani-Pak K.",
+          "Hammond-Kosack K.E."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "26198851"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1186/s12864-015-1756-1"
+          }
+        ],
+        "title": "The completed genome sequence of the pathogenic ascomycete fungus Fusarium graminearum.",
+        "publicationDate": "2015",
+        "journal": "BMC Genomics",
+        "firstPage": "544",
+        "lastPage": "544",
+        "volume": "16"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC MYA-4620 / CBS 123657 / FGSC 9075 / NRRL 31084 / PH-1",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "DS231667",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ESU14435.1"
+        },
+        {
+          "key": "Status",
+          "value": "ALT_SEQ"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "HG970333",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CEF77299.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "XP_011319860.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "XM_011321558.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q4I1Q6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q4I1Q6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "229533.Q4I1Q6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblFungi",
+      "id": "FGRAMPH1_01T10993",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "FGRAMPH1_01T10993-p1"
+        },
+        {
+          "key": "GeneId",
+          "value": "FGRAMPH1_01G10993"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "23555834",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "fgr:FGSG_08852",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "VEuPathDB",
+      "id": "FungiDB:FGRAMPH1_01G10993",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG0133",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_010348_6_1_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q4I1Q6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "113914at110618",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000070720",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome 2"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003684",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:damaged DNA binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003904",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:deoxyribodipyrimidine photo-lyase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0071949",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:FAD binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000719",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:photoreactive repair"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.25.40.80",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.579.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA Cyclobutane Dipyrimidine Photolyase, subunit A, domain 3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.620",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HUPs"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014133",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cry_DASH"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036134",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_FAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036155",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005101",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochr/Photolyase_FAD-bd"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR002081",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/DNA_photolyase_1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006050",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014729",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rossmann-like_a/b/a_fold"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR02765",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "crypto_DASH"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CRYPTOCHROME"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455:SF22",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CRYPTOCHROME DASH"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00875",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF03441",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "FAD_binding_7"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00147",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNAPHOTLYASE"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF48173",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase FAD-binding domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF52425",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51645",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHR_CRY_ALPHA_BETA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MAGNKLLVYLLRRDLRATDNPILHHLATSDHGFTHLLPIYILPPHQIETSGFVVEGQKSPYPLAKSQVGRFWRCGPLRAKFQAECIWDVKKNFENIGSGMLIRIGKFDDVLKHLIKSLNEDHQSIDTVWMTEEPSKEELDDQTAVASVCSKEGIGFKLWHDEKYFIDDRDNGLKDPQDTPDVFTTYRKTQEPLRERPRPPLPRPQAGSLPSFPSWIPPQQAPFRIPDDYDEFERLLLEPVKAPIISDPPQFPEGAKSAHPFKGGETPAWDRLYHLIKSGAMTTYQETRNGLLGTEYSTKLSAFLAMGTITARSIHAELVKFEDGSEESYSRGFGFGKGENEGTRAVRFELLWRDYMRLCTFKFRTRLFKIDGFKGASGNYTKKWLTDREEDAEPDQNPTPAQVKDMIDRWIRGTTGMGLVDASQRELQLTGYTSNRARQNVASYLTKSLGIDWRLGAEYYEQSLIDYDTHSNWGNWQYQASCGNDPRSRSFNQVKQAFDYDQDGRFTRTWVNEVKSIDRLEHVFQICTCPKQELEKHGLSDNIMVTNPLKRIDFSVTKPRGNRRPYRWRKQGDRGRGGRGGRGGGTGNTSGNGDNRHNEPSPPNGGNRHNDFSPANGGSYMQGQPISGGYQQMAWRGNSHGLPSGRGYNSRQYMLDYSQQQQQPQHQLQHYYAHQQHQHPHPRQQQQQFYHQIPPHI",
+    "length": 697,
+    "molWeight": 79863,
+    "crc64": "AA66F58296577C17",
+    "md5": "C31A23D1FA043D6657B5B5FBBC26C971"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "COFACTOR": 2,
+      "SIMILARITY": 1,
+      "SEQUENCE CAUTION": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Domain": 1,
+      "Region": 2,
+      "Compositional bias": 5
+    },
+    "uniParcId": "UPI00052104BE"
+  }
+}

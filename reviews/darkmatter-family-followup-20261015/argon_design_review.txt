@@ -1,0 +1,269 @@
+================================================================================
+INDEPENDENT ARGON DESIGN REVIEW: DARK MATTER FAMILY FOLLOW-UP (2026-10-15)
+================================================================================
+Date: 2026-10-15
+Reviewed Design: reproducibility/darkmatter/family_followup_20261015/DESIGN.txt
+Baseline References:
+  - reviews/darkmatter-family-analysis-20261015/RESULTS_FOR_AUTHOR.txt
+  - reviews/darkmatter-family-analysis-20261015/ROOT_F345_JUDGEMENT.txt
+  - reviews/darkmatter-family-analysis-20261015/ROOT_F12_JUDGEMENT.txt
+Requested Reviewer Role: Independent Argon Reviewer (Gemini 4 Argon High)
+Actual Model / Runtime Identity: Gemini 4 Argon (High) via Antigravity Agentic
+  AI Coding Assistant (Google DeepMind)
+Governance & Execution Boundary: Read-only design review; manuscript untouched;
+  all implementation and execution belong to Root on IBEX Slurm (CPU, account
+  pi-hohndor) and ORIX Slurm (GPU), never on login nodes. No new permission
+  gates are imposed. Sequence, domain, neighborhood, and structure predictions
+  assess encoded genomic potential and sequence architecture only—never
+  biochemical catalysis, retinal binding, ion transport, or sensory activity.
+
+--------------------------------------------------------------------------------
+1. EXECUTIVE ASSESSMENT
+--------------------------------------------------------------------------------
+`DESIGN.txt` appropriately freezes H1–H4 and the completed F1–F5 screening state,
+drops F2, holds F5 at its stop rule, and targets the three genuine analytical
+gaps identified in `RESULTS_FOR_AUTHOR.txt` and `ROOT_F345_JUDGEMENT.txt`:
+  (1) whether F3 site-conserving heliorhodopsin cluster diversity (`13.98` vs
+      `5.00` SMAG / `4.79` GEM external 50%-clusters at `n = 35`) is an artefact
+      of host taxonomy (`Patescibacteriota` / `Actinomycetota`) and N/C-terminal
+      length variation;
+  (2) how much of the F1 surface-vs-deep CPF enrichment (`+8.47` percentage
+      points, Holm `p = 0.00196`) reflects between-lineage community turnover vs
+      within-lineage carrier shifts; and
+  (3) how many F4 residue-conserving (`W21/E57/Y84/H92`) `EctC` genes sit in
+      complete (`partial=00`) same-strand `EctA`+`EctB` neighborhoods and how
+      that strict carrier fraction varies across paired soils.
+
+However, inspection of the underlying audited tables (`f3_site_conserving/`,
+`f345_final_audit/audit.json`, and `ecology/f1_ecology_root_v3.py`) reveals six
+critical design flaws that would bias or invalidate the follow-up inferences if
+not corrected prior to execution. Section 2 details these flaws, Section 3
+specifies bounded feasible stronger tests using existing IBEX data, Section 4
+separates required inference controls from optional scope expansion, and
+Section 5 assesses plausible manuscript value.
+
+--------------------------------------------------------------------------------
+2. CRITICAL DESIGN FLAWS
+--------------------------------------------------------------------------------
+Flaw 1 (F3 — Small-Stratum Degeneracy & Upstream Panel-Sampling Bias):
+  In `root_audit/f3_site_conserving/Helio/metadata.tsv`, the `45` site-conserving
+  (`K241`) EQ heliorhodopsins (`44` unique sequences; `20` excluded, `19/20` in
+  `Patescibacteriota`) span only five phyla: `Patescibacteriota` (`24` genes,
+  `23` unique), `Actinomycetota` (`16`), `Chloroflexota` (`2`), `Halobacteriota`
+  (`2`), and `Deinococcota` (`1`). Comparator totals across all phyla are only
+  `35` SMAG (`35` unique) and `73` GEM (`71` unique), drawn from the sampled H3
+  protein pools (`4.78M` SMAG and `4.82M` GEM proteins vs `20.45M` EQ proteins),
+  not the full published SMAG/GEM catalogues. Conditioning 3-way equal-size
+  rarefaction simultaneously on `EQ ∩ SMAG ∩ GEM` within each phylum will reduce
+  per-phylum sample sizes `n_p` to `0` or `< 5` whenever SMAG or GEM lacks
+  sufficient `Patescibacteriota` or `Actinomycetota` hits, and still reflects
+  upstream MAG completeness/binning differences for CPR (`Patescibacteriota`).
+
+Flaw 2 (F3 — Taxonomically Unannotated Curated Reference Panel in "Reference-
+  External" Cluster Metrics):
+  `DESIGN.txt` retains the fixed joint 50%/80% MMseqs2 cluster partition and
+  measures clusters outside `curated_reference` (`n = 25` site-conserving refs,
+  all currently labelled `phylum = Unknown` in `Helio/metadata.tsv`). If the `25`
+  curated references lack `Patescibacteriota` representatives, any
+  `Patescibacteriota` heliorhodopsin from EQ, SMAG, or GEM is automatically
+  "reference-external." Evaluating reference-external clusters without
+  annotating reference taxonomy and without measuring direct EQ-to-(SMAG ∪ GEM)
+  within-phylum sequence/embedding distances conflates reference-database
+  taxonomic gaps with desert-specific sequence divergence.
+
+Flaw 3 (F3 — Length-Coverage (`-c 0.80`) Splitting from Terminal Extensions vs.
+  7TM Core Divergence):
+  The frozen joint MMseqs2 clustering enforces `>= 80%` bidirectional sequence
+  coverage (`-c 0.80`). In `Helio/metadata.tsv`, EQ `Actinomycetota` candidates
+  are `243–280 aa`, whereas EQ `Patescibacteriota` candidates reach `349–352 aa`
+  and GEM reaches `406 aa`. Because `255 / 340 = 0.75 < 0.80`, full-length
+  bidirectional coverage splits sequences with N/C-terminal extensions into
+  separate clusters even when their 7TM core domains exceed 50% identity.
+  Relying solely on the frozen full-length cluster partition cannot distinguish
+  core 7TM sequence divergence from terminal extension length variation.
+
+Flaw 4 (F1 & F4 — Non-Additivity of Medians, Unshared Taxonomic Support, and
+  Pooled "Unknown" Genera in Lineage Decomposition):
+  `DESIGN.txt` specifies decomposing paired surface/deep carrier abundance into
+  between-lineage composition and within-lineage carrier-fraction components at
+  phylum and genus ranks using replicate medians and site median contrasts:
+  (a) Non-additivity & replicate renormalization: Taking taxon-by-taxon medians
+      across replicate samples within `(site, trip, compartment)` violates
+      `sum_g w_g = 1`, and site medians of components do not sum to the site
+      median of total `Delta_Y`.
+  (b) Unshared support at Genus rank: When a genus is detected in Surface
+      (`w_{g,S} > 0`) but absent in Deep (`w_{g,D} = 0`) or vice versa, its
+      within-lineage carrier fraction `p_g` is undefined in the absent
+      compartment. Restricting only to common-support taxa (`w_{g,S} > 0` and
+      `w_{g,D} > 0`) omits the compartment-exclusive lineage turnover residual
+      `R`, biasing the proportion of total `Delta_Y` explained.
+  (c) Ecological fallacy of pooling `genus = Unknown`: Many EQ MAGs across
+      divergent phyla/orders/families have `genus = Unknown`. Pooling them into
+      one global `"Unknown"` genus falsely reclassifies cross-phylum/cross-family
+      compositional turnover as a "within-genus" shift.
+  (d) Static species-representative resolution limit: Because CoverM maps reads
+      to `5,438` static ANI95 species representatives with binary trait calls
+      (`0` or `1`), any genus represented by a single MAG has `p_{g,S} == p_{g,D}`
+      (`W_g = 0` identically), and intra-species strain turnover is unobservable.
+
+Flaw 5 (F4 — Contig-Edge Truncation Confounding of Strict Neighborhoods):
+  In the completed audit (`ROOT_F345_JUDGEMENT.txt`), `623/940` complete EQ
+  `EctC` candidates satisfied `WEYH` + same-strand `EctA`+`EctB` within 5 kb,
+  where `EctA`/`EctB` only required `>= 50%` profile coverage (`partial=00` not
+  enforced). Tightening the gate to require `partial=00` for both `EctA` and
+  `EctB` will drop loci where `EctA` or `EctB` is truncated at a contig edge. If
+  contig-boundary-truncated loci (`<= 5 kb` from contig end) are lumped with
+  internal non-operonic `EctC` genes, differences in MAG assembly contiguity
+  between surface and deep communities can artefactually skew the paired soil
+  contrast.
+
+Flaw 6 (F1/F4 Inference — Redundant Re-Testing of Known F1 Contrast & Unstated
+  `K01669` Overlap):
+  `DESIGN.txt` proposes *"Holm correction across the two new overall ecology
+  contrasts."* However, the F1 overall `cpf_complete` surface-vs-deep contrast
+  (`+8.47 pp`, Wilcoxon `p = 2.34e-4`, Holm `p = 0.00196`) was already tested in
+  `ecology/results_root_v3`, where it was also shown that `cpf_complete_exclusive`
+  (complete CPF carriers lacking prior `K01669` annotation) is null (`+0.0045 pp`,
+  `p = 0.533`). Only the F4 soil compartment contrast is a new overall test; F1
+  follow-up is a decomposition of an already-established contrast that overlaps
+  the manuscript's `K01669` baseline.
+
+--------------------------------------------------------------------------------
+3. BOUNDED FEASIBLE STRONGER TESTS (IBEX SLURM, EXISTING DATA ONLY)
+--------------------------------------------------------------------------------
+Test A — F3 Taxonomy- and Architecture-Controlled Core vs. Full-Length Test:
+  1. Taxonomic Closure: Join GTDB phylum/genus taxonomy for all SMAG (`35`) and
+     GEM (`73`) site-conserving heliorhodopsins from original publication tables,
+     and assign NCBI/GTDB phylum for all `25` site-conserving `curated_reference`
+     sequences.
+  2. Within-Phylum Pairwise & 3-Way Comparisons: For each shared phylum (`p`)
+     with `>= 5` unique site-conserving sequences in at least two sources
+     (specifically `Actinomycetota` and `Patescibacteriota`), report:
+     - 3-way equal-size rarefaction where `min(n_EQ, n_SMAG, n_GEM) >= 5`, AND
+       pairwise equal-size rarefaction (`EQ vs GEM`, `EQ vs SMAG`) whenever one
+       comparator has `< 5` sequences;
+     - Direct reference-free environmental distance: each unique EQ sequence's
+       nearest neighbor in `SMAG ∪ GEM` within the same phylum (both global
+       pairwise percent identity and 1024-d ProstT5 cosine distance), compared
+       against leave-one-MAG-out within-source distances.
+  3. Core-Domain vs. Full-Length Clustering Check: Run MMseqs2 50% and 80%
+     clustering (`-c 0.80 --cov-mode 0`) on the trimmed HMM-envelope/match core
+     domains of the exact same `44` EQ, `35` SMAG, `71` GEM, and `25` reference
+     unique sequences alongside the frozen full-length partition. Quantify how
+     much of the `13.98` vs `5.00`/`4.79` gap is removed by (i) trimming N/C
+     extensions and (ii) conditioning on `Patescibacteriota` vs `Actinomycetota`.
+
+Test B — F1 & F4 Exact Three-Term Kitagawa Decomposition with Taxonomic Fallback:
+  1. Replicate Aggregation: Within each `(site, trip, compartment)` cell,
+     average replicate sample taxon relative abundances (or renormalize cell
+     medians so `sum_g w_g = 1.0` exactly) before forming paired within-trip
+     differences `Delta_Y_{s,tr} = Y_{s,tr,S} - Y_{s,tr,D}`.
+  2. Exact Three-Term Partition per Paired Visit `(s, tr)`:
+     - `B_{s,tr}` (common-support between-lineage composition):
+       `sum_{g in G_SD} (w_{g,S} - w_{g,D}) * ((p_{g,S} + p_{g,D}) / 2)`
+     - `W_{s,tr}` (common-support within-lineage carrier shift):
+       `sum_{g in G_SD} ((w_{g,S} + w_{g,D}) / 2) * (p_{g,S} - p_{g,D})`
+     - `R_{s,tr}` (unshared-support lineage turnover):
+       `sum_{g in G_S \ G_D} w_{g,S} * p_{g,S} - sum_{g in G_D \ G_S} w_{g,D} * p_{g,D}`
+     Verify in code that `B_{s,tr} + W_{s,tr} + R_{s,tr} == Delta_Y_{s,tr}` to
+     floating-point precision (`< 1e-12`) for every paired visit.
+  3. Unknown-Genus Handling: Assign every MAG with `genus == "Unknown"` to its
+     finest resolved higher-rank taxon string
+     (`<phylum>;<class>;<order>;<family>;g__unclassified`), never a single
+     cross-phylum `"Unknown"` bucket. Report the fraction of community abundance
+     in common-support genera, multi-MAG genera (where `W_g` can be non-zero),
+     and unclassified-genus bins.
+  4. Site Aggregation (`37` paired sites): Collapse multiple trips per site first,
+     then report both **site means** (which preserve exact additivity
+     `mean(Delta_Y) = mean(B) + mean(W) + mean(R)`) and **site medians** with
+     2,000-draw site-bootstrap 95% CIs (`seed = 20261015`). For F1, run this
+     decomposition on both `cpf_complete` (`775` MAGs) and `k01669_photolyase`
+     (`975` MAGs) to show their concordance.
+
+Test C — F4 Contig-Edge Accounting & Dual-Gate Soil Contrast:
+  1. Partition all `822` complete `WEYH` `EctC` genes (and symmetrized SMAG/GEM
+     comparators) into:
+     (i)   `strict_complete_same_strand_ABC` (`EctA` and `EctB` both `partial=00`,
+           same strand, within 5 kb, recording canonical gene orders such as
+           `ectA-ectB-ectC` vs `ectA-ectB-ectC-ectD`),
+     (ii)  `contig_edge_censored` (missing complete `EctA`/`EctB` and `<= 5 kb`
+           from a contig end or flanking a contig-edge-truncated `EctA`/`EctB`),
+     (iii) `internal_incomplete_or_orphan` (`> 5 kb` from both contig ends).
+  2. Test the paired Surface-vs-Deep contrast (`37` sites / `69` visits) on
+     `strict_complete_same_strand_ABC` carrier MAGs (primary new test, Holm-
+     adjusted alongside the primary family-track ecology family) and check
+     sensitivity on all complete `WEYH` `EctC` carrier MAGs so assembly breaks
+     cannot masquerade as ecological niche differences.
+
+--------------------------------------------------------------------------------
+4. REQUIRED INFERENCE CONTROLS VS. OPTIONAL SCOPE EXPANSION
+--------------------------------------------------------------------------------
+A. Required Inference Controls (Must Be Enforced):
+  - F3: Explicit SMAG/GEM/reference taxonomy joins; reporting of unsupported/
+    low-`n` phylum strata without extrapolation; pairwise source comparisons when
+    3-way intersection has `n_p < 5`; trimmed 7TM-core vs full-length clustering
+    comparison; symmetrical ORF completeness (`partial=00`), sequence length, and
+    sequence-based 7TM topology/architecture checks across all sources.
+  - F1 & F4: Exact 3-term additive decomposition (`B + W + R = Delta_Y`);
+    hierarchical fallback for unknown genera; reporting both additive site-means
+    and site-medians with site-bootstrap CIs; explicit statement that species-
+    representative read mapping cannot resolve intra-species strain turnover.
+  - F4: Symmetrical `complete EctC + WEYH + complete same-strand EctA/B` rules
+    across EQ, SMAG, and GEM; contig-edge censoring check (`<= 5 kb`); gene-
+    coordinate and domain-boundary audit of the 5 `EctCD` single-ORF candidates.
+  - Interpretation Guardrails: Zero claims of enzymatic catalysis, retinal
+    chromophore binding, phototaxis, or causal evolutionary selection from
+    sequence, structure, or metagenomic abundance data.
+
+B. Optional Scope Expansion (Not Required for Valid Inference; Defer or Bound):
+  - F3 GPU 3D structure folding (AlphaFold/ESMFold on ORIX) and raw-read BAM
+    remapping for heliorhodopsins: cannot be executed symmetrically on external
+    SMAG/GEM protein pools, cannot establish photoreceptor/sensory activity, and
+    is unnecessary to test whether taxonomic composition and terminal extensions
+    explain the 50%-cluster count gap. Omit or restrict strictly to sequence-
+    based TM/extension boundary annotation unless needed for a supplementary
+    structural illustration.
+  - F4 raw-read alignment check across the 5 `EctCD` inter-domain linkers:
+    optional diagnostic only if pre-existing BAMs on IBEX allow a fast bounded
+    Slurm check against assembly/frameshift artefacts; even if read-supported,
+    report strictly as a continuous predicted `EctC-EctD` ORF, not a proven
+    bifunctional enzyme.
+  - F5 Carbonic Anhydrases: Keep stopped per the F5 stop rule; retain the
+    audited catalogue in the supplement/archive only.
+
+--------------------------------------------------------------------------------
+5. ASSESSMENT OF PLAUSIBLE MANUSCRIPT VALUE
+--------------------------------------------------------------------------------
+1. F1 (CPF Light-Niche Decomposition) — HIGH SUPPORTING VALUE (Main Text
+   Radiation/Repair Section + Supplement):
+   Provides a rigorous complete-ORF profile census (`914` genes in `775` MAGs)
+   and quantifies how much of the surface enrichment (`+8.47 pp`) reflects
+   within-lineage enrichment (notably within `Actinomycetota`) vs community-wide
+   phylum/genus turnover, while transparently documenting overlap with the
+   `K01669` baseline and the short-photolyase (`QCI56913.1`) profile boundary.
+
+2. F4 (Strict `ectABC` Neighborhood & Soil Partitioning) — HIGH SUPPORTING VALUE
+   (Main Text Osmoprotection Section + Supplement):
+   Strengthens the osmoprotection narrative by replacing single-marker `EctC`
+   counts with a residue-verified (`WEYH`), complete-neighbor, same-strand
+   `ectABC`/`ectABCD` architecture census (plus audited `EctCD` fusion leads)
+   and testing whether canonical pathway carriers vary across surface vs deep
+   horizons or track broad lineage composition.
+
+3. F3 (Site-Conserving Heliorhodopsins) — MODEST / SUPPLEMENTARY VALUE ONLY
+   (Methodological Caveat or Supplementary Resource):
+   After retinal-site (`K241`) filtering reduced the native embedding gap by 69%
+   (`0.01338` vs `0.00903`/`0.00918`) and left signaling-neighbor enrichment
+   null (`5/18` vs `4/18`, `p = 1.0`; Type-1 `Holm p = 0.0781`), F3 is not a
+   viable main-text sensory mechanism story. Test A has clear value as a concise
+   supplementary control demonstrating how apparent environmental cluster
+   "novelty" in desert MAGs is shaped by `Patescibacteriota` host representation,
+   reference-panel bias, and N/C-terminal length extensions.
+
+4. Overall Strategic Judgement:
+   Executing the corrected F1, F4, and bounded F3 follow-ups on IBEX Slurm will
+   make the manuscript's photoprotection, osmoprotection, and dark-matter
+   sections substantially more defensible against referee scrutiny on taxonomic
+   confounding and gene fragmentation, without overclaiming unmeasured
+   biochemical functions.
+================================================================================

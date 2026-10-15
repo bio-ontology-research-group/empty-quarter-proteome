@@ -1,0 +1,174 @@
+================================================================================
+INDEPENDENT ARGON MANUSCRIPT REVIEW (ROUND 1): F3/F1/F4 INTEGRATION
+================================================================================
+Date: 2026-10-15
+Reviewer Role: Independent Argon Scientific Reviewer
+Actual Model Identity: Gemini 4 Argon (High) via Antigravity Agentic AI Coding
+  Assistant (Google DeepMind)
+Reviewed Material:
+  - manuscript/main.tex (lines 418-426, 459, 949-968, 1221-1240, 1315-1319)
+  - manuscript/figures/fig_helio_expanded.{png,pdf} & plot_family.py
+  - manuscript/references.bib (F3/F1/F4 citations)
+  - reviews/darkmatter-family-followup-20261015/{RESULTS_REVIEW_DISPOSITION.txt,
+    argon_results_review.txt}
+  - reproducibility/darkmatter/family_followup_20261015/{REPRODUCIBILITY.txt,
+    verify_family.py,scripts/review_checks.py,scripts/audit.py,results/**}
+Governance Boundary: Read-only manuscript and reproducibility review; no edits
+  made to manuscript or code; no new experiments requested.
+
+--------------------------------------------------------------------------------
+1. READINESS JUDGEMENT & ACTUAL EXECUTION / AUDIT STATUS
+--------------------------------------------------------------------------------
+Readiness Judgement: READY FOR INCLUSION (0 inference-breaking or numerical
+defects in the integrated F3/F1/F4 manuscript text, figure, or claim registry;
+only a routine final rebuild of `REPORT.md` / `main.pdf` after the 13:06-13:07
+claim addition is needed to synchronize timestamps).
+
+Actual Status vs. Prior Reports:
+  - The post-review jobs on IBEX have completed and are synced locally:
+    * `expanded_analysis` (Slurm job `53826635`): synced locally in
+      `results/expanded_analysis/`, with `init='random'` for secondary t-SNE
+      seeds `123` and `20261015` (`trustworthiness_cosine_k5 = 0.987993` and
+      `0.987321` at `perplexity = 30` vs `0.987694` for primary PCA seed `42`).
+    * `review_checks` (Slurm job `53826937`): synced locally in
+      `results/review_checks/`, verifying the 34-sequence reference-free
+      `Saccharimonadia` clustering, exact published-panel overlap by unique
+      sequence, non-overlapping domain intervals across all `8` dual-profile
+      `EctAB` ORFs (`7` EQ, `1` GEM), and merged `AB` marker-order labels.
+    * Refreshed Final Audit (Slurm job `53827015`): completed on IBEX at
+      `13:06:03` (`ExitCode 0:0`) and synced locally to `results/audit/summary.json`
+      and `artifact_manifest.tsv` (`1,124` retained files, `1,721,140,288` bytes),
+      passing all `12/12` programmatic checks (adding `"Reference-free
+      rarefaction analytical expectations"` [`n = 8`] and `"Distinct A/B domain
+      positions in dual-profile ORFs"` [`n = 8`]).
+    * Local Claim Harness: `verify_family.py` now registers `64` `family.*`
+      claims across `21` SHA256-pinned sources in `current_manuscript_artifacts.tsv`.
+      Independent execution of `verify_family.py` confirmed `64/64` claims pass
+      with zero tolerance failures.
+
+--------------------------------------------------------------------------------
+2. ASSESSMENT BY REVIEW CRITERION
+--------------------------------------------------------------------------------
+2.1 Scientific Accuracy & Numerical / Denominator Consistency
+  - Every quantitative claim in the main text (lines 418-426), Methods (lines
+    949-968), Supplementary Note S4 (lines 1221-1230), and `fig:helio` caption
+    (lines 1317-1318) was independently checked against the compact TSV/JSON
+    tables and `verify_family.py`. All numbers match:
+    * F3 Heliorhodopsins: `65` complete EQ candidates; `45` conserving aligned
+      `K241` (`44` unique sequences; compared with `35` SMAG, `73` GEM, `25`
+      curated references); `45/45` matching the `1,566` profile- and
+      lysine-qualified Bulzu et al. (2021) sequences at `>= 70%` bidirectional
+      coverage (`E <= 1e-3`); median best-hit identity `57.3%` overall and
+      `39.4%` across the `24` `Patescibacteriota` loci; deduplicated
+      `Saccharimonadia` counts of `22` EQ, `10` GEM, and `2` SMAG; expanded-
+      reference 10-sequence additions of `7.33` (`7.332`) profile-core 50%-
+      identity clusters for EQ (`7.36` [`7.361`] full-length; `7.31` [`7.309`]
+      restricted to read-supported loci) vs `0` (`0.0`) for GEM; `2/10` unique
+      GEM `Saccharimonadia` (`8/73` GEM records overall) exactly present in the
+      published panel; `45/45` exact contig translations; `43/45` passing original
+      read support (`median depth >= 5`, `breadth >= 95%`); `45/45` ESMFold
+      models passing `mean C\alpha pLDDT >= 70` (median `93.13`) and
+      `query_TM >= 0.5` to `6SU3` chain X (median `0.865`); `1,744` encoded
+      records and `1,726` unique sequences in the ProstT5 t-SNE projection.
+    * F1 CPF Follow-Up: `914` complete genes (`PF00875`, `PF03441`, or `PF04244`
+      at `E <= 1e-5` and coverage `>= 70%`) across `775` MAGs from the
+      `20,451,986` Prodigal protein set; `+8.47 pp` (`8.473`) median surface
+      enrichment across `37` sites / `69` paired visits (Holm `p = 0.00131`
+      across 6 contrasts); `28` CPF-carrier MAGs lacking `K01669` (unresolved
+      contrast, `p = 0.533`); arithmetic-mean surface excess `+8.71 pp`
+      decomposed at genus rank into `+5.31 pp` between shared groups, `+2.38 pp`
+      position-exclusive groups, and `+1.03 pp` within shared multi-MAG genera
+      (note: unrounded components `5.305 + 2.378 + 1.027 = 8.710 pp` exact;
+      two-decimal rounded values sum to `8.72`), with `25.7%` (`25.70%`) mean
+      community abundance in singleton genus-unclassified MAG groups.
+    * F4 EctABC Follow-Up: `940` complete `EctC` calls -> `822` conserving
+      `WEYH` -> `616` complete same-strand `5 kb` `EctABC` loci in `608` MAGs
+      (`609` with distinct `EctA`/`EctB` ORFs and `7` with non-overlapping
+      `TIGR02406`/`TIGR02407` matches in a single neighbouring ORF; `612` loci
+      in `604` MAGs at `>= 70%` A/B coverage), plus `164` edge/partial-marker
+      censored and `42` internal non-ABC loci (`616 + 164 + 42 = 822`); `5`
+      read-supported `EctCD` fusion ORFs (`4-19` junction-spanning templates,
+      `1/5` carrying `FEYH` outside the `WEYH` subset); nonsignificant primary
+      median surface contrast of `+0.56 pp` (raw Wilcoxon `p = 0.0974`,
+      6-contrast Holm `p = 0.389`).
+  - Denominator boundaries are stated transparently in Methods (line 950): the
+    `20,451,986` Prodigal translations used for the family screen are explicitly
+    distinguished from the `19,186,853` Bakta CDS catalogue denominator, and the
+    external comparisons explicitly cite the pre-quota sampled SMAG/GEM pools
+    with `F5Dr1` excluded from CoverM relative-abundance fractions.
+
+2.2 Resolution of Prior Review Issues (`609+7` EctABC & Reference-Free 50%/80% Sensitivity)
+  - **Reference-Free `Saccharimonadia` 50%/80% Sensitivity (Job `53826937`)**:
+    Properly addresses and improves upon my prior review. My earlier reference-
+    free numbers were drawn from `f3_finer`, whose MMseqs2 clustering input still
+    contained the 25 curated reference sequences. Root's new `review_checks.py`
+    re-clusters *only* the `34` environmental `Saccharimonadia` sequences (`22`
+    EQ, `10` GEM, `2` SMAG) without reference centroids, yielding `8.04` EQ vs
+    `4` (`4.0`) GEM profile-core clusters per 10 sequences at `50%` identity and
+    `9.61` (`9.605`) EQ vs `10` (`10.0`) GEM at `80%` identity. Reporting both
+    thresholds alongside the `2/10` exact GEM-Bulzu overlap and `SMAG n = 2`
+    disclosure cleanly demonstrates that the apparent rarefaction gap reflects
+    reference-panel overlap at 50% identity and depends on clustering resolution.
+  - **`609 + 7` `EctABC` Distinction (Job `53826937`)**:
+    Completely addressed. `dual_AB_domains.tsv` confirms that all `7` EQ and `1`
+    GEM single-ORF A/B neighbours have `0 aa` domain overlap and `>= 98.7%`
+    profile coverage on both `TIGR02406` and `TIGR02407`. Methods (line 963) and
+    Supplementary Note S4 (line 1227) accurately separate the `609` three-gene
+    loci from the `7` putative `EctAB` fusions without claiming junction-read
+    validation for `EctAB`, and `neighborhood_gene_orders.tsv` merges same-ORF
+    `AB` labels rather than treating negative-strand sort ties as `B-A-C-D`.
+  - **UniRef50-Dark Framing**:
+    The manuscript (line 420) states: *"To examine the biological value of the
+    catalogue within a recognizable protein family, we analysed heliorhodopsins
+    separately from the sequence-dark classification."* This formulation is
+    scientifically exact: it prevents readers from conflating F3 with the
+    UniRef50-dark cohort without making an untested claim of set disjointness
+    between the Prodigal family screen and the Bakta/UniRef50-dark cohort.
+
+2.3 Inference Boundaries, Story Fit, Methods Reproducibility, Figure & Citations
+  - **Inference Boundaries & Story Fit**: The F3 subsection (lines 418-426) and
+    Discussion paragraph (line 459) sit naturally after the H3 reference-
+    composition section as a concrete, conocidos-family counterpart showing how
+    genome-resolved desert sampling adds divergent, read-supported sequence
+    coverage within an established fold while deferring function and physiology
+    to experiment. F1 and F4 are appropriately placed in Supplementary Note S4,
+    with the nonsignificant primary median test governing F4 and the potentially
+    misleading mean-decomposition figure omitted.
+  - **Figure Clarity (`fig_helio_expanded.png` / `fig:helio`)**: All four panels
+    (`a` ProstT5 t-SNE, `b` `Saccharimonadia` 10-sequence additions, `c` ESMFold
+    `mean C\alpha pLDDT` vs `query_TM` to `6SU3`, `d` ranked locus read depth)
+    are visually clean, colour-consistent, and legible, and the caption
+    explicitly states every interpretive boundary (projection is illustrative,
+    error bars are finite-pool sampling percentiles, GEM overlaps Bulzu in `8/73`
+    records, terminal extensions enter the `query_TM` denominator, and crosses
+    mark the two `depth = 3.0` loci).
+  - **Citations**: All 8 newly integrated citations (`pushkarev2018heliorhodopsin`,
+    `bulzu2021heliorhodopsin`, `heinzinger2024prostt5`, `lin2023esmfold`,
+    `zhang2005tmalign`, `kovalev2020heliorhodopsin`, `xu2021shortphotolyases`,
+    `czech2019ectc`) resolve cleanly in `manuscript/references.bib` with accurate
+    bibliographic metadata and DOIs.
+
+--------------------------------------------------------------------------------
+3. REQUIRED CORRECTIONS VS. OPTIONAL IMPROVEMENTS
+--------------------------------------------------------------------------------
+3.1 Required Corrections
+  - None in manuscript prose, numerical values, figure graphics, or analysis
+    scripts.
+  - **Housekeeping Closure Only**: Ensure the final harness run (`run_all.sh` /
+    `build_manuscript.sh` and final IBEX snapshot job) refreshes
+    `reproducibility/REPORT.md` and `manuscript/main.pdf` (currently timestamped
+    `13:04`) so they post-date the `13:06-13:07` addition of the 64th claim
+    (`family.helio.translation_matches`) in `verify_family.py` and the sentence
+    in `main.tex` line 1237.
+
+3.2 Optional Improvements (Discretionary; Not Required for Readiness)
+  1. In `manuscript/main.tex` line 422, *"versus four for GEM at 50% identity;
+     at 80% identity the values were 9.61 and ten"* could optionally be written
+     with matching two-decimal precision (`4.00` and `10.00`) or left as prose
+     words since the 10-from-10 GEM draw is deterministic.
+  2. In `manuscript/main.tex` line 1225, the three rounded genus decomposition
+     components (`5.31 + 2.38 + 1.03 = 8.72`) differ by `0.01` from the rounded
+     total (`8.71`) due to rounding (`5.305 + 2.378 + 1.027 = 8.710`); this is
+     standard two-decimal rounding and requires no change unless a parenthetical
+     note is desired.
+================================================================================

@@ -1,0 +1,1533 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q8YYI3",
+  "uniProtkbId": "CCMM_NOSS1",
+  "entryAudit": {
+    "firstPublicDate": "2020-10-07",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2002-03-01",
+    "entryVersion": 115,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Nostoc sp. (strain PCC 7120 / SAG 25.82 / UTEX 2576)",
+    "taxonId": 103690,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Cyanobacteriota",
+      "Cyanophyceae",
+      "Nostocales",
+      "Nostocaceae",
+      "Nostoc"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305"
+          }
+        ],
+        "value": "Carboxysome assembly protein CcmM"
+      },
+      "shortNames": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "17675289"
+            }
+          ],
+          "value": "CcmM58"
+        },
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "17675289"
+            }
+          ],
+          "value": "M58"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Carbon dioxide concentrating mechanism protein CcmM"
+        }
+      },
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "24907906"
+            }
+          ],
+          "value": "Carbonic anhydrase"
+        },
+        "ecNumbers": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24907906"
+              }
+            ],
+            "value": "4.2.1.1"
+          }
+        ]
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "17675289"
+          }
+        ],
+        "value": "ccmM"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "all0865"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03513"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24907906"
+            }
+          ],
+          "value": "Functions as a scaffold protein for the assembly of beta-carboxysomes, initiates carboxysome assembly by coalescing RuBisCO (ribulose bisphosphate carboxylase, rbcL-rbcS) (By similarity). Produced as a full-length (M58) and a short form (M35), possibly by alternative translation initiation; probably both forms are required for correct carboxysome assembly and growth. In this strain both forms are equally abundant (PubMed:24907906)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24907906"
+            }
+          ],
+          "value": "A moderately active carbonic anhydrase that catalyzes the reversible hydration of carbon dioxide. Essential to photosynthetic carbon dioxide fixation, supplies CO(2) to ribulose bisphosphate carboxylase (RuBisCO) in the carboxysome. Also hydrolyzes COS"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03513"
+            }
+          ],
+          "value": "Beta-carboxysome assembly initiates when soluble RuBisCO is condensed into a liquid matrix in a pre-carboxysome by the RbcS-like domains of probably both forms of CcmM. CcmN interacts with the N-terminus of full length CcmM, and then recruits the shell proteins (CcmK) via CcmN's encapsulation peptide. Shell formation requires both CcmK proteins and CcmO. CcmL caps the otherwise elongated carboxysome. Once fully encapsulated carboxysomes are formed, they migrate within the cell probably via interactions with the cytoskeleton"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "hydrogencarbonate + H(+) = CO2 + H2O",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:10748"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16526"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:17544"
+          }
+        ],
+        "ecNumber": "4.2.1.1",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "24907906"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Zn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q8DKB5"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29105"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "Q8DKB5"
+              }
+            ],
+            "value": "Binds 3 zinc per trimer."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24907906"
+            }
+          ],
+          "value": "Carbonic anhydrase (CA) activity is probably under redox control to remain inactive in the cytoplasm. Carbonic anhydrase (CA) activity of full-length protein and N-terminal fragment is inhibited by ethoxyzolamide. N-terminal fragment CA activity is activated under oxidizing conditions and inhibited under reducing conditions"
+        }
+      ],
+      "commentType": "ACTIVITY REGULATION"
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "michaelisConstants": [
+          {
+            "constant": 10.2,
+            "unit": "mM",
+            "substrate": "CO(2) at pH 7.5, 25 degrees Celsius, for N-terminal 209 residue fragment",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24907906"
+              }
+            ]
+          },
+          {
+            "constant": 5.2,
+            "unit": "mM",
+            "substrate": "CO(2) at pH 8.0, 25 degrees Celsius, N-terminal 209 residue fragment",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24907906"
+              }
+            ]
+          }
+        ],
+        "note": {
+          "texts": [
+            {
+              "evidences": [
+                {
+                  "evidenceCode": "ECO:0000269",
+                  "source": "PubMed",
+                  "id": "24907906"
+                }
+              ],
+              "value": "kcat at pH 7.5 is 19000 sec(-1), at pH 8.0 is 22000 sec(-1)."
+            }
+          ]
+        }
+      },
+      "phDependence": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24907906"
+              }
+            ],
+            "value": "Optimum pH is 8.0 - 9.5."
+          }
+        ]
+      },
+      "temperatureDependence": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24907906"
+              }
+            ],
+            "value": "Optimum temperature is 25-35 degrees Celsius for N-terminal 209 residue fragment."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03513"
+            },
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q8DKB5"
+            }
+          ],
+          "value": "Probable homotrimer; zinc is bound between adjacent monomers (By similarity). Full length protein (M58) interacts with CcmN. The C-terminal RbcS-like domains (SSUL) bind to holo-RuBisCO, as does the M35 short form (By similarity)"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24907906"
+              }
+            ],
+            "value": "This cyanobacterium makes beta-type carboxysomes. Both isoforms are found equally distributed in the interior of the carboxysome. An unexpectedly large amount is found outside the carboxysome by immungold labelling, this might represent coalescing RuBisCO-CcmM"
+          }
+        ]
+      },
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "24907906"
+              }
+            ],
+            "value": "Carboxysome",
+            "id": "SL-0034"
+          }
+        },
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000305",
+                "source": "PubMed",
+                "id": "24907906"
+              }
+            ],
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        }
+      ]
+    },
+    {
+      "commentType": "ALTERNATIVE PRODUCTS",
+      "events": [
+        "Alternative initiation"
+      ],
+      "isoforms": [
+        {
+          "name": {
+            "value": "CcmM58"
+          },
+          "isoformIds": [
+            "Q8YYI3-1"
+          ],
+          "isoformSequenceStatus": "Displayed"
+        },
+        {
+          "name": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "17675289"
+              }
+            ],
+            "value": "CcmM35"
+          },
+          "isoformIds": [
+            "Q8YYI3-2"
+          ],
+          "sequenceIds": [
+            "VSP_060775",
+            "VSP_060776"
+          ],
+          "isoformSequenceStatus": "Described"
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q03513"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24907906"
+            }
+          ],
+          "value": "The N-terminus (residues 1-209) has carbonic anhydrase (CA) activity (PubMed:24907906). The C-terminus has 3 repeats that are similar to the small subunit of RuBisCO (rbcS), called SSUL. The SSUL are connected by flexible linkers. The N-terminal domain probably forms a scaffold on which CcmN and maybe other carboxysomal proteins assemble, while the C-terminus binds and coalesces RuBisCO (By similarity)"
+        }
+      ],
+      "commentType": "DOMAIN"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17675289"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24907906"
+            },
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "24907906"
+            }
+          ],
+          "value": "The first amino acid of the short form (equivalent to Val-226) is not seen in Edman degradation, while Ser-230 may be post-translationally modified (PubMed:17675289). Migrates in gels as 2 about equal forms of about 60 and 35 kDa (called M58 and M35) (PubMed:24907906). They are probably the result of alternative translation initiation (Probable)"
+        }
+      ],
+      "commentType": "PTM"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the gamma-class carbonic anhydrase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 555,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Carboxysome assembly protein CcmM",
+      "featureId": "PRO_0000451243"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 209,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Has carbonic anhydrase (CA) activity",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "24907906"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 223,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 315,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "RbcS-like repeat 1, SSUL1",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 323,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 351,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 347,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 440,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "RbcS-like repeat 2, SSUL2",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 441,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 464,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 460,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 555,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "RbcS-like repeat 3, SSUL3",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 330,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 351,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Low complexity",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 445,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 464,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Low complexity",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 56,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 56,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Proton donor/acceptor",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "P40881"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 75,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 75,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in other chain",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q8DKB5"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105",
+        "note": "ligand shared between two neighboring subunits"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 102,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 102,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q8DKB5"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105",
+        "note": "ligand shared between two neighboring subunits"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 107,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 107,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in other chain",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q8DKB5"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105",
+        "note": "ligand shared between two neighboring subunits"
+      }
+    },
+    {
+      "type": "Disulfide bond",
+      "location": {
+        "start": {
+          "value": 194,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 200,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q8DKB5"
+        },
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "24907906"
+        }
+      ]
+    },
+    {
+      "type": "Alternative sequence",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 225,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in isoform CcmM35",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "17675289"
+        }
+      ],
+      "featureId": "VSP_060775",
+      "alternativeSequence": {}
+    },
+    {
+      "type": "Alternative sequence",
+      "location": {
+        "start": {
+          "value": 226,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 226,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in isoform CcmM35",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305",
+          "source": "PubMed",
+          "id": "17675289"
+        }
+      ],
+      "featureId": "VSP_060776",
+      "alternativeSequence": {
+        "originalSequence": "V",
+        "alternativeSequences": [
+          "M"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0024",
+      "category": "Coding sequence diversity",
+      "name": "Alternative initiation"
+    },
+    {
+      "id": "KW-1283",
+      "category": "Cellular component",
+      "name": "Bacterial microcompartment"
+    },
+    {
+      "id": "KW-0120",
+      "category": "Biological process",
+      "name": "Carbon dioxide fixation"
+    },
+    {
+      "id": "KW-1282",
+      "category": "Cellular component",
+      "name": "Carboxysome"
+    },
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0903",
+      "category": "Technical term",
+      "name": "Direct protein sequencing"
+    },
+    {
+      "id": "KW-1015",
+      "category": "PTM",
+      "name": "Disulfide bond"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0602",
+      "category": "Biological process",
+      "name": "Photosynthesis"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0677",
+      "category": "Domain",
+      "name": "Repeat"
+    },
+    {
+      "id": "KW-0862",
+      "category": "Ligand",
+      "name": "Zinc"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "11759840",
+        "citationType": "journal article",
+        "authors": [
+          "Kaneko T.",
+          "Nakamura Y.",
+          "Wolk C.P.",
+          "Kuritz T.",
+          "Sasamoto S.",
+          "Watanabe A.",
+          "Iriguchi M.",
+          "Ishikawa A.",
+          "Kawashima K.",
+          "Kimura T.",
+          "Kishida Y.",
+          "Kohara M.",
+          "Matsumoto M.",
+          "Matsuno A.",
+          "Muraki A.",
+          "Nakazaki N.",
+          "Shimpo S.",
+          "Sugimoto M.",
+          "Takazawa M.",
+          "Yamada M.",
+          "Yasuda M.",
+          "Tabata S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11759840"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/8.5.205"
+          }
+        ],
+        "title": "Complete genomic sequence of the filamentous nitrogen-fixing cyanobacterium Anabaena sp. strain PCC 7120.",
+        "publicationDate": "2001",
+        "journal": "DNA Res.",
+        "firstPage": "205",
+        "lastPage": "213",
+        "volume": "8"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "PCC 7120 / SAG 25.82 / UTEX 2576",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "17675289",
+        "citationType": "journal article",
+        "authors": [
+          "Long B.M.",
+          "Badger M.R.",
+          "Whitney S.M.",
+          "Price G.D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17675289"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.m703896200"
+          }
+        ],
+        "title": "Analysis of carboxysomes from Synechococcus PCC7942 reveals multiple Rubisco complexes with carboxysomal proteins CcmM and CcaA.",
+        "publicationDate": "2007",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "29323",
+        "lastPage": "29335",
+        "volume": "282"
+      },
+      "referencePositions": [
+        "PROTEIN SEQUENCE OF 227-233",
+        "2 PROTEIN FORMS",
+        "ISOFORM CCMM35"
+      ],
+      "referenceComments": [
+        {
+          "value": "PCC 7120 / SAG 25.82 / UTEX 2576",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "24907906",
+        "citationType": "journal article",
+        "authors": [
+          "de Araujo C.",
+          "Arefeen D.",
+          "Tadesse Y.",
+          "Long B.M.",
+          "Price G.D.",
+          "Rowlett R.S.",
+          "Kimber M.S.",
+          "Espie G.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "24907906"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1007/s11120-014-0018-4"
+          }
+        ],
+        "title": "Identification and characterization of a carboxysomal gamma-carbonic anhydrase from the cyanobacterium Nostoc sp. PCC 7120.",
+        "publicationDate": "2014",
+        "journal": "Photosyn. Res.",
+        "firstPage": "135",
+        "lastPage": "150",
+        "volume": "121"
+      },
+      "referencePositions": [
+        "FUNCTION AS A CARBONIC ANHYDRASE",
+        "ACTIVITY REGULATION",
+        "BIOPHYSICOCHEMICAL PROPERTIES",
+        "SUBCELLULAR LOCATION",
+        "DOMAIN",
+        "2 PROTEIN FORMS"
+      ],
+      "referenceComments": [
+        {
+          "value": "PCC 7120 / SAG 25.82 / UTEX 2576",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "BA000019",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAB72822.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "AG1914",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "AG1914"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_010995039.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_003272.1"
+        }
+      ],
+      "isoformId": "Q8YYI3-1"
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q8YYI3",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q8YYI3",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "103690.gene:10492878",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ana:all0865",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0663",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG4451",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9803036at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000002483",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0031470",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:carboxysome"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "24907906"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005737",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-SubCell"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004089",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:carbonate dehydratase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "24907906"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0043886",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:structural constituent of carboxysome shell"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "24907906"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00710",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "LbH_gamma_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00307",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_small_like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.160.10.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapeptide repeat proteins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.190.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ribulose bisphosphate carboxylase, small subunit"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR047223",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CA_gamma_LbH"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR017156",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CcmM"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR052265",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Gamma-CA"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001451",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapep"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR000894",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_ssu_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036385",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_ssu_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011004",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trimer_LpxA-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43360",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBON DIOXIDE CONCENTRATING MECHANISM PROTEIN CCMM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43360:SF1",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBOXYSOME ASSEMBLY PROTEIN CCMM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00132",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Hexapep"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00101",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_small"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF037250",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CcmM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00961",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO_small"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF55239",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RuBisCO, small subunit"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "3"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51161",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trimeric LpxA-like enzymes"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MAVRSTAAPPTPWSRSLAEAQIHESAFVHPFSNIIGDVHIGANVIIAPGTSIRADEGTPFHIGENTNIQDGVVIHGLEQGRVVGDDNKEYSVWVGSSASLTHMALIHGPAYVGDNSFIGFRSTVFNAKVGAGCIVMMHALIKDVEVPPGKYVPSGAIITNQKQADRLPDVQPQDRDFAHHVIGINQALRAGYLCAADSKCIAPLRNDQVKSYTSTTVIGLERSSEVASNSLGAETIEQVRYLLEQGYKIGSEHVDQRRFRTGSWTSCQPIEARSVGDALAALEACLADHSGEYVRLFGIDPKGKRRVLETIIQRPDGVVAGSTSFKAPASNTNGNGSYHSNGNGNGYSNGATSGKVSAETVDQIRQLLAGGYKIGTEHVDERRFRTGSWNSCKPIEATSAGEVVAALEECIDSHQGEYIRLIGIDPKAKRRVLESIIQRPNGQVAPSSSPRTVVSASSASSGTATATATRLSTEVVDQVRQILGGGYKLSIEHVDQRRFRTGSWSSTGAISATSEREAIAVIEASLSEFAGEYVRLIGIDPKAKRRVLETIIQRP",
+    "length": 555,
+    "molWeight": 59465,
+    "crc64": "2339CC0D90BCE319",
+    "md5": "1522B3E602FC3C169B964F7A3D1B6462"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 3,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "ACTIVITY REGULATION": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "ALTERNATIVE PRODUCTS": 2,
+      "DOMAIN": 1,
+      "PTM": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Region": 6,
+      "Compositional bias": 2,
+      "Active site": 1,
+      "Binding site": 3,
+      "Disulfide bond": 1,
+      "Alternative sequence": 2
+    },
+    "uniParcId": "UPI00000CDEC9"
+  }
+}

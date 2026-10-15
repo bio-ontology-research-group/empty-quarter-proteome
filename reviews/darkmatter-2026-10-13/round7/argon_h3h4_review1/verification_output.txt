@@ -1,0 +1,19 @@
+=== ARGON H3 & H4 INDEPENDENT VERIFICATION SUMMARY (CORRECTED) ===
+H3 SMAG 1,500 replay == sampled_smag_1500_ids_seed20261014.txt: True
+H3 SMAG 1,500 manifest declared == observed bytes: True
+H3 GEM 2,055 replay matches all 6 manifests (seeds 20261014..20261016): True
+H3 matching_closure_audit.tsv all 7 rows 5-bin sum == matched_proteins: True
+H3 DIAMOND signatures (14 dmnd + 16 m8) exit_code==0 & SHA256 linked: True
+H3 matched_full_census_summary.tsv (16 rows) exact arithmetic & McNemar: True
+H3 matched_length_stratified_results.tsv (80 rows) exact & sum to full: True
+H3 Length-reweighted Dark delta (to Control length weights): 17.5175% (unadjusted: 18.5445%)
+H3 Length-reweighted Control delta (to Dark length weights): 2.6478% (unadjusted: 3.1007%)
+---
+H4 local preclosure SHA256 matches (11/15 local files): True
+H4 v7_stratum_census.tsv (40 rows x 27 int cols) mismatches: 0
+H4 Dark Tier 0 == Tier 1 exact across 2,838 models: True
+H4 Dark models changing status across Tiers 0..4: 2 (['F23PRr1::F23PRr1_1368001_43', 'V22PRr2::V22PRr2_1671192_1'])
+H4 Adaptive rerun (max-seqs 5000) updated models/regions: 39 WC models, 55 crop regions (100% Controls)
+H4 Pooled-K (N=1031, eligible=984, regions=1518) strictly qTM-defined: True
+H4 Pooled-K Tier 1: WC matched=67/1031 (6.5%), WC unmatched=964, Crop matched=775/1031 (75.17% uncond; 78.76% elig), WC-unmatched recovered=714/964 (74.07% uncond; 77.69% elig)
+H4 All Dark Q (N=2838, eligible=2690, regions=3648) Tier 1: WC matched=1475/2838 (51.97%), Crop matched=2353/2838 (82.91% uncond; 87.47% elig), WC-unmatched recovered=1006/1363 (73.81% uncond; 77.56% elig)

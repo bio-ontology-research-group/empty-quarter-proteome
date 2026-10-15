@@ -1,0 +1,117 @@
+{
+  "job_id": "53822727",
+  "host": "cn509-10-l",
+  "python": "3.11.5 (main, Sep 11 2023, 13:23:44) [GCC 11.2.0]",
+  "libraries": {
+    "numpy": "2.4.3",
+    "scipy": "1.17.1",
+    "sklearn": "1.8.0",
+    "matplotlib": "3.10.9",
+    "Bio": "1.87"
+  },
+  "manifest_files": 2310,
+  "manifest_bytes": 9643366031,
+  "checksum_checks": {
+    "root_audit/f345_embeddings/final_bundle.sha256": "PASS"
+  },
+  "EctC_reference_site_and_context": {
+    "ABC_neighborhood": 625,
+    "ABC_same_strand": 623,
+    "same_orf_EctCD": 4
+  },
+  "F5_reference_gate_failures": [
+    {
+      "accession": "A0A1C3K8P6",
+      "reference_category": "Gamma_CA",
+      "expected_class": "Gamma-Carbonic_Anhydrase",
+      "selected_class": "NOT_ACCEPTED",
+      "passes_implemented_gate": 0,
+      "experimental_function_flag": "0",
+      "best_profile": "NA",
+      "best_profile_coverage": "NA"
+    },
+    {
+      "accession": "A0ACD7QVV1",
+      "reference_category": "Gamma_CA",
+      "expected_class": "Gamma-Carbonic_Anhydrase",
+      "selected_class": "NOT_ACCEPTED",
+      "passes_implemented_gate": 0,
+      "experimental_function_flag": "0",
+      "best_profile": "NA",
+      "best_profile_coverage": "NA"
+    },
+    {
+      "accession": "A0A0E3P775",
+      "reference_category": "Gamma_CA",
+      "expected_class": "Gamma-Carbonic_Anhydrase",
+      "selected_class": "NOT_ACCEPTED",
+      "passes_implemented_gate": 0,
+      "experimental_function_flag": "0",
+      "best_profile": "NA",
+      "best_profile_coverage": "NA"
+    },
+    {
+      "accession": "A0A2C9EWC7",
+      "reference_category": "Gamma_CA",
+      "expected_class": "Gamma-Carbonic_Anhydrase",
+      "selected_class": "NOT_ACCEPTED",
+      "passes_implemented_gate": 0,
+      "experimental_function_flag": "0",
+      "best_profile": "NA",
+      "best_profile_coverage": "NA"
+    },
+    {
+      "accession": "Q39AS6",
+      "reference_category": "Gamma_CA",
+      "expected_class": "Gamma-Carbonic_Anhydrase",
+      "selected_class": "NOT_ACCEPTED",
+      "passes_implemented_gate": 0,
+      "experimental_function_flag": "0",
+      "best_profile": "NA",
+      "best_profile_coverage": "NA"
+    },
+    {
+      "accession": "A0B700",
+      "reference_category": "Gamma_CA",
+      "expected_class": "Gamma-Carbonic_Anhydrase",
+      "selected_class": "NOT_ACCEPTED",
+      "passes_implemented_gate": 0,
+      "experimental_function_flag": "0",
+      "best_profile": "NA",
+      "best_profile_coverage": "NA"
+    },
+    {
+      "accession": "A0KGA5",
+      "reference_category": "Gamma_CA",
+      "expected_class": "Gamma-Carbonic_Anhydrase",
+      "selected_class": "NOT_ACCEPTED",
+      "passes_implemented_gate": 0,
+      "experimental_function_flag": "0",
+      "best_profile": "NA",
+      "best_profile_coverage": "NA"
+    },
+    {
+      "accession": "P64798",
+      "reference_category": "Beta_CA",
+      "expected_class": "Beta-Carbonic_Anhydrase",
+      "selected_class": "NOT_ACCEPTED",
+      "passes_implemented_gate": 0,
+      "experimental_function_flag": "0",
+      "best_profile": "NA",
+      "best_profile_coverage": "NA"
+    }
+  ],
+  "external_source_inventory": [
+    "root_audit/f1_full/cohort.tsv:5438originalFAAhashes",
+    "root_audit/f345_final_audit/audit.json:fullsourceFASTAandcoordinatehashes",
+    "ecology/results_root_v3/profile_inputs.tsv:551CoverMprofilehashes",
+    "f345/references/references_manifest.tsv:retainedreferenceprovenance",
+    "f3_context/metadata:originalMAGmetadata",
+    "root_audit/f345_embeddings/model_cache.sha256:ORIXcheckpointfiles"
+  ],
+  "limits": [
+    "Manifest closes the analysis state; raw sequencing-read remapping and wet-lab validation were not performed for this family track.",
+    "Known reference gate failures limit census sensitivity; no exhaustive enzyme-class counts.",
+    "CPUjob53821447 and site-sensitivity53822479 complete before closure; failed/superseded jobs retained separately."
+  ]
+}

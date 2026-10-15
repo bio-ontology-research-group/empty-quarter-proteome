@@ -1,0 +1,6 @@
+Root execution updates,2026-10-14:
+- Auxiliary download job53740188 adds4streams for parts indexed200: (173parts) into common downloads/smag_parts, separate auxiliary_tmp and separate result manifest. Original job53738740 remains authoritative all373 manifest and dependency. Total8streams, completed parts always published afterMD5/size validation. No cancellation/dependency changes.
+- Root patched 02 extraction guard and04/05 missing-comparison guards before jobsstart; originals inround7/root_checks.
+- Separate Flash session preparing candidate provenance/cache repairs only inround7/h3_repro_repairs, will be reviewed/promoted by root without editing activejob code.
+
+LATEST root updates08:35: auxiliary53740188 intentionally cancelled byroot, replaced by53741162 (h3_smag_resume),4streams reverse-order acrossfull373parts,distinctauxiliary_tmp frommaster,HTTPRangecheckedresumes;DO NOT restart53740188. Master53738740 still authoritative dependencyunlessfails. 53740440 GEMretentioncompleted:2055rawFAAhashesand4,824,709canonical ID+seqSHAverified; genecalls/gem outputs retained; extendedmanifestwith_coordinates and originallegacycolumnsseparated. H3scripts02/03/05promotedFlashreprorepairs; first-runcode retained inround7 snapshots/rootchecks. H2replay53740945passed14byteidenticalfiles.

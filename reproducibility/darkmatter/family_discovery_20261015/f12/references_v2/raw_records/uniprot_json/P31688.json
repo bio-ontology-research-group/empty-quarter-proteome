@@ -1,0 +1,2148 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P31688",
+  "secondaryAccessions": [
+    "D6VS60"
+  ],
+  "uniProtkbId": "TPS2_YEAST",
+  "entryAudit": {
+    "firstPublicDate": "1993-07-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1996-10-01",
+    "entryVersion": 219,
+    "sequenceVersion": 3
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Saccharomyces cerevisiae (strain ATCC 204508 / S288c)",
+    "commonName": "Baker's yeast",
+    "taxonId": 559292,
+    "lineage": [
+      "Eukaryota",
+      "Fungi",
+      "Dikarya",
+      "Ascomycota",
+      "Saccharomycotina",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomycetaceae",
+      "Saccharomyces"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Trehalose-phosphatase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "2546763"
+            }
+          ],
+          "value": "3.1.3.12"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Trehalose synthase complex catalytic subunit TPS2"
+        }
+      },
+      {
+        "fullName": {
+          "value": "Trehalose-6-phosphate phosphatase"
+        },
+        "shortNames": [
+          {
+            "value": "TPP"
+          }
+        ]
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "8444170"
+          }
+        ],
+        "value": "TPS2"
+      },
+      "synonyms": [
+        {
+          "value": "PFK3"
+        }
+      ],
+      "orderedLocusNames": [
+        {
+          "value": "YDR074W"
+        }
+      ],
+      "orfNames": [
+        {
+          "value": "YD8554.07"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "2546763"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9194697"
+            }
+          ],
+          "value": "Phosphatase catalytic subunit of the trehalose synthase complex that catalyzes the production of trehalose from glucose-6-phosphate and UDP-alpha-D-glucose in a two step process"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha,alpha-trehalose 6-phosphate + H2O = alpha,alpha-trehalose + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:23420"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16551"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58429"
+          }
+        ],
+        "ecNumber": "3.1.3.12",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "2546763"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "2546763"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "2546763"
+            }
+          ],
+          "value": "Inhibited by EDTA"
+        }
+      ],
+      "commentType": "ACTIVITY REGULATION"
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "kineticParameters": {
+        "maximumVelocities": [
+          {
+            "velocity": 20.0,
+            "unit": "nmol/min/mg",
+            "enzyme": "enzyme (at pH 6.0)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "2546763"
+              }
+            ]
+          },
+          {
+            "velocity": 10.0,
+            "unit": "nmol/min/mg",
+            "enzyme": "enzyme (at pH 7.5)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "2546763"
+              }
+            ]
+          }
+        ],
+        "michaelisConstants": [
+          {
+            "constant": 0.2,
+            "unit": "mM",
+            "substrate": "trehalose 6-phosphate (at pH 6.0)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "2546763"
+              }
+            ]
+          },
+          {
+            "constant": 0.5,
+            "unit": "mM",
+            "substrate": "trehalose 6-phosphate (at pH 7.5)",
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "2546763"
+              }
+            ]
+          }
+        ]
+      },
+      "phDependence": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "2546763"
+              }
+            ],
+            "value": "Optimum pH is 6.0."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Carbohydrate biosynthesis"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9837904"
+            }
+          ],
+          "value": "The trehalose synthase complex is composed of the two catalytic subunits TPS1 and TPS2, and at least one of the two regulatory subunits TPS3 or TSL1"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "INTERACTION",
+      "interactions": [
+        {
+          "interactantOne": {
+            "uniProtKBAccession": "P31688",
+            "intActId": "EBI-19440"
+          },
+          "interactantTwo": {
+            "uniProtKBAccession": "Q00764",
+            "geneName": "TPS1",
+            "intActId": "EBI-19430"
+          },
+          "numberOfExperiments": 8,
+          "organismDiffer": false
+        },
+        {
+          "interactantOne": {
+            "uniProtKBAccession": "P31688",
+            "intActId": "EBI-19440"
+          },
+          "interactantTwo": {
+            "uniProtKBAccession": "P38426",
+            "geneName": "TPS3",
+            "intActId": "EBI-19448"
+          },
+          "numberOfExperiments": 8,
+          "organismDiffer": false
+        },
+        {
+          "interactantOne": {
+            "uniProtKBAccession": "P31688",
+            "intActId": "EBI-19440"
+          },
+          "interactantTwo": {
+            "uniProtKBAccession": "P38427",
+            "geneName": "TSL1",
+            "intActId": "EBI-19638"
+          },
+          "numberOfExperiments": 4,
+          "organismDiffer": false
+        }
+      ]
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "14562095"
+              }
+            ],
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "value": "By heat shock. Repressed by glucose"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "14562106"
+            }
+          ],
+          "value": "Present with 22700 molecules/cell in log phase SD medium"
+        }
+      ],
+      "commentType": "MISCELLANEOUS"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "In the N-terminal section; belongs to the glycosyltransferase 20 family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "In the C-terminal section; belongs to the trehalose phosphatase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 896,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Trehalose-phosphatase",
+      "featureId": "PRO_0000122509"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 554,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Glycosyltransferase"
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 48,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 48,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAA50025",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "F",
+        "alternativeSequences": [
+          "Y"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 289,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 289,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAA50025",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "N",
+        "alternativeSequences": [
+          "D"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 542,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 542,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAA50025",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "Q",
+        "alternativeSequences": [
+          "K"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 546,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 546,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAA50025",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "N",
+        "alternativeSequences": [
+          "D"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 549,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 549,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAA50025",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "M",
+        "alternativeSequences": [
+          "V"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0903",
+      "category": "Technical term",
+      "name": "Direct protein sequencing"
+    },
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0346",
+      "category": "Biological process",
+      "name": "Stress response"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "8444170",
+        "citationType": "journal article",
+        "authors": [
+          "de Virgilio C.",
+          "Buerckert N.",
+          "Bell W.",
+          "Jenoe P.",
+          "Boller T.",
+          "Wiemken A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8444170"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/j.1432-1033.1993.tb17664.x"
+          }
+        ],
+        "title": "Disruption of TPS2, the gene encoding the 100-kDa subunit of the trehalose-6-phosphate synthase/phosphatase complex in Saccharomyces cerevisiae, causes accumulation of trehalose-6-phosphate and loss of trehalose-6-phosphate phosphatase activity.",
+        "publicationDate": "1993",
+        "journal": "Eur. J. Biochem.",
+        "firstPage": "315",
+        "lastPage": "323",
+        "volume": "212"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]",
+        "PARTIAL PROTEIN SEQUENCE"
+      ],
+      "referenceComments": [
+        {
+          "value": "C13-ABYS86",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "9169867",
+        "citationType": "journal article",
+        "authors": [
+          "Jacq C.",
+          "Alt-Moerbe J.",
+          "Andre B.",
+          "Arnold W.",
+          "Bahr A.",
+          "Ballesta J.P.G.",
+          "Bargues M.",
+          "Baron L.",
+          "Becker A.",
+          "Biteau N.",
+          "Bloecker H.",
+          "Blugeon C.",
+          "Boskovic J.",
+          "Brandt P.",
+          "Brueckner M.",
+          "Buitrago M.J.",
+          "Coster F.",
+          "Delaveau T.",
+          "del Rey F.",
+          "Dujon B.",
+          "Eide L.G.",
+          "Garcia-Cantalejo J.M.",
+          "Goffeau A.",
+          "Gomez-Peris A.",
+          "Granotier C.",
+          "Hanemann V.",
+          "Hankeln T.",
+          "Hoheisel J.D.",
+          "Jaeger W.",
+          "Jimenez A.",
+          "Jonniaux J.-L.",
+          "Kraemer C.",
+          "Kuester H.",
+          "Laamanen P.",
+          "Legros Y.",
+          "Louis E.J.",
+          "Moeller-Rieker S.",
+          "Monnet A.",
+          "Moro M.",
+          "Mueller-Auer S.",
+          "Nussbaumer B.",
+          "Paricio N.",
+          "Paulin L.",
+          "Perea J.",
+          "Perez-Alonso M.",
+          "Perez-Ortin J.E.",
+          "Pohl T.M.",
+          "Prydz H.",
+          "Purnelle B.",
+          "Rasmussen S.W.",
+          "Remacha M.A.",
+          "Revuelta J.L.",
+          "Rieger M.",
+          "Salom D.",
+          "Saluz H.P.",
+          "Saiz J.E.",
+          "Saren A.-M.",
+          "Schaefer M.",
+          "Scharfe M.",
+          "Schmidt E.R.",
+          "Schneider C.",
+          "Scholler P.",
+          "Schwarz S.",
+          "Soler-Mira A.",
+          "Urrestarazu L.A.",
+          "Verhasselt P.",
+          "Vissers S.",
+          "Voet M.",
+          "Volckaert G.",
+          "Wagner G.",
+          "Wambutt R.",
+          "Wedler E.",
+          "Wedler H.",
+          "Woelfl S.",
+          "Harris D.E.",
+          "Bowman S.",
+          "Brown D.",
+          "Churcher C.M.",
+          "Connor R.",
+          "Dedman K.",
+          "Gentles S.",
+          "Hamlin N.",
+          "Hunt S.",
+          "Jones L.",
+          "McDonald S.",
+          "Murphy L.D.",
+          "Niblett D.",
+          "Odell C.",
+          "Oliver K.",
+          "Rajandream M.A.",
+          "Richards C.",
+          "Shore L.",
+          "Walsh S.V.",
+          "Barrell B.G.",
+          "Dietrich F.S.",
+          "Mulligan J.T.",
+          "Allen E.",
+          "Araujo R.",
+          "Aviles E.",
+          "Berno A.",
+          "Carpenter J.",
+          "Chen E.",
+          "Cherry J.M.",
+          "Chung E.",
+          "Duncan M.",
+          "Hunicke-Smith S.",
+          "Hyman R.W.",
+          "Komp C.",
+          "Lashkari D.",
+          "Lew H.",
+          "Lin D.",
+          "Mosedale D.",
+          "Nakahara K.",
+          "Namath A.",
+          "Oefner P.",
+          "Oh C.",
+          "Petel F.X.",
+          "Roberts D.",
+          "Schramm S.",
+          "Schroeder M.",
+          "Shogren T.",
+          "Shroff N.",
+          "Winant A.",
+          "Yelton M.A.",
+          "Botstein D.",
+          "Davis R.W.",
+          "Johnston M.",
+          "Andrews S.",
+          "Brinkman R.",
+          "Cooper J.",
+          "Ding H.",
+          "Du Z.",
+          "Favello A.",
+          "Fulton L.",
+          "Gattung S.",
+          "Greco T.",
+          "Hallsworth K.",
+          "Hawkins J.",
+          "Hillier L.W.",
+          "Jier M.",
+          "Johnson D.",
+          "Johnston L.",
+          "Kirsten J.",
+          "Kucaba T.",
+          "Langston Y.",
+          "Latreille P.",
+          "Le T.",
+          "Mardis E.",
+          "Menezes S.",
+          "Miller N.",
+          "Nhan M.",
+          "Pauley A.",
+          "Peluso D.",
+          "Rifkin L.",
+          "Riles L.",
+          "Taich A.",
+          "Trevaskis E.",
+          "Vignati D.",
+          "Wilcox L.",
+          "Wohldman P.",
+          "Vaudin M.",
+          "Wilson R.",
+          "Waterston R.",
+          "Albermann K.",
+          "Hani J.",
+          "Heumann K.",
+          "Kleine K.",
+          "Mewes H.-W.",
+          "Zollner A.",
+          "Zaccaria P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9169867"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/387s075"
+          }
+        ],
+        "title": "The nucleotide sequence of Saccharomyces cerevisiae chromosome IV.",
+        "publicationDate": "1997",
+        "journal": "Nature",
+        "firstPage": "75",
+        "lastPage": "78",
+        "volume": "387"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 204508 / S288c",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "24374639",
+        "citationType": "journal article",
+        "authors": [
+          "Engel S.R.",
+          "Dietrich F.S.",
+          "Fisk D.G.",
+          "Binkley G.",
+          "Balakrishnan R.",
+          "Costanzo M.C.",
+          "Dwight S.S.",
+          "Hitz B.C.",
+          "Karra K.",
+          "Nash R.S.",
+          "Weng S.",
+          "Wong E.D.",
+          "Lloyd P.",
+          "Skrzypek M.S.",
+          "Miyasato S.R.",
+          "Simison M.",
+          "Cherry J.M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "24374639"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1534/g3.113.008995"
+          }
+        ],
+        "title": "The reference genome sequence of Saccharomyces cerevisiae: Then and now.",
+        "publicationDate": "2014",
+        "journal": "G3 (Bethesda)",
+        "firstPage": "389",
+        "lastPage": "398",
+        "volume": "4"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 204508 / S288c",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "1656215",
+        "citationType": "journal article",
+        "authors": [
+          "Ronne H.",
+          "Carlberg M.",
+          "Hu G.-Z.",
+          "Nehlin J.O."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "1656215"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/mcb.11.10.4876-4884.1991"
+          }
+        ],
+        "title": "Protein phosphatase 2A in Saccharomyces cerevisiae: effects on cell growth and bud morphogenesis.",
+        "publicationDate": "1991",
+        "journal": "Mol. Cell. Biol.",
+        "firstPage": "4876",
+        "lastPage": "4884",
+        "volume": "11"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA] OF 608-896"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 208353 / W303-1A",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "2546763",
+        "citationType": "journal article",
+        "authors": [
+          "Vandercammen A.",
+          "Francois J.",
+          "Hers H.-G."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "2546763"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/j.1432-1033.1989.tb14870.x"
+          }
+        ],
+        "title": "Characterization of trehalose-6-phosphate synthase and trehalose-6-phosphate phosphatase of Saccharomyces cerevisiae.",
+        "publicationDate": "1989",
+        "journal": "Eur. J. Biochem.",
+        "firstPage": "613",
+        "lastPage": "620",
+        "volume": "182"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "COFACTOR",
+        "ACTIVITY REGULATION",
+        "BIOPHYSICOCHEMICAL PROPERTIES"
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "9194697",
+        "citationType": "journal article",
+        "authors": [
+          "Reinders A.",
+          "Buerckert N.",
+          "Hohmann S.",
+          "Thevelein J.M.",
+          "Boller T.",
+          "Wiemken A.",
+          "De Virgilio C."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9194697"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1046/j.1365-2958.1997.3861749.x"
+          }
+        ],
+        "title": "Structural analysis of the subunits of the trehalose-6-phosphate synthase/phosphatase complex in Saccharomyces cerevisiae and their function during heat shock.",
+        "publicationDate": "1997",
+        "journal": "Mol. Microbiol.",
+        "firstPage": "687",
+        "lastPage": "695",
+        "volume": "24"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "INTERACTION WITH TPS1; TPS3 AND TSL1"
+      ]
+    },
+    {
+      "referenceNumber": 7,
+      "citation": {
+        "id": "9837904",
+        "citationType": "journal article",
+        "authors": [
+          "Bell W.",
+          "Sun W.",
+          "Hohmann S.",
+          "Wera S.",
+          "Reinders A.",
+          "De Virgilio C.",
+          "Wiemken A.",
+          "Thevelein J.M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9837904"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.273.50.33311"
+          }
+        ],
+        "title": "Composition and functional analysis of the Saccharomyces cerevisiae trehalose synthase complex.",
+        "publicationDate": "1998",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "33311",
+        "lastPage": "33319",
+        "volume": "273"
+      },
+      "referencePositions": [
+        "SUBUNIT"
+      ]
+    },
+    {
+      "referenceNumber": 8,
+      "citation": {
+        "id": "14562095",
+        "citationType": "journal article",
+        "authors": [
+          "Huh W.-K.",
+          "Falvo J.V.",
+          "Gerke L.C.",
+          "Carroll A.S.",
+          "Howson R.W.",
+          "Weissman J.S.",
+          "O'Shea E.K."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "14562095"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nature02026"
+          }
+        ],
+        "title": "Global analysis of protein localization in budding yeast.",
+        "publicationDate": "2003",
+        "journal": "Nature",
+        "firstPage": "686",
+        "lastPage": "691",
+        "volume": "425"
+      },
+      "referencePositions": [
+        "SUBCELLULAR LOCATION [LARGE SCALE ANALYSIS]"
+      ]
+    },
+    {
+      "referenceNumber": 9,
+      "citation": {
+        "id": "14562106",
+        "citationType": "journal article",
+        "authors": [
+          "Ghaemmaghami S.",
+          "Huh W.-K.",
+          "Bower K.",
+          "Howson R.W.",
+          "Belle A.",
+          "Dephoure N.",
+          "O'Shea E.K.",
+          "Weissman J.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "14562106"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nature02046"
+          }
+        ],
+        "title": "Global analysis of protein expression in yeast.",
+        "publicationDate": "2003",
+        "journal": "Nature",
+        "firstPage": "737",
+        "lastPage": "741",
+        "volume": "425"
+      },
+      "referencePositions": [
+        "LEVEL OF PROTEIN EXPRESSION [LARGE SCALE ANALYSIS]"
+      ]
+    },
+    {
+      "referenceNumber": 10,
+      "citation": {
+        "id": "17330950",
+        "citationType": "journal article",
+        "authors": [
+          "Li X.",
+          "Gerber S.A.",
+          "Rudner A.D.",
+          "Beausoleil S.A.",
+          "Haas W.",
+          "Villen J.",
+          "Elias J.E.",
+          "Gygi S.P."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17330950"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1021/pr060559j"
+          }
+        ],
+        "title": "Large-scale phosphorylation analysis of alpha-factor-arrested Saccharomyces cerevisiae.",
+        "publicationDate": "2007",
+        "journal": "J. Proteome Res.",
+        "firstPage": "1190",
+        "lastPage": "1197",
+        "volume": "6"
+      },
+      "referencePositions": [
+        "IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ADR376",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 11,
+      "citation": {
+        "id": "18407956",
+        "citationType": "journal article",
+        "authors": [
+          "Albuquerque C.P.",
+          "Smolka M.B.",
+          "Payne S.H.",
+          "Bafna V.",
+          "Eng J.",
+          "Zhou H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "18407956"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/mcp.m700468-mcp200"
+          }
+        ],
+        "title": "A multidimensional chromatography technology for in-depth phosphoproteome analysis.",
+        "publicationDate": "2008",
+        "journal": "Mol. Cell. Proteomics",
+        "firstPage": "1389",
+        "lastPage": "1396",
+        "volume": "7"
+      },
+      "referencePositions": [
+        "IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS]"
+      ]
+    },
+    {
+      "referenceNumber": 12,
+      "citation": {
+        "id": "22814378",
+        "citationType": "journal article",
+        "authors": [
+          "Van Damme P.",
+          "Lasa M.",
+          "Polevoda B.",
+          "Gazquez C.",
+          "Elosegui-Artola A.",
+          "Kim D.S.",
+          "De Juan-Pardo E.",
+          "Demeyer K.",
+          "Hole K.",
+          "Larrea E.",
+          "Timmerman E.",
+          "Prieto J.",
+          "Arnesen T.",
+          "Sherman F.",
+          "Gevaert K.",
+          "Aldabe R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "22814378"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.1210303109"
+          }
+        ],
+        "title": "N-terminal acetylome analyses and functional insights of the N-terminal acetyltransferase NatB.",
+        "publicationDate": "2012",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "12449",
+        "lastPage": "12454",
+        "volume": "109"
+      },
+      "referencePositions": [
+        "IDENTIFICATION BY MASS SPECTROMETRY [LARGE SCALE ANALYSIS]"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "X70694",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA50025.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "Z46796",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA86796.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "Z74370",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA98893.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "X58858",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA41661.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "BK006938",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "DAA11920.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "S48761",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S48761"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_010359.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NM_001180382.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "32129",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "615"
+        }
+      ]
+    },
+    {
+      "database": "ComplexPortal",
+      "id": "CPX-582",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose-6-phosphate synthase/phosphatase complex, tps3 variant"
+        }
+      ]
+    },
+    {
+      "database": "ComplexPortal",
+      "id": "CPX-583",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose-6-phosphate synthase/phosphatase complex, tsl1 variant"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-823N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "332"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "13"
+        }
+      ]
+    },
+    {
+      "database": "MINT",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "4932.YDR074W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "CAZy",
+      "id": "GT20",
+      "properties": [
+        {
+          "key": "FamilyName",
+          "value": "Glycosyltransferase Family 20"
+        }
+      ]
+    },
+    {
+      "database": "GlyGen",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "glycosylation",
+          "value": "1 site"
+        }
+      ]
+    },
+    {
+      "database": "iPTMnet",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "4932-YDR074W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PeptideAtlas",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblFungi",
+      "id": "YDR074W_mRNA",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "YDR074W"
+        },
+        {
+          "key": "GeneId",
+          "value": "YDR074W"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "851646",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sce:YDR074W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AGR",
+      "id": "SGD:S000002481",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SGD",
+      "id": "S000002481",
+      "properties": [
+        {
+          "key": "GeneName",
+          "value": "TPS2"
+        }
+      ]
+    },
+    {
+      "database": "VEuPathDB",
+      "id": "FungiDB:YDR074W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG1050",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_002351_3_0_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "VHPMPIE",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "755951at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:YDR074W-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "YEAST:YDR074W-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "2.4.1.15",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "984"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "3.1.3.12",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "984"
+        }
+      ]
+    },
+    {
+      "database": "SABIO-RK",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID-ORCS",
+      "id": "851646",
+      "properties": [
+        {
+          "key": "hits",
+          "value": "9 hits in 10 CRISPR screens"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:P31688",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000002311",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome IV"
+        }
+      ]
+    },
+    {
+      "database": "RNAct",
+      "id": "P31688",
+      "properties": [
+        {
+          "key": "moleculeType",
+          "value": "protein"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005946",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:alpha,alpha-trehalose-phosphate synthase complex (UDP-forming)"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IPI:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000353",
+          "source": "PubMed",
+          "id": "9837904"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005739",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:mitochondrion"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "14576278"
+        },
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "16823961"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004805",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:trehalose-phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "8444170"
+        },
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "9837904"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006995",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:cellular response to nitrogen starvation"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "32240040"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0010508",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:positive regulation of autophagy"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "32240040"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005992",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:trehalose biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "8203161"
+        },
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "8444170"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005991",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:trehalose metabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "9837904"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd03788",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GT20_TPS"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd01627",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_TPP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.2000:FF:000036",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Alpha,alpha-trehalose-phosphate synthase subunit Tps2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.2000:FF:000131",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose-6-phosphate phosphatase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.30.70.1020:FF:000002",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose-6-phosphate synthase 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.2000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glycogen Phosphorylase B"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.70.1020",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose-6-phosphate phosphatase related protein, domain 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001830",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glyco_trans_20"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006379",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IIB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR003337",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IIB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR00685",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "T6PP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10788",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TREHALOSE-6-PHOSPHATE SYNTHASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10788:SF123",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TREHALOSE-PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00982",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glyco_transf_20"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02358",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53756",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "UDP-Glycosyltransferase/glycogen phosphorylase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MTTTAQDNSPKKRQRIINCVTQLPYKIQLGESNDDWKISATTGNSALFSSLEYLQFDSTEYEQHVVGWTGEITRTERNLFTREAKEKPQDLDDDPLYLTKEQINGLTTTLQDHMKSDKEAKTDTTQTAPVTNNVHPVWLLRKNQSRWRNYAEKVIWPTFHYILNPSNEGEQEKNWWYDYVKFNEAYAQKIGEVYRKGDIIWIHDYYLLLLPQLLRMKFNDESIIIGYFHHAPWPSNEYFRCLPRRKQILDGLVGANRICFQNESFSRHFVSSCKRLLDATAKKSKNSSNSDQYQVSVYGGDVLVDSLPIGVNTTQILKDAFTKDIDSKVLSIKQAYQNKKIIIGRDRLDSVRGVVQKLRAFETFLAMYPEWRDQVVLIQVSSPTANRNSPQTIRLEQQVNELVNSINSEYGNLNFSPVQHYYMRIPKDVYLSLLRVADLCLITSVRDGMNTTALEYVTVKSHMSNFLCYGNPLILSEFSGSSNVLKDAIVVNPWDSVAVAKSINMALKLDKEEKSNLESKLWKEVPTIQDWTNKFLSSLKEQASSNDDMERKMTPALNRPVLLENYKQAKRRLFLFDYDGTLTPIVKDPAAAIPSARLYTILQKLCADPHNQIWIISGRDQKFLNKWLGGKLPQLGLSAEHGCFMKDVSCQDWVNLTEKVDMSWQVRVNEVMEEFTTRTPGSFIERKKVALTWHYRRTVPELGEFHAKELKEKLLSFTDDFDLEVMDGKANIEVRPRFVNKGEIVKRLVWHQHGKPQDMLKGISEKLPKDEMPDFVLCLGDDFTDEDMFRQLNTIETCWKEKYPDQKNQWGNYGFYPVTVGSASKKTVAKAHLTDPQQVLETLGLLVGDVSLFQSAGTVDLDSRGHVKNSESSLKSKLASKAYVMKRSASYTGAKV",
+    "length": 896,
+    "molWeight": 102976,
+    "crc64": "E349672CCCDA9349",
+    "md5": "187A109D39D0E8A8AC4491111468E7A9"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "ACTIVITY REGULATION": 1,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "PATHWAY": 1,
+      "SUBUNIT": 1,
+      "INTERACTION": 3,
+      "SUBCELLULAR LOCATION": 1,
+      "INDUCTION": 1,
+      "MISCELLANEOUS": 1,
+      "SIMILARITY": 2
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Region": 1,
+      "Sequence conflict": 5
+    },
+    "uniParcId": "UPI0000052E97"
+  }
+}

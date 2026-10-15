@@ -1,0 +1,189 @@
+{
+  "reviewer": "Gemini 4 Argon High (argon_h3h4_review1)",
+  "round": 7,
+  "reviewed_at": "2026-10-14",
+  "scope": [
+    "H3_references_matched_smag_vs_gem_specificity",
+    "H4_structure_whole_chain_vs_cropped_domain_foldseek_census_and_alntm_anomaly_and_orix_gpu"
+  ],
+  "out_of_scope_closed": [
+    "H1_biogeography (closed in reviews/darkmatter-2026-10-13/round7/argon_h1h2_review1/verdicts_final.json as SUPPORTED_WITH_BOUNDS)",
+    "H2_Synteny (closed in reviews/darkmatter-2026-10-13/round7/argon_h1h2_review1/verdicts_final.json as SUPPORTED_WITH_BOUNDS)"
+  ],
+  "verification_artifacts": {
+    "script": "reviews/darkmatter-2026-10-13/round7/argon_h3h4_review1/verification.py",
+    "saved_json_output": "reviews/darkmatter-2026-10-13/round7/argon_h3h4_review1/verification_output.json",
+    "saved_text_summary": "reviews/darkmatter-2026-10-13/round7/argon_h3h4_review1/verification_output.txt"
+  },
+  "hypotheses": {
+    "H3": {
+      "hypothesis_id": "H3",
+      "title": "Matched-reference catalogue specificity across SMAG (soil) vs GEM (general Earth microbiomes) under gene-caller harmonization, within-pool deduplication, and exact 1-aa length quota matching",
+      "verdict": "SUPPORTED_WITH_BOUNDS",
+      "execution_status": "COMPLETE_AND_ARITHMETICALLY_VERIFIED",
+      "slurm_jobs_verified": [
+        "53738996 (SMAG 1,500-genome extraction and Pyrodigal v3.7.1 calling; exit 0)",
+        "53738968 (GEM seed 20261014 2,055-genome Pyrodigal v3.7.1 calling; exit 0)",
+        "53740440 (GEM seeds 20261015 & 20261016 harmonized Pyrodigal v3.7.1 calling; exit 0)",
+        "53742584 (GEM harmonized coordinate-enriched manifest retention; exit 0)",
+        "53738997 (Exact 1-aa quota matching and 16 full-census 212,084-query DIAMOND v2.0.15 searches; exit 0)"
+      ],
+      "exact_evidence_examined": [
+        "reproducibility/darkmatter/round7_analyses/h3_references/DESIGN.md",
+        "reproducibility/darkmatter/round7_analyses/h3_references/ADDITIONAL_HARMONIZED_DRAWS.md",
+        "reproducibility/darkmatter/round7_analyses/h3_references/STATUS.json",
+        "reproducibility/darkmatter/round7_analyses/h3_references/STATUS_ADDITIONAL_DRAWS.json",
+        "reproducibility/darkmatter/round7_analyses/h3_references/scripts/01_download_smag_zenodo.py",
+        "reproducibility/darkmatter/round7_analyses/h3_references/scripts/02_extract_and_call_smag.py",
+        "reproducibility/darkmatter/round7_analyses/h3_references/scripts/03_fetch_and_call_gem.py",
+        "reproducibility/darkmatter/round7_analyses/h3_references/scripts/03_retain_gem_genecalls.py",
+        "reproducibility/darkmatter/round7_analyses/h3_references/scripts/04_exact_length_matching.py",
+        "reproducibility/darkmatter/round7_analyses/h3_references/scripts/05_diamond_search_full_census.py",
+        "reproducibility/darkmatter/round7_analyses/h3_references/scripts/06_harmonize_additional_draws.py",
+        "reproducibility/darkmatter/round7_analyses/h3_references/scripts/verify_h3_results.py",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/matched_full_census_summary.tsv",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/matched_length_stratified_results.tsv",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/matching_closure_audit.tsv",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/smag_genome_manifest.tsv",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/gem_harmonized_draws_summary.json",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/gem_harmonized_manifest_seed20261014.tsv",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/gem_harmonized_manifest_seed20261015.tsv",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/gem_harmonized_manifest_seed20261016.tsv",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/gem_published_manifest_seed20261014.tsv",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/gem_published_manifest_seed20261015.tsv",
+        "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/gem_published_manifest_seed20261016.tsv",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h3_sampling_audit.json",
+        "reviews/darkmatter-2026-10-13/round7/argon_h3h4_review1/verification_output.json"
+      ],
+      "supported_claims": [
+        "Across the full 212,084-query census (106,042 recurrent Dark queries and 106,042 matched Control queries; query_all.faa SHA-256 1b0cda14...), when SMAG (1,500 MAGs, seed 20261014) and GEM (2,055 MAGs, seed 20261014) are both called de novo with Pyrodigal v3.7.1 (-p meta --no-stop-codon), deduplicated within pool, and downsampled to exact 1-aa common-support length quotas (4,210,592 unique proteins and 1,295,970,055 residues per arm; matching_closure_audit.tsv row 2), Dark queries match SMAG at 28.35% (30,064/106,042; both_hits_a=8,015, smag_only_b=22,049) versus GEM at 9.81% (10,399/106,042; gem_only_c=2,384, neither_d=73,594), yielding a paired difference of +18.54 percentage points and a discordant hit ratio b/c = 9.25 (matched_full_census_summary.tsv row 2).",
+        "Under the same primary harmonized 1-aa quota-matched comparison, Control queries match SMAG at 93.99% (99,673/106,042; a=94,277, b=5,396) versus GEM at 90.89% (96,385/106,042; c=2,108, d=4,261), yielding a paired difference of +3.10 percentage points and a discordant ratio b/c = 2.56 (matched_full_census_summary.tsv row 3).",
+        "The Dark SMAG-over-GEM enrichment is robust across pre-matching removal of all 25,067 exact shared sequences (harmonized_seed20261014_no_overlap: 4,185,525 proteins and 1,289,129,312 residues per arm; Dark paired Delta = +18.62% [28.21% vs 9.59%, b/c = 9.29]; Control Delta = +3.29% [93.93% vs 90.64%, b/c = 2.65]; matched_full_census_summary.tsv rows 4-5), enforcing a 30% sequence-identity floor (--id 30: Dark Delta = +18.14% [27.25% vs 9.11%, b/c = 9.55]; Control Delta = +3.15%; rows 6-7), two additional harmonized 2,055-genome GEM draws (seed 20261015: Dark Delta = +16.83% [28.12% vs 11.29%, b/c = 7.01]; seed 20261016: Dark Delta = +16.91% [28.34% vs 11.42%, b/c = 6.80]; rows 8-11), and end-to-end caller-plus-matching sensitivity using published GEM Prodigal v2.6.3 proteomes (seeds 20261014-20261016: Dark Delta = +18.46%, +16.87%, +16.91%; rows 12-17).",
+        "Across all five query length strata in matched_length_stratified_results.tsv (rows 2-11), Dark paired Delta increases monotonically with query length (<100 aa: +15.29% [27.09% vs 11.80%]; 100-149 aa: +18.29% [25.05% vs 6.76%]; 150-249 aa: +21.10% [29.18% vs 8.08%]; 250-399 aa: +24.55% [33.50% vs 8.96%]; >=400 aa: +30.88% [41.54% vs 10.66%]), whereas Control paired Delta narrows monotonically from +4.17% (<100 aa) to 0.00% (>=400 aa: 99.92% vs 99.92%). Direct standardization of Dark queries to the shorter Control length distribution still yields Dark paired Delta = +17.52% (verification_output.json -> h3_verification.census_and_stratified_verification.length_reweighting_sensitivity_seed20261014)."
+      ],
+      "prohibited_claims": [
+        "Do NOT claim that the three GEM draws (seeds 20261014, 20261015, 20261016) measure SMAG-side sampling uncertainty or constitute independent biological replicates; all 8 run pairs reuse a single fixed random draw of 1,500 SMAG genomes (3.75% of the 40,039 SMAG catalogue).",
+        "Do NOT claim that GEM genomes were sampled via an adaptive cumulative unique-protein stopping rule; the executed code (03_fetch_and_call_gem.py lines 415-418) selects a fixed count of ceil(4,500,000 * 1.05 / 2,300) = 2,055 GEM genomes per seed.",
+        "Do NOT claim that the harmonized vs published GEM comparison isolates pure gene-caller disagreement on fixed sequence pairs; because 1-aa quotas q_s(L) are recomputed after within-pool deduplication, changing the GEM caller also slightly alters the common-support length quotas and resamples SMAG (4,210,592 vs 4,216,518 matched proteins in seed 20261014), making it an end-to-end caller-plus-matching sensitivity.",
+        "Do NOT present McNemar binomial p-values (0.000e+00 / <1e-300) as exact superpopulation error probabilities without noting that query families share host MAGs/lineages and target hits share reference MAGs."
+      ],
+      "findings": [
+        {
+          "id": "H3-F1",
+          "severity": "MAJOR_BOUND",
+          "title": "Single fixed 1,500-genome SMAG draw and GEM comparator-draw sensitivity range (+16.83% to +18.54%)",
+          "evidence": "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/matched_full_census_summary.tsv (rows 2, 8, 10) and verification_output.json (h3_verification.gem_sampling_and_manifests)",
+          "detail": "All 8 database pairs reuse the single fixed 1,500-genome SMAG draw (seed 20261014; 3.75% of 40,039 MAGs). Varying the 2,055-genome GEM draw across seeds 20261014, 20261015, and 20261016 shifts the Dark GEM hit rate from 9.81% to 11.29% and 11.42%, changing paired Delta by 1.71 percentage points (+18.54%, +16.83%, +16.91%). Both the primary seed and the 3-seed range must be reported.",
+          "closure_condition": "State in main text/Supplement that SMAG is a single 1,500-MAG draw and report the harmonized 3-seed GEM sensitivity range (+16.83% to +18.54%)."
+        },
+        {
+          "id": "H3-F2",
+          "severity": "MAJOR_BOUND",
+          "title": "End-to-end caller-plus-matching sensitivity and Dark vs Control query length/admission conditioning",
+          "evidence": "reviews/darkmatter-2026-10-13/round7/snapshots/h3_completed/matching_closure_audit.tsv (rows 2-8), matched_length_stratified_results.tsv (rows 2-11), and verification_output.json (h3_verification.census_and_stratified_verification)",
+          "detail": "Dark queries are conditioned on recurrent multi-sample/multi-site admission (>=3 members, >=3 samples, >=2 sites) and have 47.75% <100 aa vs 62.72% <100 aa in Controls. Our length-reweighting check confirms Dark paired Delta remains +17.52% under Control length weights (and Control paired Delta is +2.65% under Dark length weights). Similarly, harmonized vs published GEM comparisons slightly change the 1-aa quota support (4,210,592 vs 4,216,518 proteins) and represent end-to-end caller-plus-matching sensitivity.",
+          "closure_condition": "Report length-stratified contrasts alongside the full-census summary and describe the published-vs-harmonized comparison as end-to-end caller-plus-matching sensitivity."
+        },
+        {
+          "id": "H3-F3",
+          "severity": "MINOR",
+          "title": "Stale inline comment in 03_fetch_and_call_gem.py and unpinned upstream NERSC checksums",
+          "evidence": "reproducibility/darkmatter/round7_analyses/h3_references/scripts/03_fetch_and_call_gem.py (lines 412-418) and DESIGN.md Section 9.3",
+          "detail": "Line 412 of 03_fetch_and_call_gem.py has a stale comment referring to cumulative unique proteins above the fixed 2,055-genome break rule; NERSC GEM downloads rely on gzip validation + local SHA-256 pinning rather than an upstream checksum manifest.",
+          "closure_condition": "Update the inline comment in 03_fetch_and_call_gem.py and retain the NERSC checksum provenance note in Supplement."
+        }
+      ],
+      "concrete_closure_conditions": [
+        "In manuscript/main.tex Section 'Reference composition affects recovery of dark families' (lines 358-368), add 2-3 bounded sentences reporting the primary harmonized 1-aa quota-matched full-census result (Dark: 28.35% SMAG vs 9.81% GEM, Delta = +18.54 percentage points, discordant ratio 9.25; Control: 93.99% vs 90.89%, Delta = +3.10 percentage points, ratio 2.56) together with the harmonized 3-seed GEM draw range (+16.83% to +18.54%), overlap-exclusion (+18.62%), and --id 30 (+18.14%) sensitivities.",
+        "Include matched_full_census_summary.tsv, matched_length_stratified_results.tsv, and matching_closure_audit.tsv in the Supplement with explicit bounds noting the single fixed 1,500-MAG SMAG draw, the fixed 2,055-MAG GEM draws, and end-to-end caller-plus-matching sensitivity."
+      ]
+    },
+    "H4": {
+      "hypothesis_id": "H4",
+      "title": "Paired whole-chain vs confident-region cropped Foldseek structural census (5,851 models, 7,773 regions), Foldseek 10-941cd33 alnTM > 1 source audit, and ORIX GPU prefilter sensitivity",
+      "verdict": "REVISE",
+      "execution_status": "CPU_CENSUS_AND_SOURCE_BUG_VERIFIED__FLASH_DIAGNOSIS_CONTAINS_ERRORS__ORIX_GPU_RAW_COMPARISON_PENDING",
+      "slurm_jobs_verified": [
+        "53738540 (IBEX CPU original Foldseek search of 5,851 whole chains [3,083,927 rows] and 7,773 cropped regions [3,295,324 rows]; crashed in post-process audit_hit_cap_saturation)",
+        "53743383 (IBEX CPU Recovery v1: executed signed --max-seqs 5000 adaptive reruns for 39 WC [193,418 rows] and 55 crop [273,263 rows] control queries; failed on CSV string reg_len)",
+        "53744678 (IBEX CPU Recovery v2: generated all pre-closure TSV/JSON tables; failed at final v7_verify_closure.py SUB_STRATA_ORDER import, fixed in scripts_recovery_v3)",
+        "53760480 (IBEX CPU staging job for ORIX GPU sensitivity; exit 0)",
+        "315233 (ORIX freecycle-h200 GPU array job: task 0 restart 2 WC completed, restart 3 idempotent exit 0; task 1 restart 0 crop completed; raw CPU-vs-GPU comparison PENDING)"
+      ],
+      "exact_evidence_examined": [
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_outputs_preclosure/v7_stratum_census.tsv",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_outputs_preclosure/v7_model_summaries.tsv",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_outputs_preclosure/v7_region_evaluations.tsv",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_outputs_preclosure/v7_full5851_cropped_regions_manifest.tsv",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_outputs_preclosure/v7_recovery_summary.json",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_outputs_preclosure/v7_closure_verification.json",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_outputs_preclosure/v7_results.sha256.tsv",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_census_invariants.json",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/v7_raw_diagnostic.json",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_foldseek_exact_source_verification.json",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_baseline_score_ranges.json",
+        "reviews/darkmatter-2026-10-13/round7/root_checks/h4_qualified_control_baseline_anomalies.json",
+        "reviews/darkmatter-2026-10-13/round7/h4_postprocess_repairs/REPAIRS.md",
+        "reviews/darkmatter-2026-10-13/round7/h4_postprocess_repairs/v7_recovery_postprocess.py",
+        "reviews/darkmatter-2026-10-13/round7/h4_postprocess_repairs/v7_crop_and_search_regions.py",
+        "reviews/darkmatter-2026-10-13/round7/h4_postprocess_repairs/v7_verify_closure.py",
+        "reviews/darkmatter-2026-10-13/round7/h4_tm_anomaly/source/structureconvertalis.cpp",
+        "reviews/darkmatter-2026-10-13/round7/h4_tm_anomaly/tm_anomaly_census.json",
+        "reviews/darkmatter-2026-10-13/round7/h4_tm_anomaly/tm_anomaly_queries.tsv",
+        "reviews/darkmatter-2026-10-13/round7/h4_tm_anomaly/exclusion_sensitivity_census.tsv",
+        "reviews/darkmatter-2026-10-13/round7/h4_tm_anomaly/exclusion_sensitivity_diff.json",
+        "reviews/darkmatter-2026-10-13/round7/h4_tm_anomaly/DIAGNOSIS.md",
+        "reviews/darkmatter-2026-10-13/round7/h4_tm_anomaly/findings.json",
+        "reviews/darkmatter-2026-10-13/round7/orix_h4_gpu/README.md",
+        "reviews/darkmatter-2026-10-13/round7/orix_h4_gpu/search.sbatch",
+        "reviews/darkmatter-2026-10-13/round7/orix_h4_gpu/prepare.py",
+        "reviews/darkmatter-2026-10-13/round7/orix_h4_gpu/transfer_status.json",
+        "reviews/darkmatter-2026-10-13/round7/argon_h3h4_review1/verification_output.json"
+      ],
+      "supported_claims": [
+        "Across all 5,851 confidence-qualified structures (2,838 dark ESMFold models + 3,013 positive-control PDB structures) and 7,773 confident cropped regions (contiguous 5-residue window-smoothed pLDDT >= 0.70, length >= 50 aa; 161 models with 0 confident regions), all 40 rows (8 strata x 5 tiers) of v7_stratum_census.tsv are 100% arithmetically consistent with v7_model_summaries.tsv, v7_region_evaluations.tsv, and v7_full5851_cropped_regions_manifest.tsv (0 mismatches across 1,080 integer checks; verification_output.json -> h4_verification.h4_census_and_invariants).",
+        "At primary Tier 1 (self-PDB4 excluded for controls; identical to unfiltered Tier 0 for all 2,838 dark models), K_local_pdb (N = 849; 812 region-eligible, 37 no-region, 1,269 regions) increases from 64/849 (7.54%) whole-chain qTM >= 0.5 matches to 692/849 (81.51% unconditional; 692/812 = 85.22% region-eligible; 692/795 = 87.04% remaining-hit-conditional) cropped-region matches, with 633/785 (80.64% unconditional; 633/750 = 84.40% region-eligible) whole-chain-unmatched models recovering a qTM >= 0.5 fold match after cropping (v7_stratum_census.tsv row 3). Across Tiers 0-4 (excluding hits with fident >= 0.30, 0.25, 0.20), K_local_pdb counts are 100% invariant (692/849 at all 5 tiers; rows 2-6).",
+        "In the combined local-match dark stratum K_local_all (N = 936; 896 eligible, 40 no-region, 1,399 regions; v7_stratum_census.tsv row 33), matches increase from 67/936 (7.16%) whole-chain to 739/936 (78.95% unconditional; 739/896 = 82.48% eligible) after cropping at Tiers 0-3 (738/936 = 78.85% at Tier 4), whereas in the dual-novel negative stratum K_dual_none (N = 95; 88 eligible, 7 no-region, 119 regions; row 13), matches increase from 0/95 (0.0%) whole-chain to 36/95 (37.89% unconditional; 36/88 = 40.91% eligible) across all Tiers 0-4, yielding an unconditional difference of +43.61 percentage points (risk ratio 2.15) between K_local_pdb and K_dual_none ( and +41.06 percentage points, risk ratio 2.08, between K_local_all and K_dual_none; v7_recovery_summary.json lines 4488-4535).",
+        "Positive controls (N = 3,013; 3,000 eligible, 13 no-region, 4,125 regions; v7_stratum_census.tsv rows 27-31) achieve whole-chain and unconditional cropped-region qTM >= 0.5 match rates of 96.52% (2,908/3,013) and 96.32% (2,902/3,013; 96.73% eligible) at Tier 0, 95.52% (2,878/3,013) and 95.88% (2,889/3,013; 96.30% eligible) at Tier 1 (self-PDB4 excluded), and 94.32% (2,842/3,013), 93.69% (2,823/3,013), and 92.80% (2,796/3,013) at Tiers 2, 3, and 4 (fident < 0.30, 0.25, 0.20).",
+        "In Foldseek 10-941cd33 (source/structureconvertalis.cpp line 898), OUTFMT_ALNTMSCORE normalizes by std::min(res.qEndPos - res.qStartPos, res.dbEndPos - res.dbStartPos) = min(qspan - 1, tspan - 1), omitting + 1 on 0-indexed inclusive coordinates, whereas OUTFMT_QTMSCORE (line 903) and OUTFMT_TTMSCORE (line 908) normalize by exact lengths res.qLen and res.dbLen. Consequently, qtmscore (max 0.9979) and ttmscore (max 0.9976) have 0 out-of-range rows across all 6,845,932 raw alignment rows, while alntmscore > 1.00001 occurs in 2,194 rows (100% positive controls across 228 KF* queries; max 1.014). Multiplying alntm by (L_span - 1) / L_span reduces all 2,194 anomalous rows to <= 0.998008 (verification_output.json -> h4_verification.h4_tm_anomaly_and_flash_audit).",
+        "Although historical stratum definitions (K_local_pdb, K_local_afdb_only, K_dual_none) used baseline alnTM >= 0.5 (which is inflated by L_span / (L_span - 1)), our exact boundary audit of v7_model_summaries.tsv proves that only 5 of 849 K_local_pdb models (0.59%) lie in the [0.5, 0.5051] boundary zone for L_span >= 100 aa and only 14 of 849 (1.65%) lie in [0.5, 0.5102] for L_span >= 50 aa; excluding all 14 boundary models changes K_local_pdb Tier 1 crop match rate by -0.07 percentage points (from 81.51% [692/849] to 81.44% [680/835]; region-eligible from 85.22% to 85.21%; verification_output.json -> h4_verification.h4_tm_anomaly_and_flash_audit.historical_stratum_boundary_sensitivity)."
+      ],
+      "prohibited_claims": [
+        "Do NOT repeat any of the five erroneous claims in Flash's reviews/darkmatter-2026-10-13/round7/h4_tm_anomaly/DIAGNOSIS.md and findings.json: (1) do NOT claim Control Tier 0/1 match rates are 100% or that Control Tier 0/1 unconditional crop match rates are 94.75% (actual: 96.32% at Tier 0 and 95.88% at Tier 1); (2) do NOT state 5,851 cropped regions (actual: 7,773 cropped regions from 5,851 models); (3) do NOT report (query, tier) pair counts across 5 tiers in exclusion_sensitivity_diff.json (57, 160, 10, 209, 329, 41, 25, 25) as unique models or unique cropped regions (actual unique counts: 25, 78, 4 WC models and 93, 150, 15 cropped regions, affecting 9 unique models in Tiers 2-4); (4) do NOT claim dark-matter alnTM scores below 1.0 are 'mathematically impossible' to be affected by the L_span - 1 denominator bug; and (5) do NOT adopt an arbitrary alnTM <= 1.0200 verification relaxation.",
+        "Do NOT claim that H4 whole-chain vs cropped-region primary match classifications depend on alnTM; primary match classification uses qTM >= 0.5 exclusively, while historical stratum partitioning (K_local_pdb vs K_local_afdb_only vs K_dual_none) used baseline whole-chain alnTM >= 0.5 and must carry the explicit boundary sensitivity bound (5 to 14 models in K_local_pdb).",
+        "Do NOT declare the ORIX GPU sensitivity validation (array job 315233) scientifically closed based solely on Slurm exit code 0 or remote COMPLETE markers, and do NOT describe --gpu 1 --prefilter-mode 1 as an exact replay of the CPU (-s 9.5 k-mer prefilter) search or as a fix for the Foldseek 10-941cd33 alnTM > 1 bug."
+      ],
+      "findings": [
+        {
+          "id": "H4-F1",
+          "severity": "CRITICAL",
+          "title": "Five factual and methodological errors in Flash's h4_tm_anomaly/DIAGNOSIS.md and findings.json must be superseded",
+          "evidence": "reviews/darkmatter-2026-10-13/round7/h4_tm_anomaly/{DIAGNOSIS.md,findings.json,exclusion_sensitivity_diff.json,exclusion_sensitivity_census.tsv}, v7_stratum_census.tsv, and verification_output.json (h4_verification.h4_tm_anomaly_and_flash_audit)",
+          "detail": "While Flash correctly identified the missing + 1 at structureconvertalis.cpp:898, DIAGNOSIS.md and findings.json contain five disqualifying errors: (i) claiming 100% Control match retention and citing a non-existent 94.75% Tier 0/1 crop match rate (actual: 96.32% Tier 0, 95.88% Tier 1); (ii) citing 5,851 cropped regions instead of 7,773; (iii) reporting 5-tier (query, tier) tuple counts (57, 160, 10, 209, 329, 41, 25, 25) as unique models/regions (actual unique counts: 25, 78, 4 WC models; 93, 150, 15 regions; 9 models); (iv) claiming dark alnTM < 1.0 scores are mathematically immune to the denominator bug; and (v) proposing an arbitrary alnTM <= 1.0200 audit relaxation.",
+          "closure_condition": "Supersede h4_tm_anomaly/DIAGNOSIS.md and findings.json with the verified numbers in verification_output.json and ensure none of Flash's five errors enter the manuscript or Supplement."
+        },
+        {
+          "id": "H4-F2",
+          "severity": "MAJOR_BOUND",
+          "title": "Below-1.0 alnTM off-by-one inflation affects historical stratum assignment near alnTM = 0.5 and manuscript lines 328-339",
+          "evidence": "manuscript/main.tex (lines 328-339), v7_model_summaries.tsv, v7_region_evaluations.tsv, h4_baseline_score_ranges.json, h4_qualified_control_baseline_anomalies.json, and verification_output.json (h4_verification.h4_tm_anomaly_and_flash_audit.historical_stratum_boundary_sensitivity)",
+          "detail": "Dividing by L_span - 1 instead of L_span inflates all Foldseek 10-941cd33 alnTM scores by ~L_span / (L_span - 1). Historical baseline per_control_structures.tsv.gz has 47 qualified control PDB alnTM > 1 and 85 AFDB alnTM > 1. Among the 1,031 dual-novel dark models partitioned by historical alnTM >= 0.5 into K_local_pdb (849), K_local_afdb_only (87), and K_dual_none (95), exactly 5 K_local_pdb models (for L_span >= 100 aa, [0.5, 0.5051]) and 14 K_local_pdb models (for L_span >= 50 aa, [0.5, 0.5102]) lie in the boundary zone (plus 1 and 2 models in K_local_afdb_only). Removing all 14 boundary models changes the K_local_pdb Tier 1 crop match rate by only -0.07 percentage points (81.51% to 81.44%). In current Round 7 searches, exact qspan rescaling crosses 0.5 for only 1/2,838 dark WC models and 14/3,648 dark cropped regions.",
+          "closure_condition": "Document these exact boundary bounds (5-14 of 849 K_local_pdb models; <=0.07 percentage-point effect on crop recovery) in the manuscript/Supplement alongside the explanation of why cropped-region qTM >= 0.5 is immune to the alignment-span off-by-one defect."
+        },
+        {
+          "id": "H4-F3",
+          "severity": "MAJOR_BOUND",
+          "title": "ORIX GPU array job 315233 is an ungapped-prefilter sensitivity (--gpu 1 --prefilter-mode 1) and awaits Root's independent raw CPU-vs-GPU comparison",
+          "evidence": "reviews/darkmatter-2026-10-13/round7/orix_h4_gpu/{README.md,search.sbatch,prepare.py,transfer_status.json}",
+          "detail": "ORIX GPU array 315233 completed on freecycle-h200 (task 0 restart 2 promoted WC outputs, restart 3 exited 0 via idempotency guard; task 1 restart 0 promoted crop outputs). However, --gpu 1 --prefilter-mode 1 uses ungapped alignment prefiltering rather than CPU -s 9.5 k-mer prefiltering, runs the same Foldseek 10-941cd33 commit (so alnTM > 1 remains present), and raw hit outputs have not yet been post-processed into 5-tier census tables, checked for --max-seqs 1000 saturation on controls, or compared against the CPU census.",
+          "closure_condition": "Complete Root's independent raw CPU-vs-GPU hit comparison and 5-tier post-processing before citing ORIX GPU agreement in the manuscript or Supplement; frame any GPU result strictly as an ungapped-prefilter sensitivity."
+        }
+      ],
+      "concrete_closure_conditions": [
+        "Supersede Flash's h4_tm_anomaly/DIAGNOSIS.md and findings.json so that only verified Control match rates (Tier 0: 96.32%, Tier 1: 95.88%), verified cropped-region counts (7,773), verified unique entity counts from exclusion_sensitivity_diff.json (25/78/4 WC models, 93/150/15 cropped regions, 9 models with crop status changes in Tiers 2-4), and exact span-rescaled bounds are used.",
+        "In manuscript/main.tex (after line 350 and in Methods), add the verified CPU paired whole-chain vs confident-region cropped qTM >= 0.5 census (K_local_pdb: 7.54% WC to 81.51% crop unconditional / 85.22% region-eligible, 80.64% WC-unmatched recovery; K_local_all: 7.16% to 78.95%; K_dual_none: 0.0% to 37.89%; Controls Tier 1: 95.88%, Tier 4: 92.80%) and explicitly state the Foldseek 10-941cd33 structureconvertalis.cpp:898 off-by-one alignment-span normalization formula and our empirical bound on historical alnTM >= 0.5 stratum assignment (5-14 of 849 K_local_pdb models; -0.07 percentage-point impact).",
+        "Keep ORIX GPU sensitivity (job 315233) marked PENDING until Root completes the raw hit-level CPU-vs-GPU comparison and saturation/tier post-processing."
+      ]
+    }
+  }
+}

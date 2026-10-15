@@ -1,0 +1,8 @@
+Root audit of implementation in progress. Do not mark these closed without checking final code:
+1. H1 upstream paths in current_manuscript_artifacts.tsv must use p6_hypotheses_clean/h1_lineage, not p7_analyses_clean/h1_lineage.
+2. h4/gpu_cpu_census.tsv upstream belongs h4_structure/orix_gpu_20261014/audit/gpu_cpu_census.tsv, not results/.
+3. h4_exclusion_fact_audit.json is root-local generated evidence (root_checks); do not invent an upstream results/ path. Pin local source and final review mirror.
+4. tm_anomaly_census.json actual remote sensitivity directory must be checked, not assumed results/.
+5. h1_tree_taxa_count() hardcodes1647 and30. Actual compact thermo_tree_taxa.tsv is now root_checks/thermo_tree_taxa.tsv; copy/pin and count rows/sets instead. Existing v3 INPUTS hash f7df2ca1e769dca52d480231bf9e962e8c75d0d18596e1c9f61b1bd9919a751f.
+6. H4 pooled CPU helper should explicitly use tier_1 (primary) even though darktiers0/1agree.
+7. Whole historical verify.py gate is known stale; preserve honest separation from current driver, do not reinsert withdrawn manuscriptclaims merelyto satisfyoldguards. Root has retired alnTM claims and797guard in current_revision_checks.py/current_claims.tsv, preservingoriginal.

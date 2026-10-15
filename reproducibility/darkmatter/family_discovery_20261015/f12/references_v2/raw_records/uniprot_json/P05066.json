@@ -1,0 +1,1973 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P05066",
+  "secondaryAccessions": [
+    "D6W379"
+  ],
+  "uniProtkbId": "PHR_YEAST",
+  "entryAudit": {
+    "firstPublicDate": "1987-08-13",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1987-08-13",
+    "entryVersion": 207,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 5.0,
+  "organism": {
+    "scientificName": "Saccharomyces cerevisiae (strain ATCC 204508 / S288c)",
+    "commonName": "Baker's yeast",
+    "taxonId": 559292,
+    "lineage": [
+      "Eukaryota",
+      "Fungi",
+      "Dikarya",
+      "Ascomycota",
+      "Saccharomycotina",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomycetaceae",
+      "Saccharomyces"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Deoxyribodipyrimidine photo-lyase, mitochondrial"
+      },
+      "ecNumbers": [
+        {
+          "value": "4.1.99.3"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "DNA photolyase"
+        }
+      },
+      {
+        "fullName": {
+          "value": "Photoreactivating enzyme"
+        }
+      }
+    ],
+    "flag": "Precursor"
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "PHR1"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "YOR386W"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "value": "Involved in repair of UV radiation-induced DNA damage. Catalyzes the light-dependent monomerization (300-600 nm) of cyclobutyl pyrimidine dimers (in cis-syn configuration), which are formed between adjacent bases on the same DNA strand upon exposure to ultraviolet radiation"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "cyclobutadipyrimidine (in DNA) = 2 pyrimidine residues (in DNA).",
+        "ecNumber": "4.1.99.3"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "FAD",
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:57692"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "value": "Binds 1 FAD per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "(6R)-5,10-methylene-5,6,7,8-tetrahydrofolate",
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:15636"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "value": "Binds 1 5,10-methenyltetrahydrofolate (MTHF) non-covalently per subunit."
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "BIOPHYSICOCHEMICAL PROPERTIES",
+      "absorption": {
+        "max": 377,
+        "approximate": false,
+        "note": {
+          "texts": [
+            {
+              "value": "Has a fluorescence excitation maximum at 390 nm and an emission maximum at 475 nm."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Monomer"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "value": "Nucleus",
+            "id": "SL-0191"
+          }
+        },
+        {
+          "location": {
+            "value": "Mitochondrion",
+            "id": "SL-0173"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "value": "There are only 150-300 molecules of photolyase per yeast cell"
+        }
+      ],
+      "commentType": "MISCELLANEOUS"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "14562106"
+            }
+          ],
+          "value": "Present with 688 molecules/cell in log phase SD medium"
+        }
+      ],
+      "commentType": "MISCELLANEOUS"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the DNA photolyase class-1 family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Transit peptide",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": null,
+          "modifier": "UNKNOWN"
+        }
+      },
+      "description": "Mitochondrion"
+    },
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": null,
+          "modifier": "UNKNOWN"
+        },
+        "end": {
+          "value": 565,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Deoxyribodipyrimidine photo-lyase, mitochondrial",
+      "featureId": "PRO_0000024051"
+    },
+    {
+      "type": "Domain",
+      "location": {
+        "start": {
+          "value": 75,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 226,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Photolyase/cryptochrome alpha/beta"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 384,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 391,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Interaction with DNA",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 451,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 452,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Interaction with DNA",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 326,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 326,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 338,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 342,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 482,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 484,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:57692"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "FAD",
+        "id": "ChEBI:CHEBI:57692"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 514,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 514,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:16991"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "DNA",
+        "id": "ChEBI:CHEBI:16991"
+      }
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 416,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 416,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 469,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 469,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Site",
+      "location": {
+        "start": {
+          "value": 492,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 492,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Electron transfer via tryptophanyl radical",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 387,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 387,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Reduces substrate binding 100-fold. Reduces quantum yield for dimer photolysis 3-fold.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "8344951"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "W",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 463,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 463,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Reduces substrate binding 100-fold.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "8344951"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "K",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 507,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 507,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Reduces substrate binding 100-fold.",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000269",
+          "source": "PubMed",
+          "id": "8344951"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "R",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Mutagenesis",
+      "location": {
+        "start": {
+          "value": 517,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 517,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Reduces substrate binding 10-fold.",
+      "alternativeSequence": {
+        "originalSequence": "K",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 77,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 77,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 2; AAA34875",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "V",
+        "alternativeSequences": [
+          "A"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 165,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 165,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 2; AAA34875",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "T",
+        "alternativeSequences": [
+          "S"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 169,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 169,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 2; AAA34875",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "S",
+        "alternativeSequences": [
+          "T"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 200,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 200,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 2; AAA34875",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "D",
+        "alternativeSequences": [
+          "S"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 351,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 351,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 2; AAA34875",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "S",
+        "alternativeSequences": [
+          "R"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 365,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 365,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 2; AAA34875",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "G",
+        "alternativeSequences": [
+          "E"
+        ]
+      }
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 473,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 473,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 2; AAA34875",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "E",
+        "alternativeSequences": [
+          "K"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0157",
+      "category": "Ligand",
+      "name": "Chromophore"
+    },
+    {
+      "id": "KW-0227",
+      "category": "Biological process",
+      "name": "DNA damage"
+    },
+    {
+      "id": "KW-0234",
+      "category": "Biological process",
+      "name": "DNA repair"
+    },
+    {
+      "id": "KW-0238",
+      "category": "Molecular function",
+      "name": "DNA-binding"
+    },
+    {
+      "id": "KW-0274",
+      "category": "Ligand",
+      "name": "FAD"
+    },
+    {
+      "id": "KW-0285",
+      "category": "Ligand",
+      "name": "Flavoprotein"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0496",
+      "category": "Cellular component",
+      "name": "Mitochondrion"
+    },
+    {
+      "id": "KW-0547",
+      "category": "Ligand",
+      "name": "Nucleotide-binding"
+    },
+    {
+      "id": "KW-0539",
+      "category": "Cellular component",
+      "name": "Nucleus"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0809",
+      "category": "Domain",
+      "name": "Transit peptide"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "3906569",
+        "citationType": "journal article",
+        "authors": [
+          "Sancar G.B."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "3906569"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/nar/13.22.8231"
+          }
+        ],
+        "title": "Sequence of the Saccharomyces cerevisiae PHR1 gene and homology of the PHR1 photolyase to E. coli photolyase.",
+        "publicationDate": "1985",
+        "journal": "Nucleic Acids Res.",
+        "firstPage": "8231",
+        "lastPage": "8246",
+        "volume": "13"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "3000886",
+        "citationType": "journal article",
+        "authors": [
+          "Yasui A.",
+          "Langeveld S.A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "3000886"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/0378-1119(85)90190-8"
+          }
+        ],
+        "title": "Homology between the photoreactivation genes of Saccharomyces cerevisiae and Escherichia coli.",
+        "publicationDate": "1985",
+        "journal": "Gene",
+        "firstPage": "349",
+        "lastPage": "355",
+        "volume": "36"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "3316199",
+        "citationType": "journal article",
+        "authors": [
+          "Sancar G.B.",
+          "Smith F.W.",
+          "Heelis P.F."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "3316199"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s0021-9258(18)47748-4"
+          }
+        ],
+        "title": "Purification of the yeast PHR1 photolyase from an Escherichia coli overproducing strain and characterization of the intrinsic chromophores of the enzyme.",
+        "publicationDate": "1987",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "15457",
+        "lastPage": "15465",
+        "volume": "262"
+      },
+      "referencePositions": [
+        "CHARACTERIZATION"
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "9169874",
+        "citationType": "journal article",
+        "authors": [
+          "Dujon B.",
+          "Albermann K.",
+          "Aldea M.",
+          "Alexandraki D.",
+          "Ansorge W.",
+          "Arino J.",
+          "Benes V.",
+          "Bohn C.",
+          "Bolotin-Fukuhara M.",
+          "Bordonne R.",
+          "Boyer J.",
+          "Camasses A.",
+          "Casamayor A.",
+          "Casas C.",
+          "Cheret G.",
+          "Cziepluch C.",
+          "Daignan-Fornier B.",
+          "Dang V.-D.",
+          "de Haan M.",
+          "Delius H.",
+          "Durand P.",
+          "Fairhead C.",
+          "Feldmann H.",
+          "Gaillon L.",
+          "Galisson F.",
+          "Gamo F.-J.",
+          "Gancedo C.",
+          "Goffeau A.",
+          "Goulding S.E.",
+          "Grivell L.A.",
+          "Habbig B.",
+          "Hand N.J.",
+          "Hani J.",
+          "Hattenhorst U.",
+          "Hebling U.",
+          "Hernando Y.",
+          "Herrero E.",
+          "Heumann K.",
+          "Hiesel R.",
+          "Hilger F.",
+          "Hofmann B.",
+          "Hollenberg C.P.",
+          "Hughes B.",
+          "Jauniaux J.-C.",
+          "Kalogeropoulos A.",
+          "Katsoulou C.",
+          "Kordes E.",
+          "Lafuente M.J.",
+          "Landt O.",
+          "Louis E.J.",
+          "Maarse A.C.",
+          "Madania A.",
+          "Mannhaupt G.",
+          "Marck C.",
+          "Martin R.P.",
+          "Mewes H.-W.",
+          "Michaux G.",
+          "Paces V.",
+          "Parle-McDermott A.G.",
+          "Pearson B.M.",
+          "Perrin A.",
+          "Pettersson B.",
+          "Poch O.",
+          "Pohl T.M.",
+          "Poirey R.",
+          "Portetelle D.",
+          "Pujol A.",
+          "Purnelle B.",
+          "Ramezani Rad M.",
+          "Rechmann S.",
+          "Schwager C.",
+          "Schweizer M.",
+          "Sor F.",
+          "Sterky F.",
+          "Tarassov I.A.",
+          "Teodoru C.",
+          "Tettelin H.",
+          "Thierry A.",
+          "Tobiasch E.",
+          "Tzermia M.",
+          "Uhlen M.",
+          "Unseld M.",
+          "Valens M.",
+          "Vandenbol M.",
+          "Vetter I.",
+          "Vlcek C.",
+          "Voet M.",
+          "Volckaert G.",
+          "Voss H.",
+          "Wambutt R.",
+          "Wedler H.",
+          "Wiemann S.",
+          "Winsor B.",
+          "Wolfe K.H.",
+          "Zollner A.",
+          "Zumstein E.",
+          "Kleine K."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9169874"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/387s098"
+          }
+        ],
+        "title": "The nucleotide sequence of Saccharomyces cerevisiae chromosome XV.",
+        "publicationDate": "1997",
+        "journal": "Nature",
+        "firstPage": "98",
+        "lastPage": "102",
+        "volume": "387"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 204508 / S288c",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "24374639",
+        "citationType": "journal article",
+        "authors": [
+          "Engel S.R.",
+          "Dietrich F.S.",
+          "Fisk D.G.",
+          "Binkley G.",
+          "Balakrishnan R.",
+          "Costanzo M.C.",
+          "Dwight S.S.",
+          "Hitz B.C.",
+          "Karra K.",
+          "Nash R.S.",
+          "Weng S.",
+          "Wong E.D.",
+          "Lloyd P.",
+          "Skrzypek M.S.",
+          "Miyasato S.R.",
+          "Simison M.",
+          "Cherry J.M."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "24374639"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1534/g3.113.008995"
+          }
+        ],
+        "title": "The reference genome sequence of Saccharomyces cerevisiae: Then and now.",
+        "publicationDate": "2014",
+        "journal": "G3 (Bethesda)",
+        "firstPage": "389",
+        "lastPage": "398",
+        "volume": "4"
+      },
+      "referencePositions": [
+        "GENOME REANNOTATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 204508 / S288c",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "8344951",
+        "citationType": "journal article",
+        "authors": [
+          "Baer M.E.",
+          "Sancar G.B."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8344951"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s0021-9258(19)85476-5"
+          }
+        ],
+        "title": "The role of conserved amino acids in substrate binding and discrimination by photolyase.",
+        "publicationDate": "1993",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "16717",
+        "lastPage": "16724",
+        "volume": "268"
+      },
+      "referencePositions": [
+        "MUTAGENESIS OF TRP-387; LYS-463 AND ARG-507"
+      ]
+    },
+    {
+      "referenceNumber": 7,
+      "citation": {
+        "id": "14562106",
+        "citationType": "journal article",
+        "authors": [
+          "Ghaemmaghami S.",
+          "Huh W.-K.",
+          "Bower K.",
+          "Howson R.W.",
+          "Belle A.",
+          "Dephoure N.",
+          "O'Shea E.K.",
+          "Weissman J.S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "14562106"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/nature02046"
+          }
+        ],
+        "title": "Global analysis of protein expression in yeast.",
+        "publicationDate": "2003",
+        "journal": "Nature",
+        "firstPage": "737",
+        "lastPage": "741",
+        "volume": "425"
+      },
+      "referencePositions": [
+        "LEVEL OF PROTEIN EXPRESSION [LARGE SCALE ANALYSIS]"
+      ]
+    },
+    {
+      "referenceNumber": 8,
+      "citation": {
+        "id": "15721603",
+        "citationType": "journal article",
+        "authors": [
+          "Weber S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "15721603"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/j.bbabio.2004.02.010"
+          }
+        ],
+        "title": "Light-driven enzymatic catalysis of DNA repair: a review of recent biophysical studies on photolyase.",
+        "publicationDate": "2005",
+        "journal": "Biochim. Biophys. Acta",
+        "firstPage": "1",
+        "lastPage": "23",
+        "volume": "1707"
+      },
+      "referencePositions": [
+        "REVIEW"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "X03183",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA26944.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "M11578",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAA34875.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "Z75294",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA99718.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "BK006948",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "DAA11145.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "S67298",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S67298"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_015031.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NM_001183806.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P05066",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P05066",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID",
+      "id": "34767",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "49"
+        }
+      ]
+    },
+    {
+      "database": "DIP",
+      "id": "DIP-6327N",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "FunCoup",
+      "id": "P05066",
+      "properties": [
+        {
+          "key": "Number of interactors",
+          "value": "411"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "P05066",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "29"
+        }
+      ]
+    },
+    {
+      "database": "MINT",
+      "id": "P05066",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "4932.YOR386W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "iPTMnet",
+      "id": "P05066",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "4932-YOR386W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PeptideAtlas",
+      "id": "P05066",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblFungi",
+      "id": "YOR386W_mRNA",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "YOR386W"
+        },
+        {
+          "key": "GeneId",
+          "value": "YOR386W"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "854568",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "sce:YOR386W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AGR",
+      "id": "SGD:S000005913",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SGD",
+      "id": "S000005913",
+      "properties": [
+        {
+          "key": "GeneName",
+          "value": "PHR1"
+        }
+      ]
+    },
+    {
+      "database": "VEuPathDB",
+      "id": "FungiDB:YOR386W",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "KOG0133",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Eukaryota"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_010348_2_1_1",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "P05066",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "YTVFTPY",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "435881at2759",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "YEAST:G3O-33848-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioGRID-ORCS",
+      "id": "854568",
+      "properties": [
+        {
+          "key": "hits",
+          "value": "0 hits in 10 CRISPR screens"
+        }
+      ]
+    },
+    {
+      "database": "PRO",
+      "id": "PR:P05066",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000002311",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome XV"
+        }
+      ]
+    },
+    {
+      "database": "RNAct",
+      "id": "P05066",
+      "properties": [
+        {
+          "key": "moleculeType",
+          "value": "protein"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005737",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytoplasm"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "14562095"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005739",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:mitochondrion"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "14576278"
+        },
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "16823961"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005634",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:nucleus"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "HDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007005",
+          "source": "PubMed",
+          "id": "14562095"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003904",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:deoxyribodipyrimidine photo-lyase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "2911265"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003729",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:mRNA binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "21124907"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0032922",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:circadian regulation of gene expression"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0043153",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:entrainment of circadian clock by photoperiod"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IBA:GO_Central"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000719",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:photoreactive repair"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "TAS:SGD"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000304",
+          "source": "PubMed",
+          "id": "10915863"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.25.40.80",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "-"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "1.10.579.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA Cyclobutane Dipyrimidine Photolyase, subunit A, domain 3"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.620",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HUPs"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036134",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_FAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036155",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Crypto/Photolyase_N_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR005101",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochr/Photolyase_FAD-bd"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR002081",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/DNA_photolyase_1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR018394",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_1_CS_C"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006050",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase_N"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014729",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Rossmann-like_a/b/a_fold"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CRYPTOCHROME"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11455:SF18",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "SI:CH1073-390K14.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00875",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_photolyase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF03441",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "FAD_binding_7"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PRINTS",
+      "id": "PR00147",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNAPHOTLYASE"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF48173",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase FAD-binding domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF52425",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Cryptochrome/photolyase, N-terminal domain"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00394",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_PHOTOLYASES_1_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00691",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DNA_PHOTOLYASES_1_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS51645",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHR_CRY_ALPHA_BETA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MKRTVISSSNAYASKRSRLDIEHDFEQYHSLNKKYYPRPITRTGANQFNNKSRAKPMEIVEKLQKKQKTSFENVSTVMHWFRNDLRLYDNVGLYKSVALFQQLRQKNAKAKLYAVYVINEDDWRAHMDSGWKLMFIMGALKNLQQSLAELHIPLLLWEFHTPKSTLSNSKEFVEFFKEKCMNVSSGTGTIITANIEYQTDELYRDIRLLENEDHRLQLKYYHDSCIVAPGLITTDRGTNYSVFTPWYKKWVLYVNNYKKSTSEICHLHIIEPLKYNETFELKPFQYSLPDEFLQYIPKSKWCLPDVSEEAALSRLKDFLGTKSSKYNNEKDMLYLGGTSGLSVYITTGRISTRLIVNQAFQSCNGQIMSKALKDNSSTQNFIKEVAWRDFYRHCMCNWPYTSMGMPYRLDTLDIKWENNPVAFEKWCTGNTGIPIVDAIMRKLLYTGYINNRSRMITASFLSKNLLIDWRWGERWFMKHLIDGDSSSNVGGWGFCSSTGIDAQPYFRVFNMDIQAKKYDPQMIFVKQWVPELISSENKRPENYPKPLVDLKHSRERALKVYKDAM",
+    "length": 565,
+    "molWeight": 66274,
+    "crc64": "CD4FC3DA6128B97C",
+    "md5": "EEE7433E3B4249579B896CA493FEE7AB"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 2,
+      "BIOPHYSICOCHEMICAL PROPERTIES": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "MISCELLANEOUS": 2,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Transit peptide": 1,
+      "Chain": 1,
+      "Domain": 1,
+      "Region": 2,
+      "Binding site": 4,
+      "Site": 3,
+      "Mutagenesis": 4,
+      "Sequence conflict": 7
+    },
+    "uniParcId": "UPI00001319FE"
+  }
+}

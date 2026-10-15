@@ -1,0 +1,1331 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P27134",
+  "secondaryAccessions": [
+    "Q31N92"
+  ],
+  "uniProtkbId": "CYNT_SYNE7",
+  "entryAudit": {
+    "firstPublicDate": "1992-08-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "1992-08-01",
+    "entryVersion": 117,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 4.0,
+  "organism": {
+    "scientificName": "Synechococcus elongatus (strain ATCC 33912 / PCC 7942 / FACHB-805)",
+    "commonName": "Anacystis nidulans R2",
+    "taxonId": 1140,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Cyanobacteriota",
+      "Cyanophyceae",
+      "Synechococcales",
+      "Synechococcaceae",
+      "Synechococcus"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "1584776"
+          }
+        ],
+        "value": "Carbonic anhydrase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q54735"
+            }
+          ],
+          "value": "4.2.1.1"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Carbonate dehydratase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "17675289"
+          }
+        ],
+        "value": "ccaA"
+      },
+      "synonyms": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "1584776"
+            }
+          ],
+          "value": "icfA"
+        }
+      ],
+      "orderedLocusNames": [
+        {
+          "value": "Synpcc7942_1447"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24585024"
+            },
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "1584776"
+            }
+          ],
+          "value": "Reversible hydration of carbon dioxide. Essential to photosynthetic carbon dioxide fixation, supplies CO(2) to RuBisCO (ribulose bisphosphate carboxylase, rbcL-rbcS) in the carboxysome (Probable). Loss of activity results in limitation of CO(2) availability to RuBisCO located in the cytoplasm (PubMed:24585024)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "hydrogencarbonate + H(+) = CO2 + H2O",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:10748"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15378"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16526"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:17544"
+          }
+        ],
+        "ecNumber": "4.2.1.1",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000250",
+            "source": "UniProtKB",
+            "id": "Q54735"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Zn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q54735"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29105"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "Q54735"
+              }
+            ],
+            "value": "Binds 1 zinc ion per monomer."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "Q54735"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "17675289"
+            }
+          ],
+          "value": "A hexamer formed by a trimer of dimers (By similarity). Purified from carboxysomes with the both RuBisCO subunits and the full-length form of CcmM, probably interacts with the N-terminus of CcmM (PubMed:17675289)"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250",
+                "source": "UniProtKB",
+                "id": "Q54735"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "22928045"
+              }
+            ],
+            "value": "This cyanobacterium makes beta-type carboxysomes (PubMed:22928045). Associates with the shell portion of carboxysomes (By similarity)"
+          }
+        ]
+      },
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "17675289"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "20304968"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "22928045"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "28616951"
+              },
+              {
+                "evidenceCode": "ECO:0000269",
+                "source": "PubMed",
+                "id": "31048338"
+              }
+            ],
+            "value": "Carboxysome",
+            "id": "SL-0034"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "31048338"
+            }
+          ],
+          "value": "Carboxysome size and components vary with growth conditions. When grown in ambient air at medium light (50 uE meter(-2) second(-1)) there are 14 units of this protein per carboxysome, the numbers decrease slightly under low light, and increase under high light and high CO(2) (at protein level)"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "1584776"
+            },
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "24585024"
+            }
+          ],
+          "value": "Essential for photosynthetic CO(2) fixation, cells do not grow in normal air, but will grow in 5% CO(2), called a high-CO(2) requiring phenotype, HCR (PubMed:1584776). Cells do not grow in 2% CO(2), and grow more slowly than wild-type at 5% CO(2). 70% reduction in the efficiency of RuBisCO carboxylation activity from isolated carboxysomes; there is probably considerable oxygenation of the substrate (PubMed:24585024)"
+        }
+      ],
+      "commentType": "DISRUPTION PHENOTYPE"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "29922315"
+            }
+          ],
+          "value": "Heterologous expression of 12 carboxysomal genes in E.coli (ccaA, ccmK2, ccmK3, ccmK4, ccmL, ccmM, ccmN, ccmO, ccmP, rbcL, rbcS, rbcX) leads to the formation of bodies that resemble carboxysomes, have densely packed paracrystalline arrays and RuBisCO activity. These structures open the door to generating carboxysomes in plant cells to increase their photosynthesis and productivity, as well as tailoring bacterial microcompartments to specific metabolic needs and molecule delivery. The absence of ccaA, ccmK3, ccmK4, ccmP and rbcX leads to less active RuBisCO"
+        }
+      ],
+      "commentType": "BIOTECHNOLOGY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the beta-class carbonic anhydrase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 272,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Carbonic anhydrase",
+      "featureId": "PRO_0000077463"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 39,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 39,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q54735"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 98,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 98,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q54735"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 101,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 101,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29105"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250",
+          "source": "UniProtKB",
+          "id": "Q54735"
+        }
+      ],
+      "ligand": {
+        "name": "Zn(2+)",
+        "id": "ChEBI:CHEBI:29105"
+      }
+    },
+    {
+      "type": "Helix",
+      "location": {
+        "start": {
+          "value": 260,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 267,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0007829",
+          "source": "PDB",
+          "id": "7O54"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0002",
+      "category": "Technical term",
+      "name": "3D-structure"
+    },
+    {
+      "id": "KW-1283",
+      "category": "Cellular component",
+      "name": "Bacterial microcompartment"
+    },
+    {
+      "id": "KW-0120",
+      "category": "Biological process",
+      "name": "Carbon dioxide fixation"
+    },
+    {
+      "id": "KW-1282",
+      "category": "Cellular component",
+      "name": "Carboxysome"
+    },
+    {
+      "id": "KW-0456",
+      "category": "Molecular function",
+      "name": "Lyase"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0602",
+      "category": "Biological process",
+      "name": "Photosynthesis"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0862",
+      "category": "Ligand",
+      "name": "Zinc"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "1584776",
+        "citationType": "journal article",
+        "authors": [
+          "Fukuzawa H.",
+          "Suzuki E.",
+          "Komukai Y.",
+          "Miyachi S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "1584776"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1073/pnas.89.10.4437"
+          }
+        ],
+        "title": "A gene homologous to chloroplast carbonic anhydrase (icfA) is essential to photosynthetic carbon dioxide fixation by Synechococcus PCC7942.",
+        "publicationDate": "1992",
+        "journal": "Proc. Natl. Acad. Sci. U.S.A.",
+        "firstPage": "4437",
+        "lastPage": "4441",
+        "volume": "89"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]",
+        "FUNCTION",
+        "DISRUPTION PHENOTYPE"
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "CI-CU51TSAST57K7",
+        "citationType": "submission",
+        "authoringGroup": [
+          "US DOE Joint Genome Institute"
+        ],
+        "authors": [
+          "Copeland A.",
+          "Lucas S.",
+          "Lapidus A.",
+          "Barry K.",
+          "Detter J.C.",
+          "Glavina T.",
+          "Hammon N.",
+          "Israni S.",
+          "Pitluck S.",
+          "Schmutz J.",
+          "Larimer F.",
+          "Land M.",
+          "Kyrpides N.",
+          "Lykidis A.",
+          "Golden S.",
+          "Richardson P."
+        ],
+        "title": "Complete sequence of chromosome 1 of Synechococcus elongatus PCC 7942.",
+        "publicationDate": "AUG-2005",
+        "submissionDatabase": "EMBL/GenBank/DDBJ databases"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 33912 / PCC 7942 / FACHB-805",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "17675289",
+        "citationType": "journal article",
+        "authors": [
+          "Long B.M.",
+          "Badger M.R.",
+          "Whitney S.M.",
+          "Price G.D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17675289"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1074/jbc.m703896200"
+          }
+        ],
+        "title": "Analysis of carboxysomes from Synechococcus PCC7942 reveals multiple Rubisco complexes with carboxysomal proteins CcmM and CcaA.",
+        "publicationDate": "2007",
+        "journal": "J. Biol. Chem.",
+        "firstPage": "29323",
+        "lastPage": "29335",
+        "volume": "282"
+      },
+      "referencePositions": [
+        "INTERACTION WITH CCMM",
+        "SUBUNIT",
+        "SUBCELLULAR LOCATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 33912 / PCC 7942 / FACHB-805",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "20304968",
+        "citationType": "journal article",
+        "authors": [
+          "Long B.M.",
+          "Tucker L.",
+          "Badger M.R.",
+          "Price G.D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "20304968"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1104/pp.110.154948"
+          }
+        ],
+        "title": "Functional cyanobacterial beta-carboxysomes have an absolute requirement for both long and short forms of the CcmM protein.",
+        "publicationDate": "2010",
+        "journal": "Plant Physiol.",
+        "firstPage": "285",
+        "lastPage": "293",
+        "volume": "153"
+      },
+      "referencePositions": [
+        "SUBCELLULAR LOCATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 33912 / PCC 7942 / FACHB-805",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "22928045",
+        "citationType": "journal article",
+        "authors": [
+          "Rae B.D.",
+          "Long B.M.",
+          "Badger M.R.",
+          "Price G.D."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "22928045"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1371/journal.pone.0043871"
+          }
+        ],
+        "title": "Structural determinants of the outer shell of beta-carboxysomes in Synechococcus elongatus PCC 7942: roles for CcmK2, K3-K4, CcmO, and CcmL.",
+        "publicationDate": "2012",
+        "journal": "PLoS ONE",
+        "firstPage": "e43871",
+        "lastPage": "e43871",
+        "volume": "7"
+      },
+      "referencePositions": [
+        "SUBCELLULAR LOCATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 33912 / PCC 7942 / FACHB-805",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 6,
+      "citation": {
+        "id": "24585024",
+        "citationType": "journal article",
+        "authors": [
+          "Nishimura T.",
+          "Yamaguchi O.",
+          "Takatani N.",
+          "Maeda S.",
+          "Omata T."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "24585024"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1007/s11120-014-9986-7"
+          }
+        ],
+        "title": "In vitro and in vivo analyses of the role of the carboxysomal beta-type carbonic anhydrase of the cyanobacterium Synechococcus elongatus in carboxylation of ribulose-1,5-bisphosphate.",
+        "publicationDate": "2014",
+        "journal": "Photosyn. Res.",
+        "firstPage": "151",
+        "lastPage": "157",
+        "volume": "121"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "DISRUPTION PHENOTYPE"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 33912 / PCC 7942 / FACHB-805",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 7,
+      "citation": {
+        "id": "28616951",
+        "citationType": "journal article",
+        "authors": [
+          "Faulkner M.",
+          "Rodriguez-Ramos J.",
+          "Dykes G.F.",
+          "Owen S.V.",
+          "Casella S.",
+          "Simpson D.M.",
+          "Beynon R.J.",
+          "Liu L.N."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "28616951"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1039/c7nr02524f"
+          }
+        ],
+        "title": "Direct characterization of the native structure and mechanics of cyanobacterial carboxysomes.",
+        "publicationDate": "2017",
+        "journal": "Nanoscale",
+        "firstPage": "10662",
+        "lastPage": "10673",
+        "volume": "9"
+      },
+      "referencePositions": [
+        "SUBCELLULAR LOCATION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 33912 / PCC 7942 / FACHB-805",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 8,
+      "citation": {
+        "id": "29922315",
+        "citationType": "journal article",
+        "authors": [
+          "Fang Y.",
+          "Huang F.",
+          "Faulkner M.",
+          "Jiang Q.",
+          "Dykes G.F.",
+          "Yang M.",
+          "Liu L.N."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "29922315"
+          },
+          {
+            "database": "DOI",
+            "id": "10.3389/fpls.2018.00739"
+          }
+        ],
+        "title": "Engineering and Modulating Functional Cyanobacterial CO2-Fixing Organelles.",
+        "publicationDate": "2018",
+        "journal": "Front. Plant Sci.",
+        "firstPage": "739",
+        "lastPage": "739",
+        "volume": "9"
+      },
+      "referencePositions": [
+        "BIOTECHNOLOGY"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 33912 / PCC 7942 / FACHB-805",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 9,
+      "citation": {
+        "id": "31048338",
+        "citationType": "journal article",
+        "authors": [
+          "Sun Y.",
+          "Wollman A.J.M.",
+          "Huang F.",
+          "Leake M.C.",
+          "Liu L.N."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "31048338"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1105/tpc.18.00787"
+          }
+        ],
+        "title": "Single-Organelle Quantification Reveals Stoichiometric and Structural Variability of Carboxysomes Dependent on the Environment.",
+        "publicationDate": "2019",
+        "journal": "Plant Cell",
+        "firstPage": "1648",
+        "lastPage": "1664",
+        "volume": "31"
+      },
+      "referencePositions": [
+        "SUBCELLULAR LOCATION",
+        "INDUCTION"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 33912 / PCC 7942 / FACHB-805",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "M77095",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAA27315.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "CP000100",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "ABB57477.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "S28795",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S28795"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_011378036.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_007604.1"
+        }
+      ]
+    },
+    {
+      "database": "PDB",
+      "id": "7O54",
+      "properties": [
+        {
+          "key": "Method",
+          "value": "X-ray"
+        },
+        {
+          "key": "Resolution",
+          "value": "1.63 A"
+        },
+        {
+          "key": "Chains",
+          "value": "B=256-272"
+        }
+      ]
+    },
+    {
+      "database": "PDBsum",
+      "id": "7O54",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P27134",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P27134",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "1140.Synpcc7942_1447",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "1140-Synpcc7942_1447",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "72430310",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "syf:Synpcc7942_1447",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG0288",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_053879_5_3_3",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9797527at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "SYNEL:SYNPCC7942_1447-MONOMER",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000889800",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0031470",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:carboxysome"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IDA:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000314",
+          "source": "PubMed",
+          "id": "17675289"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004089",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:carbonate dehydratase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IMP:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000315",
+          "source": "PubMed",
+          "id": "24585024"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008270",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:zinc ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0015976",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:carbon utilization"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd00884",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta_CA_cladeB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.1050.10:FF:000003",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic anhydrase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.1050.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic anhydrase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR045066",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Beta_CA_cladeB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001765",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR015892",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase_CS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036874",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Carbonic_anhydrase_sf"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11002",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBONIC ANHYDRASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR11002:SF76",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "CARBONIC ANHYDRASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pro_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SMART",
+      "id": "SM00947",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pro_CA"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53056",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "beta-carbonic anhydrase, cab"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00704",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PROK_CO2_ANHYDRASE_1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00705",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PROK_CO2_ANHYDRASE_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MRKLIEGLRHFRTSYYPSHRDLFEQFAKGQHPRVLFITCSDSRIDPNLITQSGMGELFVIRNAGNLIPPFGAANGGEGASIEYAIAALNIEHVVVCGHSHCGAMKGLLKLNQLQEDMPLVYDWLQHAQATRRLVLDNYSGYETDDLVEILVAENVLTQIENLKTYPIVRSRLFQGKLQIFGWIYEVESGEVLQISRTSSDDTGIDECPVRLPGSQEKAILGRCVVPLTEEVAVAPPEPEPVIAAVAAPPANYSSRGWLAPEQQQRIYRGNAS",
+    "length": 272,
+    "molWeight": 30185,
+    "crc64": "ACB30A5F16868C93",
+    "md5": "3E047E0B6DBC4B8F908AF4A52A5C0C36"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "SUBUNIT": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "INDUCTION": 1,
+      "DISRUPTION PHENOTYPE": 1,
+      "BIOTECHNOLOGY": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 3,
+      "Helix": 1
+    },
+    "uniParcId": "UPI0000128C47"
+  }
+}

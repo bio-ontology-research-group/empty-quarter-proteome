@@ -1,0 +1,51 @@
+{
+  "analysis": "F1_photolyase_cryptochrome_ecological_test",
+  "script": {
+    "name": "f1_ecology_analysis.py",
+    "sha256": "3da3288a15939af2ac9174c8c59f146a4d88e9870f2f6c076676e8290e0066c1"
+  },
+  "execution": {
+    "timestamp_utc": "2026-10-15T06:35:29.588707+00:00",
+    "elapsed_seconds": 9.24,
+    "hostname": "gpu510-32",
+    "platform": "Linux-5.14.0-427.20.1.el9_4.0.1.x86_64-x86_64-with-glibc2.34",
+    "python_version": "3.11.5 (main, Sep 11 2023, 13:23:44) [GCC 11.2.0]",
+    "mode": "full"
+  },
+  "inputs": {
+    "candidates": {
+      "path": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/candidates.tsv",
+      "sha256": "b59ccfb252f1b7971f6ea9704ac325ee58a3effe2ed2a4948df81bc3786ae217",
+      "n_candidate_hits": 1154,
+      "n_carrier_mags": 935,
+      "n_complete_carrier_mags": 775
+    },
+    "rep_traits": {
+      "path": "/ibex/scratch/projects/c2014/rob/metagenomics/06_metabolism/uv_survival_clean/results/rep_traits.tsv",
+      "sha256": "e139139e808f3595095841b57b94e2f51391444435e4956d5ea0ec2c0ddb9b98",
+      "total_catalogue_reps": 5438,
+      "annotated_catalogue_reps": 5438,
+      "k01669_photolyase_reps": 975
+    },
+    "metadata": {
+      "path": "/ibex/scratch/projects/c2014/rob/metagenomics/metadata/sample_metadata.tsv",
+      "sha256": "5daedb1b3d9820314f204343bd0dc9cae342e3c260c2aee0d832916a3b3496c4",
+      "total_samples": 551
+    },
+    "profiles_dir": "/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/picrust2_current_20260803/coverm_current/profiles_full_recompute"
+  },
+  "samples_analyzed": 551,
+  "statistical_framework": {
+    "sample_unit": "sample",
+    "replicate_handling": "median across replicates per site x compartment cell",
+    "paired_test": "two-sided Wilcoxon signed-rank test on (Surface - Deep) difference",
+    "multiplicity_correction": "Holm-Bonferroni per metric",
+    "paired_sites_available": 44
+  },
+  "scientific_caveats": [
+    "F1 CPF candidate hits are profile-supported members of the cryptochrome/photolyase family.",
+    "Attribution to specific functional repair subfamilies vs signaling cryptochromes is NOT proven by profile matching alone.",
+    "Light-niche partitioning between surface and subsurface communities indicates ecological selection, not enzymatic repair mechanism.",
+    "K01669 (deoxyribodipyrimidine photolyase) captures a subset of the broader CPF diversity, with 96 CPF carrier MAGs lacking K01669 annotation."
+  ]
+}

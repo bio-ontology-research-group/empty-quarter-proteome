@@ -1,0 +1,497 @@
+================================================================================
+INDEPENDENT CRITICAL AUDIT OF COMPLETED F3-F5 FULL RESULTS, GENOMIC CONTEXT,
+AND REPRODUCIBILITY (WITH F1/F2 FINAL ALIGNMENT)
+================================================================================
+Date: 2026-10-15
+Requested Reviewer Persona: Gemini 4 Argon High (Independent Scientific Auditor)
+Actual Runtime Identity: Antigravity Agentic AI Coding Assistant (Google DeepMind)
+Scope: Read-only audit of completed F3-F5 full census, syntactic/genomic context,
+       cross-cohort comparator runs, and independent reproducibility audits,
+       plus verification of completed F1 complete-only plots (53818392) and
+       ROOT_F12_JUDGEMENT.txt alignment.
+       Zero modifications to manuscript/main.tex or any analysis scripts.
+
+--------------------------------------------------------------------------------
+1. INSPECTED ARTIFACTS, EVIDENCE PATHS & SHA-256 PROVENANCE LEDGER
+--------------------------------------------------------------------------------
+All assessments below are grounded strictly in local read-only inspection of the
+following files at audit cutoff (2026-10-15T10:43:35+03:00):
+
+A. Governance, Hypotheses & Manuscript Baseline
+- manuscript/main.tex (UNTOUCHED):
+  2fcc918baaf344de6ef96915b060e4b8ce0ee6fefa7a26168475766b281b0a8b
+- reviews/darkmatter-family-analysis-20261015/ROOT_F12_JUDGEMENT.txt:
+  fdc85d287fcd696b2eaef09b205661590e10d6aeb5bee057ac89cbfe4d30b47f
+- reviews/darkmatter-2026-10-15-family-hypotheses/ROOT_ASSESSMENT.txt:
+  872d605d3c7230f6c1b5dfe2901f351052ca13db55abc164b6d99d26d627818c
+
+B. Newly Completed F1 Complete-Only Embedding Plots (IBEX Job 53818392)
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_plots_complete/analysis_provenance.json:
+  e4c2dec759f3606f4b99e72472022e72983b6987bbd8113005abf30c508de5e2
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_plots_complete/checksums.sha256:
+  (verifies coordinates.tsv, distances.tsv, distance_diagnostics_CPF_profile_supported.pdf/png,
+   and tsne_multiseed_CPF_profile_supported_perp{5.0,30.0,50.0}.pdf/png; COMPLETE marker present)
+
+C. Executed F3-F5 Full Pipeline Outputs & Frozen Code (IBEX Job 53818651 + Step 11 Fix)
+- reproducibility/darkmatter/family_discovery_20261015/f345/results/full_v1/f345_full_discovery_synthesis.json:
+  bc30e3aefb19da2b5c475aceb1fad033694ec0f4ff0504f756ac5f32ae0018c1
+- reproducibility/darkmatter/family_discovery_20261015/f345/results/full_v1/f3_rhodopsin/f3_full_metrics.json:
+  3e93af8089e520ac21bba5f1356be52ac846061aec06fdb4d63724c137c2cae7
+- reproducibility/darkmatter/family_discovery_20261015/f345/results/full_v1/f4_ectc/f4_full_metrics.json:
+  b50c2a0371ed8424467df75c8006dfc6d588b60f16414e1f8f9f1b15eedaa898
+- reproducibility/darkmatter/family_discovery_20261015/f345/results/full_v1/f5_carbonic_anhydrase/f5_full_metrics.json:
+  11c79185b776ae98ffc4ca78658d15d74eb5a39ff5560bd3c2a4f9a4ecee4a24
+- reproducibility/darkmatter/family_discovery_20261015/f345/RESULTS_FULL.md:
+  144190681596122e59eb3d195c75b7d9d9ed1de050f6173e5651dc526581e823
+- reproducibility/darkmatter/family_discovery_20261015/f345/results/full_v1/frozen_code/:
+  * executed_07_prepare_full_cohorts.py: e3642d346af2e48989c6f7634cabd0f7e4d6b575af0fe009e922ea464cd8a1ea
+  * executed_08_f3_full.py:              bfe9a4e75ea89406907f9f1bc52ee6ed6d649f2ae840855ffb6d9cd623337de3
+  * executed_09_f4_full.py:              9b0c5152a72f367de326c61917bc45df80f04f833688a935953dea3377811f6c
+  * executed_10_f5_full.py:              94e0f3e2b07708f78a4b60424f07ebb0230cc8d0407f959fdbbf84dc84724112
+  * executed_11_full_audit.py:           0b89bd5d7ec1dbc56dec894298b6af22f132de051735b0208287aa5fe8bf43dd
+
+D. Bounded F3 Sensory Genomic-Context Pipeline (Host cn506-11-l)
+- reproducibility/darkmatter/family_discovery_20261015/f3_context/audit/full_run_audit.json:
+  c50877163635d945be2ad7dfe4deb548e15f57ede182c58face5addb6cfa9b42
+- reproducibility/darkmatter/family_discovery_20261015/f3_context/profiles/f3_sensory_context.hmm:
+  ce054b2fe4e1b384dcfe1025d173f470c74a0c939669f6b27111f5b641e07b50
+- reproducibility/darkmatter/family_discovery_20261015/f3_context/results/full_extraction_summary.json:
+  8e60ad5294187326031d57c4264b20f16ee26082c47717f279abc1acdc33ba97
+- reproducibility/darkmatter/family_discovery_20261015/f3_context/results/full_hmmsearch_summary.json:
+  6f976f44de6e8b74239cb1b1595b7fdcf574c4f4b522e6557bd3fd0e37dc9f72
+- reproducibility/darkmatter/family_discovery_20261015/f3_context/results/full_loci_manifest.tsv:
+  b13aced5bd603eab1acf5eeb33211cf82836ff401942217595393812775f4eeb
+- reproducibility/darkmatter/family_discovery_20261015/f3_context/results/full_locus_marker_summary.tsv:
+  2f6d933279c892e8348ab0f1dae90ffb64843ebca83c98272639af66e6e41c48
+- reproducibility/darkmatter/family_discovery_20261015/f3_context/results/full_statistical_test_results.tsv:
+  3e12e5043fb515668916d9ea9464a72e26e04cedc84619513d136f2216f0d883
+- reproducibility/darkmatter/family_discovery_20261015/f3_context/reports/full_genomic_context_synthesis_report.md:
+  0abadad4782631b58e1bce2ca144424f548f4f9409a65fcc0713c60e71969ae8
+- reproducibility/darkmatter/family_discovery_20261015/f3_context/scripts/:
+  * 02_extract_neighborhoods.py: 1d02d8b6bcb4f3599ed46f9f6af7f944482ace77cce24cddd19e8486956a5391
+  * 03_run_hmmsearch.py:         28c1fc722454692fbc088155b17493a2db2cdb2a6d360b815b4124b65a1be43f
+  * 04_statistical_analysis.py:  c15f78daba811f02f1a68621d638a2bd1d24e8f7213b53faa25c078190f87baf
+
+E. Root Independent Audit & Comparator Scripts / Synced Results
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_final_audit.py:
+  3bf5f215e30c2f54ac8546e018315d5292ba1ca7de13b5bde562ae06309ab490
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_final_audit/audit.json (Job 53820266, SYNCED):
+  86d0cf198b1acaa5bae106ea0caeb9512dbba294ac60b812af686d085a1efb32
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_final_audit/ectc_context_independent.tsv (SYNCED):
+  09e817b12555e62f879ef92514b60ddc661590a56aa16c988002b283b59400ad
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_comparison.py:
+  4c5cfb38ff3c80bf0e99988ca60e4558599ee6f9239cc32379c94160b028c4f9
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_comparison/summary.json (Job 53820151, SYNCED):
+  2ca90ffd7c9759b49ba1e0eae4b53cee4f80cfeb1bdbecdd8a0a99144f3917e7
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_anchor_alignment.py:
+  6325931cb321d2e3a0b636633508415596056e257b528213c88740c91eca6611
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_anchor_alignment/summary.json (Job 53819747, SYNCED):
+  638f3fb1a48f8e071ad8d20e37a7b7784ac25cd1285e56d679ba45652cdf66e8
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_embeddings/verification_report.json (ORIX Job 316940 on orix-worker-h200-1, SYNCED):
+  d50fc80fc5cc43d34afa4d577a82ee34426c1a1a90723b064d7f5e5067d58938
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_embeddings/provenance.json (ORIX Job 316940, SYNCED):
+  09f443dc1b05c3b84c6cf282910ad0285ec033271456e21ea962d380ee8323c3
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_embedding_analysis.py (Code Audited; f345_plots output pending sync):
+  eca7e20606e7c3420ebbdf2e3e161a31cab5d0589e5175a14fe1b000c5757ce0
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f3_context_audit.py:
+  cdff48d2279f4aa96f12725ac8167171c53ee8f5d0ad8005f011a14b909af26a
+- reproducibility/darkmatter/family_discovery_20261015/root_audit/f3_context_audit/audit.json (Job 53820546, SYNCED):
+  95c6aef0bf9696672a241aa0fcadd6c3177afbbe136814e1c16e5ab8bbe01156
+
+
+--------------------------------------------------------------------------------
+2. CONFIRMATION OF F1/F2 FINAL ALIGNMENT & NEWLY COMPLETED F1 PLOTS (53818392)
+--------------------------------------------------------------------------------
+1. Alignment with ROOT_F12_JUDGEMENT.txt:
+   - Track F1 (CPF / Photolyase-Cryptochrome PF00875 + PF03441): CONDITIONAL
+     (useful biological support for complete-ORF CPF family carriage across
+     775/5,438 MAGs and site-paired top-vs-subsurface enrichment of +8.4726
+     percentage points, 95% CI [+2.2993, +13.5544], Holm p = 0.0019587;
+     CPF-exclusive signal beyond legacy K01669 is inconclusive [p = 0.53261],
+     and equal-sized phylogenetic breadth is not greater than GEM).
+   - Track F2 (Hypothesized GPGP/GPGP-like HAD Phosphatase): STOP. We adopt
+     Root's exact wording refinement: the compatible-solute phosphatase
+     assignment is UNSUPPORTED by sequence/domain evidence (0/14 retained
+     reference/competitor alignments in Job 53816465 and 0 HAD profile hits),
+     which does NOT biochemically refute or disprove all catalytic activity of
+     those uncharacterized short ORFs.
+
+2. Verification of Newly Completed Primary F1 Complete-Only Plots (Job 53818392):
+   - `root_audit/f1_plots_complete/` is now COMPLETE on disk (`COMPLETE` marker
+     and `checksums.sha256` verified; executed on `cn605-07-l`, runtime 352.82s).
+   - Embeds strictly complete sequences (`n = 2,450`: 59 curated references +
+     2,391 complete environmental proteins [914 EQ, 398 SMAG, 1,079 GEM] from
+     `f1_complete_panel/embeddings_complete.npz`, SHA-256 `834c55be...`).
+   - Multi-seed (`42, 123, 20261015`) cosine t-SNE trustworthiness is 0.9891
+     (perplexity 5), 0.9912 (perplexity 30), and 0.9921 (perplexity 50).
+   - Removing the 218 partial SMAG/GEM fragments reduced the overall mean
+     query-to-nearest-reference cosine distance from 0.023123 (unfiltered 2,668
+     panel) to 0.018192 (complete-only 2,450 panel) vs. reference leave-one-out
+     mean 0.009685, confirming strong environmental overlap across EQ, SMAG,
+     and GEM and no isolated EQ-specific cluster novelty.
+
+--------------------------------------------------------------------------------
+3. INDEPENDENT REPRODUCIBILITY & CODE AUDIT OF F3-F5 FULL PIPELINES
+--------------------------------------------------------------------------------
+A. Pre-Execution Fixes Verified in Frozen Code (Job 53818651) & Step 11 Fix
+   - All four blocking code defects identified in `argon_results_initial.txt`
+     were properly corrected prior to full execution in `f345/results/full_v1/frozen_code/`:
+     1. Exact HMMER model name routing (`TIGR02406 -> EctA`, `TIGR02407 -> EctC`,
+        `TIGR02408 -> EctB`, `PF05721 -> EctD`) replaced substring matching.
+     2. Self-exclusion (`mpid != pid`) and non-overlapping domain coordinate
+        checks (`min(c_to, d_to) < max(c_from, d_from)`) prevented self-hits
+        from inflating multi-gene operons and cleanly separated same-ORF
+        `EctCD` fusions (`6` total: `5` in EQ, `1` in external).
+     3. Curated reference panels (`30` Type-1, `26` HeR, `30` EctC, `28` Gamma-CA,
+        `12` Beta-CA, `3` CsoSCA) were included in the primary ProstT5 FASTAs
+        alongside complete (`partial=00`) candidates, with partial genes moved
+        to `*_partial_excluded.faa` instead of being coerced by length.
+     4. Initial failure of Step 11 (`11_full_audit_and_synthesis.py`) inside
+        Job 53818651 was a trivial reporting crash (`float("100.0%")` when
+        parsing CheckM strings with `%`), fixed in `executed_11_full_audit.py`
+        (`0b89bd5d7ec1dbc56dec894298b6af22f132de051735b0208287aa5fe8bf43dd`).
+
+B. Root Independent Source-Stream & Gate Closure (`f345_final_audit/audit.json`, Job 53820266)
+   - After fixing regex coordinate splitting (`re.split(r'\.\.|-', ...)` at
+     `f345_final_audit.py:L92` to handle `"1..126"` fusion intervals), Job
+     53820266 streamed the three canonical source FASTAs:
+     * `EQ_MAG` (`cohort.faa`, SHA-256 `a7d8c829...`): 20,451,986 proteins ->
+       9,901 candidates verified (39,480 candidate/marker coordinates).
+     * `Environmental_SMAG` (`smag_pool_canonical.faa`, SHA-256 `8ed326fc...`):
+       4,778,910 proteins -> 2,172 candidates verified (9,123 coordinates).
+     * `Environmental_GEM` (`gem_harmonized_pool_canonical_seed20261014.faa`,
+       SHA-256 `a88a5da4...`): 4,824,709 proteins -> 2,595 candidates verified
+       (8,584 coordinates).
+   - Every single raw HMMER gate count and complete-gene (`partial=00`) count
+     matches Flash's `f345_full_discovery_synthesis.json` with zero discrepancy:
+     * F3 Total = 505 (490 complete): EQ 211 (205 complete: 140 Type-1, 65 Helio),
+       SMAG 51 (47 complete: 12 Type-1, 35 Helio), GEM 243 (238 complete: 160 Type-1, 78 Helio).
+     * F4 Total = 1,085 (1,059 complete): EQ 966 (940 complete), SMAG 56 (56 complete),
+       GEM 63 (63 complete).
+     * F5 Total = 13,078 (12,484 complete): EQ 8,724 (8,327 complete: 4,081 Beta-CA,
+       4,212 Gamma-CA, 34 CsoSCA), SMAG 2,065 (1,921 complete: 939 Beta-CA,
+       979 Gamma-CA, 3 CsoSCA), GEM 2,289 (2,236 complete: 1,014 Beta-CA,
+       1,211 Gamma-CA, 14 CsoSCA).
+
+C. Three Reporting Traps in Flash's `f345/RESULTS_FULL.md` That Must Not Enter the Paper
+   1. TRAP 1 — Mislabeling Exact 100% SHA-256 Uniqueness as "Endemic to Empty Quarter"
+      (`f345/RESULTS_FULL.md:L53` & `f345_full_discovery_synthesis.json:L222-230`):
+      - Flash's table groups candidates by full-length amino-acid SHA-256 hash
+        (`EQ_only: 9,775`, `EQ_and_SMAG: 2`, `EQ_and_GEM: 2`) and labels the
+        9,775 sequences "Endemic to Empty Quarter MAG cohort".
+      - Why this is invalid: SHA-256 identity only tests 100% identical full-length
+        amino-acid strings. Two orthologous proteins with 90% sequence identity
+        or a 1-aa terminal difference have completely different SHA-256 hashes.
+        Root's `f345_comparison/summary.json` (Job 53820151) proves that 95.0%-99.5%
+        of complete EQ candidates across all five families align across >=70%
+        bidirectional span to SMAG and GEM homologs. Never cite SHA-256
+        non-overlap as cohort endemism.
+   2. TRAP 2 — Stale External Protein Denominator in Markdown Header (`RESULTS_FULL.md:L7-8`):
+      - `RESULTS_FULL.md:L7-8` states `(4,210,592 proteins)` for both SMAG and GEM
+        canonical FASTAs. In fact, `4,210,592` was the complete-ORF subset count;
+        the actual scanned FASTAs streamed in `f345_final_audit/audit.json:L94,L101`
+        contain `4,778,910` SMAG proteins and `4,824,709` GEM proteins.
+   3. TRAP 3 — Unqualified "Operon" Labels (`RESULTS_FULL.md:L31-37`):
+      - Calling 5 kb same-contig neighborhoods `Complete_ABCD_Operon` or
+        `Complete_ABC_Operon` overstates metagenomic DNA evidence. Root's
+        `f345_final_audit/audit.json:L107-127` properly reports `ABC_neighborhood`
+        (666/940 in EQ) alongside `ABC_same_strand` (664/940 in EQ). Even
+        same-strand 5 kb proximity is a conserved biosynthetic gene cluster /
+        neighborhood, not a transcriptionally verified operon.
+
+--------------------------------------------------------------------------------
+4. TRACK-BY-TRACK SCIENTIFIC EVALUATION & MANUSCRIPT DISPOSITION
+--------------------------------------------------------------------------------
+
+================================================================================
+TRACK F3: MICROBIAL RHODOPSINS (PF01036) & HELIORHODOPSINS (PF18761)
+================================================================================
+Original Hypothesis (`ROOT_ASSESSMENT.txt:L46-66`):
+  Test whether EQ MAGs contain divergent Type-1 or heliorhodopsin clades with
+  conserved retinal-binding Lys and sensory/signaling genomic neighborhoods
+  (histidine kinases, response regulators, MCP/HAMP transducers).
+  Pre-registered Stopping Rule: "If sequence diversity is modest and
+  neighborhoods are mostly generic or truncated on short contigs, downgrade to
+  a brief supporting observation or drop."
+
+Empirical Findings:
+1. Census & Cross-Cohort Homology (`f345_comparison/summary.json`, Job 53820151):
+   - EQ complete candidates: 205 (140 Type-1 in 111 MAGs; 65 Heliorhodopsin in
+     62 MAGs; 170 unique MAGs total).
+   - Type-1 (`n = 140` EQ, `12` SMAG, `160` GEM, `30` curated refs):
+     * Bidirectional `>=70%` coverage hits (`diamond blastp --ultra-sensitive`):
+       135/140 (96.4%) hit curated references (median identity 38.6%, 91 below 50%);
+       133/140 (95.0%) hit SMAG (median 32.8%); 138/140 (98.6%) hit GEM (median 48.2%).
+     * Equal-addition (`n = 12`) MMseqs2 cluster expansion outside references:
+       At 50% identity (`-c 0.8`), EQ = 7.24 vs SMAG = 8.00 and GEM = 5.12.
+       At 80% identity (`-c 0.8`), EQ = 11.43 vs SMAG = 11.00 and GEM = 11.10.
+       -> No exceptional EQ sequence breadth for Type-1 rhodopsins.
+   - Heliorhodopsin (`n = 65` EQ, `35` SMAG, `78` GEM, `26` curated refs):
+     * Bidirectional `>=70%` coverage hits: 61/65 (93.8%) hit curated references
+       (median identity 34.7%, 39 below 50%); 64/65 (98.5%) hit SMAG (median 39.15%);
+       64/65 (98.5%) hit GEM (median 43.1%).
+     * Equal-addition (`n = 35`) MMseqs2 cluster expansion outside references:
+       At 50% identity, EQ = 20.11 vs SMAG = 5.00 and GEM = 6.68; at 80% identity,
+       EQ = 33.64 vs SMAG = 32.00 and GEM = 31.94.
+     * Crucial taxonomic caveat: 43/65 (66.2%) of EQ complete heliorhodopsins
+       belong to `p__Patescibacteriota` (ultra-small, rapidly evolving CPR
+       bacteria) and 17/65 (26.2%) to `p__Actinomycetota`. Because the MMseqs2
+       comparison is not taxonomy-matched, the 50%-identity cluster spread reflects
+       `Patescibacteriota` representation rather than desert-specific neofunctionalization.
+
+2. Sensory Genomic-Context Test (`f3_context/` & `root_audit/f3_context_audit.py`):
+   - Scanned `+/- 5 kb` same-contig windows around all 205 complete EQ rhodopsins
+     against 17 Pfam signaling models (`f3_sensory_context.hmm`) using `--cut_ga`.
+   - Type-1 Microbial Rhodopsins (`n = 140`):
+     * Raw any-signaling enrichment: 66/140 (47.14%) vs 15/140 (10.71%) in
+       controls (Fisher p = 1.28e-11, McNemar p = 4.29e-13).
+     * Driven specifically by chemotaxis transducers (`MCPsignal`/`HAMP`/`CheW`):
+       42/140 (30.0%) vs 3/140 (2.14%) in controls (Fisher p = 3.63e-11,
+       McNemar p = 3.64e-12; 26/111 [23.42%] vs 1/111 [0.90%] in 1-per-MAG
+       dereplicated loci, McNemar p = 5.96e-08).
+     * Classical two-component histidine kinases (9/140 [6.43%] vs 6/140 [4.29%],
+       p = 0.597) and response regulators (16/140 [11.43%] vs 7/140 [5.00%],
+       p = 0.080) are NOT significantly enriched.
+   - Heliorhodopsins (`n = 65`):
+     * Completely lack `MCP/HAMP/CheW` transducers: 0/65 (0.0%) in rhodopsin
+       neighborhoods vs 0/65 (0.0%) in controls (p = 1.0).
+     * No enrichment for any sensory/signaling marker: 8/65 (12.31%) in
+       heliorhodopsin neighborhoods vs 14/65 (21.54%) in controls (OR = 0.511,
+       Fisher p = 0.2418, McNemar p = 0.2632).
+   - Methodological Audit of Control Matching & Taxonomic Breakdown:
+     * In Flash's `02_extract_neighborhoods.py:L349-360`, 90/205 (43.9%) of
+       rhodopsin loci sit on contigs too short for a non-overlapping same-contig
+       control window and fall back to `same_mag_surrogate` (which picks the
+       middle gene of the longest non-rhodopsin contig in that MAG, causing
+       control gene reuse across multi-rhodopsin MAGs [192 unique control genes
+       for 205 loci] and larger flank windows in surrogate controls).
+     * Applying Root's strict pre-specified sensitivity filter in
+       `f3_context_audit.py:L43-52` (`control_scope == 'same_contig'` AND
+       `|n_neighbors - control_n_neighbors| <= 2` AND 1 SHA-256-ranked locus per
+       MAG per class) yields:
+       - `Type-1_Microbial_Rhodopsin`: 44 primary 1-per-MAG matched pairs ->
+         15/44 (34.1%) rhodopsin-positive vs 5/44 (11.4%) control-positive
+         (discordant rho-only = 11, ctrl-only = 1; paired difference +22.73
+         percentage points; exact binomial p = 0.006348; 2-class Holm p = 0.012695).
+       - `Heliorhodopsin_Type-3`: 21 primary 1-per-MAG matched pairs ->
+         5/21 (23.8%) rhodopsin-positive vs 7/21 (33.3%) control-positive
+         (discordant rho-only = 5, ctrl-only = 7; paired difference -9.52
+         percentage points; exact binomial p = 0.7744; Holm p = 0.7744).
+     * CRITICAL BIOLOGICAL INSIGHT (Taxonomic Confounder): Out of the 42 Type-1
+       rhodopsin loci with adjacent `MCP/HAMP/CheW` transducers, **40/42 (95.2%)
+       are in `p__Halobacteriota`** (and 1 each in `Cyanobacteriota` and
+       `Bacteroidota`). Thus, the statistically robust Type-1 transducer signal
+       represents **canonical haloarchaeal Sensory Rhodopsin I/II (`SR-I`/`SR-II`)
+       paired with cognate `Htr` HAMP-MCP transducers** in `Halobacteriota`
+       (present in 40/80 = 50.0% of `Halobacteriota` Type-1 loci), NOT a novel
+       bacterial photosensory system.
+
+Judgment for Track F3: **CONDITIONAL (Supporting Context Observation Only; Downgrade Novel Sensory Family Hypothesis)**
+  - Can it strengthen the paper? YES, modestly, if framed accurately: it adds a
+    clean, well-controlled functional distinction showing that EQ `Halobacteriota`
+    Type-1 rhodopsins frequently retain canonical `Htr` (`MCP/HAMP`) sensory
+    transducers (30.0% overall; strict matched 1-per-MAG p = 0.00635), whereas
+    EQ Heliorhodopsins (concentrated in `Patescibacteriota` [43/65] and
+    `Actinomycetota` [17/65]) lack `MCP/HAMP` transducers (0/65) and show no
+    signaling-context enrichment over background (p = 0.24-0.77).
+  - Do NOT present F3 as a novel desert rhodopsin family or novel phototrophy.
+
+================================================================================
+TRACK F4: ECTOINE SYNTHASE (EctC, PF06339 / TIGR02407) & EctABCD SYNTENY
+================================================================================
+Original Hypothesis (`ROOT_ASSESSMENT.txt:L68-86`):
+  Test whether EQ MAGs encode divergent `EctC` cupin variants or atypical gene
+  cluster architectures (`EctABCD`) vs canonical halophile references.
+  Pre-registered Stopping Rule: "If hits are merely high-identity standard EctC
+  in expected halophiles, keep this as an ecology/supporting result or drop it."
+
+Empirical Findings:
+1. Census & Biosynthetic Neighborhood (`f345_final_audit/audit.json`, Job 53820266):
+   - EQ encodes 966 total (940 complete `partial=00`) `EctC` proteins across
+     865 / 5,438 (15.9%) dereplicated MAGs, compared to 56 complete in SMAG and
+     63 complete in GEM.
+   - Among the 940 complete EQ `EctC` genes:
+     * 666 / 940 (70.9%) reside within 5 kb of both `EctA` (`TIGR02406`) and
+       `EctB` (`TIGR02408`) on the same contig (`ABC_neighborhood`).
+     * 664 / 940 (70.6%) have `EctA + EctB + EctC` in the **same strand orientation**
+       (`ABC_same_strand`).
+     * 450 / 940 (47.9%) include `EctD` (`PF05721`) within the same 5 kb
+       `EctABC` neighborhood (`ABCD_neighborhood`).
+     * 5 / 940 (0.5%) are profile-supported same-ORF `EctCD` fusions with
+       non-overlapping cupin (`EctC`) and dioxygenase (`EctD`) domains (2 inside
+       complete `EctABCD` neighborhoods, 2 in `BCD` neighborhoods, 1 solitary;
+       plus 1 additional partial/external fusion for 6 across all cohorts).
+   - External cohorts show the same canonical neighborhood organization:
+     SMAG has 33/56 (58.9%) `ABC_same_strand` (26/56 `ABCD`); GEM has 47/63
+     (74.6%) `ABC_same_strand` (25/63 `ABCD`).
+
+2. Cross-Cohort Sequence Identity & Cluster Expansion (`f345_comparison/summary.json`, Job 53820151):
+   - Bidirectional `>=70%` span-coverage DIAMOND `--ultra-sensitive` alignments
+     for the 940 complete EQ `EctC` proteins:
+     * vs `curated_reference` (`n = 30`): 926 / 940 (98.5%) pass coverage
+       (14 without whole-protein `>=70%` span hit, which includes longer
+       same-ORF `EctCD` fusions where a 130 aa standalone `EctC` covers <70% of
+       the ~420 aa fusion protein), with **high median identity of 68.3%** and
+       only 63/926 (6.8%) below 50% identity.
+     * vs `SMAG` (`n = 56`): 929 / 940 (98.8%) pass coverage, **median identity
+       71.0%**, only 4/929 (0.4%) below 50% identity.
+     * vs `GEM` (`n = 63`): 931 / 940 (99.0%) pass coverage, **median identity
+       65.4%**, only 24/931 (2.6%) below 50% identity.
+   - Nonredundant MMseqs2 cluster expansion:
+     * Across all 914 unique complete EQ `EctC` sequences, there are **only 14
+       total clusters at 50% identity** (12 outside curated references).
+     * Equal-addition (`n = 53`) 50%-identity cluster expansion outside
+       references is **lower in EQ (2.80) than in SMAG (4.88) or GEM (4.00)**
+       (at 80% identity: EQ = 39.39, SMAG = 37.56, GEM = 33.00).
+
+Judgment for Track F4: **STOP as a "Novel Sequence Family" Claim / CONDITIONAL as an Ecological Osmoprotection Supporting Result**
+  - Why STOP on novelty: The empirical results directly trigger the pre-specified
+    rule in `ROOT_ASSESSMENT.txt:L85-86`. EQ `EctC` proteins are highly conserved
+    canonical ectoine synthases (median 68.3% identity to curated references,
+    71.0% to SMAG, collapsing into just 14 clusters at 50% identity across 914
+    unique sequences). Claiming "divergent desert EctC clades" is empirically
+    refuted.
+  - How it CAN strengthen the paper: As a quantitative **ecological and genomic
+    architecture supporting result** in the osmoprotection section. Carrying
+    940 complete `EctC` genes across 15.9% (865/5,438) of all desert MAGs—with
+    70.6% (664/940) verified in intact same-strand `EctABC` biosynthetic gene
+    clusters (and 47.9% with `EctD` for hydroxyectoine synthesis, plus 5
+    same-ORF `EctCD` fusions)—provides rigorous sequence- and coordinate-verified
+    support for widespread compatible-solute biosynthesis in Empty Quarter
+    microbiomes, provided no claim of sequence novelty or *in vitro* catalysis
+    is made, and unlinked `EctC` loci are treated as conditional on assembly
+    fragmentation rather than "true orphans".
+
+================================================================================
+TRACK F5: BETA- & GAMMA-CARBONIC ANHYDRASES (PF00484, PF00132) & CsoSCA (PF08936)
+================================================================================
+Original Hypothesis (`ROOT_ASSESSMENT.txt:L88-105`):
+  Rated "Highest-risk / weakest novel-family hypothesis" in `ROOT_ASSESSMENT.txt`
+  because carbonic anhydrases are ubiquitous housekeeping enzymes and `PF00132`
+  (`Hexapep`) is a broad structural repeat domain (`Cam` is only one member).
+  Pre-registered Stopping Rule: "Drop as a standalone novel-family story if hits
+  look like standard housekeeping beta/gamma CAs without strong desert-specific
+  divergence or autotrophy context."
+
+Empirical Findings:
+1. Census (`f345_final_audit/audit.json`, Job 53820266):
+   - EQ complete candidates: 4,081 `Beta-CA` (`PF00484`), 4,212 `Gamma-CA`
+     (`PF00132`), and 34 carboxysome-shell `CsoSCA` (`PF08936`).
+   - SMAG complete candidates: 939 `Beta-CA`, 979 `Gamma-CA`, 3 `CsoSCA`.
+   - GEM complete candidates: 1,014 `Beta-CA`, 1,211 `Gamma-CA`, 14 `CsoSCA`.
+   - Note on cohort scaling: EQ has ~4.3x as many total proteins (`20.45M`) as
+     the sampled SMAG (`4.78M`) and GEM (`4.82M`) pools, and EQ has ~4.1x-4.3x
+     as many `Beta-CA` and `Gamma-CA` hits (`4,081` vs `939`/`1,014`; `4,212`
+     vs `979`/`1,211`). Thus, **even the raw per-proteome frequency of Beta-CA
+     and Gamma-CA in EQ (~0.020% of proteins) is virtually identical to SMAG
+     (~0.020%) and GEM (~0.021%–0.025%)**!
+
+2. Cross-Cohort Sequence Identity & Cluster Expansion (`f345_comparison/summary.json`, Job 53820151):
+   - `BetaCA` (`n = 4,081` EQ complete):
+     * 4,044 / 4,081 (99.1%) have full-span (`>=70%` bidirectional coverage)
+       homologs in SMAG (median identity 64.3%).
+     * 4,041 / 4,081 (99.0%) have full-span homologs in GEM (median identity 62.6%).
+     * 3,635 / 4,081 (89.1%) have full-span homologs in the tiny 12-sequence
+       curated reference panel (median identity 42.7%).
+     * Equal-addition (`n = 100`) MMseqs2 50%-identity cluster expansion outside
+       curated references: **EQ = 39.18 vs SMAG = 41.56 and GEM = 44.13**
+       (at 80% identity: EQ = 96.28, SMAG = 96.14, GEM = 91.36).
+   - `GammaCA` (`n = 4,212` EQ complete):
+     * 4,190 / 4,212 (99.5%) have full-span (`>=70%` bidirectional coverage)
+       homologs in SMAG (median identity 64.6%).
+     * 4,182 / 4,212 (99.3%) have full-span homologs in GEM (median identity 60.9%).
+     * 3,803 / 4,212 (90.3%) have full-span homologs in the 28-sequence curated
+       reference panel (median identity 40.2%).
+     * Equal-addition (`n = 100`) MMseqs2 50%-identity cluster expansion outside
+       curated references: **EQ = 34.07 vs SMAG = 32.36 and GEM = 32.77**
+       (at 80% identity: EQ = 95.80, SMAG = 94.02, GEM = 91.94).
+
+Judgment for Track F5: **STOP (Do Not Include as a Novel-Family or Desert-Adaptation Discovery)**
+  - Why STOP: Track F5 fails every pre-registered criterion for a novel or
+    desert-enriched family:
+    1. Per-protein abundance in EQ (~0.020% for both Beta-CA and Gamma-CA) is
+       unchanged relative to SMAG (~0.020%) and GEM (~0.021%–0.025%).
+    2. Over 99.0%–99.5% of EQ Beta-CA and Gamma-CA proteins match SMAG and GEM
+       homologs across >=70% bidirectional span at ~61%–65% median identity.
+    3. Equal-sized (`n = 100`) 50%-identity cluster diversity is no higher in EQ
+       than in SMAG or GEM (`39.18` vs `41.56`/`44.13` for Beta-CA; `34.07` vs
+       `32.36`/`32.77` for Gamma-CA).
+    4. Carboxysome shell `CsoSCA` (`PF08936`) is present in only 34 complete EQ
+       genes (0.6% of MAGs), and `PF00132` (`Hexapep`) conflates putative
+       $\gamma$-CAs with non-CA hexapeptide-repeat transferases unless gated by
+       active-site metal ligands.
+  - Can it strengthen the paper? NO as a main-text discovery claim; presenting
+    ubiquitous housekeeping carbonic anhydrases and broad `PF00132` hexapeptide
+    repeats as "dark-matter family discovery" would weaken the manuscript. At
+    most, the verified census table can remain in the reproducibility archive.
+
+--------------------------------------------------------------------------------
+5. AUDIT OF DOWNSTREAM ROOT SCRIPTS & SYNCED OUTPUTS (JOBS 53819747, 316940, 53820546)
+--------------------------------------------------------------------------------
+1. `root_audit/f345_anchor_alignment.py` (`6325931cb...`) & Synced `f345_anchor_alignment/summary.json`
+   (`638f3fb1a...`, Job 53819747, SYNCED):
+   - Code & Output Audit: Verified. Runs `hmmalign` on complete candidates +
+     reference sequence and checks exact catalytic/ligand positions on profile
+     match columns (`all_sites_profile_aligned = true` across all 4 families):
+     * `Type1` (`P02945` Bacteriorhodopsin, `PF01036_Bac_rhodopsin.hmm`, col 487):
+       `K229` (retinal Schiff-base Lys, mature `K216`): **100 / 140 (71.4%)**
+       complete EQ candidates retain exact `K229` on the profile match column
+       (meaning 40/140 [28.6%] lack the canonical retinal-binding Lys at that
+       aligned position and cannot be assumed retinal-binding chromoproteins
+       without further structural check).
+     * `BetaCA` (`P61517` E. coli CynT, `PF00484_Pro_CA.hmm`, cols 801/803/935/938):
+       `C42, D44, H98, C101` ($\text{Zn}^{2+}$ ligands, `CHEBI:29105`):
+       **4,016 / 4,081 (98.4%)** complete EQ candidates retain the exact 4-site
+       $\text{Zn}^{2+}$-coordination pattern.
+     * `EctC` (`A0A385TEI2`, Paenibacillus lautus 5ONN native 130 aa,
+       `PF06339_Ectoine_synth.hmm`, cols 171/210/254/262; Czech et al. 2019
+       `doi:10.1038/s41598-018-36247-w`): `W21, E57, Y84, H92`:
+       **822 / 940 (87.4%)** complete EQ candidates retain all four exact
+       active-site plausibility residues.
+     * `GammaCA` (`P40881` M. thermophila Cam, `NF050158_gamma_CA.hmm`,
+       cols 679/869/908): `H115, H151, H156` ($\text{Zn}^{2+}$ ligands,
+       `CHEBI:29105`): **3,481 / 4,212 (82.6%)** complete EQ candidates retain
+       the canonical `H115/H151/H156` triad, confirming that **731 / 4,212
+       (17.4%)** of `PF00132` (`Hexapep`) hits lack the canonical $\gamma$-CA
+       metal-binding histidine triad.
+
+2. `root_audit/f345_embeddings/` (ORIX GPU Job 316940 on `orix-worker-h200-1`, SYNCED)
+   & `root_audit/f345_embedding_analysis.py` (`eca7e2060...`):
+   - GPU Embedding Audit (`verification_report.json` SHA-256 `d50fc80fc...`,
+     `provenance.json` SHA-256 `09f443dc1...`): `status = PASSED` on
+     `orix-worker-h200-1` (`job=316940`, `2026-10-15T07:43:54Z`). Embeds all
+     `14,111` complete F3-F5 panel sequences (`shape = [14111, 1024]`, zero
+     NaNs/Infs, exact raw/clean SHA-256 and length closure, duplicate
+     equivalence `max_abs_diff = 0.0`).
+   - `f345_embedding_analysis.py` Code Audit: Sound. Verifies ID/SHA/length
+     closure against `f345_comparison/metadata.tsv`, computes full native-space
+     cosine distances to curated references, and runs multi-seed (`42, 123, 20261015`)
+     t-SNE on `plot_metadata.tsv`. (`root_audit/f345_plots/` CPU plot job output
+     was still pending sync at audit cutoff).
+
+3. `root_audit/f3_context_audit.py` (`cdff48d22...`) & Synced `f3_context_audit/audit.json`
+   (`95c6aef0b...`, Job 53820546, SYNCED):
+   - Verified 100% agreement between Job 53820546 (`f3_context_audit/audit.json`)
+     and our independent local recompute reported in Section 4 (Track F3):
+     `raw_GA_passing_domains = 591`, `original_sequences_verified = 4,216` across
+     `170` MAGs (`drep_rep_proteomes/*.faa.gz`), `Type-1_Microbial_Rhodopsin`
+     primary 1-per-MAG neighbor-matched pairs `n = 44` (`15` rho-positive vs `5`
+     control-positive, `discordant 11 vs 1`, `+22.73` percentage points, exact
+     paired `p = 0.0063477`, 2-class Holm `p = 0.012695`, `transducer_phyla`:
+     `Halobacteriota = 40, Cyanobacteriota = 1, Bacteroidota = 1`), and
+     `Heliorhodopsin_Type-3` primary 1-per-MAG neighbor-matched pairs `n = 21`
+     (`5` rho-positive vs `7` control-positive, `-9.52` percentage points,
+     exact paired `p = 0.77441`, Holm `p = 0.77441`, `raw_transducer = 0`).
+
+
+--------------------------------------------------------------------------------
+6. SUMMARY MATRIX: FINAL ACCEPT / CONDITIONAL / STOP JUDGMENTS ACROSS F1-F5
+--------------------------------------------------------------------------------
+| Track | Family / Hypothesis | Final Verdict | Role in Manuscript | Key Empirical Basis |
+|---|---|---|---|---|
+| **F1** | Photolyase / Cryptochrome (`PF00875 + PF03441`) | **CONDITIONAL** | Supporting ecological / functional result | 914 complete genes in 775 MAGs; paired surface vs subsurface enrichment +8.47 pp (Holm p = 0.00196), but CPF-exclusive signal inconclusive (p = 0.533) and phylogenetic breadth <= GEM. |
+| **F2** | Putative GPGP-like HAD Phosphatase (2 short leads) | **STOP** | **Omit** (or negative methodological note) | Compatible-solute phosphatase assignment unsupported (0/14 reference/competitor alignments in Job 53816465; 0 HAD domain hits; biochemical function of short ORFs untested, not disproved). |
+| **F3** | Microbial Rhodopsins (`PF01036`) & Heliorhodopsins (`PF18761`) | **CONDITIONAL** | Supporting context contrast (downgrade novel sensory claim) | 205 complete EQ genes (140 Type-1, 65 Helio). Type-1 carries MCP/HAMP transducers (30.0%, p = 3.63e-11; strict matched 1-per-MAG p = 0.00635), but 40/42 transducer loci are canonical `Halobacteriota` SR/Htr systems. Heliorhodopsins (43/65 in `Patescibacteriota`) have 0/65 transducers and no signaling enrichment (p = 0.24-0.77). |
+| **F4** | Ectoine Synthase (`EctC`) & `EctABCD` Synteny | **STOP** (novelty) / **CONDITIONAL** (ecology) | Supporting osmoprotection prevalence & synteny result | 940 complete EQ `EctC` in 865 MAGs (15.9%); 664/940 (70.6%) in same-strand `EctABC` 5 kb clusters (450 `EctABCD`, 5 same-ORF `EctCD` fusions). Sequences are highly conserved (median 68.3% id to refs, 71.0% to SMAG; only 14 clusters at 50% id), refuting sequence-novelty claims. |
+| **F5** | $\beta$- / $\gamma$-Carbonic Anhydrases (`PF00484`, `PF00132`) & `CsoSCA` | **STOP** | **Omit from main text** (archive census only) | Ubiquitous housekeeping prevalence (~0.020% of proteins across EQ, SMAG, and GEM), >99% full-span overlap with SMAG/GEM (median 61%-65% id), no excess 50%-cluster diversity over SMAG/GEM, and only 34 complete `CsoSCA` genes. |
+================================================================================

@@ -1,0 +1,75 @@
+--- reviews/darkmatter-2026-10-13/round5/baseline_main.tex	2026-10-13 20:43:34.029895766 +0300
++++ manuscript/main.tex	2026-10-13 21:05:32.205801867 +0300
+@@ -145,7 +145,7 @@
+ detected in 98 samples, four families are confined to one sample, and 79.4\% of families are detected
+ in all five expeditions (94.8\% in at least four). Under the stricter criterion of independent
+ assembly, 28.9\% were assembled in all five. Detection by covered fraction
+-favours short genes, and these frequencies describe prevalence under the mapping rule. A prevalence-conditioned null and competitive mapping would be needed to interpret temporal persistence beyond repeated DNA detection.
++favours short genes, and these frequencies describe prevalence under the mapping rule. An exploratory null that permuted expedition labels within site and soil position, holding family occupancy and co-occurrence fixed, gave a mean all-five frequency of 82.7\% (central 95\% null range 81.1--84.2\%; 499 permutations). The observed frequency was 3.36 percentage points lower (lower-tail permutation $p = 0.002$). Repeated detection is therefore interpreted relative to prevalence and sampling structure; expedition-associated assay differences, mapping ambiguity and persistent DNA remain possible contributors.
+ 
+ The median pairwise dN/dS across 97{,}200 evaluable dark families is 0.425, with 96.7\%
+ below one, against 0.388 (99.6\% below one, $n = 95{,}647$) for 106{,}042 UniRef50-matched families
+@@ -221,7 +221,7 @@
+ Only 65 of the 1{,}341 eligible dark calls belonged, through their 90\%-identity clusters, to
+ 47 admitted recurrent families. The culture result therefore describes a broader bacterial
+ call set and cannot be transferred wholesale to the recurrent-family analysis.
+-Harmonised gene prediction would further distinguish these cases.
++In an exploratory caller substitution, applying the original MAG-caller configuration to the same culture assemblies reduced the dark no-CDS count from 344 to 235 of 735 (32.0\%). Of the original 344, 118 gained an overlapping call and nine other loci lost one; 116 gains had compatible orientation and first-base phase. The no-CDS fraction fell in 11 genome pairs and was unchanged in 11. Annotated calls changed from 607 to 498 of 67{,}802. Among complete dark calls of at least 100 residues, the count fell from 25 to 17 of 59. For the 42 DNA-supported calls belonging to admitted families, both callers left 18 without overlap, with one gain and one loss. These results locate caller sensitivity in the broader call set; the small recurrent-family subset retains the same aggregate discrepancy. Coding status remains unresolved by overlap and first-base phase alone.
+ 
+ The cultured comparison covers well-referenced bacteria with low dark
+ fractions; archaeal lineages require separate validation.
+@@ -364,6 +364,7 @@
+ Across the catalogue, 2{,}517 of the 11{,}374 encoded orthologues (22\%) lie outside the predictor's
+ emitted set. In 420 of 448 samples, every genome-encoded orthologue inside that set is predicted,
+ so presence-recall in those samples measures overlap with the reference universe.
++An exploratory comparison over a fixed common set of 8{,}860 orthologues, including zero ties, gave a mean paired rank correlation of 0.8431. Permuting sample identities within expedition and soil position gave a mean of 0.8245, a paired advantage of 0.0185. Restricting exchanges further to site left 146 exchangeable samples, with a paired mean of 0.8431 against 0.8408, an advantage of 0.0023 (upper-tail permutation $p = 0.0002$ for each design). Thus the profiles share a large orthologue-rank pattern and retain a small sample-specific component under site conditioning. This mean over a fixed universe is a different estimand from the median shared-orthologue correlation above. Abundance-threshold sensitivity is reported in Supplementary Note S2.
+ 
+ We next tested whether sequence-dark families have detectable homologues in additional catalogues. We searched
+ the 106{,}042 dark family representatives together with the 106{,}042 matched UniRef50-matched
+@@ -605,6 +606,7 @@
+ expeditions with presence under the member-aware rule; re-assembly persistence counts expeditions in
+ which an instance was independently assembled. Threshold robustness reclustered the same
+ representatives at 30\% identity.
++The exploratory expedition-label null used the 106{,}042-family by 551-sample binary detection matrix. Within each of 159 site-by-soil-position strata, we permuted expedition labels and applied the same global permutation to every family, preserving all family occupancies, co-occurrence patterns and stratum-specific expedition sample counts. Of these strata, 121 contained multiple expedition labels (509 samples). We used 499 permutations (seed 20261015), reporting the all-five frequency, central null quantiles and tail proportions with a plus-one correction. Six fixed occupancy bins were retained as descriptive sensitivities. Label exchangeability within strata is an assumption; sequencing and mapping differences associated with expedition remain possible explanations.
+ 
+ AntiFam v8.0 (278 profiles, release 12 October 2023) was searched with HMMER
+ \texttt{hmmsearch --cut\_ga} against all genome-resolved dark representatives and the control
+@@ -650,6 +652,8 @@
+ same-orientation phase compatibility taking precedence if several alignments qualified. Eligible dark calls were traced through the complete 90\%-identity cluster table into the admitted-family membership table. Indels
+ can change phase downstream, so this is not a full coding-sequence correspondence test.
+ 
++For exploratory caller substitution, we called the 22 culture assemblies with Pyrodigal v3.7.1 in metagenomic mode (\texttt{-p meta --no-stop-codon}), matching the original MAG-caller configuration while holding nucleotide alignments and eligible MAG calls fixed. The locus-overlap classification was applied to each caller's GFF at 50\% and 90\% of aligned target span; at 50\%, all 68{,}537 Bakta classifications reproduced the retained locus audit. Subsets used the original complete-call flag, exact protein length of at least 100 residues, and admitted-family membership. We retained per-genome-pair transitions and treated calls as descriptive observations. The 90\% criterion gave dark no-CDS counts of 400/735 with Bakta and 281/735 with Pyrodigal; the admitted-family subset remained 18/42 with each caller. The substitution assesses annotation sensitivity at DNA-supported loci; full codon correspondence and translation require additional evidence.
++
+ \subsection*{Lineage darkness and the matched null}
+ For each representative, every protein on its contigs was traced to its 90\%-identity cluster and
+ scored dark or not by the cluster call above; the dark fraction is the share of dark protein
+@@ -731,6 +735,7 @@
+ genome-encoded orthologues, Spearman correlation over orthologues both methods report, and the count
+ of genome-encoded orthologues outside the predictor's emitted set; the last is a reference-vintage
+ gap, not prediction error.
++For the exploratory paired-profile null, both matrices were normalised within sample and ranks were computed over their fixed intersection of 8{,}860 orthologue identifiers, including zero ties. We compared the mean matched-sample Spearman correlation with 4{,}999 permutations of PICRUSt sample labels within expedition and soil position (15 blocks, 448 samples), then within expedition, position and site (66 blocks with at least two samples, 146 samples). Only exchangeable samples contributed to each statistic; singleton strata were excluded. Random permutations could retain fixed points. The random generator used seed 20261016 across the two designs; tail proportions used a plus-one correction. A fixed threshold grid of $0$, $10^{-6}$, $10^{-5}$, $10^{-4}$ and $10^{-3}$ was applied to each normalised profile over the union of identifiers. These post hoc tests describe profile agreement and threshold dependence conditional on recovered genomes and prediction references.
+ 
+ Reference absence searched the 106{,}042 dark and 106{,}042 control family representatives in one
+ file with DIAMOND v2.0.15 (\texttt{blastp --sensitive --evalue 1e-3 -k 1}) against MGnify90
+@@ -776,8 +781,8 @@
+ conditioning and is not used as a family-level axis.
+ 
+ Stress censuses screened a 28-orthologue DNA-damage panel in eight groups and a 13-orthologue
+-compatible-solute synthesis panel (Supplementary Table~S3) against the
+-orthologue table, prevalences being fractions of the 5{,}438 representatives. Community values per
++compatible-solute synthesis panel against the
++orthologue table, prevalences being fractions of the 5{,}438 representatives. The solute panel contains K00697, K01087, K16055, K13057, K06044, K01236, K06720, K10674, K03692, K05978, K05947, K18818 and K07026. Trehalose carriage accepts K00697 or K16055 or K13057 or the pair K06044/K01236; ectoine uses K06720, glucosylglycerol K03692, and mannosylglycerate either K05947 or K18818. K10674 is reported separately as a hydroxyectoine-associated marker. Strict-route sensitivities require K16055 or both K00697/K01087 for trehalose, both K03692/K05978 for glucosylglycerol, and K18818 or both K05947/K07026 for mannosylglycerate. Community values per
+ sample used occurrence, whole-community and mapped-community metrics over the 548-sample cohort;
+ the unmapped fraction does not differ between surface and subsurface (54.3\% against 53.7\%,
+ Mann--Whitney $p = 0.50$), and root-adjacent comparisons use the mapped denominator. Surface against
+@@ -936,6 +941,10 @@
+ near-universal DNA-repair floor moves with no gradient. These exploratory associations motivate analyses that account jointly for batch, spatial dependence, compositionality and measurement limits.
+ 
+ 
++\section*{Supplementary Note S2: functional-profile threshold sensitivity}
++
++The paired functional profiles were compared at five fixed within-sample orthologue-fraction thresholds. Median Jaccard similarity was 0.634 at abundance greater than zero, 0.697 at $10^{-6}$, 0.696 at $10^{-5}$ and 0.683 at $10^{-4}$; all 448 samples retained genome-encoded orthologues at these thresholds. Median numbers retained in the genome and PICRUSt profiles were, respectively, 8{,}666.5 and 10{,}543 at zero, 7{,}270.5 and 6{,}547.5 at $10^{-6}$, 5{,}268 and 4{,}932.5 at $10^{-5}$, and 2{,}572.5 and 2{,}507.5 at $10^{-4}$. At $10^{-3}$, 446 samples retained no genome-encoded orthologues, making recall undefined for those samples; the median Jaccard was zero. The two profiles have different constructions, so a shared relative-abundance threshold can have different detection implications. These sensitivities describe reference overlap under fixed rules. Incomplete genome recovery limits the interpretation of orthologues present only in predictions.
++
+ \section*{Data and code availability}
+ Successful private ENA submission receipts map 554 runs from 551 soil samples to
+ study PRJEB125153. The accession map is retained in the review evidence package; the public

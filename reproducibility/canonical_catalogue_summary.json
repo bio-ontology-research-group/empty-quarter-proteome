@@ -1,0 +1,44 @@
+{
+  "counts": {
+    "binnable_samples": 550,
+    "canonical_assemblies": 572,
+    "checksum_targets": 16154,
+    "coassembly_groups": 126,
+    "coassembly_salvage_bins": 304,
+    "coassembly_samples": 527,
+    "metadata_samples": 551,
+    "paired_read_samples": 573,
+    "read_R1_files": 573,
+    "read_R2_files": 573,
+    "refined_bins": 14426,
+    "refined_hq": 4225,
+    "refined_lq": 1992,
+    "refined_mq": 8209,
+    "sites_wgs_samples": 552
+  },
+  "data_root": "/ibex/scratch/projects/c2014/EmptyQuarter_Data",
+  "expected": {
+    "binnable_samples": 550,
+    "coassembly_groups": 126,
+    "coassembly_salvage_bins": 304,
+    "coassembly_samples": 527,
+    "metadata_samples": 551,
+    "paired_read_samples": 573,
+    "refined_bins": 14426,
+    "refined_hq": 4225,
+    "refined_lq": 1992,
+    "refined_mq": 8209
+  },
+  "generated_utc": "2026-07-29T15:41:51+00:00",
+  "invariant_failures": [],
+  "invariants_pass": true,
+  "metagenomics_root": "/ibex/scratch/projects/c2014/rob/metagenomics",
+  "notes": [
+    "573 paired-read samples are the raw-data universe.",
+    "551 metadata rows, 550 binnable samples, and 527 coassembly samples are distinct nested universes.",
+    "HQ/MQ defensome inclusion remains provisional until explicit cellularity screening is joined.",
+    "An unplaced GTDB result is not evidence of a novel phylum.",
+    "Historical vOTU/pOTU representative catalogues are quarantined because overlapping BLAST HSPs produced AF > 100%."
+  ],
+  "schema_version": "empty-quarter-canonical-manifest-1.0"
+}

@@ -1,0 +1,382 @@
+claim_id	section	description	paper_value	tier	source
+scale.read_pairs	A0	paired-read sample universe	573	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.metadata	A0	samples with canonical metadata	551	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.binnable	A0	binnable samples	550	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.coassembly_samples	A0	samples assigned to coassembly groups	527	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.coassembly_groups	A0	coassembly groups	126	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.refined_bins	A0	canonical refined bins	14426	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.refined_hq	A0	canonical refined HQ bins	4225	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.refined_mq	A0	canonical refined MQ bins	8209	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.refined_lq	A0	canonical refined LQ bins	1992	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.refined_hq_mq	A0	canonical refined HQ+MQ bins	12434	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.drep_inputs	A0	members in the frozen historical dRep Cdb table	12433	FROZEN	reproducibility/drep_membership_reconciliation.tsv
+scale.drep_current_only	A0	current HQ/MQ identifiers absent from historical Cdb membership	1	FROZEN	reproducibility/drep_membership_reconciliation.tsv
+scale.drep_historical_only	A0	historical Cdb identifiers absent from the current HQ/MQ set	0	FROZEN	reproducibility/drep_membership_reconciliation.tsv
+scale.salvage	A0a	coassembly LQ salvage bins retained as a separate prospective cohort	304	FROZEN	reproducibility/canonical_catalogue_summary.json
+scale.representatives	A0	ANI95 HQ/MQ representatives classified with GTDB R232	5438	FROZEN	reproducibility/r232_taxonomic_novelty_summary.json
+scale.rep_hq	A0	HQ representatives	2259	FROZEN	reproducibility/r232_taxonomic_novelty_summary.json
+scale.rep_mq	A0	MQ representatives	3179	FROZEN	reproducibility/r232_taxonomic_novelty_summary.json
+scale.named_phyla	A0	named phyla represented in the ANI95 catalogue	51	FROZEN	reproducibility/r232_named_taxon_census.tsv
+scale.gap_domain	A0	first assignment gaps at domain	0	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_phylum	A0	first assignment gaps at phylum	0	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_class	A0	first assignment gaps at class	0	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_order_all	A0	first assignment gaps at order	11	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_order_hq	A0	HQ first assignment gaps at order	6	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_family	A0	first assignment gaps at family	142	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_family_hq	A0	HQ first assignment gaps at family	64	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_genus	A0	first assignment gaps at genus	1343	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_genus_hq	A0	HQ first assignment gaps at genus	530	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_species	A0	first assignment gaps at species	3755	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.gap_species_hq	A0	HQ first assignment gaps at species	1555	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.fully_assigned	A0	representatives assigned through species	187	FROZEN	reproducibility/r232_first_unassigned_census.tsv
+scale.r226_changed	A0	R232 classifications changed from R226	1898	FROZEN	reproducibility/r232_taxonomic_novelty_summary.json
+scale.phylogeny_candidates	A0a	R232 empty-order candidates staged into de novo phylogenies	10	FROZEN	reproducibility/r232_phylogeny_adjudication_summary.json
+scale.phylogeny_present	A0a	staged candidates present in de novo trees	10	FROZEN	reproducibility/r232_phylogeny_adjudication_summary.json
+scale.order_assignments	A0a	automatic novel-rank assignments after phylogeny/RED	0	FROZEN	reproducibility/r232_phylogeny_adjudication_summary.json
+scale.manual_proposals	A0a	candidates advanced to manual taxonomic proposal	0	FROZEN	reproducibility/r232_phylogeny_adjudication_summary.json
+scale.functional_mags	B1	MAGs in the historical R226-era functional/Bakta snapshot	15469	COMPUTE	results/picrust2_bias/dark_fraction.tsv
+scale.proteins	B1	predicted proteins in the historical Bakta snapshot (job 46528255)	51920778	PROVENANCE	workbench/CHANGELOG.md:2039
+a1.hydB1l.prot	A1	hydB group 1l proteins	5292	COMPUTE	results/atmospheric/hydB_class.tsv
+a1.hydB1l.mag	A1	hydB group 1l MAGs	2609	COMPUTE	results/atmospheric/hydB_class.tsv
+a1.hydB1h.prot	A1	hydB group 1h proteins	986	COMPUTE	results/atmospheric/hydB_class.tsv
+a1.hydB1h.mag	A1	hydB group 1h MAGs	893	COMPUTE	results/atmospheric/hydB_class.tsv
+a1.coxL.prot	A1	coxL form-I proteins	5645	COMPUTE	results/atmospheric/coxL_class.tsv
+a1.coxL.mag	A1	coxL form-I MAGs	3828	COMPUTE	results/atmospheric/coxL_class.tsv
+a1.guildcore	A1	guild core (H2+CO) MAGs	1204	COMPUTE	results/atmospheric/guild_core_mags.txt
+a1.aridity.rho	A1	group-1l share vs precipitation Spearman rho	-0.172	COMPUTE	results/atmospheric/aridity/aridity_summary.tsv
+a1.aridity.p	A1	group-1l share vs precipitation permutation p	0.196	COMPUTE	results/atmospheric/aridity/aridity_summary.tsv
+a1.aridity.n	A1	group-1l share vs precipitation sites	58	COMPUTE	results/atmospheric/aridity/aridity_summary.tsv
+a1.aridity.cross	A1	cross-biome group-1l share has no monotonic aridity gradient	NEGATIVE	TABLE	results/atmospheric/aridity/cross_biome_hydrogenase.tsv
+a2.ner	A2	NER prevalence %	99.4	COMPUTE	results/uv_survival/group_prevalence.tsv
+a2.ber	A2	BER prevalence %	99.5	COMPUTE	results/uv_survival/group_prevalence.tsv
+a2.nhej	A2	NHEJ prevalence %	78.4	COMPUTE	results/uv_survival/group_prevalence.tsv
+a2.photo.surf	A2	photolyase surface %	22.4	COMPUTE	results/uv_survival/compartment.tsv
+a2.photo.deep	A2	photolyase deep %	13.1	COMPUTE	results/uv_survival/compartment.tsv
+a3.osmolyte.or	A3	osmolyte class enrichment OR/p (null)	OR 1.10, p=0.45	TABLE	results/darkmatter_ecology/OSMOLYTE.md
+a4.terpene	A4	terpene BGC % of MAGs	64.5	COMPUTE	results/bgc_product_summary.tsv
+a4.nrps	A4	NRPS BGC % of MAGs	25.3	COMPUTE	results/bgc_product_summary.tsv
+a4.ectoine	A4	ectoine BGC % of MAGs	17	COMPUTE	results/bgc_product_summary.tsv
+a5.arsenic	A5	arsenic-resistance MAGs	2423	COMPUTE	results/amr_metal/metal_census.tsv
+a5.mercury	A5	mercury-resistance MAGs	1077	COMPUTE	results/amr_metal/metal_census.tsv
+a5.betalactam	A5	beta-lactam resistome % of MAGs	24.7	COMPUTE	results/amr_class_summary.tsv
+a5.pathogens	A5	named pathogen MAGs % (rounds to 0.05)	0.05	COMPUTE	results/pathogens/named_pathogen_species.tsv
+b1.reps	B1	linclust 90%id/80%cov representatives of the 51.9M Bakta proteins	23416070	PROVENANCE	workbench/CHANGELOG.md:2039
+b1.uniref.hit	B1	UniRef50-hit representatives (of 23416070)	20577040	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/seq_vs_uniref50/hit_ids.txt
+b1.dark	B1	UniRef50 no-hit (sequence-dark) representatives = 12.1% of 23416070	2839030 / 12.1%	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/seq_vs_uniref50/nohit_ids.txt
+b1.structnovel	B1	no-AFDB-match representatives in the predicted-3Di screen (of 2839030 sequence-dark)	2533446 / 89.2%	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/foldseek_results/struct_nohit_ids.txt
+b1.afdbhit	B1	AFDB-hit representatives in the predicted-3Di screen (of 2839030 sequence-dark)	305584 / 10.8%	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/prostt5_foldseek_orix/merged_afdb_hit_ids.txt
+b1.clusters30	B1	30%-id clusters of ALL 2839030 sequence-dark reps (not of the 2533446 subset)	1875540	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/novelty_analysis/novel_family_summary.tsv
+b1.families	B1	multi-member sequence-dark families (>=2 members; of 1875540 clusters)	334810	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/novelty_analysis/novel_family_summary.tsv
+b1.family.members	B1	representatives inside the 334810 multi-member families (of 2839030)	1298300	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/novelty_analysis/novel_family_summary.tsv
+b1.singletons	B1	sequence-dark singleton clusters (of 1875540 clusters)	1540730	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/novelty_analysis/novel_family_summary.tsv
+b1.assembly.catalog	B1	assembly protein catalogue (both binning strategies, incl. unbinned)	753305533	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_protein_catalog/assembly_proteins.mmseqsdb.index
+b1.assembly.clusters90	B1	assembly-catalogue 90%-id clusters (of 753305533 proteins)	449265306	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_protein_catalog/catalog_ladder/catalog_ladder_summary.tsv
+b1.assembly.dark	B1	UniRef50-dark assembly clusters (of 449265306 clusters)	68646640 / 15.3%	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_protein_catalog/catalog_ladder/catalog_ladder_summary.tsv
+b1.tier1.input	B1	historical tier1 MAG-associated input from its own pre-correction snapshot	11418079	PROVENANCE	workbench/results/tier1_structural_novelty/SUMMARY.md
+b1.tier1.novel	B1	tier1 no-AFDB-match (raw rate; fragment-inflated)	10534391 / 92.26%	PROVENANCE	workbench/results/tier1_structural_novelty/SUMMARY.md
+b1.tier1.fragment	B1	tier1 fragment caveat: 2339154 no-hits >=100 aa = 22.2% of raw no-hits; 74.0% no-hit among >=100-aa inputs	2339154 / 22.2% / 74.0%	PROVENANCE	workbench/results/tier1_structural_novelty/SUMMARY.md
+b1.tier2.input	B1	historical tier2 non-MAG input from a separate snapshot	57379961	PROVENANCE	workbench/CHANGELOG.md:1307
+b1.tier.nonclosure	B1	tier1 + tier2 exceed the assembly-catalogue dark count; snapshots do not close	151400	FROZEN	reproducibility/historical_tier_snapshot_accounting.tsv
+b1.tier1.superseded	B1	later re-tiering vs DAS_Tool-refined bins: 9515846 tier1 reps demoted to tier2	11418079 -> 1902233	PROVENANCE	workbench/CHANGELOG.md:1306
+b1.tier2.structinput	B1	tier2 structural-analysis input (>=100 aa subset of 57379961)	13088646	PROVENANCE	workbench/results/tier2_structural_novelty/README.md
+b1.tier2.novel	B1	tier2 (non-MAG, >=100 aa) no-AFDB-match of 13088646	10113496 / 77.27%	PROVENANCE	workbench/results/tier2_structural_novelty/README.md
+b1.tier2.families	B1	historical candidate novel-fold families (separate tier2 clustering; not used elsewhere)	156743	PROVENANCE	workbench/results/tier2_structural_novelty/headline.txt
+b1.tier1.clusters	B1	tier1 structural clusters / multi-member (of 11418079)	10898521 / 220177	PROVENANCE	workbench/results/tier2_structural_novelty/headline_tier1.txt
+b1.folds	B1	candidate novel-fold families (>=2 members, 0 AFDB hit; of 220177 tier1 multi-member)	68808	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/04_structure/tier1_cluster/novel_fold_analysis/family_summary.tsv
+b1.folds.proteins	B1	proteins inside the 68808 historical candidate novel-fold families	169651	PROVENANCE	workbench/results/tier2_structural_novelty/headline_tier1.txt
+b1a.structures	B1a	explicit ESMFold candidate structures in the current-reference integration	68527	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.qtm.all	B1a	query-normalised dual current-PDB/AFDB no-hits among all candidate models	41127	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.qtm.all.no_rows	B1a	unfiltered qTM candidate no-hits with neither reference row	6097	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.qtm.all.low	B1a	unfiltered qTM candidate no-hits with a retrieved row below threshold	35030	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.alntm.all	B1a	alignment-normalised dual current-PDB/AFDB no-hits among all candidate models	16386	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.alntm.all.no_rows	B1a	unfiltered alignment-TM candidate no-hits with neither reference row	6097	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.alntm.all.low	B1a	unfiltered alignment-TM candidate no-hits with a retrieved row below threshold	10289	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.candidate.qualified_n	B1a	candidate models passing length >=100 aa and mean pLDDT >=0.70	1875	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.qtm.qualified	B1a	query-normalised dual no-hits after the confidence/length gate	608	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.qtm.qualified_pct	B1a	query-normalised candidate dual-nohit rate %	32.43	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.qtm.qualified.no_rows	B1a	gated qTM candidate no-hits with neither reference row	74	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.qtm.qualified.low	B1a	gated qTM candidate no-hits with a retrieved row below threshold	534	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.qualified_n	B1a	confidence- and length-qualified known-fold controls	3013	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.qtm.qualified	B1a	query-normalised known-fold false dual no-hits	101	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.qtm.pct	B1a	query-normalised known-fold false dual-nohit rate %	3.35	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.qtm.no_rows	B1a	query-normalised false no-hits with neither reference row	66	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.qtm.low	B1a	query-normalised false no-hits with a row but both qTM scores below 0.5	35	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.wilson_lo	B1a	query-normalised known-fold false dual-nohit Wilson 95% lower bound %	2.77	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.wilson_hi	B1a	query-normalised known-fold false dual-nohit Wilson 95% upper bound %	4.06	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.all_n	B1a	all structure-defined known-fold controls	3684	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.qtm.all	B1a	unfiltered query-normalised known-fold false dual no-hits	440	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.qtm.all_pct	B1a	unfiltered query-normalised known-fold false dual-nohit rate %	11.94	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.qtm.all.no_rows	B1a	unfiltered qTM control no-hits with neither reference row	110	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.qtm.all.low	B1a	unfiltered qTM control no-hits with a retrieved row below threshold	330	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.alntm.all	B1a	unfiltered alignment-normalised known-fold false dual no-hits	236	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.alntm.all_pct	B1a	unfiltered alignment-normalised known-fold false dual-nohit rate %	6.41	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.alntm.all.no_rows	B1a	unfiltered alignment-TM control no-hits with neither reference row	110	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b1a.control.alntm.all.low	B1a	unfiltered alignment-TM control no-hits with a retrieved row below threshold	126	FROZEN	reproducibility/current_structure_metric_sensitivity_summary.json
+b.orthogroups	B2	dark orthogroups (50% id over 5438 dRep MAGs, dark rep, >=3 members) = denominator of B2/B3/B5/C3	23382	COMPUTE	results/darkmatter_ecology/darkfam_meta.tsv
+b.orthogroups.faa	B2	materialised query set for the endemism searches (23382 records)	23382	PROVENANCE	/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/darkfam_ecology/endemism/query.faa
+b2.dark.median	B2	filtered pairwise NG86 median dN/dS for recurrent dark orthogroups	0.391	COMPUTE	results/darkmatter_ecology/dnds.tsv
+b2.dark.n	B2	dark orthogroups with an evaluable codon alignment (of 23382)	22767	COMPUTE	results/darkmatter_ecology/{dnds.tsv,darkfam_meta.tsv}
+b2.dark.floor5.med	B2	dark median dN/dS at >=5 total family members	0.418	COMPUTE	results/darkmatter_ecology/{dnds.tsv,darkfam_meta.tsv}
+b2.dark.floor5.n	B2	evaluable dark families at >=5 total members	8769	COMPUTE	results/darkmatter_ecology/{dnds.tsv,darkfam_meta.tsv}
+b2.dark.floor10.med	B2	dark median dN/dS at >=10 total family members	0.449	COMPUTE	results/darkmatter_ecology/{dnds.tsv,darkfam_meta.tsv}
+b2.dark.floor10.n	B2	evaluable dark families at >=10 total members	2479	COMPUTE	results/darkmatter_ecology/{dnds.tsv,darkfam_meta.tsv}
+b2.dark.floor20.med	B2	dark median dN/dS at >=20 total family members	0.489	COMPUTE	results/darkmatter_ecology/{dnds.tsv,darkfam_meta.tsv}
+b2.dark.floor20.n	B2	evaluable dark families at >=20 total members	671	COMPUTE	results/darkmatter_ecology/{dnds.tsv,darkfam_meta.tsv}
+b2.dark.floor30.med	B2	dark median dN/dS at >=30 total family members	0.499	COMPUTE	results/darkmatter_ecology/{dnds.tsv,darkfam_meta.tsv}
+b2.dark.floor30.n	B2	evaluable dark families at >=30 total members	302	COMPUTE	results/darkmatter_ecology/{dnds.tsv,darkfam_meta.tsv}
+b2.site_restricted.med	B2	descriptive <=3-site vs EQ-wide(>=30) orthogroup pairwise NG86 dN/dS	0.332 / 0.420	TABLE	results/darkmatter_ecology/ENDEMISM.md
+b3.occupancy	B3	orthogroup site occupancy: EQ-wide 10669/23382 vs single-site 543/23382	45.6 / 2.3	TABLE	results/darkmatter_ecology/ENDEMISM.md
+b3d.single	B3	dark orthogroups single-sample % (of 23382)	1.3	COMPUTE	results/darkmatter_ecology/darkfam_abundance.tsv
+b3d.peak10	B3	dark orthogroups peak>=10 % (of 23382)	99.5	COMPUTE	results/darkmatter_ecology/darkfam_abundance.tsv
+b3d.medpeak	B3	median peak abundance ~585 (23382 x 551 matrix)	585	COMPUTE	results/darkmatter_ecology/darkfam_abundance.tsv
+b3d.medprev	B3	median orthogroup in N samples (of 551)	52	COMPUTE	results/darkmatter_ecology/darkfam_abundance.tsv
+b4.screen_tail	B4	historical pairwise-NG86 screen-tail families with mean dN/dS > 1	148	COMPUTE	RQ/E2/table_positive_families_summary.tsv
+b4.screen_heuristic	B4	screen-tail families passing minimum-dS and pair-count heuristic	123	COMPUTE	RQ/E2/table_positive_families_summary.tsv
+b4.confident_struct	B4	screen-tail families with a confident structural analogue	8	COMPUTE	RQ/E2/table_structural_tiers.tsv
+b4.recognition_hyp	B4	confident analogues annotated as recognition/binding/surface/transport hypotheses	5	COMPUTE	RQ/E2/table_structural_tiers.tsv
+b4.sites	B4	nominal FUBAR-positive sites in predicted-pocket families	332	COMPUTE	RQ/E2/table_structural_tiers.tsv
+b4.sites_in_pocket	B4	nominal FUBAR-positive sites inside predicted pockets	23	COMPUTE	RQ/E2/table_structural_tiers.tsv
+b5.enzymes	B5	well-supported specific-EC dark enzymes (from the 23382-orthogroup decode)	10	TABLE	results/darkmatter_ecology/family_ec.tsv
+c1.nsti	C1	weighted NSTI median	0.16	COMPUTE	results/picrust2_bias/per_sample_concordance.tsv
+c1.pic_ko	C1	PICRUSt2 KOs/sample under the non-zero rule (constant, not a median)	10543	COMPUTE	results/picrust2_bias/per_sample_concordance.tsv
+c1.mag_ko	C1	KOs encoded/sample (median)	4482	COMPUTE	results/picrust2_bias/per_sample_concordance.tsv
+c1.recall	C1	KO presence-recall % (median)	93	COMPUTE	results/picrust2_bias/per_sample_concordance.tsv
+c1.no_ko	C1	MAG proteins with no KO %	56.7	COMPUTE	results/picrust2_bias/dark_fraction.tsv
+c1.rebuild_n	C1	samples in threshold rebuild	440	COMPUTE	results/picrust2_bias/rebuild/per_sample_rebuilt.tsv
+c1.presence_ratio_zero	C1	asymmetric PICRUSt2-threshold/MAG-any-presence ratio at zero	2.4	COMPUTE	results/picrust2_bias/rebuild/threshold_sweep.tsv
+c1.presence_ratio_1e5	C1	asymmetric PICRUSt2-threshold/MAG-any-presence ratio at 1e-5	1.11	COMPUTE	results/picrust2_bias/rebuild/threshold_sweep.tsv
+c1.shared_rel_zero	C1	shared relative-abundance threshold ratio at zero	31.41	COMPUTE	results/picrust2_bias/rebuild/threshold_sweep.tsv
+c1.shared_rel_1e5	C1	shared relative-abundance threshold ratio at 1e-5	14.63	COMPUTE	results/picrust2_bias/rebuild/threshold_sweep.tsv
+c1.signature_rho_min	C1	signature-function abundance Spearman minimum	-0.12	COMPUTE	results/picrust2_bias/marquee_functions.tsv
+c1.signature_rho_med	C1	signature-function abundance Spearman median	0.09	COMPUTE	results/picrust2_bias/marquee_functions.tsv
+c1.signature_rho_max	C1	signature-function abundance Spearman maximum	0.42	COMPUTE	results/picrust2_bias/marquee_functions.tsv
+c2.mro	C2	SMETANA global MRO ~0.7; guild p=0.69	MRO 0.7 / p=0.69	TABLE	results/smetana/CROSSFEED.md
+c3.gem	C3	dark orthogroups absent from GEM % (of 23382)	47.4	COMPUTE	results/global_specificity/global_specificity_summary.tsv
+c3.deserts	C3	dark orthogroups absent from desert union % (of 23382)	31.9	COMPUTE	results/global_specificity/desert_specificity_summary.tsv
+c3.mgnify	C3	dark orthogroups absent from MGnify90 % (of 23382)	36.6	COMPUTE	results/global_specificity/global_specificity_summary.tsv
+c3.intersection_n	C3	no detected homolog in the named MGnify90/GEM/five-desert comparison	5011	COMPUTE	results/global_specificity/cross_catalogue_intersection.tsv
+c3.intersection	C3	no-detected-homolog fraction in the named MGnify90/GEM/five-desert comparison	21.4	COMPUTE	results/global_specificity/cross_catalogue_intersection.tsv
+h1.reps	H1	within-Thermoplasmatota species representatives evaluated in PGLS	237	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_closure_verification.json
+h1.pgls.rbh_coef	H1	PGLS shared-protein coverage slope (frac_rbh_desert)	-0.1375	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_pgls_model_summary.tsv
+h1.pgls.rbh_se	H1	PGLS shared-protein coverage standard error	0.0195	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_pgls_model_summary.tsv
+h1.pgls.rbh_p	H1	PGLS shared-protein coverage two-sided p-value	1.88e-11	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_pgls_model_summary.tsv
+h1.pgls.aai_coef	H1	PGLS amino-acid identity slope (per percentage point)	0.0017	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_pgls_model_summary.tsv
+h1.pgls.aai_se	H1	PGLS amino-acid identity standard error	0.00041	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_pgls_model_summary.tsv
+h1.pgls.aai_p	H1	PGLS amino-acid identity two-sided p-value	4.07e-05	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_pgls_model_summary.tsv
+h1.pgls.lambda	H1	PGLS profile maximum likelihood Pagel's lambda	0.9158	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_closure_verification.json
+h1.pgls.lambda_ci_lo	H1	Pagel's lambda profile likelihood 95% CI lower bound	0.8463	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_closure_verification.json
+h1.pgls.lambda_ci_hi	H1	Pagel's lambda profile likelihood 95% CI upper bound	0.9578	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_closure_verification.json
+h1.pgls.r2_gls	H1	whitened generalised-least-squares R-squared at lambda_ML	0.4691	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_closure_verification.json
+h1.meta.distinct_refs	H1	distinct reference genomes selected across 237 pairs	32	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_comparator_metadata_summary.tsv
+h1.meta.gtdb_selected	H1	pairs selecting a GTDB R232 reference	229	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_comparator_metadata_summary.tsv
+h1.meta.mgnify_selected	H1	pairs selecting an MGnify reference	8	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_comparator_metadata_summary.tsv
+h1.meta.env_soil	H1	pairs with soil environmental metadata	142	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_comparator_metadata_summary.tsv
+h1.meta.env_marine	H1	pairs with marine sediment environmental metadata	3	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_comparator_metadata_summary.tsv
+h1.meta.env_unknown	H1	pairs with unknown environmental metadata	92	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_comparator_metadata_summary.tsv
+h1.tree.total_taxa	H1	taxa in GTDB-Tk R232 archaeal marker tree	1914	FROZEN	reproducibility/darkmatter/round7_final/h1/thermo_tree_taxa.tsv
+h1.sens.caller_complete_n	H1	genomes retained in complete-gene-call proxy specification	232	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_closure_verification.json
+h1.sens.missing_checkm2_faa	H1	genomes lacking archived CheckM2 protein calls	5	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_closure_verification.json
+h1.closure.status	H1	closure verification pass for within-lineage PGLS pipeline	1	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_closure_verification.json
+h2.funnel.qualified	H2	qualified dark structural families in attrition universe	2838	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.funnel.binned	H2	dark families with a member on a refined-bin contig	2426	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.funnel.drep_species	H2	dark families with member in recognized 95% ANI species	2378	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.funnel.multispecies	H2	dark families occurring in at least two species	1461	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.funnel.multispecies_k	H2	low-query-score dark families in at least two species	570	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.funnel.multispecies_qnotk	H2	reference-matched dark families in at least two species	891	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.admission.tier1_evaluable	H2	complete-window evaluable families admitted in Tier 1	353	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_family_conservation.tsv
+h2.admission.tier1_k	H2	complete-window evaluable low-query-score families	173	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_family_conservation.tsv
+h2.admission.tier1_qnotk	H2	complete-window evaluable reference-matched families	180	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_family_conservation.tsv
+h2.admission.tier1_gate_k_pct	H2	Tier 1 complete-window retention % in low-query-score group	30.35	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.admission.tier1_gate_qnotk_pct	H2	Tier 1 complete-window retention % in reference-matched group	20.2	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.admission.tier1_multispecies_pct	H2	Tier 1 complete-window retention % of multispecies families	24.16	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.unadj.k_obs_pct	H2	low-query-score observed recurrence %	40.46	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.unadj.qnotk_obs_pct	H2	reference-matched observed recurrence %	32.22	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.unadj.k_exp_pct	H2	low-query-score same-contig positional expectation %	8.71	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.unadj.qnotk_exp_pct	H2	reference-matched same-contig positional expectation %	6.56	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.unadj.k_excess_pct	H2	low-query-score background-adjusted excess recurrence pp	31.75	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.unadj.qnotk_excess_pct	H2	reference-matched background-adjusted excess recurrence pp	25.67	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.contrast.tier1_mh_diff	H2	primary covariate-adjusted difference in excess recurrence (MH weight)	0.0354	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.contrast.tier1_p_perm	H2	primary between-group stratified permutation p-value	0.407	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.strict.pairs	H2	strict exact-phylum length-matched pairs	96	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.strict.recurrence_pct	H2	strict matched pairs recurrence % in each group	31.25	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.strict.excess_diff	H2	strict matched pairs difference in excess recurrence	-0.0054	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.strict.p_perm	H2	strict matched pairs sign-flip permutation p-value	0.923	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.stop3.evaluable	H2	evaluable families under 3-prime stop match sensitivity	637	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_family_conservation.tsv
+h2.stop3.k	H2	low-query-score families under 3-prime stop match sensitivity	260	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_family_conservation.tsv
+h2.stop3.qnotk	H2	reference-matched families under 3-prime stop match sensitivity	377	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_family_conservation.tsv
+h2.stop3.mh_diff	H2	adjusted excess recurrence difference under 3-prime stop match	0.0184	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.stop3.p_perm	H2	stratified permutation p-value under 3-prime stop match	0.562	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.disjoint.families	H2	families retained in species-disjoint sensitivity	112	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.disjoint.k	H2	low-query-score families in species-disjoint sensitivity	51	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.disjoint.qnotk	H2	reference-matched families in species-disjoint sensitivity	61	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.disjoint.k_excess	H2	species-disjoint mean excess recurrence in low-query-score	0.2619	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.disjoint.qnotk_excess	H2	species-disjoint mean excess recurrence in reference-matched	0.1984	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.partial.evaluable	H2	evaluable families retained in partial-window analysis	1320	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_family_conservation.tsv
+h2.join.bins_verified	H2	refined bins verified by SHA-256 and Bakta logs	2041	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_join_metrics.json
+h2.join.bins_total	H2	total refined bins containing candidate loci	2126	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_join_metrics.json
+h2.join.bins_missing	H2	bins lacking required Bakta annotation logs	85	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_join_metrics.json
+h2.loci.total	H2	selected loci across Tier 1 evaluable families	877	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_family_conservation.tsv
+h2.loci.bin_contigs	H2	unique bin-contig pairs occupied by selected loci	869	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.loci.bins	H2	unique refined bins occupied by selected loci	617	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.loci.species	H2	unique 95% ANI species groups occupied by selected loci	568	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.loci.multi_contigs	H2	contigs contributing to multiple families	8	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.loci.multi_bins	H2	bins contributing to multiple families	145	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h2.loci.multi_species	H2	species groups contributing to multiple families	153	FROZEN	reproducibility/darkmatter/round7_final/h2/pilot_conservation_summary.json
+h3.matched.proteins_per_arm	H3	exact matched protein quota per reference arm	4210592	FROZEN	reproducibility/darkmatter/round7_final/h3/matching_closure_audit.tsv
+h3.matched.residues_per_arm	H3	exact matched residue quota per reference arm	1295970055	FROZEN	reproducibility/darkmatter/round7_final/h3/matching_closure_audit.tsv
+h3.primary.dark_smag_hits	H3	dark queries with hit in SMAG matched reference	30064	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.primary.dark_gem_hits	H3	dark queries with hit in GEM matched reference	10399	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.primary.dark_smag_pct	H3	dark query hit rate % in SMAG matched reference	28.35	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.primary.dark_gem_pct	H3	dark query hit rate % in GEM matched reference	9.81	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.primary.dark_diff_pp	H3	paired dark query recovery difference percentage points	18.54	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.primary.control_smag_pct	H3	control query hit rate % in SMAG matched reference	93.99	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.primary.control_gem_pct	H3	control query hit rate % in GEM matched reference	90.89	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.primary.control_diff_pp	H3	paired control query recovery difference percentage points	3.1	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.contingency.dark_both	H3	dark queries with hits in both SMAG and GEM	8015	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.contingency.dark_smag_only	H3	dark queries with hits in SMAG only	22049	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.contingency.dark_gem_only	H3	dark queries with hits in GEM only	2384	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.contingency.dark_neither	H3	dark queries with hits in neither reference	73594	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.contingency.ctrl_both	H3	control queries with hits in both SMAG and GEM	94277	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.contingency.ctrl_smag_only	H3	control queries with hits in SMAG only	5396	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.contingency.ctrl_gem_only	H3	control queries with hits in GEM only	2108	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.contingency.ctrl_neither	H3	control queries with hits in neither reference	4261	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.draws.harmonized_draw2_diff	H3	harmonized GEM draw 2 dark recovery difference pp	16.83	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.draws.harmonized_draw3_diff	H3	harmonized GEM draw 3 dark recovery difference pp	16.91	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.draws.published_draw1_diff	H3	published GEM calls draw 1 dark recovery difference pp	18.46	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.draws.published_draw2_diff	H3	published GEM calls draw 2 dark recovery difference pp	16.87	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.draws.published_draw3_diff	H3	published GEM calls draw 3 dark recovery difference pp	16.91	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.overlap.shared_exact_seqs	H3	exact shared sequences retained between primary arms	22310	FROZEN	reproducibility/darkmatter/round7_final/h3/matching_closure_audit.tsv
+h3.no_overlap.proteins_per_arm	H3	proteins per arm after removing shared sequences	4185525	FROZEN	reproducibility/darkmatter/round7_final/h3/matching_closure_audit.tsv
+h3.no_overlap.residues_per_arm	H3	residues per arm after removing shared sequences	1289129312	FROZEN	reproducibility/darkmatter/round7_final/h3/matching_closure_audit.tsv
+h3.no_overlap.dark_diff_pp	H3	dark difference pp with zero shared sequence overlap	18.62	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.id30.dark_diff_pp	H3	dark difference pp under >=30% sequence identity filter	18.14	FROZEN	reproducibility/darkmatter/round7_final/h3/matched_full_census_summary.tsv
+h3.manifest.zenodo_parts	H3	verified archive parts from SMAG Zenodo deposit 8223844	373	FROZEN	reproducibility/darkmatter/round7_final/h3/smag_zenodo_parts_manifest.tsv
+h4.census.total_models	H4	finite population models evaluated in paired PDB census	5851	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.census.total_crops	H4	confidence-defined crops extracted across all models	7773	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.census.models_no_region	H4	models lacking an eligible confidence-defined region	161	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.pooled_k.total_models	H4	pooled initial low-query-score dark models (K_local_pdb + K_local_afdb_only + K_dual_none)	1031	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.pooled_k.eligible_regions	H4	initial low-query-score dark models with an eligible region	984	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.pooled_k_wc_matched	H4	paired CPU PDB whole-chain matches in initial low-query dark group	67	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.pooled_k_wc_unmatched	H4	paired CPU PDB whole-chain absences in initial low-query dark group	964	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.pooled_k_crop_recovered	H4	whole-chain-unmatched dark models recovering a crop match	714	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.pooled_k_crop_recovered_pct	H4	recovery rate % of whole-chain-unmatched dark models	74.07	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.pooled_k_crop_matched_total	H4	initial low-query dark models with at least one matched crop	775	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.ctrl_tier1_crop_matched	H4	control crop matches after excluding source PDB entry	2889	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.ctrl_tier1_crop_pct	H4	control crop match % under source-entry exclusion	95.88	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.ctrl_tier2_crop_matched	H4	control crop matches under 30% sequence identity exclusion	2842	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.ctrl_tier3_crop_matched	H4	control crop matches under 25% sequence identity exclusion	2823	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.ctrl_tier4_crop_matched	H4	control crop matches under 20% sequence identity exclusion	2796	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.adaptive.wc_expanded	H4	CPU whole chains with hit cap expanded to 5,000	39	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_recovery_summary.json
+h4.adaptive.crop_expanded	H4	CPU crops with hit cap expanded to 5,000	55	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_recovery_summary.json
+h4.adaptive.wc_saturated_unmatched	H4	whole chains remaining cap-saturated and unmatched	3	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_recovery_summary.json
+h4.adaptive.crop_saturated_unmatched	H4	crops remaining cap-saturated and unmatched	1	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_recovery_summary.json
+h4.gpu.wc_rows	H4	ORIX GPU whole-chain alignment rows returned	2853102	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_raw_audit.json
+h4.gpu.crop_rows	H4	ORIX GPU crop alignment rows returned	3228450	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_raw_audit.json
+h4.gpu.pooled_k_wc_unmatched	H4	GPU whole-chain absences in initial low-query dark group	961	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.gpu.pooled_k_crop_recovered	H4	GPU whole-chain absences recovering a crop match	731	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.gpu.pooled_k_crop_matched_total	H4	initial low-query dark models with matched crop on GPU	794	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.gpu.wc_disagreements	H4	CPU vs GPU whole-chain binary classification differences	41	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.gpu.crop_disagreements	H4	CPU vs GPU crop binary classification differences	43	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.gpu.pooled_k_cap_unmatched	H4	dark queries cap-saturated while remaining unmatched on GPU	0	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.gpu.ctrl_crop_matched	H4	control crop matches on GPU under source exclusion	2896	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.gpu.ctrl_wc_cap_unmatched	H4	control whole chains cap-saturated and unmatched on GPU	2	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.anomaly.cpu_rows_audited	H4	CPU raw alignment rows audited across four hit files	6845932	FROZEN	reproducibility/darkmatter/round7_final/h4/tm_anomaly_census.json
+h4.anomaly.cpu_alntm_gt1	H4	CPU raw alignment rows with alnTM > 1 (all controls)	2194	FROZEN	reproducibility/darkmatter/round7_final/h4/tm_anomaly_census.json
+h4.anomaly.gpu_alntm_gt1	H4	GPU raw alignment rows with alnTM > 1 (all controls)	1708	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_raw_audit.json
+h4.anomaly.cpu_exclusion_changed_models	H4	distinct control models with crop status changed by alnTM>1 exclusion	9	FROZEN	reproducibility/darkmatter/round7_final/h4/h4_exclusion_fact_audit.json
+h1.sens.same_class_n	H1	genomes with same-class comparator	236	FROZEN	reproducibility/darkmatter/round7_final/h1/v3_pgls_sensitivity.tsv
+h1.tree.gtdb_thermoplasmatota	H1	tree tips in gtdb_thermoplasmatota	1647	FROZEN	reproducibility/darkmatter/round7_final/h1/thermo_tree_taxa.tsv
+h1.tree.outgroup	H1	tree tips in outgroup	30	FROZEN	reproducibility/darkmatter/round7_final/h1/thermo_tree_taxa.tsv
+h3.overlap.pre_matching	H3	shared exact sequences before quota matching	25067	FROZEN	reproducibility/darkmatter/round7_final/h3/matching_closure_audit.tsv
+h4.cpu.other_wc	H4	other wc	1408	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.other_crop	H4	other crop	1578	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.initial_pdb_n	H4	initial pdb n	1107	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.initial_pdb_wc	H4	initial pdb wc	1107	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.initial_pdb_crop	H4	initial pdb crop	1009	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.initial_afdb_n	H4	initial afdb n	700	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.initial_afdb_wc	H4	initial afdb wc	301	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.initial_afdb_crop	H4	initial afdb crop	569	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.cpu.control_wc	H4	control wc	2878	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.k.trans_persistent_low	H4	pooled K trans_persistent_low	167	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.k.trans_raw_zero	H4	pooled K trans_raw_zero	38	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.k.trans_post_empty	H4	pooled K trans_post_empty	0	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.k.trans_unm_no_reg	H4	pooled K trans_unm_no_reg	45	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.k.trans_retained	H4	pooled K trans_retained	61	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.k.trans_lost_low	H4	pooled K trans_lost_low	4	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.k.trans_m_no_reg	H4	pooled K trans_m_no_reg	2	FROZEN	reproducibility/darkmatter/round7_final/h4/v7_stratum_census.tsv
+h4.gpu.control_tier2	H4	GPU finite-depth control crop matches	2816	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.gpu.control_tier3	H4	GPU finite-depth control crop matches	2788	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.gpu.control_tier4	H4	GPU finite-depth control crop matches	2753	FROZEN	reproducibility/darkmatter/round7_final/h4/gpu_cpu_census.tsv
+h4.anomaly.wc_changed	H4	unique control whole-chain classifications changed under strict tiers	4	FROZEN	reproducibility/darkmatter/round7_final/h4/h4_exclusion_fact_audit.json
+family.helio.complete	Family follow-up	Complete EQ heliorhodopsin profile candidates	65	FROZEN	reproducibility/darkmatter/family_discovery_20261015/root_audit/f345_comparison/Helio/metadata.tsv
+family.helio.site.EQ	Family follow-up	Aligned-lysine-conserving HeR records: EQ	45	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f3_comparison/taxonomy.tsv
+family.helio.site.SMAG	Family follow-up	Aligned-lysine-conserving HeR records: SMAG	35	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f3_comparison/taxonomy.tsv
+family.helio.site.GEM	Family follow-up	Aligned-lysine-conserving HeR records: GEM	73	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f3_comparison/taxonomy.tsv
+family.helio.site.curated_reference	Family follow-up	Aligned-lysine-conserving HeR records: curated_reference	25	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f3_comparison/taxonomy.tsv
+family.helio.sacch.EQ	Family follow-up	Unique Saccharimonadia HeRs: EQ	22	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f3_finer/taxonomy_unique.tsv
+family.helio.sacch.GEM	Family follow-up	Unique Saccharimonadia HeRs: GEM	10	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f3_finer/taxonomy_unique.tsv
+family.helio.sacch.SMAG	Family follow-up	Unique Saccharimonadia HeRs: SMAG	2	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f3_finer/taxonomy_unique.tsv
+family.helio.published_n	Family follow-up	Profile/site-qualified published HeRs	1566	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_helio/summary.json
+family.helio.published_hits	Family follow-up	EQ HeRs with coverage-qualified published hits	45	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_helio/closest_published_hits.tsv
+family.helio.identity	Family follow-up	Median identity of best-bit-score published hit	57.3	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_helio/closest_published_hits.tsv
+family.helio.patesci_n	Family follow-up	EQ Patescibacteriota HeR loci	24	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_helio/closest_published_hits.tsv
+family.helio.patesci_identity	Family follow-up	Patescibacteriota median published hit identity	39.4	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_helio/closest_published_hits.tsv
+family.helio.rarefaction.full.EQ	Family follow-up	Mean added 50%-identity clusters, 10 sequences	7.36	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_clusters/rarefaction.tsv
+family.helio.rarefaction.full.GEM	Family follow-up	Mean added 50%-identity clusters, 10 sequences	0	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_clusters/rarefaction.tsv
+family.helio.extra_clusters.full	Family follow-up	All EQ Saccharimonadia clusters absent expanded reference	13	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_clusters/rarefaction.tsv
+family.helio.rarefaction.core.EQ	Family follow-up	Mean added 50%-identity clusters, 10 sequences	7.33	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_clusters/rarefaction.tsv
+family.helio.rarefaction.core.GEM	Family follow-up	Mean added 50%-identity clusters, 10 sequences	0	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_clusters/rarefaction.tsv
+family.helio.extra_clusters.core	Family follow-up	All EQ Saccharimonadia clusters absent expanded reference	12	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/published_clusters/rarefaction.tsv
+family.helio.read_rarefaction	Family follow-up	Mean core clusters in read-supported EQ sensitivity	7.31	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/expanded_analysis/read_supported_rarefaction.tsv
+family.helio.GEM_overlap	Family follow-up	GEM records exactly present in published panel	8	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/expanded_analysis/native_distances.tsv
+family.helio.projection_unique_sequences	Family follow-up	Expanded ProstT5 projection_unique_sequences	1726	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/expanded_analysis/summary.json
+family.helio.input_records	Family follow-up	Expanded ProstT5 input_records	1744	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/expanded_analysis/summary.json
+family.reads.F3_Helio	Family follow-up	Loci passing depth/breadth rule: F3_Helio	43	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/read_support/loci.tsv
+family.reads.F4_EctCD	Family follow-up	Loci passing depth/breadth rule: F4_EctCD	5	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/read_support/loci.tsv
+family.fusion.templates.min	Family follow-up	min junction-spanning templates	4	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/read_support/loci.tsv
+family.fusion.templates.max	Family follow-up	max junction-spanning templates	19	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/read_support/loci.tsv
+family.helio.structure_pass.mean_CA_pLDDT	Family follow-up	EQ models above mean_CA_pLDDT threshold	45	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/structure_audit/structures.tsv
+family.helio.structure_median.mean_CA_pLDDT	Family follow-up	Median EQ mean_CA_pLDDT	93.13	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/structure_audit/structures.tsv
+family.helio.structure_pass.query_TM	Family follow-up	EQ models above query_TM threshold	45	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/structure_audit/structures.tsv
+family.helio.structure_median.query_TM	Family follow-up	Median EQ query_TM	0.865	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/structure_audit/structures.tsv
+family.cpf.genes	Family follow-up	Complete CPF profile candidates	914	FROZEN	reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_full/candidates.tsv
+family.cpf.mags	Family follow-up	MAGs with complete CPF candidates	775	FROZEN	reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_full/candidates.tsv
+family.prodigal.proteins	Family follow-up	Caller-specific family-screen Prodigal translations	20451986	FROZEN	reproducibility/darkmatter/family_discovery_20261015/root_audit/f1_full/summary.json
+family.ecology.CPF.sites	Family follow-up	CPF sites	37	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/median_ecology_tests.tsv
+family.ecology.CPF.visits	Family follow-up	CPF visits	69	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/median_ecology_tests.tsv
+family.ecology.CPF.median_difference_pp	Family follow-up	CPF median_difference_pp	8.47	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/median_ecology_tests.tsv
+family.ecology.CPF.p_Holm_six_contrasts	Family follow-up	CPF p_Holm_six_contrasts	0.00131	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/median_ecology_tests.tsv
+family.ecology.EctABC_strict.median_difference_pp	Family follow-up	EctABC_strict median_difference_pp	0.56	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/median_ecology_tests.tsv
+family.ecology.EctABC_strict.p_raw	Family follow-up	EctABC_strict p_raw	0.0974	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/median_ecology_tests.tsv
+family.ecology.EctABC_strict.p_Holm_six_contrasts	Family follow-up	EctABC_strict p_Holm_six_contrasts	0.389	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/median_ecology_tests.tsv
+family.cpf.decomposition.total_pp	Family follow-up	Genus grouping CPF total_pp	8.71	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.between_pp	Family follow-up	Genus grouping CPF between_pp	5.31	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.within_pp	Family follow-up	Genus grouping CPF within_pp	1.03	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.exclusive_pp	Family follow-up	Genus grouping CPF exclusive_pp	2.38	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.unclassified_mass	Family follow-up	Mean mass in individually grouped genus-unclassified MAGs, percent	25.7	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.total_pp.mean_ci_low	Family follow-up	CPF descriptive site-bootstrap interval	4.19	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.total_pp.mean_ci_high	Family follow-up	CPF descriptive site-bootstrap interval	13.2	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.between_pp.mean_ci_low	Family follow-up	CPF descriptive site-bootstrap interval	1.21	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.between_pp.mean_ci_high	Family follow-up	CPF descriptive site-bootstrap interval	9.02	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.exclusive_pp.mean_ci_low	Family follow-up	CPF descriptive site-bootstrap interval	0.9	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.exclusive_pp.mean_ci_high	Family follow-up	CPF descriptive site-bootstrap interval	3.89	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.within_pp.mean_ci_low	Family follow-up	CPF descriptive site-bootstrap interval	0.68	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.cpf.decomposition.within_pp.mean_ci_high	Family follow-up	CPF descriptive site-bootstrap interval	1.4	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/decomposition_summary.tsv
+family.ect.complete	Family follow-up	EQ EctC complete	940	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.WEYH	Family follow-up	EQ EctC WEYH	822	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.ABC	Family follow-up	EQ EctC ABC	616	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.ABC_cov70	Family follow-up	EQ EctC ABC_cov70	612	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.edge	Family follow-up	EQ EctC edge	164	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.internal	Family follow-up	EQ EctC internal	42	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.mags.strict_ABC	Family follow-up	MAGs carrying strict_ABC	608	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.mags.strict_ABC_cov70	Family follow-up	MAGs carrying strict_ABC_cov70	604	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.distinct_AB	Family follow-up	Strict EQ loci with separate A/B ORFs	609	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.dual_AB	Family follow-up	Strict EQ loci with a single A/B-profile ORF	7	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.ect.fusion_nonWEYH	Family follow-up	Complete EQ EctCD fusions outside WEYH criterion	1	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/f4_integrity/loci.tsv
+family.cpf.without_K01669	Family follow-up	CPF-carrier MAGs lacking K01669	28	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/ecology/median_ecology_tests.tsv
+family.helio.sacch.GEM_overlap	Family follow-up	Unique GEM Saccharimonadia exactly present in published panel	2	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/review_checks/published_overlap_unique.tsv
+family.helio.reference_free.50.EQ	Family follow-up	Mean total core clusters without references	8.04	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/review_checks/reference_free_rarefaction.tsv
+family.helio.reference_free.50.GEM	Family follow-up	Mean total core clusters without references	4	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/review_checks/reference_free_rarefaction.tsv
+family.helio.reference_free.80.EQ	Family follow-up	Mean total core clusters without references	9.61	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/review_checks/reference_free_rarefaction.tsv
+family.helio.reference_free.80.GEM	Family follow-up	Mean total core clusters without references	10	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/review_checks/reference_free_rarefaction.tsv
+family.helio.translation_matches	Family follow-up	EQ HeR translations independently matching original contigs	45	FROZEN	reproducibility/darkmatter/family_followup_20261015/results/structure_audit/EQ_assembly_verification.tsv

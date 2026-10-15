@@ -1,0 +1,992 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q8EQ67",
+  "uniProtkbId": "DEOB_OCEIH",
+  "entryAudit": {
+    "firstPublicDate": "2003-11-28",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2003-03-01",
+    "entryVersion": 129,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 3.0,
+  "organism": {
+    "scientificName": "Oceanobacillus iheyensis (strain DSM 14371 / CIP 107618 / JCM 11309 / KCTC 3954 / HTE831)",
+    "taxonId": 221109,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Bacillota",
+      "Bacilli",
+      "Caryophanales",
+      "Bacillaceae",
+      "Oceanobacillus"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_00740"
+          }
+        ],
+        "value": "Phosphopentomutase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00740"
+            }
+          ],
+          "value": "5.4.2.7"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00740"
+            }
+          ],
+          "value": "Phosphodeoxyribomutase"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_00740"
+          }
+        ],
+        "value": "deoB"
+      },
+      "synonyms": [
+        {
+          "value": "drm"
+        }
+      ],
+      "orderedLocusNames": [
+        {
+          "value": "OB1846"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00740"
+            }
+          ],
+          "value": "Isomerase that catalyzes the conversion of deoxy-ribose 1-phosphate (dRib-1-P) and ribose 1-phosphate (Rib-1-P) to deoxy-ribose 5-phosphate (dRib-5-P) and ribose 5-phosphate (Rib-5-P), respectively"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "2-deoxy-alpha-D-ribose 1-phosphate = 2-deoxy-D-ribose 5-phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:27658"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57259"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:62877"
+          }
+        ],
+        "ecNumber": "5.4.2.7",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_00740"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha-D-ribose 1-phosphate = D-ribose 5-phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:18793"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57720"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:78346"
+          }
+        ],
+        "ecNumber": "5.4.2.7",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000255",
+            "source": "HAMAP-Rule",
+            "id": "MF_00740"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00740"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29035"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000255",
+                "source": "HAMAP-Rule",
+                "id": "MF_00740"
+              }
+            ],
+            "value": "Binds 2 manganese ions."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00740"
+            }
+          ],
+          "value": "Carbohydrate degradation; 2-deoxy-D-ribose 1-phosphate degradation; D-glyceraldehyde 3-phosphate and acetaldehyde from 2-deoxy-alpha-D-ribose 1-phosphate: step 1/2"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "commentType": "SUBCELLULAR LOCATION",
+      "subcellularLocations": [
+        {
+          "location": {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000255",
+                "source": "HAMAP-Rule",
+                "id": "MF_00740"
+              }
+            ],
+            "value": "Cytoplasm",
+            "id": "SL-0086"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000255",
+              "source": "HAMAP-Rule",
+              "id": "MF_00740"
+            }
+          ],
+          "value": "Belongs to the phosphopentomutase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 392,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Phosphopentomutase",
+      "featureId": "PRO_0000199831"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 13,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 13,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29035"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_00740"
+        }
+      ],
+      "ligand": {
+        "name": "Mn(2+)",
+        "id": "ChEBI:CHEBI:29035",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 286,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 286,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29035"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_00740"
+        }
+      ],
+      "ligand": {
+        "name": "Mn(2+)",
+        "id": "ChEBI:CHEBI:29035",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 291,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 291,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29035"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_00740"
+        }
+      ],
+      "ligand": {
+        "name": "Mn(2+)",
+        "id": "ChEBI:CHEBI:29035",
+        "label": "2"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 327,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 327,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29035"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_00740"
+        }
+      ],
+      "ligand": {
+        "name": "Mn(2+)",
+        "id": "ChEBI:CHEBI:29035",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 328,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 328,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29035"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_00740"
+        }
+      ],
+      "ligand": {
+        "name": "Mn(2+)",
+        "id": "ChEBI:CHEBI:29035",
+        "label": "1"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 339,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 339,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:29035"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000255",
+          "source": "HAMAP-Rule",
+          "id": "MF_00740"
+        }
+      ],
+      "ligand": {
+        "name": "Mn(2+)",
+        "id": "ChEBI:CHEBI:29035",
+        "label": "2"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0963",
+      "category": "Cellular component",
+      "name": "Cytoplasm"
+    },
+    {
+      "id": "KW-0413",
+      "category": "Molecular function",
+      "name": "Isomerase"
+    },
+    {
+      "id": "KW-0464",
+      "category": "Ligand",
+      "name": "Manganese"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "12235376",
+        "citationType": "journal article",
+        "authors": [
+          "Takami H.",
+          "Takaki Y.",
+          "Uchiyama I."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12235376"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/nar/gkf526"
+          }
+        ],
+        "title": "Genome sequence of Oceanobacillus iheyensis isolated from the Iheya Ridge and its unexpected adaptive capabilities to extreme environments.",
+        "publicationDate": "2002",
+        "journal": "Nucleic Acids Res.",
+        "firstPage": "3927",
+        "lastPage": "3935",
+        "volume": "30"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "DSM 14371 / CIP 107618 / JCM 11309 / KCTC 3954 / HTE831",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "BA000028",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAC13802.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_011066242.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_004193.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q8EQ67",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q8EQ67",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "221109.gene:10734086",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "oih:OB1846",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG1015",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_053861_0_0_9",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OrthoDB",
+      "id": "9769930at2",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PhylomeDB",
+      "id": "Q8EQ67",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00002",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "UER00467"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000822",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0000287",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:magnesium ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0030145",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:manganese ion binding"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008973",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:phosphopentomutase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0006018",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:2-deoxyribose 1-phosphate catabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-UniRule"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0043094",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:metabolic compound salvage"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0009117",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:nucleotide metabolic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:InterPro"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd16009",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PPM"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.30.70.1250:FF:000001",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphopentomutase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.720.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Alkaline Phosphatase, subunit A"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.70.1250",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphopentomutase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "HAMAP",
+      "id": "MF_00740",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphopentomut"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR017850",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Alkaline_phosphatase_core_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR010045",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DeoB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006124",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Metalloenzyme"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR024052",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Phosphopentomutase_DeoB_cap_sf"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01696",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "deoB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "NF003766",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PRK05362.1"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR21110",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHOSPHOPENTOMUTASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR21110:SF0",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "PHOSPHOPENTOMUTASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF01676",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Metalloenzyme"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF001491",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Ppentomutase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53649",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Alkaline phosphatase-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF143856",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "DeoB insert domain-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MNNFKRVFLIVMDSVGIGEAPDARDFNDVGANTLGHIAENMNGLNMPTMASLGLSNIRKIEGIEASAQPRAHYTKMQEASNGKDTMTGHWEIMGLHIEKPFRTFPDGFPDELIEELEQKTGRKVIGNKPASGTEILDELGQQHMDTGSLIVYTSADSVLQIAAHEEIIPIDEQYRICEIARELTLDEKYMVGRVIARPFIGEPGAFERTSNRHDYALKPFGRTVMNELKDNNYDVLALGKISDIYDGEGVTESIRTKDNNDGMVQLRKSMDKSFTGLNFLNLVDFDAKYGHRRDPVGYGKALEEFDEQLPEIIEQLHDDDLLIITADHGNDPIHHGTDHTREYVPLVVYHNQIKQAKELPIRKTFADIGATIADNFGIKLPEHGESFLNDIK",
+    "length": 392,
+    "molWeight": 43994,
+    "crc64": "89F81D2CEA774635",
+    "md5": "33D7D64237815AC7FC9E837895A25B59"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 2,
+      "COFACTOR": 1,
+      "PATHWAY": 1,
+      "SUBCELLULAR LOCATION": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 6
+    },
+    "uniParcId": "UPI00000E0FD2"
+  }
+}

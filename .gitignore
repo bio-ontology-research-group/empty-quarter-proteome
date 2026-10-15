@@ -1,0 +1,67 @@
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.run.xml
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+paper/*.pdf
+manuscript/main.pdf
+/*.pdf
+
+# Large data — keep these in the workbench / results, not in git history
+*.faa
+*.fa
+*.fa.gz
+*.fasta
+*.bam
+*.sam
+*.h5
+*.pdb
+*.cif
+
+# OS / editor cruft
+.DS_Store
+*~
+.*.swp
+
+# secrets
+secrets.env
+
+# python cruft
+__pycache__/
+*.pyc
+
+# workbench is a separate repo (symlink) — never commit it here
+workbench
+
+# raw intermediate too large for GitHub (>100MB); curated outputs are kept
+results/vfdb/vfdb_hits.tsv
+
+# reproducibility scratch
+reproducibility/.fig*
+reproducibility/.verify*
+
+# Large data files staged on IBEX (fetch via reproducibility/fetch_large_files.sh)
+results/metabolism_marker_long.tsv
+results/darkmatter_ecology/darkfam_abundance.tsv
+results/darkmatter_ecology/endemism/mgnify_hits.m8
+results/picrust2_bias/mag/mag_ko_count_by_sample.tsv
+results/picrust2_bias/mag/mag_ko_presence_by_sample.tsv
+results/picrust2_bias/mag/mag_ko_relab_by_sample.tsv
+
+# Life on air (P3): per-sample read counts live on IBEX (reproducibility/large_files.sha256)
+lifeonair/results/reads/per_sample/
+lifeonair/results/reads/per_sample_counts.tar.gz
+lifeonair/manuscript/*.pdf
+lifeonair/manuscript/*.fdb_latexmk
+lifeonair/manuscript/*.fls
+lifeonair/manuscript/*.bbl
+lifeonair/manuscript/*.blg
+lifeonair/manuscript/*.out
+lifeonair/manuscript/build.log

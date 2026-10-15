@@ -1,0 +1,101 @@
+{
+  "job_id": "53816576",
+  "sources": {
+    "EQ": {
+      "proteins": 914,
+      "unique_sequences": 912
+    },
+    "SMAG": {
+      "proteins": 503,
+      "unique_sequences": 496
+    },
+    "GEM": {
+      "proteins": 1192,
+      "unique_sequences": 1136
+    },
+    "curated_reference": {
+      "proteins": 59,
+      "unique_sequences": 59
+    }
+  },
+  "gates": {
+    "profile_ievalue": 1e-05,
+    "profile_coverage": 0.7,
+    "alignment_both_coverage": 0.7
+  },
+  "limits": "sampled environmental panels; incomplete EQ excluded; reference curation is not experimental validation; no activity/endemicity/adaptation inference; tSNE illustrative; all source identities retained",
+  "commands": [
+    [
+      "hmmsearch",
+      "--cpu",
+      "16",
+      "--domtblout",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/reference_domains.tsv",
+      "-o",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/reference_hmm_report.txt",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_profile_pilot/cpf.hmm",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/references_v2/cpf_references_dedup.faa"
+    ],
+    [
+      "/ibex/scratch/projects/c2014/rob/metagenomics/../miniconda3/envs/eggnog/bin/diamond",
+      "makedb",
+      "--in",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/combined.faa",
+      "--db",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/combined"
+    ],
+    [
+      "/ibex/scratch/projects/c2014/rob/metagenomics/../miniconda3/envs/eggnog/bin/diamond",
+      "blastp",
+      "--query",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/combined.faa",
+      "--db",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/combined.dmnd",
+      "--out",
+      "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_comparison/alignments.tsv",
+      "--ultra-sensitive",
+      "--max-target-seqs",
+      "0",
+      "--evalue",
+      "1e-3",
+      "--threads",
+      "16",
+      "--outfmt",
+      "6",
+      "qseqid",
+      "sseqid",
+      "pident",
+      "qstart",
+      "qend",
+      "sstart",
+      "send",
+      "evalue",
+      "bitscore",
+      "qlen",
+      "slen"
+    ]
+  ],
+  "EQ_comparisons": {
+    "curated_reference": {
+      "queries": 914,
+      "with_coverage_passing_hit": 883,
+      "without_coverage_passing_hit": 31,
+      "identity_median": 43.8,
+      "below_50_identity_among_hits": 652
+    },
+    "SMAG": {
+      "queries": 914,
+      "with_coverage_passing_hit": 910,
+      "without_coverage_passing_hit": 4,
+      "identity_median": 55.9,
+      "below_50_identity_among_hits": 284
+    },
+    "GEM": {
+      "queries": 914,
+      "with_coverage_passing_hit": 911,
+      "without_coverage_passing_hit": 3,
+      "identity_median": 57.7,
+      "below_50_identity_among_hits": 175
+    }
+  }
+}

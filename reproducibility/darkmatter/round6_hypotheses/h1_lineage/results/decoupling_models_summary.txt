@@ -1,0 +1,24 @@
+================================================================================
+STATISTICAL MODELING AND DECOUPLING REPORT: WITHIN-THERMOPLASMATOTA DARKNESS
+================================================================================
+
+1. EVIDENCE ON RATIO COUPLING ARTIFACT
+  Observed correlation (dark_fraction vs frac_rbh_of_desert) in SW-10-69-26: rho = -0.3953
+  Expected correlation under independent counts with common denominator: rho = 0.3017 (95% CI: [0.1789, 0.4194])
+  Finding: The negative correlation between dark fraction and RBH fraction is overwhelmingly driven by
+           the shared denominator (n_proteins). When n_dark and aai_n_rbh are permuted independently,
+           the ratio correlation remains strongly negative (mean null rho = 0.3017).
+           Furthermore, the raw count correlation between n_dark and aai_n_rbh is POSITIVE (rho = 0.2419, p = 9.0942e-04).
+
+2. MULTIVARIABLE MODEL FINDINGS
+  OLS Quality Baseline R^2: 0.4686
+  OLS Quality + AAI R^2: 0.4966 (AAI coef = 0.00113, p = 0.0005)
+  OLS Quality + RBH Count R^2: 0.4792 (RBH count coef = 0.00001, p = 0.0333)
+  OLS Full Model R^2: 0.4994
+  Gene completeness effect (frac_complete): coef = -0.1166, p = 3.1749e-05
+
+3. TAKEAWAYS FOR REVISED HYPOTHESIS H1
+  - External divergence (AAI and raw RBH count) provides negligible explanatory power once quality is controlled.
+  - Contig fragmentation and callable gene completeness (frac_complete) strongly predict dark fraction.
+  - Ratio coupling between dark fraction and RBH fraction is confirmed as a mathematical artifact.
+================================================================================

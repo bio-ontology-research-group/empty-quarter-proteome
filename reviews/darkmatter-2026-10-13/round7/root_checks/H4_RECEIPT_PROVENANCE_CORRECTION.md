@@ -1,0 +1,3 @@
+# H4 receipt provenance correction
+
+A final read-only remote path check found that `results/v7_closure_verification.json` does not exist on IBEX. Flash had pinned a local preclosure receipt to that nonexistent remote path. No active numerical claim uses this receipt. It has been removed from the active artifact manifest and retained in the historical snapshot only; it is not proof of production closure. The 27th pinned item is now the independently executed root census audit (`h4_census_invariants.json`, 118857 assertions). Actual production attempts failed the strict alignment-TM range check; biological acceptance relies on the independent qTM census, raw diagnostic and GPU raw audits, not an all-score closure receipt. All 152 current claim values are unchanged.

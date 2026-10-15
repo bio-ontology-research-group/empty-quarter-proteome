@@ -1,0 +1,52 @@
+{
+  "n_samples": 547,
+  "n_dark_families_total": 23382,
+  "n_dark_families_detected": 23374,
+  "samples_per_trip": {
+    "1": 206,
+    "2": 37,
+    "3": 128,
+    "4": 85,
+    "5": 91
+  },
+  "sites_per_trip": {
+    "1": 58,
+    "2": 7,
+    "3": 47,
+    "4": 51,
+    "5": 52
+  },
+  "persistence": {
+    "core_all5_trips": 16428,
+    "core_all5_pct_of_detected": 70.28,
+    "trip_restricted_1trip": 606,
+    "trip_restricted_pct": 2.59,
+    "histogram_n_families_by_n_trips": {
+      "0": 8,
+      "1": 606,
+      "2": 916,
+      "3": 1658,
+      "4": 3766,
+      "5": 16428
+    }
+  },
+  "turnover_mean_BC": {
+    "within-site_within-trip (replicates)": 0.3744,
+    "within-site_across-trip (temporal)": 0.5002,
+    "across-site_within-trip (spatial)": 0.4385,
+    "across-site_across-trip": 0.5137
+  },
+  "test_temporal_vs_spatial_MWU_p_less": 6.0857003364899956e-05,
+  "permanova": {
+    "trip": {
+      "pseudo_F": 27.326,
+      "R2": 0.1678,
+      "p": 0.001
+    },
+    "site": {
+      "pseudo_F": 1.253,
+      "R2": 0.1296,
+      "p": 0.008
+    }
+  }
+}

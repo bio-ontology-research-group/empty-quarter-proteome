@@ -1,0 +1,44 @@
+{
+  "analysis": "H3_additional_harmonized_draws",
+  "status": "COMPLETED",
+  "slurm_job_id": "53742584",
+  "job_name": "h3_gem_draws",
+  "submitted_at": "2026-10-14T09:02:02+03:00",
+  "completed_at": "2026-10-14T09:30:13+03:00",
+  "runtime_seconds": 1592.0,
+  "exit_code": "0:0",
+  "seeds": [20261015, 20261016],
+  "genome_count_per_seed": 2055,
+  "selection_rule": "fixed_count_ceil_4500000_1.05_div_2300",
+  "script": "scripts/06_harmonize_additional_draws.py",
+  "sbatch": "scripts/06_harmonize_additional_draws.sbatch",
+  "log_out": "logs/gem_draws_53742584.out",
+  "log_err": "logs/gem_draws_53742584.err",
+  "workdir": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h3_references",
+  "description": "Download missing GEM nucleotide assemblies from NERSC, run harmonized Pyrodigal v3.7.1 (-p meta --no-stop-codon -f gff) for seeds 20261015 and 20261016, retain raw FAA and GFF coordinates in genecalls/gem/, and emit canonical/unique pools and manifests.",
+  "results": {
+    "seed20261015": {
+      "genomes": 2055,
+      "canonical_proteins": 4693590,
+      "canonical_residues": 1482250212,
+      "unique_canonical_proteins": 4220573,
+      "unique_canonical_residues": 1347953920,
+      "redundancy_pct": 10.08,
+      "overlap_with_seed20261014": 65,
+      "pool_canonical_sha256": "52d1d55594ee179fd58faeeb3ef6ef96fa7ead1d85bb458139478ea5bbac0215",
+      "pool_unique_sha256": "f40af369dd4c6327ed030cac26bd06751f88e7d3db51618ecdc27397d1b75db3"
+    },
+    "seed20261016": {
+      "genomes": 2055,
+      "canonical_proteins": 4845330,
+      "canonical_residues": 1529947999,
+      "unique_canonical_proteins": 4337716,
+      "unique_canonical_residues": 1386748080,
+      "redundancy_pct": 10.48,
+      "overlap_with_seed20261014": 76,
+      "pool_canonical_sha256": "18dc6026c28f1b5a8ac284fa1477a8eafa4cd5834fe433c416553aadd7437a9c",
+      "pool_unique_sha256": "d227531a46b1e6ca47d20a3b436afed7e9e06ca0e9eff007215cb19f687b473f"
+    }
+  },
+  "search_dependency_note": "Job 53742584 completed exit 0. Candidate matching and search scripts ready under reviews/darkmatter-2026-10-13/round7/h3_additional_draws/."
+}

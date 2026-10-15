@@ -1,0 +1,918 @@
+     bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                     was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+ 1    Deep dive into the diversity and properties of rhodopsins in actinomycetes of the family
+ 2    Geodermatophilaceae
+ 3
+ 4    Sergey V. Tarlachkov,a,b,# Irina P. Starodumova,a,c Olga V. Boueva,a Sergei V. Chernyshov,b and Lyudmila I.
+ 5    Evtushenkoa
+ 6
+      a
+ 7     All-Russian Collection of Microorganisms (VKM), G.K. Skryabin Institute of Biochemistry and
+ 8    Physiology of Microorganisms, Pushchino Scientific Center for Biological Research of the Russian
+ 9    Academy of Sciences, Pushchino, Russia
+      b
+10        Branch of Shemyakin and Ovchinnikov Institute of Bioorganic Chemistry of the Russian Academy of
+11    Sciences, Pushchino, Russia
+      c
+12     Shemyakin and Ovchinnikov Institute of Bioorganic Chemistry of the Russian Academy of Sciences,
+13    Moscow, Russia
+14
+      #
+15        Corresponding author: Sergey V. Tarlachkov, e-mail: sergey@tarlachkov.ru
+16
+17              ABSTRACT
+18              Rhodopsin with the NTQ motif and heliorhodopsins, both discovered for the first time in
+19    actinomycetes of the family Geodermatophilaceae were characterized, along with characterization of the
+20    DTEW, DTEF and NDQ rhodopsins reported in members of this family previously. The identified
+21    absorption maxima ranged from 513 to 559 nm, of which the blue-shifted rhodopsin contained the NTQ
+22    motif and the red-shifted one were heliorhodopsin. An assessment of the pumping activity of the NTQ
+23    rhodopsin and heliorhodopsin showed that the former functioned as inward Cl --, Br--, I--pump with much
+24    weaker activity towards NO3-, while no any activity was detected for the later. The DTEW and DTEF
+25    rhodopsins had the outward H+-transport activity which was dependent on the presence of Ca 2+ ions and
+26    on the particular E. coli expression strain. The outward pumping of H+ was also detected for NDQ
+27    rhodopsin both in NaCl and KCl solutions at pH 5 and 6, but not at pH 7. Weak Na +-efflux activity for this
+28    rhodopsin was observed at pH 6 and 7 in NaCl solution only after adding carbonyl cyanide m-
+29    chlorophenyl hydrazone (CCCP).
+30
+
+
+
+
+                                                                                                                                                        1
+     bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                     was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+31              ABBREVIATIONS
+32              AaClR, Alteribacter aurantiacus rhodopsin; BR, bacteriorhodopsin; CCCP, carbonyl cyanide m-
+33    chlorophenyl hydrazone; CDS, coding sequence; DDM, n-dodecyl β-D-maltoside; FR, Fulvimarina
+34    pelagi rhodopsin; GLR, Gillisia limnaea rhodopsin; HeR, heliorhodopsins; IAR, Indibacter alkaliphilus
+35    rhodopsin; IPTG, isopropyl β-D-1-thiogalactopyranoside; ISP2, International Streptomyces Project-2;
+36    KR2, Krokinobacter eikastus (Dokdonia eikasta) rhodopsin 2; LB, lysogeny broth; NdR2, Nonlabens dok-
+37    donensis rhodopsin 2; NM-R2, Nonlabens marinus rhodopsin 2; NM-R3, Nonlabens marinus rhodopsin 3;
+38    PCR, polymerase chain reaction; PoClR, Parvularcula oceani rhodopsin; SOE PCR, splicing by overhang
+39    extension PCR; XR, xanthorhodopsin.
+40
+41              INTRODUCTION
+42              Rhodopsins are a large family of integral membrane proteins containing retinal chromophores that
+43    perform the photoreceptor function and also the function of ion pumps in the processes of light energy
+44    conversion. Rhodopsins are classified into Type I microbial and Type II animal rhodopsins (play a key role
+45    in animal vision). Microbial and animal rhodopsins contain all-trans and 11-cis retinal molecules,
+46    respectively, that capture light (Rozenberg et al., 2021). Recently, a new family of rhodopsins,
+47    heliorhodopsins (HeR), was discovered by the functional metagenome analysis, and their global
+48    distribution in Archaea, Bacteria, Eukarya and viruses was shown (Pushkarev et al., 2018; Shihoya et al.,
+49    2019; Hososhima et al., 2022). Heliorhodopsins are distant relatives of Type I microbial rhodopsins, and
+50    their most distinct difference from conventional rhodopsins is inverted membrane topology (Pushkarev et
+51    al., 2018; Kovalev et al., 2020; Shihoya et al., 2019).
+52              It is worth noting that most studies within the last two decades have focused on discovery and
+53    characterization of various microbial rhodopsins from marine and freshwater microorganisms (Chazan et
+54    al., 2022; Fuhrman et al., 2008; Chuon et al., 2021; Keffer et al., 2015; Nakamura et al., 2016; Sharma et
+55    al., 2008; Dwulit-Smith et al., 2018; Pushkarev and Béjà, 2016; Pushkarev et al., 2018; Hososhima et al.,
+56    2022; Singh et al., 2023). Little is known about distribution and the biological role of these proteins in
+57    microorganisms inhabiting terrestrial environments, especially extreme ones. By metagenomic approaches
+58    the rhodopsins were revealed, for instance, in phyllospheres of plants, soil crust and Antarctic Dry Valley
+59    edaphic systems (Atamna-Ismaeel et al., 2012; Finkel et al., 2013; Guerrero et al., 2017). Rhodopsins
+60    were also found in some cultured prokaryotes from terrestrial ecosystems, such as Exiguobacterium
+61    sibiricum from Siberian permafrost (Petrovskaya et al., 2010; Dioumaev et al., 2013), the thylakoid-
+62    lacking cyanobacterium Gloeobacter violaceus from calcareous rock (Choi et al., 2014), and
+63    Sphingomonas paucimobilis from hospital respirator (Maliar et al., 2020). The rhodopsins from the
+
+
+                                                                                                                                                        2
+     bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                     was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+64    aforementioned organisms have been well characterized and shown to possess H +-pumping activity. A Cl--
+65    pumping rhodopsin was found in cyanobacterium Mastigocladopsis repens, a soil isolate (Hasemi et al.,
+66    2016).
+67              Recently, the presence of rhodopsins was reported in actinomycetes (formerly called
+68    actinobacteria) of the family Geodermatophilaceae (class Actinomycetes, phylum Actinomycetota) which
+69    originate primarily from hot and arid terrestrial environments (Tarlachkov et al., 2020; Tarlachkov et al.,
+70    2023). By using a bioinformatics-based approach, the rhodopsins with DTE and NDQ amino acid motifs
+71    in positions 85, 89 and 96 (in BR numbering) were discovered in members of this family. The cluster
+72    analysis was further showed that the DTE rhodopsin group consisted of two separate groups, DTEW and
+73    DTEF, which differed in the presence of highly conserved tryptophan (DTEW) and phenylalanine (DTEF)
+74    at position 182 (in BR numbering). Thus, three different groups of microbial rhodopsins were identified in
+75    Geodermatophilaceae before the present work, namely, DTEW, DTEF and NDQ (Tarlachkov et al., 2020;
+76    Tarlachkov et al., 2023).
+77              The DTEW rhodopsins are well known and occur in various groups of microorganisms, including
+78    actinomycetes (Chuon et al., 2021; Keffer et al., 2015; Nakamura et al., 2016). The DTEF rhodopsins, on
+79    the contrary, are quite unique and have been found so far only in representatives of Geodermatophilaceae.
+80    As for the rhodopsins with NDQ motif, these have not been described in the literature among
+81    actinomycetes           and      other      gram-positives           (monoderms),            except       for     a     representative            of
+82    Geodermatophilaceae (Tarlachkov et al., 2020), although some close protein sequences of actinomycete
+83    origin are present in public protein databases. However, the physiological role and functional
+84    characteristics of rhodopsins from Geodermatophilaceae have not been studied.
+85              Although generally considered endemic to soils, evolution of members of Geodermatophilaceae
+86    has continued in specialized biotopes, including rocks and desert sandy soils in areas of moisture
+87    deficiency, low nutrients, high salinity and high UV- and gamma-radiation (Busarakam et al., 2016;
+88    Tarlachkov et al., 2023; Urzì et al., 2001). The rhodopsin-containing Geodermatophilaceae inhabiting
+89    such specialized land biotopes represent unique group for study and broadening our understanding of the
+90    diversity and functions of microbial rhodopsins and their role in biological adaptation to extremal
+91    environments.
+92              In this work, we provide new data on the diversity and properties of rhodopsins from
+93    actinomycetes of the family Geodermatophilaceae.
+94
+
+
+
+
+                                                                                                                                                        3
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+ 95              MATERIALS AND METHODS
+ 96              Bioinformatic analysis
+ 97              Complete and high-quality draft genome sequences of 110 bacteria of the family
+ 98    Geodermatophilaceae were obtained from GenBank, (Supplementary Table S1) and re-annotated using
+ 99    Prokka 1.14.6 (Seemann, 2014) with the Barrnap 0.9 plug-in. In order to search and identify the
+100    rhodopsins genes present in the genomes studied, the reference protein sequences of well-known
+101    rhodopsins were used as a query in BLASTp search against translated CDS which were extracted from
+102    each genome. A best-hits with e-values lower than 0.01 were considered as potential rhodopsin proteins.
+103    Then, each found sequence was aligned using MUSCLE (Edgar, 2021) against reference sequences to
+104    finally identify rhodopsins.
+105              Multiple sequence alignment of the revealed rhodopsin proteins was performed by MUSCLE.
+106    Phylogenetic trees were inferred by MEGA11 (Tamura et al., 2021). The pairwise identity between protein
+107    sequences was determined using TaxonDC 1.3 (Tarlachkov and Starodumova, 2017). The sequences
+108    closest to the found rhodopsins were identified by BLASTp searches against the NCBI non-redundant
+109    protein database (NCBI NR).
+110
+111              Genome sequencing and assembly
+112              The cells of strain Geodermatophilus sp. DSM 44513 were grown at 28 °С for 24 hours on a rotary
+113    shaker in a peptone yeast medium containing the following (g/L): peptone, 5; yeast extract, 3; K 2HPO4,
+114    0.2; glucose, 5; NaCl, 3; pH 7. To obtain long-reads, DNA was isolated with GeneJET Genomic DNA
+115    Purification Kit (Thermo Scientific, USA). To enhance cells lysis, enzymatic cell wall digestion was
+116    performed in buffer containing 25 mM Tris-HCl 8.0, 0.05 mM EDTA, 40 mM NaCl, 0.1% Triton X-100,
+117    and supplemented with 1 mg/ml lysozyme and 0.09 mg/ml EndoRB49 (Chernyshov et. al, 2023). Library
+118    were prepared using Ligation Sequencing Kit (Oxford Nanopore Technologies, UK) and Native Barcoding
+119    Expansion 13-24 (Oxford Nanopore Technologies, UK). The resulting library was sequenced with
+120    MinION flow cell R9.4.1 (Oxford Nanopore Technologies, UK).
+121              For obtaining short-reads, DNA isolation was performed using a FastDNA SPIN Kit and FastPrep-
+122    24 homogenizer (MP Biomedicals, USA). Library was prepared with a KAPA HyperPlus Kit (KAPA,
+123    USA) and sequenced on an Illumina NovaSeq 6000 platform (Illumina, USA) with a NovaSeq 6000 S2
+124    Reagent Kit (200 cycles).
+125              Long reads basecalling was performed using Guppy v6.5.7 (Oxford Nanopore Technologies, UK).
+126    Short and low-quality reads were removed using Filtlong v0.2.1 (https://github.com/rrwick/Filtlong).
+127    Genome backbone was assembled using Flye v2.9.2 (Kolmogorov et. al, 2019). Adapter sequences and
+
+
+                                                                                                                                                         4
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+128    low-quality regions in short reads were removed using Trimmomatic v0.39 (Bolger et. al, 2014). The
+129    assembly was polished with clean short reads using Polypolish v0.5.0 (Wick and Holt, 2022) and Pilon
+130    v1.24 (Walker et. al, 2014). The annotation was performed at the NCBI PGAP v6.6 (Tatusova et. al,
+131    2016).
+132
+133              Rhodopsins cloning and expression
+134              A total of 6 rhodopsin genes were amplified from the genomic DNA of 5 strains (Table 1). The
+135    fragments were cloned into the pET-30b expression vector between sites NdeI and XhoI. The termination
+136    codon was omitted from all genes, thus cloned genes have LEHHHHHH-coding extension at 3' end. The
+137    gene of DTEF-rhodopsin from Geodermatophilus obscurus VKM Ac-658T (GobFR) contains inner XhoI
+138    restriction site, which was removed by SOE PCR, along with local optimization of codon usage.
+139              Protein expression was carried out in E. coli BL21(DE3) and C43(DE3) strains using LB medium
+140    containing the following (g/L): tryptone, 10; yeast extract, 5; NaCl, 10. Induction was performed with
+141    IPTG (isopropyl β-D-1-thiogalactopyranoside) at concentrations of 0.01 mM for E. coli BL21(DE3) and
+142    0.5 mM for E. coli C43(DE3) for 4 hours at 37 °С with the addition of retinal to a final concentration of
+143    13 μM.
+144
+145    Table 1. Rhodopsins characterized in this work and related information. For accession numbers of source
+146    sequences, see Supplementary Table S2.
+        Rhodopsin           Rhodopsin Cloned Gene Strain                                                                  Source of strain
+        designation         group     GenBank Acc.                                                                        isolation*
+                                      number
+        GdiWR               DTEW              PP765527.1            Geodermatophilus dictyosporus                         Soil, Westgard Pass,
+                                                                    VKM Ac-659T (=DSM 43161T)                             California
+        GdiFR               DTEF              PP765528.1
+        GobFR               DTEF              PP765529.1            G. obscurus VKM Ac-658T (=DSM                         Soil, Amargosa desert,
+                                                                    43160T)                                               Nevada
+        MspDR               NDQ               PP765530.1            Modestobacter sp. VKM Ac-2978                         Salt crust on the soil
+                                                                                                                          surface, Kysyskum
+                                                                                                                          desert, Uzbekistan
+        GspTR               NTQ               PP765531.1            Geodermatophilus sp. DSM 44513                        Marble quarry, Turkey
+        BagHR               HeR               PP765532.1            Blastococcus aggregatus VKM Ac-                       Sea water, Baltic Sea
+                                                                    1606T (=DSM 4725T)
+147    * Data from Luedemann, 1968; Urzì et al., 2001; Urzì et al. 2004; Tarlachkov et al., 2023.
+148
+
+
+                                                                                                                                                         5
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+149              Protein purification and absorption measurements
+150              All procedures were carried out at 4 °C. Harvested cells were resuspended in a buffer containing
+151    50 mM sodium phosphate, pH 7.8, and 300 mM NaCl, followed by ultrasonication. Undisrupted cells
+152    were removed by centrifugation at 5,000g for 10 min. Further, membrane fraction was sedimented at
+153    100,000g for 1 hour, and membrane proteins were extracted using the same buffer supplemented with 1%
+154    DDM (n-dodecyl β-D-maltoside). Purification of rhodopsins was carried out on Ni-IDA agarose (Biontex)
+155    according to the manufacturer's recommendations. After elution, buffer was changed to 50 mM Tris-HCl,
+156    pH 7.5, 100 mM NaCl, 0.05% DDM using Amicon Ultra Centrifugal Filters. Purity was confirmed by
+157    electrophoresis under denaturing conditions. Absorption spectra were recorded with a Shimadzu UV 1800
+158    spectrophotometer.
+159
+160              Pumping activity assay
+161              Pelleted cells were washed three times with appropriate unbuffered salt solution at a concentration
+162    of 100 mM, and then re-suspended for ion transport measurements. The sample was illuminated by 500W
+163    halogen lamp supplemented with IR filter. The pH changes were measured in the thermostated cell at 20
+164    °C with intensive stirring and recorded in time-dependent manner. CCCP (carbonyl cyanide m-
+165    chlorophenyl hydrazone) at final concentration of 30 μM was used to verify and discriminate proton and
+166    non-proton pumping activities.
+167
+
+
+
+
+                                                                                                                                                         6
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+168              RESULTS AND DISCUSSION
+169              New groups of rhodopsins
+170              As mentioned previously, three groups of rhodopsins with DTEW, DTEF, and NDQ motifs were
+171    found in members of the family Geodermatophilaceae by bioinformatic analysis (Tarlachkov et al., 2020).
+172    A more extended analysis of the available genome sequences of 110 members of this family, including
+173    Geodermatophilus sp. DSM 44513, sequenced in this work, revealed 69 strains containing the
+174    aforementioned DTEW, DTEF, and NDQ rhodopsins, and also NTQ rhodopsin (presumably Cl - pump)
+175    and heliorhodopsins. Thus, five groups of rhodopsins have been discovered in members of
+176    Geodermatophilaceae to date (Fig. 1, Supplementary Table S1, S2).
+
+
+
+
+177    Fig. 1. Unrooted approximate maximum likelihood tree of amino acid sequences of rhodopsins from
+178    actinomycetes of the family Geodermatophilaceae. Red dots denote positions of rhodopsins characterized
+179    in this work.
+180
+181              General characteristics of the genome of Geodermatophilus sp. DSM 44513
+182              A complete genome of Geodermatophilus sp. DSM 44513, an isolate from marble quarry, Turkey
+183    (Urzì et al., 2001) was sequenced and submitted to GenBank under accession number CP135963.1. The
+184    genome consisted of a 4.6 Mb circular chromosome with 75,17% G+C content and had a total of 4,454
+185    predicted genes, of which 4,350 were protein-coding. The search revealed genes encoding rhodopsin with
+186    DTEW motif and also two rhodopsins novel for the family Geodermatophilaceae, NTQ rhodopsin and
+187    heliorhodopsin.
+188
+189
+
+
+                                                                                                                                                         7
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+190              NTQ rhodopsin
+191              The aforementioned novel rhodopsin with a NTQ motif at positions 85, 89 and 96 (in BR
+192    numbering) from Geodermatophilus sp. DSM 44513 (GspTR) formed a distinct branch on the unrooted
+193    tree of rhodopsins found in representatives of the family Geodermatophilaceae (Fig. 1). This rhodopsin
+194    also clustered apart from the clades of previously reported NTQ rhodopsins acting primarily as Cl - pumps
+195    (Supplementary Fig. S3).
+196              To date, only three NTQ rhodopsins have been characterized in detail, namely, NM-R3 from
+197    Nonlabens marinus (Flavobacteriia) (Yoshizawa et al., 2014), FR from Fulvimarina pelagi
+198    (Alphaproteobacteria) (Inoue et al., 2014) and AaClR from Alteribacter aurantiacus (Bacillaceae) (Singh
+199    et al., 2023). In addition, two identified but incompletely characterized rhodopsins from this group have
+200    been reported: PoClR from Parvularcula oceani (Alphaproteobacteria) (Inoue et al., 2016) and unnamed
+201    protein from Nonlabens sp. YIK11 (Flavobacteriia) (Kwon et al., 2016). There is also information on
+202    some uncharacterized NTQ rhodopsins originating from marine bacteria (Yoshizawa et al., 2014, Kwon et
+203    al., 2016). All the above bacteria with NTQ rhodopsins, except for Alteribacter aurantiacus and
+204    Geodermatophilus sp. DSM 44513, are Gram-negatives (diderms), and all originate from aquatic, mainly
+205    marine, environments, with the exception of the above Geodermatophilus sp. DSM 44513 isolated from a
+206    terrestrial source (marble quarry) (Urzì et al., 2001).
+207              In the NCBI protein database, the sequences nearest to the NTQ rhodopsin from
+208    Geodermatophilus sp. DSM 44513 (GspTR) were found in uncultivated actinomycetes, such as a
+209    representative of the suborder Frankineae from biological soil crust sampled in Negev Desert (GenBank
+210    acc. CAA9312725.1, 79.6% identity) and a member of the order Mycobacteriales from soil (GenBank
+211    acc. HWG93181.1, 63.0% identity). Other found rhodopsins showed less than 43% identities to GspTR
+212    and did not always contain NTQ motif. Thus, the phylogenetically distant GspTR rhodopsin discovered in
+213    Geodermatophilus sp. DSM 44513 and some related satellite sequences from uncultivated organisms
+214    available in the NCBI protein database form a separate group of hypothetical Cl - pumps which appear to
+215    specialize for non-aquatic ecological niches.
+216              GspTR rhodopsin and its homologs from the two above non-aquatic actinomycetes, members of
+217    Frankineae and Mycobacteriales, shared less than 38.9% amino acid identity to the all other described
+218    NTQ rhodopsins from aquatic bacteria and had several noticeable differences in key amino acids. For
+219    example, GspTR contained a hydrophobic valine at position 204 (in BR numbering), while the NTQ
+220    rhodopsins from the above aquatic bacteria had a charged arginine at homologous positions
+221    (Supplementary Fig. S4). As a result of such substitution, the H+ release mechanisms may alter due to the
+222    possible involvement of the corresponding amino acid residues in the proton-releasing group (PRG).
+
+
+                                                                                                                                                         8
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+223              Heliorhodopsins
+224              A total of 18 heliorhodopsin genes were discovered in actinomycetes of the family
+225    Geodermatophilaceae by the bioinformatic analysis (Supplementary Table S1, S2). These were present
+226    predominantly in strains of the genus Modestobacter and also identified in three Blastococcus strains and
+227    three representatives of Geodermatophilus. The detected heliorhodopsins were assigned to subfamily 1
+228    according to the classification of Kovalev et al. (Kovalev et al., 2020) and to group A according to Chazan
+229    et al. (Chazan et al., 2022). The subfamily 1 and group A contain mostly proteins from actinomycetes,
+230    including HeR 48C12, a well-studied member of the heliorhodopsin family found in an actinomycete from
+231    the freshwater Lake Kinneret (Pushkarev et al., 2018).
+232              The identified Geodermatophilaceae heliorhodopsins often co-occurred with NDQ rhodopsins in
+233    the same strains (Supplementary Table S1, S2). In two strains, M. roseus DSM 45764 and M. marinus
+234    DSM 45201, the genes for heliorhodopsins and NDQ-rhodopsins were closely located, but did not form an
+235    operon (Supplementary Fig. S5). The heliorhodopsin genes in Blastococcus sp. DSM 46792,
+236    Modestobacter sp. VKM Ac-2978 and M. caceresii KNN 45-2b were frame-shifted or fragmented
+237    (Supplementary Fig. S6), in contrast to all other rhodopsin genes in members of the family
+238    Geodermatophilaceae, and are most likely inactive. The above findings suggest a weaker selection
+239    pressure for the heliorhodopsin genes as compared with the other rhodopsins, at least in
+240    Geodermatophilaceae. On the other hand, the heliorhodopsin proteins of Geodermatophilaceae have a
+241    relatively large percentage of identity among themselves, typically more than 85%, which may point to
+242    some conservation processes.
+243              Heliorhodopsins from the family Geodermatophilaceae showed less than 49% identity with HeR
+244    48C12, the aforementioned well-studied heliorhodopsin from actinomycete (Pushkarev et al., 2018). But
+245    at the same time, the Geodermatophilaceae heliorhodopsins have conserved most of the reported
+246    functionally important amino acids (Supplementary Fig. S7). Notable differences in amino acid sequences
+247    were revealed at positions associated with dimerization and the AB loop, and also with serine-to-alanine
+248    substitution at position 76 (in 48C12 numbering), which is part of the retinal Schiff base (RSB).
+249              To date, there is no consensus on the biological and functional roles of heliorhodopsins. One of the
+250    approaches to understanding their role is the analysis of neighboring genes. From the strongest association
+251    between heliorhodopsins and the DegV family proteins involved in activation of fatty acids, it was
+252    hypothesized that heliorhodopsins might be involved in light-induces membrane lipid modifications
+253    (Chazan et al., 2022). However, genes for DegV proteins were not found in the vicinity of heliorhodopsin
+254    genes in strains of Geodermatophilaceae (Supplementary Fig. S5), although the DegV genes were present
+255    in the majority of members of this family, including the heliorhodopsin-lacking ones. From the above
+
+
+                                                                                                                                                         9
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+256    findings it follows that if any relationship between heliorhodopsins and DegV takes place, it is not
+257    universal.
+258              The heliorhodopsins were also reported to regulate the activity of class 2 cyclobutane pyrimidine
+259    dimer photolyase (Shim et al., 2022) and glutamine synthetase (Cho et al., 2022). In both cases, the genes
+260    for the target enzymes were adjacent and formed an operon with heliorhodopsins. It has also been noted
+261    that the heliorhodopsin genes from some aquatic actinomycetes (actinobacteria in the original work) are
+262    surrounded by two large clusters of Nuo genes, the products of which are the key proteins in respiratory
+263    chains (Kovalev et al., 2020). A different situation was observed in Geodermatophilaceae, where the
+264    heliorhodopsin genes had a diverse vicinity without clear patterns. In addition, they were predominantly
+265    oriented in the opposite direction to the nearest neighboring genes. The above data provide clear evidence
+266    for the absence of co-expression. Thus, it can be stated that the analysis of neighboring genes does not
+267    allow us to make an assumption about functions of heliorhodopsins in the Geodermatophilaceae family.
+268
+269              Light-harvesting carotenoid antenna
+270              A previous study of Salinibacter ruber (Actinomycetales) has shown that it produces
+271    xanthorhodopsin (XR), a well-known light-driven H+ pump (Balashov et al., 2005). In addition to retinal,
+272    XR contains a non-covalently bound carotenoid salinixanthin with a function of a light-harvesting antenna
+273    (Balashov et al., 2005). In the present study, we have found that a significant number of amino acids
+274    involved in carotenoid binding by xanthorhodopsin are present in Type I rhodopsins from
+275    Geodermatophilaceae, including glycine at a position homologous to 156 in xanthorhodopsin
+276    (Supplementary Fig. S8). Glycine at this position was supposed to be the best diagnostic feature for the
+277    possibility of binding the salinixanthin-like carotenoids (Luecke et al., 2008).
+278              The Na+-pumping rhodopsin (NaR) from flavobacterium Dokdonia sp. PRO95 was reported to
+279    bind carotenoid antenna after replacement of threonine by glycine at position 216 (homolog of G201 for
+280    xanthorhodopsin) (Anashkin et al., 2018). Interestingly, glycine at the corresponding position was found in
+281    most Type I rhodopsins from Geodermatophilaceae, and only NDQ rhodopsins had methionine instead of
+282    glycine. Other carotenoid-binding amino acids identical between xanthorhodopsin and NaR rhodopsin
+283    from Dokdonia sp. PRO95 (G156, N191, L197, Y207 in XR numbering) were the same as in the majority
+284    of Type I rhodopsins of Geodermatophilaceae. From all the above data it might be supposed that the DTE
+285    and NTQ rhodopsins from Geodermatophilaceae may bind the light harvesting antenna and enhance
+286    efficiency of ion transport, like that reported for other carotenoid-binding rhodopsins.
+287
+288
+
+
+                                                                                                                                                         10
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+289              Rhodopsins absorption spectra
+290              DDM-solubilized rhodopsins isolated from E. coli were violet to red in color, with absorption
+291    maxima ranging from 513 to 559 nm at pH 7.5 (Fig. 2). The NTQ rhodopsin from Geodermatophilus sp.
+292    DSM 44513 (GspTR) had absorption peak at 513 nm in 100 mM NaCl and was the most blue-shifted
+293    compared to the 24 NTQ rhodopsins available in the Karasuyama et al. database (Karasuyama et al.,
+294    2018). The absorption peak of GspTR was the closest to that of FR rhodopsin from Fulvimarina pelagi
+295    (518 nm in 1660 mM NaCl) (Inoue et al., 2014) and of AaClR from Alteribacter aurantiacus (517 nm in
+296    100 mM NaCl) (Singh et al., 2023), and showed significant distance from NM-R3 rhodopsin from
+297    Nonlabens marinus with absorption peak at 533.5 nm (Yoshizawa et al., 2014).
+298              Heliorhodopsin from B. aggregatus VKM Ac-1606T (BagHR) with the absorption maximum at 559
+299    nm was the most red-shifted protein compared to all actinomycete heliorhodopsins and the majority of
+300    other heliorhodopsins characterized to date (Kim et al., 2021; Cho et al., 2022; Hososhima et al., 2022;
+301    Shihoya et al., 2019; Chazan et al., 2022). This value was only slightly lower than that reported for the
+302    known most red-shifted heliorhodopsin HULAa30F3 (absorption peak, 562 nm) from aquatic Chloroflexi
+303    (Chazan et al., 2022). The Geodermatophilaceae heliorhodopsins had less than 43% protein identity to the
+304    HULAa30F3 and contained the highly conserved canonical histidine residues at positions 23 and 80 (in
+305    48C12 numbering), unlike hydrophobic leucine in HULAa30F3 (Supplementary Fig. S7). The
+306    replacement of histidine with an aromatic phenylalanine at each position was reported to significantly
+307    slow down the photocycle of 48C12 (Pushkarev et al., 2018).
+
+
+
+
+308    Fig. 2. Absorption spectra of purified rhodopsins solubilized in the DDM. For rhodopsins designations,
+309    see Table 1.
+310
+311
+
+
+                                                                                                                                                         11
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+312              Pumping specificity
+313              Rhodopsins with DTEW and DTEF motifs from G. dictyosporus and G. obscurus
+314              GdiWR and GdiFR rhodopsins from G. dictyosporus VKM Ac-659T and GobFR rhodopsin from
+315    G. obscurus VKM Ac-658T (Table 1) were found to exhibit outward H+-pumping activity, which depended
+316    on the presence of Ca2+ ions and the particular expression strain. In case the rhodopsin genes were
+317    expressed in E. coli BL21(DE3), the pumping was observed in both CaCl2 and NaCl solutions, but the
+318    activity was higher at CaCl2 (Fig. 3A, 3B, 3G, 3H). On the other hand, Ca 2+ was strictly required for H +-
+319    pumping when DTE rhodopsin genes are expressed in strain E. coli C43(DE3) (Fig. 3D, 3E, 3J, 3K).
+320    Another divalent ion, namely, Mg2+, showed little effect only in case the strain E. coli BL21(DE3) was
+321    used for expression, but no effect was observed with E. coli C43(DE3) expression strain (Fig. 3C, 3F, 3I,
+322    3L). The H+-pumping activity was confirmed using cells treated with a protonophore (CCCP) that greatly
+323    reduced light-induced pH changes.
+324              It is worth mentioning that no Ca 2+ requirement for pumping activities was noted previously for
+325    rhodopsins, including those from actinomycetes (Chuon et al., 2021; Dwulit-Smith et al., 2018; Keffer et
+326    al., 2015; Nakamura et al., 2016; Pushkarev and Béjà, 2016). However, some papers and guidelines
+327    recommend addition of Ca2+ and Mg2+ to pumping solutions at concentrations of 100 μM and 10 mM,
+328    respectively (Han et al., 2020; Maresca et al., 2016; Wang et al., 2003). In our experiments, no DTE
+329    rhodopsin activity was observed at the above Ca 2+ and Mg2+concentrations when the expression strain E.
+330    coli C43(DE3) is used (data not shown). The activity of rhodopsins from other groups studied in this work
+331    did not depend on the presence of Ca2+ or on the use a particular E. coli expression strain.
+332              Considering the requirement for high Ca2+ concentrations, it is unlikely that it plays a regulatory
+333    function. It can be inferred from our study that Ca 2+ in a high concentration is necessary to correct folding
+334    of DTE rhodopsins. Although the DTE rhodopsins are colored that indicates the overall right protein
+335    folding, the local miss-folds may still prevent rhodopsin pumping activity in the absence of Ca 2+. In
+336    addition, Ca2+ can interact with lipid membranes, in particular, it rigidifies and orders lipid bilayers by
+337    involving in mechanisms of conformational changes of the lipid headgroup region, ordering of acyl chains
+338    and lipid dehydration (Melcrová et al., 2016). Thus, Ca 2+ ions can affect the membrane structure, resulting
+339    in the activation of rhodopsins.
+340              It is unclear whether Ca2+ is required for pumping process only when the DTE rhodopsins are
+341    expressed in Gram-negative (diderm) E. coli, or it also necessary in case the expression strain is Gram-
+342    positive (monoderm) prokaryotes like the host Geodermatophilaceae strains. The Gram-positives do not
+343    contain outer membrane, possesses different lipid composition and usually has thicker and more rigid cell
+344    walls with multilayered peptidoglycans and different layers of heteropolysaccharides and peptides (Rohde,
+
+
+                                                                                                                                                         12
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+345    2019). On the other hand, the requirement for Ca 2+ can be unique feature of the DTE rhodopsins from
+346    Geodermatophilaceae when Ca2+ acts as an activator of these rhodopsins under certain physico-chemical
+347    environmental conditions, for instance, in the calcium-rich biotopes. This is consistent with the ability of
+348    representatives of the family Geodermatophilaceae to live in such biotopes, for example, in limestone
+349    carbonates. It can also be assumed that, despite the similarity in behavior of DTEW and DTEF rhodopsins
+350    when expressed in E. coli, their functions may somewhat differ in host strains under certain natural
+351    conditions. This supposition follows from the co-presence of rhodopsins from both above groups, DTEW
+352    and DTEF, in three members of the family Geodermatophilaceae (Supplementary Table S1, S2).
+
+
+
+
+353    Fig. 3. Ion transport activity of the DTE rhodopsins from G. dictyosporus VKM Ac-659T (GdiWR) and G.
+354    obscurus VKM Ac-658T (GobFR) expressed in E. coli BL21(DE3) and C43(DE3) strains. For DTEF
+355    rhodopsin from G. dictyosporus VKM Ac-659T (GdiFR) see Supplementary Fig. S9. Measurements were
+356    performed with (orange line) and without (blue line) adding CCCP. The cell suspensions were illuminated
+357    for 240 s (yellow area on the plots).
+358
+359              Rhodopsin MspDR with NDQ motif from Modestobacter sp. VKM Ac-2978
+360              MspDR rhodopsin from Modestobacter sp. VKM Ac-2978 acts exclusively as H+ pump in both
+361    NaCl and KCl solutions at pH 5 (Fig. 4A, 4B). At pH 6, the H+-pumping still predominated (Fig. 4C, 4D),
+362    but some Na+-pumping activity became additionally detectable when CCCP is added to the cell suspension
+363    in NaCl solution. Even at pH 7, Na+-pumping was observed in NaCl solution only after adding CCCP
+
+
+
+                                                                                                                                                         13
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+364    (Fig. 4E). However, H+-pumping was absent at neutral pH according to the experiment with KCl solution
+365    (Fig. 4F). As follows, the lack of any activity in NaCl solution at pH 7 without CCCP is not due to a
+366    combination of the opposite processes of Na+- and H+-pumping, just weak activity against Na+.
+367              Previously it was supposed that NDQ rhodopsins from the Geodermatophilaceae have Na+- or
+368    H+/Na+-pumping activity (Tarlachkov et al., 2020). The present study showed that the MspDR rhodopsin
+369    acts predominantly as a pH-dependent H+ pump, but the Na+ activity in E. coli cell suspension was very
+370    weak. For strong Na+-pumping activity, a much more alkaline pH and much more than 100 mM NaCl
+371    concentration are probably required.
+372              Thus, the behavior of MspDR rhodopsin differed from that of the previously characterized NDQ
+373    rhodopsins KR2, NdR2 and IAR from Flavobacteriaceae and Cyclobacteriaceae which showed a
+374    significant Na+-pumping activity at neutral pH in 100 mM NaCl solution, and H +-pumping at any pH in a
+375    KCl solution (Inoue et al., 2013; Li et al., 2015; Zhao et al., 2017). MspDR rhodopsin also differed from
+376    NM-R2 (Yoshizawa et al., 2014) and GLR (Balashov et al., 2014) rhodopsins found in Flavobacteriaceae,
+377    which exhibited only Na+ activity. It is worth noting that all the aforementioned NDQ rhodopsins are
+378    harbored in Gram-negative (diderm) bacteria inhabiting aquatic ecosystems, mainly seas, and their
+379    differences in the behavior from MspDR rhodopsin of Gram-positive (monoderm) Modestobacter from
+380    Kyzylkum Desert can be related to their specific habitat conditions and the cell envelope structure.
+
+
+
+
+381    Fig. 4. Ion transport activity of NDQ rhodopsin from Modestobacter sp. VKM Ac-2978 (MspDR)
+382    expressed in E. coli C43(DE3). Measurements were performed with (orange line) and without (blue line)
+383    adding CCCP. The cell suspensions were illuminated for 240 s (yellow area on the plots).
+384
+
+
+
+
+                                                                                                                                                         14
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+385              Protein sequence analysis revealed also a number of differences in the amino acids between NDQ
+386    rhodopsins from Geodermatophilaceae and well-studied NDQ rhodopsins from aquatic Gram-negatives
+387    (Supplementary Fig. S10). The most notable differences were observed at positions L74, N61 and G263
+388    (in KR2 numbering). The first amino acid residue (L74) plays an important role in switching between Na +-
+389    to H+-pumping activities and the last two (N61 and G263) are associated with ion selectivity (Gushchin et
+390    al., 2015; Kovalev et al., 2019). In addition, the valine is detected at the position homologous to H180 in
+391    KR2. Histidine at this position was reported to be involved in the mechanism of Na +-pumping and is
+392    characteristic of all NDQ rhodopsins studied in this respect (Kriebel et al., 2023).
+393              It is clear, that the MspDR rhodopsin and most likely other NDQ rhodopsins from
+394    Geodermatophilaceae act only as H+ pumps at pH < 6. MspDR also showed slight bifunctional properties
+395    at pH 6-7, and may probably act as Na+ pump in some extreme conditions at high pH and salinity. These
+396    rhodopsins are apparently incapable of transporting Na+ to a noticeable degree under seawater conditions,
+397    but they can do this in case the Na+ content and pH value of the environment are significantly higher than
+398    in seawater (>>0.5 M NaCl and pH >>8). This may be important for the survival and vital activity of
+399    Geodermatophilaceae species in saline and hyper-arid environments under the salinity level much higher
+400    than in seawater (Busarakam et al., 2016; Tarlachkov et al., 2023).
+401              On the other hand, members of the family Geodermatophilaceae with NDQ rhodopsins can grow
+402    well in the NaCl-lacking nutrient media (for example, ISP2) (Busarakam et al., 2016; Tarlachkov et al.,
+403    2023; Xiao et al., 2011), unlike most marine microorganisms with Na +- or Na+/H+-pumping rhodopsins
+404    that prefer salt-containing media (Khan et al., 2006; Park et al., 2012; Yoon et al., 2006). It can be
+405    therefore supposed that the NDQ rhodopsins revealed in Geodermatophilaceae are capable of performing
+406    two functions, namely, to maintain the Na + homeostasis under extreme salinity and the pH balance under
+407    acidification of the environment.
+408              Previously a pH-sensitive DTS rhodopsin active at pH 6 and below from Gram-negative (diderm)
+409    bacterium Sphingomonas paucimobilis promising for use in optogenetics has been reported (Maliar et al.,
+410    2020). Microbial rhodopsins with the NDQ motif from actinomycetes of the family Geodermatophilaceae
+411    may represent another group of pH-sensitive rhodopsins of interest for optogenetic studies and
+412    applications. Further improvement in specificity can be achieved, in particular, by site-directed
+413    mutagenesis to completely eliminate the affinity to Na + ions. These proteins can also be used as model to
+414    study the mechanism of switching between the H+ and Na+ specificities in NDQ rhodopsins.
+415
+416
+417
+
+
+                                                                                                                                                         15
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+418              Rhodopsin GspTR with NTQ motif from Geodermatophilus sp. DSM 44513
+419              GspTR rhodopsin from Geodermatophilus sp. DSM 44513 showed high inward Cl-- and Br--
+420    pumping activities (Fig. 5A, 5B, 5C, 5D), and had weaker activity towards I - (Fig. 5E, 5F). Some trace
+421    signals were also registered in pumping solutions with NO3- (Fig. 5G, 5H), but no any pumping activity
+422    against SO42- was detected (Fig. 5I, 5J). It was observed during experiment that even at a slight
+423    contamination of the cell suspension with Cl- ions a noticeable signal was detected, so a double junction
+424    electrode filled with KNO3 was used to prevent such contamination from the reference electrode.
+
+
+
+
+425    Fig. 5. Ion transport activity of NTQ rhodopsin from Geodermatophilus sp. DSM 44513 (GspTR)
+426    expressed in E. coli C43(DE3). Measurements were performed with (orange line) and without (blue line)
+427    adding CCCP. The cell suspensions were illuminated for 240 s (yellow area on the plots).
+428
+429              Heliorhodopsin BagHR from B. aggregatus
+430              BagHR from B. aggregatus VKM Ac-1606T did not exhibit any pumping activity in either NaCl or
+431    CaCl2 solutions (data not shown). Some factors may interfere with the pumping activity of this
+432    heliorhodopsin, like that described above for DTE rhodopsins. Thus, the functions of heliorhodopsin from
+433    B. aggregatus (and also from other members of Geodermatophilaceae) remain unclear. On the other hand,
+
+
+                                                                                                                                                         16
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+434    these functions may have no relation to pumping process, and the Geodermatophilaceae heliorhodopsins
+435    may play completely different functional and biological roles. Diverse biological functions of
+436    heliorhodopsins were supposed based on their 10 different groups (subfamilies) identified by
+437    bioinformatic analysis (Kovalev et al., 2020) and also follows from the data discussed above in the
+438    heliorhodopsin-related section. As a result, it can be assumed that taxonomic or ecological groups of the
+439    family Geodermatophilaceae may have their own specific heliorhodopsins with significantly different
+440    functions acquired as a result of their evolution and adaptation to specific terrestrial ecological niches.
+441
+442              CONCLUSION
+443              New data have been provided on the diversity of rhodopsins in actinomycetes of the family
+444    Geodermatophilaceae (class Actinomycetes, phylum Actinomycetota) mostly originating from hot and arid
+445    ecosystems, and some new properties and functional characteristics of the rhodopsins have been reported.
+446    Rhodopsins from all five groups studied in the present work, both the newly discovered NTQ and
+447    heliorhodopsins, and the DTEW, DTEF and NDQ rhodopsins previously identified in the
+448    Geodermatophilaceae, have either unique absorbance maxima or unique features of pumping activity. The
+449    retinal proteins of Gram-positive (diderm) Geodermatophilaceae share quite low similarities to the
+450    respective rhodopsins from Gram-negatives (monoderms) inhabiting marine and freshwater environments
+451    and also differ from them in some highly conserved amino acid residues. This is not surprising given the
+452    evolutionary distances and phenotypic differences between rhodopsin-producing members of
+453    Actinomycetota and representatives of the other bacterial phyla, as well as remarkable variations between
+454    their specialized biotopes, both aquatic and terrestrial, including rocks and desert sandy soils. Further
+455    study will extend our knowledge about the diversity and functional characteristics of the
+456    Geodermatophilaceae rhodopsins and their role in adaptation of actinomycetes of this family to harsh
+457    environments.
+458
+459              ACKNOWLEDGEMENTS
+460              This work was financially supported by the Ministry of Science and Higher Education of the
+461    Russian Federation (Grant agreement # 075-15-2021-1051).
+462              The authors are grateful to prof. Oded Béjà for pointing out the presence of heliorhodopsins in the
+463    Geodermatophilus family.
+464
+
+
+
+
+                                                                                                                                                         17
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+465              REFERENCES
+466    1. Anashkin VA, Bertsova YV, Mamedov AM, Mamedov MD, Arutyunyan AM, Baykov AA, Bogachev
+467         AV. Engineering a carotenoid-binding site in Dokdonia sp. PRO95 Na+-translocating rhodopsin by a
+468         single amino acid substitution. Photosynth Res, 2018, 136(2):161-169. doi: 10.1007/s11120-017-0453-
+469         0.
+470    2. Atamna-Ismaeel N, Finkel OM, Glaser F, Sharon I, Schneider R, Post AF, Spudich JL, von Mering C,
+471         Vorholt JA, Iluz D, Béjà O, Belkin S. Microbial rhodopsins on leaf surfaces of terrestrial plants.
+472         Environ Microbiol, 2012, 14(1):140-146. doi: 10.1111/j.1462-2920.2011.02554.x.
+473    3. Balashov SP, Imasheva ES, Boichenko VA, Antón J, Wang JM, Lanyi JK. Xanthorhodopsin: a proton
+474         pump with a light-harvesting carotenoid antenna. Science, 2005, 309(5743):2061-2064. doi:
+475         10.1126/science.1118046.
+476    4. Balashov SP, Imasheva ES, Dioumaev AK, Wang JM, Jung K-H, Lanyi JK. Light-driven Na(+) pump
+477         from Gillisia limnaea: a high-affinity Na(+) binding site is formed transiently in the photocycle.
+478         Biochemistry, 2014, 53(48):7549-7561. doi: 10.1021/bi501064n.
+479    5. Bolger AM, Lohse M, Usadel B. Trimmomatic: a flexible trimmer for Illumina sequence data.
+480         Bioinformatics, 2014, 30(15):2114-2120. doi: 10.1093/bioinformatics/btu170.
+481    6. Busarakam K, Bull AT, Trujillo ME, Riesco R, Sangal V, van Wezel GP, Goodfellow M.
+482         Modestobacter caceresii sp. nov., novel actinobacteria with an insight into their adaptive mechanisms
+483         for survival in extreme hyper-arid Atacama Desert soils. Syst Appl Microbiol, 2016, 39(4):243-251.
+484         doi: 10.1016/j.syapm.2016.03.007.
+485    7. Chazan A, Rozenberg A, Mannen K, Nagata T, Tahan R, Yaish S, Larom S, Inoue K, Béjà O,
+486         Pushkarev A. Diverse heliorhodopsins detected via functional metagenomics in freshwater
+487         Actinobacteria, Chloroflexi and Archaea. Environ Microbiol, 2022, 24(1):110-121. doi: 10.1111/1462-
+488         2920.15890.
+489    8. Chernyshov SV, Tsvetkova DV, Mikoulinskaia GV. A rapid and efficient technique for the isolation of
+490         Bacillus genomic DNA using a cocktail of peptidoglycan hydrolases of different type. World J
+491         Microbiol Biotechnol, 2022, 39(1):31. doi: 10.1007/s11274-022-03475-2.
+492    9. Cho S-G, Song M, Chuon K, Shim J-G, Meas S, Jung K-H. Heliorhodopsin binds and regulates
+493         glutamine synthetase activity. PLoS Biol, 2022, 20(10):e3001817. doi: 10.1371/journal.pbio.3001817.
+494    10. Choi AR, Shi L, Brown LS, Jung K-H. Cyanobacterial light-driven proton pump, Gloeobacter
+495         rhodopsin: complementarity between rhodopsin-based energy production and photosynthesis. PLoS
+496         One, 2014, 9(10):e110643. doi: 10.1371/journal.pone.0110643.
+
+
+
+
+                                                                                                                                                         18
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+497    11. Chuon K, Kim SY, Meas S, Shim J-G, Cho S-G, Kang K-W, Kim J-H, Cho H-S, Jung K-H. Assembly
+498         of natively synthesized dual chromophores into functional actinorhodopsin. Front Microbiol, 2021,
+499         12:652328. doi: 10.3389/fmicb.2021.652328.
+500    12. Dioumaev AK, Petrovskaya LE, Wang JM, Balashov SP, Dolgikh DA, Kirpichnikov MP, Lanyi JK.
+501         Photocycle of Exiguobacterium sibiricum rhodopsin characterized by low-temperature trapping in the
+502         IR and time-resolved studies in the visible. J Phys Chem B, 2013, 117(24):7235-7253. doi:
+503         10.1021/jp402430w.
+504    13. Dwulit-Smith JR, Hamilton JJ, Stevenson DM, He S, Oyserman BO, Moya-Flores F, Garcia SL,
+505         Amador-Noguez D, McMahon KD, Forest KT. acI actinobacteria assemble a functional
+506         actinorhodopsin with natively synthesized retinal. Appl Environ Microbiol, 2018, 84(24):e01678-18.
+507         doi: 10.1128/AEM.01678-18.
+508    14. Edgar RC. MUSCLE v5 enables improved estimates of phylogenetic tree confidence by ensemble
+509         bootstrapping. bioRxiv, 2021. doi: 10.1101/2021.06.20.449169.
+510    15. Finkel OM, Béjà O, Belkin S. Global abundance of microbial rhodopsins. ISME J, 2013, 7(2):448-
+511         451. doi: 10.1038/ismej.2012.112.
+512    16. Fuhrman JA, Schwalbach MS, Stingl U. Proteorhodopsins: an array of physiological roles? Nat Rev
+513         Microbiol, 2008, 6(6):488-494. doi: 10.1038/nrmicro1893.
+514    17. Guerrero LD, Vikram S, Makhalanyane TP, Cowan DA. Evidence of microbial rhodopsins in Antarctic
+515         Dry Valley edaphic systems. Environ Microbiol, 2017, 19(9):3755-3767. doi: 10.1111/1462-
+516         2920.13877.
+517    18. Gushchin I, Shevchenko V, Polovinkin V, Kovalev K, Alekseev A, Round E, Borshchevskiy V,
+518         Balandin T, Popov A, Gensch T, Fahlke C, Bamann C, Willbold D, Büldt G, Bamberg E, Gordeliy V.
+519         Crystal structure of a light-driven sodium pump. Nat Struct Mol Biol, 2015, 22(5):390-395. doi:
+520         10.1038/nsmb.3002.
+521    19. Han S, Kim S-H, Cho J-C, Song J, Bleckner G, Jung K-H. Photochemical characterization of
+522         flavobacterial rhodopsin: The importance of the helix E region for heat stability. Biochim Biophys
+523         Acta Bioenerg, 2020, 1861(1):148092. doi: 10.1016/j.bbabio.2019.148092.
+524    20. Hasemi T, Kikukawa T, Kamo N, Demura M. Characterization of a cyanobacterial chloride-pumping
+525         rhodopsin and its conversion into a proton pump. J Biol Chem, 2016, 291(1):355-362. doi:
+526         10.1074/jbc.M115.688614.
+527    21. Hososhima S, Mizutori R, Abe-Yoshizumi R, Rozenberg A, Shigemura S, Pushkarev A, Konno M,
+528         Katayama K, Inoue K, Tsunoda SP, Béjà O, Kandori H. Proton-transporting heliorhodopsins from
+529         marine giant viruses. Elife, 2022, 11:e78416. doi: 10.7554/eLife.78416.
+
+
+                                                                                                                                                         19
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+530    22. Inoue K, Ito S, Kato Y, Nomura Y, Shibata M, Uchihashi T, Tsunoda SP, Kandori H. A natural light-
+531         driven inward proton pump. Nat Commun, 2016, 7:13415. doi: 10.1038/ncomms13415.
+532    23. Inoue K, Koua FHM, Kato Y, Abe-Yoshizumi R, Kandori H. Spectroscopic study of a light-driven
+533         chloride ion pump from marine bacteria. J Phys Chem B, 2014, 118(38):11190-9. doi:
+534         10.1021/jp507219q.
+535    24. Inoue K, Ono H, Abe-Yoshizumi R, Yoshizawa S, Ito H, Kogure K, Kandori H. A light-driven sodium
+536         ion pump in marine bacteria. Nat Commun, 2013, 4:1678. doi: 10.1038/ncomms2689.
+537    25. Karasuyama M, Inoue K, Nakamura R, Kandori H, Takeuchi I. Understanding colour tuning rules and
+538         predicting absorption wavelengths of microbial rhodopsins by data-driven machine-learning approach.
+539         Sci Rep, 2018, 8(1):15580. doi: 10.1038/s41598-018-33984-w.
+540    26. Keffer JL, Hahn MW, Maresca JA. Characterization of an unconventional rhodopsin from the
+541         freshwater actinobacterium Rhodoluna lacicola. J Bacteriol, 2015, 197(16):2704-2712. doi:
+542         10.1128/JB.00386-15.
+543    27. Khan ST, Nakagawa Y, Harayama S. Krokinobacter gen. nov., with three novel species, in the family
+544         Flavobacteriaceae. Int J Syst Evol Microbiol, 2006, 56(Pt 2):323-328. doi: 10.1099/ijs.0.63841-0.
+545    28. Kim S-H, Chuon K, Cho S-G, Choi A, Meas S, Cho H-S, Jung K-H. Color-tuning of natural variants
+546         of heliorhodopsin. Sci Rep, 2021, 11(1):854. doi: 10.1038/s41598-020-72125-0.
+547    29. Kolmogorov M, Yuan J, Lin Y, Pevzner PA. Assembly of long, error-prone reads using repeat graphs.
+548         Nat Biotechnol, 2019, 37(5):540-546. doi: 10.1038/s41587-019-0072-8.
+549    30. Kovalev K, Polovinkin V, Gushchin I, Alekseev A, Shevchenko V, Borshchevskiy V, Astashkin R,
+550         Balandin T, Bratanov D, Vaganova S, Popov A, Chupin V, Büldt G, Bamberg E, Gordeliy V. Structure
+551         and mechanisms of sodium-pumping KR2 rhodopsin. Sci Adv, 2019, 5(4):eaav2671. doi:
+552         10.1126/sciadv.aav2671.
+553    31. Kovalev K, Volkov D, Astashkin R, Alekseev A, Gushchin I, Haro-Moreno JM, Chizhov I, Siletsky S,
+554         Mamedov M, Rogachev A, Balandin T, Borshchevskiy V, Popov A, Bourenkov G, Bamberg E,
+555         Rodriguez-Valera F, Büldt G, Gordeliy V. High-resolution structural insights into the heliorhodopsin
+556         family. Proc Natl Acad Sci USA, 2020, 117(8):4131-4141. doi: 10.1073/pnas.1915888117.
+557    32. Kriebel CN, Asido M, Kaur J, Orth J, Braun P, Becker-Baldus J, Wachtveitl J, Glaubitz C. Structural
+558         and functional consequences of the H180A mutation of the light-driven sodium pump KR2. Biophys J,
+559         2023, 122(6):1003-1017. doi: 10.1016/j.bpj.2022.12.023.
+560    33. Kwon YM, Kim SY, Jung KH, Kim SJ. Diversity and functional analysis of light-driven pumping
+561         rhodopsins in marine Flavobacteria. Microbiol. Open, 2016, 5(2):212-23. doi: 10.1002/mbo3.321.
+
+
+
+
+                                                                                                                                                         20
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+562    34. Li H, Sineshchekov OA, da Silva GFZ, Spudich JL. In vitro demonstration of dual light-driven Na+/H+
+563         pumping          by      a      microbial         rhodopsin.         Biophys          J,     2015,       109(7):1446-1453.              doi:
+564         10.1016/j.bpj.2015.08.018.
+565    35. Luecke H, Schobert B, Stagno J, Imasheva ES, Wang JM, Balashov SP, Lanyi JK. Crystallographic
+566         structure of xanthorhodopsin, the light-driven proton pump with a dual chromophore. Proc Natl Acad
+567         Sci USA, 2008, 105(43):16561-16565. doi: 10.1073/pnas.0807162105.
+568    36. Luedemann GM. Geodermatophilus, a new genus of the Dermatophilaceae (Actinomycetales). Journal
+569         of bacteriology, 1968, 96(5):1848-1858. doi: 10.1128/jb.96.5.1848-1858.1968.
+570    37. Maliar N, Okhrimenko IS, Petrovskaya LE, Alekseev AA, Kovalev KV, Soloviov DV, Popov PA,
+571         Rokitskaya TI, Antonenko YN, Zabelskii DV, Dolgikh DA, Kirpichnikov MP, Gordeliy VI. Novel pH-
+572         sensitive microbial rhodopsin from Sphingomonas paucimobilis. Dokl Biochem Biophys, 2020,
+573         495(1):342-346. doi: 10.1134/S1607672920060162.
+574    38. Maresca JA, Keffer JL, Miller KJ. Biochemical analysis of microbial rhodopsins. Curr Protoc
+575         Microbiol, 2016, 41:1F.4.1-1F.4.18. doi: 10.1002/cpmc.5.
+576    39. Melcrová A, Pokorna S, Pullanchery S, Kohagen M, Jurkiewicz P, Hof M, Jungwirth P, Cremer PS,
+577         Cwiklik L. The complex nature of calcium cation interactions with phospholipid bilayers. Sci Rep,
+578         2016, 6:38035. doi: 10.1038/srep38035.
+579    40. Nakamura S, Kikukawa T, Tamogami J, Kamiya M, Aizawa T, Hahn MW, Ihara K, Kamo N, Demura
+580         M. Photochemical characterization of actinorhodopsin and its functional existence in the natural host.
+581         Biochim Biophys Acta, 2016, 1857(12):1900-1908. doi: 10.1016/j.bbabio.2016.09.006.
+582    41. Park S, Yoshizawa S, Chiura HX, Muramatsu Y, Nakagawa Y, Kogure K, Yokota A. Nonlabens marina
+583         sp. nov., a novel member of the Flavobacteriaceae isolated from the Pacific Ocean. Antonie Van
+584         Leeuwenhoek, 2012, 102(4):669-676. doi: 10.1007/s10482-012-9765-4.
+585    42. Petrovskaya LE, Lukashev EP, Chupin VV, Sychev SV, Lyukmanova EN, Kryukova EA, Ziganshin
+586         RH, Spirina EV, Rivkina EM, Khatypov RA, Erokhina LG, Gilichinsky DA, Shuvalov VA,
+587         Kirpichnikov MP. Predicted bacteriorhodopsin from Exiguobacterium sibiricum is a functional proton
+588         pump. FEBS Lett, 2010, 584(19):4193-4196. doi: 10.1016/j.febslet.2010.09.005.
+589    43. Pushkarev A, Béjà O. Functional metagenomic screen reveals new and diverse microbial rhodopsins.
+590         ISME J, 2016, 10(9):2331-2335. doi: 10.1038/ismej.2016.7.
+591    44. Pushkarev A, Inoue K, Larom S, Flores-Uribe J, Singh M, Konno M, Tomida S, Ito S, Nakamura R,
+592         Tsunoda SP, Philosof A, Sharon I, Yutin N, Koonin EV, Kandori H, Béjà O. A distinct abundant group
+593         of microbial rhodopsins discovered using functional metagenomics. Nature, 2018, 558(7711):595-599.
+594         doi: 10.1038/s41586-018-0225-9.
+
+
+                                                                                                                                                         21
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+595    45. Rohde M. The Gram-positive bacterial cell wall. Microbiology Spectrum, 2019, 7(3). doi:
+596         10.1128/microbiolspec.GPP3-0044-2018.
+597    46. Rozenberg A, Inoue K, Kandori H, Béjà O. Microbial rhodopsins: the last two decades. Annu Rev
+598         Microbiol, 2021, 75:427-447. doi: 10.1146/annurev-micro-031721-020452.
+599    47. Seemann T. Prokka: rapid prokaryotic genome annotation. Bioinformatics, 2014, 30(14):2068-2069.
+600         doi: 10.1093/bioinformatics/btu153.
+601    48. Sharma AK, Zhaxybayeva O, Papke RT, Doolittle WF. Actinorhodopsins: proteorhodopsin-like gene
+602         sequences found predominantly in non-marine environments. Environ Microbiol, 2008, 10(4):1039-
+603         1056. doi: 10.1111/j.1462-2920.2007.01525.x.
+604    49. Shihoya W, Inoue K, Singh M, Konno M, Hososhima S, Yamashita K, Ikeda K, Higuchi A, Izume T,
+605         Okazaki S, Hashimoto M, Mizutori R, Tomida S, Yamauchi Y, Abe-Yoshizumi R, Katayama K,
+606         Tsunoda SP, Shibata M, Furutani Y, Pushkarev A, Béjà O, Uchihashi T, Kandori H, Nureki O. Crystal
+607         structure of heliorhodopsin. Nature, 2019, 574:132–136. doi: 10.1038/s41586-019-1604-6.
+608    50. Shim J-G, Cho S-G, Kim S-H, Chuon K, Meas S, Choi A, Jung K-H. Heliorhodopsin helps photolyase
+609         to    enhance        the     DNA        repair      capacity.       Microbiol        Spectr,      2022,       10(6):e0221522.           doi:
+610         10.1128/spectrum.02215-22.
+611    51. Singh M, Ito S, Hososhima S, Abe-Yoshizumi R, Tsunoda SP, Inoue K, Kandori H. Light-driven
+612         chloride and sulfate pump with two different transport modes. J Phys Chem B, 2023, 127(32):7123-
+613         7134. doi: 10.1021/acs.jpcb.3c02116.
+614    52. Tamura K, Stecher G, and Kumar S. MEGA11: Molecular Evolutionary Genetics Analysis version 11.
+615         Molecular Biology and Evolution, 2021, 38:3022-3027. doi: 10.1093/molbev/msab120.
+616    53. Tarlachkov SV, Shevchuk TV, Montero-Calasanz MDC, Starodumova IP. Diversity of rhodopsins in
+617         cultivated bacteria of the family Geodermatophilaceae associated with non-aquatic environments.
+618         Bioinformatics, 2020, 36(6):1668-1672. doi: 10.1093/bioinformatics/btz840.
+619    54. Tarlachkov SV, Starodumova IP, Boueva OV, Lysak LV, Subbotin SA, Evtushenko LI. Draft genome
+620         sequences of 11 rhodopsin gene-containing actinobacteria (Geodermatophilaceae) from saline arid
+621         habitats in the Central Asian Deserts. Microbiol Resour Announc, 2023, 12(5):e0136822. doi:
+622         10.1128/mra.01368-22.
+623    55. Tarlachkov SV, Starodumova IP. TaxonDC: calculating the similarity value of the 16S rRNA gene
+624         sequences of prokaryotes or ITS regions of fungi. J Bioinform Genom, 2017, 3:1-4. doi:
+625         10.18454/jbg.2017.3.5.1.
+
+
+
+
+                                                                                                                                                         22
+      bioRxiv preprint doi: https://doi.org/10.1101/2024.05.16.594530; this version posted May 16, 2024. The copyright holder for this preprint (which
+                      was not certified by peer review) is the author/funder. All rights reserved. No reuse allowed without permission.
+
+
+
+
+626    56. Tatusova T, DiCuccio M, Badretdin A, Chetvernin V, Nawrocki EP, Zaslavsky L, Lomsadze A, Pruitt
+627         KD, Borodovsky M, Ostell J. NCBI prokaryotic genome annotation pipeline. Nucleic Acids Res, 2016,
+628         44(14):6614-6624. doi: 10.1093/nar/gkw569.
+629    57. Urzì C, Brusetti L, Salamone P, Sorlini C, Stackebrandt E, Daffonchio D. Biodiversity of
+630         Geodermatophilaceae isolated from altered stones and monuments in the Mediterranean basin.
+631         Environ Microbiol, 2001, 3(7):471-9. doi: 10.1046/j.1462-2920.2001.00217.x.
+632    58. Urzì C, Salamone P, Schumann P, Rohde M, Stackebrandt E. Blastococcus saxobsidens sp. nov., and
+633         emended descriptions of the genus Blastococcus Ahrens and Moll 1970 and Blastococcus aggregatus
+634         Ahrens and Moll 1970. Int J Syst Evol Microbiol, 2004, 54:253-259. doi: 10.1099/ijs.0.02745-0.
+635    59. Walker BJ, Abeel T, Shea T, Priest M, Abouelliel A, Sakthikumar S, Cuomo CA, Zeng Q, Wortman J,
+636         Young SK, Earl AM. Pilon: an integrated tool for comprehensive microbial variant detection and
+637         genome assembly improvement. PLoS One, 2014, 9(11):e112963. doi: 10.1371/journal.pone.0112963.
+638    60. Wang W-W, Sineshchekov OA, Spudich EN, Spudich JL. Spectroscopic and photochemical
+639         characterization of a deep ocean proteorhodopsin. J Biol Chem, 2003, 278(36):33985-33991. doi:
+640         10.1074/jbc.M305716200.
+641    61. Wick RR, Holt KE. Polypolish: Short-read polishing of long-read bacterial genome assemblies. PLoS
+642         Comput Biol, 2022, 18(1):e1009802. doi: 10.1371/journal.pcbi.1009802.
+643    62. Xiao J, Luo Y, Xu J, Xie S, Xu J. Modestobacter marinus sp. nov., a psychrotolerant actinobacterium
+644         from deep-sea sediment, and emended description of the genus Modestobacter. Int J Syst Evol
+645         Microbiol, 2011, 61(Pt 7):1710-1714. doi: 10.1099/ijs.0.023085-0.
+646    63. Yoon J-H, Kang S-J, Lee C-H, Oh T-K. Donghaeana dokdonensis gen. nov., sp. nov., isolated from sea
+647         water. Int J Syst Evol Microbiol, 2006, 56(Pt 1):187-191. doi: 10.1099/ijs.0.63847-0.
+648    64. Yoshizawa S, Kumagai Y, Kim H, Ogura Y, Hayashi T, Iwasaki W, DeLong EF, Kogure K. Functional
+649         characterization of flavobacteria rhodopsins reveals a unique class of light-driven chloride pump in
+650         bacteria. Proc Natl Acad Sci USA, 2014, 111(18):6732-6737. doi: 10.1073/pnas.1403051111.
+651    65. Zhao H, Ma B, Ji L, Li L, Wang H, Chen D. Coexistence of light-driven Na + and H+ transport in a
+652         microbial rhodopsin from Nonlabens dokdonensis. J Photochem Photobiol B, 2017, 172:70-76. doi:
+653         10.1016/j.jphotobiol.2017.05.004.
+
+
+
+
+                                                                                                                                                         23
+

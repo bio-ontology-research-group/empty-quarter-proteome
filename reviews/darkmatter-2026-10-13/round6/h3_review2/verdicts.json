@@ -1,0 +1,43 @@
+{
+  "id": "H3",
+  "status": "VIABLE",
+  "bounded_hypothesis": "Conditional on the MD5/SHA-256-verified public Zenodo Record 8223844 SMAG archive-order convenience pool (212 complete MAGs from mag.tar.gz.aa-ab, recalled with Pyrodigal v3.7.1 -p meta --no-stop-codon) and the staged 52,515 published GEM Prodigal v2.6.3 proteomes, after canonicalizing sequences (stripping trailing '*' and uppercasing), deduplicating exact canonical sequences within each reference pool, applying an explicit cross-release overlap rule, and enforcing exact integer-length (1 aa) common-support quota matching so that both arms have identical unique protein counts, identical total amino-acid residues, and identical exact length distributions, does the SMAG reference subset yield a different paired hit rate than matched GEM reference subsets for Empty Quarter dark protein families under identical DIAMOND blastp settings?",
+  "critical_issues": [],
+  "evidence_paths": [
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/SNAPSHOT_MANIFEST.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/LARGE_ARTIFACT_LOCATORS.json",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/DESIGN.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/DOSSIER.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/response.txt",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/INPUTS.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/scripts/08_v3_extract_and_call_smag.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/scripts/09_v3_match_gem_and_search.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/scripts/10_run_v3_matched_pilot.sbatch",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/logs/pilot_v3_53707059.out",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/logs/pilot_v3_53707059.err",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_smag_zenodo_parts_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_smag_tar_extraction_audit.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_smag_genome_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_smag_duplicate_map.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_gem_genome_manifest_seed20261013.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_gem_genome_manifest_seed20261014.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_gem_genome_manifest_seed20261015.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_cross_release_shared_sequences.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_matching_closure_audit.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_matched_cohort_summary.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_matched_length_stratified_results.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_top1_vs_dbsize_decomposition.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/results/v3_artifact_checksums.tsv",
+    "reviews/darkmatter-2026-10-13/round6/root_checks/h3_table_audit.json"
+  ],
+  "optional_improvements": [
+    "Re-label the ancillary Section 3 E-value rescaling split (E_sub <= 1e-3 / 21.15 = 4.73e-5 in DOSSIER.md:25,60-65 and results/v3_top1_vs_dbsize_decomposition.tsv) as a rough heuristic diagnostic rather than an exact decomposition of '-k 1' masking vs database-size scaling, since DIAMOND E-values depend on effective searched amino-acid residues (with edge-effect length correction), composition masking, and block/seed search heuristics rather than raw protein-count ratios (and note minor transcription items: DOSSIER.md:36 cites alphabetical first genome MAG/D3rbin.13.fa [member 92] instead of tar member 1 MAG/SRR5579859rbin.24.fa in v3_smag_tar_extraction_audit.tsv:2; INPUTS.tsv:43 holds a pre-update hash for v3_artifact_checksums.tsv).",
+    "Run the full 212,084-query panel (106,042 dark + 106,042 control family representatives in query_all.faa) against the exact-length-matched reference databases to eliminate finite-query sampling variance.",
+    "Download all 373 Zenodo Record 8223844 archive parts (~39 GB) if extending inference beyond the 212-MAG archive-order convenience prefix (mag.tar.gz.aa-ab) to random whole-catalogue SMAG sampling, and fetch external GEM nucleotide assemblies if re-calling GEM with Pyrodigal v3.7.1."
+  ],
+  "scope_changes_from_original": [
+    "Narrowed from a full-catalogue, caller-harmonized soil-biome test (round5/EXTENSIONS.md H3) to a bounded reference-release comparison conditioned on the verified 212-MAG public Zenodo 8223844 archive-order convenience pool (mag.tar.gz.aa-ab, recalled with Pyrodigal v3.7.1) and published GEM Prodigal v2.6.3 proteomes, without generalizing to unexamined archive parts or claiming causal soil-biome adaptation.",
+    "Separated dark and annotated control cohorts strictly (reporting Horvitz-Thompson / stratified population-weighted marginal estimates with finite-population-corrected SEs) without pooling cohorts or using controls to calibrate technical vs biological shares, and framed the three deterministic GEM genome draws as reference-subsampling sensitivity analyses rather than biological replicates."
+  ],
+  "reason": "h3_v3 resolves all four critical findings from h3_review1 with executed code and verified artifacts (Slurm Job 53707059): streaming Python tarfile extraction enforces member.size (retaining 212 complete hashed SMAG genomes on IBEX and rejecting truncated member 213 MAG/SRR5855438rbin.1.fa), sequences are canonicalized (stripping trailing '*' across 94.7-95.7% of GEM proteins) and deduplicated in deterministic order, exact integer-length (1 aa) common-support quota matching achieves identical unique protein counts (657,779-660,421) and identical residue totals (196.95M-197.20M aa) across 3 deterministic GEM seeds plus overlap-excluded and search-time --id 30 sensitivities, and separate dark/control population-weighted estimates with FPC SEs are verified against raw .m8 outputs. The protein-count E-value rescaling in DOSSIER Section 3 is a rough heuristic diagnostic rather than an exact decomposition, but is ancillary to the primary matched-database experiment."
+}

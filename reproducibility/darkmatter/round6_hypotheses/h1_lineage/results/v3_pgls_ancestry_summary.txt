@@ -1,0 +1,39 @@
+========================================================================================
+V3 PGLS ANCESTRY-AWARE ASSOCIATION REPORT (REPAIRED R^2, UNBIASED SE, LAMBDA CI)
+========================================================================================
+
+1. PRIMARY MODEL SPECIFICATION AND FIT (S1_Primary_All_237)
+  Population: n = 237 desert Thermoplasmatota species representatives (p = 7, df_resid = 230)
+  Response: dark_fraction (N_dark / N_proteins_cat)
+  Profiled Pagel's lambda MLE: 0.915784 (95% Profile-Likelihood CI: [0.846303, 0.957823])
+  LRT vs lambda=0 (OLS): 2*Delta_logL = 229.5585 (p = 7.4411e-52)
+  Log-likelihood: 640.932977, AIC: -1265.865955, BIC: -1238.121473
+  Fixed-covariance whitened GLS R^2 (at lambda_ML): 0.469051 (RSS = 0.243540, TSS_GLS = 0.458687)
+  Unbiased residual variance sigma^2_unb = RSS/(n-p): 0.00105887 (ML sigma^2_ML = RSS/n: 0.00102759)
+  Student-t critical value t_{0.975, 230}: 1.970332
+
+2. PRIMARY TWO-SIDED ESTIMANDS (UNBIASED FIXED-LAMBDA SEs & STUDENT-t INTERVALS)
+  aai slope: beta = +0.001704, SE_unb = 0.000407 (SE_ML = 0.000401), t = +4.1847, two-sided p = 4.065008e-05
+    95% Conditional Student-t CI (at lambda_ML): [+0.000902, +0.002506]
+  frac_rbh_desert slope: beta = -0.137484, SE_unb = 0.019456 (SE_ML = 0.019167), t = -7.0664, two-sided p = 1.879206e-11
+    95% Conditional Student-t CI (at lambda_ML): [-0.175819, -0.099149]
+  log10(length) slope: beta = +0.115427, SE_unb = 0.018391, t = +6.2764, two-sided p = 1.706357e-09
+  log10(N50) slope: beta = -0.009005, SE_unb = 0.003031, t = -2.9709, two-sided p = 3.284365e-03
+  completeness slope: beta = -0.000335, SE_unb = 0.000126, t = -2.6586, two-sided p = 8.398044e-03
+
+3. SENSITIVITY SUMMARY ACROSS COHORTS AND COVARIANCE/DENOMINATOR SPECIFICATIONS
+  S1_Primary_All_237 (n=237, lambda_ML=0.915784 [0.846303, 0.957823], R^2_GLS=0.469051):
+    aai: beta=0.001704 (SE_unb=0.000407, p=4.065008e-05), frac_rbh: beta=-0.137484 (SE_unb=0.019456, p=1.879206e-11)
+  S2_Unnormalized_Brownian_VCV_237 (n=237, lambda_ML=0.916132 [0.846418, 0.958344], R^2_GLS=0.475264):
+    aai: beta=0.001744 (SE_unb=0.000407, p=2.694748e-05), frac_rbh: beta=-0.140505 (SE_unb=0.019533, p=8.831619e-12)
+  S3_Catalogue_Denominator_RBH_237 (n=237, lambda_ML=0.915415 [0.845649, 0.957628], R^2_GLS=0.468174):
+    aai: beta=0.001693 (SE_unb=0.000407, p=4.499514e-05), frac_rbh: beta=-0.136591 (SE_unb=0.019416, p=2.265112e-11)
+  S4_Restricted_c__SW-10-69-26_185 (n=185, lambda_ML=0.900804 [0.800104, 0.960065], R^2_GLS=0.500906):
+    aai: beta=0.001921 (SE_unb=0.000491, p=1.285632e-04), frac_rbh: beta=-0.180441 (SE_unb=0.022624, p=1.776834e-13)
+  S5_Dominant_Family_JAJPHT01_Omitted_97 (n=97, lambda_ML=0.901145 [0.765888, 0.963229], R^2_GLS=0.444105):
+    aai: beta=0.001494 (SE_unb=0.000513, p=4.526286e-03), frac_rbh: beta=-0.102379 (SE_unb=0.030547, p=1.176333e-03)
+  S6_Same_Class_Comparators_SW_plus_E2_236 (n=236, lambda_ML=0.893376 [0.806220, 0.946533], R^2_GLS=0.475040):
+    aai: beta=0.001568 (SE_unb=0.000392, p=8.387793e-05), frac_rbh: beta=-0.145879 (SE_unb=0.019191, p=7.485088e-13)
+  S7_With_Caller_Complete_Proxy_232 (n=232, lambda_ML=0.913489 [0.839117, 0.958295], R^2_GLS=0.483091):
+    aai: beta=0.001550 (SE_unb=0.000452, p=7.245799e-04), frac_rbh: beta=-0.104756 (SE_unb=0.026891, p=1.293680e-04)
+========================================================================================

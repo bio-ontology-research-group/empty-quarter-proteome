@@ -1,0 +1,56 @@
+{
+  "job": "53825794",
+  "reference": "6SU3",
+  "chain": "X",
+  "sources": {
+    "EQ": {
+      "records": 45,
+      "median_CA_pLDDT": 93.12510681152344,
+      "median_query_TM": 0.86512,
+      "query_TM_ge05": 45,
+      "mean_CA_ge70": 45
+    },
+    "GEM": {
+      "records": 73,
+      "median_CA_pLDDT": 93.04012298583984,
+      "median_query_TM": 0.9036,
+      "query_TM_ge05": 73,
+      "mean_CA_ge70": 73
+    },
+    "SMAG": {
+      "records": 35,
+      "median_CA_pLDDT": 93.75650787353516,
+      "median_query_TM": 0.89896,
+      "query_TM_ge05": 35,
+      "mean_CA_ge70": 35
+    },
+    "curated_reference": {
+      "records": 25,
+      "median_CA_pLDDT": 92.2615737915039,
+      "median_query_TM": 0.89121,
+      "query_TM_ge05": 25,
+      "mean_CA_ge70": 25
+    }
+  },
+  "EQ_assembly_translations_verified": 45,
+  "TMalign_binary_sha256": "5b4872ad182643ca73d49b5327c905c421fe18bdf5abf63b4e89728994a862de",
+  "ESMFold_provenance": {
+    "job": "317016",
+    "model": "/mnt/data/u/hohndor/folding/hf/hub/models--facebook--esmfold_v1/snapshots/75a3841ee059df2bf4d56688166c8fb459ddd97a",
+    "torch": "2.3.1+cu121",
+    "transformers": "4.49.0",
+    "python": "3.10.20",
+    "gpu": "NVIDIA H200",
+    "recycles": 4,
+    "chunk_size": 64,
+    "input_sha256": "e972609e6bc421be0c5bf768c4f2a51a2be9297e64d891c46b4a37090fa8aa1d",
+    "script_sha256": "eee366ad363ad5f50c3be94aee4b9358dd633bdf886aa86ab2071a8033f90488",
+    "plddt": "CA atom index 1; native [0,1] scaled to [0,100]",
+    "n": 175
+  },
+  "limits": [
+    "Predicted structural compatibility, not experimental validation",
+    "Full-query TM normalization includes terminal extensions",
+    "Assembly translation agreement does not establish raw-read support or exclude assembly errors"
+  ]
+}

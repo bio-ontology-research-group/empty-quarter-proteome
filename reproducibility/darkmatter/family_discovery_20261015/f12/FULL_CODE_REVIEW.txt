@@ -1,0 +1,441 @@
+================================================================================
+COMPREHENSIVE CODE REVIEW & IMPLEMENTATION AUDIT: FULL PIPELINE STAGES 4 & 5
+Track F1 (Photolyase / Cryptochrome) & Track F2 (Compatible-Solute Phosphatase)
+Empty Quarter Metagenome Family Discovery Framework
+================================================================================
+Author: Assistant / Auditor (Reviewed against Root Independent Audit)
+Date: 2026-10-15
+Status: READ-ONLY AUDIT & TECHNICAL CORRECTION SPECIFICATION
+Handoff: Root owns F1 census/stages 2-3 and F2 identity audit in root_audit.
+         f12 compute is paused; zero job submissions or script mutations.
+================================================================================
+
+1. EXECUTIVE SUMMARY & CONTEXT
+--------------------------------------------------------------------------------
+Slurm batch job 53816247 failed at Stage 1 due to two immediate mechanical bugs:
+  1. KeyError: 'protein_id' in candidate dictionary lookup.
+  2. Syntax / execution termination caused by literal 'EOF' artifacts appended
+     at the ends of all pipeline scripts.
+Beyond these mechanical failures, Root's independent audit (job 53816043 and
+code reviews) uncovered deep conceptual and implementation defects across the
+entire pipeline:
+  - Stage 1 hardcoded literal amino acid strings for F2 leads and labeled this
+    "empirical verification" instead of programmatically extracting and hashing
+    sequences from current FASTA proteomes.
+  - Stage 4 used a naïve sequence deduplication scheme (seen_seqs) that discards
+    provenance, corrupts multi-cohort sharing, breaks cluster tracking, and
+    drops candidate IDs needed for downstream GPU ProstT5 embedding lookups.
+  - Stage 4 ignored subject coverage (slen) in DIAMOND alignments, used only
+    unidirectional query coverage, and applied NO coverage/identity gating
+    before assigning candidates to reference subfamilies.
+  - Curated reference databases in references_v2 contained non-CPF contaminants,
+    notably plant basic helix-loop-helix (bHLH) transcription factors (Q9C670,
+    Q8GY61) and outgroup Radical SAM enzymes (SplB).
+  - Stage 5 hardcoded positive narrative conclusions into RESULTS_FULL_F1.txt
+    and STATUS.json prior to verified completion of upstream compute.
+
+In accordance with Root's instructions, this document provides a rigorous,
+uncompromising code review of Stages 4 and 5, defines the exact algorithmic
+corrections required, and establishes the data models needed for Root's
+execution in root_audit.
+
+
+2. STAGE 1 POST-MORTEM: HARDCODED STRINGS VS EMPIRICAL VERIFICATION
+--------------------------------------------------------------------------------
+Flaw Identified:
+  In scripts/01_reconcile_pilot_and_finalize_f2.py, function verify_f2_leads()
+  embedded the literal 93 aa and 148 aa sequences of the historical leads
+  directly in a Python dictionary:
+    "sequence": "MDPPVYSVLELCRNRAGYEAVPQEKLRLRLHDVERDLKEAGFEPLANAGILLVARWEDVEVSVFESGKLLFKTRDEGKARVAMAAFRGAMGWT"
+    "sequence": "MRAAAADGGWIAFLNREGEELSRLEPTLSRGVLRAHLRDRLAEAYDFPLRTFVRALVVGERHVERLDDADGAAVPVRQPRFLELWPAGLARPAAALSGPLMVPCTRPLAAGSVLTAALLLEDPRRYRLSGPGILGRFVDYSVEVAVEP"
+  The script then measured len(sequence) and reported this as verification.
+
+Why This Is Scientifically Unsound:
+  1. Tautological Verification: Measuring the length of a hardcoded string
+     proves only that the string was typed or pasted with that length. It does
+     NOT verify that the locus in the actual current assembly or bin FAA matches
+     that sequence, that Bakta/Prodigal called that exact CDS, or that the locus
+     ID was joined correctly.
+  2. Masking Extraction Bugs: If a locus join script extracted the wrong CDS or
+     truncated a sequence during coordinate mapping, hardcoding the expected
+     string completely masks the pipeline error.
+  3. Replicability Breach: Every claim regarding gene length, completeness
+     (partial=00), and sequence hash MUST be derived dynamically from primary
+     assembly artifacts:
+       path = W / f"06_darkmatter/drep_rep_proteomes/{mag}.faa.gz"
+       read_and_hash_actual_locus(path, locus_id)
+
+Heredoc Artifact:
+  Appending code blocks via `cat << 'EOF' > ... EOF` without strict delimiter
+  handling resulted in literal `EOF` tokens being written into script bodies at
+  line ends (e.g. line 230 of 01_reconcile_pilot_and_finalize_f2.py). In Python,
+  this raises `NameError: name 'EOF' is not defined`; in bash, `EOF: command
+  not found`. All scripts have been sanitized locally, but no remote jobs
+  should be run until Root incorporates clean code.
+
+
+3. STAGE 4 CRITICAL AUDIT: SOURCE-PRESERVING DEDUPLICATION
+--------------------------------------------------------------------------------
+Current Implementation in scripts/04_f1_diversity_novelty_and_manifest.py:
+  Lines 204-221:
+    seen_seqs = {}
+    unique_seq_dict = {}
+    manifest_rows = []
+    
+    def add_sequence(seq_id, source, seq_str, tax_str, cls_str, extra_info=""):
+        seq_clean = seq_str.strip().upper().replace("*", "")
+        h = hashlib.sha256(seq_clean.encode()).hexdigest()
+        if h in seen_seqs:
+            canonical_id = seen_seqs[h]
+            return canonical_id
+        seen_seqs[h] = seq_id
+        unique_seq_dict[seq_id] = seq_clean
+        manifest_rows.append({
+            "id": seq_id,
+            "source": source,
+            "taxonomy": tax_str,
+            "subfamily_class": cls_str,
+            "length": len(seq_clean),
+            "sha256": h,
+            "extra_info": extra_info
+        })
+        return seq_id
+
+Fatal Flaws in Current Deduplication:
+  1. First-Wins Provenance Erasure:
+     The script loads cohorts sequentially:
+       Order: (1) Curated_References -> (2) EmptyQuarter_MAGs -> (3) SMAG_Marine -> (4) GEM_Global.
+     If an Empty Quarter candidate is 100% identical in amino acid sequence to a
+     curated reference enzyme (or a SMAG/GEM sequence), `h in seen_seqs` evaluates
+     to True. The function returns the reference accession and completely
+     discards the EQ candidate!
+     The candidate's protein ID, MAG origin, sample compartment, and taxonomy
+     are NEVER added to `manifest_rows` or `f1_combined_dedup.faa`.
+
+  2. Destruction of Environmental Novelty / Sharing Metrics:
+     In lines 341-358, MMseqs2 cluster membership is analyzed as follows:
+       ref_ids = set(ref_map.keys())
+       eq_ids = {r["id"] for r in eq_records}
+       ...
+       for rep, members in c50.items():
+           m_set = set(members)
+           if m_set & eq_ids:
+               eq_clusters_50 += 1
+               if not (m_set & ref_ids) and not (m_set & smag_ids) and not (m_set & gem_ids):
+                   eq_novel_clusters_50 += 1
+     Because `combined_dedup_faa` only contains the canonical ID (the reference
+     accession), MMseqs2 clusters the sequence under the reference ID. The EQ
+     protein ID is not in `members`. Therefore, `m_set & eq_ids` evaluates to
+     FALSE!
+     An EQ candidate identical to a reference is not recognized as an EQ
+     carrier, falsely deflating EQ cluster counts and distorting novelty
+     calculations.
+
+  3. Downstream GPU ProstT5 Lookup Failure:
+     The planned downstream pipeline uses Root's reusable GPU ProstT5 runner
+     to compute sequence embeddings. Downstream downstream analysis (t-SNE,
+     structural distance) maps candidate IDs to embeddings. If a candidate ID
+     was dropped from `f1_combined_manifest.tsv` and `f1_combined_dedup.faa`,
+     any script joining on candidate ID will throw KeyError or missing-row
+     errors.
+
+Exact Algorithmic Correction: Two-Tier Relational Registry:
+  To preserve source provenance while preventing redundant compute:
+  1. Level 1: Canonical Sequence Registry (Unique by SHA-256):
+     Each unique sequence string has exactly ONE canonical entry for compute
+     (FASTA for MMseqs2 and ProstT5):
+       canonical_seqs[sha256] = {
+           "canonical_id": f"CPF_CANON_{sha256[:12]}",  # or stable primary ID
+           "sequence": seq_clean,
+           "length": len(seq_clean),
+           "sha256": sha256
+       }
+  2. Level 2: Occurrence & Provenance Table (All Instances Retained):
+     Every candidate or reference that shares that sequence is retained:
+       instances.append({
+           "instance_id": seq_id,
+           "canonical_sha256": sha256,
+           "canonical_id": canonical_id,
+           "cohort": cohort_name,         # Reference, EQ_MAG, SMAG, GEM
+           "source_file": source_file,
+           "mag": mag_id,
+           "taxonomy": taxonomy_str,
+           "is_complete_cds": is_complete,
+           "partial": partial_tag,
+           "sample": sample_id,
+           "compartment": compartment
+       })
+  3. Cohort Sharing Flags on Canonical Sequences:
+     Compute multi-cohort boolean flags directly from occurrences:
+       canonical_metadata[sha256] = {
+           "in_reference": bool(instances_in_ref),
+           "in_eq": bool(instances_in_eq),
+           "in_smag": bool(instances_in_smag),
+           "in_gem": bool(instances_in_gem),
+           "eq_instance_count": count_eq,
+           "all_instance_ids": ";".join(all_ids)
+       }
+  4. Inverted Cluster Mapping:
+     When evaluating MMseqs2 clusters, map cluster members (canonical IDs)
+     back to ALL constituent instances via `canonical_to_instances[canon_id]`.
+     A cluster is considered shared with EQ if ANY constituent instance
+     originates from EQ.
+
+
+4. STAGE 4 CRITICAL AUDIT: CLOSEST-HIT COVERAGE & ALIGNMENT GATING
+--------------------------------------------------------------------------------
+Current Implementation in scripts/04_f1_diversity_novelty_and_manifest.py:
+  Lines 87-118:
+    cmd = [
+        diamond_bin, "blastp",
+        "--outfmt", "6", "qseqid", "sseqid", "pident", "length", "mismatch", "gapopen",
+        "qstart", "qend", "sstart", "send", "evalue", "bitscore", "qlen", "slen",
+        "--evalue", "1e-3",
+        "--max-target-seqs", "10",
+        "--ultra-sensitive"
+    ]
+    ...
+    cov = aln_len / qlen if qlen > 0 else 0.0
+    if qid not in top_hits or bitscore > top_hits[qid]["bitscore"]:
+        top_hits[qid] = { ... "coverage": cov ... }
+
+Fatal Flaws in Current Alignment Analysis:
+  1. Complete Omission of Subject Coverage:
+     The code extracts `qlen` (query length, parts[12]) and computes:
+       `cov = aln_len / qlen`
+     However, `slen` (subject length, parts[13]) and subject alignment
+     coordinates (`sstart`, `send`) are completely ignored.
+     Consequence:
+       Consider an environmental query sequence of 110 aa that aligns over
+       85 aa to a 550 aa full-length CPD photolyase reference.
+       Query coverage is 85 / 110 = 77.3% (passes a >70% gate!).
+       Subject coverage is 85 / 550 = 15.5%.
+       The alignment covers only a single localized structural motif (such as
+       a non-specific nucleotide-binding loop). Treating this alignment as
+       evidence that the 110 aa peptide belongs to that reference subfamily
+       is biologically invalid.
+
+  2. Absence of Any Filtering Gates on top_hits:
+     In lines 109-118, ANY hit with E-value <= 1e-3 was accepted as the top
+     reference hit, regardless of whether coverage was 5% or 95%, and
+     regardless of whether identity was 20% or 90%.
+
+  3. Spurious Subfamily Propagation:
+     In lines 255, 282, 306:
+       hit = top_ref_hits.get(pid, {})
+       r_acc = hit.get("ref_acc", "")
+       r_meta = ref_map.get(r_acc, {})
+       cls = r_meta.get("broad_family", "Unclassified_CPF") if hit else "Divergent_CPF_candidate"
+     Because ANY blast hit with E <= 1e-3 qualified as a `hit`, a candidate
+     with a 25 aa local hit at 22% identity was assigned the broad_family
+     of the reference (e.g. "CPD_photolyase" or "cryptochrome")!
+     Conversely, genuine CPF candidates that were divergent from existing
+     references were either falsely assigned to reference subfamilies or
+     labeled "Divergent_CPF_candidate" purely on blast bitscore rather than
+     profile-driven domain architecture.
+
+Exact Algorithmic Correction: Bidirectional Coverage & Stratified Gating:
+  1. Compute Dual Coverage Metrics:
+     For every DIAMOND alignment:
+       aln_qlen = abs(int(parts[7]) - int(parts[6])) + 1  # or aln_len
+       aln_slen = abs(int(parts[9]) - int(parts[8])) + 1
+       qlen = int(parts[12])
+       slen = int(parts[13])
+       qcov = aln_qlen / qlen if qlen > 0 else 0.0
+       scov = aln_slen / slen if slen > 0 else 0.0
+       bidirectional_cov = min(qcov, scov)
+
+  2. Stratified Evidence Gates:
+     Do NOT assign a single monolithic subfamily label. Define distinct,
+     auditable classification tiers:
+     - Tier A: Confirmed Subfamily Homolog
+       Criteria: E-value <= 1e-10, pident >= 40.0%, qcov >= 0.70, scov >= 0.70.
+       Assignment: Reference subfamily (e.g. CPD_I, CPD_II, CRY-DASH).
+     - Tier B: Subfamily-Affiliated / Borderline
+       Criteria: E-value <= 1e-5, pident >= 30.0%, qcov >= 0.50, scov >= 0.50.
+       Assignment: Putative_<Subfamily>_Affiliated.
+     - Tier C: Broad CPF / Divergent Environmental Candidate
+       Criteria: Profile-supported (HMMER PF00875/PF03441/PF04244 iE <= 1e-5,
+       domain cov >= 0.70), but DIAMOND alignment fails Tier A/B gates
+       (pident < 30% or bidirectional_cov < 0.50).
+       Assignment: Unclassified_CPF_Environmental.
+     - Tier D: Atypical / Short Photolyase Candidate (SPL)
+       Criteria: Length 300-450 aa, profile-supported by core photolyase HMM
+       (PF00875/PF03441), no requirement for eukaryotic C-terminal extensions.
+       Assignment: Candidate_Short_Photolyase_SPL.
+
+  3. Separate Nearest-Neighbor Attributes from Confirmed Classifications:
+     The candidate metadata table must store:
+       top_ref_accession
+       top_ref_subfamily
+       top_ref_pident
+       top_ref_evalue
+       top_ref_qcov
+       top_ref_scov
+       classification_tier  (Tier A, Tier B, Tier C, Tier D)
+       confirmed_subfamily  (Only populated for Tier A)
+
+
+5. REFERENCE DATABASE AUDIT: CONTAMINANTS & OUTGROUP ISOLATION
+--------------------------------------------------------------------------------
+Inspection of references_v2/verified_references_metadata_dedup.tsv:
+  1. Contaminants Found:
+     Accessions Q9C670 and Q8GY61 are included in the CPF reference set:
+       - Q9C670: Arabidopsis thaliana Transcription factor bHLH76 (gene: BHLH76, 390 aa)
+       - Q8GY61: Arabidopsis thaliana Transcription factor bHLH63 (gene: BHLH63, 335 aa)
+     In the metadata file, these are labeled:
+       class_assignment = CPD_I, broad_family = cryptochrome_associated.
+     These proteins are basic helix-loop-helix transcription factors that bind
+     to cryptochromes during blue-light signaling. They are NOT enzymes and do
+     not belong to the Cryptochrome/Photolyase Family fold!
+     Their inclusion in cpf_references_dedup.faa risks creating false positive
+     matches with bacterial transcription factors (e.g. HTH or HLH motifs).
+
+  2. Radical SAM Outgroup (SplB) Separation:
+     References P37956, Q97L63, and C9RZ55 are spore photoproduct lyases
+     (SplB, EC 4.1.99.14). SplB uses a Radical SAM [4Fe-4S] cluster mechanism
+     (Pfam PF04055) and is structurally unrelated to the flavoprotein CPF fold
+     (PF00875/PF03441).
+     While SplB repairs UV-induced DNA lesions, it is NOT a photolyase.
+     Including PF04055 or SplB references in positive CPF tallies was the
+     exact reason why Pilot v3 initially inflated positive counts by 2,396
+     generic Radical SAM matches.
+     SplB references must be maintained strictly as a negative/outgroup control
+     database, completely isolated from cpf_references_dedup.faa.
+
+  3. True Photolyase / Cryptochrome Reference Set Curation:
+     An authoritative CPF reference database must require:
+     - Verified Swiss-Prot entries with EC 4.1.99.3 (CPD photolyase),
+       EC 4.1.99.13 (6-4 photolyase), or reviewed cryptochrome function.
+     - Pfam domain corroboration: each reference must carry PF00875 and/or
+       PF03441 and/or PF04244.
+     - Inclusion of verified short photolyases (e.g. Rhodococcoides fascians
+       QCI56913.1 / WP_032397095.1).
+     - Explicit exclusion of all interacting transcription factors, kinases,
+       or generic SAM enzymes.
+
+
+6. STAGE 5 CRITICAL AUDIT: AUDITABILITY & REPORT INTEGRITY
+--------------------------------------------------------------------------------
+Current Implementation in scripts/05_f1_full_audit_and_report.py:
+  Lines 101-145:
+    f.write("  FULL CENSUS VERDICT: FULL_ANALYSIS_SUCCESS\n")
+    ...
+    f.write("  HYPOTHESIS F2 (Compatible-Solute Phosphatase Historical Predictions):\n")
+    f.write("  FINAL DISPOSITION: STOPPED / SPECIFIC ASSIGNMENT NOT ESTABLISHED\n")
+  And lines 162-178:
+    status_data = { "status": "FULL_F1_COMPLETE", ... }
+
+Fatal Flaws in Current Audit & Reporting:
+  1. Hardcoded Narrative Outcomes:
+     The text asserting "FULL_ANALYSIS_SUCCESS" and pre-composed narrative
+     paragraphs were written into the script prior to the execution of the
+     full census. If upstream stages fail or produce anomalous data, the script
+     would still emit a report asserting success.
+     Scientific reports must be synthesized strictly from live, evaluated
+     data structures.
+
+  2. Premature STATUS.json Completion Tagging:
+     Setting `"status": "FULL_F1_COMPLETE"` inside a script that is executed
+     as part of a batch job creates a race condition: if the script is
+     interrupted, or if verification fails, STATUS.json remains marked
+     as complete.
+
+  3. Overclaiming Global Novelty:
+     Lines 121 and 347 compute:
+       if not (m_set & ref_ids) and not (m_set & smag_ids) and not (m_set & gem_ids):
+           eq_novel_clusters_50 += 1
+     The script previously labeled these "EQ-specific novel clusters".
+     However, SMAG and GEM pools are bounded comparators (subsampled
+     environmental pools). A cluster absent from references, SMAG, and GEM
+     is ONLY novel relative to the reference set and the tested comparators.
+     Claiming global novelty is ungrounded.
+
+  4. Ecological Extrapolation Risk:
+     Tallying surface vs deep carriage from representative MAG names
+     (sample prefix) must remain strictly exploratory. True ecological niche
+     partitioning requires sample metagenomic read depth mapping across sites.
+     The report must maintain this distinction and avoid framing isolate
+     carriage as community abundance.
+
+Exact Algorithmic Correction:
+  1. Derivation from Checksummed Artifacts:
+     Stage 5 must parse JSON outputs produced by Stages 2, 3, and 4, verify
+     their SHA-256 hashes against `outputs_sha256.txt`, and verify that
+     candidate counts are non-zero and mathematically consistent.
+  2. Guarded Status Updates:
+     STATUS.json should only be updated to "FULL_F1_COMPLETE" if all output
+     files exist, non-empty, and checksums match. If an error occurs, write
+     "FAILED_STAGE_<N>" with error diagnostics.
+  3. Reference-Relative Novelty Language:
+     All report sections must explicitly use the term "Reference-Relative
+     and Comparator-Relative Novelty", specifying the exact denominator of
+     comparators used.
+
+
+7. CORRECTED DATA FLOW SPECIFICATION FOR ROOT IMPLEMENTATION
+--------------------------------------------------------------------------------
+To support Root's execution in root_audit and subsequent full runs, the
+following data flow, schemas, and checks are recommended:
+
+[Stage 2: Full Census (Root owned)]
+  Inputs:
+    - Wdb.csv (5,438 ANI95 winners)
+    - drep_rep_proteomes/{mag}.faa.gz (5,438 proteomes)
+    - Core CPF HMMs (PF00875, PF03441, PF04244)
+  Gate:
+    - Profile coverage >= 0.70, domain iE-value <= 1e-5.
+  Outputs:
+    - eq_cpf_candidates.tsv (id, mag, profile, iE, score, cov, length, sha256, partial)
+    - eq_cpf_candidates.faa
+    - eq_cpf_summary.json
+
+[Stage 3: Environmental Comparators (Root owned)]
+  Inputs:
+    - SMAG pool: p7_analyses_clean/h3_references/smag_pool_canonical.faa
+    - GEM pool: p7_analyses_clean/h3_references/results/gem_harmonized_pool_canonical_seed20261014.faa
+  Gate:
+    - Identical profile coverage >= 0.70, domain iE-value <= 1e-5.
+  Outputs:
+    - smag_cpf_candidates.tsv / .faa
+    - gem_cpf_candidates.tsv / .faa
+    - environmental_comparators_summary.json
+
+[Stage 4: Corrected Diversity, Novelty & ProstT5 Manifest]
+  Inputs:
+    - Purged reference set (no bHLH, no generic Radical SAM outgroups)
+    - eq_cpf_candidates.faa, smag_cpf_candidates.faa, gem_cpf_candidates.faa
+  Deduplication:
+    - Canonical hash table preserving all instance mappings.
+  Alignment:
+    - DIAMOND blastp --ultra-sensitive against curated CPF references.
+    - Evaluate bidirectional coverage: qcov >= 0.70 AND scov >= 0.70.
+  Clustering:
+    - MMseqs2 easy-cluster at 50% and 80% sequence identity.
+    - Expand cluster membership to all instances before novelty evaluation.
+  Outputs:
+    - f1_combined_dedup.faa (deduplicated canonical sequences)
+    - f1_combined_manifest.tsv (all instances with cohort, taxonomy, tier, hash)
+    - f1_diversity_and_novelty_metrics.json
+
+[Stage 5: Corrected Audit & Synthesis]
+  Inputs:
+    - Verified JSON artifacts from Stages 2, 3, 4.
+  Outputs:
+    - INPUTS.tsv (SHA-256 pinned inputs)
+    - outputs_sha256.txt (SHA-256 pinned outputs)
+    - RESULTS_FULL_F1.txt (Empirically grounded scientific report)
+    - STATUS.json (Dynamically verified status)
+
+
+8. CONCLUSION & WORK HALT
+--------------------------------------------------------------------------------
+1. In strict compliance with user instructions, NO further batch jobs have been
+   submitted, and NO pipeline scripts have been mutated while Root conducts the
+   census and identity audits.
+2. The implementation flaws identified in this review—specifically source-
+   preserving deduplication, dual-coverage alignment gating, reference database
+   purity, and dynamic report generation—provide a complete technical blueprint
+   for Root's implementation in root_audit.
+3. Work in f12 is paused awaiting Root's computational outputs.
+================================================================================

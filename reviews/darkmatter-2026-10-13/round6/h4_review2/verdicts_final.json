@@ -1,0 +1,64 @@
+{
+  "round": "round6_h4_review2_final",
+  "reviewer_model": "Gemini 4 Argon High",
+  "reviewed_at": "2026-10-13T23:34:00+03:00",
+  "hypothesis_id": "h4_structure",
+  "snapshot_path": "reviews/darkmatter-2026-10-13/round6/snapshots/h4_v3",
+  "corrected_document_hashes": {
+    "reproducibility/darkmatter/round6_hypotheses/h4_structure/DOSSIER.md": {
+      "sha256": "07ee9b53b6854c05a2f9980505f9056740fe72a9279e63ec8fc1e1e8aa2f9656",
+      "bytes": 37993,
+      "snapshot_h4_v3_sha256": "abd9fb399d5612b48e8eec064044749d2cefadd93453137e911c2250008cf9c3"
+    },
+    "reproducibility/darkmatter/round6_hypotheses/h4_structure/DESIGN.md": {
+      "sha256": "119670883c9a6e7d21614e3fd3b40b9bb0e15231c52dcdf2ac7ff8dadbe54aad",
+      "bytes": 20466,
+      "snapshot_h4_v3_sha256": "521a035145902823fb7da351f1a171032c6dff0308e7de69b9fe2d75f3b9d7dd"
+    },
+    "reviews/darkmatter-2026-10-13/round6/h4_review2/review.txt": {
+      "sha256": "1dc845164a97cb52e045a6abfc6d6bf5ec827ef9065fd20f30c1415cc800f66c",
+      "bytes": 11765
+    },
+    "reviews/darkmatter-2026-10-13/round6/h4_review2/verdicts.json": {
+      "sha256": "279263d2acc6891bf5fbfbf713d81a988675706b008dbaa9177b5e0b20be730e",
+      "bytes": 7342
+    }
+  },
+  "verdict": "VIABLE",
+  "bounded_hypothesis": "Among confidence-qualified sequence-dark representative protein models (>=100 aa, mean pLDDT >=0.70; one representative per fold cluster) with low whole-chain PDB structural similarity (qTM_wc < 0.5), physical cropping and de novo Foldseek alignment of outcome-independent confident structural regions (>=50 aa, 15-aa rolling-window smoothed pLDDT >=0.70, bridging <=5 aa dips with mean pLDDT >=0.55) against PDB (pdb_20260730/foldseek_pdb) recovers reference-conditional structural matches (qTM_crop >= 0.5) at a higher parent-model-level rate in candidates with whole-chain local hits (K_local_pdb, and overall K_local_all) than in candidates lacking local hits (K_dual_none), when evaluated symmetrically across sequence-identity exclusion tiers against internal fold-matched dark comparators (Q \\ K) and PDB positive controls.",
+  "prior_critical_findings": [
+    {
+      "id": "C1",
+      "status": "RESOLVED",
+      "evidence": "V3 re-ran Foldseek easy-search with --max-seqs 1000 for both whole-chain (300 models) and cropped-region (413 regions) queries (Slurm job 53706771), reducing POST_EXCLUSION_EMPTY among control regions from 17/103 (Tier 2), 22/103 (Tier 3), and 27/103 (Tier 4) in V2 (--max-seqs 50) to 0/103 (0.00%) across all five tiers (Tiers 0-4) and rescuing +19, +23, and +31 control regions at Tiers 2, 3, and 4 (unconditional control region match rates 99.03% at Tiers 1-2 and 98.06% at Tiers 3-4; model-level 98.67% [74/75] and 97.33% [73/75]). Scripts explicitly separate POST_EXCLUSION_EMPTY from PERSISTENT_LOW_SCORE, track hit-list saturation (total_hits_raw >= 1000: 8/75 control whole chains and 8/103 control regions, 0 candidates), and document that a finite cap (1000) mitigates but does not theoretically eliminate homology-saturation censoring."
+    },
+    {
+      "id": "C2",
+      "status": "RESOLVED",
+      "evidence": "V3 completed physical region cropping across all N=5,851 parent models (Slurm job 53704591; results/v3_full5851_cropped_regions_manifest.tsv, 7,784 rows), yielding 7,773 cropped regions across 5,690 eligible models and an exact finite-population census of 161 (2.75%) NO_CONFIDENT_REGION models (37/849 [4.36%] K_local_pdb, 3/87 [3.45%] K_local_afdb_only, 7/95 [7.37%] K_dual_none, 70/1,107 [6.32%] Q_not_K_pdb, 31/700 [4.43%] Q_not_K_afdb_only, 13/3,013 [0.43%] Controls). In the n=300 pilot, NO_CONFIDENT_REGION (11 models: 3 K_local_pdb, 4 K_dual_none, 4 Q_not_K_pdb) is strictly separated from Foldseek RAW_ZERO_RETRIEVAL (12 models: 1 K_local_pdb, 10 K_dual_none, 1 Control) across all tables and JSON summaries."
+    },
+    {
+      "id": "C3",
+      "status": "RESOLVED",
+      "evidence": "V3 searched both whole-chain models (n=300, v3_wc_pdb_hits.raw.tsv, 115,916 rows) and cropped regions (413 regions, v3_crop_pdb_hits.raw.tsv, 129,914 rows) in the same run (Slurm job 53706771) with identical Foldseek parameters (--alignment-type 1 -e 10 -s 9.5 --max-seqs 1000) and 21-column output schemas, applied Tiers 0-4 symmetrically to both, partitioned PDB-consistent vs AFDB-only baseline strata (K_local_pdb vs K_local_afdb_only; Q_not_K_pdb vs Q_not_K_afdb_only), and tracked the 10-state within-model transition matrix (trans_t0..t4). In K_local_pdb (n=90), 9/90 models match on the whole chain at --max-seqs 1000 (8 retained in crops, 1 NO_CONFIDENT_REGION) and 67/81 (82.72% unweighted; 83.04% H-T weighted, 95% CI [74.06%, 92.02%]) of same-run whole-chain unmatched models recover a cropped match, vs 18/50 (36.00% unweighted and H-T weighted, 95% CI [26.75%, 45.25%]) in K_dual_none (+47.04 pp H-T contrast, FPC z=7.15, p=8.53e-13; Fisher exact p=7.46e-8). In Q_not_K_pdb (n=55), 51/51 (100.0%) region-eligible models retain their match in crops."
+    },
+    {
+      "id": "C4",
+      "status": "RESOLVED",
+      "evidence": "V3 provided an empirical 16-CPU scaling benchmark from Slurm job 53704591 showing why full-cohort --max-seqs 1000 TM-align across 5,851 whole chains + 7,773 cropped regions (~1.35e7 3D superpositions) requires ~84.5 min for whole chains alone and ~183 min (3.05 h) combined on 16 CPUs, exceeding the <=16 CPU, <=64 GB, <=1 h single-job allocation cap. V3 retained the exact N=5,851 region-eligibility census and implemented Horvitz-Thompson / Hajek inverse-probability design-weighted estimators with finite-population-corrected (FPC) standard errors across all 7 sampling design strata (sum of weights = 5,851.00; K_local_all weights 5.12, 17.40, 9.24, 5.68 summing to 936.00)."
+    },
+    {
+      "id": "C5",
+      "status": "RESOLVED",
+      "evidence": "V3 parsed exact aligned residue pairs (M operations from Foldseek cigar strings) across all 115,916 whole-chain and 129,914 cropped hit rows, verified cigar_M_count == qspan + tspan - alnlen on 100% of rows, and reported aligned_pair_qcov (82.79% in K_local_pdb, 74.86% in K_dual_none, 89.53% in Q_not_K_pdb, 98.06% in Controls) separately from qspan_cov (92.75%, 88.77%, 96.14%, 99.55%). Primary cross-stratum inference is conducted at the parent-model level across all tiers; the 3,013-control self-hit exclusion test uses exact paired McNemar binomial p = 4.55e-13 (b=0, c=42); and top-hit sequence identity is computed strictly over retrieved queries while enumerating all 4 candidate regions (417 cropped hit rows, 114 whole-chain rows) with fident >= 20%."
+    }
+  ],
+  "new_critical_issues": [],
+  "minor_corrections_applied": [
+    "Updated DOSSIER.md Table 2.3 (line 85) K_local_all Horvitz-Thompson non-match percentages and FPC SEs to match results/v3_recovery_summary.json exactly (PERSISTENT_LOW_SCORE 13.91% [SE 3.85%, CI [6.37, 21.44]], RAW_ZERO_RETRIEVAL 0.99% [SE 0.93%, CI [0.00, 2.81]], NO_CONFIDENT_REGION 2.95% [SE 1.93%, CI [0.00, 6.73]]), and synchronized 1-ulp rounding values in Table 3.1 (lines 97-102).",
+    "Updated DOSSIER.md Section 5.2 byte sizes to match the actual local V3 result files on disk (v3_full5851_cropped_regions_manifest.tsv: 1,835,820; v3_cropped_regions_manifest.tsv: 112,535; v3_region_evaluations.tsv: 188,351; v3_model_summaries.tsv: 193,577; v3_recovery_summary.json: 218,523; v3_audited_example_hits.tsv: 45,232).",
+    "Added explicit methodological notes in DESIGN.md (§2.3) and DOSSIER.md (§3.1 and §4 item 5) stating that Taylor/Wald boundary [0.0, 0.0] or [100.0, 100.0] intervals do not establish finite-population absence or certainty and empty-domain 0.0 / [0.0, 0.0] outputs are numeric schema implementation placeholders rather than estimable zeros, and that none of these cells are used for the primary cross-stratum inference.",
+    "Clarified in DESIGN.md (§3.2 item 6), DOSSIER.md (§5.1), and h4_review2/minor_corrections.txt that 11 regular file entries in INPUTS.tsv carry SHA-256 digests whereas the 4 directory/database entries are historical locator placeholders (AFDB is historical upstream and not searched in V3), and added the pointer to reviews/darkmatter-2026-10-13/round6/root_checks/pdb_reference_verification.json (Slurm 53709618) pinning the 32 actual searched PDB database component files (4,530,919,251 bytes; plus 6,978 bytes for the excluded self-entry in the historical 33-entry total of 4,530,926,229 bytes)."
+  ],
+  "required_fixes": []
+}

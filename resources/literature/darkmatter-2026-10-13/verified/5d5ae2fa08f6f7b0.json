@@ -1,0 +1,351 @@
+{
+  "doi": "10.1093/nar/gkad814",
+  "status": "fulltext_doi_verified",
+  "path": "resources/literature/darkmatter-2026-10-13/verified/5d5ae2fa08f6f7b0.xml",
+  "title": "StORF-Reporter: finding genes between genes.",
+  "year": "2023",
+  "error": "",
+  "metadata": {
+    "id": "37897345",
+    "source": "MED",
+    "pmid": "37897345",
+    "pmcid": "PMC10682499",
+    "fullTextIdList": {
+      "fullTextId": [
+        "PMC10682499"
+      ]
+    },
+    "doi": "10.1093/nar/gkad814",
+    "title": "StORF-Reporter: finding genes between genes.",
+    "authorString": "Dimonaco NJ, Clare A, Kenobi K, Aubrey W, Creevey CJ.",
+    "authorList": {
+      "author": [
+        {
+          "fullName": "Dimonaco NJ",
+          "lastName": "Dimonaco",
+          "firstName": "Nicholas J",
+          "initials": "NJ",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0002-3808-206X"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Institute of Biological, Environmental and Rural Sciences, Aberystwyth University, Aberystwyth SY23 3PD, Wales, UK."
+              },
+              {
+                "affiliation": "Department of Computer Science, Aberystwyth University, Aberystwyth SY23 3DB, Wales, UK."
+              },
+              {
+                "affiliation": "Department of Medicine, McMaster University, Hamilton, ON, Canada."
+              },
+              {
+                "affiliation": "Farncombe Family Digestive Health Research Institute, McMaster University, Hamilton, ON, Canada."
+              },
+              {
+                "affiliation": "School of Biological Sciences, Queen's University Belfast, Belfast BT7 1NN, Northern Ireland, UK."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Clare A",
+          "lastName": "Clare",
+          "firstName": "Amanda",
+          "initials": "A",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-8315-3659"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Computer Science, Aberystwyth University, Aberystwyth SY23 3DB, Wales, UK."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Kenobi K",
+          "lastName": "Kenobi",
+          "firstName": "Kim",
+          "initials": "K",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-7074-7159"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Mathematics, Aberystwyth University, Aberystwyth SY23 3BZ, Wales, UK."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Aubrey W",
+          "lastName": "Aubrey",
+          "firstName": "Wayne",
+          "initials": "W",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0003-3351-1758"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "Department of Computer Science, Aberystwyth University, Aberystwyth SY23 3DB, Wales, UK."
+              }
+            ]
+          }
+        },
+        {
+          "fullName": "Creevey CJ",
+          "lastName": "Creevey",
+          "firstName": "Christopher J",
+          "initials": "CJ",
+          "authorId": {
+            "type": "ORCID",
+            "value": "0000-0001-7183-1555"
+          },
+          "authorAffiliationDetailsList": {
+            "authorAffiliation": [
+              {
+                "affiliation": "School of Biological Sciences, Queen's University Belfast, Belfast BT7 1NN, Northern Ireland, UK."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "authorIdList": {
+      "authorId": [
+        {
+          "type": "ORCID",
+          "value": "0000-0001-7074-7159"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0001-7183-1555"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0001-8315-3659"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0002-3808-206X"
+        },
+        {
+          "type": "ORCID",
+          "value": "0000-0003-3351-1758"
+        }
+      ]
+    },
+    "dataLinksTagsList": {
+      "dataLinkstag": [
+        "altmetrics",
+        "supporting_data"
+      ]
+    },
+    "journalInfo": {
+      "issue": "21",
+      "volume": "51",
+      "journalIssueId": 3669927,
+      "dateOfPublication": "2023 Nov",
+      "monthOfPublication": 11,
+      "yearOfPublication": 2023,
+      "journal": {
+        "medlineAbbreviation": "Nucleic Acids Res",
+        "title": "Nucleic acids research",
+        "essn": "1362-4962",
+        "issn": "0305-1048",
+        "isoabbreviation": "Nucleic Acids Res",
+        "nlmid": "0411011"
+      },
+      "printPublicationDate": "2023-11-01"
+    },
+    "pubYear": "2023",
+    "pageInfo": "11504-11517",
+    "abstractText": "Large regions of prokaryotic genomes are currently without any annotation, in part due to well-established limitations of annotation tools. For example, it is routine for genes using alternative start codons to be misreported or completely omitted. Therefore, we present StORF-Reporter, a tool that takes an annotated genome and returns regions that may contain missing CDS genes from unannotated regions. StORF-Reporter consists of two parts. The first begins with the extraction of unannotated regions from an annotated genome. Next, Stop-ORFs (StORFs) are identified in these unannotated regions. StORFs are open reading frames that are delimited by stop codons and thus can capture those genes most often missing in genome annotations. We show this methodology recovers genes missing from canonical genome annotations. We inspect the results of the genomes of model organisms, the pangenome of Escherichia coli, and a set of 5109 prokaryotic genomes of 247 genera from the Ensembl Bacteria database. StORF-Reporter extended the core, soft-core and accessory gene collections, identified novel gene families and extended families into additional genera. The high levels of sequence conservation observed between genera suggest that many of these StORFs are likely to be functional genes that should now be considered for inclusion in canonical annotations.",
+    "affiliation": "Institute of Biological, Environmental and Rural Sciences, Aberystwyth University, Aberystwyth SY23 3PD, Wales, UK.",
+    "publicationStatus": "ppublish",
+    "language": "eng",
+    "pubModel": "Print",
+    "pubTypeList": {
+      "pubType": [
+        "Research Support, Non-U.S. Gov't",
+        "research-article",
+        "Journal Article"
+      ]
+    },
+    "grantsList": {
+      "grant": [
+        {
+          "agency": "Biotechnology and Biological Sciences Research Council",
+          "grantId": "BB/E/W/10964A01",
+          "orderIn": 0
+        },
+        {
+          "agency": "Aberystwyth University",
+          "orderIn": 0
+        },
+        {
+          "agency": "McMaster University",
+          "orderIn": 0
+        },
+        {
+          "agency": "DAFM Ireland/DAERA Northern Ireland",
+          "grantId": "R3192GFS",
+          "orderIn": 0
+        },
+        {
+          "agency": "Horizon 2020",
+          "grantId": "818368",
+          "orderIn": 0
+        },
+        {
+          "agency": "Weston Family Microbiome Initiative",
+          "orderIn": 0
+        },
+        {
+          "agency": "Biotechnology and Biological Sciences Research Council",
+          "acronym": "BB_",
+          "grantId": "BBS/OS/GC/000011B",
+          "orderIn": 0
+        },
+        {
+          "agency": "Horizon 2020",
+          "grantId": "101000213",
+          "orderIn": 0
+        }
+      ]
+    },
+    "meshHeadingList": {
+      "meshHeading": [
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Escherichia coli",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "GE",
+                "qualifierName": "genetics"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "Y",
+          "descriptorName": "Genome, Bacterial"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Open Reading Frames",
+          "meshQualifierList": {
+            "meshQualifier": [
+              {
+                "majorTopic_YN": "N",
+                "abbreviation": "GE",
+                "qualifierName": "genetics"
+              }
+            ]
+          }
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Databases, Factual"
+        },
+        {
+          "majorTopic_YN": "N",
+          "descriptorName": "Molecular Sequence Annotation"
+        }
+      ]
+    },
+    "subsetList": {
+      "subset": [
+        {
+          "code": "IM",
+          "name": "Index Medicus"
+        }
+      ]
+    },
+    "fullTextUrlList": {
+      "fullTextUrl": [
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "doi",
+          "site": "Unpaywall",
+          "url": "https://doi.org/10.1093/nar/gkad814"
+        },
+        {
+          "availability": "Subscription required",
+          "availabilityCode": "S",
+          "documentStyle": "doi",
+          "site": "DOI",
+          "url": "https://doi.org/10.1093/nar/gkad814"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "html",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC10682499"
+        },
+        {
+          "availability": "Open access",
+          "availabilityCode": "OA",
+          "documentStyle": "pdf",
+          "site": "Europe_PMC",
+          "url": "https://europepmc.org/articles/PMC10682499?pdf=render"
+        }
+      ]
+    },
+    "commentCorrectionList": {
+      "commentCorrection": [
+        {
+          "source": "PPR",
+          "id": "PPR476082",
+          "type": "Preprint in",
+          "note": "CrossRef Pre-print loader",
+          "orderIn": 10002
+        }
+      ]
+    },
+    "isOpenAccess": "Y",
+    "inEPMC": "Y",
+    "inPMC": "Y",
+    "citedByCount": 5,
+    "hasReferences": "Y",
+    "hasTextMinedTerms": "Y",
+    "hasDbCrossReferences": "N",
+    "hasPDF": "Y",
+    "hasBook": "N",
+    "hasSuppl": "Y",
+    "hasLabsLinks": "Y",
+    "hasData": "Y",
+    "license": "cc by",
+    "authMan": "N",
+    "epmcAuthMan": "N",
+    "nihAuthMan": "N",
+    "hasTMAccessionNumbers": "Y",
+    "tmAccessionTypeList": {
+      "accessionType": [
+        "gen",
+        "doi"
+      ]
+    },
+    "dateOfCompletion": "2023-11-29",
+    "dateOfCreation": "2023-10-28",
+    "dateOfRevision": "2025-09-23",
+    "firstPublicationDate": "2023-11-01",
+    "firstIndexDate": "2023-10-31",
+    "fullTextReceivedDate": "2023-12-01",
+    "hasEvaluations": "N"
+  },
+  "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10682499/fullTextXML",
+  "sha256": "a33a8e37a459f5763e0aacb8529235ffd4bc12bf38a79e8a110fbb55c1c60014"
+}

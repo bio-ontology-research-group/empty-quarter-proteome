@@ -1,0 +1,105 @@
+================================================================================
+INDEPENDENT ARGON MANUSCRIPT REVIEW (ROUND 2): REFINEMENT & CLOSURE CHECK
+================================================================================
+Date: 2026-10-15
+Reviewer Role: Independent Argon Scientific Reviewer
+Actual Model Identity: Gemini 4 Argon (High) via Antigravity Agentic AI Coding
+  Assistant (Google DeepMind)
+Reviewed Material:
+  - reviews/darkmatter-family-followup-20261015/{argon_manuscript_round1.txt,
+    MANUSCRIPT_ROUND1_DISPOSITION.txt,harness_round2.log}
+  - manuscript/main.tex (lines 418-426, 459, 949-968, 1221-1240, 1315-1319)
+  - reproducibility/darkmatter/family_followup_20261015/{verify_family.py,
+    results/ecology/decomposition_summary.tsv,results/audit/summary.json}
+  - reproducibility/{REPORT.md,claims.tsv,current_manuscript_artifacts.tsv}
+Governance Boundary: Read-only verification; no edits to manuscript or code; no
+  new analyses executed.
+
+--------------------------------------------------------------------------------
+1. VERDICT: BOUNDED ADDITIONS ARE READY
+--------------------------------------------------------------------------------
+The bounded F3, F1, and F4 additions in `manuscript/main.tex`,
+`manuscript/figures/fig_helio_expanded.{pdf,png}`, and
+`reproducibility/darkmatter/family_followup_20261015/verify_family.py` are
+**READY** for final acceptance. There are **zero remaining concrete scientific,
+numerical, graphical, or reproducibility defects**.
+
+--------------------------------------------------------------------------------
+2. VERIFICATION OF ROUND-2 REFINEMENTS & CLAIM REGISTRY
+--------------------------------------------------------------------------------
+2.1 Eight CPF Site-Bootstrap Interval Endpoints & Exact Pre-Rounding Sum
+  - In `manuscript/main.tex` line 1225 (`Supplementary Note S4`), Root added the
+    descriptive 95% site-bootstrap intervals (2,000 site resamples, seed
+    `20261015`) for the genus-level arithmetic-mean CPF decomposition and
+    explicitly stated: *"Components sum exactly before rounding; all intervals
+    are descriptive 95% site-bootstrap intervals."*
+  - Independent verification of `verify_family.py` (lines 111-115) against
+    `results/ecology/decomposition_summary.tsv` (lines 9-12, `trait='CPF'`,
+    `rank='genus'`) confirms exact agreement within the `0.005` two-decimal
+    rounding tolerance for all 8 registered endpoints:
+    * `total_pp` (`8.71`, exact `8.710002`):
+      - `mean_ci_low`: `4.19` vs `4.192087` (`|diff| = 0.002087 <= 0.005`, PASS)
+      - `mean_ci_high`: `13.20` vs `13.195614` (`|diff| = 0.004386 <= 0.005`, PASS)
+    * `between_pp` (`5.31`, exact `5.305053`):
+      - `mean_ci_low`: `1.21` vs `1.208884` (`|diff| = 0.001116 <= 0.005`, PASS)
+      - `mean_ci_high`: `9.02` vs `9.016244` (`|diff| = 0.003756 <= 0.005`, PASS)
+    * `exclusive_pp` (`2.38`, exact `2.378197`):
+      - `mean_ci_low`: `0.90` vs `0.904973` (`|diff| = 0.004973 <= 0.005`, PASS)
+      - `mean_ci_high`: `3.89` vs `3.888845` (`|diff| = 0.001155 <= 0.005`, PASS)
+    * `within_pp` (`1.03`, exact `1.026752`):
+      - `mean_ci_low`: `0.68` vs `0.684683` (`|diff| = 0.004683 <= 0.005`, PASS)
+      - `mean_ci_high`: `1.40` vs `1.398614` (`|diff| = 0.001386 <= 0.005`, PASS)
+  - Unrounded components sum to `5.30505297 + 2.37819706 + 1.02675199 =
+    8.71000202`, matching `total_pp = 8.71000202` to machine precision.
+
+2.2 Active Artifact Manifest, Claim Registry & Harness Status
+  - `verify_family.py` now defines `72` `family.*` claims (including the 8 new
+    CPF interval endpoints and `family.helio.translation_matches = 45` from
+    `results/structure_audit/EQ_assembly_verification.tsv`). All `72/72` pass
+    independent execution (`0` failures).
+  - `reproducibility/current_manuscript_artifacts.tsv` pins `65` frozen
+    artifacts (`22` from `family_discovery_20261015` / `family_followup_20261015`,
+    including the updated SHA256 `68f878e8...` for `verify_family.py` and
+    `9e94577d...` for `EQ_assembly_verification.tsv`).
+  - `reviews/darkmatter-family-followup-20261015/harness_round2.log`,
+    `reproducibility/REPORT.md` (updated `13:12`), `reproducibility/claims.tsv`
+    (`382` lines, updated `13:12`), and `manuscript/main.pdf` (`40` pages,
+    updated `13:12`) are fully synchronized:
+    `GATES: PASS (65 frozen artifacts; manuscript boundary language current)`
+    `COMPUTE: 62 pass | FROZEN: 288 pass | TABLE sources: 6 present | PROVENANCE: 25 ledger-pinned | FAIL: 0`
+    `MANUSCRIPT: OK (40 pages; BibTeX resolved; public snapshot)`
+    `REPRODUCIBILITY: OK`.
+  - **IBEX Audit Status vs. Queued Final Snapshot**:
+    Analytical audit job `53827015` (`eq-family-final-audit`) already completed
+    (`ExitCode 0:0`, `12/12` checks `PASS`, `1,124` retained files) and is
+    synced locally in `results/audit/summary.json`. A subsequent snapshot-closure
+    rerun (`53827265`, `eq-family-final-audit`) to record the updated manuscript
+    and reproducibility snapshot hashes in `artifact_manifest.tsv` is currently
+    queued on IBEX (`PD`, `Reason=Priority`); this is normal cluster queue
+    scheduling for the final file-manifest snapshot, not an analytical failure.
+
+2.3 Preservation of All Prior Scientific Boundaries
+  - Re-reading `manuscript/main.tex` (lines 418-426, 459, 949-968, 1221-1240,
+    1315-1319) confirms that all previously verified guardrails remain intact:
+    1. **Reference-panel overlap**: `2/10` unique GEM `Saccharimonadia`
+       sequences (`8/73` GEM records overall) are disclosed as exact matches to
+       the Bulzu et al. (2021) panel, and `SMAG n = 2` is disclosed as below the
+       equal-draw threshold.
+    2. **50% vs. 80% reference-free resolution**: Reference-free environmental
+       `Saccharimonadia` clustering (`8.04` EQ vs `4` GEM at 50% identity;
+       `9.61` EQ vs `10` GEM at 80% identity) and its resolution dependence are
+       stated explicitly.
+    3. **`609 + 7` `EctABC` distinction**: The `609` distinct-ORF loci and `7`
+       single-ORF non-overlapping `EctAB` putative fusions (`+1` in GEM) are
+       reported separately from the `5` junction-spanning-read `EctCD` fusions
+       (`1` `FEYH` outside `WEYH`).
+    4. **Fixed-trait & unclassified-genus boundaries**: The `25.7%`
+       genus-unclassified MAG abundance (`W_g = 0` by construction) and fixed
+       species-representative traits (excluding within-strain inference) remain
+       explicit.
+    5. **Null F4 primary test & known-family framing**: The nonsignificant
+       Wilcoxon signed-rank test (`+0.56 pp`, `p = 0.0974`, Holm `p = 0.389`)
+       governs F4 without the mean-decomposition figure, and F3 remains framed
+       as a separate screen within a recognizable family without inferring
+       UniRef50-dark membership or exclusion from profile recognition alone.
+================================================================================

@@ -1,0 +1,82 @@
+{
+  "status": "PASSED",
+  "output_dir": "/mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/smoke_results_v4",
+  "fasta_path": "/mnt/data/u/hohndor/eq-family-discovery-20261015/gpu/smoke_references.fasta",
+  "checks": {
+    "files_present": {
+      "passed": true
+    },
+    "checksums": {
+      "passed": true,
+      "errors": []
+    },
+    "npy_npz_identical": {
+      "passed": true
+    },
+    "dimensionality": {
+      "passed": true,
+      "actual_shape": [
+        7,
+        1024
+      ],
+      "expected_shape": [
+        7,
+        1024
+      ]
+    },
+    "finiteness": {
+      "passed": true,
+      "has_nans": false,
+      "has_infs": false
+    },
+    "id_order_preserved": {
+      "passed": true,
+      "num_ids": 7
+    },
+    "lengths_match": {
+      "passed": true
+    },
+    "raw_sequence_shas_match": {
+      "passed": true
+    },
+    "clean_sequence_shas_match": {
+      "passed": true
+    },
+    "manifest_integrity": {
+      "passed": true
+    },
+    "duplicate_equivalence": {
+      "passed": true,
+      "checks": [
+        {
+          "id1": "O52251",
+          "id2": "O52251_dup",
+          "clean_sha256": "a7ad43e3311956bf69d772b5c8227c62f03673ef83ec125d1630fba7487ffa03",
+          "max_abs_diff": 0.0,
+          "passed": true
+        },
+        {
+          "id1": "O52251",
+          "id2": "O52251_stop",
+          "clean_sha256": "a7ad43e3311956bf69d772b5c8227c62f03673ef83ec125d1630fba7487ffa03",
+          "max_abs_diff": 0.0,
+          "passed": true
+        }
+      ]
+    },
+    "provenance_valid": {
+      "passed": true,
+      "run_signature": "0ed9ad6a60fda90959f38d79361f49cd25c84a4752cd8b74f290f0f595bc59cb",
+      "runner_code_sha256": "f47516cb37d07e6fb298a6f1e78c7ab6900d925121317cfa4d77757108c6df95",
+      "gpu_device": "NVIDIA H200",
+      "peak_vram_gb": 2.9779,
+      "single_vs_batched_consistency": {
+        "max_abs_diff": 0.00048828125,
+        "mean_abs_diff": 2.2704354705638252e-05,
+        "min_cos_sim": 0.9999997615814209,
+        "tolerance_threshold": 0.005,
+        "verified": true
+      }
+    }
+  }
+}

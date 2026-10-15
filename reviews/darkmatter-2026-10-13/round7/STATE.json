@@ -1,0 +1,112 @@
+{
+  "stage": "POSTINTEGRATION_REVIEWS_AND_REFINEMENTS_COMPLETE",
+  "started_utc": "2026-10-14T04:37:56.824215+00:00",
+  "models": {
+    "implementation": "gemini-3.8-flash-high",
+    "review": "gemini-4-argon-high"
+  },
+  "scope": [
+    "h1_lineage",
+    "h2_context",
+    "h3_references",
+    "h4_structure"
+  ],
+  "implementation_sessions": {
+    "h2": "23573dce-b2a3-4614-96ca-075b41633667",
+    "h3_repro_repairs": "f1f760e4-1120-48a9-8476-d4e60310f72f",
+    "h3_references": "c25fbf1d-ce6b-4a91-b381-f795a3e90e27",
+    "h4_structure": "c788abbc-c73b-4ed0-a285-d4487e0f300f",
+    "h4_tm_anomaly": "639411ba-5c55-49dd-a0ee-4642f7d41649",
+    "h3_final_raw_audit": "211e42f6-0903-497d-baa7-084592c6f438"
+  },
+  "jobs": {
+    "h2_full": 53738443,
+    "h4_full": 53738540,
+    "h3_smag_download": 53738740,
+    "h3_gem_preparation": 53738968,
+    "h3_smag_extraction": 53738996,
+    "h3_matched_search": 53738997,
+    "h3_download_auxiliary": 53740188,
+    "h3_gem_retention": 53740440,
+    "h3_download_auxiliary_cancelled": 53740188,
+    "h3_download_resumable": 53741162,
+    "h2_review_replay": 53740945,
+    "h3_additional_harmonized_draws": 53742584,
+    "h3_download_middle": 53743377,
+    "h4_recovery": 53744678,
+    "h4_independent_raw_audit": 53743520,
+    "h3_unrecorded_auxiliary_cancelled": 53741379,
+    "h3_legacy_resumed": 53744172,
+    "h4_recovery_v1_failed_schema": 53743383,
+    "h4_summary_generated_verifier_failed": 53744678,
+    "h4_finalization": 53745194,
+    "h4_independent_raw_audit_cancelled": 53743520,
+    "h4_finalization_tm_range_failed": 53745194,
+    "h4_raw_diagnostic": 53745510,
+    "h4_tm_sensitivity": 53746868,
+    "h4_orix_preparation": 53760480,
+    "h4_orix_gpu_array": 315233,
+    "h3_final_raw_audit": 53796328,
+    "h3_audit_field_mapping_failure": 53796102,
+    "h3_audit_report_version_failure": 53796196,
+    "h4_gpu_raw_audit": 53796103
+  },
+  "root_audits_completed": [
+    "h2_full_table_audit.json",
+    "h2_contrasts.json",
+    "h3_final_raw_audit/h3_raw_audit_summary.json",
+    "root_checks/h4_gpu_audit/gpu_raw_audit.json"
+  ],
+  "review_sessions": {
+    "h1_h2": "c040653b-e842-47c2-96b8-7d66ad90fe98",
+    "h3_h4_preintegration": "c43ab8a1-80f6-4704-8fe7-edc1e2cd7f79",
+    "postintegration1": "600688d7-e052-4ef5-b6fd-d7b58a64ccb4",
+    "postintegration2": "944f3f83-0316-46fc-8b8b-970e5aea569e"
+  },
+  "review_stage": "Both post-integration Argon/root rounds complete; targeted round2 closure withdraws reviewer errors and accepts bounded H1-H4 claims",
+  "accepted": {
+    "H1": "SUPPORTED_WITH_BOUNDS",
+    "H2": "SUPPORTED_WITH_BOUNDS",
+    "H3": "SUPPORTED_WITH_BOUNDS; raw audit53796328PASS",
+    "H4": "POOLED_QTM_SUPPORTED_WITH_BOUNDS; GPU raw audit passed"
+  },
+  "monitoring": "Root monitors Slurm; initial Flash monitoring turns interrupted after submission to avoid repeated idle model calls. Resume recorded conversations for result collection once jobs complete.",
+  "login_memory_incident": {
+    "date": "2026-10-14",
+    "status": "Acknowledged direct-login helper policy violation; no offending process remains; Slurm worker guard installed and verified",
+    "exact_memory_cause": "unproven",
+    "guard_test_job": 53746999,
+    "audit": "root_checks/LOGIN_MEMORY_INCIDENT.md"
+  },
+  "h4_orix": {
+    "status": "GPU_RAW_AUDIT_PASSED_WITH_PREFILTER_AND_CONTROL_CAP_BOUNDS",
+    "partition": "freecycle-h200",
+    "gpu": "nvidia_h200:1 per task",
+    "tasks": {
+      "0": "5851 whole-chain models",
+      "1": "7773 cropped regions"
+    },
+    "relay_status": "orix_h4_gpu/transfer_status.json",
+    "method": "same Foldseek10 commit and frozen PDB; GPU prefilter sensitivity, not exact CPU replay",
+    "remote": "/mnt/data/u/hohndor/eq-current-structures/h4-round7-gpu-20261014",
+    "checked_utc": "2026-10-14T18:48:24.781705+00:00",
+    "whole_chain_execution": "task0 restart2 produced 624MiB raw; later restart3 reused completed results"
+  },
+  "required_completion": "Audit and judge H1-H4; confirm disputed findings with Argon; write supported sections into manuscript/main.tex; then two complete Argon plus root review/refine rounds; build and validate final paper",
+  "postintegration_review_rounds_completed": 2,
+  "completed_reviews_utc": "2026-10-14T19:51:12.882613+00:00",
+  "final_validation": {
+    "current_driver": "PASS",
+    "full_driver": "PASS",
+    "computed_claims": 62,
+    "frozen_claims": 216,
+    "h1_h4_subset_claims": 152,
+    "h1_h4_pinned_files": 27,
+    "pages": 35,
+    "upstream_path_existence": "25 remote sources and 2 local root-audit sources verified"
+  },
+  "ibex_mirror": {
+    "path": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/manuscript_review_20261014",
+    "verification_receipt": "manuscript/ibex_mirror_verification.json"
+  }
+}

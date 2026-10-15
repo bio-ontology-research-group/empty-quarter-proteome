@@ -1,0 +1,934 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "P58116",
+  "uniProtkbId": "YHHW_ECO57",
+  "entryAudit": {
+    "firstPublicDate": "2001-06-01",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2001-06-01",
+    "entryVersion": 128,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Escherichia coli O157:H7",
+    "taxonId": 83334,
+    "lineage": [
+      "Bacteria",
+      "Pseudomonadati",
+      "Pseudomonadota",
+      "Gammaproteobacteria",
+      "Enterobacterales",
+      "Enterobacteriaceae",
+      "Escherichia"
+    ]
+  },
+  "proteinExistence": "3: Inferred from homology",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Quercetin 2,3-dioxygenase"
+      },
+      "shortNames": [
+        {
+          "value": "Quercetinase"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "value": "1.13.11.24"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Pirin-like protein YhhW"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "yhhW"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "Z4807"
+        },
+        {
+          "value": "ECs4288"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Has quercetin 2,3-dioxygenase activity in vitro. Its physiological role is unknown; however, may provide a mechanism that would avoid inhibition of key cellular proteins, such as DNA gyrase, by quercetin (By similarity)"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "quercetin + O2 = 2-(3,4-dihydroxybenzoyloxy)-4,6-dihydroxybenzoate + CO",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:15381"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15379"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:17245"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57628"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:57694"
+          }
+        ],
+        "ecNumber": "1.13.11.24"
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Zn(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29105"
+          }
+        },
+        {
+          "name": "Co(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:48828"
+          }
+        },
+        {
+          "name": "Fe(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:29033"
+          }
+        }
+      ],
+      "note": {
+        "texts": [
+          {
+            "evidences": [
+              {
+                "evidenceCode": "ECO:0000250"
+              }
+            ],
+            "value": "Binds 1 divalent metal cation, Zn(2+), Co(2+) or Fe(2+)."
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "value": "Flavonoid metabolism; quercetin degradation"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250"
+            }
+          ],
+          "value": "Is composed of two structurally similar domains arranged face to face"
+        }
+      ],
+      "commentType": "DOMAIN"
+    },
+    {
+      "texts": [
+        {
+          "value": "Quercetin is a flavonoid compound synthesized by a variety of plants, including foods for human consumption"
+        }
+      ],
+      "commentType": "MISCELLANEOUS"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the pirin family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 231,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Quercetin 2,3-dioxygenase",
+      "featureId": "PRO_0000214064"
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 57,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 57,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:60240"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "a divalent metal cation",
+        "id": "ChEBI:CHEBI:60240"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 59,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 59,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:60240"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "a divalent metal cation",
+        "id": "ChEBI:CHEBI:60240"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 101,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 101,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:60240"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "a divalent metal cation",
+        "id": "ChEBI:CHEBI:60240"
+      }
+    },
+    {
+      "type": "Binding site",
+      "location": {
+        "start": {
+          "value": 103,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 103,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "",
+      "featureCrossReferences": [
+        {
+          "database": "ChEBI",
+          "id": "CHEBI:60240"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ],
+      "ligand": {
+        "name": "a divalent metal cation",
+        "id": "ChEBI:CHEBI:60240"
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0186",
+      "category": "Ligand",
+      "name": "Copper"
+    },
+    {
+      "id": "KW-0223",
+      "category": "Molecular function",
+      "name": "Dioxygenase"
+    },
+    {
+      "id": "KW-0408",
+      "category": "Ligand",
+      "name": "Iron"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    },
+    {
+      "id": "KW-0560",
+      "category": "Molecular function",
+      "name": "Oxidoreductase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    },
+    {
+      "id": "KW-0862",
+      "category": "Ligand",
+      "name": "Zinc"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "11206551",
+        "citationType": "journal article",
+        "authors": [
+          "Perna N.T.",
+          "Plunkett G. III",
+          "Burland V.",
+          "Mau B.",
+          "Glasner J.D.",
+          "Rose D.J.",
+          "Mayhew G.F.",
+          "Evans P.S.",
+          "Gregor J.",
+          "Kirkpatrick H.A.",
+          "Posfai G.",
+          "Hackett J.",
+          "Klink S.",
+          "Boutin A.",
+          "Shao Y.",
+          "Miller L.",
+          "Grotbeck E.J.",
+          "Davis N.W.",
+          "Lim A.",
+          "Dimalanta E.T.",
+          "Potamousis K.",
+          "Apodaca J.",
+          "Anantharaman T.S.",
+          "Lin J.",
+          "Yen G.",
+          "Schwartz D.C.",
+          "Welch R.A.",
+          "Blattner F.R."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11206551"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1038/35054089"
+          }
+        ],
+        "title": "Genome sequence of enterohaemorrhagic Escherichia coli O157:H7.",
+        "publicationDate": "2001",
+        "journal": "Nature",
+        "firstPage": "529",
+        "lastPage": "533",
+        "volume": "409"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "O157:H7 / EDL933 / ATCC 700927 / EHEC",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "11258796",
+        "citationType": "journal article",
+        "authors": [
+          "Hayashi T.",
+          "Makino K.",
+          "Ohnishi M.",
+          "Kurokawa K.",
+          "Ishii K.",
+          "Yokoyama K.",
+          "Han C.-G.",
+          "Ohtsubo E.",
+          "Nakayama K.",
+          "Murata T.",
+          "Tanaka M.",
+          "Tobe T.",
+          "Iida T.",
+          "Takami H.",
+          "Honda T.",
+          "Sasakawa C.",
+          "Ogasawara N.",
+          "Yasunaga T.",
+          "Kuhara S.",
+          "Shiba T.",
+          "Hattori M.",
+          "Shinagawa H."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "11258796"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/8.1.11"
+          }
+        ],
+        "title": "Complete genome sequence of enterohemorrhagic Escherichia coli O157:H7 and genomic comparison with a laboratory strain K-12.",
+        "publicationDate": "2001",
+        "journal": "DNA Res.",
+        "firstPage": "11",
+        "lastPage": "22",
+        "volume": "8"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "O157:H7 / Sakai / RIMD 0509952 / EHEC",
+          "type": "STRAIN"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AE005174",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAG58548.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "BA000007",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAB37711.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "H86010",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H86010"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "H91164",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "H91164"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "NP_312315.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NC_002695.2"
+        }
+      ]
+    },
+    {
+      "database": "RefSeq",
+      "id": "WP_000639806.1",
+      "properties": [
+        {
+          "key": "NucleotideSequenceId",
+          "value": "NZ_AP018488.1"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "P58116",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "P58116",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "155864.Z4807",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "GeneID",
+      "id": "915854",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ece:Z4807",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "ecs:ECs_4288",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PATRIC",
+      "id": "fig|386585.9.peg.4480",
+      "properties": [
+        {
+          "key": "GeneDesignation",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "COG1741",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "HOGENOM",
+      "id": "CLU_064194_2_2_6",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "OMA",
+      "id": "HQDAWFH",
+      "properties": [
+        {
+          "key": "Fingerprint",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "UniPathway",
+      "id": "UPA00724",
+      "properties": [
+        {
+          "key": "RectionId",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000000558",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0008127",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:quercetin 2,3-dioxygenase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd20311",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "cupin_Yhhw_C"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd02910",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "cupin_Yhhw_N"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "2.60.120.10:FF:000028",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin family protein"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "2.60.120.10:FF:000021",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Quercetin 2,3-dioxygenase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "2.60.120.10",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Jelly Rolls"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR012093",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR003829",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin_N_dom"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR041602",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Quercetinase_C"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR014710",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC-like_jellyroll"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR011051",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC_Cupin_sf"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43212",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "QUERCETIN 2,3-DIOXYGENASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR43212:SF3",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "QUERCETIN 2,3-DIOXYGENASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02678",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF17954",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin_C_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF006232",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Pirin"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF51182",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "RmlC-like cupins"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MIYLRKANERGHANHGWLDSWHTFSFANYYDPNFMGFSALRVINDDVIEAGQGFGTHPHKDMEILTYVLEGTVEHQDSMGNKEQVPAGEFQIMSAGTGIRHSEYNPSSTERLHLYQIWIMPEENGITPRYEQRRFDAVQGKQLVLSPDARDGSLKVHQDMELYRWALLKDEQSVHQIAAERRVWIQVVKGNVTINGVKASISDGLAIWDEQAISIHADSDSEVLLFDLPPV",
+    "length": 231,
+    "molWeight": 26291,
+    "crc64": "DC15B213316875E4",
+    "md5": "442AA1696AF0C5D6C21EBC8D558C956D"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "PATHWAY": 1,
+      "DOMAIN": 1,
+      "MISCELLANEOUS": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Binding site": 4
+    },
+    "uniParcId": "UPI000013B25C"
+  }
+}

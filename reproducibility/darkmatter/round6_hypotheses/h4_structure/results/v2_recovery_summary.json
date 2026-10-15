@@ -1,0 +1,81 @@
+{
+  "analysis_version": "v2_cropped_regions",
+  "cohort_mode": "pilot",
+  "pilot_seed": 20261013,
+  "region_definition": {
+    "min_length_aa": 50,
+    "min_smoothed_plddt": 0.7,
+    "smoothing_window_aa": 15,
+    "max_bridge_gap_aa": 5
+  },
+  "stratum_summaries": {
+    "K_local": {
+      "model_count": 100,
+      "transition_recovered_after_cropping": 70,
+      "pct_recovered": 70.0,
+      "transition_persistent_low_score": 25,
+      "pct_persistent_low_score": 25.0,
+      "transition_zero_retrieval": 5,
+      "pct_zero_retrieval": 5.0,
+      "whole_chain_matched": 0,
+      "total_regions": 165,
+      "regions_t1_source_excl_matched": 108,
+      "pct_regions_t1_matched": 65.45,
+      "regions_t2_seqid30_matched": 108,
+      "pct_regions_t2_matched": 65.45,
+      "regions_t3_seqid25_matched": 108,
+      "pct_regions_t3_matched": 65.45
+    },
+    "K_dual_none": {
+      "model_count": 50,
+      "transition_recovered_after_cropping": 15,
+      "pct_recovered": 30.0,
+      "transition_persistent_low_score": 20,
+      "pct_persistent_low_score": 40.0,
+      "transition_zero_retrieval": 15,
+      "pct_zero_retrieval": 30.0,
+      "whole_chain_matched": 0,
+      "total_regions": 60,
+      "regions_t1_source_excl_matched": 19,
+      "pct_regions_t1_matched": 31.67,
+      "regions_t2_seqid30_matched": 19,
+      "pct_regions_t2_matched": 31.67,
+      "regions_t3_seqid25_matched": 19,
+      "pct_regions_t3_matched": 31.67
+    },
+    "Q_not_K": {
+      "model_count": 75,
+      "transition_recovered_after_cropping": 14,
+      "pct_recovered": 18.67,
+      "transition_persistent_low_score": 5,
+      "pct_persistent_low_score": 6.67,
+      "transition_zero_retrieval": 1,
+      "pct_zero_retrieval": 1.33,
+      "whole_chain_matched": 55,
+      "total_regions": 85,
+      "regions_t1_source_excl_matched": 74,
+      "pct_regions_t1_matched": 87.06,
+      "regions_t2_seqid30_matched": 74,
+      "pct_regions_t2_matched": 87.06,
+      "regions_t3_seqid25_matched": 74,
+      "pct_regions_t3_matched": 87.06
+    },
+    "Controls": {
+      "model_count": 75,
+      "transition_recovered_after_cropping": 1,
+      "pct_recovered": 1.33,
+      "transition_persistent_low_score": 0,
+      "pct_persistent_low_score": 0.0,
+      "transition_zero_retrieval": 1,
+      "pct_zero_retrieval": 1.33,
+      "whole_chain_matched": 73,
+      "total_regions": 103,
+      "regions_t1_source_excl_matched": 100,
+      "pct_regions_t1_matched": 97.09,
+      "regions_t2_seqid30_matched": 83,
+      "pct_regions_t2_matched": 80.58,
+      "regions_t3_seqid25_matched": 78,
+      "pct_regions_t3_matched": 75.73
+    }
+  }
+}

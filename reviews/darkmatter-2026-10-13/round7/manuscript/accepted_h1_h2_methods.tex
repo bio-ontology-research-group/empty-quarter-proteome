@@ -1,0 +1,32 @@
+\subsection*{Within-lineage reference proximity and flanking-gene recurrence}
+For each of the 237 Thermoplasmatota representatives, the external comparator was the genome
+with the highest mean amino-acid identity among reciprocal best hits, requiring at least 100
+reciprocal pairs. The comparator pool contained 218 GTDB R232 and 29 non-duplicate MGnify genomes
+in classes SW-10-69-26 and E2. Proteins were predicted independently with Pyrodigal v3.7.1 in
+single-genome mode and searched with DIAMOND v2.1.16, using \texttt{--very-sensitive},
+$E\leq10^{-5}$, identity $\geq30\%$, and query and subject coverage $\geq70\%$.
+The 237 selected pairs used 32 distinct reference genomes. The response was the catalogue dark
+fraction, with predictors comprising amino-acid identity, the reciprocal-hit count divided by
+the desert genome's single-genome protein count, CheckM2 completeness and contamination, and
+base-10 logarithms of assembly length and N50. We fitted phylogenetic generalised least squares
+on the GTDB-Tk R232 archaeal marker tree, normalising shared branch lengths to a correlation
+matrix and estimating Pagel's $\lambda$ by profile maximum likelihood. Coefficient standard
+errors and two-sided tests condition on the fitted covariance and tree. Supplementary Note S3
+reports the covariance, denominator, lineage-subset and caller-completeness sensitivities.
+
+For the genomic-context analysis, we compared the 1{,}031 confidence-qualified dark structural
+families below the dual-reference query-normalised threshold with the other 1{,}807 qualified
+dark families. Family members were mapped to refined-bin contigs and 95\%-ANI species groups;
+1{,}461 families occurred in at least two species. We selected one locus per family and species
+by the outcome-independent ordering in the archived selection script. Contig mappings to Bakta
+annotations required nucleotide-sequence hashes and the original identifiers in Bakta logs.
+The primary window comprised the two predicted genes on each side of the focal gene, with all
+four flanks matched to Bakta by exact coordinates and strand. A family was evaluable when such
+windows were available in at least two species. Recurrence meant that at least one flanking KEGG
+orthologue occurred around that family in two or more species, irrespective of flank position.
+We estimated a family-specific background from 5{,}000 draws of eligible pseudo-focal positions
+on the same contigs. The primary between-group contrast used excess recurrence above this
+background, weighted within common-support strata of species breadth, coarse host phylum and
+flanking annotation opportunity. Two-sided label permutations used 10{,}000 draws and a plus-one
+correction. Sensitivities included unique same-strand 3$'$-stop matches, exact-phylum and
+length-matched pairs, and a species-disjoint family subset (Supplementary Note S3).

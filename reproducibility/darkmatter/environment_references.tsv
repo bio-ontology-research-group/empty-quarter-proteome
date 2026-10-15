@@ -1,0 +1,32 @@
+source_line	scripts
+COVERM=/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/coverm	06_darkmatter/contamination_clean/scripts/04_coverm_controls.sbatch;06_darkmatter/contamination_clean/scripts/08_coverm_sntc_counts.sbatch
+"DIAMOND = ""/ibex/scratch/projects/c2014/rob/miniconda3/envs/eggnog/bin/diamond"""	06_darkmatter/cultured_comparison_clean/scripts/step3_06_pair_anatomy.py
+"FASTTREE = ""/home/velazqal/miniconda3/envs/phabox2/bin/FastTreeMP"""	06_darkmatter/lineage_darkness_clean/scripts/v2_thermo_tree.py
+FASTTREE=/home/velazqal/miniconda3/envs/phabox2/bin/FastTreeMP	06_darkmatter/lineage_darkness_clean/scripts/v2_thermo_tree.sbatch
+HMMSEARCH=/ibex/scratch/projects/c2014/rob/miniconda3/envs/bigslice/bin/hmmsearch	04_structure/pfam_candidates_clean/scripts/02_hmmsearch_pfam.sh
+MAFFT=$WD/../miniconda3/envs/busco/bin/mafft	06_darkmatter/darkfam_basis_clean/scripts/fam_6c_dnds.sh
+MM2=/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/minimap2	06_darkmatter/contamination_clean/scripts/05_identify_controls.sbatch;06_darkmatter/contamination_clean/scripts/09_sanity_spositive_zero.sbatch
+MMSEQS=$WD/../miniconda3/envs/mmseqs2/bin/mmseqs	06_darkmatter/specificity_clean/scripts/spec_5_depth.sbatch
+PY=/home/velazqal/miniconda3/envs/darkfunc/bin/python          # pyrodigal 3.7.1, numpy	06_darkmatter/lineage_darkness_clean/scripts/v2_thermo_relatives.sbatch
+PY=/home/velazqal/miniconda3/envs/python-utils/bin/python	06_darkmatter/cultured_comparison_clean/scripts/step3_06_pair_anatomy.sbatch;06_darkmatter/specificity_clean/scripts/spec_6a_smag_fetch.sbatch
+SAM=/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/samtools	06_darkmatter/contamination_clean/scripts/09_sanity_spositive_zero.sbatch
+"SAMTOOLS = ""/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/samtools"""	06_metabolism/uv_survival_clean/scripts/uv_5_ladder.py
+SK=/ibex/sw/rl9c/gtdb-tk/2.5.2/rl9.4_conda3/Miniconda3/envs/gtdbtk_v2.5.2/bin/skani	06_darkmatter/contamination_clean/scripts/05_identify_controls.sbatch;06_darkmatter/cultured_comparison_clean/scripts/01_skani.sbatch;06_darkmatter/lineage_darkness_clean/scripts/v2_thermo_relatives.sbatch
+conda activate eco_probes	06_darkmatter/darkfam_basis_clean/scripts/fam_4_coverm_array.sh;06_darkmatter/darkfam_basis_clean/scripts/fam_6c_dnds.sh
+conda activate eggnog	06_darkmatter/cultured_comparison_clean/scripts/step3_01_makedb.sbatch;06_darkmatter/cultured_comparison_clean/scripts/step3_02_dark_vs_cultured.sbatch
+conda activate esmfold	04_structure/00_structure_clean/scripts/05b_fold.sh;04_structure/00_structure_clean/scripts/05b_fold_v100.sh
+conda activate gtdbtk	06_darkmatter/contamination_clean/scripts/06_sntc_uniref.sbatch
+conda activate instrain	04_protein_catalog/darkmatter_clean/scripts/darkclean_1_uncovered_ids.sh;04_protein_catalog/darkmatter_clean/scripts/darkclean_4_combine.sh;04_protein_catalog/darkmatter_clean/scripts/darkclean_5_mag.sh
+conda activate mmseqs2	04_protein_catalog/darkmatter_clean/scripts/darkclean_3b_uniref.sh;06_darkmatter/contamination_clean/scripts/06_sntc_uniref.sbatch;06_darkmatter/cultured_comparison_clean/scripts/step3_03_cultured_vs_uniref50.sbatch;06_darkmatter/darkfam_basis_clean/scripts/basis_2_search.sh;06_darkmatter/darkfam_basis_clean/scripts/fam_1_cluster.sh;06_darkmatter/darkfam_basis_clean/scripts/fam_5_control.sh;06_darkmatter/darkfam_basis_clean/scripts/fam_7_robustness.sh
+conda activate pyrodigal	04_protein_catalog/darkmatter_clean/scripts/darkclean_3a_chunk.sh;04_protein_catalog/darkmatter_clean/scripts/darkclean_3c_merge.sh;06_darkmatter/specificity_clean/scripts/spec_6b_smag_genecall.sbatch
+conda activate pyrodigal   # has pigz	04_protein_catalog/darkmatter_clean/scripts/darkclean_2_extract.sh
+"echo ""barrnap: $(module purge >/dev/null 2>&1; module load barrnap/0.9 >/dev/null 2>&1; echo ""$(command -v barrnap) ($(barrnap --version 2>&1))"")"""	mimag_rrna_trna_clean/scripts/01_rrna_trna_array.sbatch
+"echo ""tRNAscan-SE: $(module purge >/dev/null 2>&1; module load trnascan-se/2.0.12 >/dev/null 2>&1; command -v tRNAscan-SE)"""	mimag_rrna_trna_clean/scripts/01_rrna_trna_array.sbatch
+"module load antismash/8.0.4 2>/dev/null || { echo ""antismash module load failed""; exit 2; }"	06_metabolism/bgc_clean/scripts/bgc_antismash_array.sh
+module load barrnap/0.9 >/dev/null 2>&1	mimag_rrna_trna_clean/scripts/01_rrna_trna_array.sbatch
+module load diamond/2.1.16	06_darkmatter/lineage_darkness_clean/scripts/v2_thermo_relatives.sbatch
+module load foldseek/10-941cd33	04_structure/00_structure_clean/scripts/05c_afdb.sh;04_structure/00_structure_clean/scripts/05c_screen.sh
+module load gtdb-tk/2.7.2	06_darkmatter/contamination_clean/scripts/05_identify_controls.sbatch;06_darkmatter/lineage_darkness_clean/scripts/v2_thermo_relatives_gtdbtk.sbatch
+module load rl9-gpustack cuda/12.4.1	04_structure/00_structure_clean/scripts/02_prostt5.sh
+module load trnascan-se/2.0.12 >/dev/null 2>&1	mimag_rrna_trna_clean/scripts/01_rrna_trna_array.sbatch
+source $WD/../miniconda3/etc/profile.d/conda.sh; conda activate eggnog	06_darkmatter/specificity_clean/scripts/spec_1_global.sbatch;06_darkmatter/specificity_clean/scripts/spec_2_deserts.sbatch;06_darkmatter/specificity_clean/scripts/spec_3_spire.sbatch;06_darkmatter/specificity_clean/scripts/spec_4_rarefaction.sbatch;06_darkmatter/specificity_clean/scripts/spec_6c_smag_db_search.sbatch

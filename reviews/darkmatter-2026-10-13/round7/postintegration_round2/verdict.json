@@ -1,0 +1,115 @@
+{
+  "review_round": "postintegration_round2",
+  "reviewer": "Gemini4ArgonHigh",
+  "target_journal": "Nature Communications",
+  "manuscript_title": "Known phyla, unknown proteome: a controlled census of the Rub' al-Khali soil metagenome",
+  "pdf_integrity_scan": {
+    "source": "reviews/darkmatter-2026-10-13/round7/manuscript/pdf_integrity_after_round1.txt",
+    "status": "CLEAN",
+    "note": "Only three legitimate white plot labels (69, 90, 61 at size 6.6 on p. 32) on coloured heatmap cells; no hidden text or prompt injection."
+  },
+  "raw_audit_closures": {
+    "H3_raw_audit": {
+      "job_id": "53796328",
+      "status": "PASS",
+      "summary_path": "reviews/darkmatter-2026-10-13/round7/h3_final_raw_audit/h3_raw_audit_summary.json"
+    },
+    "H4_gpu_raw_audit": {
+      "job_id": "53796103",
+      "status": "PASS",
+      "summary_path": "reviews/darkmatter-2026-10-13/round7/root_checks/h4_gpu_audit/gpu_raw_audit.json"
+    },
+    "H4_root_census_invariants": {
+      "assertions": 118857,
+      "status": "PASS",
+      "summary_path": "reproducibility/darkmatter/round7_final/h4/h4_census_invariants.json",
+      "note": "Replaced unused local preclosure receipt (results/v7_closure_verification.json) in the 27-file active manifest; all 152 registered H1-H4 claim values unchanged."
+    }
+  },
+  "reproducibility_suite_status": {
+    "check_round7_registered_py": "PASS: 152 H1-H4 FROZEN claims from 27 checksum-pinned source files. No upstream rerun claimed.",
+    "current_revision_checks_py": "PASS: 49 revision claims and manuscript regression guards; historical whole-paper gates remain separate.",
+    "verify_py_quiet": "GATES: PASS (40 frozen artifacts; manuscript boundary language current) | COMPUTE: 62 pass | FROZEN: 216 pass | TABLE sources: 6 present | PROVENANCE: 25 ledger-pinned | FAIL: 0"
+  },
+  "new_sections_verdict": "ACCEPT_WITH_BOUNDS",
+  "per_component_verdicts": {
+    "H1_thermoplasmatota_pgls": {
+      "verdict": "ACCEPT_WITH_BOUNDS",
+      "round1_items_closed": true,
+      "summary": "All 237-genome PGLS statistics, phylogenetic signal (lambda_ML = 0.9158, 95% CI 0.8463-0.9578, R^2_GLS = 0.4691), AAI (+0.001704 +- 0.000407, p = 4.07e-5) and RBH coverage (-0.137484 +- 0.019456, p = 1.88e-11) coefficients, comparator metadata (32 unique comparators, 229 GTDB R232 and 8 MGnify pairs; 142 soil, 3 marine sediment, 92 unknown), FastTree LG+Gamma ar53 phylogeny (1,914 tips: 237 desert, 1,647 GTDB Thermoplasmatota, 30 outgroup), and 6 sensitivity specifications (S2-S7, including S6 same-class n = 236 excluding Thermoplasmata representative F41Dr3__self_SemiBin_814 matched to SW-10-69-26 comparator GCA_035541015.1 at AAI 48.678%) match round6/snapshots/h1_final/results/ exactly and avoid directional gene-history claims."
+    },
+    "H2_flanking_synteny": {
+      "verdict": "ACCEPT_WITH_BOUNDS",
+      "round1_items_closed": true,
+      "summary": "All attrition funnel counts (2,838 -> 2,426 -> 2,378 -> 1,461 -> 353), cohort identity with H4's pooled qTM < 0.5 (1,031) and qTM >= 0.5 (1,807) groups, deterministic within-species locus ranking, 16-stratum Mantel-Haenszel weights n_K * n_Q / (n_K + n_Q) (product of group sizes divided by total stratum size, half the ordinary harmonic mean), positional null eligibility including the focal position, random seeds (20261013, 20261014, 20261015), within-group recurrence above contig-aware positional nulls (40.46% vs 8.71%, excess +31.75 pp, p = 0.0002; 32.22% vs 6.56%, excess +25.67 pp, p = 0.0002), and inconclusive adjusted between-group contrasts across Tier 1 (Delta_MH = 0.035358, p = 0.4069), strict 96-pair matching (31.25% vs 31.25%, diff = -0.005440, p = 0.9226), Tier 2 (n = 637, diff = 0.018391, p = 0.5618), species-disjoint (n = 112), and Tier 3 (n = 1,320) match round7/snapshots/h2_final/results/ exactly."
+    },
+    "H3_matched_smag_vs_gem": {
+      "verdict": "ACCEPT_WITH_BOUNDS",
+      "round1_items_closed": true,
+      "summary": "All deterministic sampling seeds (20261014-20261016; 1 fixed SMAG draw of 1,500/40,039 genomes and 3 GEM draws of 2,055/52,515 genomes), 373 Zenodo archive MD5 checksums, exact 1-aa quota matching (4,210,592 proteins and 1,295,970,055 residues per arm), pre-matching (25,067) vs post-matching (22,310) shared sequence accounting, zero-overlap sensitivity (4,185,525 proteins and 1,289,129,312 residues per arm, +18.62 pp), paired 2x2 contingency tables for 106,042 dark (+18.54 pp) and 106,042 control (+3.10 pp) queries, 30% identity cutoff sensitivity (+18.14 pp), and completed IBEX raw-input audit (Slurm job 53796328) match round7/snapshots/h3_completed/ and bound inference to finite-catalogue coverage rather than biological replication or causal soil adaptation."
+    },
+    "H4_paired_pdb_cropping_and_Figure_4": {
+      "verdict": "ACCEPT_WITH_BOUNDS",
+      "round1_items_closed": true,
+      "summary": "Defective alignment-TM threshold subdivisions and heuristic rescaling ratios are excluded from all biological endpoints. The pooled 1,031 low-qTM dark cohort (984 eligible; 67 WC matched -> 61 retained, 4 low score, 2 no region; 964 WC unmatched -> 714 crop-recovered [74.07%], 167 low score, 38 zero retrieval, 45 no region, 0 post-exclusion empty; 775/1,031 [75.17%] crop-matched overall), 1,807 other dark models (1,408 WC and 1,578 crop matches; split into 1,107 initial PDB matches [1,107 WC, 1,009 crop] and 700 initial AFDB-only matches [301 WC, 569 crop]), and 3,013 controls across CPU Tiers 1-4 (2,878 WC; 2,889, 2,842, 2,823, 2,796 crop) and GPU Tiers 1-4 (job 53796103: 731/961 dark recovered, 794/1,031 dark crop-matched; 2,896, 2,816, 2,788, 2,753 control crop-matched), explicit framing of cropping as a joint intervention on sequence extent, length-dependent score normalisation, and search opportunity, Figure 4 caption explanation of initial vs paired reference/depth differences, and CPU alntmscore > 1 row-exclusion sensitivity (0 changes in Tier 1; 4 WC and 9 crop control models in Tiers 2-4) are complete and exact."
+    }
+  },
+  "round1_closure_summary": [
+    {
+      "id": 1,
+      "topic": "Supplementary Note numbering and citation order",
+      "status": "CLOSED",
+      "verification": "Reordered to Supplementary Note S1 (H1-H4 controls, line 950), S2 (functional-profile threshold sensitivity, line 1092), and S3 (exploratory functional and environmental profiles, line 1098), matching first-citation order in the main text."
+    },
+    {
+      "id": 2,
+      "topic": "H4 transition counts, other-dark 1,807 breakdown, control tiers, and Figure 4 caption",
+      "status": "CLOSED",
+      "verification": "Added exact 1,031-cohort transitions (lines 1047-1051), 1,807 other-dark breakdown (1,107 initial PDB and 700 initial AFDB-only, lines 1055-1058), CPU and GPU control counts across all exclusion tiers (lines 1059-1061 and 1074-1077), and Figure 4 caption explanation of reference and retrieval-depth differences between panels a and b (lines 1253-1255)."
+    },
+    {
+      "id": 3,
+      "topic": "H4 CPU out-of-range alignment-score row-exclusion sensitivity",
+      "status": "CLOSED",
+      "verification": "Documented in Supplementary Note S1 (lines 1086-1089) that row exclusion leaves Tier 1 unchanged and changes 4 whole-chain and 9 crop control classifications under stricter exclusion Tiers 2-4."
+    },
+    {
+      "id": 4,
+      "topic": "H2 deterministic locus ranking, 16-stratum MH weights, positional null eligibility, and random seeds",
+      "status": "CLOSED",
+      "verification": "Specified in Methods (lines 731-735) and Supplementary Note S1 (lines 992-999), including seeds 20261013, 20261014, and 20261015."
+    },
+    {
+      "id": 5,
+      "topic": "H3 pre-matching (25,067) vs post-matching (22,310) shared sequence counts",
+      "status": "CLOSED",
+      "verification": "Reconciled in Supplementary Note S1 (lines 1026-1029): 4,210,592 - 25,067 = 4,185,525 proteins and 1,289,129,312 residues per arm with zero cross-arm overlap and +18.62 pp dark-query difference."
+    },
+    {
+      "id": 6,
+      "topic": "H1 FastTree specification in Methods and S6 same-class n = 236 explanation",
+      "status": "CLOSED",
+      "verification": "Added FastTree (LG+Gamma) on GTDB-Tk R232 ar53 alignment to Methods (lines 722-724) and explained in Supplementary Note S1 (lines 972-974) that S6 excludes the single Thermoplasmata representative (F41Dr3__self_SemiBin_814) whose nearest comparator (GCA_035541015.1, AAI 48.678%) belongs to SW-10-69-26."
+    },
+    {
+      "id": 7,
+      "topic": "Reproducibility harness synchronization",
+      "status": "CLOSED",
+      "verification": "reproducibility/verify.py, reproducibility/darkmatter/check_round7_registered.py, and reproducibility/darkmatter/current_revision_checks.py all pass with zero failures; active 27-file manifest pins h4_census_invariants.json (118,857 assertions) in place of unused local v7_closure_verification.json."
+    }
+  ],
+  "nature_communications_submission_readiness": {
+    "h1_to_h4_revision_package_status": "ACCEPT_WITH_BOUNDS",
+    "whole_paper_submission_readiness": "LIMITED_BY_DOCUMENTED_PROVENANCE_AND_DEPOSITION_PREREQUISITES",
+    "substantive_whole_paper_prerequisites": [
+      "Complete raw-to-final reproducibility prerequisites explicitly documented in Data and code availability (lines 1197-1200): 78 missing raw-file paths, 302 permission failures, unverified duplicate-run merge commands for the three samples with two sequencing runs, and incomplete historical claim-registry migration outside the compact driver.",
+      "Confirm public release or reviewer access for the 554 ENA sequencing runs from 551 soil samples under study PRJEB125153 (recorded release date 1 November 2026; zero runs returned on public filereport as of 13 October 2026), complete the separate MIMAG MAG deposition and archived release DOI noted as pending (lines 1189-1197), and publish the compact evidence tables, figures, and companion datasets.",
+      "While the numerical laboratory XRF table is retained in the package (reproducibility/darkmatter/environment_inputs/geochemistry/xrf_lab_table_all_trips.tsv, rebuilt byte-for-byte with rebuild_environment.py), laboratory XRF units, instrument metadata, detection-limit coding, and raw Open-Meteo API responses remain unarchived, and the exploratory environmental associations in Supplementary Note S3 remain conditional on those unresolved metadata and batch sensitivities."
+    ],
+    "optional_minor_clarifications": [
+      "Methods line 744 / Supplementary Note S1 line 994: state the exact formula for flanking annotation opportunity (prim_elig_flanks_mapped_KO / prim_elig_flanks_total across eligible complete-window loci).",
+      "Data and code availability lines 1201-1204: include SMAG (Zenodo deposit 8223844) and the 30 July 2026 frozen PDB Foldseek snapshot in the closing summary list of reference database releases.",
+      "Supplementary Note S1 line 973: optionally remind the reader that the external comparator pool was restricted to classes SW-10-69-26 and E2 (as stated in Methods line 716), which explains why the single Thermoplasmata representative matched a comparator in SW-10-69-26."
+    ]
+  }
+}

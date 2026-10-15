@@ -1,0 +1,19 @@
+{
+  "task": "F1_photolyase_cryptochrome_ecological_analysis",
+  "status": "V2_FULL_CENSUS_RUNNING",
+  "slurm_job_id_pilot": 53816874,
+  "slurm_job_id_full_v1": 53817017,
+  "slurm_job_id_full_v2": 53817212,
+  "stage": "v2_full_census_execution",
+  "updated_at_utc": "2026-10-15T09:37:05+00:00",
+  "script": "f1_ecology_analysis_v2_frozen.py",
+  "script_sha256": "6182dd9c2c2626d9f6f217cb06371ed6c5e1d40aaf670e7f0356aadcd12e9be2",
+  "inputs": {
+    "candidates": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/candidates.tsv",
+    "candidates_sha256": "b59ccfb252f1b7971f6ea9704ac325ee58a3effe2ed2a4948df81bc3786ae217",
+    "rep_traits": "/ibex/scratch/projects/c2014/rob/metagenomics/06_metabolism/uv_survival_clean/results/rep_traits.tsv",
+    "metadata": "/ibex/scratch/projects/c2014/rob/metagenomics/metadata/sample_metadata.tsv",
+    "profiles_dir": "/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/picrust2_current_20260803/coverm_current/profiles_full_recompute"
+  },
+  "guard": "require_slurm_worker.sh enforced"
+}

@@ -1,0 +1,713 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q55034",
+  "secondaryAccessions": [
+    "Q54787"
+  ],
+  "uniProtkbId": "STPA_SYNY3",
+  "entryAudit": {
+    "firstPublicDate": "2001-08-14",
+    "lastAnnotationUpdateDate": "2026-06-10",
+    "lastSequenceUpdateDate": "1996-11-01",
+    "entryVersion": 131,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 2.0,
+  "organism": {
+    "scientificName": "Synechocystis sp. (strain ATCC 27184 / PCC 6803 / Kazusa)",
+    "taxonId": 1111708,
+    "lineage": [
+      "Bacteria",
+      "Bacillati",
+      "Cyanobacteriota",
+      "Cyanophyceae",
+      "Synechococcales",
+      "Merismopediaceae",
+      "Synechocystis"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "value": "Glucosylglycerol-phosphate phosphatase"
+      },
+      "shortNames": [
+        {
+          "value": "GGP-P"
+        }
+      ],
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9045835"
+            }
+          ],
+          "value": "3.1.3.69"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "value": "Glucosylglycerol 3-phosphatase"
+        }
+      },
+      {
+        "fullName": {
+          "value": "Salt tolerance protein A"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "value": "stpA"
+      },
+      "orderedLocusNames": [
+        {
+          "value": "slr0746"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "9045835"
+            }
+          ],
+          "value": "Phosphorylates glucosylglycerol-phosphate the precursor of the osmoprotectant glucosylglycerol necessary for salt adaptation of Synechocystis"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "2-O-(alpha-D-glucopyranosyl)-sn-glycerol 3-phosphate + H2O = 2-O-(alpha-D-glucopyranosyl)glycerol + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:22652"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:82766"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:87089"
+          }
+        ],
+        "ecNumber": "3.1.3.69",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000269",
+            "source": "PubMed",
+            "id": "9045835"
+          }
+        ]
+      }
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Monomer. Interacts with GGPS"
+        }
+      ],
+      "commentType": "SUBUNIT"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Belongs to the histidine acid phosphatase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 422,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Glucosylglycerol-phosphate phosphatase",
+      "featureId": "PRO_0000114472"
+    },
+    {
+      "type": "Active site",
+      "location": {
+        "start": {
+          "value": 403,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 403,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Proton donor",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000250"
+        }
+      ]
+    },
+    {
+      "type": "Sequence conflict",
+      "location": {
+        "start": {
+          "value": 384,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 384,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "in Ref. 1; CAA53245",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000305"
+        }
+      ],
+      "alternativeSequence": {
+        "originalSequence": "D",
+        "alternativeSequences": [
+          "E"
+        ]
+      }
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-1185",
+      "category": "Technical term",
+      "name": "Reference proteome"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "CI-9TIM3S7TVD33J",
+        "citationType": "journal article",
+        "authors": [
+          "Onana B.",
+          "Jeanjean R.",
+          "Joset F."
+        ],
+        "title": "A gene stpA involved in the establishment of salt tolerance in the cyanobacterium Synechocystis PCC6803.",
+        "publicationDate": "1994",
+        "journal": "Russ. J. Plant Physiol.",
+        "firstPage": "176",
+        "lastPage": "183",
+        "volume": "41"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "referenceNumber": 2,
+      "citation": {
+        "id": "8772170",
+        "citationType": "journal article",
+        "authors": [
+          "Hagemann M.",
+          "Richter S.",
+          "Zuther E.",
+          "Schoor A."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8772170"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1007/s002030050360"
+          }
+        ],
+        "title": "Characterization of a glucosylglycerol-phosphate-accumulating, salt-sensitive mutant of the cyanobacterium Synechocystis sp. strain PCC 6803.",
+        "publicationDate": "1996",
+        "journal": "Arch. Microbiol.",
+        "firstPage": "83",
+        "lastPage": "91",
+        "volume": "166"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [GENOMIC DNA]"
+      ]
+    },
+    {
+      "referenceNumber": 3,
+      "citation": {
+        "id": "8905231",
+        "citationType": "journal article",
+        "authors": [
+          "Kaneko T.",
+          "Sato S.",
+          "Kotani H.",
+          "Tanaka A.",
+          "Asamizu E.",
+          "Nakamura Y.",
+          "Miyajima N.",
+          "Hirosawa M.",
+          "Sugiura M.",
+          "Sasamoto S.",
+          "Kimura T.",
+          "Hosouchi T.",
+          "Matsuno A.",
+          "Muraki A.",
+          "Nakazaki N.",
+          "Naruo K.",
+          "Okumura S.",
+          "Shimpo S.",
+          "Takeuchi C.",
+          "Wada T.",
+          "Watanabe A.",
+          "Yamada M.",
+          "Yasuda M.",
+          "Tabata S."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "8905231"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1093/dnares/3.3.109"
+          }
+        ],
+        "title": "Sequence analysis of the genome of the unicellular cyanobacterium Synechocystis sp. strain PCC6803. II. Sequence determination of the entire genome and assignment of potential protein-coding regions.",
+        "publicationDate": "1996",
+        "journal": "DNA Res.",
+        "firstPage": "109",
+        "lastPage": "136",
+        "volume": "3"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA]"
+      ],
+      "referenceComments": [
+        {
+          "value": "ATCC 27184 / PCC 6803 / Kazusa",
+          "type": "STRAIN"
+        }
+      ]
+    },
+    {
+      "referenceNumber": 4,
+      "citation": {
+        "id": "9045835",
+        "citationType": "journal article",
+        "authors": [
+          "Hagemann M.",
+          "Schoor A.",
+          "Jeanjean R.",
+          "Zuther E.",
+          "Joset F."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "9045835"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1128/jb.179.5.1727-1733.1997"
+          }
+        ],
+        "title": "The stpA gene form synechocystis sp. strain PCC 6803 encodes the glucosylglycerol-phosphate phosphatase involved in cyanobacterial osmotic response to salt shock.",
+        "publicationDate": "1997",
+        "journal": "J. Bacteriol.",
+        "firstPage": "1727",
+        "lastPage": "1733",
+        "volume": "179"
+      },
+      "referencePositions": [
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "CHARACTERIZATION"
+      ]
+    },
+    {
+      "referenceNumber": 5,
+      "citation": {
+        "id": "17116240",
+        "citationType": "journal article",
+        "authors": [
+          "Stirnberg M.",
+          "Fulda S.",
+          "Huckauf J.",
+          "Hagemann M.",
+          "Kramer R.",
+          "Marin K."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "17116240"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1111/j.1365-2958.2006.05495.x"
+          }
+        ],
+        "title": "A membrane-bound FtsH protease is involved in osmoregulation in Synechocystis sp. PCC 6803: the compatible solute synthesizing enzyme GgpS is one of the targets for proteolysis.",
+        "publicationDate": "2007",
+        "journal": "Mol. Microbiol.",
+        "firstPage": "86",
+        "lastPage": "102",
+        "volume": "63"
+      },
+      "referencePositions": [
+        "POSSIBLE INTERACTION WITH GGPS"
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "U32936",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAB41279.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "X75566",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "CAA53245.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "EMBL",
+      "id": "BA000022",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA18740.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "Genomic_DNA"
+        }
+      ]
+    },
+    {
+      "database": "PIR",
+      "id": "S76828",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "S76828"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q55034",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q55034",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "IntAct",
+      "id": "Q55034",
+      "properties": [
+        {
+          "key": "Interactions",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "STRING",
+      "id": "1148.gene:10500512",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "PaxDb",
+      "id": "1148-gene:10500512",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "EnsemblBacteria",
+      "id": "BAA18740",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "BAA18740"
+        },
+        {
+          "key": "GeneId",
+          "value": "BAA18740"
+        }
+      ]
+    },
+    {
+      "database": "KEGG",
+      "id": "syn:slr0746",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "eggNOG",
+      "id": "ENOG502Z8T5",
+      "properties": [
+        {
+          "key": "ToxonomicScope",
+          "value": "Bacteria"
+        }
+      ]
+    },
+    {
+      "database": "InParanoid",
+      "id": "Q55034",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BioCyc",
+      "id": "MetaCyc:MONOMER-20258",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "3.1.3.69",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "6192"
+        }
+      ]
+    },
+    {
+      "database": "Proteomes",
+      "id": "UP000001425",
+      "properties": [
+        {
+          "key": "Component",
+          "value": "Chromosome"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0050530",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:glucosylglycerol 3-phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:UniProtKB-EC"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR033379",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Acid_Pase_AS"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR012765",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GGPPase"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR02399",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "salt_tol_Pase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF09506",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Salt_tol_Pase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PIRSF",
+      "id": "PIRSF020945",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GGPPase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PROSITE",
+      "id": "PS00778",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HIS_ACID_PHOSPHAT_2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MVLHQQRFSLDHGAFCQTLAQTENLLIVQDLDGVCMELVQDPLSRRLDADYVRATTLFAEHFYVLTNGEHVGKRGVQGIVEQSFGDASFVQQEGLYLPGLAAGGVQWQDRHGKVSHPGVGQTELEFLAAVPEKITNCLKTFFGDRPHSLSPEQLQTGIEASVLDNVASPTANLNTLANLLQDFPQIYRDLQETMAQLLDQLMAEAVAQGLGNSFFVHYAPNLGRDERGKEIIRWAKAGDSGTTDFQFMLRGGVKEAGVLALLNRYYHNRTGQYPLGESFSARQAPPSHQDLLHLVKAQFDPALMPLIIGVGDTVTSQVDEATGEIRRGGSDRQFLQLIQDLGDWGNHGNLVVYVDSSQGEVKNRQPLQLETVAGQTQVVAGPGDMRDREEPLKINVAFPGGHDQYVAAFKQAAQRRRVHFSQ",
+    "length": 422,
+    "molWeight": 46542,
+    "crc64": "E9C58CBC91A938F2",
+    "md5": "9BEF98607696CE4E8E8EB35611704ED1"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "SUBUNIT": 1,
+      "SIMILARITY": 1
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Active site": 1,
+      "Sequence conflict": 1
+    },
+    "uniParcId": "UPI0000136131"
+  }
+}

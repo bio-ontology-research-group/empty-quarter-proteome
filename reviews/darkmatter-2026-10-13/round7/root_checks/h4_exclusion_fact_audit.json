@@ -1,0 +1,221 @@
+{
+  "wc_top_qtm_changes": {
+    "entries": 57,
+    "example": [
+      {
+        "query": "KF000107",
+        "tier": 0,
+        "baseline_qtm": 0.9976,
+        "filtered_qtm": 0.9962,
+        "delta": -0.0014000000000000679
+      }
+    ],
+    "unique_queries": 25,
+    "all_control_queries": true,
+    "tier_counts": {
+      "0": 25,
+      "1": 21,
+      "2": 4,
+      "3": 4,
+      "4": 3
+    }
+  },
+  "wc_top_alntm_changes": {
+    "entries": 160,
+    "example": [
+      {
+        "query": "KF000088",
+        "tier": 0,
+        "baseline_alntm": 1.006,
+        "filtered_alntm": 1.0,
+        "delta": -0.006000000000000005
+      }
+    ],
+    "unique_queries": 78,
+    "all_control_queries": true,
+    "tier_counts": {
+      "0": 78,
+      "1": 71,
+      "2": 4,
+      "3": 4,
+      "4": 3
+    }
+  },
+  "wc_status_changes": {
+    "entries": 10,
+    "example": [
+      {
+        "query": "KF001702",
+        "tier": 3,
+        "baseline_status": "MATCHED",
+        "filtered_status": "POST_EXCLUSION_EMPTY"
+      }
+    ],
+    "unique_queries": 4,
+    "all_control_queries": true,
+    "tier_counts": {
+      "3": 4,
+      "4": 3,
+      "2": 3
+    }
+  },
+  "crop_top_qtm_changes": {
+    "entries": 209,
+    "example": [
+      {
+        "crop_id": "KF000048_reg2",
+        "tier": 0,
+        "baseline_qtm": 0.9943,
+        "filtered_qtm": 0.9941,
+        "delta": -0.00019999999999997797
+      }
+    ],
+    "unique_crops": 93,
+    "all_control_crops": true,
+    "tier_counts": {
+      "0": 88,
+      "1": 78,
+      "2": 14,
+      "3": 15,
+      "4": 14
+    }
+  },
+  "crop_top_alntm_changes": {
+    "entries": 329,
+    "example": [
+      {
+        "crop_id": "KF000048_reg2",
+        "tier": 0,
+        "baseline_alntm": 1.001,
+        "filtered_alntm": 1.0,
+        "delta": -0.0009999999999998899
+      }
+    ],
+    "unique_crops": 150,
+    "all_control_crops": true,
+    "tier_counts": {
+      "0": 150,
+      "1": 136,
+      "2": 14,
+      "3": 15,
+      "4": 14
+    }
+  },
+  "crop_status_changes": {
+    "entries": 41,
+    "example": [
+      {
+        "crop_id": "KF000169_reg1",
+        "tier": 2,
+        "baseline_status": "MATCHED",
+        "filtered_status": "POST_EXCLUSION_EMPTY"
+      }
+    ],
+    "unique_crops": 15,
+    "all_control_crops": true,
+    "tier_counts": {
+      "2": 12,
+      "3": 15,
+      "4": 14
+    }
+  },
+  "model_crop_status_changes": {
+    "entries": 25,
+    "example": [
+      {
+        "model_id": "KF001702",
+        "tier": 3,
+        "baseline": "MATCHED",
+        "filtered": "POST_EXCLUSION_EMPTY"
+      }
+    ],
+    "unique_models": 9,
+    "all_controls": true,
+    "tier_counts": {
+      "3": 9,
+      "4": 8,
+      "2": 8
+    }
+  },
+  "model_transition_changes": {
+    "entries": 25,
+    "example": [
+      {
+        "model_id": "KF001702",
+        "tier": 3,
+        "baseline": "WC_MATCHED_RETAINED_IN_CROP",
+        "filtered": "WC_UNMATCHED_TO_POST_EXCLUSION_EMPTY"
+      }
+    ],
+    "unique_models": 9,
+    "all_controls": true,
+    "tier_counts": {
+      "3": 9,
+      "4": 8,
+      "2": 8
+    }
+  },
+  "stratum_census_changes": {
+    "entries": 65,
+    "example": [
+      {
+        "stratum": "Controls",
+        "tier": "tier_2",
+        "field": "wc_matched",
+        "baseline": 2798,
+        "filtered": 2795
+      }
+    ]
+  },
+  "primary_control_counts": [
+    {
+      "stratum": "Controls",
+      "tier": "tier_1",
+      "model_count": "3013",
+      "models_eligible": "3000",
+      "models_no_region": "13",
+      "total_regions": "4125",
+      "wc_matched": "2878",
+      "wc_low_score": "77",
+      "wc_post_empty": "0",
+      "wc_raw_zero": "58",
+      "crop_matched": "2889",
+      "crop_persistent_low": "27",
+      "crop_post_empty": "1",
+      "crop_raw_zero": "83",
+      "crop_no_region": "13",
+      "unconditional_crop_match_count": "2889",
+      "unconditional_crop_match_denominator": "3013",
+      "unconditional_crop_match_pct": "95.88",
+      "region_eligible_crop_match_count": "2889",
+      "region_eligible_crop_match_denominator": "3000",
+      "region_eligible_crop_match_pct": "96.3",
+      "remaining_hit_conditional_crop_match_count": "2889",
+      "remaining_hit_conditional_crop_match_denominator": "2916",
+      "remaining_hit_conditional_crop_match_pct": "99.07",
+      "wc_unmatched_count": "135",
+      "wc_unmatched_recovered_count": "46",
+      "wc_unmatched_recovery_pct": "34.07",
+      "wc_unmatched_eligible_count": "133",
+      "wc_unmatched_recovery_eligible_pct": "34.59",
+      "wc_matched_count": "2878",
+      "wc_matched_retained_count": "2843",
+      "wc_matched_retained_pct": "98.78",
+      "crop_persistent_low_pct": "0.9",
+      "crop_post_empty_pct": "0.03",
+      "crop_raw_zero_pct": "2.75",
+      "crop_no_region_pct": "0.43",
+      "trans_recovered": "46",
+      "trans_persistent_low": "22",
+      "trans_post_empty": "0",
+      "trans_raw_zero": "65",
+      "trans_unm_no_reg": "2",
+      "trans_retained": "2843",
+      "trans_lost_low": "5",
+      "trans_lost_empty": "1",
+      "trans_lost_zero": "18",
+      "trans_m_no_reg": "11"
+    }
+  ],
+  "scope": "Excluding alnTM>1 rows is a diagnostic, not a correction of below-one alnTM values; primary qTM classifications and historical alnTM-defined strata must be distinguished."
+}

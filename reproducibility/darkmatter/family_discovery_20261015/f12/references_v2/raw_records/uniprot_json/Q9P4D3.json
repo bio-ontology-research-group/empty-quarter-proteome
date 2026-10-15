@@ -1,0 +1,827 @@
+{
+  "entryType": "UniProtKB reviewed (Swiss-Prot)",
+  "primaryAccession": "Q9P4D3",
+  "uniProtkbId": "TPS2_ZYGRO",
+  "entryAudit": {
+    "firstPublicDate": "2021-06-02",
+    "lastAnnotationUpdateDate": "2026-09-02",
+    "lastSequenceUpdateDate": "2000-10-01",
+    "entryVersion": 70,
+    "sequenceVersion": 1
+  },
+  "annotationScore": 4.0,
+  "organism": {
+    "scientificName": "Zygosaccharomyces rouxii",
+    "commonName": "Yeast",
+    "synonyms": [
+      "Saccharomyces rouxii"
+    ],
+    "taxonId": 4956,
+    "evidences": [
+      {
+        "evidenceCode": "ECO:0000312",
+        "source": "EMBL",
+        "id": "AAF80562.1"
+      }
+    ],
+    "lineage": [
+      "Eukaryota",
+      "Fungi",
+      "Dikarya",
+      "Ascomycota",
+      "Saccharomycotina",
+      "Saccharomycetes",
+      "Saccharomycetales",
+      "Saccharomycetaceae",
+      "Zygosaccharomyces"
+    ]
+  },
+  "proteinExistence": "1: Evidence at protein level",
+  "proteinDescription": {
+    "recommendedName": {
+      "fullName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305"
+          }
+        ],
+        "value": "Trehalose-phosphatase"
+      },
+      "ecNumbers": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305",
+              "source": "PubMed",
+              "id": "12748054"
+            }
+          ],
+          "value": "3.1.3.12"
+        }
+      ]
+    },
+    "alternativeNames": [
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "12748054"
+            }
+          ],
+          "value": "Trehalose-6-phosphate phosphatase"
+        }
+      },
+      {
+        "fullName": {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000303",
+              "source": "PubMed",
+              "id": "12748054"
+            }
+          ],
+          "value": "ZrTPS2"
+        }
+      }
+    ]
+  },
+  "genes": [
+    {
+      "geneName": {
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000303",
+            "source": "PubMed",
+            "id": "12748054"
+          }
+        ],
+        "value": "TPS2"
+      }
+    }
+  ],
+  "comments": [
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "12748054"
+            }
+          ],
+          "value": "Phosphatase catalytic subunit of the trehalose synthase complex that catalyzes the production of trehalose from glucose-6-phosphate and UDP-alpha-D-glucose in a two step process"
+        }
+      ],
+      "commentType": "FUNCTION"
+    },
+    {
+      "commentType": "CATALYTIC ACTIVITY",
+      "reaction": {
+        "name": "alpha,alpha-trehalose 6-phosphate + H2O = alpha,alpha-trehalose + phosphate",
+        "reactionCrossReferences": [
+          {
+            "database": "Rhea",
+            "id": "RHEA:23420"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:15377"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:16551"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:43474"
+          },
+          {
+            "database": "ChEBI",
+            "id": "CHEBI:58429"
+          }
+        ],
+        "ecNumber": "3.1.3.12",
+        "evidences": [
+          {
+            "evidenceCode": "ECO:0000305",
+            "source": "PubMed",
+            "id": "12748054"
+          }
+        ]
+      }
+    },
+    {
+      "commentType": "COFACTOR",
+      "cofactors": [
+        {
+          "name": "Mg(2+)",
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000250",
+              "source": "UniProtKB",
+              "id": "P31688"
+            }
+          ],
+          "cofactorCrossReference": {
+            "database": "ChEBI",
+            "id": "CHEBI:18420"
+          }
+        }
+      ]
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "Carbohydrate biosynthesis"
+        }
+      ],
+      "commentType": "PATHWAY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000269",
+              "source": "PubMed",
+              "id": "12748054"
+            }
+          ],
+          "value": "Repressed by salt and thermal stress"
+        }
+      ],
+      "commentType": "INDUCTION"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "In the C-terminal section; belongs to the trehalose phosphatase family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    },
+    {
+      "texts": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000305"
+            }
+          ],
+          "value": "In the N-terminal section; belongs to the glycosyltransferase 20 family"
+        }
+      ],
+      "commentType": "SIMILARITY"
+    }
+  ],
+  "features": [
+    {
+      "type": "Chain",
+      "location": {
+        "start": {
+          "value": 1,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 900,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Trehalose-phosphatase",
+      "featureId": "PRO_0000453075"
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 76,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 109,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Region",
+      "location": {
+        "start": {
+          "value": 874,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 900,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Disordered",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    },
+    {
+      "type": "Compositional bias",
+      "location": {
+        "start": {
+          "value": 82,
+          "modifier": "EXACT"
+        },
+        "end": {
+          "value": 108,
+          "modifier": "EXACT"
+        }
+      },
+      "description": "Basic and acidic residues",
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000256",
+          "source": "SAM",
+          "id": "MobiDB-lite"
+        }
+      ]
+    }
+  ],
+  "keywords": [
+    {
+      "id": "KW-0378",
+      "category": "Molecular function",
+      "name": "Hydrolase"
+    },
+    {
+      "id": "KW-0460",
+      "category": "Ligand",
+      "name": "Magnesium"
+    },
+    {
+      "id": "KW-0479",
+      "category": "Ligand",
+      "name": "Metal-binding"
+    }
+  ],
+  "references": [
+    {
+      "referenceNumber": 1,
+      "citation": {
+        "id": "12748054",
+        "citationType": "journal article",
+        "authors": [
+          "Kwon H.B.",
+          "Yeo E.T.",
+          "Hahn S.E.",
+          "Bae S.C.",
+          "Kim D.Y.",
+          "Byun M.O."
+        ],
+        "citationCrossReferences": [
+          {
+            "database": "PubMed",
+            "id": "12748054"
+          },
+          {
+            "database": "DOI",
+            "id": "10.1016/s1567-1356(03)00035-7"
+          }
+        ],
+        "title": "Cloning and characterization of genes encoding trehalose-6-phosphate synthase (TPS1) and trehalose-6-phosphate phosphatase (TPS2) from Zygosaccharomyces rouxii.",
+        "publicationDate": "2003",
+        "journal": "FEMS Yeast Res.",
+        "firstPage": "433",
+        "lastPage": "440",
+        "volume": "3"
+      },
+      "referencePositions": [
+        "NUCLEOTIDE SEQUENCE [MRNA]",
+        "FUNCTION",
+        "CATALYTIC ACTIVITY",
+        "INDUCTION"
+      ],
+      "referenceComments": [
+        {
+          "evidences": [
+            {
+              "evidenceCode": "ECO:0000312",
+              "source": "EMBL",
+              "id": "AAF80562.1"
+            }
+          ],
+          "value": "KACC30010",
+          "type": "STRAIN"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000312",
+          "source": "EMBL",
+          "id": "AAF80562.1"
+        }
+      ]
+    }
+  ],
+  "uniProtKBCrossReferences": [
+    {
+      "database": "EMBL",
+      "id": "AF208030",
+      "properties": [
+        {
+          "key": "ProteinId",
+          "value": "AAF80562.1"
+        },
+        {
+          "key": "Status",
+          "value": "-"
+        },
+        {
+          "key": "MoleculeType",
+          "value": "mRNA"
+        }
+      ]
+    },
+    {
+      "database": "AlphaFoldDB",
+      "id": "Q9P4D3",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "SMR",
+      "id": "Q9P4D3",
+      "properties": [
+        {
+          "key": "Description",
+          "value": "-"
+        }
+      ]
+    },
+    {
+      "database": "CAZy",
+      "id": "GT20",
+      "properties": [
+        {
+          "key": "FamilyName",
+          "value": "Glycosyltransferase Family 20"
+        }
+      ]
+    },
+    {
+      "database": "BRENDA",
+      "id": "3.1.3.12",
+      "properties": [
+        {
+          "key": "OrganismId",
+          "value": "6763"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005946",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:alpha,alpha-trehalose-phosphate synthase complex (UDP-forming)"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005829",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "C:cytosol"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0003825",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:alpha,alpha-trehalose-phosphate synthase (UDP-forming) activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0004805",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "F:trehalose-phosphatase activity"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IGI:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000316",
+          "source": "PubMed",
+          "id": "12748054"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0034605",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:cellular response to heat"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0031505",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:fungal-type cell wall organization"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IEA:TreeGrafter"
+        }
+      ]
+    },
+    {
+      "database": "GO",
+      "id": "GO:0005992",
+      "properties": [
+        {
+          "key": "GoTerm",
+          "value": "P:trehalose biosynthetic process"
+        },
+        {
+          "key": "GoEvidenceType",
+          "value": "IGI:UniProtKB"
+        }
+      ],
+      "evidences": [
+        {
+          "evidenceCode": "ECO:0000316",
+          "source": "PubMed",
+          "id": "12748054"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd03788",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "GT20_TPS"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "CDD",
+      "id": "cd01627",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_TPP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "FunFam",
+      "id": "3.40.50.2000:FF:000036",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Alpha,alpha-trehalose-phosphate synthase subunit Tps2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.2000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glycogen Phosphorylase B"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.40.50.1000",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD superfamily/HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Gene3D",
+      "id": "3.30.70.1020",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose-6-phosphate phosphatase related protein, domain 2"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR001830",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glyco_trans_20"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR036412",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR006379",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF_hydro_IIB"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR023214",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD_sf"
+        }
+      ]
+    },
+    {
+      "database": "InterPro",
+      "id": "IPR003337",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR01484",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-SF-IIB"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "NCBIfam",
+      "id": "TIGR00685",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "T6PP"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10788",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TREHALOSE-6-PHOSPHATE SYNTHASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "PANTHER",
+      "id": "PTHR10788:SF123",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "TREHALOSE-PHOSPHATASE"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF00982",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Glyco_transf_20"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "Pfam",
+      "id": "PF02358",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "Trehalose_PPase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF56784",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "HAD-like"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "database": "SUPFAM",
+      "id": "SSF53756",
+      "properties": [
+        {
+          "key": "EntryName",
+          "value": "UDP-Glycosyltransferase/glycogen phosphorylase"
+        },
+        {
+          "key": "MatchStatus",
+          "value": "1"
+        }
+      ]
+    }
+  ],
+  "sequence": {
+    "value": "MVNSGHRRQRIINCVAQLPYKIQLGETNDEWNIVPATGSSSLYSSIEYLNSEEKAKDYEQHVLGWTGEIGRESLPSRLFNSKNRDKSENGEKGENDLHAKEEREKEEDPLYLTNDQIDGITKDLRRHGKSDDHYNVDNVHPVWLLRRDQKRWRGFAENVLWPTFHYILKFSSDSGEKENLSWYDYVRFNEAYAMKIGEIYEKGDIIWIHDYYLLLLPQLLRMKFNDQDLTIAYFHHSPWPSNEYFRVLPRRKQILDGLMGADRGWFQNEGFARHFVSSCKRLLDSTSRKSKNRLGMEQYQISAYGGDIVVDSLPIGINRVKLLEDTFTKDIAQKVLAIKDAFQGKKIIVGRDRLDSVRGVVQKLRAFETFLSMYPEWRDQVVLIQVSVPSMKGGTNQLIRLEQQVNELVTSINMQYGSLNFSPVHHYYMRIPKDVYLSLLRVADLCVIASVRDGTNTTALEYVTVKSHMSNYNCYGNPLILSEFSGTSTILKDAMIINPWDSVAVAKSINRALSLSRDEKRALEDKIWPQVPTIQKWTDQFLSTLSDIVDEAHNTTDRKMTPALNRPALLEHYRQSKRRLFLFDYDGTLTPIVQDPAAAIPSARLISILQKLASDPCNQIWIISGRDQAFLNKWLGSRLPQLGLSAEHGCFYKDVDEENWINLTEKFDMSWQEKVGSIMEEFTRRTPGSFIERKKVALTWHYRRADPELGEFYASELKKELDKICADYDLDVMEGKANIEVRPKFVNKGEIVKRLVWHHHGRRQDMLNTKKEELPISEMPDFTLCLGDDFTDEDMFNQLNDIEAVWKKQYEDEVNQWGGFGLYPCTVGSASKKTVAKAHLTDPQQVLDTLGLLVGDVSLFQSAGTVELDSRGHVKHSDSSIRSEQASARYAMKRQQSYKN",
+    "length": 900,
+    "molWeight": 103843,
+    "crc64": "9A56724C033659D8",
+    "md5": "CF2BECBC74963ACF4E8A982465F3FAF7"
+  },
+  "extraAttributes": {
+    "countByCommentType": {
+      "FUNCTION": 1,
+      "CATALYTIC ACTIVITY": 1,
+      "COFACTOR": 1,
+      "PATHWAY": 1,
+      "INDUCTION": 1,
+      "SIMILARITY": 2
+    },
+    "countByFeatureType": {
+      "Chain": 1,
+      "Region": 2,
+      "Compositional bias": 1
+    },
+    "uniParcId": "UPI00000699C9"
+  }
+}

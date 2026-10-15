@@ -1,0 +1,60 @@
+# Editorial and Scientific-Fidelity Review: Dark-Matter Biology Rewrite
+**Reviewer:** Gemini 4 Argon (High)
+**Date:** 15 October 2026
+**Scope:** Read-only comparison of `manuscript/main.tex` and `manuscript/authors.tex` against `reviews/darkmatter-biology-rewrite-20261015/baseline.tex` and `reviews/darkmatter-family-followup-20261015/RESULTS_FOR_AUTHOR.txt`.
+
+## Overall Assessment
+The rewrite successfully transforms the manuscript from a defensive methodological census into a question-led biological study focused on lineage structure, subsurface Thermoplasmatota ecology, cross-soil repertoire sharing, structural domain recovery, and heliorhodopsin diversity. Evidence strength is properly calibrated throughout: no claims of experimentally proven function, adaptive selection, desert endemism, novel protein folds, or t-SNE-derived novelty are made. `manuscript/authors.tex` matches the 19 authors and seven affiliations of `lifeonair/manuscript/authors.tex` in the exact instructed order (Alejandra Lopez Velazquez first, middle authors alphabetical by surname, Magnus Rueping and Robert Hoehndorf last) with no shared-first-author claim.
+
+However, moving material out of Results introduced several broken cross-references, a split-paragraph orphan in Methods, missing denominators/outcomes for analyses still defined in Methods, and a few undefined terms or splice errors.
+
+---
+
+## Mandatory Corrections
+
+### M1. Orphaned text in Methods (`Environmental interpretation`) and displaced sensitivity in Supplementary Note S3
+Splitting the former opening paragraph of Supplementary Note S3 left dangling pronouns and an unexplained comparison in Methods while placing the site-aggregated sensitivity result at the top of Supplementary Note S3 before the primary 251-sample chemistry analysis is introduced.
+- **Passages (`main.tex` lines 585–590 and 822):**
+  - Lines 585–590: `\subsection*{Environmental interpretation} Laboratory XRF units... This changes the observational unit but leaves spatial, compositional, batch and measurement concerns unresolved. The larger sulfur count after aggregation can reflect between-site structure...`
+  - Line 822: `An exploratory sensitivity analysis aggregated the 251 chemistry samples to 59 sites... Within-site mean TPM and median chemistry gave 59{,}120 sulfur, 49{,}387 calcium, 48{,}567 chloride and 12{,}054 iron associations at 5\% FDR.`
+- **Replacement:** Delete `\subsection*{Environmental interpretation}` (lines 585–590). Fold the XRF unit/Fe outlier note into `Methods -> Sampling, sequencing and environmental data` (after line 157), and move the site-aggregation sentences from line 822 together with lines 588–589 (`"This changes the observational unit... The larger sulfur count after aggregation..."`) to the end of the chemistry paragraph in `Supplementary Note S3` (after line 881, following the `54,227` sulfur result).
+
+### M2. Uncited `Supplementary Note S2`, uncited `Fig. 5a` and `Fig. 3b`, and splice typo at line 802
+Moving the KEGG orthologue / PICRUSt2 comparison out of Results removed the only main-text citations to `Supplementary Note S2` and `Fig.~\ref{fig:reference}a` and left a capitalization splice error. `Fig.~\ref{fig:lineage}b` is also uncited in the text.
+- **Passage (`main.tex` line 802):** `For amplicon-based prediction, In the 448 samples with both a genome profile and a 16S profile from the companion survey...`
+- **Replacement (line 802):** `For amplicon-based prediction, in the 448 samples with both a genome profile and a 16S profile from the companion survey...`
+- **Cross-reference fix:** Cite `Fig.~\ref{fig:reference}a` and `Supplementary Note S2` in Results (e.g., line 93 or 81) or `Methods -> Functional profiles and sequence-reference comparisons` (line 436), and cite `Fig.~\ref{fig:lineage}b` alongside placeholder-rank depth in `Methods` (line 298 or 577).
+
+### M3. Missing denominators and dropped outcomes for procedures described in Methods
+1. **Culture comparison denominators and paired-test outcomes (`Results` line 65; `Methods` lines 317–322, 575):**
+   - Line 65 states `15.8%` and `80.1%` protein recovery and `56.1%` and `86.3%` combined recovery without denominators, making `516 of 1,105` and `735` opaque. Add the denominators in line 65 or line 575: `238 of 1{,}507` dark and `65{,}478 of 81{,}723` annotated calls for reciprocal protein matches (`26 of 166` complete dark calls $\ge 100$ residues), and `752 of 1{,}341` eligible dark and `70{,}354 of 81{,}533` eligible annotated calls ($\ge 90$~nt) for the protein-plus-DNA union.
+   - `Methods` lines 317–322 describe the 22-group Wilcoxon signed-rank test on per-genome dark rates and the 166-protein complete-call subset, but their outcomes were deleted. Append to line 575: `Cultured genomes had a lower dark fraction in 18 of 22 groups (median difference $-0.36$ percentage points, Wilcoxon $p=0.0066$), and 26 of 166 complete dark calls of at least 100 residues had a reciprocal protein partner.`
+2. **Order-gap adjudication (`Methods` lines 193–196):** State the outcome of the GUNC and de novo tree checks: `All ten passed GUNC (clade separation 0.01--0.32 against 0.45) and relative evolutionary divergence supported no new order (six single-genome lineages and two clades at family and genus depth).`
+3. **MGnify90 2026\_07 search (`Methods` lines 448–450):** State the outcome of the described search: `This search matched 5.8\% of the absent dark families and 34.3\% of the absent control families, leaving 27.08\% of dark families unmatched.`
+
+### M4. Missing definitions/scope statements at first use and formatting in Fig. 6
+- **Abstract (line 37):** Define sequence-dark and include the cluster and sample denominators: `Among 43.4 million genome-linked protein clusters, 9.89\% lacked a UniRef50 match (sequence-dark); 106{,}042 recurrent dark families... These archaea occurred in 481 of 549 profiled samples...`
+- **Results (line 59):** Specify clustering identity thresholds (`43{,}423{,}322 90\%-identity protein-cluster representatives` and `Clustering them at 50\% identity identified 106{,}042 families`).
+- **Results (line 69):** Define `per-genome dark fraction` (`the share of a genome's protein calls in sequence-dark clusters`), give comparator species denominators (`4.6\% in the other 354 archaea and 6.2\% in the 4{,}847 bacteria`), and fix the tautology `Of the 237 Thermoplasmatota representatives, 236 of 237 exceeded` $\to$ `Among the 237 Thermoplasmatota representatives, 236 exceeded`.
+- **Results (line 85):** Include the 3Di triage denominator so the two-stage screen is clear: `A 3Di screen of the 1{,}466{,}943 dark representatives at least 100 residues long left 997{,}646 without a PDB or AlphaFold Database hit, yielding 17{,}221 families of at least three members for coordinate modelling.`
+- **Results (line 101):** State explicitly that heliorhodopsins were screened across the 5,438 genomes independently of the UniRef50-dark classification.
+- **Results (line 107):** Spell out `Cryptochrome/photolyase-family (CPF)` at first use and state the denominator (`across 37 paired sites`).
+- **Undefined `EQ` and caption style (`Methods` line 552; `Fig. 6` line 1002):** Replace undefined `EQ` with `desert` or `Rub' al-Khali`, and bold the Fig. 6 title (`\caption{\textbf{Sequence coverage and supporting evidence for desert heliorhodopsins.}}`).
+
+### M5. Grammar and prohibited phrasing (`lines 217, 439, 913`)
+- **Line 217:** `this membership rule, defines` $\to$ `this membership rule defines` (stray comma left after deleting `not read mapping`).
+- **Line 439:** `separately rather than concatenated` $\to$ `individually instead of concatenated`.
+- **Line 913:** `One retained FEYH rather than WEYH` $\to$ `One carried FEYH at the aligned WEYH positions`.
+
+---
+
+## Optional Corrections
+
+- **O1 (`Results` line 63):** State the direction of the divergence-stratified dN/dS contrast rather than only that it changed: `The 95{,}647 evaluable annotated families had a median of 0.388; median dN/dS was higher in dark families at low synonymous divergence (0.582 versus 0.321 at mean dS $<0.1$) and similar at moderate divergence (0.435 versus 0.452 at dS 0.5--1.0; Fig.~\ref{fig:dark}c).`
+- **O2 (`Results` line 81 / `Methods` line 579):** Mention the absence of methanogenesis, ammonia-oxidation, and rhodopsin markers in all 237 Thermoplasmatota (and their Halobacteriota metabolic contrast) in `Results` line 81 as biological evidence for heterotrophic scavenging rather than leaving it solely in `Methods -> Comparative-analysis diagnostics`.
+- **O3 (`Results` lines 65, 73; `Supplementary Note S3` lines 896, 901):** Cut redundant method-pointer sentences at the end of Results subsections (lines 65, 73) and smooth list-style colons (`"include the following:"`) in lines 896 and 901.
+
+---
+
+## Verdict
+**Accept after minor mandatory text restorations (M1–M5).** No new computations or figures are required.

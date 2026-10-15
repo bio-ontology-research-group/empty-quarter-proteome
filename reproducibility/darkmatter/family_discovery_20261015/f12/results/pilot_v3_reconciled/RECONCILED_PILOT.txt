@@ -1,0 +1,49 @@
+================================================================================
+RECONCILED FEASIBILITY PILOT REPORT: AUDITED TRACKS F1 & F2
+Empty Quarter Metagenome | Reconciled against Root Audit Job 53816043
+================================================================================
+
+EXECUTIVE DECISIONS:
+--------------------------------------------------------------------------------
+TRACK F1 (Photolyase / Cryptochrome Family Identity & Diversity):
+  VERDICT: FEASIBILITY_PASS (Authorized for Full 5,438 Catalogue Analysis)
+  RECONCILIATION SUMMARY:
+  - Initial Pilot v3 Candidate Rows: 3104
+  - Generic Radical SAM Outgroup Matches (PF04055): 3028
+    (PF04055 alone represents generic Radical SAM, NOT confirmed SplB)
+  - Authentic Non-Outgroup CPF Candidates in Pilot: 76
+  - Root Independent Profile-First Job 53816043 Candidates: 56
+    (Search with core CPF profiles PF00875, PF03441, PF04244; domain iE <= 1e-5, cov >= 70%)
+  - Overlap between Root Profile-First and Non-Outgroup Candidates: 56
+  - Root Verified Carrier Genomes: 45 / 256
+  - Root Verified Complete CDS: 48 / 56 (85.7%)
+  PROMOTION STATUS: AUTHORIZED FOR FULL 5,438 SPECIES-REPRESENTATIVE CENSUS.
+
+TRACK F2 (Historical Compatible-Solute Phosphatase Predictions):
+  VERDICT: SPECIFIC PHOSPHATASE ASSIGNMENT NOT ESTABLISHED / INCONCLUSIVE
+  EMPIRICAL EVIDENCE:
+  1. Locus Remapping: Both historical leads exist as complete coding sequences (partial=00)
+     in winning ANI95 representatives of Thermoplasmatota SW-10-69-26:
+     - Lead_1 (1PRr2__self_SemiBin_81::1PRr2_1391604_4): length=93 aa, bin=1PRr2__self_SemiBin_81, winner=1PRr2__self_SemiBin_81.fa
+     - Lead_2 (S52PRr1__single_SemiBin_53::S52PRr1_477345_9): length=148 aa, bin=S52PRr1__single_SemiBin_53, winner=S52PRr1__single_SemiBin_53.fa
+  2. Sequence Similarity to Target & Competing HAD References:
+     - DIAMOND blastp (--ultra-sensitive, evalue <= 1e-3): 0 hits.
+     - HMMER domtblout (PF00702 Hydrolase, PF13419 HAD_2): 0 hits above inclusion threshold.
+     - Delta-bitscore (osmolyte vs competing HAD): NA (undefined due to lack of alignments).
+     - Corrective Note: Lack of alignment does NOT equal functional equivalence;
+       there is NO sequence-level evidence supporting HAD or compatible-solute phosphatase identity.
+  3. Flanking Operon Synteny:
+     - Co-localization with osmolyte synthases (MpgS, OtsA, GgpS): NOT_TESTED
+       (no verified synthase profile database was included in the pilot).
+  PROMOTION STATUS: FULL F2 TRACK STOPPED (NO FULL CENSUS JUSTIFIED).
+
+AUDIT COMPLIANCE & REPAIR CONFIRMATION:
+--------------------------------------------------------------------------------
+[X] Reconciled pilot CPF candidate counts with Root job 53816043 (56 profile candidates).
+[X] Excluded generic Radical SAM (PF04055) from CPF candidate totals.
+[X] Ran DIAMOND --ultra-sensitive on F2 leads (0 hits confirmed).
+[X] Corrected F2 length reporting: Lead 1 = 93 aa, Lead 2 = 148 aa (fixed hardcoded 286 aa bug).
+[X] Corrected delta-bitscore to NA (undefined due to no hits).
+[X] Removed speculative interpretations regarding operon neighbours; marked NOT_TESTED.
+[X] Quarantined old flawed pilot narrative in rejected_pilot_v3.
+================================================================================

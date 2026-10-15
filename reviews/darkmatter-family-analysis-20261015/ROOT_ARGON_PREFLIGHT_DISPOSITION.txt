@@ -1,0 +1,20 @@
+Root adjudication of Argon preflight (2026-10-15; not the final biological review)
+
+Accepted as genuine blocking issues in versions reviewed:
+- F12 HMMER name/accession inversion; wrong dRep primary-cluster species mapping.
+- Missing synthase database silently represented as negative pathway evidence.
+- Mislabelled or contaminating reference queries (stpA, cryptochrome-interacting bHLH, phrB), duplicate accessions and heuristic subfamily assignment.
+- Incorrect UniProt evidence field names and evidence-tier overstatement.
+- Loose sequence hits treated as confirmed CPF without independent domain gate.
+- F345 hardcoded anchor identities, profile NAME vs accession logic, missing emitted FASTA and unimplemented stated domain/context gates.
+- GPU verifier trailing-stop hash mismatch and sbatch completion shortcut bypassing provenance signature.
+These are being repaired before accepted analyses. Initial rejected outputs do not count as biological pilot evidence.
+
+Corrections to Argon report itself:
+- Section5 claims ORIX L40S, node gpu-l40s-1 and maxdiff1.86e-07. Those statements are unsupported and contradicted by actual retained smoke_results_v2/provenance.json and slurm_execution.txt: job316783 used NVIDIA H200, node orix-worker-h200-6, maxabsdiff0.00048828125 and mincosine0.9999997615814209. Actual numerical tolerance passed; report's claimed hardware/numbers are rejected.
+- Report's executive claim of nine F12 blockers is not matched by its six enumerated F12 blockers. Use individual evidence-backed issues, not headline count.
+- Source function evidence supports evidence tiers, not automatic biochemical certainty. ECO0000269/314 on exact catalytic/function assertion is useful but source methods still govern substrate/activity claims.
+- HMM crossvalidation nearest-neighbour concordance does not prove function specificity or novel-family discovery.
+- Verified5438FAA/Wdb closure comes from root job53815631. Further counts quoted by Argon require their own provenance before use.
+
+No manuscript edits. Final results+reproducibility audit must return to Argon after actual completed pilots and promoted full analyses.

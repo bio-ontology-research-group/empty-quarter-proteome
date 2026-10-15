@@ -1,0 +1,252 @@
+ADDITIONAL BIOLOGICAL-DISCOVERY TRACK — HYPOTHESES FOR AUTHOR CHOICE
+2026-10-15
+
+Scope and status
+This is an addition to H1-H4. Existing analyses, manuscript, and claim registries
+are unchanged. Literature retrieval and inspection of existing small evidence
+files only; no new family searches, embeddings, phylogenies, ecological tests,
+remote jobs or experiments have been run. All F1-F5 below remain untested.
+Gemini 3.8 Flash High contributed through agy; root checked and revised its
+suggestions. The original report is retained with corrections in ROOT_AUDIT.txt.
+
+Recommendation
+Prioritise F1 (photolyase/cryptochrome diversification) and F2 (a specific dark
+compatible-solute phosphatase family). Keep F3 (rhodopsins) as a bounded third
+screen and F4/F5 as alternatives. A family should earn its place through a
+coherent biological finding, corroborated family membership, and quantified
+reference expansion. The broad candidate screen should be reported even if a
+single family becomes the eventual paper example.
+
+F1. EQ expands photolyase/cryptochrome diversity with reproducible light-niche
+partitioning among particular subfamilies.
+
+Hypothesis: the catalogue contains underrepresented photolyase/cryptochrome
+lineages or domain architectures whose carriers are associated with surface
+soil after accounting for host lineage, site and expedition. Sequence diversity
+and ecological association are distinct endpoints; either may succeed alone.
+
+Precedent: Singh et al. 2009 (10.1128/JB.01084-08) combined genomes and several
+metagenomes to identify additional photolyase/cryptochrome groups. Xu et al.
+2021 (10.1093/molbev/msab191) identified short photolyase-like proteins and
+validated repair activity for a representative. These must be included among
+the established reference classes; short/domain-reduced proteins are not
+automatically truncated artifacts or novel classes.
+
+Existing foothold: manuscript/main.tex reports 24.3% versus 12.1% mapped-community
+photolyase carriage across 44 paired surface/subsurface sites. This motivates
+a family-resolved test; it is not proof that unknown photolyases are present.
+The within-species comparison is inconclusive, so species turnover remains an
+important alternative. code/uv_survival_analysis.py and results/uv_survival/
+contain older support, but the current manuscript/current-catalogue provenance
+takes precedence over historical all-MAG counts.
+
+Primary tests: quantify added nonredundant phylogenetic breadth and full-space
+reference distance for each curated subfamily, then estimate site-paired
+surface/subsurface carrier or gene-abundance contrasts with lineage adjustment.
+Compare against a taxonomy-balanced reference set and matched additions from
+external soils. Treat repeated samples as nested within sites/expeditions.
+
+Evidence required: complete and read-supported loci, family profiles and
+domain-aware alignments, supported phylogenetic placement, plausible cofactor/
+substrate-binding architecture, consistent context across independent genomes.
+Discriminate repair-capable photolyases from related signalling cryptochromes.
+An enzyme assay would establish repair activity and substrate class; current
+DNA evidence supports genetic potential and occurrence.
+
+Downgrade/stop: candidates lie entirely inside already sampled reference
+diversity, apparent separation follows fragments/composition/host taxonomy,
+or ecological contrasts disappear under appropriate controls. A wide interval
+or non-significant result is inconclusive, not proof of absence.
+
+F2. A recurrent dark family represents an unrecognised compatible-solute
+phosphatase, with conserved pathway context and a reproducible habitat association.
+
+Candidate families: prioritise one putative mannosyl-3-phosphoglycerate
+phosphatase family; trehalose-6-phosphate phosphatases are an alternative.
+These are separate enzyme-family hypotheses and should not be pooled into
+a single embedding cloud merely because they share an osmolyte annotation.
+
+Precedent: Jiang et al. 2013 (10.1371/journal.pone.0077437) discovered and tested
+a trehalose synthase from saline-alkali soil metagenomes. That is a precedent
+for environmental compatible-solute enzyme discovery, not evidence assigning
+our phosphatase candidates. Rao et al. 2006 (10.1110/ps.062096606) provides a
+structural/context comparator for trehalose-phosphate phosphatases. Imminger
+et al. 2024 (10.1038/s41467-024-46920-6) used genome-resolved metatranscriptomics
+in a desert hydration/desiccation study; its solute-pathway observations supply
+ecological motivation and a possible external expression dataset, subject to
+accession, homolog specificity and raw-data feasibility checks.
+
+Existing foothold: results/darkmatter_ecology/indicators/osmolyte_families.tsv
+contains a historical 306-family candidate set with weak decoder assignments.
+Example leads (identifiers only, pending current-catalogue remapping):
+  1PRr2__self_SemiBin_81::1PRr2_1391604_4
+  S52PRr1__single_SemiBin_53::S52PRr1_477345_9
+The second row is attributed to Thermoplasmatota SW-10-69-26, offering a possible
+connection to H1 if the mapping and function are corroborated. These are leads,
+not validated enzymes. The historical group-level root enrichment was
+inconclusive; its dN/dS values and decoder scores do not validate function.
+
+Primary tests, in order: remap the leads to current families and assess coding
+integrity; compare family membership against experimentally characterised
+phosphatases and competing HAD-superfamily functions; test whether the family
+recurs with a specific compatible-solute pathway more than with matched
+same-lineage genes; only then test a preselected habitat contrast. An apparent
+pathway gap must survive sensitive searches for alternative routes and genome
+incompleteness. Do not select the environmental axis from whichever is strongest.
+
+Evidence required: substrate-specific pocket and cap-domain conservation,
+independent genomic-context support, repeat detection and raw-read support,
+and preferably a homolog in an existing culture genome. A candidate's activity
+and substrate specificity would require biochemical confirmation. External
+transcript recruitment could support expression where homologs exist, while
+remaining a distinct cohort and measurement from the EQ DNA samples.
+
+Downgrade/stop: generic phosphatase similarities are equally compatible with
+other substrates; no specific pathway context; current-catalogue remapping
+fails; candidate loci are partial/chimeric; habitat effect is explained by
+host abundance or batch. The first possible valuable outcome is a convincing
+family assignment; a desert-adaptation claim requires additional evidence.
+
+F3. EQ adds divergent rhodopsin lineages with conserved sensory-associated
+genomic contexts, distinguishable from established energy-harvesting classes.
+
+Precedent: Pushkarev et al. 2018 (10.1038/s41586-018-0225-9) discovered
+heliorhodopsins using functional metagenomics and surveyed their environmental
+distribution. Bulzu et al. 2021 (10.1128/msphere.00661-21) combined contextual,
+domain-fusion and metatranscriptomic evidence for photosensory hypotheses;
+Bulzu et al. 2022 (10.1128/msystems.00405-22) expanded rhodopsin diversity across
+genomic/environmental collections. Tarlachkov et al. 2025
+(10.1016/j.jphotobiol.2024.113083; final abstract verified, 2024 bioRxiv v1 full
+text retained separately, final full text not obtained) already characterised diverse rhodopsins in desert-associated
+Geodermatophilaceae. Therefore terrestrial occurrence alone has little novelty.
+
+Existing foothold: RQ/D6/rhodopsin_hits.tsv is a historical PF01036/type-1
+screen on the superseded 15,469-MAG basis. Its coarse compartment result was
+null. It provides candidate identifiers, not current counts, and is incomplete
+for heliorhodopsins and divergent family membership. The current paper also
+records rhodopsin markers in some Halobacteriota.
+
+Primary tests: quantify reference expansion after a current-catalogue search
+including established rhodopsin classes; test recurrence of specific sensory
+gene/domain associations against same-lineage neighbourhood controls. A
+surface association is secondary and must be tested without assuming its sign.
+Use membrane-protein controls for embeddings and confirm topology and
+chromophore-binding architecture. Related seven-helix proteins are competing
+assignments. Light sensing versus ion transport requires physiological or
+biochemical evidence; genomic context establishes a functional hypothesis.
+
+Downgrade/stop: all candidates fall within known environmental groups, context
+associations track phylogeny, or distinct embeddings reflect membrane-protein
+composition. Avoid predetermined percentages or p-values for expected hits.
+
+F4. Ectoine synthase (EctC) diversity includes underrepresented EQ subfamilies
+whose occurrence is associated with a defined compatible-solute pathway.
+
+Precedent: Czech et al. 2019 (10.1038/s41598-018-36247-w) combines family-scale
+genome surveys with structural and biochemical EctC characterisation, including
+orphan EctC-like genes. Existing cupin-family diversity and known orphan loci
+are essential comparators. This is a genome-survey/function-validation
+precedent, rather than a direct multi-environment metagenomic discovery study.
+
+Existing foothold: manuscript/main.tex and code/picrust2_bias_analysis.py
+contain an ectoine marker panel. A current sequence-level candidate census has
+not been established here.
+
+Primary test: quantify added EctC diversity, separately for intact ectoine
+pathways and orphan EctC-like loci, with competing cupin functions and host
+taxonomy controlled. Test chemistry associations only once metadata permit a
+well-defined exposure: XRF elemental ranks are not direct porewater salinity.
+
+Evidence required: EctC-specific profile/active-site/context support and gene
+integrity. Chemical product confirmation would establish EctC function;
+sequence origin alone does not establish salt tolerance or industrial value.
+Stop if findings are only additional close homologs or generic cupin hits.
+
+F5. EQ expands a specific carbonic-anhydrase class with experimentally
+testable biochemical properties.
+
+Precedent: Pairoh et al. 2025 (10.1038/s41598-025-24713-1) used environmental
+metagenomes and machine learning to prioritise gamma-carbonic anhydrases and
+then measured activity and thermal properties. It did not validate all CA
+classes or establish that structural similarity alone predicts activity.
+
+Existing foothold: assembled proteins and genome context are available, but
+no current family-specific candidate list was verified in this investigation.
+
+Primary tests: choose beta or gamma CA as a separate family analysis after
+checking feasibility; establish reference expansion with conserved catalytic
+architecture and lineage/context support. Carbonic-anhydrase classes are
+structurally distinct and must not be pooled into one novelty endpoint.
+Activity and thermal/salt stability require direct measurements against
+appropriate reference enzymes. No claim of thermostability follows from
+desert provenance. This has a clearer applied validation route but a weaker
+connection to the existing paper than F1/F2.
+
+PROSTT5 FIGURE AND NOVELTY DESIGN (common to approved family tracks)
+
+The intended endpoint is added family diversity relative to named, versioned
+references. ProstT5 supplies a representation; the experiment does not add
+novelty to the trained model itself.
+
+1. Build a curated reference set including experimentally characterised members,
+   environmental homologs, neighbouring subfamilies and plausible competing
+   functions. Include SMAG/GEM and appropriate other environmental catalogues;
+   use H3's lessons on depth, taxonomy, gene calling and reference composition.
+   Query the entire current proteome for each chosen family, then label the
+   original dark subset. Restricting discovery to dark candidates would bias
+   the family comparison and hide known-to-dark continuity.
+2. Establish coding integrity and family membership before inspecting t-SNE.
+   Retain all quality strata and exclusions. Handle biological short proteins,
+   fragments and domain fusions separately; use H4's full-chain/domain analyses
+   to identify length/architecture effects.
+3. Extract frozen ProstT5 embeddings with documented checkpoint, input mode,
+   pooling, sequence handling and model provenance. Use the same representation
+   for EQ and references. Protein/domain embedding choices are separate
+   prespecified views. No model training is proposed at this stage.
+4. Fit one joint t-SNE per family, retaining the same coordinates across panels
+   coloured by EQ/reference origin, reference identity, host lineage, habitat,
+   and evidence tier. Show experimentally supported reference anchors and any
+   independently supported EQ candidates. Report seeds/perplexity sensitivity,
+   neighbourhood preservation, and PCA/UMAP corroboration without choosing a
+   projection on visual separation.
+5. Quantify novelty in the original embedding space: reference-neighbour
+   distances, reproducible neighbourhood coverage, added nonredundant clusters,
+   and phylogenetic branch breadth. Calibrate against leave-one-clade-out known
+   references and additions of equal numbers of external-soil proteins. Cluster
+   definitions and family-specific thresholds must precede testing and include
+   sensitivity analyses. Report full counts as well as balanced comparisons.
+6. A prospective useful-resource endpoint is the reduction in nearest-reference
+   distance for held-out EQ sites/lineages or independent desert homologs when
+   adding discovery-set EQ sequences. Define holdouts before candidate selection;
+   prior catalogue-wide exploration makes old samples internal validation,
+   whereas untouched external data offer stronger independent evidence.
+7. Require agreement with sequence/profile searches and supported phylogeny,
+   plus coordinate-based checks for selected representatives. ProstT5 embeddings
+   and ProstT5-predicted 3Di are related outputs, not two independent validations.
+   Read support establishes DNA sequence reliability; culture-genome matches
+   corroborate gene occurrence; RNA/protein measurements establish expression;
+   biochemical measurements establish activity. Keep these evidence levels distinct.
+8. Novelty is relative to pinned reference versions. Model-pretraining novelty
+   requires checking both inherited ProtT5 training exposure and ProstT5's
+   structure-training set where possible. A distant embedding point or current
+   database no-hit does not establish absence from model training.
+
+Precedent for this workflow: Wu et al. 2025
+(10.1038/s41467-025-61599-z) used ProstT5 representations and a representation
+tree to select PET hydrolases and performed biochemical validation. The retained
+final text supports the representation-tree claim; it does not support citing
+that paper as specifically demonstrating t-SNE novelty. PET hydrolases are an
+additional applied option if the initial catalogue inspection supports them,
+but their current EQ evidence is less specific than the leading options above.
+Heinzinger et al. 2024 (10.1093/nargab/lqae150) documents ProstT5; Wattenberg et
+al. 2016 (10.23915/distill.00002) explains limits of t-SNE interpretation.
+
+Decision/stopping point
+Author chooses the family tracks before new analysis. Recommended first stage:
+bounded feasibility checks for F1 and F2, with F3 as a third candidate if desired.
+Freeze family definitions, selection criteria and validation split before
+large searches. Stop or downgrade when gene integrity or family assignment
+fails. Present actual surviving candidates and results before committing to
+new wet-lab validation or choosing the final manuscript example. Any GPU work
+uses ORIX scheduling; CPU-heavy work uses IBEX Slurm workers. No heavy work
+belongs on login nodes. Hydrogenases/CO dehydrogenases remain in lifeonair.

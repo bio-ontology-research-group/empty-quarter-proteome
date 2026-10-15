@@ -1,0 +1,19 @@
+Root fact audit of the second review, 14 October 2026
+
+The independent executed H1-H4 checks support the new bounded numerical claims. Review prose is evaluated separately.
+
+The initial review draft repeats unsupported statements that require correction:
+1. The paper does not define sequence darkness by joint UniRef50 and Pfam absence. Pfam is a downstream screen. The draft's 12,135,193 proteins, 99.6% known-phyla and 87.9% unnamed-species claims are not current-paper claims and must not be imported.
+2. Crop recovery jointly changes sequence extent, length-dependent score normalization and retrieval opportunity. It does not isolate either unconfident-sequence removal or normalization as the mechanism. The paper states the joint intervention explicitly.
+3. Nature Communications readiness remains limited by 78 missing raw-file paths, 302 permission failures, unverified duplicate-run merge commands, incomplete historical claim migration, MAG deposition, release DOI and reviewer/public data access. These are substantive provenance/access prerequisites, not only routine confidentiality release. PRJEB125153 receipts map 554 runs from 551 samples; the accession has not been verified to contain the MAG deposition. Recorded release date is 1 November2026, not a verified 'held confidential until publication' statement.
+4. The alleged 5,442-row Extended_Data_Table1 build and four-genome-removal text are absent from the current manuscript. No speculative spreadsheet rewrite is warranted.
+5. Figure4b has vertical bars, each labelled with percentages. It does not mix integer-count labels in two groups and percentages in the third. The requested consistency fix is based on an incorrect description of the figure.
+6. The quoted normalization sentence and named old section headings in the minor comments are absent. Verify every quoted string against the actual submitted source, and do not replace missing quotes with plausible paraphrases represented as quotations.
+7. The strata use nK*nQ/(nK+nQ), half the ordinary harmonic mean; report the exact stated weight.
+8. The assertion that legacy/XRF limitations affect no conclusion is too strong: exploratory supplementary claims remain conditional on them.
+
+Root's final refinements are limited to supported clarifications: define H2 KO annotation opportunity exactly from source code, expand the database-release list to include SMAG and the July2026 paired-PDB snapshot, and rephrase negative inference disclaimers as affirmative assay/design scope. No scientific estimates change.
+
+A remote-path audit also replaced the unused local preclosure receipt in the active 27-file manifest with the executed root census audit. See ROOT_LATE_PROVENANCE_NOTE.md. No active numerical claim depended on that receipt.
+
+Additional correction: the laboratory XRF table is retained, not absent from the package. See reproducibility/darkmatter/environment_inputs/geochemistry/xrf_lab_table_all_trips.tsv and rebuild_environment.py, plus Methods lines494-505 in the submitted source. Units, instrument metadata, detection limits and climate provider/raw-response provenance remain unresolved; distinguish these from absence of the numerical laboratory table. Do not claim that the acknowledged upstream gaps are irrelevant to complete raw-to-final reproducibility.

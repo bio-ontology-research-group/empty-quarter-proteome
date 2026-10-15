@@ -1,0 +1,60 @@
+JobId=9181 JobName=smag_net_bench
+   UserId=hohndor(2122) GroupId=hohndor(2122) MCS_label=N/A
+   Priority=1 Nice=0 Account=(null) QOS=normal
+   JobState=FAILED Reason=RaisedSignal:53(Real-time_signal_19) Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:53
+   RunTime=00:00:01 TimeLimit=00:30:00 TimeMin=N/A
+   SubmitTime=2026-10-14T08:24:30 EligibleTime=2026-10-14T08:24:30
+   AccrueTime=2026-10-14T08:24:30
+   StartTime=2026-10-14T08:24:30 EndTime=2026-10-14T08:24:31 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-14T08:24:30 Scheduler=Backfill
+   Partition=debug AllocNode:Sid=unimatrix01:925841
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node007
+   BatchHost=node007
+   NumNodes=1 NumCPUs=2 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=1G,node=1,billing=1
+   AllocTRES=cpu=2,mem=1G,node=1,billing=2
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:1 CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=1G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/data/hohndor/darkmatter_round7_download/unimatrix_download_benchmark.sbatch
+   WorkDir=/home/hohndor
+   StdErr=/data/hohndor/darkmatter_round7_download/benchmark_9181.log
+   StdIn=/dev/null
+   StdOut=/data/hohndor/darkmatter_round7_download/benchmark_9181.log
+   Power=
+   TresPerTask=cpu:1
+   
+
+JobId=9182 JobName=smag_net_bench
+   UserId=hohndor(2122) GroupId=hohndor(2122) MCS_label=N/A
+   Priority=1 Nice=0 Account=(null) QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:04 TimeLimit=00:30:00 TimeMin=N/A
+   SubmitTime=2026-10-14T08:26:09 EligibleTime=2026-10-14T08:26:09
+   AccrueTime=2026-10-14T08:26:09
+   StartTime=2026-10-14T08:26:09 EndTime=2026-10-14T08:56:09 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-14T08:26:09 Scheduler=Backfill
+   Partition=debug AllocNode:Sid=unimatrix01:926157
+   ReqNodeList=unimatrix ExcNodeList=(null)
+   NodeList=unimatrix
+   BatchHost=unimatrix
+   NumNodes=1 NumCPUs=2 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=1G,node=1,billing=1
+   AllocTRES=cpu=2,mem=1G,node=1,billing=2
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:1 CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=1G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
+   Command=/data/hohndor/darkmatter_round7_download/unimatrix_download_benchmark.sbatch
+   WorkDir=/data/hohndor/darkmatter_round7_download
+   StdErr=/data/hohndor/darkmatter_round7_download/benchmark_9182.log
+   StdIn=/dev/null
+   StdOut=/data/hohndor/darkmatter_round7_download/benchmark_9182.log
+   Power=
+   TresPerTask=cpu:1
+   
+

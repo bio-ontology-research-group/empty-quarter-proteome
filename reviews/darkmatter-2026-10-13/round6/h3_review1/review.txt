@@ -1,0 +1,77 @@
+# Argon Independent Review: Hypothesis 3 (h3_v2)
+
+**Target Dossier:** `reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/` (`DESIGN.md`, `DOSSIER.md`, `INPUTS.tsv`, `scripts/01`–`07`, `results/`, `logs/`)
+**Verdict:** `REVISE`
+
+---
+
+## 1. Bounded Hypothesis and Scope Changes
+
+- **Bounded Hypothesis:** Conditional on the MD5-verified public Zenodo Record 8223844 SMAG archive-order genome pool (recalled with Pyrodigal v3.7.1 `-p meta --no-stop-codon`) and the staged 52,515 published GEM Prodigal proteomes, after canonicalizing sequences (stripping trailing `*`), deduplicating within each reference arm, applying an explicit cross-release overlap rule, and enforcing exact common-support matching of unique reference protein counts across protein length strata, does the SMAG reference subset yield a different paired hit rate than length- and count-matched GEM reference subsets for Empty Quarter dark protein families under identical `diamond blastp` settings?
+- **Scope Changes from Original (`round5/EXTENSIONS.md` H3):**
+  1. Narrowed from a full-catalogue, caller-harmonized soil-biome test to a bounded reference-release subset comparison conditioned on the public Zenodo SMAG archive-order genome pool and published GEM Prodigal proteomes (`DESIGN.md:23-27`, `DOSSIER.md:29,47`).
+  2. Removed v1 claims that annotated control families calibrate the quantitative share of technical vs biological discordance or isolate residual desert lineage adaptation (`DESIGN.md:21-22`, `DOSSIER.md:26-28`).
+
+---
+
+## 2. Executive Assessment against Review Contract
+
+`h3_v2` resolves two major blockers from Round 5:
+1. **Top-1 Subsampling Fallacy Proven (`scripts/03_pilot_subsample_search.py`, Job `53700569`):** On a 2,500-genome GEM subset (5,815,177 proteins; `results/pilot_top1_bias_summary.tsv`), post-hoc filtering of full-database `-k 1` hits (`gem_hits.m8`) masks 110/126 (87.30%) of true empirical dark hits and 895/953 (93.91%) of true control hits. Physical re-search is empirically required and executed.
+2. **Public Source Retrieval (`scripts/04_fetch_smag_parts.py`):** Public SMAG archive parts (`mag.tar.gz.aa`, `mag.tar.gz.ab`; 104,857,600 bytes each) are fetched from Zenodo Record 8223844 and verified against official MD5 checksums (`5fb8a52b97940d1d1c14aecda57ac5bc`, `de5f1ecb60b8ceac42b616e2780b2d04`) in `reviews/darkmatter-2026-10-13/round6/public_source_checks/zenodo_8223844.json` (`results/smag_zenodo_download_manifest.tsv`).
+
+However, independent audit of the frozen `h3_v2` code and IBEX artifacts identifies **four critical flaws** that invalidate the claimed reference matching, overlap audit, and archive-integrity guarantees. All flaws are directly repairable on staged IBEX data without privilege escalation or full-catalogue downloads.
+
+---
+
+## 3. Critical Findings, Evidence, Impact, and Concrete Repairs
+
+### Critical Finding 1: Reference Subsets Are Raw-Count Overshoot Sampled, Not Length-Matched or Deduplicated
+- **Evidence:**
+  - `DOSSIER.md:1` (title: *"Reference-Release Composition Under Matched Protein Amount and Length"*), `DOSSIER.md:29,53-55`, and `DESIGN.md:24,41-42` define the estimand and $H_0$ under *"matched sequence count and length distribution"*. `DOSSIER.md:68` claims sequence length is *"Controlled ... Length-stratified across 5 bins (<100 to >=400 aa)"*.
+  - `scripts/06_match_gem_and_search.py:68-98` merely shuffles the 52,515 GEM `.faa.gz` filenames (`seed=20261013`) and concatenates whole proteomes until `g_prot >= s_prot` (`if g_prot >= s_prot: break`). It performs no reference length matching, residue matching, or deduplication.
+  - In `results/smag_vs_gem_redundancy_overlap_audit.tsv:2-8`, GEM has 694,598 proteins (292 MAGs) vs 693,227 SMAG proteins (212 MAGs), +9.28% more characters (`221,718,516` vs `202,894,612`), higher mean length (`319.20` vs `292.68` aa), and higher median length (`271.00` vs `252.00` aa).
+  - Across the five length bins (`<100`, `100–149`, `150–249`, `250–399`, `>=400` aa), `smag_pilot_recalled.faa` has `[95213, 86357, 160630, 193697, 157330]` proteins (`13.73%, 12.46%, 23.17%, 27.94%, 22.70%`), whereas `gem_pilot_matched.faa` (stop-codon stripped) has `[81519, 76897, 155922, 195442, 184818]` (`11.74%, 11.07%, 22.45%, 28.14%, 26.61%`). SMAG contains +13,694 (+16.8%) more `<100` aa and +9,460 (+12.3%) more `100–149` aa targets, whereas GEM contains +27,488 (+17.5%) more `>=400` aa targets. Stratifying *queries* (`scripts/02_sample_queries.py:52-84`) does not match *reference* lengths.
+  - GEM also has 15.1x higher internal duplicate rate (`2.26%`, 15,730 duplicates; `678,868` unique hashes) than SMAG (`0.15%`, 1,033 duplicates; `692,194` unique hashes), leaving GEM with 13,326 (-1.93%) *fewer* unique sequences despite higher raw protein count.
+- **Impact:** Short queries face +12–17% more short target proteins in SMAG while overall unique sequence diversity is lower in GEM, confounding the reference-composition estimand.
+- **Concrete Repair / Feasibility Check:** Deduplicate each candidate reference pool to unique canonical sequences first (recording raw vs unique counts), enforce exact common-support quota matching of unique reference proteins across fine length strata (verifying residue parity per stratum) across repeated deterministic GEM draws (`R >= 5` seeds), and execute fresh DIAMOND `makedb`/`blastp` searches on the matched databases.
+
+### Critical Finding 2: Uncanonicalized Trailing Stop Codons (`*`) Corrupt Length Stats and Falsify Cross-Catalogue Overlap
+- **Evidence:**
+  - `scripts/05_extract_and_genecall_smag.py:31` runs Pyrodigal with `--no-stop-codon` (`0 / 693,227` SMAG proteins end with `*`), whereas `scripts/06_match_gem_and_search.py:81-90` copies published GEM `.faa.gz` records verbatim, where `663,757 / 694,598` (`95.56%`) end with a literal `*` character.
+  - Neither `read_fasta_stats` (`06_match_gem_and_search.py:37`) nor `hash_fasta` (`06_match_gem_and_search.py:103-120`) strips trailing `*`.
+  - Direct IBEX verification shows that stripping trailing `*` (`seq.rstrip("*").upper()`) reduces GEM residue count by 663,757 (`221,054,759` true amino acids vs `221,718,516` reported), shifts GEM mean length from `319.20` to `318.25` aa, reduces unique GEM sequence hashes from `678,868` to `678,867`, and changes cross-catalogue exact shared sequences from the reported `0` (`0.00%`, `results/smag_vs_gem_redundancy_overlap_audit.tsv:9-10`, `DOSSIER.md:70,129`) to **30 exact shared sequences**.
+  - Additionally, `DOSSIER.md:69,127` mislabels full-sequence 128-bit MD5 digests (32 hex characters) as *"Exact 32-mer MD5 sequence hashes"*.
+- **Impact:** Unstripped `*` characters inflate GEM lengths by +1 across stratum boundaries and make exact sequence-hash overlap structurally impossible for 95.56% of GEM proteins.
+- **Concrete Repair / Feasibility Check:** Canonicalize all sequences on ingestion (`seq.strip().rstrip("*").upper()`), verify zero internal `*`, recompute redundancy and cross-catalogue exact overlap on canonical sequences, apply an explicit overlap policy (report shared sequences and test retaining vs excluding them), and fix the "32-mer MD5" wording.
+
+### Critical Finding 3: Unsafe Partial Tar Extraction, Non-Deterministic FASTA Ordering, and Deleted Unhashed Source Genomes
+- **Evidence:**
+  - `DESIGN.md:59-61` asserts Python's `tarfile` module verifies every member against `member.size`. In reality, `scripts/05_extract_and_genecall_smag.py` does not import `tarfile`; line 84 runs `cat {' '.join(part_files)} | tar -xz -C {tmp_genomes_dir} 2>/dev/null || true`, and lines 100-120 check only `size >= 1000`, `first_char == ">"`, and `tail.endswith("\n")`. Multi-contig FASTA files contain newlines after every header and wrapped sequence line, so truncation at any line boundary passes `tail.endswith("\n")`.
+  - In Slurm job `53704317` (`logs/pilot_v2_53704317.out:11-13`), extraction was skipped because `if not extracted_files:` (`05_extract_and_genecall_smag.py:81`) reused 212 pre-existing files in `tmp/smag_pilot_genomes`. Streaming `mag.tar.gz.aa` + `mag.tar.gz.ab` via `tarfile.open(..., mode="r|gz")` shows 212 complete members (`MAG/D3rbin.13.fa` to `MAG/SRR5437667rbin.15.fa`) followed by a truncated 213th member `MAG/SRR5855438rbin.1.fa` (`declared = 12,783,848` bytes, `observed = 6,995,968` bytes before `ReadError`).
+  - `05_extract_and_genecall_smag.py:169-171` deletes all 212 extracted `.fa` files (`os.remove(gpath)`) without recording SHA-256 hashes or declared/observed tar sizes in `results/smag_pilot_genome_manifest.tsv`.
+  - `05_extract_and_genecall_smag.py:140-145` writes `smag_pilot_recalled.faa` inside `concurrent.futures.as_completed(future_to_genome)`, making record ordering non-deterministic across multi-threaded runs.
+- **Impact:** The code violates `DESIGN.md`, cannot prove archive-member completeness in general, deletes primary extracted genomes without hashes, and writes non-deterministic FASTA outputs.
+- **Concrete Repair / Feasibility Check:** Stream verified part files in Python using `tarfile.open(fileobj=..., mode="r|gz")`, enforce `len(data) == member.size` (explicitly logging rejected member 213 `MAG/SRR5855438rbin.1.fa`), keep extracted `.fa` files on scratch, sort outputs deterministically by `(mag_id, gene_idx)` before writing `smag_pilot_recalled.faa`, and record tar member index, path, declared/observed bytes, completion status, and nucleotide/protein SHA-256 hashes in `results/smag_pilot_genome_manifest.tsv`.
+
+### Critical Finding 4: Missing GEM Manifest/Checksums, Hit-Rule Mismatch, Query-Weighting Distortion, and Overstated Full-Test Claims
+- **Evidence:**
+  - `scripts/06_match_gem_and_search.py:76-95` never writes `sampled_gem_files` (292 GEM `.faa.gz` filenames) to disk, and `INPUTS.tsv:17,22-23` records `not_applicable` for the GEM directory and `uncomputed_large` for `smag_pilot_recalled.faa` (234 MB) and `gem_pilot_matched.faa` (322 MB).
+  - `DOSSIER.md:39` defines $Y_{i,k}=1$ as requiring **$E \le 10^{-3}$ and $\ge 30\%$ sequence identity**, whereas `DESIGN.md:36` and `06_match_gem_and_search.py:160-179` apply only `-e 1e-3`. In `results/smag_pilot_hits.m8` and `results/gem_matched_hits.m8`, `28/1,089` (`2.57%`) and `21/926` (`2.27%`) hits have `pident < 30.0%` (down to `26.1%`).
+  - `scripts/02_sample_queries.py:64-83` draws equal quotas (`200` per length bin = `20%`), whereas population strata (`results/length_stratified_quadrants.tsv:2-11`) are `47.75%` (dark) and `62.72%` (control) in `<100` aa vs `4.34%` and `2.35%` in `>=400` aa. `06_match_gem_and_search.py:193-214` reports unweighted sums across the 5 equal-quota bins as overall cohort rates, pools `dark + ctrl` into a combined `all` McNemar test, and writes `inf` for `0/0` in `results/smag_vs_gem_matched_length_stratified.tsv:11`.
+  - `DOSSIER.md:203-210` (§8) claims the proposed 3-arm test *"Confirms that soil-biome reference content specifically enhances recovery ... independent of catalogue release or gene caller"* or *"Proves that the historical 'SMAG advantage' is not a biological soil-biome effect"*, contradicting the bounded scope in §1–2.
+- **Impact:** The GEM subset lacks file-level provenance, code and prose disagree on the hit threshold and `0/0` ratio, unweighted equal-quota sums misestimate cohort marginal rates, and §8 reintroduces unidentifiable causal claims.
+- **Concrete Repair / Feasibility Check:** Write `results/gem_pilot_genome_manifest.tsv` with filenames, byte sizes, SHA-256 hashes, and raw/canonical protein counts; compute real SHA-256 hashes for all FASTA files in `INPUTS.tsv`; reconcile the `E <= 1e-3` vs `pident >= 30%` hit definition (reporting both); report stratum-specific and population-weighted (or full 212,084-query) estimates without pooling `dark + ctrl`; fix `0/0` to `NA`; and restrict §7–8 to bounded observational reference-release comparisons.
+
+---
+
+## 4. Bounded Viability Requirements vs. Optional Catalogue-Scale Additions
+
+- **Required for Bounded Viability:** Implement the four repairs above on the already-staged IBEX data (no full-catalogue download required).
+- **Optional Catalogue-Scale Additions:** Downloading all 373 Zenodo SMAG parts (~39 GB), fetching external GEM nucleotide assemblies for Pyrodigal re-calling, and 3-arm GEM `Soil` vs `Non-Soil` stratification with MMseqs2 clustering.
+
+---
+
+## 5. Concise Verdict
+
+**`REVISE`** — `h3_v2` proves top-1 post-hoc subsampling bias and establishes public Zenodo SMAG retrieval and paired DIAMOND execution, but fails to implement reference length-stratum matching, sequence deduplication, stop-codon canonicalization (`*`), `tarfile` `member.size` verification, and complete source/FASTA provenance. Executing the concrete repairs above will make bounded H3 `VIABLE`.

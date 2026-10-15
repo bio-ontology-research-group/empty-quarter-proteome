@@ -1,0 +1,235 @@
+{
+  "timestamp": "2026-10-15T07:36:34Z",
+  "all_audit_assertions_verified": true,
+  "execution_status": "COMPLETED_AUDIT_VERIFIED",
+  "preflight": {
+    "preflight_verified": true,
+    "missing_inputs": 0,
+    "timestamp": "2026-10-15T07:11:02Z",
+    "eq_reps": {
+      "genomes": 5438,
+      "unique_clusters": 5438,
+      "proteins": 20451986,
+      "cohort_faa": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/cohort.faa",
+      "cohort_tsv": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/root_audit/f1_full/cohort.tsv",
+      "faa_size_bytes": 9269718729
+    },
+    "environmental_cohorts": {
+      "smag_canonical_faa": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h3_references/results/smag_pool_canonical.faa",
+      "smag_faa_size_bytes": 1599946653,
+      "smag_coordinate_map": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h3_references/results/smag_protein_coordinate_mapping.tsv",
+      "gem_canonical_faa": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h3_references/results/gem_harmonized_pool_canonical_seed20261014.faa",
+      "gem_faa_size_bytes": 1692480579,
+      "gem_coordinate_map": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p7_analyses_clean/h3_references/results/gem_harmonized_protein_coordinate_mapping_seed20261014.tsv"
+    },
+    "taxonomy": {
+      "gtdb_bac120": "/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/_gtdbtk_r232/gtdbtk.bac120.summary.tsv",
+      "gtdb_ar53": "/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/_gtdbtk_r232/gtdbtk.ar53.summary.tsv"
+    },
+    "metadata": {
+      "checkm": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/metadata/genomeInformation.csv",
+      "wdb": "/ibex/scratch/projects/c2014/rob/metagenomics/05_refine/_drep/out/data_tables/Wdb.csv"
+    },
+    "references": {
+      "f3_hmm": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/references/profiles/f3_rhodopsins.hmm",
+      "f4_hmm": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/references/profiles/f4_ectc.hmm",
+      "f5_hmm": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/references/profiles/f5_carbonic_anhydrase.hmm",
+      "all_refs_dmnd": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/references/all_f345_references.dmnd",
+      "all_refs_faa": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/references/all_f345_references.faa"
+    },
+    "binaries": {
+      "mmseqs2": "/ibex/scratch/projects/c2014/rob/miniconda3/envs/mmseqs2/bin/mmseqs",
+      "diamond": "/ibex/scratch/projects/c2014/rob/miniconda3/envs/eggnog/bin/diamond"
+    },
+    "duration_seconds": 0.03
+  },
+  "frozen_code_hashes": {
+    "executed_07_prepare_full_cohorts.py": {
+      "size_bytes": 10516,
+      "sha256": "e3642d346af2e48989c6f7634cabd0f7e4d6b575af0fe009e922ea464cd8a1ea"
+    },
+    "executed_08_f3_full.py": {
+      "size_bytes": 35262,
+      "sha256": "bfe9a4e75ea89406907f9f1bc52ee6ed6d649f2ae840855ffb6d9cd623337de3"
+    },
+    "executed_09_f4_full.py": {
+      "size_bytes": 46913,
+      "sha256": "9b0c5152a72f367de326c61917bc45df80f04f833688a935953dea3377811f6c"
+    },
+    "executed_10_f5_full.py": {
+      "size_bytes": 40296,
+      "sha256": "94e0f3e2b07708f78a4b60424f07ebb0230cc8d0407f959fdbbf84dc84724112"
+    },
+    "executed_11_full_audit.py": {
+      "size_bytes": 31664,
+      "sha256": "0b89bd5d7ec1dbc56dec894298b6af22f132de051735b0208287aa5fe8bf43dd"
+    }
+  },
+  "f3_rhodopsin": {
+    "track": "F3",
+    "family": "Microbial_and_Heliorhodopsin",
+    "timestamp": "2026-10-15T07:12:21Z",
+    "total_candidates": 505,
+    "total_complete_candidates": 490,
+    "by_cohort": {
+      "EQ_MAG": 211,
+      "Environmental_SMAG": 51,
+      "Environmental_GEM": 243
+    },
+    "by_class": {
+      "Type-1_Microbial_Rhodopsin": 319,
+      "Heliorhodopsin_Type-3": 186
+    },
+    "complete_by_class": {
+      "Type-1_Microbial_Rhodopsin": 312,
+      "Heliorhodopsin_Type-3": 178
+    },
+    "unique_sequences": 488,
+    "total_rejections_and_ambiguous": 47,
+    "execution_time_seconds": 78.11
+  },
+  "f4_ectc": {
+    "track": "F4",
+    "family": "Ectoine_Synthase_EctC",
+    "timestamp": "2026-10-15T07:21:55Z",
+    "total_candidates": 1085,
+    "total_complete_candidates": 1059,
+    "by_cohort": {
+      "EQ_MAG": 966,
+      "Environmental_SMAG": 56,
+      "Environmental_GEM": 63
+    },
+    "complete_by_cohort": {
+      "EQ_MAG": 940,
+      "Environmental_SMAG": 56,
+      "Environmental_GEM": 63
+    },
+    "pathway_organization_counts": {
+      "Isolated_EctC_Candidate": 197,
+      "Partial_Operon_BCD": 51,
+      "Complete_ABCD_Operon": 499,
+      "Complete_ABC_Operon": 256,
+      "Partial_Operon_BC": 30,
+      "Partial_Operon_AC": 8,
+      "Partial_Operon_CD": 38,
+      "Complete_ABCD_Operon_with_sameORF_EctCD_fusion": 2,
+      "Partial_Operon_BCD_with_sameORF_EctCD_fusion": 2,
+      "Solitary_sameORF_EctCD_fusion": 2
+    },
+    "same_orf_ectcd_fusions": 6,
+    "solitary_same_orf_fusions": 2,
+    "unique_sequences": 1045,
+    "primary_prostt5_candidates": 1019,
+    "partial_excluded_candidates": 26,
+    "total_rejections_and_ambiguous": 69937,
+    "execution_time_seconds": 573.37
+  },
+  "f5_carbonic_anhydrase": {
+    "track": "F5",
+    "family": "Carbonic_Anhydrase_and_CsoSCA",
+    "timestamp": "2026-10-15T07:31:49Z",
+    "total_candidates": 13078,
+    "total_complete_candidates": 12484,
+    "by_cohort": {
+      "EQ_MAG": 8724,
+      "Environmental_SMAG": 2065,
+      "Environmental_GEM": 2289
+    },
+    "by_class": {
+      "Gamma-Carbonic_Anhydrase": 6668,
+      "Beta-Carbonic_Anhydrase": 6351,
+      "Carboxysome_Shell_CA_CsoSCA": 59
+    },
+    "complete_by_class": {
+      "Gamma-Carbonic_Anhydrase": 6402,
+      "Beta-Carbonic_Anhydrase": 6034,
+      "Carboxysome_Shell_CA_CsoSCA": 48
+    },
+    "unique_sequences": 12574,
+    "total_rejections_and_ambiguous": 195560,
+    "execution_time_seconds": 593.67
+  },
+  "f4_audit_details": {
+    "zero_self_hit_neighbors_verified": true,
+    "same_orf_ectcd_fusions": 6,
+    "pilot_fusion_candidate": "V60PRr2__single_SemiBin_127_sub::V60PRr2_211258_4",
+    "pilot_fusion_verified": true,
+    "checkm_external_cohorts_na_verified": true,
+    "absence_conditional_guardrail_verified": true
+  },
+  "prostt5_packages": {
+    "prostt5_type-1_microbial_rhodopsin": {
+      "primary_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_type-1_microbial_rhodopsin.faa",
+      "primary_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_type-1_microbial_rhodopsin_manifest.tsv",
+      "total_primary_sequences": 328,
+      "curated_references": 30,
+      "complete_candidates": 298,
+      "partial_excluded_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_type-1_microbial_rhodopsin_partial_excluded.faa",
+      "partial_excluded_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_type-1_microbial_rhodopsin_partial_excluded_manifest.tsv",
+      "partial_excluded_candidates": 7
+    },
+    "prostt5_heliorhodopsin_type-3": {
+      "primary_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_heliorhodopsin_type-3.faa",
+      "primary_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_heliorhodopsin_type-3_manifest.tsv",
+      "total_primary_sequences": 201,
+      "curated_references": 26,
+      "complete_candidates": 175,
+      "partial_excluded_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_heliorhodopsin_type-3_partial_excluded.faa",
+      "partial_excluded_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_heliorhodopsin_type-3_partial_excluded_manifest.tsv",
+      "partial_excluded_candidates": 8
+    },
+    "prostt5_ectc": {
+      "primary_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_ectc.faa",
+      "primary_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_ectc_manifest.tsv",
+      "total_primary_sequences": 1049,
+      "curated_references": 30,
+      "complete_candidates": 1019,
+      "partial_excluded_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_ectc_partial_excluded.faa",
+      "partial_excluded_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_ectc_partial_excluded_manifest.tsv",
+      "partial_excluded_candidates": 26
+    },
+    "prostt5_gamma_ca": {
+      "primary_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_gamma_ca.faa",
+      "primary_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_gamma_ca_manifest.tsv",
+      "total_primary_sequences": 6160,
+      "curated_references": 28,
+      "complete_candidates": 6132,
+      "partial_excluded_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_gamma_ca_partial_excluded.faa",
+      "partial_excluded_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_gamma_ca_partial_excluded_manifest.tsv",
+      "partial_excluded_candidates": 266
+    },
+    "prostt5_beta_ca": {
+      "primary_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_beta_ca.faa",
+      "primary_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_beta_ca_manifest.tsv",
+      "total_primary_sequences": 5817,
+      "curated_references": 12,
+      "complete_candidates": 5805,
+      "partial_excluded_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_beta_ca_partial_excluded.faa",
+      "partial_excluded_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_beta_ca_partial_excluded_manifest.tsv",
+      "partial_excluded_candidates": 317
+    },
+    "prostt5_csosca": {
+      "primary_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_csosca.faa",
+      "primary_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_csosca_manifest.tsv",
+      "total_primary_sequences": 46,
+      "curated_references": 3,
+      "complete_candidates": 43,
+      "partial_excluded_fasta": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_csosca_partial_excluded.faa",
+      "partial_excluded_manifest": "/ibex/project/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f345/results/full_v1/prostt5_inputs/prostt5_csosca_partial_excluded_manifest.tsv",
+      "partial_excluded_candidates": 11
+    }
+  },
+  "sequence_sharing_summary": {
+    "EQ_only": 9775,
+    "SMAG_only": 2066,
+    "GEM_only": 2241,
+    "EQ_and_SMAG": 2,
+    "EQ_and_GEM": 2,
+    "SMAG_and_GEM": 21,
+    "All_three": 0
+  },
+  "total_all_candidates": 14668,
+  "total_complete_candidates": 14033,
+  "unique_amino_acid_sequences": 14107,
+  "execution_duration_seconds": 2.4
+}

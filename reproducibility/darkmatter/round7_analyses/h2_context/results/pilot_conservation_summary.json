@@ -1,0 +1,2222 @@
+{
+  "protocol_version": "v3",
+  "attrition_funnel_2838_universe": {
+    "K": {
+      "gate0_confidence_qualified": 1031,
+      "gate1_refined_mag_binned": 917,
+      "gate2_drep_species_ge1": 898,
+      "gate3_multi_species_ge2": 570
+    },
+    "QnotK": {
+      "gate0_confidence_qualified": 1807,
+      "gate1_refined_mag_binned": 1509,
+      "gate2_drep_species_ge1": 1480,
+      "gate3_multi_species_ge2": 891
+    }
+  },
+  "cohort_admission": {
+    "total_families_selected": 1461,
+    "selected_by_arm": {
+      "K": 570,
+      "QnotK": 891
+    },
+    "tier1_primary_evaluable": {
+      "total": 353,
+      "ineligible_missing": 1108,
+      "K": 173,
+      "QnotK": 180
+    },
+    "tier2_stop3_sensitivity_evaluable": {
+      "total": 637,
+      "ineligible_missing": 824,
+      "K": 260,
+      "QnotK": 377
+    },
+    "tier3_partial_window_sensitivity_evaluable": {
+      "total": 1320,
+      "ineligible_missing": 141,
+      "K": 521,
+      "QnotK": 799
+    }
+  },
+  "tier1_primary_gate_unadjusted": {
+    "K_conserved": {
+      "n": 70,
+      "total": 173,
+      "rate": 0.404624
+    },
+    "QnotK_conserved": {
+      "n": 58,
+      "total": 180,
+      "rate": 0.322222
+    },
+    "raw_risk_difference": 0.082402,
+    "odds_ratio": 1.429528,
+    "p_fisher_exact_raw_c": 0.121402,
+    "mean_r_fam": {
+      "K": 0.378489,
+      "QnotK": 0.293995
+    },
+    "p_mann_whitney_raw_r": 0.081555,
+    "mean_excess_c_fam": {
+      "K": 0.31751,
+      "QnotK": 0.256671,
+      "difference": 0.060839,
+      "p_mann_whitney_excess_c": 0.049604
+    },
+    "mean_excess_r_fam": {
+      "K": 0.317125,
+      "QnotK": 0.241957,
+      "difference": 0.075168,
+      "p_mann_whitney_excess_r": 0.03211
+    }
+  },
+  "tier2_stop3_sensitivity_gate_unadjusted": {
+    "K_conserved": {
+      "n": 113,
+      "total": 260,
+      "rate": 0.434615
+    },
+    "QnotK_conserved": {
+      "n": 138,
+      "total": 377,
+      "rate": 0.366048
+    },
+    "raw_risk_difference": 0.068568,
+    "odds_ratio": 1.331312,
+    "p_fisher_exact_raw_c": 0.083967,
+    "mean_r_fam": {
+      "K": 0.384622,
+      "QnotK": 0.315004
+    },
+    "p_mann_whitney_raw_r": 0.052541,
+    "mean_excess_c_fam": {
+      "K": 0.319931,
+      "QnotK": 0.282207,
+      "difference": 0.037724,
+      "p_mann_whitney_excess_c": 0.358656
+    },
+    "mean_excess_r_fam": {
+      "K": 0.31253,
+      "QnotK": 0.25784,
+      "difference": 0.05469,
+      "p_mann_whitney_excess_r": 0.220962
+    }
+  },
+  "tier3_partial_sensitivity_gate_unadjusted": {
+    "K_conserved": {
+      "n": 175,
+      "total": 521,
+      "rate": 0.335893
+    },
+    "QnotK_conserved": {
+      "n": 197,
+      "total": 799,
+      "rate": 0.246558
+    },
+    "raw_risk_difference": 0.089334,
+    "odds_ratio": 1.545583,
+    "p_fisher_exact_raw_c": 0.000458,
+    "mean_r_fam": {
+      "K": 0.256994,
+      "QnotK": 0.190511
+    },
+    "p_mann_whitney_raw_r": 0.000467
+  },
+  "part_a_within_arm_same_contig_positional_reference": {
+    "iterations": 5000,
+    "eligibility_rule": "Uniform random pseudo-focal gene index j on same contig where all 4 flanks (j-2, j-1, j+1, j+2) are exact-coordinate Bakta-mapped (mapped_KO or mapped_noKO)",
+    "eligible_position_counts_across_tier1_loci": {
+      "total_tier1_eligible_loci": 1380,
+      "loci_with_M_c_eq_1": 40,
+      "loci_with_M_c_ge_2": 1340,
+      "loci_with_M_c_ge_5": 1169,
+      "min_M_c": 1,
+      "median_M_c": 18.0,
+      "mean_M_c": 42.68,
+      "max_M_c": 795
+    },
+    "by_arm": {
+      "K": {
+        "n_eligible_families": 173,
+        "observed_c_fam_rate": 0.404624,
+        "positional_expected_c_fam_rate": 0.087114,
+        "positional_null_sd_c_fam": 0.016634,
+        "within_arm_excess_c_fam": 0.31751,
+        "p_within_arm_positional_c_fam": 0.0002,
+        "observed_r_fam_mean": 0.378489,
+        "positional_expected_r_fam_mean": 0.061364,
+        "within_arm_excess_r_fam": 0.317125,
+        "p_within_arm_positional_r_fam": 0.0002,
+        "n_families_with_ge2_multi_position_loci": 168,
+        "within_arm_excess_c_fam_multi_position_subset": 0.322642
+      },
+      "QnotK": {
+        "n_eligible_families": 180,
+        "observed_c_fam_rate": 0.322222,
+        "positional_expected_c_fam_rate": 0.065551,
+        "positional_null_sd_c_fam": 0.014999,
+        "within_arm_excess_c_fam": 0.256671,
+        "p_within_arm_positional_c_fam": 0.0002,
+        "observed_r_fam_mean": 0.293995,
+        "positional_expected_r_fam_mean": 0.052038,
+        "within_arm_excess_r_fam": 0.241957,
+        "p_within_arm_positional_r_fam": 0.0002,
+        "n_families_with_ge2_multi_position_loci": 168,
+        "within_arm_excess_c_fam_multi_position_subset": 0.258488
+      }
+    }
+  },
+  "part_b_between_arm_covariate_stratified_permutation": {
+    "tier1_primary": {
+      "iterations": 10000,
+      "median_ko_opportunity_split": 0.375,
+      "n_strata_total": 16,
+      "n_strata_common_support": 16,
+      "common_support_coverage": {
+        "K_supported": 173,
+        "K_total": 173,
+        "K_fraction": 1.0,
+        "QnotK_supported": 180,
+        "QnotK_total": 180,
+        "QnotK_fraction": 1.0
+      },
+      "mh_weighted_excess_c_diff": 0.035358,
+      "null_sd_mh_excess_c_diff": 0.042346,
+      "p_stratified_mh_excess_c": 0.406859,
+      "pooled_supported_excess_c_diff": 0.060839,
+      "null_sd_pooled_excess_c_diff": 0.040917,
+      "p_stratified_pooled_excess_c": 0.224378,
+      "mh_weighted_raw_c_diff": 0.05385,
+      "null_sd_mh_raw_c_diff": 0.046674,
+      "p_stratified_mh_raw_c": 0.259774,
+      "pooled_supported_raw_c_diff": 0.082402,
+      "null_sd_pooled_raw_c_diff": 0.0451,
+      "p_stratified_pooled_raw_c": 0.158884,
+      "mh_weighted_excess_r_diff": 0.047337,
+      "p_stratified_mh_excess_r": 0.234677
+    },
+    "tier2_stop3_sensitivity": {
+      "iterations": 10000,
+      "median_ko_opportunity_split": 0.35,
+      "n_strata_total": 16,
+      "n_strata_common_support": 16,
+      "common_support_coverage": {
+        "K_supported": 260,
+        "K_total": 260,
+        "K_fraction": 1.0,
+        "QnotK_supported": 377,
+        "QnotK_total": 377,
+        "QnotK_fraction": 1.0
+      },
+      "mh_weighted_excess_c_diff": 0.018391,
+      "null_sd_mh_excess_c_diff": 0.031223,
+      "p_stratified_mh_excess_c": 0.561844,
+      "pooled_supported_excess_c_diff": 0.037724,
+      "null_sd_pooled_excess_c_diff": 0.029783,
+      "p_stratified_pooled_excess_c": 0.294171,
+      "mh_weighted_raw_c_diff": 0.043859,
+      "null_sd_mh_raw_c_diff": 0.034337,
+      "p_stratified_mh_raw_c": 0.232277,
+      "pooled_supported_raw_c_diff": 0.068568,
+      "null_sd_pooled_raw_c_diff": 0.032753,
+      "p_stratified_pooled_raw_c": 0.117788,
+      "mh_weighted_excess_r_diff": 0.032909,
+      "p_stratified_mh_excess_r": 0.251375
+    }
+  },
+  "part_b_between_arm_matched_pairs_tier1": {
+    "n_matched_pairs": 148,
+    "exact_phylum_group_match_rate": 0.6216,
+    "smd_before_matching": {
+      "n_species_complete_window": -0.0319,
+      "ko_annotation_opportunity": 0.1288,
+      "length": 0.6439,
+      "mean_plddt": -0.3176
+    },
+    "smd_after_matching": {
+      "n_species_complete_window": 0.0661,
+      "ko_annotation_opportunity": 0.0297,
+      "length": 0.3622,
+      "mean_plddt": -0.267
+    },
+    "balance_diagnostic_note": "Soft caliper (|dz_opp|<=0.75, |dz_len|<=1.25, soft phylum penalty) balances species breadth (SMD=0.0661) and KO annotation opportunity (SMD=0.0297) across 148 pairs, but retains residual imbalance on sequence length (SMD=0.3622) and phylum_group (62.2% exact match) due to structural length separation between K (mean 281.6 aa) and QnotK (mean 243.8 aa). See strict_exact_phylum_caliper_sensitivity for exact-lineage + tight-length (|dz_len|<=0.50) matching.",
+    "matched_mean_excess_c_K": 0.302589,
+    "matched_mean_excess_c_QnotK": 0.281808,
+    "matched_diff_excess_c": 0.020781,
+    "p_sign_flip_excess_c": 0.662834,
+    "matched_mean_raw_c_K": 0.391892,
+    "matched_mean_raw_c_QnotK": 0.351351,
+    "matched_diff_raw_c": 0.040541,
+    "p_sign_flip_raw_c": 0.524348,
+    "matched_diff_excess_r": 0.037165,
+    "p_sign_flip_excess_r": 0.394961,
+    "strict_exact_phylum_caliper_sensitivity": {
+      "n_matched_pairs": 96,
+      "exact_phylum_group_match_rate": 1.0,
+      "smd_after_strict_matching": {
+        "n_species_complete_window": 0.1761,
+        "ko_annotation_opportunity": 0.0013,
+        "length": 0.1242,
+        "mean_plddt": -0.2783
+      },
+      "matched_mean_excess_c_K": 0.238371,
+      "matched_mean_excess_c_QnotK": 0.24381,
+      "matched_diff_excess_c": -0.00544,
+      "p_sign_flip_excess_c": 0.922608,
+      "matched_mean_raw_c_K": 0.3125,
+      "matched_mean_raw_c_QnotK": 0.3125,
+      "matched_diff_raw_c": 0.0,
+      "p_sign_flip_raw_c": 1.0
+    }
+  },
+  "part_b_multivariable_ols_hc3_excess_c_fam": {
+    "converged": true,
+    "full_rank": true,
+    "rank": 9,
+    "n_obs": 353,
+    "r2": 0.2418,
+    "all_se_finite_bounded": true,
+    "parameters": {
+      "is_k": {
+        "coef": 0.029446,
+        "se_hc3": 0.04295,
+        "p_value": 0.49297,
+        "ci_95": [
+          -0.054735,
+          0.113628
+        ]
+      },
+      "n_species_complete_window": {
+        "coef": -0.006722,
+        "se_hc3": 0.020778,
+        "p_value": 0.746317,
+        "ci_95": [
+          -0.047446,
+          0.034003
+        ]
+      },
+      "ko_annotation_opportunity": {
+        "coef": 0.786956,
+        "se_hc3": 0.080334,
+        "p_value": 0.0,
+        "ci_95": [
+          0.629504,
+          0.944408
+        ]
+      },
+      "length_100aa": {
+        "coef": -0.000142,
+        "se_hc3": 0.013702,
+        "p_value": 0.991709,
+        "ci_95": [
+          -0.026997,
+          0.026712
+        ]
+      },
+      "mean_plddt_scaled": {
+        "coef": 0.037694,
+        "se_hc3": 0.037404,
+        "p_value": 0.313578,
+        "ci_95": [
+          -0.035617,
+          0.111005
+        ]
+      },
+      "phylum_group_Actinomycetota": {
+        "coef": 0.068105,
+        "se_hc3": 0.065047,
+        "p_value": 0.295092,
+        "ci_95": [
+          -0.059384,
+          0.195595
+        ]
+      },
+      "phylum_group_multi": {
+        "coef": -0.16006,
+        "se_hc3": 0.056174,
+        "p_value": 0.004381,
+        "ci_95": [
+          -0.270158,
+          -0.049961
+        ]
+      },
+      "phylum_group_other_bacteria_archaea": {
+        "coef": 0.014012,
+        "se_hc3": 0.06509,
+        "p_value": 0.829558,
+        "ci_95": [
+          -0.113562,
+          0.141586
+        ]
+      }
+    }
+  },
+  "part_b_multivariable_ols_hc3_raw_c_fam": {
+    "converged": true,
+    "full_rank": true,
+    "rank": 9,
+    "n_obs": 353,
+    "r2": 0.3044,
+    "all_se_finite_bounded": true,
+    "parameters": {
+      "is_k": {
+        "coef": 0.049661,
+        "se_hc3": 0.046674,
+        "p_value": 0.28733,
+        "ci_95": [
+          -0.041818,
+          0.14114
+        ]
+      },
+      "n_species_complete_window": {
+        "coef": 0.066643,
+        "se_hc3": 0.021244,
+        "p_value": 0.001707,
+        "ci_95": [
+          0.025005,
+          0.10828
+        ]
+      },
+      "ko_annotation_opportunity": {
+        "coef": 0.942835,
+        "se_hc3": 0.082188,
+        "p_value": 0.0,
+        "ci_95": [
+          0.781749,
+          1.10392
+        ]
+      },
+      "length_100aa": {
+        "coef": -0.003815,
+        "se_hc3": 0.014596,
+        "p_value": 0.79378,
+        "ci_95": [
+          -0.032423,
+          0.024792
+        ]
+      },
+      "mean_plddt_scaled": {
+        "coef": 0.0455,
+        "se_hc3": 0.040196,
+        "p_value": 0.257651,
+        "ci_95": [
+          -0.033282,
+          0.124282
+        ]
+      },
+      "phylum_group_Actinomycetota": {
+        "coef": 0.086399,
+        "se_hc3": 0.070133,
+        "p_value": 0.217975,
+        "ci_95": [
+          -0.05106,
+          0.223858
+        ]
+      },
+      "phylum_group_multi": {
+        "coef": -0.198166,
+        "se_hc3": 0.060164,
+        "p_value": 0.000989,
+        "ci_95": [
+          -0.316084,
+          -0.080247
+        ]
+      },
+      "phylum_group_other_bacteria_archaea": {
+        "coef": 0.017581,
+        "se_hc3": 0.072484,
+        "p_value": 0.808354,
+        "ci_95": [
+          -0.124485,
+          0.159646
+        ]
+      }
+    }
+  },
+  "part_b_multivariable_logistic_regression_raw_c_fam": {
+    "converged": true,
+    "full_rank": true,
+    "rank": 9,
+    "n_obs": 353,
+    "all_se_finite_bounded": true,
+    "pseudo_r2": 0.2708,
+    "parameters": {
+      "is_k": {
+        "coef": 0.280149,
+        "se": 0.296352,
+        "p_value": 0.344492,
+        "odds_ratio": 1.323327,
+        "ci_95_or": [
+          0.7403,
+          2.365521
+        ]
+      },
+      "n_species_complete_window": {
+        "coef": 0.419208,
+        "se": 0.141145,
+        "p_value": 0.002978,
+        "odds_ratio": 1.520756,
+        "ci_95_or": [
+          1.153226,
+          2.005417
+        ]
+      },
+      "ko_annotation_opportunity": {
+        "coef": 5.64745,
+        "se": 0.744404,
+        "p_value": 0.0,
+        "odds_ratio": 283.567415,
+        "ci_95_or": [
+          65.91841,
+          1219.848587
+        ]
+      },
+      "length_100aa": {
+        "coef": -0.045775,
+        "se": 0.123615,
+        "p_value": 0.711157,
+        "odds_ratio": 0.955257,
+        "ci_95_or": [
+          0.749716,
+          1.217148
+        ]
+      },
+      "mean_plddt_scaled": {
+        "coef": 0.236272,
+        "se": 0.244049,
+        "p_value": 0.332977,
+        "odds_ratio": 1.266519,
+        "ci_95_or": [
+          0.785006,
+          2.043386
+        ]
+      },
+      "phylum_group_Actinomycetota": {
+        "coef": 0.441274,
+        "se": 0.387514,
+        "p_value": 0.254815,
+        "odds_ratio": 1.554687,
+        "ci_95_or": [
+          0.727419,
+          3.322777
+        ]
+      },
+      "phylum_group_multi": {
+        "coef": -1.329295,
+        "se": 0.402361,
+        "p_value": 0.000954,
+        "odds_ratio": 0.264664,
+        "ci_95_or": [
+          0.120281,
+          0.582359
+        ]
+      },
+      "phylum_group_other_bacteria_archaea": {
+        "coef": 0.118737,
+        "se": 0.385751,
+        "p_value": 0.75823,
+        "odds_ratio": 1.126073,
+        "ci_95_or": [
+          0.528699,
+          2.398418
+        ]
+      }
+    }
+  },
+  "part_b_l2_penalized_logistic_sensitivity_raw_c_fam": {
+    "converged": true,
+    "l2_penalty_lambda": 0.5,
+    "full_rank": true,
+    "all_se_finite_bounded": true,
+    "parameters": {
+      "is_k": {
+        "coef": 0.294897,
+        "se": 0.278099,
+        "p_value": 0.288961,
+        "odds_ratio": 1.342987,
+        "ci_95_or": [
+          0.778663,
+          2.316297
+        ]
+      },
+      "n_species_complete_window": {
+        "coef": 0.396617,
+        "se": 0.134989,
+        "p_value": 0.003302,
+        "odds_ratio": 1.486786,
+        "ci_95_or": [
+          1.141152,
+          1.937107
+        ]
+      },
+      "ko_annotation_opportunity": {
+        "coef": 4.503901,
+        "se": 0.603709,
+        "p_value": 0.0,
+        "odds_ratio": 90.368991,
+        "ci_95_or": [
+          27.677849,
+          295.057417
+        ]
+      },
+      "length_100aa": {
+        "coef": -0.057709,
+        "se": 0.11795,
+        "p_value": 0.624652,
+        "odds_ratio": 0.943925,
+        "ci_95_or": [
+          0.749094,
+          1.189428
+        ]
+      },
+      "mean_plddt_scaled": {
+        "coef": 0.224332,
+        "se": 0.231742,
+        "p_value": 0.333032,
+        "odds_ratio": 1.251486,
+        "ci_95_or": [
+          0.794627,
+          1.971011
+        ]
+      },
+      "phylum_group_Actinomycetota": {
+        "coef": 0.480195,
+        "se": 0.354689,
+        "p_value": 0.175785,
+        "odds_ratio": 1.61639,
+        "ci_95_or": [
+          0.806545,
+          3.239393
+        ]
+      },
+      "phylum_group_multi": {
+        "coef": -1.146257,
+        "se": 0.362903,
+        "p_value": 0.001585,
+        "odds_ratio": 0.317824,
+        "ci_95_or": [
+          0.156055,
+          0.647285
+        ]
+      },
+      "phylum_group_other_bacteria_archaea": {
+        "coef": 0.12419,
+        "se": 0.354055,
+        "p_value": 0.725765,
+        "odds_ratio": 1.132231,
+        "ci_95_or": [
+          0.565662,
+          2.266275
+        ]
+      }
+    }
+  },
+  "covariate_profiles_tier1_primary": {
+    "mean_species_breadth": {
+      "K": 2.468,
+      "QnotK": 2.5
+    },
+    "mean_length_aa": {
+      "K": 320.8,
+      "QnotK": 233.1
+    },
+    "mean_plddt": {
+      "K": 0.768,
+      "QnotK": 0.785
+    },
+    "mean_ko_annotation_opportunity": {
+      "K": 0.3839,
+      "QnotK": 0.3554
+    },
+    "phylum_group_counts": {
+      "K": {
+        "Actinomycetota": 43,
+        "Thermoplasmatota": 35,
+        "multi": 56,
+        "other_bacteria_archaea": 39
+      },
+      "QnotK": {
+        "multi": 70,
+        "Actinomycetota": 33,
+        "other_bacteria_archaea": 34,
+        "Thermoplasmatota": 43
+      }
+    }
+  },
+  "cross_family_locus_and_species_independence_tier1": {
+    "tier1_evaluable_families": 353,
+    "tier1_evaluable_primary_loci": 877,
+    "unique_bin_contig_pairs": 869,
+    "contigs_shared_across_multiple_families": 8,
+    "overlapping_4flank_windows_across_families": 0,
+    "unique_refined_bins": 617,
+    "bins_shared_across_multiple_families": 145,
+    "unique_drep_species_clusters": 568,
+    "species_shared_across_multiple_families": 153,
+    "species_cluster_bootstrap_se_raw_c_diff": 0.0353,
+    "species_cluster_bootstrap_se_excess_c_diff": 0.031325,
+    "species_cluster_bootstrap_se_raw_c_diff_descriptive": 0.0353,
+    "species_cluster_bootstrap_se_excess_c_diff_descriptive": 0.031325,
+    "species_resampling_methodological_note": "Descriptive fixed-family-outcome reweighting under species cluster resampling. Does not recompute multi-species recurrence or stratified Delta_MH.",
+    "species_disjoint_subset_sensitivity": {
+      "n_families_with_zero_shared_species": 112,
+      "n_K": 51,
+      "n_QnotK": 61,
+      "mean_excess_c_K": 0.261855,
+      "mean_excess_c_QnotK": 0.19843,
+      "diff_excess_c": 0.063425
+    }
+  },
+  "closure_assertions": {
+    "c1_all_tier1_eligible_loci_have_4_exact_mapped_flanks": true,
+    "c1_all_ineligible_families_coded_minus_one": true,
+    "c1_all_r_fam_within_0_1_bounds": true,
+    "c1_numerator_denominator_species_closure": true,
+    "c2_zero_unassigned_r232_phylum_in_cohort": true,
+    "c2_all_binned_loci_have_positive_contig_len_bp": true,
+    "c3_all_positional_null_draws_satisfy_primary_gate": true,
+    "c3_between_arm_stratified_common_support_verified": true,
+    "c3_ols_hc3_and_logit_models_converged_full_rank_finite_se": true,
+    "c4_flank_category_totals_close_exactly": true,
+    "c5_cohort_attrition_totals_close_exactly": true
+  },
+  "recurrent_annotations_tier1_primary": [
+    {
+      "family": "16Sr3::16Sr3_5768931_2",
+      "arm": "QnotK",
+      "phylum": "Cyanobacteriota",
+      "n_species_complete_window": 2,
+      "best_ko": "K03642",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.025,
+      "excess_c_fam": 0.975,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "19PRr1::19PRr1_610468_16",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 5,
+      "best_ko": "K01142",
+      "species_count": 5,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1364,
+      "excess_c_fam": 0.8636,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "1Dr2::1Dr2_1922991_92",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 3,
+      "best_ko": "K03116",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0818,
+      "excess_c_fam": 0.9182,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "1Dr2::1Dr2_253715_2",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 3,
+      "best_ko": "K04075",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.2934,
+      "excess_c_fam": 0.7066,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "1Dr2::1Dr2_476456_56",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 7,
+      "best_ko": "K06888",
+      "species_count": 7,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.4644,
+      "excess_c_fam": 0.5356,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "22PRr1::22PRr1_1289246_3",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01733",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0218,
+      "excess_c_fam": 0.9782,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "22PRr1::22PRr1_413405_2",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K05592",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0306,
+      "excess_c_fam": 0.9694,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "24PRr2::24PRr2_117060_7",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00249",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.074,
+      "excess_c_fam": 0.926,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "28Dr1::28Dr1_545359_1",
+      "arm": "QnotK",
+      "phylum": "Myxococcota_A",
+      "n_species_complete_window": 2,
+      "best_ko": "K01876",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0362,
+      "excess_c_fam": 0.9638,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "33PRr2::33PRr2_1315111_5",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K03545",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.7602,
+      "excess_c_fam": 0.2398,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "36PRr1::36PRr1_462970_6",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K18455",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.226,
+      "excess_c_fam": 0.774,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "36PRr3::36PRr3_1658918_4",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K07100",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0634,
+      "excess_c_fam": 0.9366,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "36PRr3::36PRr3_498012_10",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00261",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.031,
+      "excess_c_fam": 0.969,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "36PRr3::36PRr3_886227_2",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01491",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0616,
+      "excess_c_fam": 0.9384,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "38Sr1::38Sr1_546485_4",
+      "arm": "QnotK",
+      "phylum": "Pseudomonadota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01142",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 1.0,
+      "excess_c_fam": 0.0,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "39PRr3::39PRr3_1380620_2",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K06883",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.137,
+      "excess_c_fam": 0.863,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "39PRr3::39PRr3_2512718_10",
+      "arm": "K",
+      "phylum": "Myxococcota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00901",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.135,
+      "excess_c_fam": 0.865,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "39Sr2::39Sr2_218611_4",
+      "arm": "QnotK",
+      "phylum": "Bdellovibrionota",
+      "n_species_complete_window": 2,
+      "best_ko": "K03564",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0624,
+      "excess_c_fam": 0.9376,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "3Dr2::3Dr2_768169_20",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00260",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0818,
+      "excess_c_fam": 0.9182,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "3Dr2::3Dr2_781500_7",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01494",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1138,
+      "excess_c_fam": 0.8862,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "41PRr1::41PRr1_112326_120",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K03088",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0012,
+      "excess_c_fam": 0.9988,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "41PRr1::41PRr1_266748_368",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 3,
+      "best_ko": "K06965",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.0224,
+      "excess_c_fam": 0.9776,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "41PRr2::41PRr2_1054851_8",
+      "arm": "K",
+      "phylum": "Pseudomonadota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00681",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0264,
+      "excess_c_fam": 0.9736,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "41PRr3::41PRr3_1293792_6",
+      "arm": "K",
+      "phylum": "Pseudomonadota",
+      "n_species_complete_window": 3,
+      "best_ko": "K01214",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.1724,
+      "excess_c_fam": 0.8276,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "41PRr3::41PRr3_465686_40",
+      "arm": "QnotK",
+      "phylum": "Patescibacteriota",
+      "n_species_complete_window": 3,
+      "best_ko": "K04763",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.554,
+      "excess_c_fam": 0.446,
+      "mobilome_flag": 1
+    },
+    {
+      "family": "41PRr3::41PRr3_601067_16",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01876",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0492,
+      "excess_c_fam": 0.9508,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "42PRr1::42PRr1_681348_1",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 3,
+      "best_ko": "K02108",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.123,
+      "excess_c_fam": 0.877,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "43PRr3::43PRr3_1191692_2",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01265",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0312,
+      "excess_c_fam": 0.9688,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "43PRr3::43PRr3_789599_1",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 7,
+      "best_ko": "K07464",
+      "species_count": 2,
+      "r_fam_primary": 0.285714,
+      "mu_pos_c_fam": 0.1338,
+      "excess_c_fam": 0.8662,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "44Dr2::44Dr2_3882404_4",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00261",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.2668,
+      "excess_c_fam": 0.7332,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "45PRr2::45PRr2_1799097_11",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 3,
+      "best_ko": "K15865",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.1632,
+      "excess_c_fam": 0.8368,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "45PRr2::45PRr2_1936870_91",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K06142",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0224,
+      "excess_c_fam": 0.9776,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "48Sr1::48Sr1_762367_3",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K00756",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.186,
+      "excess_c_fam": 0.814,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "49PRr1::49PRr1_2988_2",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K05592",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.084,
+      "excess_c_fam": 0.916,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "4Dr3::4Dr3_2208420_5",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01167",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.2156,
+      "excess_c_fam": 0.7844,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "51Dr1::51Dr1_242899_6",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K07033",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.2186,
+      "excess_c_fam": 0.7814,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "54PRr2::54PRr2_192771_23",
+      "arm": "K",
+      "phylum": "Pseudomonadota",
+      "n_species_complete_window": 3,
+      "best_ko": "K01420",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.0828,
+      "excess_c_fam": 0.9172,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "54PRr2::54PRr2_43897_14",
+      "arm": "QnotK",
+      "phylum": "Planctomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01759",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0384,
+      "excess_c_fam": 0.9616,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "59PRr1::59PRr1_167289_10",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00762",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.3608,
+      "excess_c_fam": 0.6392,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "5Dr2::5Dr2_3442593_2",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 3,
+      "best_ko": "K06864",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.0236,
+      "excess_c_fam": 0.9764,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "64Dr3::64Dr3_32121_72",
+      "arm": "K",
+      "phylum": "Myxococcota_A",
+      "n_species_complete_window": 2,
+      "best_ko": "K00052",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0556,
+      "excess_c_fam": 0.9444,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "64Dr3::64Dr3_875308_66",
+      "arm": "K",
+      "phylum": "Myxococcota_A",
+      "n_species_complete_window": 5,
+      "best_ko": "K07114",
+      "species_count": 2,
+      "r_fam_primary": 0.4,
+      "mu_pos_c_fam": 0.0838,
+      "excess_c_fam": 0.9162,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "64PRr2::64PRr2_1760811_64",
+      "arm": "K",
+      "phylum": "Acidobacteriota",
+      "n_species_complete_window": 3,
+      "best_ko": "K02045",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1218,
+      "excess_c_fam": 0.8782,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "6Dr2::6Dr2_1722917_7",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00728",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.3418,
+      "excess_c_fam": 0.6582,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "8PRr1::8PRr1_1249170_8",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01770",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1262,
+      "excess_c_fam": 0.8738,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "8PRr1::8PRr1_1932933_9",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 7,
+      "best_ko": "K03088",
+      "species_count": 7,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.9816,
+      "excess_c_fam": 0.0184,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F13Dr1::F13Dr1_1354472_5",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 7,
+      "best_ko": "K06883",
+      "species_count": 7,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.9454,
+      "excess_c_fam": 0.0546,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F1Dr1::F1Dr1_6255820_354",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K04075",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.148,
+      "excess_c_fam": 0.852,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F1Dr1::F1Dr1_6707708_450",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K06013",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0802,
+      "excess_c_fam": 0.9198,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F1Dr1::F1Dr1_7819650_89",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 3,
+      "best_ko": "K01870",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1272,
+      "excess_c_fam": 0.8728,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F22PRr2::F22PRr2_1850877_18",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 5,
+      "best_ko": "K06929",
+      "species_count": 2,
+      "r_fam_primary": 0.4,
+      "mu_pos_c_fam": 0.1826,
+      "excess_c_fam": 0.8174,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F22PRr2::F22PRr2_1883350_2",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K07064",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.03,
+      "excess_c_fam": 0.97,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F22PRr2::F22PRr2_405892_6",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K02909",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0584,
+      "excess_c_fam": 0.9416,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F23PRr1::F23PRr1_142702_24",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K13280",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0666,
+      "excess_c_fam": 0.9334,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F24PRr1::F24PRr1_1844874_8",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K02108",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1404,
+      "excess_c_fam": 0.8596,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F25Dr2::F25Dr2_61875_4",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 4,
+      "best_ko": "K06883",
+      "species_count": 4,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.394,
+      "excess_c_fam": 0.606,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F26Dr2::F26Dr2_46622_2",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K00001",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.5678,
+      "excess_c_fam": 0.4322,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F26PRr1::F26PRr1_1774817_47",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 6,
+      "best_ko": "K01959",
+      "species_count": 2,
+      "r_fam_primary": 0.333333,
+      "mu_pos_c_fam": 0.1752,
+      "excess_c_fam": 0.8248,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F26PRr1::F26PRr1_712717_5",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K12132",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0314,
+      "excess_c_fam": 0.9686,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F27Dr1::F27Dr1_190343_53",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K03817",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0076,
+      "excess_c_fam": 0.9924,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F28Dr1::F28Dr1_1358026_2",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 3,
+      "best_ko": "K03924",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.016,
+      "excess_c_fam": 0.984,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F28Dr1::F28Dr1_1971658_16",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 3,
+      "best_ko": "K02871",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.1684,
+      "excess_c_fam": 0.8316,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F2Dr1::F2Dr1_2447321_2",
+      "arm": "K",
+      "phylum": "Acidobacteriota",
+      "n_species_complete_window": 2,
+      "best_ko": "K02045",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.3218,
+      "excess_c_fam": 0.6782,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F2Sr2::F2Sr2_1931043_57",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 3,
+      "best_ko": "K05592",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.1224,
+      "excess_c_fam": 0.8776,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F31Dr2::F31Dr2_428982_6",
+      "arm": "QnotK",
+      "phylum": "Thermoproteota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00590",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0906,
+      "excess_c_fam": 0.9094,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F34PRr2::F34PRr2_1575772_4",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K02888",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0634,
+      "excess_c_fam": 0.9366,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F37Dr2::F37Dr2_1734936_3",
+      "arm": "K",
+      "phylum": "Myxococcota_A",
+      "n_species_complete_window": 2,
+      "best_ko": "K03088",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.159,
+      "excess_c_fam": 0.841,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F37Sr1::F37Sr1_714563_1",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 3,
+      "best_ko": "K00174",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1304,
+      "excess_c_fam": 0.8696,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F38PRr1::F38PRr1_140322_2",
+      "arm": "K",
+      "phylum": "Fibrobacterota",
+      "n_species_complete_window": 3,
+      "best_ko": "K03797",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0764,
+      "excess_c_fam": 0.9236,
+      "mobilome_flag": 1
+    },
+    {
+      "family": "F38Sr1::F38Sr1_386592_2",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K03924",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1718,
+      "excess_c_fam": 0.8282,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F41Dr3::F41Dr3_524800_3",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01870",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.076,
+      "excess_c_fam": 0.924,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F41Dr3::F41Dr3_561308_4",
+      "arm": "QnotK",
+      "phylum": "Gemmatimonadota",
+      "n_species_complete_window": 3,
+      "best_ko": "K03924",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1002,
+      "excess_c_fam": 0.8998,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F41Dr3::F41Dr3_7398_3",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K02108",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0328,
+      "excess_c_fam": 0.9672,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F41PRr1::F41PRr1_141946_52",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 3,
+      "best_ko": "K01996",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.0328,
+      "excess_c_fam": 0.9672,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F49PRr3::F49PRr3_1003538_3",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 4,
+      "best_ko": "K07711",
+      "species_count": 4,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.2616,
+      "excess_c_fam": 0.7384,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F4PRr1::F4PRr1_1135562_30",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01939",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0456,
+      "excess_c_fam": 0.9544,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F4PRr3::F4PRr3_39860_5",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 5,
+      "best_ko": "K06982",
+      "species_count": 4,
+      "r_fam_primary": 0.8,
+      "mu_pos_c_fam": 0.3676,
+      "excess_c_fam": 0.6324,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F5Sr2::F5Sr2_1518539_1",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 8,
+      "best_ko": "K02003",
+      "species_count": 6,
+      "r_fam_primary": 0.75,
+      "mu_pos_c_fam": 0.6462,
+      "excess_c_fam": 0.3538,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F6Dr2::F6Dr2_1379090_156",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K02045",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0316,
+      "excess_c_fam": 0.9684,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F6Dr2::F6Dr2_196639_7",
+      "arm": "QnotK",
+      "phylum": "Fibrobacterota",
+      "n_species_complete_window": 2,
+      "best_ko": "K02454",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0888,
+      "excess_c_fam": 0.9112,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F6Dr2::F6Dr2_2308626_3",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 3,
+      "best_ko": "K03575",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.0306,
+      "excess_c_fam": 0.9694,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F6Dr2::F6Dr2_468720_8",
+      "arm": "QnotK",
+      "phylum": "Fibrobacterota",
+      "n_species_complete_window": 2,
+      "best_ko": "K06941",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.5912,
+      "excess_c_fam": 0.4088,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F6Dr2::F6Dr2_614823_13",
+      "arm": "QnotK",
+      "phylum": "Myxococcota_A",
+      "n_species_complete_window": 2,
+      "best_ko": "K00360",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0434,
+      "excess_c_fam": 0.9566,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "F6PRr3::F6PRr3_1063534_5",
+      "arm": "K",
+      "phylum": "Gemmatimonadota",
+      "n_species_complete_window": 2,
+      "best_ko": "K07403",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.098,
+      "excess_c_fam": 0.902,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S11PRr1::S11PRr1_690820_134",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00261",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0372,
+      "excess_c_fam": 0.9628,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S18PRr1::S18PRr1_439134_2",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K01921",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1118,
+      "excess_c_fam": 0.8882,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S22PRr1::S22PRr1_266671_1",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 5,
+      "best_ko": "K07161",
+      "species_count": 5,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.4616,
+      "excess_c_fam": 0.5384,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S2Dr1::S2Dr1_338147_7",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K00826",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.109,
+      "excess_c_fam": 0.891,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S2PRr1::S2PRr1_94455_15",
+      "arm": "K",
+      "phylum": "Acidobacteriota",
+      "n_species_complete_window": 3,
+      "best_ko": "K06867",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.521,
+      "excess_c_fam": 0.479,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S46Dr1::S46Dr1_311511_1",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 4,
+      "best_ko": "K01462",
+      "species_count": 2,
+      "r_fam_primary": 0.5,
+      "mu_pos_c_fam": 0.2554,
+      "excess_c_fam": 0.7446,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S52PRr1::S52PRr1_309397_2",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 3,
+      "best_ko": "K00873",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.3022,
+      "excess_c_fam": 0.6978,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "S52PRr1::S52PRr1_334793_92",
+      "arm": "K",
+      "phylum": "Myxococcota",
+      "n_species_complete_window": 2,
+      "best_ko": "K10026",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.06,
+      "excess_c_fam": 0.94,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "T1Dr3::T1Dr3_1361427_22",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K01114",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0384,
+      "excess_c_fam": 0.9616,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "T1Dr3::T1Dr3_1954410_31",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K03118",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.201,
+      "excess_c_fam": 0.799,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "T2PRr2::T2PRr2_1270798_6",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K11924",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.3348,
+      "excess_c_fam": 0.6652,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "T5PRr3::T5PRr3_2230135_3",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K10947",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0834,
+      "excess_c_fam": 0.9166,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "T8PRr1::T8PRr1_2213077_5",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 4,
+      "best_ko": "K03724",
+      "species_count": 2,
+      "r_fam_primary": 0.5,
+      "mu_pos_c_fam": 0.1622,
+      "excess_c_fam": 0.8378,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V12Dr3::V12Dr3_456902_4",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K02902",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.128,
+      "excess_c_fam": 0.872,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V12Dr3::V12Dr3_749489_8",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K03088",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.045,
+      "excess_c_fam": 0.955,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V12Dr3::V12Dr3_882685_12",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 3,
+      "best_ko": "K00791",
+      "species_count": 2,
+      "r_fam_primary": 0.666667,
+      "mu_pos_c_fam": 0.3808,
+      "excess_c_fam": 0.6192,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V12Sr1::V12Sr1_1454330_2",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K02221",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.412,
+      "excess_c_fam": 0.588,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V15PRr2::V15PRr2_848361_1",
+      "arm": "QnotK",
+      "phylum": "Myxococcota_A",
+      "n_species_complete_window": 2,
+      "best_ko": "K00075",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1774,
+      "excess_c_fam": 0.8226,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V27Dr2::V27Dr2_600879_2",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K03624",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0428,
+      "excess_c_fam": 0.9572,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V29PRr2::V29PRr2_373376_4",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00266",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0656,
+      "excess_c_fam": 0.9344,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V2PRr1::V2PRr1_1965096_2",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 3,
+      "best_ko": "K02003",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1496,
+      "excess_c_fam": 0.8504,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V30PRr1::V30PRr1_1219613_7",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K07566",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0328,
+      "excess_c_fam": 0.9672,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V30PRr1::V30PRr1_62945_5",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00760",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0838,
+      "excess_c_fam": 0.9162,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V33PRr1::V33PRr1_982520_12",
+      "arm": "K",
+      "phylum": "Pseudomonadota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00286",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0066,
+      "excess_c_fam": 0.9934,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V37PRr2::V37PRr2_488468_1",
+      "arm": "K",
+      "phylum": "Cyanobacteriota",
+      "n_species_complete_window": 3,
+      "best_ko": "K02033",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.991,
+      "excess_c_fam": 0.009,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V38PRr3::V38PRr3_145343_5",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K06988",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1246,
+      "excess_c_fam": 0.8754,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V39Dr1::V39Dr1_204728_2",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 6,
+      "best_ko": "K07670",
+      "species_count": 5,
+      "r_fam_primary": 0.833333,
+      "mu_pos_c_fam": 0.8774,
+      "excess_c_fam": 0.1226,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V39Sr2::V39Sr2_267206_2",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K06902",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1902,
+      "excess_c_fam": 0.8098,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V40Sr3::V40Sr3_835310_2",
+      "arm": "QnotK",
+      "phylum": "Pseudomonadota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00053",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1142,
+      "excess_c_fam": 0.8858,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V47PRr1::V47PRr1_1958367_45",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K07333",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0128,
+      "excess_c_fam": 0.9872,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V54PRr1::V54PRr1_185211_17",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 3,
+      "best_ko": "K07730",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.334,
+      "excess_c_fam": 0.666,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V54PRr1::V54PRr1_515122_5",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00260",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1898,
+      "excess_c_fam": 0.8102,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V54PRr1::V54PRr1_761827_7",
+      "arm": "K",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 2,
+      "best_ko": "K11717",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0432,
+      "excess_c_fam": 0.9568,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V58PRr1::V58PRr1_115154_2",
+      "arm": "QnotK",
+      "phylum": "Thermoplasmatota",
+      "n_species_complete_window": 3,
+      "best_ko": "K08971",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1576,
+      "excess_c_fam": 0.8424,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V58PRr1::V58PRr1_187836_44",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K01802",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0302,
+      "excess_c_fam": 0.9698,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V58PRr1::V58PRr1_97362_17",
+      "arm": "K",
+      "phylum": "Cyanobacteriota",
+      "n_species_complete_window": 2,
+      "best_ko": "K06929",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.1056,
+      "excess_c_fam": 0.8944,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V5Dr1::V5Dr1_585320_11",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K07177",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0144,
+      "excess_c_fam": 0.9856,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V5Dr1::V5Dr1_995632_86",
+      "arm": "QnotK",
+      "phylum": "multi",
+      "n_species_complete_window": 4,
+      "best_ko": "K03117",
+      "species_count": 2,
+      "r_fam_primary": 0.5,
+      "mu_pos_c_fam": 0.042,
+      "excess_c_fam": 0.958,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V5PRr1::V5PRr1_1270793_10",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 7,
+      "best_ko": "K04075",
+      "species_count": 3,
+      "r_fam_primary": 0.428571,
+      "mu_pos_c_fam": 0.9862,
+      "excess_c_fam": 0.0138,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V5PRr1::V5PRr1_2325845_3",
+      "arm": "QnotK",
+      "phylum": "Acidobacteriota",
+      "n_species_complete_window": 3,
+      "best_ko": "K01990",
+      "species_count": 3,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.089,
+      "excess_c_fam": 0.911,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V60PRr2::V60PRr2_261967_40",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K09022",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0402,
+      "excess_c_fam": 0.9598,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V60PRr2::V60PRr2_435968_3",
+      "arm": "K",
+      "phylum": "multi",
+      "n_species_complete_window": 2,
+      "best_ko": "K01647",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.059,
+      "excess_c_fam": 0.941,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V8PRr1::V8PRr1_1011131_1",
+      "arm": "QnotK",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K00575",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.0258,
+      "excess_c_fam": 0.9742,
+      "mobilome_flag": 0
+    },
+    {
+      "family": "V8PRr1::V8PRr1_436286_2",
+      "arm": "K",
+      "phylum": "Actinomycetota",
+      "n_species_complete_window": 2,
+      "best_ko": "K06988",
+      "species_count": 2,
+      "r_fam_primary": 1.0,
+      "mu_pos_c_fam": 0.273,
+      "excess_c_fam": 0.727,
+      "mobilome_flag": 0
+    }
+  ]
+}

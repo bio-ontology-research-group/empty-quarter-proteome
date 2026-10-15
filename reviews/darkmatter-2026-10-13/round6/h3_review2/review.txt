@@ -1,0 +1,64 @@
+# Argon Independent Review: Hypothesis 3 (h3_v3)
+
+**Target Dossier:** `reviews/darkmatter-2026-10-13/round6/snapshots/h3_v3/` (`DESIGN.md`, `DOSSIER.md`, `response.txt`, `INPUTS.tsv`, `SNAPSHOT_MANIFEST.json`, `LARGE_ARTIFACT_LOCATORS.json`, `scripts/08`–`10`, `results/`, `logs/`)
+**Verdict:** `VIABLE`
+
+---
+
+## 1. Bounded Hypothesis and Revised Scope
+
+- **Bounded Hypothesis:** Conditional on the MD5/SHA-256-verified public Zenodo Record 8223844 SMAG archive-order convenience pool (212 complete MAGs from `mag.tar.gz.aa`–`ab`, recalled with Pyrodigal v3.7.1 `-p meta --no-stop-codon`) and the staged 52,515 published GEM Prodigal v2.6.3 proteomes, after canonicalizing sequences (`seq.strip().rstrip("*").upper()`), deduplicating exact canonical sequences within each reference pool, applying an explicit cross-release overlap rule, and enforcing exact integer-length (`1 aa`) common-support quota matching so that both arms have identical unique protein counts, identical total amino-acid residues, and identical exact length distributions, does the SMAG reference subset yield a different paired hit rate than matched GEM reference subsets for Empty Quarter dark protein families under identical `diamond blastp` settings?
+- **Scope Changes from Original (`round5/EXTENSIONS.md` H3):**
+  1. **Bounded Pool and Caller Conditioning:** Narrowed from a full-catalogue, caller-harmonized soil-biome test to a bounded reference-release comparison conditioned on the verified 212-MAG SMAG archive-order convenience pool (`mag.tar.gz.aa`–`ab`, Pyrodigal v3.7.1) and published GEM Prodigal proteomes (`DESIGN.md:18-26`, `DOSSIER.md:18-25,114`). No unqualified generalization is made to the remaining 371 archive parts (~39 GB) or to causal soil-biome adaptation/endemism.
+  2. **Separate Cohort Estimation and Reference-Draw Sensitivity:** Annotated control families ($N = 106,042$, $62.72\%$ $<100\text{ aa}$) are analyzed strictly separately from dark families ($N = 106,042$, $47.75\%$ $<100\text{ aa}$) and are not used to calibrate or subtract technical bias (`DESIGN.md:24,75`). The three deterministic GEM candidate-pool seeds (`20261013`, `20261014`, `20261015`) are explicitly treated as reference-subsampling sensitivity analyses against the fixed 212-MAG SMAG pool, not independent biological replicates (`DESIGN.md:51`, `DOSSIER.md:87-89`).
+
+---
+
+## 2. Independent Verification of Snapshot, Source Manifests, and Data Invariants
+
+1. **Snapshot & Large Artifact Integrity:** All 67 files in `SNAPSHOT_MANIFEST.json` were independently verified locally by exact byte size and SHA-256 digest. Both historical large v2 FASTAs in `LARGE_ARTIFACT_LOCATORS.json` (`smag_pilot_recalled.faa`, `234,311,783` bytes; `gem_pilot_matched.faa`, `322,737,197` bytes) were verified by size and SHA-256 locally and on IBEX. All 10 v3 reference/matched FASTAs (`v3_smag_pool_canonical.faa`, `v3_smag_pool_unique.faa`, and the 8 matched databases `v3_{smag,gem}_matched_seed*.faa`) and all 212 retained `.fa` genome files in `/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/p6_hypotheses_clean/h3_references/genomes/smag_extracted/` were verified read-only on IBEX against `results/v3_smag_genome_manifest.tsv` and `results/v3_artifact_checksums.tsv`.
+2. **Outcome Table & Statistical Audit:** All 50 length-stratum rows in `results/v3_matched_length_stratified_results.tsv` and all 10 cohort summary rows in `results/v3_matched_cohort_summary.tsv` were independently recomputed from the raw `.m8` alignment files (`results/v3_{smag,gem}_hits_*.m8`) and `results/pilot_query_manifest.tsv`, matching `root_checks/h3_table_audit.json` to full output precision.
+
+---
+
+## 3. Disposition of Prior Critical Findings (`round6/h3_review1`)
+
+### Prior Critical Finding 1: Unmatched Reference Protein Length Distributions and Un-Deduplicated Pools — **RESOLVED**
+- **Verification:** `scripts/08_v3_extract_and_call_smag.py:348-375` deduplicates the 212-MAG canonical SMAG pool (`693,227` canonical proteins, `202,894,612` aa) to `692,194` unique canonical proteins (`202,751,091` aa; `1,033` exact duplicates mapped in `results/v3_smag_duplicate_map.tsv`). `scripts/09_v3_match_gem_and_search.py:125-263` samples whole GEM proteomes across three deterministic seeds (`20261013`: 299 MAGs, `709,463` raw -> `693,721` unique, `2.22%` redundancy; `20261014`: 308 MAGs, `716,158` raw -> `696,211` unique, `2.79%` redundancy; `20261015`: 312 MAGs, `711,230` raw -> `693,028` unique, `2.56%` redundancy). `scripts/09_v3_match_gem_and_search.py:266-371` enforces exact integer-length ($1\text{ aa}$) common-support quotas $q_s(L) = \min(N_{\text{SMAG, uniq}}(L), N_{\text{GEM, uniq}, s}(L))$ with fail-closed assertions (`lines 329-338`) verifying `0%` internal duplicates, identical unique protein counts, identical total amino-acid residues, and identical exact length histograms across all four matched database pairs (`results/v3_matching_closure_audit.tsv`: `657,779` proteins / `197,005,061` aa in `seed20261013`; `657,529` / `196,961,439` aa in `seed20261013_no_overlap`; `660,049` / `197,201,755` aa in `seed20261014`; `660,421` / `196,954,586` aa in `seed20261015`).
+
+### Prior Critical Finding 2: Uncanonicalized Trailing Stop Codons (`*`) and False 0% Overlap — **RESOLVED**
+- **Verification:** `scripts/08_v3_extract_and_call_smag.py:140-164` and `scripts/09_v3_match_gem_and_search.py:67-122,166-191` audit trailing `*`, internal `*`, and character case/validity before applying `seq.strip().rstrip("*").upper()` across SMAG (`0` trailing `*`), GEM (`678,136`, `685,307`, and `673,565` trailing `*` stripped across the 3 seeds; `0` internal `*`), and queries (`results/v3_pilot_query_2000_canonical.faa`). Exact full-sequence SHA-256 deduplication identifies **250** (`seed20261013`), **34** (`seed20261014`), and **85** (`seed20261015`) cross-release shared canonical sequences (`results/v3_cross_release_shared_sequences.tsv`). Both `overlap_retained` (`seed20261013`, dark $\hat{\Delta}_{\text{wt}} = +10.30\%$) and `overlap_excluded` (`seed20261013_no_overlap`, `0` shared sequences, dark $\hat{\Delta}_{\text{wt}} = +10.11\%$) are executed. The "32-mer MD5" wording is corrected.
+
+### Prior Critical Finding 3: Unsafe Partial Tar Extraction, Non-Deterministic FASTA Order, and Deleted Genomes — **RESOLVED**
+- **Verification:** `scripts/08_v3_extract_and_call_smag.py:206-315` verifies MD5 and SHA-256 digests of `mag.tar.gz.aa` and `mag.tar.gz.ab` (`results/v3_smag_zenodo_parts_manifest.tsv`), streams them via Python's `tarfile.open(fileobj=..., mode="r|gz")`, enforces `observed_bytes == m.size` and IUPAC FASTA validation, retains all 212 complete `.fa` files permanently on IBEX (`genomes/smag_extracted/`) with verified nucleotide and raw-protein SHA-256 digests (`results/v3_smag_genome_manifest.tsv`), and explicitly rejects and logs the truncated 213th member `MAG/SRR5855438rbin.1.fa` (`declared_bytes = 12,783,848`, `observed_bytes = 6,946,816`, `status = REJECTED_TRUNCATED_STREAM_END`) in `results/v3_smag_tar_extraction_audit.tsv:214`. Pyrodigal records are deterministically sorted by `(mag_id, gene_idx)` (`lines 326,359-375`).
+
+### Prior Critical Finding 4: Missing GEM Manifests/Checksums, Hit-Rule Mismatch, Query Weighting, and Scope Overclaims — **RESOLVED**
+- **Verification:** `results/v3_gem_genome_manifest_seed{20261013,20261014,20261015}.tsv` records file bytes, SHA-256 digests, and stop-codon/protein counts for all sampled GEM `.faa.gz` files (299, 308, and 312 MAGs). `DESIGN.md:68-73` and `DOSSIER.md:74-86` align the primary hit rule (`E <= 1e-3`, `--sensitive -e 1e-3 -k 1`) with upstream `specificity_clean` and execute a separate physical DIAMOND search with `--id 30` (`seed20261013_id30`, verified `pident >= 30.0%` on all hits, dark $\hat{\Delta}_{\text{wt}} = +9.74\%$). `scripts/09_v3_match_gem_and_search.py:408-598` separates `dark` and `ctrl` cohorts (no pooled `all` row), computes Horvitz-Thompson / stratified population-weighted marginal estimates ($W_h = N_h / N$, $\pi_h = n_h / N_h$, finite-population-corrected SEs: dark $\hat{\Delta}_{\text{wt}} = +10.30\%, +11.29\%, +10.06\%$ with FPC SEs $1.47\%, 1.46\%, 1.41\%$ across the 3 seeds), formats `c_h = 0` ratios as `undefined`, and restricts prose in `DESIGN.md` and `DOSSIER.md` to bounded observational claims.
+
+---
+
+## 4. New Critical Issues
+
+- **None.** No unresolved critical feasibility, data-provenance, or inferential flaw remains in the bounded `h3_v3` design.
+
+---
+
+## 5. Non-Critical Documentation Notes and Optional Improvements
+
+1. **Ancillary E-Value Rescaling Diagnostic Is a Rough Heuristic, Not an Exact Decomposition (`DOSSIER.md:25,60-65`, `DESIGN.md:25`, `scripts/09_v3_match_gem_and_search.py:601-650`, `results/v3_top1_vs_dbsize_decomposition.tsv`):**
+   - To explain the discrepancy in the preliminary 2,500-genome GEM benchmark (`03_pilot_subsample_search.py`, Job `53700569`), Section 3 divides the E-value threshold by the raw protein-count ratio $122,978,191 / 5,815,177 = 21.15\times$ ($E_{\text{sub}} \le 4.73 \times 10^{-5}$) and labels the `79/110` (`71.82%`) dark and `885/895` (`98.88%`) control hits below that cutoff as "genuine `-k 1` secondary-hit masking" versus `31/110` (`28.18%`) and `10/895` (`1.12%`) as "database-size E-value rescaling."
+   - In Karlin-Altschul / DIAMOND statistics ($E = K m' n' e^{-\lambda S}$), E-values scale with the **effective searched amino-acid residue space** $n' = N_{\text{letters}} - N_{\text{seqs}} \cdot l_{\text{eff}}(m)$ (which depends on total database letters and query-length edge correction $l_{\text{eff}}(m)$), composition-based adjustments/masking, and DIAMOND's seed/extension/block heuristics—not a uniform sequence-count ratio (note also `09_v3_match_gem_and_search.py:605` comments `1,835,451,488` sub2500 letters whereas `logs/pilot_53700569.err:23` reports `1,834,739,150`).
+   - **Distinction from Primary Design:** This calculation is purely ancillary to motivating why historical `-k 1` tables cannot be subsampled post-hoc. In the primary v3 experiment (`09_v3_match_gem_and_search.py:266-405`), both SMAG and GEM matched databases are freshly built and searched with **identical unique protein counts, identical total amino-acid residues, and identical exact integer-length histograms**, so effective search space $n'$ is identically matched for every query. When citing Section 3 in manuscript or supplement text, describe the $4.73 \times 10^{-5}$ split as an approximate heuristic diagnostic (or pass `--dbsize` directly in a benchmark if an exact decomposition is desired).
+2. **Minor Transcription & Self-Checksum Notes (Non-Blocking):**
+   - `DOSSIER.md:36` writes `Members 1–212 (MAG/D3rbin.13.fa through MAG/SRR5437667rbin.15.fa)`, taking the first alphabetical row of `results/v3_smag_genome_manifest.tsv:2` (`MAG/D3rbin.13.fa`, `member_order_idx = 92`) instead of tar stream member 1 in `results/v3_smag_tar_extraction_audit.tsv:2` (`MAG/SRR5579859rbin.24.fa`; member 212 is `MAG/SRR5437667rbin.15.fa`). The audit table (`v3_smag_tar_extraction_audit.tsv`) is exact and governs.
+   - `INPUTS.tsv:43` records a pre-update SHA-256 (`6cf58237...`) for `results/v3_artifact_checksums.tsv` (whose finalized digest `ffb8ad86...` is pinned in `SNAPSHOT_MANIFEST.json:166`), while all 51 artifact entries inside `v3_artifact_checksums.tsv` match `INPUTS.tsv` and `SNAPSHOT_MANIFEST.json` exactly.
+3. **Optional Catalogue-Scale Extensions:**
+   - Executing the full 212,084-query catalogue (`FAMILIES_FINAL.txt` + `CONTROL_FAMILIES.txt`) against the matched reference databases to eliminate finite-sample query variance (`SE = 0`).
+   - Downloading all 373 Zenodo Record 8223844 parts (~39 GB) to sample randomly across all 40,039 SMAG MAGs rather than conditioning on the 212-MAG archive-order prefix (`mag.tar.gz.aa`–`ab`).
+   - Fetching external nucleotide assemblies for GEM MAGs to re-call GEM with Pyrodigal v3.7.1 (`-p meta --no-stop-codon`) for a caller-harmonized comparison.
+
+---
+
+## 6. Final Verdict
+
+**`VIABLE`** — All four critical findings from `h3_review1` are resolved in executed code and verified IBEX/local artifacts (Slurm Job `53707059`). The bounded H3 v3 design is identifiable, reproducible, falsifiable in both directions, and ready for full-query execution or bounded reporting within its stated archive-prefix and caller-conditional scope.

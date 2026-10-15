@@ -1,0 +1,14 @@
+We tested whether confident regions within whole-chain-unmatched models recover structural
+matches by searching the complete chains and their confidence-defined crops against a frozen
+PDB reference with the same query-normalised threshold. Across all 5{,}851 qualified dark and
+control models, this procedure extracted 7{,}773 regions; 161 models had no eligible region.
+Of the 1{,}031 dark models below the initial dual-reference query threshold, 964 remained
+unmatched as whole chains in this PDB search. Cropping recovered a match for 714 of these
+964 models (74.07\%); 775 of all 1{,}031 had at least one matched crop, including models already
+matched as whole chains (Fig.~\ref{fig:structural}b,c). With the source PDB entry excluded,
+2{,}889 of 3{,}013 controls had a matched crop (95.88\%). A GPU ungapped-prefilter sensitivity
+recovered 731 of 961 whole-chain-unmatched models in the same initial dark group
+(Supplementary Note S3). These paired results show that structural reference coverage increases
+when the query is a confident region. Cropping jointly changes sequence extent, score
+normalisation and search opportunity.
+

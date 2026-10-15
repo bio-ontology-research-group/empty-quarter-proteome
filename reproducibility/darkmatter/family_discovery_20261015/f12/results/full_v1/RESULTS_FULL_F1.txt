@@ -1,0 +1,62 @@
+================================================================================
+FULL CATALOGUE ANALYSIS: BIOLOGICAL HYPOTHESIS F1 & FINAL F2 STATUS
+Slurm Execution Environment: Job ID 53816995 | Root Audited Framework v4
+Timestamp: 2026-10-15 06:37:01 UTC
+================================================================================
+
+EXECUTIVE SCIENTIFIC VERDICTS:
+--------------------------------------------------------------------------------
+HYPOTHESIS F1 (Photolyase / Cryptochrome Family Identity, Diversity & Reference Expansion):
+  FULL CENSUS VERDICT: FULL_ANALYSIS_SUCCESS
+  KEY FINDINGS:
+  1. Empty Quarter MAG Proteome Census:
+     - Scanned Denominator: 5,438 ANI95 representative MAG proteomes (20451986 total proteins).
+     - Identified Profile-Supported Candidates: 1154 loci.
+     - Complete Coding Sequences (partial=00): 914 loci.
+     - Carrier Genomes: 935 / 5,438 MAGs.
+     - Core Profiles Applied: PF00875 (DNA_photolyase), PF03441 (FAD_binding_7), PF04244 (Cryptochrome_C/DPRP).
+     - Excluded from positive counts: PF04055 (Radical SAM generic outgroup).
+
+  2. Environmental Cohort Comparison (Same-Caller Pools):
+     - Marine SMAG Pool: 503 candidates (4778910 proteins scanned).
+     - Global GEM Pool:   1192 candidates (4824709 proteins scanned).
+
+  3. Reference Expansion & Sequence Clustering:
+     - Curated Reference Baseline: 66 verified reference enzymes.
+     - MMseqs2 50% ID Clusters: 589 total clusters;
+       EQ-carrying clusters = 253;
+       EQ-specific novel clusters (not found in references, SMAG, or GEM) = 153.
+     - MMseqs2 80% ID Clusters: 2432 total clusters;
+       EQ-specific novel subclusters = 975.
+
+  4. Downstream GPU ProstT5 Readiness:
+     - Prepared deduplicated FASTA: /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/results/full_v1/f1_combined_dedup.faa
+     - Prepared unified metadata manifest: /ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/family_discovery_20261015_clean/f12/results/full_v1/f1_combined_manifest.tsv
+     - Total combined sequences staged: 2847
+     - Ready for Root reusable GPU ProstT5 embedding and t-SNE runner (no custom GPU runner created).
+
+  5. Ecological Association Assessment:
+     - Internal exploratory representative MAG carriage: Surface=188, Deep=254.
+     - Ecological status: Representative-isolate compartment carriage is exploratory only;
+       site-paired community-abundance niche partitioning requires sample metagenomic read depth
+       profiles and is reported strictly as NOT_TESTED_IN_PILOT (no fabricated p-values).
+
+HYPOTHESIS F2 (Compatible-Solute Phosphatase Historical Predictions):
+  FINAL DISPOSITION: STOPPED / SPECIFIC ASSIGNMENT NOT ESTABLISHED
+  RATIONALE:
+  - Loci 1PRr2_1391604_4 (93 aa) and S52PRr1_477345_9 (148 aa) stably exist in current ANI95 winning MAGs.
+  - However, sequence-level searches against authentic compatible-solute phosphatases (MpgP, TPP, GgpP)
+    and competing HAD enzymes produce 0 hits even under DIAMOND --ultra-sensitive (E <= 1e-3) and HMMER.
+  - Delta-bitscore is NA (undefined). Flank operon status marked NOT_TESTED (no synthase DB).
+  - In accordance with Root instructions: full F2 track is STOPPED; no full census is attempted.
+
+AUDIT COMPLIANCE SUMMARY:
+--------------------------------------------------------------------------------
+[X] Zero model-generated sequences: all references from audited UniProt REST.
+[X] Profile-first search on 5,438 representatives using PF00875, PF03441, PF04244.
+[X] Excluded generic Radical SAM (PF04055) from positive CPF counts.
+[X] Evaluated same-caller external environmental comparators (SMAG marine and GEM terrestrial/host).
+[X] Staged deduplicated FASTA and manifest for Root reusable GPU runner.
+[X] Framed novelty strictly as reference-relative novelty (no claims of global novelty from small subsets).
+[X] Zero manuscript, claim registry, or H1-H4 edits.
+================================================================================

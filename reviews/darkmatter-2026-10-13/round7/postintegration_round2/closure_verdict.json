@@ -1,0 +1,51 @@
+{
+  "review_round": "postintegration_round2_closure",
+  "reviewer": "Gemini4ArgonHigh",
+  "supersedes_errors_in": [
+    "reviews/darkmatter-2026-10-13/round7/postintegration_round2/review.txt",
+    "reviews/darkmatter-2026-10-13/round7/postintegration_round2/verdict.json"
+  ],
+  "pdf_integrity_scan_after_round2": {
+    "source": "reviews/darkmatter-2026-10-13/round7/manuscript/pdf_integrity_after_round2.txt",
+    "status": "CLEAN",
+    "note": "Identical three legitimate white plot labels (69, 90, 61 at size 6.6 on p. 32); no prompt injection."
+  },
+  "withdrawn_reviewer_errors": [
+    {
+      "item": "Opening summary catalogue numbers and darkness definition",
+      "correction": "Withdrawn 12,135,193 proteins, 99.6% known phyla, 87.9% unnamed species, joint UniRef50+Pfam darkness definition, and 'cinco' typo. Submitted source reports 551 soil samples (549 assembled), 5,438 species representatives across 51 GTDB R232 phyla (187 with species assignment; first empty rank at order 11, family 142, genus 1,343, species 3,755), 753,305,533 predicted proteins, 449,265,306 90%-identity cluster representatives, sequence darkness defined by UniRef50 (2026_01) absence alone (69,938,628 assembly-wide; 4,292,446 of 43,423,322 genome-resolved; 106,042 admitted recurrent families with 536,437 members), and Pfam as a downstream screen."
+    },
+    {
+      "item": "H4 cropping mechanism isolation",
+      "correction": "Withdrawn claim that cropping directly establishes global length normalisation and unconfident regions as the mechanism. Cropping is a joint intervention changing sequence extent, length-dependent score normalisation, and retrieval opportunity."
+    },
+    {
+      "item": "Whole-paper readiness and PRJEB125153 framing",
+      "correction": "Withdrawn 'only standard external release' and 'held confidential until publication' phrasing. Whole-paper submission readiness and raw-to-final reproducibility remain bounded by 78 missing raw-file paths, 302 permission failures, unverified duplicate-run merge commands, incomplete historical claim migration, pending MIMAG MAG deposition and release DOI, and unconfirmed public/reviewer access to ENA PRJEB125153 (554 runs from 551 samples, recorded release date 1 November 2026, not verified to contain MAGs)."
+    },
+    {
+      "item": "Laboratory XRF table archive status and supplementary dependence",
+      "correction": "Withdrawn 'unarchived 251-sample raw XRF table' and 'neither item affects any conclusion' statements. The numerical laboratory XRF table is retained (reproducibility/darkmatter/environment_inputs/geochemistry/xrf_lab_table_all_trips.tsv) and rebuilt via rebuild_environment.py; XRF units, instrument metadata, detection limits, and raw climate API responses remain unresolved, and Supplementary Note S3 exploratory claims remain conditional on them."
+    },
+    {
+      "item": "Figure 4b label consistency comment",
+      "correction": "Withdrawn Figure 4b minor comment. Figure 4b uses vertical bars with percentage-only labels across all three groups; no figure change is needed."
+    },
+    {
+      "item": "H2 Mantel-Haenszel weight wording",
+      "correction": "Clarified that n_K * n_Q / (n_K + n_Q) is the product of group sizes divided by total stratum size (half the harmonic mean)."
+    }
+  ],
+  "root_final_prose_and_manifest_changes_verified": {
+    "H1_comparator_pool_note": "Supplementary Note S1 (lines 971-972) explicitly states that Thermoplasmata was absent from the external comparator pool.",
+    "H2_annotation_opportunity_definition": "Supplementary Note S1 (lines 992-994) defines annotation opportunity as the fraction of the four flanks per evaluable species carrying a mapped KEGG orthologue, pooled across the family's selected loci.",
+    "availability_database_list": "Data and code availability (lines 1203-1206) distinguishes PDB release 250101 (initial screen) from the 30 July 2026 frozen PDB Foldseek database (paired structural searches) and includes SMAG (Zenodo deposit 8223844).",
+    "affirmative_scope_refinements": "Lines 186-241 and 1102 rephrase negative disclaimers as affirmative assay/design scope without changing numerical values.",
+    "active_manifest_27th_file": "reproducibility/darkmatter/round7_final/h4/h4_census_invariants.json (118,857 assertions) replaces unused local v7_closure_verification.json; all 152 H1-H4 registered claims pass."
+  },
+  "final_verdicts": {
+    "H1_to_H4_supported_claims_verdict": "ACCEPT_WITH_BOUNDS",
+    "remaining_material_issues_for_H1_to_H4": [],
+    "nature_communications_whole_paper_readiness": "BOUNDED_BY_DOCUMENTED_PROVENANCE_ACCESS_AND_DEPOSITION_PREREQUISITES"
+  }
+}

@@ -1,0 +1,176 @@
+
+==============================================================================
+1. ECOLOGY PARTIAL SPEARMAN ARITHMETIC CHECK
+==============================================================================
+Path: /home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/source_snapshot/06_darkmatter/darkfam_ecology_clean/results/partial_summary.tsv
+              axis  n_samples  n_marginal_q05  n_partial_q05  retained_pct  median_abs_dr
+    salinity_proxy        251           37280          20055          41.4         0.0551
+                 S        251           54227          48713          82.0         0.0347
+                Cl        251           46972          42042          82.6         0.0280
+                Ca        251           47174          39094          71.1         0.0452
+     aridity_index        456           23031          22510          85.6         0.0150
+plantroot_vs_other        547           61182          59820          94.1         0.0109
+  salinity_proxy      : n_marg= 37280, n_part= 20055, n_part/n_marg= 53.8%, table retained_pct= 41.4% (implies both≈15434, new_in_partial≈4621)
+  S                   : n_marg= 54227, n_part= 48713, n_part/n_marg= 89.8%, table retained_pct= 82.0% (implies both≈44466, new_in_partial≈4247)
+  Cl                  : n_marg= 46972, n_part= 42042, n_part/n_marg= 89.5%, table retained_pct= 82.6% (implies both≈38799, new_in_partial≈3243)
+  Ca                  : n_marg= 47174, n_part= 39094, n_part/n_marg= 82.9%, table retained_pct= 71.1% (implies both≈33541, new_in_partial≈5553)
+  aridity_index       : n_marg= 23031, n_part= 22510, n_part/n_marg= 97.7%, table retained_pct= 85.6% (implies both≈19715, new_in_partial≈2795)
+  plantroot_vs_other  : n_marg= 61182, n_part= 59820, n_part/n_marg= 97.8%, table retained_pct= 94.1% (implies both≈57572, new_in_partial≈2248)
+
+==============================================================================
+2. PICRUST2 REFERENCE BIAS AUDIT
+==============================================================================
+Path: /home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/inputs/06_reference_bias/refbias_clean/results/per_sample_comparison.tsv.gz
+Columns: ['sample', 'n_mag_ko', 'n_pic_ko', 'n_shared', 'recall_of_mag', 'jaccard', 'mag_outside_pic_reference', 'frac_mag_outside_reference', 'mag_in_ref_not_predicted', 'pic_only', 'spearman_shared', 'weighted_nsti']
+n rows: 448
+                                    min           50%          mean           max
+n_mag_ko                    2058.000000   8666.500000   8513.729911  10119.000000
+n_pic_ko                    1948.000000  10543.000000  10404.765625  10543.000000
+n_shared                    1744.000000   7431.500000   7281.435268   8252.000000
+recall_of_mag                  0.199588      0.859563      0.856639      0.957240
+jaccard                        0.185307      0.633865      0.624705      0.706648
+mag_outside_pic_reference     88.000000   1200.000000   1179.662946   1867.000000
+frac_mag_outside_reference     0.042760      0.139690      0.137032      0.184504
+mag_in_ref_not_predicted       0.000000      0.000000     52.631696   5685.000000
+pic_only                       8.000000   3077.500000   3123.330357   8573.000000
+spearman_shared                0.141167      0.839017      0.823701      0.886838
+weighted_nsti                  0.005325      0.158663      0.170273      0.522898
+Samples with mag_in_ref_not_predicted == 0: 420
+  n_mag_ko                      : min=2058.0000, q25=8169.2500, med=8666.5000, q75=9002.7500, max=10119.0000
+  n_pic_ko                      : min=1948.0000, q25=10543.0000, med=10543.0000, q75=10543.0000, max=10543.0000
+  n_shared                      : min=1744.0000, q25=7099.0000, med=7431.5000, q75=7651.0000, max=8252.0000
+  recall_of_mag                 : min=0.1996, q25=0.8501, med=0.8596, q75=0.8713, max=0.9572
+  jaccard                       : min=0.1853, q25=0.6161, med=0.6339, q75=0.6462, max=0.7066
+  mag_outside_pic_reference     : min=88.0000, q25=1042.7500, med=1200.0000, q75=1341.0000, max=1867.0000
+  frac_mag_outside_reference    : min=0.0428, q25=0.1280, med=0.1397, q75=0.1496, max=0.1845
+  mag_in_ref_not_predicted      : min=0.0000, q25=0.0000, med=0.0000, q75=0.0000, max=5685.0000
+  pic_only                      : min=8.0000, q25=2850.2500, med=3077.5000, q75=3394.2500, max=8573.0000
+  spearman_shared               : min=0.1412, q25=0.8130, med=0.8390, q75=0.8577, max=0.8868
+  weighted_nsti                 : min=0.0053, q25=0.1153, med=0.1587, q75=0.2092, max=0.5229
+
+==============================================================================
+3. SPECIFICITY / CONTENT VS DEPTH / SPIRE ANCHOR CHECK
+==============================================================================
+           catalogue   db_seqs  dark_obs  dark_exp_size_only  dark_gap_pts  ctrl_obs  ctrl_exp_size_only  ctrl_gap_pts
+             atacama   6193359     95.61               90.94         -4.67     43.04               13.07        -29.97
+    desert_autotroph   7200701     72.81               90.23         17.42     10.48               11.89          1.41
+                arid  30569562     52.59               80.97         28.38      3.91                6.26          2.35
+antarctic_colddesert  49206550     67.55               77.02          9.47      8.67                5.07         -3.60
+              mojave  54361006     62.54               76.14         13.60      6.16                4.84         -1.32
+    deserts_combined 147531178     42.60               66.93         24.33      2.07                3.00          0.93
+                 gem 122978191     64.38               68.65          4.27      2.97                3.29          0.32
+               spire 269496580     39.90               61.20         21.30      0.98                2.21          1.23
+            mgnify90 717738164     52.68               52.53         -0.15      1.36                1.35         -0.01
+
+b6_absence_occupancy_by_length.tsv.gz:
+len_stratum  n_absent  median_sites_absent  n_has_hit  median_sites_has_hit  median_samples_absent  median_samples_has_hit
+     lt60aa      8642                   44      15893                    50                    149                     233
+      60-99      9105                   38      16994                    40                     97                     113
+    100-149      5506                   33      14214                    36                     77                      91
+    150-249      4877                   31      16424                    32                     70                      71
+    ge250aa      2349                   26      12038                    27                     55                      55
+
+--- rarefaction_curve.tsv (/home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/source_snapshot/06_darkmatter/specificity_clean/results/rarefaction_curve.tsv) ---
+       p  eff_db_seqs           anchor  dark_pct_absent_expected  ctrl_pct_absent_expected
+1.000000    717738164    mgnify90_full                    52.534                     1.355
+0.794328    570119689                -                    54.505                     1.517
+0.630957    452862166                -                    56.516                     1.711
+0.501187    359721205                -                    58.595                     1.916
+0.398107    285736710                -                    60.703                     2.157
+0.377575    271000000        spire_est                    61.202                     2.215
+0.316228    226968736                -                    62.856                     2.422
+0.251189    180287676                -                    65.028                     2.722
+0.205550    147531178 deserts_combined                    66.930                     3.003
+0.199526    143207591                -                    67.213                     3.046
+0.171341    122978191              gem                    68.648                     3.287
+0.158489    113753833                -                    69.376                     3.413
+0.125893     90357881                -                    71.528                     3.817
+0.100000     71773816                -                    73.637                     4.256
+0.079433     57011969                -                    75.723                     4.738
+
+--- b6_absence_vs_occupancy.tsv (/home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/source_snapshot/06_darkmatter/specificity_clean/results/b6_absence_vs_occupancy.tsv) ---
+               class  n_families  median_n_sites  median_n_samples  pct_le3_sites  median_dNdS
+absent_from_all_refs       30479              37                95           1.59       0.4718
+   has_hit_somewhere       75563              38               100           1.59       0.4232
+
+--- b6_definition_check.tsv (/home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/source_snapshot/06_darkmatter/specificity_clean/results/b6_definition_check.tsv) ---
+           definition  n_families_le3_sites  pct_universe  median_n_sites
+read_mapping_presence                  1690          1.59              37
+   assembly_detection                 12523         11.81               9
+
+--- b6_occupancy_bins.tsv (/home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/source_snapshot/06_darkmatter/specificity_clean/results/b6_occupancy_bins.tsv) ---
+site_bin  n_families  pct_universe  median_dNdS  n_with_dNdS  pct_dNdS_lt1  pct_absent_from_all_refs  median_n_samples
+     1-3        1690          1.59       0.3982         1622          99.0                     28.70                 6
+    4-10       11491         10.84       0.4007        11189          98.4                     28.71                12
+   11-30       27263         25.71       0.4205        26527          97.4                     29.86                37
+   31-55       58808         55.46       0.4463        53807          94.7                     29.65               157
+   56-61        6790          6.40       0.4931         4055          96.4                     16.42               360
+
+--- b6_length_confound.tsv (/home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/source_snapshot/06_darkmatter/specificity_clean/results/b6_length_confound.tsv) ---
+site_bin  n_families  median_rep_len  pct_lt100aa  median_len_with_dNdS  median_len_dropped  pct_with_dNdS
+     1-3        1690             145         31.7                   146                 126           96.0
+    4-10       11491             138         35.0                   139                  92           97.4
+   11-30       27263             136         34.9                   138                  58           97.3
+   31-55       58808              95         52.6                   102                  26           91.5
+   56-61        6790              37         83.3                    67                  24           59.7
+
+--- s14_persistence_by_length.tsv (/home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/source_snapshot/06_darkmatter/specificity_clean/results/s14_persistence_by_length.tsv) ---
+ length_stratum  n_families  pct_universe  median_samples_of_551  n_single_sample  pct_all_5_trips  pct_ge4_trips
+         lt60aa       24535          23.1                    201                4             89.7           97.7
+          60-99       26099          24.6                    107                0             81.9           95.6
+        100-149       19720          18.6                     87                0             78.4           94.9
+        150-249       21301          20.1                     71                0             73.6           92.9
+        ge250aa       14387          13.6                     55                0             67.1           90.8
+ALL_as_in_paper      106042         100.0                     98                4             79.4           94.8
+
+==============================================================================
+4. LINEAGE DARKNESS & MATCHED NULL CHECK
+==============================================================================
+v2_reps shape: (5438, 22)
+dark_fraction median: 0.063117 mean: 0.08409229974255242
+n_proteins sum: 20379930 n_dark sum: 1600067
+pooled dark_proteins / n_proteins: 0.07851189871604074
+Pool=archaea: n=218, target_med=0.3078, ctrl_med=0.0476, diff_med=0.2524, darker=216/218, scipy_p=1.800e-37, abs_diff_ties=0
+Pool=bacteria: n=237, target_med=0.3096, ctrl_med=0.0688, diff_med=0.2353, darker=237/237, scipy_p=1.244e-40, abs_diff_ties=0
+
+Top phyla by species count in v2_dark_composition_by_phylum:
+           phylum  n_species  species_share  median_abundance_share  dark_family_share  protein_share  dark_protein_share  enrichment_families  enrichment_proteins
+   Actinomycetota       1633       0.300294                0.527904           0.327564       0.298542            0.214580             1.090809             0.718758
+   Pseudomonadota       1216       0.223612                0.223152           0.095616       0.221162            0.123508             0.427597             0.558450
+     Bacteroidota        388       0.071350                0.028385           0.030116       0.072519            0.056613             0.422088             0.780657
+   Halobacteriota        269       0.049467                0.000000           0.009200       0.042551            0.023008             0.185975             0.540706
+    Chloroflexota        249       0.045789                0.038754           0.080642       0.054513            0.074632             1.761170             1.369073
+ Thermoplasmatota        237       0.043582                0.008142           0.198381       0.037907            0.152086             4.551874             4.012028
+  Planctomycetota        210       0.038617                0.006424           0.024485       0.046843            0.066200             0.634033             1.413223
+        Bacillota        208       0.038249                0.011558           0.007435       0.034149            0.020180             0.194380             0.590943
+Patescibacteriota        183       0.033652                0.001226           0.004996       0.009233            0.022713             0.148446             2.460090
+  Gemmatimonadota        163       0.029974                0.022883           0.054211       0.032622            0.032689             1.808591             1.002056
+
+==============================================================================
+5. CULTURED COMPARISON CHECK
+==============================================================================
+Path: /home/leechuck/Documents/papers/empty-quarter-mags/reproducibility/darkmatter/inputs/06_darkmatter/cultured_comparison_clean/results/step3_paired_by_species.tsv.gz
+                     mag_rep  n_cultured_genomes  cultured_n_proteins  cultured_n_dark  cultured_dark_fraction  mag_n_proteins  mag_n_dark  mag_dark_fraction     delta
+    30PRr3__self_SemiBin_293                   1                 5183               53                0.010226            5210         101           0.019386 -0.009160
+  30PRr3__single_SemiBin_149                   3                19545              327                0.016731            5403         108           0.019989 -0.003258
+30PRr3__single_SemiBin_4_sub                   6                28381              176                0.006201            5234         102           0.019488 -0.013287
+     3PRr3__self_SemiBin_848                   2                 8879              144                0.016218            4117          53           0.012873  0.003345
+  49PRr1__single_SemiBin_160                   1                 2842               56                0.019704            2800          41           0.014643  0.005061
+    55Dr2__single_SemiBin_17                   1                 3695               50                0.013532            3165          69           0.021801 -0.008269
+  55PRr1__single_SemiBin_159                   3                10562              224                0.021208            3132          68           0.021711 -0.000503
+   60PRr1__self_SemiBin_1190                  18                59284              282                0.004757            3293          22           0.006681 -0.001924
+    60PRr1__self_SemiBin_353                   8                26467              210                0.007934            3407          33           0.009686 -0.001752
+    64PRr2__self_SemiBin_454                   1                 3078               21                0.006823            2312          27           0.011678 -0.004855
+     64PRr2__self_SemiBin_63                   1                 2762              144                0.052136            3551         112           0.031540  0.020596
+   F13PRr2__self_SemiBin_135                   1                 2165               62                0.028637            3273         114           0.034830 -0.006193
+    F1PRr2__self_SemiBin_738                   1                 2527               11                0.004353            2713         162           0.059712 -0.055359
+    F28Dr1__self_SemiBin_285                  12                48216              252                0.005226            4661          43           0.009225 -0.003999
+   F35PRr1__self_SemiBin_714                  35               152580             1609                0.010545            4058          44           0.010843 -0.000298
+F4Sr2__single_SemiBin_30_sub                   2                 7304               28                0.003834            3180          21           0.006604 -0.002770
+     T1PRr2__self_SemiBin_31                   9                36486              186                0.005098            4401          48           0.010907 -0.005809
+    V35PRr2__self_SemiBin_99                   2                 7751               51                0.006580            3745          47           0.012550 -0.005970
+  V42PRr2__single_SemiBin_33                   2                 7670               59                0.007692            4151           6           0.001445  0.006247
+   V53PRr2__self_SemiBin_704                  49               211068             1958                0.009277            4386          45           0.010260 -0.000983
+    V53PRr2__self_SemiBin_82                  29               123790              634                0.005122            3985          36           0.009034 -0.003912
+  V54PRr1__single_SemiBin_12                   1                 3308               74                0.022370            2750         109           0.039636 -0.017266
+   V55Sr2__single_SemiBin_88                   1                 4373              102                0.023325            4454         102           0.022901  0.000424

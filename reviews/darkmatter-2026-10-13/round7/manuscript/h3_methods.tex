@@ -1,0 +1,17 @@
+For the matched-reference comparison, we sampled 1{,}500 genomes without replacement from the
+40{,}039 identifiers in SMAG Supplementary Data 2 \citep{ma2023smag}, using sorted identifiers
+and Python's random generator with seed 20261014. We retained this SMAG draw and sampled
+2{,}055 genomes from the 52{,}515-genome GEM frame for each seed 20261014--20261016.
+This fixed count follows $\lceil4{,}500{,}000\times1.05/2{,}300\rceil$; each GEM draw used a
+seeded shuffle of sorted identifiers. Both genome sets were called with Pyrodigal v3.7.1
+\citep{larralde2022pyrodigal} in metagenomic mode, omitting terminal stop symbols. After
+canonicalisation and exact-sequence deduplication within each arm, we sampled at each integer
+protein length the smaller of the two available sequence counts. This matches protein counts,
+residue totals and the full integer-length distribution. DIAMOND v2.0.15 searched all
+212{,}084 dark and control queries with \texttt{--sensitive -e 1e-3 -k 1}.
+Sensitivity comparisons excluded sequences shared between arms before matching, required
+\texttt{--id 30} during search, or used GEM's published Prodigal v2.6.3 calls followed by
+rematching. We report paired hit-rate differences and five query-length strata: below 100,
+100--149, 150--249, 250--399 and at least 400 residues. The three GEM draws quantify comparator
+sampling and quota sensitivity conditional on the fixed SMAG sample. Taxonomic composition,
+genome quality and reference diversity remain properties of the compared catalogues.

@@ -1,0 +1,42 @@
+{
+  "id": "H3",
+  "status": "REVISE",
+  "bounded_hypothesis": "Conditional on the MD5-verified public Zenodo 8223844 SMAG archive-order genome pool (recalled with Pyrodigal v3.7.1 -p meta --no-stop-codon) and the staged 52,515 published GEM Prodigal proteomes, after canonicalizing sequences (stripping trailing '*'), deduplicating within each reference arm, applying an explicit cross-release overlap rule, and enforcing exact common-support matching of unique reference protein counts across protein length strata, does the SMAG reference subset yield a different paired hit rate than length- and count-matched GEM reference subsets for Empty Quarter dark protein families under identical DIAMOND blastp settings?",
+  "critical_issues": [
+    "Unmatched reference protein length distributions and un-deduplicated pools: Despite DOSSIER.md:1,29,68 and DESIGN.md:24,41-42 claiming length-matched reference comparison, scripts/06_match_gem_and_search.py:68-98 only samples whole GEM proteomes until raw protein count reaches >=693,227 (694,598 GEM vs 693,227 SMAG). GEM has +9.28% more characters, higher mean/median length (319.20/271.00 aa vs 292.68/252.00 aa), 15.1x higher internal duplicate rate (2.26% vs 0.15%, leaving 678,867 canonical unique GEM proteins vs 692,194 in SMAG), and major reference length-stratum imbalances (+16.8% more <100 aa and +12.3% more 100-149 aa targets in SMAG; +17.5% more >=400 aa targets in GEM). Repair: deduplicate canonical sequences first and enforce exact common-support quota matching of unique reference proteins across length strata across repeated deterministic GEM draws, then re-run DIAMOND makedb/blastp.",
+    "Uncanonicalized trailing stop codons ('*') between callers: scripts/05_extract_and_genecall_smag.py:31 calls SMAG with --no-stop-codon (0/693,227 trailing '*'), whereas scripts/06_match_gem_and_search.py:81-90 retains published GEM trailing '*' on 663,757/694,598 (95.56%) proteins. Neither read_fasta_stats (line 37) nor hash_fasta (lines 103-120) strips '*', inflating GEM residue count by +663,757, shifting complete GEM protein lengths by +1 aa, and forcing exact MD5 overlap for complete proteins to 0 (reported as 0.00% in results/smag_vs_gem_redundancy_overlap_audit.tsv:9-10 and DOSSIER.md:70,129, whereas canonicalized rstrip('*').upper() sequences share 30 exact matches). Repair: strip trailing '*' and uppercase all sequences on ingestion before length, redundancy, and cross-catalogue overlap audits and database construction; also fix '32-mer MD5' terminology in DOSSIER.md:69,127.",
+    "Unsafe partial tar extraction, non-deterministic FASTA ordering, and deleted unhashed source genomes: Contradicting DESIGN.md:59-61 (which claims Python tarfile member.size verification), scripts/05_extract_and_genecall_smag.py:84 runs 'cat ... | tar -xz ... 2>/dev/null || true' and lines 100-120 check only size>=1000, leading '>', and trailing newline (which cannot detect multi-contig truncation at line boundaries). Job 53704317 (logs/pilot_v2_53704317.out:11-13) skipped extraction entirely via line 81 ('if not extracted_files:'), reusing 212 pre-extracted files, then lines 169-171 deleted all 212 nucleotide FASTA files without SHA-256 hashes or declared/observed byte records in results/smag_pilot_genome_manifest.tsv. Line 140-145 writes smag_pilot_recalled.faa in non-deterministic ProcessPoolExecutor as_completed order. Repair: stream verified archive parts via Python tarfile (mode='r|gz'), enforce len(data)==member.size (explicitly logging rejected 213th member MAG/SRR5855438rbin.1.fa at 6,995,968/12,783,848 bytes), retain extracted genomes with SHA-256 checksums in the manifest, and sort records deterministically before writing smag_pilot_recalled.faa.",
+    "Missing GEM manifest/checksums, hit-definition mismatch, unweighted equal-quota query pooling, and overstated full-test claims: scripts/06_match_gem_and_search.py:76-95 never saves sampled_gem_files (292 GEM genome IDs), and INPUTS.tsv:17,22-23 leaves GEM directory and both searched pilot FASTAs (234 MB and 322 MB) without SHA-256 hashes ('uncomputed_large'). DOSSIER.md:39 defines hits as E<=1e-3 and >=30% identity, but 06_match_gem_and_search.py:160-179 applies no pident>=30% filter (28/1,089 SMAG and 21/926 GEM hits have pident<30%). Equal-quota query strata (200/bin in 02_sample_queries.py:64-83) are summed unweighted in 06_match_gem_and_search.py:193-214 and pooled across dark+ctrl ('all'), and 0/0 is written as 'inf' in results/smag_vs_gem_matched_length_stratified.tsv:11. DOSSIER.md:203-210 (§8) claims causal soil-biome and caller-independent conclusions that the design cannot identify. Repair: write a complete GEM subset manifest and all FASTA SHA-256 hashes, reconcile the pident>=30% hit rule, report stratum-specific and population-weighted (or full 212,084-query) estimates without pooling dark+ctrl, fix 0/0 formatting, and restrict §7-8 to bounded caller-conditional reference-release comparisons."
+  ],
+  "evidence_paths": [
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/DESIGN.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/DOSSIER.md",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/INPUTS.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/scripts/02_sample_queries.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/scripts/03_pilot_subsample_search.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/scripts/04_fetch_smag_parts.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/scripts/05_extract_and_genecall_smag.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/scripts/06_match_gem_and_search.py",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/results/pilot_top1_bias_summary.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/results/smag_zenodo_download_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/results/smag_pilot_genome_manifest.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/results/smag_vs_gem_redundancy_overlap_audit.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/results/smag_vs_gem_matched_search_results.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/results/smag_vs_gem_matched_length_stratified.tsv",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/results/smag_pilot_hits.m8",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/results/gem_matched_hits.m8",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/logs/pilot_v2_53704317.out",
+    "reviews/darkmatter-2026-10-13/round6/snapshots/h3_v2/logs/pilot_v2_53704317.err",
+    "reviews/darkmatter-2026-10-13/round6/public_source_checks/zenodo_8223844.json"
+  ],
+  "optional_improvements": [
+    "Full-catalogue Zenodo 8223844 download (all 373 parts, ~39 GB) to extend the SMAG pool beyond the archive-order pilot parts.",
+    "External nucleotide assembly download for GEM MAGs to re-call GEM with Pyrodigal v3.7.1 for a fully caller-harmonized sensitivity analysis.",
+    "Three-arm GEM metadata stratification (Soil vs Non-Soil) and MMseqs2 95%/50% sequence clustering across full catalogues."
+  ],
+  "scope_changes_from_original": [
+    "Narrowed from a full-catalogue, caller-harmonized soil-biome effect (round5/EXTENSIONS.md H3) to a bounded reference-release subset comparison conditioned on the MD5-verified public Zenodo SMAG archive-order genome pool (recalled with Pyrodigal v3.7.1) and published GEM Prodigal proteomes.",
+    "Removed v1 claims that annotated control families calibrate the quantitative share of technical vs biological discordance or isolate residual desert lineage adaptation."
+  ],
+  "reason": "h3_v2 empirically proves top-1 post-hoc subsampling bias (Job 53700569) and demonstrates public Zenodo SMAG ingestion and paired DIAMOND blastp execution (Job 53704317), but fails to implement the claimed reference length-stratum matching and sequence deduplication, omits trailing '*' stop-codon canonicalization between Pyrodigal and GEM Prodigal (falsifying the 0.00% overlap audit), uses partial shell tar extraction without header byte-size verification while deleting unhashed source genomes, and omits GEM genome manifests and FASTA checksums."
+}

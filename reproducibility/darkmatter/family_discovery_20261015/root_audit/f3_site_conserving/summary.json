@@ -1,0 +1,176 @@
+{
+  "job_id": "53822479",
+  "families": {
+    "Type1": {
+      "source_counts": {
+        "EQ": 100,
+        "SMAG": 12,
+        "GEM": 158,
+        "curated_reference": 30
+      },
+      "closest_reference": {
+        "SMAG": {
+          "coverage_passing_hits": 99,
+          "median_identity": 34.0
+        },
+        "GEM": {
+          "coverage_passing_hits": 99,
+          "median_identity": 54.8
+        },
+        "curated_reference": {
+          "coverage_passing_hits": 97,
+          "median_identity": 42.7
+        }
+      },
+      "cluster_sensitivity": {
+        "50": {
+          "equal_addition_n": 12,
+          "fixed_joint_clustering": true,
+          "sources": {
+            "EQ": {
+              "sequences": 99,
+              "clusters_outside_reference": 24,
+              "mean_equal_addition_clusters_outside_reference": 5.72
+            },
+            "SMAG": {
+              "sequences": 12,
+              "clusters_outside_reference": 8,
+              "mean_equal_addition_clusters_outside_reference": 8
+            },
+            "GEM": {
+              "sequences": 145,
+              "clusters_outside_reference": 24,
+              "mean_equal_addition_clusters_outside_reference": 4.98
+            }
+          }
+        },
+        "80": {
+          "equal_addition_n": 12,
+          "fixed_joint_clustering": true,
+          "sources": {
+            "EQ": {
+              "sequences": 99,
+              "clusters_outside_reference": 77,
+              "mean_equal_addition_clusters_outside_reference": 11.21
+            },
+            "SMAG": {
+              "sequences": 12,
+              "clusters_outside_reference": 11,
+              "mean_equal_addition_clusters_outside_reference": 11
+            },
+            "GEM": {
+              "sequences": 145,
+              "clusters_outside_reference": 106,
+              "mean_equal_addition_clusters_outside_reference": 11.14
+            }
+          }
+        }
+      },
+      "median_cosine": {
+        "EQ": 0.016669330434027796,
+        "SMAG": 0.023418637032261935,
+        "GEM": 0.021122650877159477,
+        "curated_reference": 0.003725699855660125
+      }
+    },
+    "Helio": {
+      "source_counts": {
+        "EQ": 45,
+        "SMAG": 35,
+        "GEM": 73,
+        "curated_reference": 25
+      },
+      "closest_reference": {
+        "SMAG": {
+          "coverage_passing_hits": 45,
+          "median_identity": 50.4
+        },
+        "GEM": {
+          "coverage_passing_hits": 45,
+          "median_identity": 50.6
+        },
+        "curated_reference": {
+          "coverage_passing_hits": 42,
+          "median_identity": 51.400000000000006
+        }
+      },
+      "cluster_sensitivity": {
+        "50": {
+          "equal_addition_n": 35,
+          "fixed_joint_clustering": true,
+          "sources": {
+            "EQ": {
+              "sequences": 44,
+              "clusters_outside_reference": 16,
+              "mean_equal_addition_clusters_outside_reference": 13.98
+            },
+            "SMAG": {
+              "sequences": 35,
+              "clusters_outside_reference": 5,
+              "mean_equal_addition_clusters_outside_reference": 5
+            },
+            "GEM": {
+              "sequences": 71,
+              "clusters_outside_reference": 7,
+              "mean_equal_addition_clusters_outside_reference": 4.79
+            }
+          }
+        },
+        "80": {
+          "equal_addition_n": 35,
+          "fixed_joint_clustering": true,
+          "sources": {
+            "EQ": {
+              "sequences": 44,
+              "clusters_outside_reference": 40,
+              "mean_equal_addition_clusters_outside_reference": 32.25
+            },
+            "SMAG": {
+              "sequences": 35,
+              "clusters_outside_reference": 32,
+              "mean_equal_addition_clusters_outside_reference": 32
+            },
+            "GEM": {
+              "sequences": 71,
+              "clusters_outside_reference": 61,
+              "mean_equal_addition_clusters_outside_reference": 31.48
+            }
+          }
+        }
+      },
+      "median_cosine": {
+        "EQ": 0.013382508117992464,
+        "SMAG": 0.009034016665210087,
+        "GEM": 0.009180601455864967,
+        "curated_reference": 0.0061270816901801695
+      }
+    }
+  },
+  "quality_conditioned_context": {
+    "Type1": {
+      "n_pairs": 33,
+      "rho_positive": 13,
+      "control_positive": 6,
+      "discordant_rho_only": 8,
+      "discordant_control_only": 1,
+      "p_exact": 0.0390625,
+      "p_Holm": 0.078125
+    },
+    "Helio": {
+      "n_pairs": 18,
+      "rho_positive": 5,
+      "control_positive": 4,
+      "discordant_rho_only": 5,
+      "discordant_control_only": 4,
+      "p_exact": 1.0,
+      "p_Holm": 1
+    }
+  },
+  "limits": [
+    "Post-census reference-site sensitivity, not an independently preregistered validation.",
+    "Same retinal-Lys rule applied to every source; exact annotation of all30Type1referencepositions previously calibrated.",
+    "Site conservation does not demonstrate retinal binding or sensory function.",
+    "Fixed original joint cluster partition retained; no taxonomy-adjusted exceptional-diversity test.",
+    "Helio excludes short131aaA0A2C8YND9 reference lacking the reference-aligned site."
+  ]
+}
