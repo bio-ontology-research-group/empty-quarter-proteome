@@ -110,3 +110,25 @@ metadata from this node. Full audit: `resources/literature/CITATION_AUDIT.md` §
 fallback that resolved Holm 1979, Mantel 1967 and the BWA-MEM arXiv record, none of which Crossref has),
 bioRxiv fulltext, and the Europe PMC render route. **Blocked:** `ncbi.nlm.nih.gov/pmc`, `export.arxiv.org`
 (returns empty), nature.com and link.springer.com (auth redirects). Semantic Scholar rate-limits (429).
+
+## Added 2026-09-22 — regional soil genome catalogues (L1 pass)
+
+| paper | identifier | file into | why it is wanted |
+|---|---|---|---|
+| Leung, Bay, … Delgado-Baquerizo, Greening 2025, "Aridity drives global convergence of desert microbiomes and biogeochemical activities", bioRxiv (32 authors) | doi:10.1101/2025.11.29.691269 (bib `leung2025aridity`) | `regional-soil-catalogues/` or `trace-gas-deserts/` | the activity-measured successor to `ji2017atmospheric` / `bay2021trace`: standardised desert survey on seven continents with measured respiration, trace-gas oxidation and carbon fixation, aridity as the primary driver. Bears directly on §2.2 (our trace-gas census is capacity-only) and on the Discussion's desert-comparison paragraph. **Cannot establish from the abstract whether it reports MAGs or includes any Arabian site** — that is the blocking question |
+
+**Route note (2026-09-22):** the Europe PMC render URL `europepmc.org/articles/PMC<id>?pdf=render` now
+returns a **Cloudflare challenge (HTTP 403, `cf-mitigated: challenge`)** from this node, with or without a
+browser user agent — the August route is dead. Two replacements work: **`nature.com` open-access PDFs**
+(`https://www.nature.com/articles/<article-id>.pdf`) download cleanly with a browser user agent, and the
+**Europe PMC REST full text** (`https://www.ebi.ac.uk/europepmc/webservices/rest/PMC<id>/fullTextXML`)
+returns complete JATS XML without any challenge. **bioRxiv now rate-limits this node (HTTP 429)** on both
+`*.full.pdf` and `*.full-text`.
+
+## Added 2026-09-22 — Thermoplasmatota brief (L2 pass)
+
+| paper | identifier | file into | why it is wanted |
+|---|---|---|---|
+| Eloe-Fadrosh, Ivanova, Woyke & Kyrpides 2016, "Metagenomics uncovers gaps in amplicon-based detection of microbial diversity", *Nat Microbiol* 1:15032 | doi:10.1038/nmicrobiol.2015.32 (bib `eloefadrosh2016gaps`) | `reference-bias/` | the citation for main.tex line 56, "amplicons cannot reach … the archaea": ~10% of environmental SSU sequences are missed by classical PCR surveys, mostly CPR and uncharacterised Archaea, measured across >6,000 assembled metagenomes. **Paywalled, no PMCID, nature.com PDF route returns HTML.** Verified from Crossref plus the Europe PMC abstract only; the "mostly Archaea" split cannot be quantified further without the paper |
+| Bates, Berg-Lyons, Caporaso, Walters, Knight & Fierer 2011, "Examining the global distribution of dominant archaeal populations in soil", *ISME J* 5:908–917 | doi:10.1038/ismej.2010.171 (bib `bates2011soilarchaea`) | `dryland-ecology/` | the baseline R4 is measured against: two Nitrososphaeria phylotypes are >70% of soil archaeal sequences across 146 global soils, archaea average 2% of the community. Needed if R4 or the Discussion states that Thermoplasmatota being the cosmopolitan archaea of this sand sea is atypical for soil. **Paywalled, no PMCID**; numbers above come from the abstract, the per-biome breakdown (are any drylands in the 146?) is the blocking question |
+| Maeke et al. 2025 supplementary Fig. S16/S17 (AGNOSTOS unknown fractions per MAG) | part of doi:10.1186/s40168-025-02140-8 MOESM1 (`.docx`, 10 MB, downloaded to `/tmp` this session but **not filed**) | `thermoplasmatota/` | Table S16 was mined and is recorded in READING_NOTES; the AGNOSTOS panels S17 are the only figure in that paper directly comparable to our dark-family axis. Retrieve with the same Springer MediaObjects URL if the comparison is ever put in the text |

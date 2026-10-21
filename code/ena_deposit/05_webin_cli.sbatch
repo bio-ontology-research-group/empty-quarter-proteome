@@ -12,7 +12,9 @@
 #
 #   MODE=validate  local check of manifest + files (nothing is sent to ENA; the files need not be
 #                  uploaded yet) - this is the dry run.
-#   MODE=submit    IRREVERSIBLE: registers experiment + run on ENA; needs the files in the upload area.
+#   MODE=submit    IRREVERSIBLE: registers experiment + run on ENA. ⚠ Webin-CLI UPLOADS THE FILES ITSELF into
+#                  webin-cli/reads/<run>/ and ignores files pre-uploaded to the root of the upload area
+#                  (learned 2026-09-06 after 46 runs): for pre-uploaded reads use 08_submit_runs_xml.py instead.
 #   Never combine -submit with -test: Webin-CLI would push the 6 TB to the test area. Not offered here.
 #
 # Usage:

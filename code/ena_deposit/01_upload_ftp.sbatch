@@ -4,7 +4,7 @@
 #SBATCH --error=/ibex/scratch/projects/c2014/alelopezv/ena_wgs/logs/upload_%A_%a.err
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=4G
-#SBATCH --time=06:00:00
+#SBATCH --time=12:00:00
 #
 # md5 + FTP upload of the WGS read files to the ENA Webin upload area, one Slurm array task per run
 # (R1 + R2). Adapted from eqmgc 00_upload_ftp.sh (2026-04-30) with the IFS and log-overwrite fixes kept.
@@ -63,9 +63,30 @@ for name in "${files[@]}"; do
     [ "${DRYRUN}" = "1" ] && { echo "[dryrun] would upload ${name}"; continue; }
     if grep -q "^${name}	OK	" "${UPLOG}"; then echo "[skip] ${name} already uploaded"; continue; fi
 
+    remote_size() {   # Content-Length of the remote copy, or empty if the query is refused; up to 3 tries
+        local r=""; for i in 1 2 3; do
+            r=$(curl --silent -K "${curlconf}" --ftp-pasv -I "ftp://${WEBIN_HOST}/${name}" | awk '/Content-Length/ {print $2}' | tr -d '\r')
+            [ -n "${r}" ] && break; sleep 60
+        done; printf '%s' "${r}"
+    }
+    # a previous pass may have uploaded the file but failed to verify it: re-query before re-sending
+    if grep -q "^${name}	SIZE_MISMATCH	?	" "${UPLOG}"; then
+        remote=$(remote_size)
+        if [ "${remote}" = "${bytes}" ]; then
+            printf '%s\tOK\t%s\t%s\n' "${name}" "${remote}" "$(date -Is)" >> "${UPLOG}"
+            echo "[verified] ${name} already complete on the server (${remote} bytes)"; continue
+        fi
+    fi
+
     echo "[upload] ${run_alias} ${name} ($(( bytes / 1000000 )) MB) ..."
-    if curl --silent --show-error -K "${curlconf}" --ftp-pasv -T "${path}" "ftp://${WEBIN_HOST}/${name}"; then
-        remote=$(curl --silent -K "${curlconf}" --ftp-pasv -I "ftp://${WEBIN_HOST}/${name}" | awk '/Content-Length/ {print $2}' | tr -d '\r')
+    # ENA FTP refuses new logins (530) in waves of ~40 min: retry with a 5-min pause, up to 12 times (1 h)
+    ok=1
+    for attempt in $(seq 1 12); do
+        if curl --silent --show-error -K "${curlconf}" --ftp-pasv -T "${path}" "ftp://${WEBIN_HOST}/${name}"; then ok=0; break; fi
+        echo "  attempt ${attempt} failed; waiting 300 s"; sleep 300
+    done
+    if [ ${ok} -eq 0 ]; then
+        remote=$(remote_size)
         if [ "${remote}" = "${bytes}" ]; then
             printf '%s\tOK\t%s\t%s\n' "${name}" "${remote}" "$(date -Is)" >> "${UPLOG}"
             echo "  -> OK (remote ${remote} bytes)"

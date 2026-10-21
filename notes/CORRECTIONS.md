@@ -564,6 +564,60 @@ rewritten to: whole-protein architectures with no covering match, whose parts re
 structurally but are not recognisable sequence domains. Caveat: K is sequence-dark by construction, so
 the K-vs-control Pfam gap is partly built in; the K-vs-Q-not-K contrast carries the signal.
 
+### 2026-09-24 — genome-mapping cohort 548 → 550 (census and stress analyses rerun)
+
+The three canonical samples without a CoverM representative-level profile (`51Sr1`, `F13PRr1`, `F5Dr1`) now
+have one, but `F5Dr1` (1,232 read pairs after filtering) maps no read and its profile is all-NaN, so the
+usable cohort is 550 of 551, not 551. `lifeonair_clean`, `uv_survival_clean` and `osmolyte_clean` were rerun
+on 550 into `results/v551/` (scripts gained a `RES_OUT` override and a guard that skips zero-mapped samples;
+registered outputs untouched). Promoted: paired sites 44 → 45 (site 51 gains its surface profile); photolyase
+24.3/12.1 → 25.0/12.3, carotenoid 70.3/61.0 → 70.7/60.9, NHEJ 80.0/85.7 → 79.7/85.6 (mapped share, %);
+unmapped 54.3/53.7 (p 0.50) → 54.4/53.7 (p 0.47); Halobacteriota vs S ρ 0.451 → 0.456 (p 3.0e-14), Cl 0.385 →
+0.392, salt cohort n 248 → 250. Unchanged: guild share 18.4 %, species counts 968/1,170/1,860. Not rerun: the
+climate-axis gradients (n = 453) and the arsenic gradients in `resistome_clean` (n = 248); Figure 6c and 6e still
+show the 548 basis until rebuilt. Superseded: 548, 44 sites, 24.3/12.1, 70.3/61.0, 80.0/85.7, 0.451, 0.385, n 248.
+
+### 2026-09-24 — known relatives of the 237 Thermoplasmatota REGISTERED (lineage_darkness_clean, v2_thermo_relatives)
+
+Comparators: the 218 GTDB r232 species representatives of c__SW-10-69-26 (21) and c__E2 (197) plus the 83
+MGnify genomes in those classes (54 duplicate a GTDB rep and are excluded from nearest calls). SMAG's 49 genomes
+could not be fetched per genome and are not included. Result: 0 of 237 at ANI ≥ 95 %; best AAI median 64.8 %
+(same-genus median among GTDB reps 75.4 %); 24 reach 70 %; median AAI to the nearest other desert rep 73.1 %.
+New R4 paragraph and Methods sentences written. AAI is a new small step (reciprocal-best-hit DIAMOND on
+Pyrodigal proteomes) because no CompareM/EzAAI exists on the system. Downloads (5.0 GB) deleted; manifests kept.
+
+### 2026-09-24 — MIMAG rRNA/tRNA on the 5,438 REGISTERED (new folder `M/mimag_rrna_trna_clean/`)
+
+barrnap 0.9 + tRNAscan-SE 2.0.12 in domain mode (Slurm array 52468548). Under the full MIMAG rule 126 of the 5,438
+representatives are high quality (16S assembled in 495; all three rRNAs in 157; ≥18 tRNA isotypes in 3,629). The
+paper keeps completeness/contamination tiers (2,259 / 3,179) as operational and now discloses the MIMAG count in
+R1 and Methods; the former "not assessed" sentence is replaced.
+
+### 2026-09-24 — SMAG added to the reference-absence search (specificity_clean, SMAG leg)
+
+SMAG (Ma 2023; 40,039 genomes as listed in its Supplementary Data 2, from the Zenodo 8223844 archive, which holds
+40,352 files including 312 timestamped duplicates) was gene-called here (Pyrodigal -p meta, 129,550,340 proteins)
+and searched under the identical DIAMOND 2.0.15 rule. Dark 40.47 % absent vs control 1.57 %; +27.69 points over the
+size-only expectation, the largest gain of any multi-study catalogue (desert set +24.33, SPIRE +21.30). Union with
+SMAG 26.83 / 0.36 %. The shipped headline union (28.74 / 0.41 %, 1.258 G) is UNCHANGED; SMAG is written as a
+separately reported sixth catalogue in R6 and Methods until the depth check (spec_5) is rerun on the with-SMAG set.
+Genomes and intermediates deleted; only the DIAMOND db (54 GB, /ibex/user/velazqal/eqmags_31/smag/) is kept.
+
+### 2026-09-24 — depth check rerun on the with-SMAG absent set (specificity_clean, spec_5 with TAG)
+
+Job 52498970. Of the 28,446 dark families absent from the union with SMAG, 1,546 (5.43 %) gain a hit in MGnify90
+2026_07 against 138 of 385 control absences (35.8 %); 25.37 % of the 106,042 dark families remain unmatched by any
+reference searched (control 0.23 %). The hits are identical to the original run's on the same families. Registered
+beside the SMAG row; the paper still reports the old set (5.8 / 34.3 / 27.08) until decision A11.
+
+### 2026-09-27 — SMAG JOINS the headline reference-absence union (decision A11, Alejandra)
+
+Headline absence is now over MGnify90 ∪ GEM ∪ SPIRE ∪ SMAG ∪ five desert catalogues (1.387 G sequences): dark
+26.83 % (28,446) / control 0.36 % (385), replacing 28.74 % (30,479) / 0.41 % (435) on the 1.258 G union. Depth
+sentence now 5.4 / 35.8 / 25.37 % (was 5.8 / 34.3 / 27.08). Discussion gain range "24 to 28 points" (desert set,
+SMAG). Occupancy of the absent set recomputed on the 28,446 (see registry). Figure 5b needs the SMAG point and 5c
+the new occupancy values. Superseded: 28.74, 30,479, 0.41, 435, 1.258 G, 27.08, 5.8, 34.3.
+
 ### 2026-10-12 — P3 life on air: review round 1 (Astra) corrections
 Source: `lifeonair/reviews/round1/` (33 findings) and `response_round1.md`; code `lifeonair/code/fix_coxL_v2.py`,
 `h123_v2.R`, `h1_mechanism_v2.R`, `apply_sub_fix.py`, `b1_classifier_benchmark.sh`, `s1_sub_reconcile.sh`;

@@ -314,7 +314,7 @@ manuscript is either a tool cite (T3 is sufficient) or was read this session. Ro
 | **Greening et al. 2022, *Nat Rev Microbiol* 20:513** | carries the "absent from budgets" negative (D-3) | T2 abstract only; paywalled, no PMCID |
 | **D'Costa et al. 2011, *Nature* 477:457** | the pre-anthropogenic half of §2.4's resistome claim | T2 abstract only (not OA). Sufficient for the cite-only role it now has |
 | **King & Weber 2007, *Nat Rev Microbiol* 5:107** | the CO-oxidiser breadth claim (D-4) | T2 abstract only; paywalled review |
-| **Constant et al. 2010, *Environ Microbiol* 12:821** | "classic mesic-soil group 1h" (D-6) | T2 abstract only. ⚠ the on-disk `Constant_2016_streptomyces_h2.pdf` is **Liot & Constant 2016**, a *different* paper — do not mistake it for this one |
+| **Constant et al. 2010, *Environ Microbiol* 12:821** | "classic mesic-soil group 1h" (D-6) | T2 abstract only. ⚠ the on-disk `Liot_2016_streptomyces_h2.pdf` (formerly `Constant_2016_streptomyces_h2.pdf`, renamed 2026-10-11) is **Liot & Constant 2016**, a *different* paper — do not mistake it for this one |
 | **Parks et al. 2017, *Nat Microbiol* 2:1533** | optional second anchor for the L134 deep-lineage expectation | T2 abstract only, no PMCID. Not added — `liu2025qaidam` (T1, on disk) carries the claim |
 
 Two useful routes, both confirmed working from this node and worth remembering: **Europe PMC render**

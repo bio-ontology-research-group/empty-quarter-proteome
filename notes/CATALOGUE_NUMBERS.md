@@ -26,10 +26,11 @@ the union to get the genome-resolved numbers.
 | assemblies | **549** (1 failed + 1 empty): `51Sr1` has no contigs file, `F5Dr1` has a zero-byte one | `P` assembly tree |
 | sequencing depth per sample | median **21.58 Gbp** / 156.6 M reads after filtering, IQR 16.53–25.08, range 0–475.81; 3 samples below 2 Gbp (`F5Dr1` 1,232 reads, `F45PRr3`, `F13Sr1`); median **48.5%** of reads map to the 5,438 | fastp `*_report.json` + coverm logs |
 | DAS_Tool inputs → samples producing refined bins | **542** in → **539** out (3 yielded none) | `M/05_refine/sample_list.txt`; `*_DASTool_contig2bin.tsv` |
-| genome-mapping cohort (§2.1–2.4 abundance) | **548** usable of **569** profiles produced | `M/rebuild_20260729/picrust2_current_20260803/coverm_current/profiles_full_recompute/` |
+| MIMAG full rule on the 5,438 reps (barrnap 0.9 + tRNAscan-SE 2.0.12, domain mode) | high **126** / medium 5,312 / low 0; of the 2,259 completeness-contamination HQ, 2,133 drop to medium; all three rRNAs 157 · 16S 495 · 23S 333 · 5S 2,537 · ≥18 tRNA isotypes 3,629 (median 19) | `M/mimag_rrna_trna_clean/results/{mimag_tiers,rrna_trna_per_rep}.tsv` |
+| genome-mapping cohort (§2.1–2.4 abundance) | **550** usable of 551 canonical (`F5Dr1`, 1,232 read pairs, maps no read; `51Sr1` and `F13PRr1` profiles repaired 2026-09) | `M/rebuild_20260729/picrust2_current_20260803/coverm_current/profiles_full_recompute/` |
 | family-member mapping cohort (§1.4/§2.5) | **551** (complete) | `M/06_darkmatter/darkfam_basis_clean/results/coverm/` |
 | compartment split (canonical / profiled) | 117 / 166 / 268 · 116 / 165 / 267 (Surface / Deep / root-adjacent) | `M/metadata/sample_metadata.tsv` |
-| **sites**; site-paired test set | **60** sites (61 numeric labels); 45 Surface+Deep sampled; **44** both profiled | `M/metadata/sample_metadata.tsv` |
+| **sites**; site-paired test set | **60** sites (61 numeric labels); 45 Surface+Deep sampled; **45** both profiled (44 before the `51Sr1` profile repair) | `M/metadata/sample_metadata.tsv` |
 | XRF chemistry subset / climate axes | **248** / **453** profiled samples | `M/metadata/` |
 
 Footnotes: gene prediction ran on 552 assembly files (a Methods-level basis only). Three canonical samples
@@ -212,6 +213,7 @@ Basis: same folder. Class counts in §1.1 table above.
 | aerobic respiration in the 237 | cytochrome c oxidase coxA K02274 **168 of 237** (SW-10-69-26 124/185, E2 43/51) · cytochrome bd 38/237 | same |
 | encoded metabolism of the 237 (share of genomes; DRAM step-form modules ≥2/3 steps; comparators 1:1 completeness-matched: Halobacteriota 181 pairs, other archaea 216, bacteria 237) | EMP glycolysis **82.3%** · gluconeogenesis 81.0 · archaeal non-oxidative PPP **82.7** (Halobacteriota 9.9) · oxidative PPP 0.4 (75.1) · Entner–Doudoroff **0** · TCA 83.1 via 2-oxoglutarate:ferredoxin oxidoreductase 96.2 · glyoxylate cycle 79.3 (34.8) · complex I 70.9 · complex II 77.6 · coxA+coxB 58.6 · V/A-ATPase 91.1 · branched-chain amino-acid ABC **78.9** · peptide/Ni ABC 54.9 · multiple-sugar ABC **2.1** (72.9) · extracellular serine protease AprX 95.8 · endoglucanase 79.3 · chitinase 44.3 · GDH 94.5 + GS 82.3, GOGAT 19.4 (82.3) · nitrate assimilation 2.5 (71.8) · sulfate assimilation 10.1 · sulfide:quinone oxidoreductase 34.2 (1.7) · archaellum 99.6 · CRISPR-Cas 79.3 · catalase 28.7 (84.5) · trehalose otsAB 7.2 (53.6) | `results/v2_thermo_metabolism_summary.tsv` |
 | auxotrophy proxy | ilvBN/C/D carbon skeleton **1.7%** (Halobacteriota 91.2) with the terminal transaminase 93.2 → valine/isoleucine imported; median 11 of 16 testable amino acids and 5 of 17 cofactors encoded (matched bacteria 12 / 9); cobalamin 0.4, F420 0, pantothenate 0, thiamine 0.4, biotin 7.6 | same |
+| known relatives of the 237 (comparators: 218 GTDB r232 species reps of the two classes + 83 MGnify genomes, 54 duplicating a GTDB rep and excluded from nearest calls, 29 distinct; classes confirmed by GTDB-Tk r232) | ANI ≥ 95 %: **0 of 237** (3 skani hits at all, ANI 84–85 %, AF 14–18 %) · best AAI median **64.8 %** (IQR 58.8–66.4, max 80.0) · ≥ 65 %: 111 · ≥ 70 %: 24 · same-genus AAI among GTDB reps median 75.4 (5th pct 63.1), same-family 95th pct 68.3 (35 desert reps above) · median AAI to nearest other desert rep **73.1 %** · SW-10-69-26: 153/185 in o__JACQPN01, 4 nearest to type genome GCA_003009755.1 (median AAI to it 47.3) · 28 of 218 GTDB reps have a desert rep as nearest (16/21 SW-10-69-26, 12/197 E2) · MGnify biomes: marine sediment 60, soil 19, marine 4; nearest comparator of 142/237 is a soil genome | `results/v2_thermo_relatives_{summary,pairs,report}.tsv/txt` |
 | the two classes | E2 (51) vs SW-10-69-26 (185): same completeness (82.5 vs 85.6, p 0.18), smaller genomes (2.89 vs 3.84 Mb, p 3e-19), 819 vs 952 KOs at matched completeness; E2 sheds importers (peptide ABC 3.9 vs 68.6%), Trp/Pro/His/Met synthesis, SOD, cas3; keeps GOGAT (68.6 vs 5.4); dark 0.283 vs 0.320 | `results/v2_thermo_metabolism_report.txt` |
 
 ## §2.1 Reference prediction bias
@@ -240,7 +242,7 @@ comes from Bakta gene calls, so 55.6% is the proteome-consistent value; CheckM2'
 ## §2.2 Trace gases
 
 Basis: `M/06_atmospheric/lifeonair_clean/` on 5,438 reps / `rep_ko_v2` (`M/04_functional/repko_clean/`);
-abundance over the 548-sample genome-mapping cohort.
+abundance over the 550-sample genome-mapping cohort (`results/v551/`; 18.36 % median, unchanged from the 548 basis).
 
 | number | value | source |
 |---|---|---|
@@ -261,17 +263,17 @@ compartment tests on the 44 site-paired subset. Full grids = Supplementary Table
 |---|---|---|
 | within-phylum photolyase control (**R232**) | replicates in **3** phyla: Actinomycetota p=0.0014 · Pseudomonadota p=0.020 · Bacillota p=0.021. **Bacteroidota p=0.30 (not significant)** — it gained 107 reps in the r226→R232 `Bacteroidota_A` merge | `uv_survival_clean/results/within_phylum_tests.tsv` |
 | repair floor (% of species) | BER 99.6 · NER 99.5 · oxidative 93.5 · SOS 90.1 · NHEJ 74.5 · MMR 57.7 · carotenoid 54.4 · photolyase 17.9 | `uv_survival_clean/README.md` |
-| compartment (mapped, 44 sites) | photolyase 24.3 vs 12.1 · carotenoid 70.3 vs 61.0 · NHEJ 80.0 vs 85.7 | Supp Table S4 |
+| compartment (mapped, 45 sites) | photolyase 25.0 vs 12.3 · carotenoid 70.7 vs 60.9 · NHEJ 79.7 vs 85.6 · unmapped 54.4 vs 53.7 (p 0.47) | `uv_survival_clean/results/v551/compartment_tests.tsv` |
 | compartment (whole-community bound) | photolyase 11.1 vs 4.9 · carotenoid 31.1 vs 28.8 | Supp Table S4 |
 | ecotype test | null across 324/327 spanning species (all p≥0.18) → species sorting | `uv_survival_clean/README.md` |
 | osmolyte census (% of species) | any 79.5 · trehalose-any 75.4 (otsAB 66.3) · ectoine 16.5 · GG 3.6 · MG 2.8 | `osmolyte_clean/README.md` |
-| salt = turnover | Halobacteriota vs S ρ +0.451 (p 7.4e-14) · Cl +0.385 · proxy +0.311 (n=248, geography-partialled; CLR/detection-robust) | `osmolyte_clean/README.md` |
+| salt = turnover | Halobacteriota vs S ρ +0.456 (p 3.0e-14) · Cl +0.392 · proxy +0.316 (n=250, geography-partialled; CLR/detection-robust; `results/v551/salt_turnover.tsv`) | `osmolyte_clean/README.md` |
 | haloarchaea pathways | ectoine 5/269 · GG+MG 0/269 · trehalose 172/269 | `osmolyte_clean/README.md` |
 
 ## §2.4 Biosynthesis and resistome
 
 Basis: `M/06_metabolism/bgc_clean/` + `M/06_metabolism/resistome_clean/` (+ `pathway_check_clean/`
-verification layer) on 5,438 reps; community carriage on the 548-sample CoverM cohort.
+verification layer) on 5,438 reps; community carriage on the 550-sample CoverM cohort.
 
 | number | value | source |
 |---|---|---|
@@ -374,15 +376,16 @@ v2.0.15. **All numbers are dark/control pairs.** Jobs 50594992 · 50594993 · 50
 
 | number | value (dark / matched control) | source |
 |---|---|---|
-| **HEADLINE — absent from every named reference** (MGnify90 ∪ GEM ∪ deserts ∪ SPIRE, 1.258 G seqs) | **28.74% (30,479) / 0.41% (435)** — 70-fold | `results/union_specificity_summary.tsv` |
+| **HEADLINE — absent from every named reference** (MGnify90 ∪ GEM ∪ deserts ∪ SPIRE ∪ SMAG, 1.387 G seqs; decision A11 2026-09-27) | **26.83% (28,446) / 0.36% (385)** — 75-fold. Superseded: 28.74% (30,479) / 0.41% (435) on the 1.258 G union without SMAG (`results/union_specificity_summary.tsv`) | `results/union_specificity_with_smag_summary.tsv` |
 | per catalogue, % absent | mgnify90 (717,738,164) 52.68/1.36 · gem (122,978,191) 64.38/2.97 · spire (269,496,580) 39.90/0.98 · deserts_combined (147,531,178) 42.60/2.07 | `results/{specificity,desert_specificity}_summary.tsv` |
+| **SMAG** (Ma 2023; 40,039 genomes per Supplementary Data 2, Zenodo 8223844; Pyrodigal -p meta here; 129,550,340 proteins; DIAMOND 2.0.15 same rule) | absent dark **40.47%** (42,920) / control 1.57% (1,660) · size-only expectation 68.16 / 3.20 → gap **+27.69** / +1.63 points (desert set +24.33, SPIRE +21.30, GEM +4.27) · union with SMAG: dark **26.83%** (28,446) / control 0.36% (385); genome catalogues only (GEM+SPIRE+SMAG) 33.53 / 0.66 · SMAG JOINS the headline union (A11, 2026-09-27) · depth check (spec_5, MGnify90 2026_07) on the with-SMAG set: dark gain a hit 1,546/28,446 = **5.43%**, control residual resolved 138/385 = **35.8%**, dark still unmatched 26,900 = **25.37%** of 106,042, control 247 = 0.23% (old set: 5.8 / 34.3 / 27.08 / 0.27) | `results/smag_specificity_summary.tsv`, `smag_content_vs_depth.tsv`, `union_specificity_with_smag_summary.tsv`; db `/ibex/user/velazqal/eqmags_31/smag/smag_db.dmnd` (md5 213ca2a1…) |
 | per desert study, % absent | atacama (6,193,359) 95.61/43.04 · desert_autotroph (7,200,701) 72.81/10.48 · arid (30,569,562) 52.59/3.91 · antarctic_colddesert (49,206,550) 67.55/8.67 · mojave (54,361,006) 62.54/6.16 | `results/desert_specificity_summary.tsv` |
 | known **genome** space only (GEM ∪ SPIRE, 392.5M) | 39.10 / 0.89 | `results/union_specificity_summary.tsv` |
 | **content beyond depth** — gap vs a size-matched random MGnify90 slice (expected − observed, pts) | deserts_combined **+24.33** (42.60 obs / 66.93 exp) · spire **+21.30** · arid **+28.38** · gem +4.27; control gaps +0.93 / +1.23 / +2.35 / +0.32 | `results/content_vs_depth.tsv` |
 | rarefaction **self-validation** (licenses the above) | mgnify90 at p=1: 52.68 observed vs 52.53 expected = **0.15 pt** | `results/rarefaction_curve.tsv` |
 | **depth robustness** — vs complete MGnify90 **2026_07** (1,661,142,385 seqs, MMseqs2 `-s 7.5 -e 1e-3`) | 1,760 of 30,479 dark gain a hit (5.8%) → **27.08% still unmatched**; control 149 of 435 (34.3%) → **0.27%** | `results/depth_robustness_summary.tsv` |
 | e-value/DB-size confound, measured | 2,544 families (2.40%) hit only because the desert DBs were searched split rather than concatenated | README |
-| occupancy of the reference-absent set (length-stratified) | median **37 of 61 sites** vs 38 for families with a hit; holds in all five length strata (44/50 · 38/40 · 33/36 · 31/32 · 26/27) | `results/b6_absence_occupancy_by_length.tsv` |
+| occupancy of the reference-absent set (length-stratified; on the with-SMAG absent set, 28,446 vs 77,596) | median **37 of 61 sites** vs 38 for families with a hit; holds in all five length strata (44/50 · 38/40 · 34/36 · 31/32 · 27/27). Superseded (30,479 set): 33/36 and 26/27 in the third and fifth strata | `results/b6_absence_occupancy_by_length_with_smag.tsv` |
 
 ⚠ **Get the gap's sign right.** Gap = expected − observed. A **positive** gap means observed absence is
 *below* the size-matched expectation, so the catalogue leaves **less** of the dark proteome unexplained
@@ -390,7 +393,7 @@ than its size alone predicts (deserts_combined 42.60 observed vs 66.93 expected 
 is the reverse (atacama 95.61 vs 90.94 → −4.67). **Never write "a positive gap explains more absence"** —
 that states the opposite of the result.
 ⚠ **Do NOT union the depth leg with the DIAMOND absences** — different tool (MMseqs2) and release. It is a
-robustness check; **28.74% is the quotable headline**, 27.08% is its robustness figure.
+robustness check; **26.83% is the quotable headline** (SMAG in the union, 2026-09-27), 25.37% is its robustness figure.
 ⚠ **atacama's gap is not interpretable**: its *control* gap is −29.97 because a single 35-sample study is a
 narrow, redundant slice that loses to a random draw even for conserved proteins. Quote the gap for the
 large, broad catalogues only. See CORRECTIONS 2026-08-17.
