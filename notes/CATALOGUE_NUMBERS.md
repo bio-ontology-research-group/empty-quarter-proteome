@@ -6,7 +6,8 @@ qualify. Convention: each section's basis line names its workbench folder once; 
 to it. No dates and no job IDs here — time and change history live in `CORRECTIONS.md`, forensics live in
 the workbench README the source names (exception: a still-RUNNING job keeps its ID until the result lands).
 Numbers computed but not used in the paper stay in their workbench README and are not registered.
-Machine-checked mirror = `reproducibility/claims.tsv` (PI-owned, rebound from this file at end-game).
+Machine-checked mirror = `reproducibility/verify.py` + `reproducibility/claims.tsv` of this repo (PI-owned;
+`claims.tsv` is generated output, not edited by hand).
 
 Paths: `M = /ibex/scratch/projects/c2014/rob/metagenomics` ·
 `P = /ibex/scratch/projects/c2014/EmptyQuarter_Data/processed/sequencing-results/sites`
@@ -31,7 +32,7 @@ the union to get the genome-resolved numbers.
 | family-member mapping cohort (§1.4/§2.5) | **551** (complete) | `M/06_darkmatter/darkfam_basis_clean/results/coverm/` |
 | compartment split (canonical / profiled) | 117 / 166 / 268 · 116 / 165 / 267 (Surface / Deep / root-adjacent) | `M/metadata/sample_metadata.tsv` |
 | **sites**; site-paired test set | **60** sites (61 numeric labels); 45 Surface+Deep sampled; **45** both profiled (44 before the `51Sr1` profile repair) | `M/metadata/sample_metadata.tsv` |
-| XRF chemistry subset / climate axes | **248** / **453** profiled samples | `M/metadata/` |
+| XRF chemistry subset / climate axes | **250** / **455** profiled samples (248 / 453 on the 548 cohort, superseded) | `M/metadata/` |
 
 Footnotes: gene prediction ran on 552 assembly files (a Methods-level basis only). Three canonical samples
 lack genome profiles (51Sr1, F13PRr1, F5Dr1); the family-member mapping covers all 551 (F13PRr1 landed
@@ -140,7 +141,7 @@ admission ≥3 diverged members, ≥3 samples, ≥2 sites. Mapping cohort: 551 (
 | recurrence | median **12 samples / 9 sites** | `results/fam_recurrence.tsv` |
 | dN/dS dark vs control | **0.425** (96.7%<1, n=97,200) vs **0.388** (99.6%<1, n=95,647); MWU p<1e-300 | `results/selection/dnds.tsv` |
 | fast tail (>1) | 3.3% dark vs 0.4% control — hypothesis-generating only | `results/selection/dnds.tsv` |
-| **frame-shifted null arm** (same dark CDS read in the +1 frame, stop codons masked; seeded 10,000-family subset) | median **1.087** (IQR 0.901–1.326; 37.7% <1; n 9,148) vs the same families in the true frame **0.427** (IQR 0.295–0.580; 97.0% <1; n 9,182; full arm 0.425); paired null − true **+0.655**, null higher in **92.4%** of 9,029 families; stop codons masked 2.0% (+1 frame) vs 0.7% (true) | `results/selection/dnds_null_frame1.tsv`, `dnds_dark_subset.tsv` |
+| **frame-shifted null arm** (same dark CDS read in the +1 frame, stop codons masked; seeded 10,000-family subset) | Superseded (PI rerun, see PI October analyses): median **1.087** (IQR 0.901–1.326; 37.7% <1; n 9,148) vs the same families in the true frame **0.427** (IQR 0.295–0.580; 97.0% <1; n 9,182; full arm 0.425); paired null − true **+0.655**, null higher in **92.4%** of 9,029 families; stop codons masked 2.0% (+1 frame) vs 0.7% (true) | `results/selection/dnds_null_frame1.tsv`, `dnds_dark_subset.tsv` |
 | prevalence / abundance | median **98/551** · 4 single-sample · median peak **99 TPM** | `results/fam_{presence,abundance}.tsv` |
 | persistence | **79.4%** all-5 expeditions (94.8% ≥4) · 28.9% re-assembled all-5 | `results/fam_presence.tsv` + `fam_recurrence.tsv` |
 | persistence, length-stratified (presence rule favours short genes) | families ≥250 aa: median 55/551, **67.1%** all-5 · <60 aa: median 201/551, 89.7% all-5 | `results/fam_presence.tsv` × `darkmatter_clean/06_dark_lengths/` (CORRECTIONS 2026-08-17) |
@@ -161,13 +162,13 @@ rerun (`tmp/uniref_hits/`).
 | species shared with a catalogue representative (skani 0.3.1, ANI ≥95, AF ≥30) | **189 of 722** cultured genomes (26.2%); **25 of 5,438** representatives, all Bacteria; 203 pairs; the 189 resolve to **23** representatives on best ANI | `results/summary.tsv`, `shared_species.tsv` |
 | cultured dark rate | all 722: 48,741 / 3,024,784 = **1.61%** · 189 shared-species genomes: 6,713 / 777,916 = **0.86%** · unshared 533: 1.87% · by batch: soil 0.77, enrichment 1.62, isolate 2.05 | `results/step3_cultured_dark_rate_summary.tsv` |
 | matched representatives (23 distinct) | 1,513 / 87,381 = 1.73% pooled, median 1.29% | same |
-| **paired by species, n = 23** | cultured lower in **18 of 23**; median difference **−0.33 pp**; Wilcoxon **p 0.021**, sign test p 0.011; ≥10 strains (n=5) median −0.19 pp, single strain (n=9) −0.62 pp | `results/step3_paired_by_species.tsv` |
+| **paired by species, n = 23** | Superseded (PI rerun, see PI October analyses): cultured lower in **18 of 23**; median difference **−0.33 pp**; Wilcoxon **p 0.021**, sign test p 0.011; ≥10 strains (n=5) median −0.19 pp, single strain (n=9) −0.62 pp | `results/step3_paired_by_species.tsv` |
 | cultured dark proteins re-found as catalogue dark reps | 2,746 / 6,713 = **40.9%** | `results/step3_dark_with_cultured_homolog.tsv` |
 | catalogue dark reps with a cultured homolog (reciprocal cov ≥50%) | 4,226 / 4,292,446 = 0.10% (any hit 25,403 = 0.59%; 679 at ≥90% id in a shared-species genome) | same |
 | control in the same DIAMOND run | annotated family reps 49,170 / 106,042 = **46.4%** vs dark family reps 187 / 106,042 = **0.18%** (263-fold) | same |
 | lengths | catalogue dark reps median **70** aa (65.8% <100) · cultured dark proteins median **59** aa (78.5% <100) | `results/step3_length_summary.tsv` |
 
-| **pair anatomy** (step3_06; reciprocal best hits ≥50% id, ≥50% cov both ways; 23 pairs, best-ANI culture) | shared proteins median **2,935** per pair (pooled 69,207 of 87,381 MAG / 85,949 cultured); shared-pair identity median **99.7%**; **annotated MAG proteins with a partner 80.3%** (median 84.7) vs **dark 15.7%** (median 14.5); from the culture side 81.2% vs 23.6%; dark < annotated in **23 of 23** pairs, both directions; on complete calls ≥100 aa 88.9% vs 15.7% (n 65,450 vs 166) | `results/pair_anatomy/` |
+| **pair anatomy** (step3_06; reciprocal best hits ≥50% id, ≥50% cov both ways; 23 pairs, best-ANI culture) | Superseded (PI rerun, see PI October analyses): shared proteins median **2,935** per pair (pooled 69,207 of 87,381 MAG / 85,949 cultured); shared-pair identity median **99.7%**; **annotated MAG proteins with a partner 80.3%** (median 84.7) vs **dark 15.7%** (median 14.5); from the culture side 81.2% vs 23.6%; dark < annotated in **23 of 23** pairs, both directions; on complete calls ≥100 aa 88.9% vs 15.7% (n 65,450 vs 166) | `results/pair_anatomy/` |
 | pair anatomy, unique remainders | MAG-unique 18,174: median **137 aa** (shared 268), 45% partial, 51% within 200 bp of a contig end, 7% dark · culture-unique 16,742: median **210 aa**, 4.5% dark, 24% Bakta hypothetical; top products lipoprotein, phage protein, transposase, IS3, histidine kinase | same |
 
 Superseded (651-proteome run, 2026-09-20): 1.71% / 0.99% / 16 of 23, p 0.042 / 37.8% / 3,988 / 46.5% vs 0.16% / 60 aa.
@@ -207,14 +208,18 @@ Basis: same folder. Class counts in §1.1 table above.
 | matching covariates | completeness, contamination, log corrected size, log N50, log mean abundance, prevalence; 1:1 nearest neighbour without replacement | same |
 | composition | species **4.4%** · abundance **0.8%** (median of per-sample shares, 549 samples) · dark families **19.8%** of 77,069 single-phylum · dark proteins **15.2%** · enrichment **4.6** (families) / **4.0** (proteins); Actinomycetota 30.0 / 52.8 / 32.8 / 21.5, enr 1.1 / 0.7 | `results/v2_dark_composition_by_phylum.tsv` |
 | class tree | FastTree LG+gamma on the **r232** GTDB-Tk ar53 alignment, **1,914** taxa (237 desert + 1,647 r232 Thermoplasmatota reps + 30 outgroup); display only. The earlier tree on the r226 alignment (1,525 taxa) is kept in `results/thermo_tree_r226/` | `results/thermo_tree.nwk` (job 52210624) |
-| occurrence (549 usable samples) | detected in **481 of 549**; median 21 of 237 reps per sample; summed share median **0.39%** of reads (IQR 0.06–1.01); Halobacteriota 81 of 549 (patchy, median 31 reps where present) | `results/v2_thermo_ecology_summary.tsv` |
-| depth | median share Deep **0.55%** (155/165 samples) · PlantRoot 0.38% (224/267) · Surface **0.17%** (102/117); site-paired Surface vs Deep: **Deep higher at 40 of 45 sites**, median −0.38 pp, Wilcoxon p 4e-7 (38/45, p 8e-7 after dividing by total mapped); PlantRoot vs bulk **null** (26/53, p 0.66) | same |
+| occurrence (550 usable samples) | detected in **482 of 550**; median **21** of 237 reps per sample; summed share median **0.38%** of reads (0.3823) | `M/06_darkmatter/natcomms_20261020/results/ecology_run.json` |
+| depth (visit-matched design) | **37 sites / 69 site–visit pairs**; subsurface higher at **36 of 37** sites (34 on mapped reads); median **+0.46 pp** (95% site bootstrap 0.33–0.86); Holm p **4.07e-10** · root-adjacent vs subsurface lower at **30 of 48** sites, **−0.23 pp**, adjusted p **0.0148** | `M/06_darkmatter/natcomms_20261020/results/ecology_summary.tsv` (rows Deep−Surface, Root−Deep); 30/48 counted from `ecology_site_contrasts.tsv` |
 | clean absences in the 237 (median completeness 85.4) | mcrABG **0** (also 0 in all 5,438: no methanogen recovered) · amoABC **0** (archaea overall 55/591) · rhodopsin bop/hop/sop **0** (Halobacteriota 51/269) · nifHDK 0 (all archaea 0) · photolyase **5** · ectoine ectC **1** · hydrogenase K06281 17 · coxL K03520 12 · trehalose otsAB 30 | `results/v2_thermo_ecology_by_rep.tsv` |
 | aerobic respiration in the 237 | cytochrome c oxidase coxA K02274 **168 of 237** (SW-10-69-26 124/185, E2 43/51) · cytochrome bd 38/237 | same |
 | encoded metabolism of the 237 (share of genomes; DRAM step-form modules ≥2/3 steps; comparators 1:1 completeness-matched: Halobacteriota 181 pairs, other archaea 216, bacteria 237) | EMP glycolysis **82.3%** · gluconeogenesis 81.0 · archaeal non-oxidative PPP **82.7** (Halobacteriota 9.9) · oxidative PPP 0.4 (75.1) · Entner–Doudoroff **0** · TCA 83.1 via 2-oxoglutarate:ferredoxin oxidoreductase 96.2 · glyoxylate cycle 79.3 (34.8) · complex I 70.9 · complex II 77.6 · coxA+coxB 58.6 · V/A-ATPase 91.1 · branched-chain amino-acid ABC **78.9** · peptide/Ni ABC 54.9 · multiple-sugar ABC **2.1** (72.9) · extracellular serine protease AprX 95.8 · endoglucanase 79.3 · chitinase 44.3 · GDH 94.5 + GS 82.3, GOGAT 19.4 (82.3) · nitrate assimilation 2.5 (71.8) · sulfate assimilation 10.1 · sulfide:quinone oxidoreductase 34.2 (1.7) · archaellum 99.6 · CRISPR-Cas 79.3 · catalase 28.7 (84.5) · trehalose otsAB 7.2 (53.6) | `results/v2_thermo_metabolism_summary.tsv` |
 | auxotrophy proxy | ilvBN/C/D carbon skeleton **1.7%** (Halobacteriota 91.2) with the terminal transaminase 93.2 → valine/isoleucine imported; median 11 of 16 testable amino acids and 5 of 17 cofactors encoded (matched bacteria 12 / 9); cobalamin 0.4, F420 0, pantothenate 0, thiamine 0.4, biotin 7.6 | same |
 | known relatives of the 237 (comparators: 218 GTDB r232 species reps of the two classes + 83 MGnify genomes, 54 duplicating a GTDB rep and excluded from nearest calls, 29 distinct; classes confirmed by GTDB-Tk r232) | ANI ≥ 95 %: **0 of 237** (3 skani hits at all, ANI 84–85 %, AF 14–18 %) · best AAI median **64.8 %** (IQR 58.8–66.4, max 80.0) · ≥ 65 %: 111 · ≥ 70 %: 24 · same-genus AAI among GTDB reps median 75.4 (5th pct 63.1), same-family 95th pct 68.3 (35 desert reps above) · median AAI to nearest other desert rep **73.1 %** · SW-10-69-26: 153/185 in o__JACQPN01, 4 nearest to type genome GCA_003009755.1 (median AAI to it 47.3) · 28 of 218 GTDB reps have a desert rep as nearest (16/21 SW-10-69-26, 12/197 E2) · MGnify biomes: marine sediment 60, soil 19, marine 4; nearest comparator of 142/237 is a soil genome | `results/v2_thermo_relatives_{summary,pairs,report}.tsv/txt` |
 | the two classes | E2 (51) vs SW-10-69-26 (185): same completeness (82.5 vs 85.6, p 0.18), smaller genomes (2.89 vs 3.84 Mb, p 3e-19), 819 vs 952 KOs at matched completeness; E2 sheds importers (peptide ABC 3.9 vs 68.6%), Trp/Pro/His/Met synthesis, SOD, cas3; keeps GOGAT (68.6 vs 5.4); dark 0.283 vs 0.320 | `results/v2_thermo_metabolism_report.txt` |
+
+Superseded (site-paired design, 549 samples; `results/v2_thermo_ecology_summary.tsv`): occurrence 481 of 549, 0.39% (IQR
+0.06–1.01; Halobacteriota 81 of 549); Deep 0.55% / PlantRoot 0.38% / Surface 0.17%; Deep higher at 40 of 45 sites, median
+−0.38 pp, Wilcoxon p 4e-7 (38/45, p 8e-7 on mapped); PlantRoot vs bulk null (26/53, p 0.66).
 
 ## §2.1 Reference prediction bias
 
@@ -257,7 +262,8 @@ abundance over the 550-sample genome-mapping cohort (`results/v551/`; 18.36 % me
 ## §2.3 Radiation, desiccation, salt
 
 Basis: `M/06_metabolism/uv_survival_clean/` + `M/06_metabolism/osmolyte_clean/` on 5,438 reps / `rep_ko_v2`;
-compartment tests on the 44 site-paired subset. Full grids = Supplementary Tables S3–S4.
+compartment tests on the 45 site-paired subset; gradient tests on the 550 cohort (salt axes n = 250, climate axes n = 455;
+`osmolyte_clean/results/v551/gradient_tests.tsv`). Full grids = Supplementary Tables S3–S4.
 
 | number | value | source |
 |---|---|---|
@@ -283,7 +289,7 @@ verification layer) on 5,438 reps; community carriage on the 550-sample CoverM c
 | AMR census (% of species) | any 37.4 · β-lactam 24.6 (1,335) · aminoglycoside 11.9 · rifamycin 7.2 | `resistome_clean/results/amr_class_summary.tsv` |
 | AMR carriage | median 15% whole-community / 33.5% mapped | `resistome_clean/results/community_summary.tsv` |
 | metal layer (STRESS) | arsenic 17.3 (943) · mercury 7.5 (409) | `resistome_clean/results/stress_class_summary.tsv` |
-| arsenic gradients (geography-partialled) | Ca ρ +0.224 (q 0.011, n=248) · precipitation −0.243 (q 2.4e-6, n=453) | `resistome_clean/results/gradient_tests.tsv` |
+| arsenic gradients (geography-partialled, 550 cohort) | Ca ρ +0.226 (q 0.0093, n=250) · precipitation −0.242 (q 2.6e-6, n=455); superseded 548-cohort values +0.224 (q 0.011, n=248) / −0.243 (q 2.4e-6, n=453) | `resistome_clean/results/v551/gradient_tests.tsv` |
 | pathogen census | 2 named pathogen species of 5,438 (0.04%) · pathogen-containing genera 0.9% | `resistome_clean/results/pathogen_census_summary.tsv` |
 | VFDB tiers (PI compute, reused) | 5,435 → 3,769 → 202 species at id ≥40 → ≥70 → ≥90 | `M/06_resistome_safety/vfdb/VFDB.md` |
 | ectoine triangulation | antiSMASH×KO Jaccard 0.921 (860/895/899) · trehalose KO×gapsmith 0.795 | `pathway_check_clean/results/triangulation_summary.tsv` |
@@ -356,10 +362,10 @@ climate 456).
 | families tracking an axis (q<0.05 · % negative) | S 54,227 (91.7) · Ca 47,174 (92.5) · Cl 46,972 (90.4) · salinity proxy 37,280 (86.9) · Fe 24,110 (95.0) · aridity 23,031 (95.9) · K 11,935 · Na 4,603 | `results/indicators_summary.tsv` |
 | trace-metal nulls | V, Mo, Ni, Co, Mn, Zn = 0 families (Cu 1) | `results/indicators_summary.tsv` |
 | space-partial retention (control lat+lon, q<0.05 surviving) | **plant-root 94.1%** (n 547; 61,182 → 59,820) · aridity 85.6% · Cl 82.6% · S 82.0% · Ca 71.1% · salinity proxy 41.4% | `results/partial_summary.tsv` |
-| plant-root contrast, family sets (q<0.05 of 102,005 tested) | **19,818 root-enriched** (median ρ +0.154, IQR 0.121–0.200) · **40,495 root-depleted** (−0.186, IQR −0.235 to −0.140) | `results/compartment_families_summary.tsv` |
-| phylum shares, root-enriched vs all attributable (single-phylum base 77,069) | Pseudomonadota **19.2 vs 9.6%** · Actinomycetota **16.8 vs 32.8%** · Myxococcota_A 11.3 vs 4.9 · Thermoplasmatota 11.2 vs 19.8 · Planctomycetota 8.3 vs 2.4 · Bacteroidota 5.5 vs 3.0; root-depleted: Actinomycetota **52.7%**, Chloroflexota 13.2, Thermoplasmatota 11.3 | `results/compartment_families_by_phylum.tsv` |
-| over-representation among root-enriched (share of set / share of all; ≥20 families) | Bacillota 3.6 · Planctomycetota 3.4 · Bdellovibrionota 3.3 · Cyanobacteriota 3.0 · Verrucomicrobiota 2.9 · Myxococcota_A 2.3 · Pseudomonadota 2.0 | same |
-| all-five-expedition persistence of the two sets | root-enriched **86.8%** · root-depleted **89.8%** · all families 79.4% | `results/compartment_families_summary.tsv` |
+| plant-root contrast, family sets (q<0.05 of 102,005 tested) | Superseded (PI rerun, see PI October analyses): **19,818 root-enriched** (median ρ +0.154, IQR 0.121–0.200) · **40,495 root-depleted** (−0.186, IQR −0.235 to −0.140) | `results/compartment_families_summary.tsv` |
+| phylum shares, root-enriched vs all attributable (single-phylum base 77,069) | Superseded (PI rerun, see PI October analyses): Pseudomonadota **19.2 vs 9.6%** · Actinomycetota **16.8 vs 32.8%** · Myxococcota_A 11.3 vs 4.9 · Thermoplasmatota 11.2 vs 19.8 · Planctomycetota 8.3 vs 2.4 · Bacteroidota 5.5 vs 3.0; root-depleted: Actinomycetota **52.7%**, Chloroflexota 13.2, Thermoplasmatota 11.3 | `results/compartment_families_by_phylum.tsv` |
+| over-representation among root-enriched (share of set / share of all; ≥20 families) | Superseded (PI rerun, see PI October analyses; not recomputed there): Bacillota 3.6 · Planctomycetota 3.4 · Bdellovibrionota 3.3 · Cyanobacteriota 3.0 · Verrucomicrobiota 2.9 · Myxococcota_A 2.3 · Pseudomonadota 2.0 | same |
+| all-five-expedition persistence of the two sets | Superseded (PI rerun, see PI October analyses): root-enriched **86.8%** · root-depleted **89.8%** · all families 79.4% | `results/compartment_families_summary.tsv` |
 
 Footnotes: counts ≈10× the June object's (universe 4.5× larger; median family prevalence 98/551 clears
 the ≥25-present power gate); June's Mo signal (177 families, 100% positive) does not reproduce (0) —
@@ -383,9 +389,9 @@ v2.0.15. **All numbers are dark/control pairs.** Jobs 50594992 · 50594993 · 50
 | known **genome** space only (GEM ∪ SPIRE, 392.5M) | 39.10 / 0.89 | `results/union_specificity_summary.tsv` |
 | **content beyond depth** — gap vs a size-matched random MGnify90 slice (expected − observed, pts) | deserts_combined **+24.33** (42.60 obs / 66.93 exp) · spire **+21.30** · arid **+28.38** · gem +4.27; control gaps +0.93 / +1.23 / +2.35 / +0.32 | `results/content_vs_depth.tsv` |
 | rarefaction **self-validation** (licenses the above) | mgnify90 at p=1: 52.68 observed vs 52.53 expected = **0.15 pt** | `results/rarefaction_curve.tsv` |
-| **depth robustness** — vs complete MGnify90 **2026_07** (1,661,142,385 seqs, MMseqs2 `-s 7.5 -e 1e-3`) | 1,760 of 30,479 dark gain a hit (5.8%) → **27.08% still unmatched**; control 149 of 435 (34.3%) → **0.27%** | `results/depth_robustness_summary.tsv` |
+| **depth robustness** — vs complete MGnify90 **2026_07** (1,661,142,385 seqs, MMseqs2 `-s 7.5 -e 1e-3`) | 1,760 of 30,479 dark gain a hit (5.8%) → 27.08% still unmatched; control 149 of 435 (34.3%) → 0.27% — **superseded by 25.37 / 5.43 / 35.8 on the with-SMAG set** (SMAG row above) | `results/depth_robustness_summary.tsv` |
 | e-value/DB-size confound, measured | 2,544 families (2.40%) hit only because the desert DBs were searched split rather than concatenated | README |
-| occupancy of the reference-absent set (length-stratified; on the with-SMAG absent set, 28,446 vs 77,596) | median **37 of 61 sites** vs 38 for families with a hit; holds in all five length strata (44/50 · 38/40 · 34/36 · 31/32 · 27/27). Superseded (30,479 set): 33/36 and 26/27 in the third and fifth strata | `results/b6_absence_occupancy_by_length_with_smag.tsv` |
+| occupancy of the reference-absent set (length-stratified; on the with-SMAG absent set, 28,446 vs 77,596) | median **37 of 61 location labels** (60 sites, see cohorts footnote) vs 38 for families with a hit; holds in all five length strata (44/50 · 38/40 · 34/36 · 31/32 · 27/27). Superseded (30,479 set): 33/36 and 26/27 in the third and fifth strata | `results/b6_absence_occupancy_by_length_with_smag.tsv` |
 
 ⚠ **Get the gap's sign right.** Gap = expected − observed. A **positive** gap means observed absence is
 *below* the size-matched expectation, so the catalogue leaves **less** of the dark proteome unexplained
@@ -397,6 +403,36 @@ robustness check; **26.83% is the quotable headline** (SMAG in the union, 2026-0
 ⚠ **atacama's gap is not interpretable**: its *control* gap is −29.97 because a single 35-sample study is a
 narrow, redundant slice that loses to a random draw even for conserved proteins. Quote the gap for the
 large, broad catalogues only. See CORRECTIONS 2026-08-17.
+
+## PI October analyses (P4 rewrite)
+
+Basis: here **P = `reproducibility/darkmatter/` of this repo** (not the header's sites path); IBEX folders
+`M/06_darkmatter/p6_hypotheses_clean/`, `M/06_darkmatter/p7_analyses_clean/`, `M/06_darkmatter/natcomms_20261020/`,
+`M/06_darkmatter/heat_stress_20261016/`. Machine mirror: `reproducibility/verify.py` / `claims.tsv` (PI-owned).
+
+| number | value | source |
+|---|---|---|
+| PGLS within Thermoplasmatota | protein-sharing coefficient **−0.1375** (SE 0.0195, p 1.9e-11); AAI +0.0017 (SE 0.0004); Pagel λ 0.916; R² 0.469; 1,914-taxon tree | `M/06_darkmatter/p6_hypotheses_clean/h1_lineage/results/v3_pgls_ancestry_summary.txt` |
+| flanking-orthologue recurrence | **353** families; excess 31.75 pp (K) vs 25.67 pp (Q∖K); MH difference 0.035, p 0.41 | `M/06_darkmatter/p7_analyses_clean/h2_context/RESULTS.md` |
+| matched-depth SMAG vs GEM | 1,500 SMAG / 2,055 GEM genomes, 4,210,592 proteins each; dark hit rate **28.35 vs 9.81%** = **+18.54 pp** (GEM draws 16.83, 16.91); control +3.10 | `M/06_darkmatter/p7_analyses_clean/h3_references/results/matched_full_census_summary.tsv` |
+| crop (confident-region) structural search | **1,807** of 2,838 matched initially; **964** whole-chain-unmatched in the paired PDB run; **714 (74.07%)** recover a crop match | `M/06_darkmatter/p7_analyses_clean/h4_structure/results/v7_stratum_census.tsv` |
+| culture DNA-level support | **516 of 1,105** dark-unshared calls DNA-supported; **47** admitted families intersect the culture comparison | `P/culture_nucleotide_cigar/summary.json`, `P/culture_family_membership/summary.json` |
+| culture pairs, *E. coli* representative excluded | **22** pairs; cultured lower in **18 of 22**; median **−0.36 pp**; Wilcoxon p **0.0066**; reciprocal partner **80.1%** annotated vs **15.8%** dark | `P/round1_sensitivity.json` (block `exclude_ecoli`) |
+| AntiFam / opposite-strand screens | **3,385** dark proteins flagged, **141** admitted members; 56 AntiFam + 46 shadow families, disjoint, union **102** | `P/antifam/summary.json`, `P/shadow_overlap/family_flags.tsv` |
+| visit-bundle permutation, all-five-expedition detection | observed **79.4%**; expected 80.5% (p 0.11); label null 82.7% (p 0.002) | `P/round5_extensions/results/temporal_visits_summary.json` |
+| PICRUSt2 Jaccard, shared KOs | **0.634** | `P/round5_extensions/RESULTS.md` |
+| frame-shift null (PI rerun) | median **1.086**, n 9,029 paired | `P/current_table_checks.json` |
+| plant-root family sets (PI rerun after round-4 ecology fixes, 547 samples) | **101,897** tested; **20,136** root-enriched / **41,046** root-depleted; shares Actinomycetota 16.6%, Pseudomonadota 19.1%; persistence 86.3 / 89.9% | `P/round4_corrections/results/compartment_families_summary.tsv` |
+| contaminant exclusion | 12 flagged representatives (10 vector-contig + 2 SNTC) hold 42,831 protein / 1,792 dark instances; per-genome dark median **6.31 → 6.34%** | `M/06_darkmatter/lineage_darkness_clean/results/v2_rep_dark.tsv` × `M/06_darkmatter/contamination_clean/results/control_contig_hits.tsv` |
+| chaperone-neighbourhood families (Thermoplasmatota) | **5 of 2,630** at q < 0.05; GrpE 16 of 18 (q 3.47e-9); DnaJ/GrpE 14 of 18 (q 1.19e-5); genus-aggregated q = 1 | `M/06_darkmatter/heat_stress_20261016/RESULTS.md` |
+| heliorhodopsins (Saccharimonadia) | 65 → **45** lysine-bearing; **43** read-supported; pLDDT 93.13; TM 0.865 | `P/family_followup_20261015/results/f3_comparison/`, `read_support/loci.tsv`, `structure_audit/structures.tsv` |
+| CPF photolyase family | **914** genes in **775** MAGs; **+8.47 pp** (Holm 0.0013) | `P/family_followup_20261015/results/ecology/median_ecology_tests.tsv`, `P/family_discovery_20261015/root_audit/f1_full/summary.json` |
+| EctC / EctABC | **616** loci in 608 MAGs; +0.56 pp (Holm 0.389) | same ecology table; `claims.tsv` `family.ect.ABC` |
+
+Footnotes: crops — 1,807 is printed; 964 = 1,031 − 67 and 714 = 775 − 61 are derived from `v7_stratum_census.tsv` cells.
+Culture pairs — the all-pairs values (23 pairs, 18/23, −0.33 pp, p 0.021, 80.3 / 15.7%; R2 table) are superseded by the
+*E. coli*-excluded basis (A2, decided by the PI). Frame-shift null — our 1.087 (n 9,148; §1.4) is superseded by 1.086.
+Plant-root sets — our 102,005 / 19,818 / 40,495 / 16.8 / 19.2 / 86.8 / 89.8 (§2.5) are superseded by the PI rerun.
 
 ---
 
@@ -423,10 +459,14 @@ large, broad catalogues only. See CORRECTIONS 2026-08-17.
 | BGC on 15,469 bins: terpene **64.5%** · NRPS 25.3% · ectoine 17.0% · edge "~90%" | 5,438 species: 62.1 · 25.1 · 16.5 · edge 85.3 measured (§2.4) | BGC census |
 | AMR on 15,469 bins: β-lactam **24.67%** · As 2,423 · Hg 1,077 · pathogens 7 MAGs / 0.05% · "As tracks salinity proxy r=+0.26" | 5,438 species: 24.55 · As 943 · Hg 409 · 2 species / 0.04% · Ca/Na + aridity, geography-partialled (§2.4) | resistome |
 | C1 on 15,469 bins / 436 matched samples: no-KO **56.7%** · recall **93%** · MAG richness **4,482** · ratios 2.40×/1.11× and 31.41×/14.63× | 5,438 / 448 samples: **55.6%** (58.4% CheckM2 denominator) · 86.0% · 8,666 · ratios stay withdrawn (§2.1) | reference bias |
+| Thermoplasmatota occurrence **481/549**, 0.39% | **482/550**, 0.38% (R4) | archaeal occurrence |
+| Deep higher at **40 of 45** sites (site-paired), −0.38 pp, p 4e-7 | **36 of 37** sites, visit-matched (69 pairs), +0.46 pp, Holm 4.07e-10 (R4) | archaeal depth |
+| culture pairs **23**; 18/23, −0.33 pp, p 0.021; 80.3 / 15.7% | **22** (*E. coli* excluded); 18/22, −0.36 pp, p 0.0066; 80.1 / 15.8% (PI October) | cultivation control |
+| frame-shift null **1.087** (n 9,148) | **1.086** (n 9,029) (PI October) | dN/dS null |
+| plant-root sets **102,005 / 19,818 / 40,495**; 16.8 / 19.2%; 86.8 / 89.8% | **101,897 / 20,136 / 41,046**; 16.6 / 19.1%; 86.3 / 89.9% (PI October) | plant-root families |
 
-_Last updated 2026-08-14 — uniform `number | value | source` tables throughout, cohorts restored to the
-top, dates/status words removed (time lives in CORRECTIONS), pending-section placeholders added so every
-paper section is listed. Values unchanged._
+_Uniform `number | value | source` tables throughout, cohorts at the top, dates/status words removed (time lives in
+CORRECTIONS), every paper section listed._
 
 ## 2026-10-13 current review overlay
 

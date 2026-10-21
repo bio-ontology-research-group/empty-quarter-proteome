@@ -1,75 +1,69 @@
 # EQ-MAGs: open items
-
-The one open-items register (rewritten 2026-09-24 after the paper evaluation and the L1/L2 literature
-passes). Structure: `PAPER_STRUCTURE.md`; numbers: `CATALOGUE_NUMBERS.md`; what changed and why:
-`CORRECTIONS.md`; literature: `../resources/literature/READING_NOTES.md`. Done items are removed
-here and live in CORRECTIONS.
-
-Rule: a proof-of-concept number never enters the registry or the manuscript until it has been rerun
-in a workbench `_clean/` folder and registered with its basis.
+Purpose: the open-items register for the PI's rewrite (15 and 20 Oct 2026: five Results sections, controls in Methods and supplement, 19 authors, Nature Communications as stretch target).
+Pointers: structure `PAPER_STRUCTURE.md` (rewritten after A0); numbers `CATALOGUE_NUMBERS.md`; changes `CORRECTIONS.md`; manuscript = Overleaf main (`paper/` submodule in empty-quarter-mags; snapshot in `manuscript/`).
+Rule: nothing unregistered enters the paper. M = main.tex line, S = supplementary_notes.tex line.
 
 ## A. Decisions for Alejandra
+| # | item | recommendation | bears on |
+|---|---|---|---|
+| A0 | Section existence: his five sections vs the eight of 2026-09-20 (censuses to Note S3 and P3; R3, R8 into notes) | accept his five | structure, PAPER_STRUCTURE |
+| A1 | Restore the matched-null sentence: 0.308 vs 0.048 (218 pairs, 6.5×), 0.310 vs 0.069 (237 pairs, 4.5×) | yes, no causal wording | M73 |
+| A2 | Known relatives: 0 of 237 at species rank; best AAI median 64.8 % vs same-genus 75.4 %; nearest desert 73.1 %; skani step | yes | M75, S650 |
+| A3 | Maeke clause: rarity and reference composition, not genome quality (3.9 % vs 22.5 %) | yes | M107 |
+| A4 | Precedent sentence: Zhou 2019, Sheridan 2022, Finstad 2017 | yes | M85 or M111 |
+| A5 | Microflora Danica beside SMAG (`singleton2026danica`) | yes | Intro M34 |
+| A6 | Length clause: 76 % of dark representatives under 100 aa; 67.1 % of families ≥250 aa in all five expeditions | yes | M113, S898 |
+| A7 | Structural floor beside raw counts: 1,031 of 2,838 (36.3 %) vs 101 of 3,013 (3.35 %) | yes; ratio waits on B4 | M213, S906 |
+| A8 | Adopt his reruns: frame null 1.086 (n 9,029); root sets 20,136 / 41,046 | yes; mine to superseded | registry |
+| A9 | 22 culture pairs (E. coli excluded) as the basis | yes | registry, S588–591 |
+| A10 | "61 locations" → "60 sites" (settled with the companion papers 2026-08-17) | yes | M40, M46, M121, M176, M202, S408–417 |
+| A11 | `tawfiq2026companion`, `rubalkhali_datapaper` instead of "in preparation" | yes if the bib entries are hers | S415 |
+| A12 | Workbench STATUS lines in specificity_clean, uv_survival_clean, osmolyte_clean | yes (rob/ path, her word) | workbench |
+| A13 | `setfacl` traverse on `/ibex/user/velazqal` for the PI (SMAG db) | yes; else 54 GB copy | B2 verification |
+| A14 | One-line list to the PI: S380 path missing; natcomms_20261020 README/sbatch; "102 flagged", "6.31 → 6.34" without result file | yes | package |
+| A15 | Remove 18 orphan figures, supplementary.tex, main_v1.tex from Overleaf | no, until submission | Overleaf |
+| A16 | Title: his 20 Oct atlas, his 15 Oct archaea, or hers | his 15 Oct archaea title | title |
+| A17 | XRF units and instrument (blocked since September) | answer in one line | Methods S440 |
 
-| # | decision | bears on |
+## B. Decisions with the PI
+| # | decision | options | recommendation |
+|---|---|---|---|
+| B1 | Where paper and record live | (a) text in Overleaf main, record in this repo, old repo archived; (b) edit only through him | (a); push to a branch plus one line to him |
+| B2 | SMAG in the headline union | (a) 26.83 % / 0.36 %, 1.387 G; (b) his 30,479 / 1.258 G / 27.08 plus a with-SMAG sensitivity sentence; (c) drop | (a); his 18.54 matched test stays as the fairness test |
+| B3 | Journal | Nature Communications vs decide after P3 | Nature Communications; no trim needed |
+| B4 | Structural excess as a claim | (a) 6.6× / 8.1× standardised with his caveat; (b) crops-only framing | (b) in main, (a) in Note S2 |
+| B5 | Authorship and contributions | 19 authors as set; contributions statement missing | accept; draft contributions from the record |
+
+## C. Compute
+| # | item | state |
 |---|---|---|
-| A1 | Archaea in the title. A lineage-led paper is the only visible route to Nature Microbiology; the current decision keeps them out | title, abstract, Discussion |
-| A2 | Two reagent contaminants confirmed by the no-template blank (*E. coli* `V42PRr2__single_SemiBin_33`, *C. acnes* `51Dr3__single_SemiBin_390`): keep with annotation (current draft) or remove from the 5,438. PI call. Never write anthrax | R1, R2, Discussion |
-| A3 | R5 closing wording: "known parts in new arrangements" was withdrawn after Pfam found no domain in 91 % of members; current text reads "parts that resemble known folds structurally but are not recognisable sequence domains". Alejandra considers the structural result important; revisit the wording with her | R5 |
-| A4 | Weight of the contamination material in the Discussion (competing-explanations paragraph and the Methods blank paragraph); candidate trim | Discussion, Methods |
-| A5 | Target journal. As it stands Nature Communications (5,000 words, no trim). Nature Microbiology needs A1 and a 600-word trim (R3 to one paragraph, R5 to ~150 words, R6 prediction paragraph to one sentence). Decide at the end | word budget |
-| A7 | Authorship and byline | front matter |
-| A8 | Claim registry `reproducibility/claims.tsv`: no rows for the v2 sections, withdrawn values elsewhere. PI rebinds at end-game | Methods |
-| A9 | XRF units and instrument; aridity climate source and years; fifth-expedition handheld XRF in or out | Methods (sampling), BLOCKED on her |
-| A10 | Data availability: genome deposition target, archived-release DOI, companion KG citation | availability |
+| C1 | Gene-level compartment check on all assembled genes, unbinned half included | revision item |
+| C2 | Within-population pN/pS on dark and control genes (bowtie2 + inStrain, 551 samples) | revision item |
+| C3 | natcomms_20261020 folder needs README and sbatch | PI |
+| C4 | Arsenic and climate gradients rerun on cohort 550 (resistome_clean, osmolyte_clean `results/v551`) | in progress 2026-10-21 |
 
-## B. Compute
-
-| # | item | state | cost | unblocks |
-|---|---|---|---|---|
-| B1 | Known relatives of the 237: DONE and written 2026-09-24 (0 of 237 at species rank; best AAI median 64.8 %). Optional follow-up: the 49 SMAG genomes of the two classes once the SMAG archive from B2 is on disk | optional | minutes | R4 |
-| B2 | SMAG in the R6 absence search: DONE, registered and written 2026-09-24 (40.47 % absent, gap +27.69; union with SMAG 26.83 / 0.36). SMAG JOINED the headline union 2026-09-27 (A11): 26.83 / 0.36 %, depth 5.4 / 35.8 / 25.37 %, written and registered. Occupancy on the new absent set registered (37 vs 38 unchanged). Remaining: Fig 5b SMAG point (see C5) | done | | Fig 5 |
-| B5 | Gene-level check of the compartment contrasts on all assembled genes, unbinned half included | revision item | hours | R7 |
-| B6 | Within-population pN/pS on dark and control member genes (bowtie2 + inStrain on 551 samples; 3,000–6,000 CPU-h) | revision item | days | R2 |
-
-## C. Writing and display
-
-| # | item | bears on |
+## D. Writing and display
+| # | item | waits on |
 |---|---|---|
-| C1 | Commit the three Discussion fixes now in `main.tex`: Maeke wording (reference composition, not genome quality; "sister" removed), trace-gas comparator like-for-like (968 of 5,438 vs 58 %), Thermoplasmatota precedents (Zhou 2019, Sheridan 2022, Finstad 2017) | Discussion |
-| C2 | Length as a fifth competing explanation: 76 % of dark representatives under 100 aa; answer with 67.1 % persistence at ≥250 aa, the frame-shift null, cultured dark median 59 aa; cite `duan2024gmsc` | Discussion |
-| C3 | Intro paragraph 1: scale sentence naming Microflora Danica (10,683 samples, 5,518 species; `singleton2026danica`) and SMAG (3,304 metagenomes, 21,077 SGBs; `ma2023smag`). Intro paragraph 3: narrow the foil, global catalogues have the family layer and no context, regional catalogues the context and no controlled family layer | Intro |
-| C4 | R4: never write TMEG, MBG-D, RC-III or Lutacidiplasmatales as former names of E2 or SW-10-69-26 (those are c__Thermoplasmata) | R4 |
-| C5 | Figures: Fig 1 redraw in vector; Figs 2 and 3 unbuilt; Fig 6b shows the superseded geochemistry block (rebuild on the eleven-axis block, add the partition); Fig 6c and 6e still on the 548 cohort (rebuild from `results/v551/`, 45 sites, n 250); Fig 5b needs the SMAG point | display |
-| C6 | Extended Data Table 1 (censuses) and Supplementary Table S3 (stress panels) are referenced with no file | display |
-| C7 | Tawfiq companion and data-descriptor bibkeys (from Alejandra) | Intro, Methods |
-| C8 | Re-check Hutchinson's 58 % (322/554) against the published ISME J version | Discussion |
-| C9 | Trim to 3,500 only if A5 = Nature Microbiology | whole paper |
-
-## D. Records to fix
-
-- R1 order-gap sentence accounts for 8 of the 10 adjudicated candidates (six single-genome, two multi-genome clades); find the other two in the adjudication path and state them; the GUNC range 0.01–0.32 is not in the registry, register it.
-- `CATALOGUE_NUMBERS.md` §2.3 basis line still says "44 site-paired"; the table says 45.
-- `PAPER_STRUCTURE.md`: says seven sections with geochemistry as R7; the paper has eight, R1 and R6 headings differ. Align.
-- `CATALOGUE_NUMBERS.md`: relabel §1.1–§3.1 to R1–R8 at the true-up; register the adjudication path; move 10.8x and "1.5x, p = 0.011" to the superseded map.
-- `PIPELINE_GUIDE.md`: §8 provisional header, stale `refbias_2_magko.py:82` pointer, r226 warning, "GUNC never ran" false for the 10 candidates.
-- `reproducibility/claims.tsv`, `REPORT.md`, `run_all.sh` on withdrawn numbers (PI, A8).
-- `env_matrix.tsv` cannot be rebuilt; the availability statement ships the matrix.
-- Supplementary Note 1 (energetics) survives only if the trace-gas ED item needs it; its "60–80 Tg yr⁻¹" conflates terms.
+| D1 | SMAG union Methods sentence after S765; SPIRE +21.30 / SMAG +27.69 at M91; Fig. 4b SMAG point | B2 = yes |
+| D2 | PAPER_STRUCTURE rewrite to his section table | A0 |
+| D3 | Contributions statement | B5 |
+| D4 | Phrase check: his `verify.py` reads only `manuscript/main.tex`; the 20 Oct split moved required phrases into `supplementary_notes.tex` | PI fix |
 
 ## E. Blocked
-
 | item | on |
 |---|---|
-| Sampling-methods facts (XRF, aridity source) | Alejandra (A9) |
-| Availability: reads = PRJEB125153 (554 runs, hold 2026-11-01); sample-level accessions from `code/ena_deposit/09_fold_accessions.py` once the deposit closes; genomes and code target | Alejandra / PI (A10) |
-| Contaminant representatives in or out | PI (A2) |
-| Plant-host genus axes (amplicon cache off-IBEX) | infrastructure |
+| XRF units and instrument | Alejandra (A17) |
+| ENA PRJEB125153 public release 1 Nov 2026; MAG deposition and DOI; round7 submission prerequisites (raw paths, permissions, duplicate-run provenance, author contributions) | PI |
+
+## Closed since 24 Sep
+- A2 contaminants (PI: keep in the 5,438, exclude E. coli from culture pairs) · A3, A4 sections rewritten · A5 → B3 · A7 → B5 · A8 his harness replaces claims.tsv coordination · B1, B2 done
+- C1–C3 done in her text, now transplants (A) · C5, C6, C8, C9 moot (new figure set, no ED table, trace gas in P3, no trim needed) · D records: registry updated 2026-10-21
 
 ## Not doing
-
 - Nothing from the exploratory folders enters the paper without a registered rerun.
 - Nothing from the `dark_function` annotation project enters this paper (2026-09-20).
-- No further characterisation of the dark proteome beyond C2; no pangenome of the Thermoplasmatota on genomes below 90 % complete.
+- No further characterisation of the dark proteome beyond the length clause (A6); no pangenome of the Thermoplasmatota on genomes below 90 % complete.
 - The environment matrix is not rebuilt; the SMETANA cross-feeding pilot is cut.
 - No geographic-endemism claim; database-relative absence under a named search rule only.
 - No "radiation", no "genomes worldwide", no "hydrogenase-rich", no anthrax, no 10.8x, no 1.5x.

@@ -782,3 +782,25 @@ Authoritative follow-up root: /ibex/scratch/projects/c2014/rob/metagenomics/06_d
 Rewrote the title, Abstract, Introduction, Results and Discussion around the biological questions: recurrent unknown families, their concentration in Thermoplasmatota, subsurface distribution, cross-soil sequence sharing, structural relationships and heliorhodopsin diversity. Moved procedural controls, calibration and interpretive assumptions to Methods; consolidated biological limitations and proposed experiments in Discussion. Retained numerical results in the appropriate analysis sections and restored denominators/cross-references after Gemini 4 Argon High proofreading. No new analysis or change to numerical evidence. Review, baseline and root disposition: `reviews/darkmatter-biology-rewrite-20261015/`.
 
 Added the 19-author byline from Life on Air, with Alejandra first, remaining middle authors alphabetical by surname, and Magnus Rueping then Robert Hoehndorf last. The Life on Air manuscript has its own checkout at `~/Documents/papers/empty-quarter-lifeonair/` and Overleaf project `6ad0d1b4338ca7cd7d291188`; its analysis bundle remains in this repository.
+
+### 2026-10-21 — record joined with the 20 October rewrite; cohort residue cleared; PI numbers registered
+
+Record: the September registry rows (SMAG union, cohort 550, relatives, MIMAG), corrections and open items carried
+into this repository; the old repository's main merged and archived. Manuscript base = Overleaf main a65f9aa.
+
+Supplement cohort block set to the registered 550-cohort values (S323–329, S504, S821–831): 44 → **45** sites;
+photolyase 24.3/12.1 → **25.0/12.3**; carotenoid 70.3/61.0 → **70.7/60.9**; NHEJ 80.0/85.7 → **79.7/85.6**; unmapped
+54.3/53.7 p 0.50 → **54.4/53.7 p 0.47**; Halobacteriota ρ 0.451 n 248 → **0.456 n 250**, Cl 0.385 → **0.392**;
+salt axes n 248 → **250**; climate axes n 453 → **455**. The 548-cohort paragraph replaced by one cohort sentence.
+Not bound to any check in `reproducibility/verify.py`; the harness stays green.
+
+Gradient reruns on the 550 cohort (`resistome_clean/results/v551/`, `osmolyte_clean/results/v551/`; scripts gained
+`RES_OUT`): arsenic ~ Ca +0.224 → **+0.226** (q 0.0093, n 250); ~ precipitation −0.243 → **−0.242** (q 2.6e-6, n 455);
+climate-axis tests keep 7/7/0 significant rows per axis. Superseded: 248, 453, +0.224, −0.243.
+
+PI October analyses registered with the file that prints each value (new section "PI October analyses"): PGLS,
+flanking recurrence, SMAG–GEM 18.54, crops 714/964 (derived), culture DNA support and 22 pairs, AntiFam/shadow 102,
+visit-bundle null 80.5 %, Jaccard 0.634, frame null 1.086, plant-root sets 20,136/41,046, contaminant exclusion
+6.31 → 6.34 %, chaperone families, heliorhodopsins, CPF, EctC; visit-matched ecology 482/550, 36 of 37 sites,
++0.46 pp (`06_darkmatter/natcomms_20261020`). Superseded in place: 481/549, 40 of 45, 23 pairs, 1.087,
+102,005/19,818/40,495. Occupancy wording: 61 location labels, 60 sites.
