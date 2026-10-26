@@ -22,7 +22,7 @@ re-runnable; sbatch scripts take an explicit `MODE` (no default) where a step is
 | assemblies | `12_coverage_bam.sbatch` | `samtools coverage` for assemblies without a binning depth table |
 | assemblies, bins, MAGs | `13_webin_cli_genome.sbatch` | Webin-CLI genome array, `MODE=validate|submit`; `MANIFEST_DIR` selects the object set |
 | bins | `14_build_bin_table.py` | `wgs_bins.tsv`: the 12,434 HQ+MQ bins with quality, GTDB lineage, rRNA/tRNA, coverage, paths (run under Slurm) |
-| bins | `15_resolve_bin_taxa.py` | NCBI taxon id + name per bin from the GTDB lineage, checked against ENA's taxonomy service (cached) |
+| bins | `15_resolve_bin_taxa.py` | NCBI taxon per bin from the GTDB lineage: species → "Genus sp." → rank names (GTDB name, then the NCBI names its genomes carry in the r232 metadata) → uncultured; every name checked against ENA's taxonomy service (cached); `ncbi_level` records the step |
 
 Tables: `wgs_runs.tsv` (554 runs), `wgs_biosample_map.tsv` (551 samples), `wgs_assemblies.tsv` (549 assemblies),
 `wgs_bins.tsv` (12,434 bins; the 5,438 with `is_representative=1` form the MAG tier).

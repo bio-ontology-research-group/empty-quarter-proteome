@@ -46,8 +46,8 @@ QUALITY_RRNA = ("Multiple fragments where gaps span repetitive regions. Presence
                 "and at least 18 tRNAs")
 QUALITY_SINGLE = "Single contiguous sequence without gaps or ambiguities with a consensus error rate equivalent to Q50 or better"
 
-KEEP = ["ncbi_taxid", "ncbi_name", "binned_sample_accession", "ena_analysis_binned", "mag_sample_accession",
-        "ena_analysis_mag"]
+KEEP = ["ncbi_taxid", "ncbi_name", "ncbi_level", "binned_sample_accession", "ena_analysis_binned",
+        "mag_sample_accession", "ena_analysis_mag"]
 COLUMNS = ["bin", "sample", "biosample_accession", "run_refs", "is_representative", "drep_cluster", "completeness",
            "contamination", "genome_size", "n_contigs", "n50", "gtdb_lineage", "has_5S", "has_16S", "has_23S",
            "n_trna_aa", "assembly_quality", "coverage", "fasta"] + KEEP
