@@ -1,14 +1,43 @@
 # ENA deposit — 551 soil shotgun read sets (RAK-WGS = PRJEB125153)
 
-Scripts `code/ena_deposit/`; work dir (not in git) `/ibex/scratch/projects/c2014/alelopezv/ena_wgs/`
-(`fastq/` symlink farm, `manifests/`, `xml/`, `receipts/`, `logs/`, `cache/`). Password only `~/.webin_pass`.
+Scripts `code/ena_deposit/`; work dir (not in git) `/ibex/scratch/projects/c2014/alelopezv/ena_wgs/`: `xml/` + `receipts/`
+(what was sent, what ENA answered), `logs/*.tsv` (status, md5s, accessions), `cache/samples/` (BioSamples before the
+cleanup MODIFY), `assemblies/` (step 2 staging), `webin-cli-10.0.0.jar`. Reads-phase symlink farm, reads manifests and
+per-task Slurm logs deleted 2026-10-25 (regenerable by 00/04). Password only `~/.webin_pass`.
 Test service (wwwdev) = daily mirror; MODIFY of production samples cannot be rehearsed there.
 
-## Roadmap under PRJEB125153 (decided 2026-09-03)
-1. reads (554 runs) — in progress · 2. primary metagenome assemblies (549) — next, reuse eqmgc `05_generate_assembly_manifests.py`
-· 3. later: bins + MAGs (proposal: 5,438 species reps as MAG type with MIMAG BioSamples and GTDB→NCBI taxonomy;
-6,996 other HQ+MQ bins as binned metagenome; LQ not deposited) — decision with Rob · 4. non-ENA datasets (protein
-catalogue, dark families, ESMFold models, tables) → Zenodo DOIs · 5. new umbrella (PI) + aligned release dates.
+## Roadmap under PRJEB125153 (decided 2026-09-03; steps 2–3 revised 2026-10-25)
+1. reads (554 runs) — DONE · 2. primary metagenome assemblies (549) — IN PROGRESS, scripts 10–13 · 3. bins: ALL
+12,434 HQ+MQ refined bins as `binned metagenome` (ERC000050 samples derived from the soil BioSample), THEN the 5,438 dRep
+species representatives again as `Metagenome-Assembled Genome (MAG)` (ERC000047 GSC MIMAGS samples derived from their
+binned sample) — ENA's recommended two-level path; LQ (1,992) not deposited · 4. non-ENA datasets (protein catalogue,
+dark families, ESMFold models, tables) → Zenodo DOIs · 5. new umbrella (PI) + aligned release dates. Study hold moved to
+2026-11-25 (live, Webin report API 2026-10-25).
+
+### Step 2 — primary metagenome assemblies (2026-10-25)
+| item | decision / fact |
+|---|---|
+| objects | 549 = 551 cohort − 51Sr1 (no contigs) − F5Dr1 (empty); MEGAHIT v1.2.9, contigs ≥ 500 bp, headers `<sample>_<N>` |
+| source | organized tree `EmptyQuarter_Data/processed/sequencing-results/sites/<trip>/site<N>/<s>/wgs/assembly/<s>_contigs.fa` (symlink to `soil/wgs_assemblies/assemblies/<s>/`); trip/site from workbench `metadata/sample_metadata.tsv` |
+| route | Webin-CLI 10.0.0 `-context genome`, `ASSEMBLY_TYPE primary metagenome`, SAMPLE = soil BioSample, RUN_REF = all runs of the sample (3 dual-batch samples carry two) |
+| COVERAGE | length-weighted mean depth over all contigs, Σ(depth·len)/Σlen, from `samtools coverage` 1.16.1 on the SemiBin2 self-supervised BAM (BWA-MEM 0.7.17, own reads on own assembly, `soil/wgs_assemblies/binning/<s>/`), the only mapping present for all 549; the pretrained-run minimap2 BAM in the tree covers 545 and gives ~10 % different values, not used |
+| name / text | ASSEMBLYNAME `<sample>_assembly`; DESCRIPTION "Primary metagenome assembly of Rub' al-Khali desert soil sample <s>, contigs >= 500 bp" (optional field; RAK-PR used none; carries the contig cut-off, the one fact stored nowhere else); PLATFORM ILLUMINA; MOLECULETYPE genomic DNA |
+| 1 M-sequence cap | stated on the genome + MAG doc pages only; dry runs: 25Sr3 (1,004,824 contigs, 9.0.3) and F5PRr3 (5,254,851 contigs, 10.0.0) both validated OK → does not apply to primary metagenomes; all 549 deposited unfiltered |
+| staging | gzipped copies in `ena_wgs/assemblies/fasta/` (~165 GB) + `stats/ coverage/ manifests/ logs/ reports/`; kept (her decision 2026-10-25) |
+| table | `code/ena_deposit/wgs_assemblies.tsv` (sample, name, BioSample, run_refs, n_contigs, total_bp, coverage, source, ERZ) |
+| accession | ERZ is final for primary metagenomes; cite PRJEB125153 + SAMEA, never ERZ |
+
+### Step 3 — bins (12,434 binned metagenome, then 5,438 MAG) — compute started 2026-10-25
+| item | decision / fact |
+|---|---|
+| sets | 12,434 HQ+MQ refined bins = 5,438 dRep reps + 6,995 non-reps in dRep clusters + `25PRr2__self_SemiBin_2_sub` (dropped inside dRep, still HQ+MQ); LQ 1,992 not deposited |
+| taxonomy | reps: `M/05_refine/_gtdbtk_r232/`; non-reps: NEW `M/05_refine/_gtdbtk_r232_nonreps/` (same GTDB-Tk 2.7.2 / r232 / options; job 54542503). NCBI taxon per bin from the GTDB lineage: species → NCBI species; else "Genus sp."; else "Family bacterium/archaeon" (all submittable per ENA taxonomy REST) |
+| rRNA/tRNA | reps: `M/mimag_rrna_trna_clean/results/`; non-reps: same folder, `SET=nonreps` (array 54542640), domain inherited from the bin's dRep representative |
+| bin coverage | length-weighted mean depth over the bin's contigs from the sample's `samtools coverage` table (step 2 output) + DAS_Tool contig2bin |
+| samples | binned: ERC000050 by XML (new script 14, helpers of 03), description "This sample represents a metagenomic bin from the metagenomic sample ERSxxx. GTDB r232: <lineage>"; MAG: ERC000047 derived from the binned sample, "This sample represents a MAG derived from the metagenomic sample ERSxxx" |
+| order | all 12,434 as `binned metagenome` first, then the 5,438 reps as `Metagenome-Assembled Genome (MAG)` (her decision 2026-10-25; ENA's recommended path); no "representative" clause, the MAG link carries it |
+| taxa requests | none for bins; for MAGs only if the test-service dry run rejects the "Genus sp." names |
+| taxon resolution, 5,438 reps (script 15, 2026-10-25) | species 122 (107 ENA name + 15 GTDB-metadata majority) · "Genus sp." 1,792 · family 1,409 · order 804 · class 353 · phylum 380 bacteria / 236 "Thermoplasmatota archaeon" · family/order/class archaeon 143 · **fallback "uncultured bacterium/archaeon" 199** (GTDB placeholder ranks all the way up, mostly Patescibacteriota: NCBI names there carry "Candidatus …" prefixes the script does not try yet) — OPEN for her review: accept the fallback, add a "Candidatus" lookup tier, or request informal names |
 
 ## Open items
 - **Reads DONE (2026-09-06)** — 554/554 runs registered; next = watch the portal for "archived" on all files (ENA
@@ -68,6 +97,8 @@ catalogue, dark families, ESMFold models, tables) → Zenodo DOIs · 5. new umbr
 ## Status
 | step | state |
 |---|---|
+| primary assemblies (step 2) | **DONE 2026-10-26 03:30: 549/549 submitted** (Webin-CLI 10.0.0, validate 549/549 OK, submit array 54553238 + retry 54568981 for two transient FTP failures); ERZ30552864–ERZ30555284 in `wgs_assemblies.tsv`, verified against ENA's live analysis list (549, 0 mismatches); private under the study hold 2026-11-25. Next: watch the Webin Portal Analyses Report for processing errors; `fasta/` staging (165 GB) can go once all 549 are processed |
+| bins (step 3) | 2026-10-25: rRNA/tRNA on the 6,995 non-reps DONE (full-MIMAG high 78 / medium 6,917); GTDB-Tk r232 on them (job 54542503) queued; `wgs_bins.tsv` built: 12,434 rows, coverage 12,434, rRNA/tRNA 12,433 (missing `25PRr2__self_SemiBin_2_sub`), GTDB lineage 5,438 (non-reps fill in when the run lands), assembly quality 204 rRNA-tier / 12,229 many-fragments; NCBI taxa (script 15) not yet resolved; scripts 14–16 written; NOTHING registered or submitted for bins — her review first |
 | RAK-WGS study | PRJEB125153 registered (2026-09-03) |
 | 106 missing BioSamples | registered (`logs/register.prod.tsv`) |
 | cleanup of all 1,301 soil BioSamples | done: 1,204 modified, 0 failed, 97 unchanged; verified by re-fetch |
@@ -92,6 +123,18 @@ Correct on all five expeditions: **20.82784 N, 53.57835 E** (= ENA). Trip-1/3 sh
 `scripts/rdf/generate_site_ontology.groovy:134-153` (RAK_1000052 = midpoint; 52AD snapped into RAK_1000053 with "saline pan").
 Proof: GPS tracks `repos/empty-quarter/data/metadata/track/trip1/2023-03-20_07-13_Mon.gpx` (08:30 at site 52) and
 `repos/empty-quarter/website/frontend/public/tracks/2024-02-20.gpx`. Regenerate geodata → curated table → OWL → env_table → evidence tables.
+
+## Commands (assemblies phase, 2026-10-25)
+```
+cd /ibex/scratch/projects/c2014/alelopezv/repos/empty-quarter-proteome/code/ena_deposit
+python3 10_build_assembly_table.py --prepare                       # sample_list.tsv: sample, contig FASTA, BAM (549)
+sbatch --array=1-549%64 11_gzip_assemblies.sbatch                 # fasta/<s>_assembly.fa.gz + stats/<s>.tsv
+sbatch --array=1-549%64 12_coverage_bam.sbatch                    # coverage/<s>.samtools_coverage.tsv
+python3 10_build_assembly_table.py --study PRJEB125153            # wgs_assemblies.tsv + 549 manifests
+MODE=validate sbatch --array=1-549%16 13_webin_cli_genome.sbatch  # local check, nothing sent
+MODE=submit   sbatch --array=1-549%12 13_webin_cli_genome.sbatch  # IRREVERSIBLE, on her word
+python3 10_build_assembly_table.py --fold                         # ERZ accessions into wgs_assemblies.tsv
+```
 
 ## Commands (reads phase)
 ```
