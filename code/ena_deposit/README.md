@@ -24,5 +24,9 @@ re-runnable; sbatch scripts take an explicit `MODE` (no default) where a step is
 | bins | `14_build_bin_table.py` | `wgs_bins.tsv`: the 12,434 HQ+MQ bins with quality, GTDB lineage, rRNA/tRNA, coverage, paths (run under Slurm) |
 | bins | `15_resolve_bin_taxa.py` | NCBI taxon per bin from the GTDB lineage: species → "Genus sp." → rank names (GTDB name, then the NCBI names its genomes carry in the r232 metadata) → uncultured; every name checked against ENA's taxonomy service (cached); `ncbi_level` records the step |
 
+| bins, MAGs | `16_register_bin_samples.py` | derived BioSamples by XML: `--tier binned` (ERC000050, derived from the soil sample) / `--tier mag` (ERC000047, derived from the binned sample); `--dryrun` writes XML only; `--service test|prod` |
+| bins | `17_gzip_bins.sbatch` | gzip the 12,434 bin FASTAs into the work dir (25 tasks) |
+| bins, MAGs | `18_build_bin_manifests.py` | one Webin-CLI genome manifest per bin for a tier; `--fold` puts the ERZ accessions into `wgs_bins.tsv` |
+
 Tables: `wgs_runs.tsv` (554 runs), `wgs_biosample_map.tsv` (551 samples), `wgs_assemblies.tsv` (549 assemblies),
-`wgs_bins.tsv` (12,434 bins; the 5,438 with `is_representative=1` form the MAG tier).
+`wgs_bins.tsv` (12,434 bins; the representatives with contamination < 10 form the MAG tier).

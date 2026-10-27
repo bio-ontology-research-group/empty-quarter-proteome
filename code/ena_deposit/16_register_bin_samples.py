@@ -36,15 +36,19 @@ CHECKLIST = {"binned": "ERC000050", "mag": "ERC000047"}
 PROJECT_NAME = "Rub' al-Khali Desert Microbiome"
 METAGENOMIC_SOURCE = "soil metagenome"
 ISOLATION_SOURCE = "Rub' al-Khali desert soil"
-BINNING_SOFTWARE = "SemiBin2 v2.2.1; DAS Tool v1.1.7"
-BINNING_PARAMETERS = ("SemiBin2 single_easy_bin, pretrained global model (--environment global) and self-supervised "
-                      "(--self-supervised -m 1000) runs on each assembly; DAS Tool refinement, score threshold 0.5")
-ASSEMBLY_SOFTWARE = "MEGAHIT;v1.2.9;--presets meta-large --min-contig-len 500 --min-count 2 --prune-level 1 --low-local-ratio 0.3"
-COMPLETENESS_SOFTWARE = "CheckM2 v1.1.0"
-TAXONOMIC_MARKER = "GTDB-Tk v2.7.2, GTDB release 232 (120 bacterial / 53 archaeal marker genes)"
+BINNING_SOFTWARE = "SemiBin2 2.2.1; DAS Tool 1.1.7"
+BINNING_PARAMETERS = ("SemiBin2 single_easy_bin on coverage and k-mer composition, pretrained global model "
+                      "(--environment global) and self-supervised (--self-supervised -m 1000) runs on each assembly; "
+                      "DAS Tool refinement, score threshold 0.5")
+ASSEMBLY_SOFTWARE = "MEGAHIT;1.2.9;--presets meta-large --min-contig-len 500 --min-count 2 --prune-level 1 --low-local-ratio 0.3"
+COMPLETENESS_SOFTWARE = "CheckM2 1.1.0"
+TAXONOMIC_MARKER = "multi-marker approach (GTDB-Tk 2.7.2, 120 bacterial / 53 archaeal marker genes, GTDB release 232)"
+RRNA_SOFTWARE = "barrnap 0.9"
+TRNA_SOFTWARE = "tRNAscan-SE 2.0.12"
 COPY_FROM_SOIL = ("collection date", "geographic location (latitude)", "geographic location (longitude)",
                   "geographic location (country and/or sea)", "broad-scale environmental context",
-                  "local environmental context", "environmental medium", "depth", "elevation")
+                  "local environmental context", "environmental medium")
+COPY_FROM_SOIL_MAG = ("geographic location (region and locality)",)      # field exists in ERC000047 only
 
 
 def tsv(path: Path) -> list[dict]:
@@ -103,10 +107,10 @@ def build(row: dict, tier: str, soil: dict[str, tuple[str, str | None]]) -> ET.E
     add(attrs, "metagenomic source", METAGENOMIC_SOURCE)
     add(attrs, "sample derived from", derived)
     add(attrs, "isolation_source", ISOLATION_SOURCE)
-    for tag in COPY_FROM_SOIL:
+    for tag in COPY_FROM_SOIL + (COPY_FROM_SOIL_MAG if tier == "mag" else ()):
         if tag in soil and soil[tag][0]:
             add(attrs, tag, soil[tag][0], soil[tag][1])
-        elif tag not in ("depth", "elevation"):
+        elif tag in COPY_FROM_SOIL:
             sys.exit(f"ERROR: soil sample {row['biosample_accession']} lacks {tag!r}")
     add(attrs, "binning software", BINNING_SOFTWARE)
     add(attrs, "binning parameters", BINNING_PARAMETERS)
@@ -118,11 +122,13 @@ def build(row: dict, tier: str, soil: dict[str, tuple[str, str | None]]) -> ET.E
     if row["assembly_quality"]:
         add(attrs, "assembly quality", row["assembly_quality"])
         add(attrs, "16s recovered", "Yes" if row["has_16S"] == "1" else "No")
-        add(attrs, "number of standard tRNAs extracted", row["n_trna_aa"])
+        add(attrs, "16S recovery software", RRNA_SOFTWARE)
+        add(attrs, "number of standard tRNAs extracted", row["n_trna_total"])
+        add(attrs, "tRNA extraction software", TRNA_SOFTWARE)
     elif tier == "mag":
         sys.exit(f"ERROR: {b}: assembly quality is mandatory for a MAG sample (rRNA/tRNA not available)")
     if tier == "mag":
-        add(attrs, "investigation type", "metagenome-assembled genome")
+        add(attrs, "reassembly post binning", "No")
     add(attrs, "ENA-CHECKLIST", CHECKLIST[tier])
     return s
 
@@ -132,7 +138,7 @@ def main() -> None:
     ap.add_argument("--tier", required=True, choices=["binned", "mag"])
     ap.add_argument("--service", required=True, choices=["test", "prod"])
     ap.add_argument("--batch", type=int, default=200)
-    ap.add_argument("--only", help="one bin name")
+    ap.add_argument("--only", help="comma-separated bin names (e.g. a test-service rehearsal set)")
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--dryrun", action="store_true", help="write the XML, send nothing")
     g.add_argument("--submit", action="store_true", help="POST to the chosen service")
@@ -142,8 +148,11 @@ def main() -> None:
     rows = tsv(TABLE)
     cols = list(rows[0].keys())
     acc_col = "binned_sample_accession" if a.tier == "binned" else "mag_sample_accession"
-    todo = [r for r in rows if (a.tier == "binned" or r["is_representative"] == "1")
-            and not r[acc_col] and (not a.only or r["bin"] == a.only)]
+    # MAG tier = species representatives with contamination < 10 (checklist: "If contamination >= 10% then please
+    # submit as a binned assembly"); the one representative at exactly 10 stays binned only
+    only = set(a.only.split(",")) if a.only else None
+    todo = [r for r in rows if (a.tier == "binned" or (r["is_representative"] == "1" and float(r["contamination"]) < 10))
+            and not r[acc_col] and (only is None or r["bin"] in only)]
     log = OUT / "logs" / f"register_{a.tier}.{a.service}.tsv"
     log.parent.mkdir(parents=True, exist_ok=True)
     done = set()

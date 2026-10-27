@@ -16,8 +16,11 @@
 #   N=$(ls /ibex/scratch/projects/c2014/alelopezv/ena_wgs/assemblies/manifests/*.manifest | wc -l)
 #   MODE=validate sbatch --array=1-${N}%16 code/ena_deposit/13_webin_cli_genome.sbatch
 #   MODE=submit   sbatch --array=1-${N}%12 code/ena_deposit/13_webin_cli_genome.sbatch     # after her go
-# MANIFEST_DIR overrides the manifest folder (bins and MAGs reuse this script). Resume: aliases already OK in the
-# status log exit immediately. Credential: ~/.webin_pass via -passwordFile (never argv).
+# MANIFEST_DIR / LOGDIR override the folders (bins and MAGs reuse this script); CHUNK=n makes each array task work
+# through n manifests (bins: CHUNK=25 → 498 tasks for 12,434; pass a matching -t). Resume: aliases already OK in the
+# status log are skipped. Credential: ~/.webin_pass via -passwordFile (never argv).
+#   W=.../ena_wgs/bins; CHUNK=25 MANIFEST_DIR=$W/manifests_binned LOGDIR=$W/logs MODE=validate sbatch -t 01:00:00 --array=1-498%64 ...
+#   CHUNK=25 MANIFEST_DIR=$W/manifests_binned LOGDIR=$W/logs MODE=submit sbatch -t 04:00:00 --array=1-498%14 ...
 
 set -u
 WORK=/ibex/scratch/projects/c2014/alelopezv/ena_wgs
@@ -41,26 +44,34 @@ REPORTS=${LOGDIR}/webin_reports_${MODE}
 mkdir -p "${REPORTS}"
 [ -f "${STATUS}" ] || printf 'alias\tstatus\terz\ttimestamp\n' > "${STATUS}"
 
+# CHUNK manifests per array task (default 1). Thousands of small bins: CHUNK=25 keeps the array under the per-user
+# job limit (12,434 single tasks were refused: QOSMaxSubmitJobPerUserLimit); each task works through its slice.
+CHUNK=${CHUNK:-1}
 mapfile -t manifests < <(ls "${MANIFEST_DIR}"/*.manifest | sort)
-manifest=${manifests[$(( SLURM_ARRAY_TASK_ID - 1 ))]:-}
-[ -n "${manifest}" ] || { echo "ERROR: no manifest for task ${SLURM_ARRAY_TASK_ID}"; exit 1; }
-alias=$(basename "${manifest}" .manifest)
+first=$(( (SLURM_ARRAY_TASK_ID - 1) * CHUNK ))
+slice=("${manifests[@]:${first}:${CHUNK}}")
+[ ${#slice[@]} -gt 0 ] || { echo "ERROR: no manifests for task ${SLURM_ARRAY_TASK_ID}"; exit 1; }
 
-if grep -q "^${alias}	OK	" "${STATUS}"; then
-    echo "[skip] ${alias} already ${MODE} OK"; exit 0
-fi
-
-echo "[${MODE}] ${alias} $(date -Is)"
-output=$(java -jar "${WEBIN_CLI}" -context genome -manifest "${manifest}" \
-            -userName "${WEBIN_USER}" -passwordFile "${PASS_FILE}" \
-            -${MODE} -outputDir "${REPORTS}" 2>&1)
-rc=$?
-echo "${output}" | tail -6
-if [ ${rc} -eq 0 ]; then
-    erz=$(echo "${output}" | grep -o 'ERZ[0-9]*' | tail -1)
-    printf '%s\tOK\t%s\t%s\n' "${alias}" "${erz}" "$(date -Is)" >> "${STATUS}"
-else
-    printf '%s\tFAILED\t\t%s\n' "${alias}" "$(date -Is)" >> "${STATUS}"
-    echo "  FAILED - see ${REPORTS}/genome/${alias}/"
-fi
-exit ${rc}
+fails=0
+for manifest in "${slice[@]}"; do
+    alias=$(basename "${manifest}" .manifest)
+    if grep -q "^${alias}	OK	" "${STATUS}"; then
+        echo "[skip] ${alias} already ${MODE} OK"; continue
+    fi
+    echo "[${MODE}] ${alias} $(date -Is)"
+    output=$(java -jar "${WEBIN_CLI}" -context genome -manifest "${manifest}" \
+                -userName "${WEBIN_USER}" -passwordFile "${PASS_FILE}" \
+                -${MODE} -outputDir "${REPORTS}" 2>&1)
+    rc=$?
+    echo "${output}" | tail -3
+    if [ ${rc} -eq 0 ]; then
+        erz=$(echo "${output}" | grep -o 'ERZ[0-9]*' | tail -1)
+        printf '%s\tOK\t%s\t%s\n' "${alias}" "${erz}" "$(date -Is)" >> "${STATUS}"
+    else
+        printf '%s\tFAILED\t\t%s\n' "${alias}" "$(date -Is)" >> "${STATUS}"
+        echo "  FAILED - see ${REPORTS}/genome/${alias}/"
+        fails=$((fails + 1))
+    fi
+done
+echo "task ${SLURM_ARRAY_TASK_ID}: ${#slice[@]} manifests, ${fails} failed"
+exit ${fails}

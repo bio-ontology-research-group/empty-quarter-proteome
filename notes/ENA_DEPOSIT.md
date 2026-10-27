@@ -98,7 +98,8 @@ dark families, ESMFold models, tables) → Zenodo DOIs · 5. new umbrella (PI) +
 | step | state |
 |---|---|
 | primary assemblies (step 2) | **DONE 2026-10-26 03:30: 549/549 submitted** (Webin-CLI 10.0.0, validate 549/549 OK, submit array 54553238 + retry 54568981 for two transient FTP failures); ERZ30552864–ERZ30555284 in `wgs_assemblies.tsv`, verified against ENA's live analysis list (549, 0 mismatches); private under the study hold 2026-11-25. Next: watch the Webin Portal Analyses Report for processing errors; `fasta/` staging (165 GB) can go once all 549 are processed |
-| bins (step 3) | 2026-10-26 21:30: **`wgs_bins.tsv` COMPLETE for her review** — 12,434 rows, all with coverage, GTDB r232 lineage (non-reps: `M/05_refine/_gtdbtk_r232_nonreps/run/`, 6,996 classified, domains = their representatives'), rRNA/tRNA (non-reps: full-MIMAG high 78 / medium 6,918), assembly quality 204 rRNA-tier / 12,230 many-fragments, NCBI taxon + level for every bin (0 fallbacks); scripts 14–16 written and documented; NOTHING registered or submitted for bins — her review first (sample wording in 16, taxon table, bin names) |
+| bins (step 3), binned tier | 2026-10-27 00:30: her go (binned tier only, MAG tier NOT started). Field review applied (dropped depth/elevation/investigation type; no "v" in versions; marker = "multi-marker approach (…)"; tRNA total; 16S/tRNA software fields; MAG tier later: contamination < 10, region/locality, reassembly No). Test service: 14 rehearsal samples of every taxon class ACCEPTED, one bin assembly validated OK against its test sample. PRODUCTION: 12,434 binned samples REGISTERED (ERC000050, 63 batches, 0 failures, accessions in `wgs_bins.tsv`), 12,434 gz + manifests, Webin-CLI validate 12,434/12,434 OK (arrays 54616584 + 54620075; 176 slipped the first array's 1 h limit), **SUBMITTED 2026-10-27: 12,434/12,434 binned metagenomes on ENA** (array 54623065, 498 tasks × 25, 12–14 concurrent, ~8 h; two retry passes for FTP refusal waves; 31 "already exists" replies showed Webin-CLI can register an analysis and still exit with an FTP error, so ENA's live analysis list — 12,983 = 549 primaries + 12,434 bins — is the authority and `18 --fold` reads it first); ERZ in `wgs_bins.tsv`; private under the study hold 2026-11-25. Bin names stay internal (`<sample>__single|self_SemiBin_N`; key: `single` = SemiBin2 pretrained global-model run, `self` = self-supervised run, both single-sample; `_sub` = DAS Tool contig subset) |
+| bins (step 3), table | 2026-10-26 21:30: **`wgs_bins.tsv` COMPLETE for her review** — 12,434 rows, all with coverage, GTDB r232 lineage (non-reps: `M/05_refine/_gtdbtk_r232_nonreps/run/`, 6,996 classified, domains = their representatives'), rRNA/tRNA (non-reps: full-MIMAG high 78 / medium 6,918), assembly quality 204 rRNA-tier / 12,230 many-fragments, NCBI taxon + level for every bin (0 fallbacks); scripts 14–16 written and documented; NOTHING registered or submitted for bins — her review first (sample wording in 16, taxon table, bin names) |
 | RAK-WGS study | PRJEB125153 registered (2026-09-03) |
 | 106 missing BioSamples | registered (`logs/register.prod.tsv`) |
 | cleanup of all 1,301 soil BioSamples | done: 1,204 modified, 0 failed, 97 unchanged; verified by re-fetch |
@@ -135,6 +136,23 @@ MODE=validate sbatch --array=1-549%16 13_webin_cli_genome.sbatch  # local check,
 MODE=submit   sbatch --array=1-549%12 13_webin_cli_genome.sbatch  # IRREVERSIBLE, on her word
 python3 10_build_assembly_table.py --fold                         # ERZ accessions into wgs_assemblies.tsv
 ```
+
+## Commands (bins phase, binned tier, 2026-10-26)
+```
+cd /ibex/scratch/projects/c2014/alelopezv/repos/empty-quarter-proteome/code/ena_deposit
+srun -c 2 --mem 16G python3 14_build_bin_table.py                 # wgs_bins.tsv (12,434)
+srun -c 2 --mem 16G python3 15_resolve_bin_taxa.py                # ncbi_taxid / ncbi_name / ncbi_level
+sbatch --array=1-25 17_gzip_bins.sbatch                           # ena_wgs/bins/fasta/<bin>.fa.gz
+python3 16_register_bin_samples.py --tier binned --service test --only <bins> --submit   # rehearsal
+python3 16_register_bin_samples.py --tier binned --service prod --submit                 # 12,434 samples, batches of 200
+python3 18_build_bin_manifests.py --tier binned --study PRJEB125153
+W=/ibex/scratch/projects/c2014/alelopezv/ena_wgs/bins
+CHUNK=25 MANIFEST_DIR=$W/manifests_binned LOGDIR=$W/logs MODE=validate sbatch -t 01:00:00 --array=1-498%64 13_webin_cli_genome.sbatch
+CHUNK=25 MANIFEST_DIR=$W/manifests_binned LOGDIR=$W/logs MODE=submit   sbatch -t 04:00:00 --array=1-498%14 13_webin_cli_genome.sbatch
+# (CHUNK: 25 manifests per task — a 12,434-task array is refused by the per-user job limit)
+python3 18_build_bin_manifests.py --tier binned --fold
+```
+MAG tier (not started; her go needed): `16 --tier mag` (derived from the binned ERS), `18 --tier mag`, same 13 arrays.
 
 ## Commands (reads phase)
 ```
