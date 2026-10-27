@@ -48,7 +48,6 @@ TRNA_SOFTWARE = "tRNAscan-SE 2.0.12"
 COPY_FROM_SOIL = ("collection date", "geographic location (latitude)", "geographic location (longitude)",
                   "geographic location (country and/or sea)", "broad-scale environmental context",
                   "local environmental context", "environmental medium")
-COPY_FROM_SOIL_MAG = ("geographic location (region and locality)",)      # field exists in ERC000047 only
 
 
 def tsv(path: Path) -> list[dict]:
@@ -107,10 +106,10 @@ def build(row: dict, tier: str, soil: dict[str, tuple[str, str | None]]) -> ET.E
     add(attrs, "metagenomic source", METAGENOMIC_SOURCE)
     add(attrs, "sample derived from", derived)
     add(attrs, "isolation_source", ISOLATION_SOURCE)
-    for tag in COPY_FROM_SOIL + (COPY_FROM_SOIL_MAG if tier == "mag" else ()):
+    for tag in COPY_FROM_SOIL:
         if tag in soil and soil[tag][0]:
             add(attrs, tag, soil[tag][0], soil[tag][1])
-        elif tag in COPY_FROM_SOIL:
+        else:
             sys.exit(f"ERROR: soil sample {row['biosample_accession']} lacks {tag!r}")
     add(attrs, "binning software", BINNING_SOFTWARE)
     add(attrs, "binning parameters", BINNING_PARAMETERS)
@@ -127,8 +126,6 @@ def build(row: dict, tier: str, soil: dict[str, tuple[str, str | None]]) -> ET.E
         add(attrs, "tRNA extraction software", TRNA_SOFTWARE)
     elif tier == "mag":
         sys.exit(f"ERROR: {b}: assembly quality is mandatory for a MAG sample (rRNA/tRNA not available)")
-    if tier == "mag":
-        add(attrs, "reassembly post binning", "No")
     add(attrs, "ENA-CHECKLIST", CHECKLIST[tier])
     return s
 

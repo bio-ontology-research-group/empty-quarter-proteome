@@ -62,6 +62,17 @@ def build(tier: str, study: str) -> None:
         manifest = [("STUDY", study), ("SAMPLE", r[ACC[tier]]), ("ASSEMBLYNAME", name), ("ASSEMBLY_TYPE", TYPE[tier]),
                     ("COVERAGE", r["coverage"]), ("PROGRAM", PROGRAM), ("PLATFORM", PLATFORM),
                     ("MOLECULETYPE", MOLECULETYPE), ("RUN_REF", r["run_refs"]), ("FASTA", str(gz))]
+        if tier == "mag" and r["n_contigs"] == "1":
+            # ENA MAG rule: a contig-level assembly needs >= 2 sequences; a single highly complete sequence is
+            # submitted at chromosome level with a chromosome list (name "1", topology linear: circularity not asserted)
+            import gzip
+            with gzip.open(gz, "rt") as fh:
+                contig = next(line for line in fh if line.startswith(">"))[1:].split()[0]
+            cl = OUT / "chromlists" / f"{name}.chromlist.gz"
+            cl.parent.mkdir(exist_ok=True)
+            with gzip.open(cl, "wt") as fh:
+                fh.write(f"{contig}\t1\tLinear-Chromosome\n")
+            manifest.append(("CHROMOSOME_LIST", str(cl)))
         (mdir / f"{name}.manifest").write_text("".join(f"{k}\t{v}\n" for k, v in manifest))
     skipped = sum(1 for r in rows if not r[ACC[tier]] and (tier == "binned" or r["is_representative"] == "1"))
     print(f"{len(sel)} {tier} manifests -> {mdir}; without a {tier} sample accession (not registered yet): {skipped}")
