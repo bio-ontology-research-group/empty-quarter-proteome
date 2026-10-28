@@ -21,7 +21,7 @@ Scripts `code/ena_deposit/` (README there, one line per script). Work dir, not i
 | reads | 554 runs, 6.60 TB | archived | `wgs_runs.tsv` (ERX/ERR) |
 | primary metagenome assemblies | 549 | submitted, private until release | `wgs_assemblies.tsv`, ERZ30552864–ERZ30555284 (final) |
 | binned metagenomes | 12,434 samples + assemblies | submitted, private until release | `wgs_bins.tsv`, ERZ30573912–ERZ30593965 (final) |
-| MAGs | 5,437 samples + assemblies | submitted, private until release | `wgs_bins.tsv`, ERZ30595485–ERZ30606248 (GCA + contig accessions follow by email) |
+| MAGs | 5,437 samples + assemblies | submitted, private until release; GCA assigned for 5,388 (49 awaiting ENA's next accession email) | `wgs_bins.tsv`: ERZ30595485–ERZ30606248, GCA_990079656–GCA_990090661 + contig / chromosome accessions (`gca_mag`, `sequence_acc_mag`) |
 | not deposited | 1,992 LQ bins; QC-rerun reads; protein catalogue, dark families, ESMFold models → Zenodo (later) | | |
 
 ## Decisions
@@ -56,7 +56,7 @@ Scripts `code/ena_deposit/` (README there, one line per script). Work dir, not i
 |---|---|
 | routes | assemblies only via Webin-CLI genome context, one manifest + gz per object, Webin-CLI uploads the file itself (nothing pre-uploaded); samples by XML to the drop-box (`ena_common.py`), batches of 200; reads with pre-uploaded files by XML (08), because Webin-CLI `-submit` re-uploads |
 | accessions | ERZ is final for primary and binned metagenomes; MAGs and isolates get GCA + contig accessions; cite PRJEB + SAMEA (+ GCA), never ERZ |
-| accession authority | ENA's live analysis list (`report/analyses`), folded by `10/18 --fold`; the Webin-CLI status logs are secondary |
+| accession authority | ERZ: ENA's live analysis list (`report/analyses`), folded by `10/18 --fold`; the Webin-CLI status logs are secondary. GCA + sequence accessions: ENA's "genome assembly has been accessioned" emails, saved verbatim as `ena_wgs/receipts/emails/ena_email_<date>.txt` and parsed by `18 --tier mag --fold` |
 | concurrency | ≤ 12 Webin-CLI submissions at once (ENA FTP session limit); arrays of 25 manifests per task (user limit 2,000 jobs); retries as a targeted array over the manifests without an accession |
 | test service | daily mirror; used for sample registration and validation rehearsal, not for MODIFY of production records |
 

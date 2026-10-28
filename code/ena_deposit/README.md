@@ -26,7 +26,7 @@ re-runnable; sbatch scripts take an explicit `MODE` (no default) where a step is
 
 | bins, MAGs | `16_register_bin_samples.py` | derived BioSamples by XML: `--tier binned` (ERC000050, derived from the soil sample) / `--tier mag` (ERC000047, derived from the binned sample); `--dryrun` writes XML only; `--service test|prod` |
 | bins | `17_gzip_bins.sbatch` | gzip the 12,434 bin FASTAs into the work dir (25 tasks) |
-| bins, MAGs | `18_build_bin_manifests.py` | one Webin-CLI genome manifest per bin for a tier; `--fold` puts the ERZ accessions into `wgs_bins.tsv` |
+| bins, MAGs | `18_build_bin_manifests.py` | one Webin-CLI genome manifest per bin for a tier (chromosome list for a single-contig MAG); `--fold` puts the ERZ (ENA live list) and, for MAGs, the GCA + sequence accessions (saved accession emails) into `wgs_bins.tsv` |
 
 Tables: `wgs_runs.tsv` (554 runs), `wgs_biosample_map.tsv` (551 samples), `wgs_assemblies.tsv` (549 assemblies),
 `wgs_bins.tsv` (12,434 bins; the representatives with contamination < 10 form the MAG tier).

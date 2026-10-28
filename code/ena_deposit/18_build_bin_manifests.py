@@ -97,15 +97,34 @@ def fold(tier: str) -> None:
                     erz.setdefault(r["alias"], r["erz"])
     if not erz:
         sys.exit(f"ERROR: neither {live} nor {log} holds accessions")
+    # ENA's "genome assembly has been accessioned" emails (saved verbatim as receipts/emails/ena_email_<date>.txt):
+    # pipe table ASSEMBLY_NAME | ASSEMBLY_ACC | STUDY_ID | SAMPLE_ID | CONTIG_ACC | SCAFFOLD_ACC | CHROMOSOME_ACC.
+    # For MAGs the ASSEMBLY_ACC is the GCA (the citable accession) and the sequence accessions are the contig range
+    # or, for a chromosome-level MAG, the chromosome accession. ERZ rows (primaries, binned) add nothing to the table.
+    gca, seqs = {}, {}
+    for p in sorted((OUT.parent / "receipts" / "emails").glob("ena_email_*.txt")):
+        for line in p.read_text().splitlines():
+            f = [x.strip() for x in line.split("|")]
+            if len(f) >= 7 and f[1].startswith("GCA_"):
+                gca[f[0]] = f[1]
+                seqs[f[0]] = f[4] or f[6] or f[5]
     rows, cols = rows_and_cols()
+    if tier == "mag":
+        for c in ("gca_mag", "sequence_acc_mag"):
+            if c not in cols:
+                cols.append(c)
     for r in rows:
         r[ANALYSIS[tier]] = erz.get(name_of(r, tier), r[ANALYSIS[tier]])
+        if tier == "mag":
+            r["gca_mag"] = gca.get(name_of(r, tier), r.get("gca_mag", ""))
+            r["sequence_acc_mag"] = seqs.get(name_of(r, tier), r.get("sequence_acc_mag", ""))
     with open(TABLE, "w") as fh:
         w = csv.DictWriter(fh, fieldnames=cols, delimiter="\t")
         w.writeheader()
         w.writerows(rows)
     done = sum(bool(r[ANALYSIS[tier]]) for r in rows)
-    print(f"{tier}: {done} bins carry an ERZ accession")
+    print(f"{tier}: {done} bins carry an ERZ accession"
+          + (f"; {sum(bool(r['gca_mag']) for r in rows)} carry a GCA from the accession emails" if tier == "mag" else ""))
 
 
 def main() -> None:
