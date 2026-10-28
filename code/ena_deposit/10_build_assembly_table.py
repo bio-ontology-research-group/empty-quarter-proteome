@@ -43,7 +43,7 @@ PLATFORM = "ILLUMINA"
 MOLECULETYPE = "genomic DNA"
 MIN_CONTIG = 500
 COLUMNS = ["sample_id", "assembly_name", "biosample_accession", "run_refs", "n_contigs", "total_bp", "coverage",
-           "contigs_src", "fasta_gz", "ena_analysis"]
+           "ena_analysis"]
 
 
 def cohort() -> list[str]:
@@ -153,7 +153,7 @@ def build(study: str, partial: bool = False) -> None:
         if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9 _#\-.]*", name) or len(name) > 50:
             sys.exit(f"ERROR: assembly name {name!r} violates the ENA name rule")
         row = dict(sample_id=s, assembly_name=name, biosample_accession=bs[s], run_refs=",".join(refs[s]),
-                   n_contigs=n, total_bp=bp, coverage=cov, contigs_src=fa, fasta_gz=str(gz),
+                   n_contigs=n, total_bp=bp, coverage=cov,
                    ena_analysis=old.get(s, {}).get("ena_analysis", ""))
         rows.append(row)
         manifest = [("STUDY", study), ("SAMPLE", row["biosample_accession"]), ("ASSEMBLYNAME", name),

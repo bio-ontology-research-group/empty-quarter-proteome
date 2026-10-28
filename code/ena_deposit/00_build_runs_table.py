@@ -64,9 +64,10 @@ CASE_COLLISION = {"48PRR1": "plate-5 QC rerun of 48PRr1 (uppercase R), excluded"
 PROCESSED = Path("/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/processed_reads")
 PROCESSED_FALLBACK = {"48Dr2": "raw R1 truncated, no intact copy on IBEX; fastp-processed pair deposited instead"}
 
+# Written columns: no cluster paths in the committed table (the raw paths stay in memory for --symlinks).
 COLS = ["sample_id", "run_alias", "batch", "trip", "biosample_accession", "instrument_id", "run_number",
         "flowcell", "lanes", "platform", "instrument_model", "library_kit", "kit_source", "insert_size",
-        "insert_size_sd", "r1_path", "r2_path", "r1_bytes", "r2_bytes", "upload_r1", "upload_r2", "note"]
+        "insert_size_sd", "r1_bytes", "r2_bytes", "upload_r1", "upload_r2", "note"]
 
 
 def index_styles() -> dict[str, str]:
@@ -176,7 +177,7 @@ def main() -> None:
     unknown_inst = sorted({r["instrument_id"] for r in rows if r["instrument_model"] == "UNKNOWN"})
 
     with open(OUT, "w") as fh:
-        w = csv.DictWriter(fh, fieldnames=COLS, delimiter="\t")
+        w = csv.DictWriter(fh, fieldnames=COLS, delimiter="\t", extrasaction="ignore")
         w.writeheader()
         w.writerows(rows)
     WORK.joinpath("logs").mkdir(parents=True, exist_ok=True)

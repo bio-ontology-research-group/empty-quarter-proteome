@@ -41,7 +41,7 @@ def main() -> None:
         rows, cols = list(reader), list(reader.fieldnames)
     for c in ("ena_experiment", "ena_run"):
         if c not in cols:
-            cols.insert(cols.index("r1_path"), c)
+            cols.insert(cols.index("r1_bytes"), c)
     missing, mismatch = [], []
     for r in rows:
         alias = f"webin-reads-{r['run_alias']}"

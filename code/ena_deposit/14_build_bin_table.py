@@ -14,7 +14,6 @@ Per bin (decisions: notes/ENA_DEPOSIT.md, Step 3):
   coverage                                                     length-weighted mean depth over the bin's contigs, from the
                                                                sample's samtools coverage table (ena_wgs/assemblies/coverage/)
                                                                and the DAS_Tool contig2bin map
-  fasta                                                        05_refine/_refined_bins_all/<bin>.fa
   ncbi_taxid, ncbi_name                                        filled by 15_resolve_bin_taxa.py
   binned_sample_accession, ena_analysis_binned,                filled by the registration / submission steps
   mag_sample_accession, ena_analysis_mag
@@ -50,7 +49,7 @@ KEEP = ["ncbi_taxid", "ncbi_name", "ncbi_level", "binned_sample_accession", "ena
         "mag_sample_accession", "ena_analysis_mag", "gca_mag", "sequence_acc_mag"]
 COLUMNS = ["bin", "sample", "biosample_accession", "run_refs", "is_representative", "drep_cluster", "completeness",
            "contamination", "genome_size", "n_contigs", "n50", "gtdb_lineage", "has_5S", "has_16S", "has_23S",
-           "n_trna_aa", "n_trna_total", "assembly_quality", "coverage", "fasta"] + KEEP
+           "n_trna_aa", "n_trna_total", "assembly_quality", "coverage"] + KEEP
 
 
 def tsv(path: Path, delimiter: str = "\t") -> list[dict]:
@@ -159,7 +158,7 @@ def main() -> None:
                        n50=q["Contig_N50"], gtdb_lineage=lineage.get(b, ""), has_5S=r["has_5S"] if r else "",
                        has_16S=r["has_16S"] if r else "", has_23S=r["has_23S"] if r else "",
                        n_trna_aa=r["n_tRNA_unique_aa"] if r else "", n_trna_total=r["n_tRNA_total"] if r else "",
-                       assembly_quality=aq, coverage=cov.get(b, ""), fasta=str(fa))
+                       assembly_quality=aq, coverage=cov.get(b, ""))
             for k in KEEP:
                 row[k] = old.get(b, {}).get(k, "")
             n_cov += bool(row["coverage"]); n_tax += bool(row["gtdb_lineage"]); n_rt += bool(r)
