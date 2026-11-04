@@ -1,6 +1,6 @@
 # EQ-MAGs: structure, narrative and display set
 
-Status: structure in force = the PI's five Results sections (decided 2026-11-04 by Alejandra); title change pending with the PI (B6).
+Status: structure in force = the PI's five Results sections (decided 2026-11-04 by Alejandra); the title is the PI's.
 Pointers: open items `OPEN_ITEMS.md` · values `CATALOGUE_NUMBERS.md` · changes `CORRECTIONS.md` · text = Overleaf main (`paper/` submodule of empty-quarter-mags); this repo holds the record.
 Rule: nothing unregistered enters the paper; a computed but unregistered value stays `\unreg{}` in the source.
 
@@ -16,7 +16,6 @@ structural crops plus recurring genomic neighbourhoods nominate candidates for f
 ## 2. Title and abstract
 
 Title in force (PI, 20 Oct): **A genome-resolved protein atlas reveals the unknown repertoire of widespread desert archaea**.
-Preferred alternative, pending with the PI (B6): "Widespread desert archaea harbour a disproportionate share of unknown protein families".
 Abstract carries: 551 metagenomes; 5,438 species representatives; Thermoplasmatota 4.4 % of species vs 19.8 % of
 single-phylum dark families; widespread, enriched below the surface; more than a quarter of recurrent families
 unmatched after expanded searches; confident-region crops recover structural matches for most whole-chain misses.
@@ -59,7 +58,6 @@ unmatched after expanded searches; confident-region crops recover structural mat
 | item | effect |
 |---|---|
 | B2 SMAG in the headline union | R4 numbers and Fig 4b (26.83 % / 1.387 G vs the text's 30,479 / 27.08) |
-| B6 title | the PI's 20 Oct atlas wording stays until he agrees to the 15 Oct archaea wording |
 | B4 structural excess as a claim | crops-only in main; 6.6× / 8.1× standardised only in Note S2 |
 | Contributions statement (B5) | missing section |
 | Manuscript snapshot in this repo | blocked on the PI's phrase checkers (read only `manuscript/main.tex`) |
