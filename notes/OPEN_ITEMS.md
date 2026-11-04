@@ -6,9 +6,7 @@ Rule: nothing unregistered enters the paper. M = main.tex line, S = supplementar
 ## A. Decisions for Alejandra
 | # | item | recommendation | bears on |
 |---|---|---|---|
-| A0 | Section existence: his five sections vs the eight of 2026-09-20 (censuses to Note S3 and P3; R3, R8 into notes) | accept his five | structure, PAPER_STRUCTURE |
 | A15 | Remove 18 orphan figures, supplementary.tex, main_v1.tex from Overleaf | no, until submission | Overleaf |
-| A16 | Title: his 20 Oct atlas, his 15 Oct archaea, or hers | his 15 Oct archaea title | title |
 | A17 | XRF units and instrument (blocked since September) | answer in one line | Methods S440 |
 
 ## B. Decisions with the PI
@@ -19,6 +17,7 @@ Rule: nothing unregistered enters the paper. M = main.tex line, S = supplementar
 | B3 | Journal | Nature Communications vs decide after P3 | Nature Communications; no trim needed |
 | B4 | Structural excess as a claim | (a) 6.6× / 8.1× standardised with his caveat; (b) crops-only framing | (b) in main, (a) in Note S2 |
 | B5 | Authorship and contributions | 19 authors as set; contributions statement missing | accept; draft contributions from the record |
+| B6 | Title | his 20 Oct "A genome-resolved protein atlas reveals the unknown repertoire of widespread desert archaea" (in force) or his 15 Oct "Widespread desert archaea harbour a disproportionate share of unknown protein families" | Alejandra prefers the 15 Oct wording (states the finding; the atlas is not deposited yet); his word |
 
 ## C. Compute
 | # | item | state |
@@ -43,7 +42,7 @@ Rule: nothing unregistered enters the paper. M = main.tex line, S = supplementar
 | ENA PRJEB125153 public release 1 Nov 2026; MAG deposition and DOI; round7 submission prerequisites (raw paths, permissions, duplicate-run provenance, author contributions) | PI |
 
 ## Closed since 24 Sep
-- A2 contaminants (PI: keep in the 5,438, exclude E. coli from culture pairs) · A3, A4 sections rewritten · A5 → B3 · A7 → B5 · A8 his harness replaces claims.tsv coordination · B1, B2 done
+- A2 contaminants (PI: keep in the 5,438, exclude E. coli from culture pairs) · A3, A4 sections rewritten · A5 → B3 · A7 → B5 · A8 his harness replaces claims.tsv coordination · former compute items B1 (relatives) and B2 (SMAG leg) done · A0 sections accepted 2026-11-04 · A16 → B6
 - C1–C3 done in her text, now transplants (A) · C5, C6, C8, C9 moot (new figure set, no ED table, trace gas in P3, no trim needed) · D records: registry updated 2026-10-21
 
 ## Not doing

@@ -1,155 +1,78 @@
 # EQ-MAGs: structure, narrative and display set
 
-Status: structure in force for the v2 draft (2026-09-20), written from the 2026-09-17 proposal after an
-independent evaluation; Alejandra's sign-off pending on the two changes marked ★. This file holds the
-STRUCTURE only. Open items: `OPEN_ITEMS.md`. Current values: `CATALOGUE_NUMBERS.md`. What changed and
-why: `CORRECTIONS.md`. Method detail: each workbench `_clean/README.md`. How each analysis works and
-what it licenses: `dossiers/`. Archived predecessors: `archive/`.
+Status: structure in force = the PI's five Results sections (decided 2026-11-04 by Alejandra); title change pending with the PI (B6).
+Pointers: open items `OPEN_ITEMS.md` · values `CATALOGUE_NUMBERS.md` · changes `CORRECTIONS.md` · text = Overleaf main (`paper/` submodule of empty-quarter-mags); this repo holds the record.
+Rule: nothing unregistered enters the paper; a computed but unregistered value stays `\unreg{}` in the source.
 
-**Writing method.** Rewritten from scratch: `paper/main_v1.tex` is the archive, `paper/main.tex` the
-new manuscript, no prose reused. Drafting reads only the dossiers, the registry and
-`resources/literature/READING_NOTES.md`. Nothing enters from an exploratory folder without a
-registered rerun in a workbench `_clean/` folder; until then it is marked `\unreg{}` in the source.
+## 1. Story in one paragraph
 
-**Two decisions already made (Alejandra):** the archaea get their own Results section but not the
-title; the journal is not fixed, so the draft is written to the tightest standard (3,500 words for
-Introduction, Results and Discussion; six display items; 150-word abstract) so the top targets stay open.
-
-## 1. The story in one paragraph
-
-Earth's largest contiguous sand sea was sampled five times over 31 months at 60 sites and three soil
-positions, with geochemistry. The organisms are ordinary at every rank above order, and the companion
-16S paper already describes their ecology. What 16S cannot see is the gene content, and a tenth of the
-genome-resolved protein clusters have no homolog in any reference. This paper measures that unknown
-against a control at every layer and asks three questions a pooled catalogue cannot: is it real, who
-carries it, and why is it unknown. It is real: the same families recur across all five expeditions,
-they carry the purifying signature of coding genes, and long-read genomes of species cultured from the
-same soils carry dark protein at the same rate once the species is sampled on both sides. It has
-owners: lineage, not assembly quality, sets how dark a genome is, and the largest single owner is two
-unnamed archaeal classes. It is unknown because no reference has sampled here: what does match at the
-structural level is known parts in unmatched arrangements, and biome-matched sequence buys more
-coverage than generic database depth. Geochemistry sorts the known and the unknown gene content alike,
-beyond what distance explains. Known phyla do not imply known biology; the gap is in the reference set.
+A genome-resolved protein atlas from 551 Rub' al-Khali soil metagenomes links sequence-dark proteins to the
+genomes, sites and soil positions that carry them. A tenth of genome-linked clusters lack a UniRef50 match, and
+106,042 families recur across samples, sites and expeditions. Thermoplasmatota hold a disproportionate share:
+4.4 % of species, 19.8 % of single-phylum dark families. These archaea are widespread and enriched below the
+surface. External soil references recover much of the repertoire, more than a quarter stays unmatched, and
+structural crops plus recurring genomic neighbourhoods nominate candidates for functional characterisation.
 
 ## 2. Title and abstract
 
-Working title: **Known phyla, unknown proteome: a controlled census of Rub' al-Khali soil**.
-Alternatives if the archaea are cut: "Lineage sets the unknown fraction of the soil proteome".
-Archaea stay out of the title (decision).
+Title in force (PI, 20 Oct): **A genome-resolved protein atlas reveals the unknown repertoire of widespread desert archaea**.
+Preferred alternative, pending with the PI (B6): "Widespread desert archaea harbour a disproportionate share of unknown protein families".
+Abstract carries: 551 metagenomes; 5,438 species representatives; Thermoplasmatota 4.4 % of species vs 19.8 % of
+single-phylum dark families; widespread, enriched below the surface; more than a quarter of recurrent families
+unmatched after expanded searches; confident-region crops recover structural matches for most whole-chain misses.
 
-Abstract: written last, 150 words, unreferenced. Sentence 1 states a concrete fact about the object;
-gap within two sentences; "Here we" carries the design and the headline count with its denominator;
-one sentence per Results section; close on the reference-set sentence. Every archaeal figure it quotes
-must be registered first (R3/R4 rows in the registry).
+## 3. Results (five sections)
 
-Basis rule: 9.89 % is a rate over 90/80 cluster representatives with a member on a contig of the
-37,949-bin union; it is not a rate over proteins or over the 5,438 representatives. Four dark rates
-circulate on four bases; each carries its denominator in its own sentence.
-
-## 3. Results sections (seven) ★
-
-Heading style is per section: a declarative heading only where a control in the section licenses the
-magnitude it asserts; a label for construction and for uncontrolled censuses. No section opens with a
-question or "We asked whether".
-
-| # | heading | carrying evidence (registered unless marked) | control | figure |
+| # | heading (main.tex) | carrying numbers (registry section) | control or caveat → where | fig |
 |---|---|---|---|---|
-| R1 | A five-expedition genome catalogue of the Rub' al-Khali (label) | 551 samples, 60 sites, 1,043 km, five expeditions over 31 months, three positions, median 21.58 Gbp; 14,426 bins, 5,438 species, 51 phyla; first empty rank order 11 / family 142 / genus 1,343 / species 3,755; 10 order gaps adjudicated, 0 proposals | none, and say so; GUNC clean on the 10 candidates | Fig 1 |
-| R2 | A tenth of the encoded protein clusters have no reference homolog, and they behave as coding sequence | 9.89 % (4,292,446 of 43,423,322); 106,042 families; median prevalence 98/551; 79.4 % in all five expeditions (28.9 % re-assembled in all five); dN/dS 0.425 vs 0.388, direction stated; cultured same-species genomes, paired n = 23 (unreg.) | length- and size-matched UniRef50-matched families; 23 cultured long-read bacterial genomes (reach stated: bacteria only) | Fig 2 |
-| R3 | Lineage, not genome quality, sets how much of a genome is unknown | quality R² 0.115, +phylum 0.768, +genus 0.835; unique lineage 0.720 vs quality 0.020; novelty gradient 0.217 → 0.017; phylum term keeps 52 % after novelty; darkness falls with genome size (all unreg.) | quality covariates; novelty rank; size | Fig 3 |
-| R4 | Two poorly sampled archaeal classes carry a fifth of the unknown proteome | 237 species in c__SW-10-69-26 (185) and c__E2 (51), 0 named genera; GTDB r232 holds 21 and 197 species representatives in those classes; median dark 0.310 vs 0.048 matched archaea (6.5x, 218 pairs) and 0.069 matched bacteria (4.5x, 237 pairs); 19.8 % of single-phylum dark families from 4.4 % of species; occurrence and depth pattern (all unreg.) | 1:1 matched null on completeness, contamination, size, N50, abundance, prevalence, within domain and across | Fig 3 |
-| R5 | Structural novelty is architectural, not local, against a blinded floor | 2,838 confident models; 1,031 (36.3 %) dual no-hit; floor 3.35 %; 6.6x standardised on confidence, 8.1x on confidence × length; alignment-normalised 1.38x with CI crossing 1 = null; 96.7 % locally familiar, 63.7 % covered end to end | 3,013 blinded known-fold controls co-searched | Fig 4 |
-| R6 | The gap is in the reference set: biome-matched content beats depth | 55.6 % of protein-coding genes carry no KO; 22 % of encoded KOs outside the predictor's set; 26.83 % of dark families absent from 1.387 G sequences (SMAG included, A11 2026-09-27) vs 0.36 % control; desert catalogues +24.33 and SMAG +27.69 points beyond size; depth resolves 35.8 % of control absences vs 5.4 % of dark | matched annotated control in the same DIAMOND pass; rarefaction self-check 0.15 pt | Fig 5 |
-| R7 | What the annotated fraction encodes (label) | trace-gas guild moved to P3 (`lifeonair/`, 10 Oct 2026); repair floors; osmolytes 79.5 %; BGC 97.5 %, 85.3 % contig-edge; resistome 37.4 %, arsenic 17.3 % tracking Ca and precipitation | none: prevalence only, no enrichment claim; pathogen census withheld | Extended Data table |
-| R8 | Geochemistry structures known and unknown gene content beyond distance ★ | geochemistry R² 0.132, 0.089 beyond space; unique variance geochem 0.106 vs space 0.055 (n = 251); S 54,227 families (91.7 % negative), aridity 23,031 (95.9 %); vanadium null; photolyase 24.3 vs 12.1 % by depth, species sorting; Halobacteriota vs S ρ +0.451 | vanadium block, space partialling, within-phylum and within-species controls, site-paired design | Fig 6 |
+| 1 | A genome-resolved atlas links desert protein diversity to recurrent families | 551 samples, 61 locations, five expeditions; 5,438 reps (126 HQ / 5,312 MQ), 51 phyla, 187 with species; 9.89 % (4,292,446 of 43,423,322); 106,042 families; median 9 sites / 98 samples; 28.9 % assembled, 79.4 % detected in all five expeditions; dN/dS < 1; culture overlap 47 families (§1.1, §1.2, §1.4, PI October) | visit-bundle permutation, culture pairs (22, *E. coli* excluded), AntiFam/shadow → Note S1; dark call basis → Methods | 1, Table 1 |
+| 2 | Thermoplasmatota contribute a disproportionate share of unknown families | median dark 31.0 % vs 4.6 % other archaea, 6.2 % bacteria; 236/237 above bacterial P95; matched-null medians 6.5× (218 pairs) / 4.5× (237 pairs); 19.8 % of 77,069 from 4.4 % of species, 4.6-fold; relatives ANI ≥ 95 % 0/237, AAI median 64.8 % vs 75.4 % congeneric, 73.1 % nearest desert rep; PGLS −0.1375 (R4, PI October) | quality-matched null → Methods; PGLS → Note S2, Table S3 | 2, 3a |
+| 3 | The unknown archaeal repertoire occurs in widespread subsurface communities | 482 of 550 samples; median 21 species, 0.38 % of reads; 36 of 37 sites (69 pairs) higher below surface, +0.46 pp (0.33–0.86); glycolysis, glyoxylate, peptide transport; precedents Thermoprofundales, Lutacidiplasmatales, Atacama halite type genome (R4) | Holm over four tests, mapped-read and leave-one-expedition sensitivities → Note S3, Table S5; capacity not activity | 3b,c |
+| 4 | External soil references recover much of the unknown sequence repertoire | text: 30,479 unmatched on 1.258 G, 27.08 % after MGnify90 2026_07 (registry headline 26.83 % on 1.387 G with SMAG, see B2); occupancy 37 vs 38 of 61; desert +24.33 pp beyond size; SMAG 28.35 vs GEM 9.81 % = +18.54 pp, control +3.10 (§3.1, PI October) | matched UniRef50 control, rarefaction, GEM draws, length strata → Note S2, Table S4, Supp Fig S2, Suppl. Methods | 4 |
+| 5 | Structural and genomic context connect unknown sequences to biological hypotheses | 17,221 modelled; 2,838 qualified; 1,807 matched initially; 964 whole-chain unmatched, crops recover 714 (74.07 %); flanking recurrence 353 families, contrast unresolved; GrpE 16/18, DnaJ/GrpE 14/18 (§1.3, PI October) | 3,013 known-fold controls, paired PDB run → Note S2; genus aggregation q = 1 → Note S4 | 5 |
 
-Change 1 (2026-09-20, revised the same day on Alejandra's decision): the functional censuses (trace
-gas, repair and osmolyte floors, biosynthesis, resistome) stay in the main text as R7 under a LABEL
-heading, written as description with every floor named. A control is required for a declarative
-claim, not for a census to be reported. The pathogen census is withheld until the E. coli
-representative and the blanks are resolved.
-★ Change 2: the former heading "Salt, not aridity, filters known and unknown gene content alike"
-is withdrawn: the dark families do track aridity (23,031 families, 95.9 % negative, the highest
-retention under space partialling of any axis). Geochemistry explains more variance than climate;
-aridity is not null. The section is R8 with the heading above.
+## 4. Discussion (six paragraphs)
 
-Order: organisms · how much is unknown and is it real · who owns it · the archaea · what the novelty
-looks like · why the references miss it · what the known part encodes · how chemistry sorts known and
-unknown alike.
+1. The atlas ties an unresolved repertoire to widespread subsurface Thermoplasmatota; evidence-explicit candidate selection.
+2. Complement to global catalogues; Maeke et al. attribute unknown content in another Thermoplasmatota class to rarity and reference composition; here low abundance with wide occurrence.
+3. Soil references recover more dark families at matched depth; habitat, taxonomy and recovery remain confounded; unmatched families as restricted-range candidates.
+4. Structural crops shift the task to divergent proteins; neighbourhoods add context but are taxonomically concentrated; chaperone families as assay targets.
+5. Limits: coding potential and DNA occurrence only; site independence; partial genes; chimerism screen; expression and proteomics; independent benchmark.
+6. Path from sequence discovery to biology: cultivation, targeted expression, biochemistry.
 
-Word budget (3,500 for Introduction, Results, Discussion; 3,700 is the working ceiling before the
-true-up trim): Intro 400 · R1 250 · R2 480 · R3 230 · R4 340 · R5 350 · R6 340 · R7 200 · R8 430 ·
-Discussion 550. Trim the Discussion and R8 first. Methods uncounted, re-cut from `main_v1.tex`
-M.1–M.14; the frozen numbering does not carry over.
+## 5. Display set
 
-Pending decision: `eqmags_poc/04_differential_function` (module-level compartment, trip and chemistry
-contrasts, site-paired, phylum sign control) is presented to Alejandra before any promotion; if
-promoted it becomes one paragraph in R7.
+| item | content (file) |
+|---|---|
+| Fig 1 | sampling and genome quality (`fig_study_current.pdf`) |
+| Fig 2 | lineage dark fractions, matched null (`fig_lineage_current.pdf`) |
+| Fig 3 | family shares, depth contrast, marker sets (`fig_archaeal_ecology.pdf`) |
+| Fig 4 | SMAG–GEM, rarefaction, occupancy (`fig_reference_atlas.pdf`) |
+| Fig 5 | TM-scores, whole-chain vs crop outcomes (`fig_structure_current.pdf`) |
+| Table 1 | analytical units (`tab:cohorts`) |
+| Supp Figs S1–S4 | dN/dS and culture sharing · reference recovery and PICRUSt2 · protein maintenance across visits · heliorhodopsins |
+| Supp Tables S1–S5 | taxonomy depths · culture gene-call support · PGLS coefficients · matched references · depth contrasts |
+| Notes S1–S5 | catalogue quality and coding evidence · reference proximity, context, search controls · ecology and functional profiles · protein-maintenance families · light-response and osmoprotection candidates; plus Supplementary Methods |
 
-Hazards while writing: 55.6 % is both the no-KO ceiling and the complete-NHEJ prevalence, never
-unqualified in one paragraph; four dark rates on four bases; the cultured control reaches 23
-bacterial species and no archaea, so it is never cited from R4; "radiation" is not licensed (two
-classes, no phylogenomic claim); "genomes worldwide" is wrong, write "species representatives in
-GTDB r232"; never write anthrax; never write "hydrogenase-rich"; comparisons with other studies live
-in the Discussion only.
+## 6. Pending that touches structure
 
-## 4. Introduction, four paragraphs (400 words)
+| item | effect |
+|---|---|
+| B2 SMAG in the headline union | R4 numbers and Fig 4b (26.83 % / 1.387 G vs the text's 30,479 / 27.08) |
+| B6 title | the PI's 20 Oct atlas wording stays until he agrees to the 15 Oct archaea wording |
+| B4 structural excess as a claim | crops-only in main; 6.6× / 8.1× standardised only in Note S2 |
+| Contributions statement (B5) | missing section |
+| Manuscript snapshot in this repo | blocked on the PI's phrase checkers (read only `manuscript/main.tex`) |
 
-1. Drylands, the hot hyperarid case, and the absence of a genome-resolved survey of this interior;
-   what the companion 16S paper mapped and what it listed as out of reach (genes without primer
-   bias, function to genome, archaea).
-2. The unknown proteome: the fraction depends on reference and rule; the global family catalogues
-   report reference absence with lineage but without biome persistence, environment, cultured
-   complements or a measured error floor.
-3. The two design limits of pooled catalogues: context stripped, error rate unmeasured.
-4. Here we: one biome, five expeditions, genomes, cultured strains, geochemistry, a control at every
-   layer. Close on the gap sentence.
+## 7. Superseded
 
-## 5. Discussion (500 words)
+- Eight-section plan (R1–R8): replaced by the five sections above.
+- Title "Known phyla, unknown proteome": replaced by the PI's atlas title.
+- Census section R7: now Note S3 and the Life-on-Air paper.
+- Geochemistry section R8: now Note S3, exploratory.
+- dark_function project: still excluded; no result or sentence from it enters the paper.
 
-First paragraph states a generalisation the Results did not. Then one paragraph per competing
-explanation, each at full strength and then bounded with a number: reference bias, assembly
-artefact, rarity or quality of the archaeal genomes, contamination, lineage composition as a
-confound. Then what the evaluation does not establish, then the specific next tests. Comparisons
-live here only. Source: `DISCUSSION_NOTES.md`.
-
-- What the intersection adds over the taxon-axis, fold-space and global-catalogue papers:
-  persistence, a cultivation control, biome-matched reference gain.
-- Content beats depth as a recommendation for how soil references should grow.
-- The dissolved censuses, one sentence each: CO-weighted where cold deserts are H2-weighted;
-  biosynthesis as a target list not a mineable set; a pre-anthropogenic resistome.
-- Limits with magnitude or mechanism: capacity not activity; half the representatives below 90 %
-  complete; XRF is total elements with no pH; the cultivation control reaches only cultivable
-  bacteria; the selection test has no non-coding arm; contamination decision pending.
-- Outlook: species in hand as strains; the two archaeal classes as culture and fold targets; strain
-  persistence across expeditions as the named next study.
-
-## 7. The dark_function project
-
-Not in this paper (Alejandra, 2026-09-20): no result, ceiling or sentence from `alelopezv/dark_function/`
-enters the manuscript. The paper states only that it makes no functional claim about any dark family.
-
-## 8. Target journal
-
-## 6. Display set (six main, five Extended Data)
-
-| item | content | source | state |
-|---|---|---|---|
-| Fig 1 (R1) | map, timeline, positions, funnel, first-empty-rank ladder | `fig_study_design` | redraw in vector, add ladder |
-| Fig 2 (R2) | dark ladder with bases; length vs completeness; expedition persistence; dN/dS vs control; cultured vs MAG paired | `fig_darkfam_reality` (missing) + cultured comparison | rebuild |
-| Fig 3 (R3+R4) | variance decomposition; residual dark by phylum; novelty gradient; matched null; archaeal occurrence and depth | lineage darkness `_clean` | new |
-| Fig 4 (R5) | structural calibration, four panels, standardised floor | `fig_structural_calibration.pdf` | update |
-| Fig 5 (R6) | absence vs control; content vs depth; two ceilings | `fig_specificity_controls` + `fig_refbias_ceiling` | compose |
-| Fig 6 (R7) | PERMANOVA blocks and partition; per-axis families; site-paired stress modes | `fig_darkmatter_permanova` + `fig_stress_modes` | compose |
-| ED 1–5 | trace-gas guild, BGC and resistome censuses; unbinned reservoir; genome size vs KO richness; contamination diagnostics | existing + `_clean` reruns | as is |
-
-Cut: the endemism set, `fig_picrust2_bias`, `fig_lifeonair_by_phylum` (dead bases), Box 1 and
-Box 2 (negatives move into the sections that need them, each with its detection limit), the
-energetics model (Supplementary Note 1 stays as a supplementary note only if the trace-gas ED item
-needs it).
-
-
-Not fixed. Draft to Nature Microbiology Article limits (3,500 words, 6 items, 150-word abstract,
-headed Results), which keeps Nature and Science formats reachable by trimming rather than rewriting.
-Fallback Nature Communications (5,000 words, 10 items). ISME J deprioritised (MAG-only descriptive
-work named out of scope; Methods count toward the limit).
+Hazards while writing: four dark rates on four bases, each with its denominator; the cultured control reaches
+bacteria only, never cited for the archaea; "radiation" is not licensed; "species representatives in GTDB R232",
+never "genomes worldwide"; never anthrax; never "hydrogenase-rich"; comparisons with other studies in the
+Discussion only; 60 = design count of sites, 61 = sampled locations.
