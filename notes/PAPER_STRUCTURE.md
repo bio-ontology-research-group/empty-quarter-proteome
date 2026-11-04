@@ -27,7 +27,7 @@ unmatched after expanded searches; confident-region crops recover structural mat
 | 1 | A genome-resolved atlas links desert protein diversity to recurrent families | 551 samples, 61 locations, five expeditions; 5,438 reps (126 HQ / 5,312 MQ), 51 phyla, 187 with species; 9.89 % (4,292,446 of 43,423,322); 106,042 families; median 9 sites / 98 samples; 28.9 % assembled, 79.4 % detected in all five expeditions; dN/dS < 1; culture overlap 47 families (§1.1, §1.2, §1.4, PI October) | visit-bundle permutation, culture pairs (22, *E. coli* excluded), AntiFam/shadow → Note S1; dark call basis → Methods | 1, Table 1 |
 | 2 | Thermoplasmatota contribute a disproportionate share of unknown families | median dark 31.0 % vs 4.6 % other archaea, 6.2 % bacteria; 236/237 above bacterial P95; matched-null medians 6.5× (218 pairs) / 4.5× (237 pairs); 19.8 % of 77,069 from 4.4 % of species, 4.6-fold; relatives ANI ≥ 95 % 0/237, AAI median 64.8 % vs 75.4 % congeneric, 73.1 % nearest desert rep; PGLS −0.1375 (R4, PI October) | quality-matched null → Methods; PGLS → Note S2, Table S3 | 2, 3a |
 | 3 | The unknown archaeal repertoire occurs in widespread subsurface communities | 482 of 550 samples; median 21 species, 0.38 % of reads; 36 of 37 sites (69 pairs) higher below surface, +0.46 pp (0.33–0.86); glycolysis, glyoxylate, peptide transport; precedents Thermoprofundales, Lutacidiplasmatales, Atacama halite type genome (R4) | Holm over four tests, mapped-read and leave-one-expedition sensitivities → Note S3, Table S5; capacity not activity | 3b,c |
-| 4 | External soil references recover much of the unknown sequence repertoire | text: 30,479 unmatched on 1.258 G, 27.08 % after MGnify90 2026_07 (registry headline 26.83 % on 1.387 G with SMAG, see B2); occupancy 37 vs 38 of 61; desert +24.33 pp beyond size; SMAG 28.35 vs GEM 9.81 % = +18.54 pp, control +3.10 (§3.1, PI October) | matched UniRef50 control, rarefaction, GEM draws, length strata → Note S2, Table S4, Supp Fig S2, Suppl. Methods | 4 |
+| 4 | External soil references recover much of the unknown sequence repertoire | 28,446 of 106,042 families (26.83 %) vs 0.36 % control absent from 1.387 G sequences (MGnify90, GEM, SPIRE, SMAG, five desert catalogues); MGnify90 2026_07 depth check 25.37 %; occupancy 37 vs 38 of 61; desert +24.33 pp and SMAG +27.69 pp beyond size; SMAG 28.35 vs GEM 9.81 % = +18.54 pp, control +3.10 (§3.1, PI October analyses) | matched UniRef50 control, rarefaction, GEM draws, length strata → Note S2, Table S4, Supp Fig S2, Suppl. Methods | 4 |
 | 5 | Structural and genomic context connect unknown sequences to biological hypotheses | 17,221 modelled; 2,838 qualified; 1,807 matched initially; 964 whole-chain unmatched, crops recover 714 (74.07 %); flanking recurrence 353 families, contrast unresolved; GrpE 16/18, DnaJ/GrpE 14/18 (§1.3, PI October) | 3,013 known-fold controls, paired PDB run → Note S2; genus aggregation q = 1 → Note S4 | 5 |
 
 ## 4. Discussion (six paragraphs)
@@ -57,10 +57,10 @@ unmatched after expanded searches; confident-region crops recover structural mat
 
 | item | effect |
 |---|---|
-| B2 SMAG in the headline union | R4 numbers and Fig 4b (26.83 % / 1.387 G vs the text's 30,479 / 27.08) |
+| B2 SMAG in the headline union | applied in the text (26.83 % / 1.387 G); his confirmation |
 | B4 structural excess as a claim | crops-only in main; 6.6× / 8.1× standardised only in Note S2 |
 | Contributions statement (B5) | missing section |
-| Manuscript snapshot in this repo | blocked on the PI's phrase checkers (read only `manuscript/main.tex`) |
+| Manuscript snapshot in this repo (D4) | blocked on the PI's phrase checkers (read only `manuscript/main.tex`) |
 
 ## 7. Superseded
 

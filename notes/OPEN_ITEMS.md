@@ -1,19 +1,18 @@
 # EQ-MAGs: open items
 Purpose: the open-items register for the PI's rewrite (15 and 20 Oct 2026: five Results sections, controls in Methods and supplement, 19 authors, Nature Communications as stretch target).
-Pointers: structure `PAPER_STRUCTURE.md` (rewritten after A0); numbers `CATALOGUE_NUMBERS.md`; changes `CORRECTIONS.md`; manuscript = Overleaf main (`paper/` submodule in empty-quarter-mags; snapshot in `manuscript/`).
+Pointers: structure `PAPER_STRUCTURE.md`; numbers `CATALOGUE_NUMBERS.md`; changes `CORRECTIONS.md`; manuscript = Overleaf main (`paper/` submodule in empty-quarter-mags; snapshot in `manuscript/`).
 Rule: nothing unregistered enters the paper. M = main.tex line, S = supplementary_notes.tex line.
 
 ## A. Decisions for Alejandra
 | # | item | recommendation | bears on |
 |---|---|---|---|
-| A15 | Remove 18 orphan figures, supplementary.tex, main_v1.tex from Overleaf | no, until submission | Overleaf |
-| A17 | XRF units and instrument (blocked since September) | answer in one line | Methods S440 |
+| A15 | Remove 17 orphan figures (+ options/), supplementary.tex, main_v1.tex from Overleaf | no, until submission | Overleaf |
 
 ## B. Decisions with the PI
 | # | decision | options | recommendation |
 |---|---|---|---|
-| B1 | Where paper and record live | (a) text in Overleaf main, record in this repo, old repo archived; (b) edit only through him | (a); push to a branch plus one line to him |
-| B2 | SMAG in the headline union | (a) 26.83 % / 0.36 %, 1.387 G; (b) his 30,479 / 1.258 G / 27.08 plus a with-SMAG sensitivity sentence; (c) drop | (a); his 18.54 matched test stays as the fairness test |
+| B1 | Where paper and record live | (a) text in Overleaf main, record in this repo, old repo archived; (b) edit only through him | (a); push to main, one line to him |
+| B2 | SMAG in the headline union, applied in the text (28,446 families, 26.83 % / 0.36 %, 1.387 G; depth check 25.37 %) | his confirmation; fallback = his 30,479 / 1.258 G / 27.08 % | one line to him |
 | B3 | Journal | Nature Communications vs decide after P3 | Nature Communications; no trim needed |
 | B4 | Structural excess as a claim | (a) 6.6× / 8.1× standardised with his caveat; (b) crops-only framing | (b) in main, (a) in Note S2 |
 | B5 | Authorship and contributions | 19 authors as set; contributions statement missing | accept; draft contributions from the record |
@@ -22,32 +21,25 @@ Rule: nothing unregistered enters the paper. M = main.tex line, S = supplementar
 | # | item | state |
 |---|---|---|
 | C1 | Gene-level compartment check on all assembled genes, unbinned half included | revision item |
-| C2 | Within-population pN/pS on dark and control genes (bowtie2 + inStrain, 551 samples) | revision item |
-| C3 | natcomms_20261020 folder needs README and sbatch | PI |
-| C4 | Arsenic and climate gradients rerun on cohort 550 (resistome_clean, osmolyte_clean `results/v551`) | in progress 2026-10-21 |
+| C2 | Within-population pN/pS on all dark and control genes (bowtie2 + inStrain, 551 samples); only the Note S4 read-level pilot exists | revision item |
 
 ## D. Writing and display
 | # | item | waits on |
 |---|---|---|
-| D1 | SMAG union Methods sentence after S765; SPIRE +21.30 / SMAG +27.69 at M91; Fig. 4b SMAG point | B2 = yes |
-| D2 | PAPER_STRUCTURE rewrite to his section table | A0 |
+| D1 | Fig. 4b: SMAG point drawn (verify after the figure rebuild); SPIRE +21.30 not in text, optional | Alejandra |
 | D3 | Contributions statement | B5 |
 | D4 | Phrase check: his `verify.py` reads only `manuscript/main.tex`; the 20 Oct split moved required phrases into `supplementary_notes.tex` | PI fix |
 
 ## E. Blocked
 | item | on |
 |---|---|
-| XRF units and instrument | Alejandra (A17) |
-| ENA PRJEB125153 public release 1 Nov 2026; MAG deposition and DOI; round7 submission prerequisites (raw paths, permissions, duplicate-run provenance, author contributions) | PI |
-
-## Closed since 24 Sep
-- A2 contaminants (PI: keep in the 5,438, exclude E. coli from culture pairs) · A3, A4 sections rewritten · A5 → B3 · A7 → B5 · A8 his harness replaces claims.tsv coordination · former compute items B1 (relatives) and B2 (SMAG leg) done · A0 sections accepted 2026-11-04 · A16 title: the PI's, no item
-- C1–C3 done in her text, now transplants (A) · C5, C6, C8, C9 moot (new figure set, no ED table, trace gas in P3, no trim needed) · D records: registry updated 2026-10-21
+| ENA PRJEB125153 hold until 2026-11-25 (runs, assemblies, bins, MAGs submitted); archive DOI; umbrella project (PI) | PI |
+| Fe > 45 in F17Sr1, S44PRr1, S56PRr1 (data-descriptor XRF tables) unexplained | PI / data owner |
 
 ## Not doing
 - Nothing from the exploratory folders enters the paper without a registered rerun.
 - Nothing from the `dark_function` annotation project enters this paper (2026-09-20).
-- No further characterisation of the dark proteome beyond the length clause (A6); no pangenome of the Thermoplasmatota on genomes below 90 % complete.
+- No further characterisation of the dark proteome beyond the length clause in main.tex; no pangenome of the Thermoplasmatota on genomes below 90 % complete.
 - The environment matrix is not rebuilt; the SMETANA cross-feeding pilot is cut.
 - No geographic-endemism claim; database-relative absence under a named search rule only.
 - No "radiation", no "genomes worldwide", no "hydrogenase-rich", no anthrax, no 10.8x, no 1.5x.

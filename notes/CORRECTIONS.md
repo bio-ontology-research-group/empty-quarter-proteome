@@ -2,8 +2,7 @@
 
 Division of records: `CATALOGUE_NUMBERS.md` = what is current · **this file** = what changed (numbers,
 methods, basis decisions), old → new, with evidence · `reproducibility/claims.tsv` = the PI's
-machine-checked mirror — never edited by us, rebindings batched on the PI list in `PLAN.md`, may lag
-this file.
+machine-checked mirror — never edited by us, may lag this file.
 
 **Status:** FROZEN — current result, locked; cite as is · HISTORICAL — superseded, audit-only; do not
 recompute, do not headline · RECOMPUTE — needs the current basis · VERIFY — check the basis first ·
@@ -786,13 +785,12 @@ Added the 19-author byline from Life on Air, with Alejandra first, remaining mid
 ### 2026-10-21 — record joined with the 20 October rewrite; cohort residue cleared; PI numbers registered
 
 Record: the September registry rows (SMAG union, cohort 550, relatives, MIMAG), corrections and open items carried
-into this repository; the old repository's main merged and archived. Manuscript base = Overleaf main a65f9aa.
+into this repository; the old repository's main merged and archived. Manuscript base = Overleaf main (PI's 20 October version).
 
-Supplement cohort block set to the registered 550-cohort values (S323–329, S504, S821–831): 44 → **45** sites;
+Supplement cohort block set to the registered 550-cohort values: 44 → **45** sites;
 photolyase 24.3/12.1 → **25.0/12.3**; carotenoid 70.3/61.0 → **70.7/60.9**; NHEJ 80.0/85.7 → **79.7/85.6**; unmapped
 54.3/53.7 p 0.50 → **54.4/53.7 p 0.47**; Halobacteriota ρ 0.451 n 248 → **0.456 n 250**, Cl 0.385 → **0.392**;
 salt axes n 248 → **250**; climate axes n 453 → **455**. The 548-cohort paragraph replaced by one cohort sentence.
-Not bound to any check in `reproducibility/verify.py`; the harness stays green.
 
 Gradient reruns on the 550 cohort (`resistome_clean/results/v551/`, `osmolyte_clean/results/v551/`; scripts gained
 `RES_OUT`): arsenic ~ Ca +0.224 → **+0.226** (q 0.0093, n 250); ~ precipitation −0.243 → **−0.242** (q 2.6e-6, n 455);
@@ -803,22 +801,28 @@ flanking recurrence, SMAG–GEM 18.54, crops 714/964 (derived), culture DNA supp
 visit-bundle null 80.5 %, Jaccard 0.634, frame null 1.086, plant-root sets 20,136/41,046, contaminant exclusion
 6.31 → 6.34 %, chaperone families, heliorhodopsins, CPF, EctC; visit-matched ecology 482/550, 36 of 37 sites,
 +0.46 pp (`06_darkmatter/natcomms_20261020`). Superseded in place: 481/549, 40 of 45, 23 pairs, 1.087,
-102,005/19,818/40,495. Occupancy wording: 61 location labels, 60 sites.
+102,005/19,818/40,495. Occupancy wording: 61 sampled locations (see 2026-11-04).
 
-### 2026-11-04 — consistency items A8–A12 closed (Alejandra)
+### 2026-11-04 — consistency fixes, restorations, SMAG in the union, XRF
 
-A8, A9: the PI's reruns (frame null 1.086; plant-root sets 20,136/41,046; 22 culture pairs) confirmed as the current basis;
-no text change. A10, recounted from `sample_metadata.tsv`: the 551 samples cover **59 of the 60 numbered transect sites**
-(site 56 unsampled) plus **two named locations** (labels 62, 64; 4 samples) = **61 sampled locations**; 60 is the transect
-design count. The PI's wording ("59 core sites and two auxiliary locations", "61 locations") is exact and stays; the
-Supplementary Methods sentence now states the breakdown; the registry cohort row and footnote corrected. A11: the companion 16S survey and the field-data descriptor cited by key (`tawfiq2026companion`,
-`rubalkhali_datapaper`) instead of "manuscripts in preparation". A12: STATUS lines in `specificity_clean`,
-`uv_survival_clean`, `osmolyte_clean` now say registered/promoted. A13 (SMAG db access) and A14 (note to the PI) dropped.
+The PI's reruns (frame null 1.086; plant-root sets 20,136/41,046; 22 culture pairs) confirmed as the current basis; no
+text change. Sites, recounted from `sample_metadata.tsv`: the 551 samples cover **59 of the 60 numbered transect sites**
+(site 56 unsampled) plus **two named locations** (labels 62, 64; 4 samples) = **61 sampled locations**; 60 is the
+transect design count. The PI's wording ("59 core sites and two auxiliary locations", "61 locations") stays; the
+Supplementary Methods sentence states the breakdown; registry cohort row and footnote corrected. The companion 16S survey
+and the field-data descriptor cited by key (`tawfiq2026companion`, `rubalkhali_datapaper`) instead of "manuscripts in
+preparation". STATUS lines in `specificity_clean`, `uv_survival_clean`, `osmolyte_clean` now say registered/promoted.
 
-Same day, restorations A1–A5 written into the PI's text (main.tex only): matched-null medians and folds (R4 rows) after the
-matched-comparison sentence; known relatives of the 237 (0 within the species radius, AAI 64.8 % vs 75.4 % congeneric,
-nearest desert 73.1 %) opening the reference-relationship paragraph; Maeke clause (rarity and reference composition, not
-genome quality); one precedent sentence (Zhou 2019, Sheridan 2022, Finstad 2017) closing the metabolism paragraph;
-`singleton2026danica` beside SMAG in the Introduction. A6 dropped: recurrence does not test coding status and the PI's
-limits paragraph already carries the partial-gene and frame-dependence argument. A7 dropped and the §1.3 rules retired
-(query-normalised TM only; control miss rate only beside a novelty claim, of which the paper makes none).
+Restored into the PI's text (main.tex only): matched-null medians and folds (R4 rows) after the matched-comparison
+sentence; known relatives of the 237 (0 within the species radius, AAI 64.8 % vs 75.4 % congeneric, nearest desert
+73.1 %) opening the reference-relationship paragraph; Maeke clause (rarity and reference composition, not genome
+quality); one precedent sentence (Zhou 2019, Sheridan 2022, Finstad 2017) closing the metabolism paragraph;
+`singleton2026danica` beside SMAG in the Introduction. No coding-status sentence added: recurrence does not test it and
+the PI's limits paragraph carries the partial-gene and frame-dependence argument. §1.3 rules retired (query-normalised
+TM only; control miss rate only beside a novelty claim, of which the paper makes none).
+
+SMAG joins the reference union in the paper (registry headline since 2026-09-27): Results and Methods list SMAG;
+1.258 → **1.387 G**; 30,479 → **28,446 (26.83 %)** with the control **0.36 %** stated; depth check 5.8 / 34.3 / 27.08 →
+**5.4 / 35.8 / 25.37**; Supplementary Methods gains the SMAG database sentence (129,550,340 proteins, 40,039 genomes,
+Zenodo 8223844). XRF Methods sentence rewritten to the data descriptor's documented facts (Olympus Vanta handheld, Fast
+Mode, helium/8 mm on trip 5; units undocumented, consistent with weight percent; zero = not reported positive).

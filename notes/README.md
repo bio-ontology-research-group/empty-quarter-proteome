@@ -4,8 +4,8 @@ Two canonical documents, one open-items register, one change log, one number reg
 structures, no dead-number documents; superseded planning files are in `archive/`.
 
 **Canonical**
-- `PAPER_STRUCTURE.md` — the structure in force for the v2 draft: story, title, seven Results
-  sections with their controls, Introduction and Discussion plans, display set, journal. Start here.
+- `PAPER_STRUCTURE.md` — the structure in force: story, the PI's title, his five Results sections
+  with their controls, Discussion plan, display set. Start here.
 - `CATALOGUE_NUMBERS.md` — the numbers registry: every paper number, with basis and source, in paper
   order. The only source for numbers in prose.
 
@@ -20,7 +20,7 @@ structures, no dead-number documents; superseded planning files are in `archive/
   registered numbers, what can and cannot be claimed, reviewer attack surface. The drafting source.
 
 **Reference**
-- `PIPELINE_GUIDE.md` / `.pdf` — end-to-end pipeline walkthrough (carries known stale spots, see `OPEN_ITEMS.md` D).
+- `PIPELINE_GUIDE.md` / `.pdf` — end-to-end pipeline walkthrough (carries known stale spots).
 - `DARKFAM_PRIMER.md` — dark-family concepts in plain words.
 
 **Archive** (`archive/`, kept for the record, never maintained)

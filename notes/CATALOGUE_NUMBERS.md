@@ -4,7 +4,7 @@
 One format throughout: tables of `number | value | source`; caveats are footnotes under the table they
 qualify. Convention: each section's basis line names its workbench folder once; table sources are relative
 to it. No dates and no job IDs here — time and change history live in `CORRECTIONS.md`, forensics live in
-the workbench README the source names (exception: a still-RUNNING job keeps its ID until the result lands).
+the workbench README the source names.
 Numbers computed but not used in the paper stay in their workbench README and are not registered.
 Machine-checked mirror = `reproducibility/verify.py` + `reproducibility/claims.tsv` of this repo (PI-owned;
 `claims.tsv` is generated output, not edited by hand).
@@ -28,34 +28,34 @@ the union to get the genome-resolved numbers.
 | sequencing depth per sample | median **21.58 Gbp** / 156.6 M reads after filtering, IQR 16.53–25.08, range 0–475.81; 3 samples below 2 Gbp (`F5Dr1` 1,232 reads, `F45PRr3`, `F13Sr1`); median **48.5%** of reads map to the 5,438 | fastp `*_report.json` + coverm logs |
 | DAS_Tool inputs → samples producing refined bins | **542** in → **539** out (3 yielded none) | `M/05_refine/sample_list.txt`; `*_DASTool_contig2bin.tsv` |
 | MIMAG full rule on the 5,438 reps (barrnap 0.9 + tRNAscan-SE 2.0.12, domain mode) | high **126** / medium 5,312 / low 0; of the 2,259 completeness-contamination HQ, 2,133 drop to medium; all three rRNAs 157 · 16S 495 · 23S 333 · 5S 2,537 · ≥18 tRNA isotypes 3,629 (median 19) | `M/mimag_rrna_trna_clean/results/{mimag_tiers,rrna_trna_per_rep}.tsv` |
-| genome-mapping cohort (§2.1–2.4 abundance) | **550** usable of 551 canonical (`F5Dr1`, 1,232 read pairs, maps no read; `51Sr1` and `F13PRr1` profiles repaired 2026-09) | `M/rebuild_20260729/picrust2_current_20260803/coverm_current/profiles_full_recompute/` |
+| genome-mapping cohort (§2.1–2.4 abundance) | **550** usable of 551 canonical (`F5Dr1`, 1,232 read pairs, maps no read; `51Sr1` and `F13PRr1` profiles repaired) | `M/rebuild_20260729/picrust2_current_20260803/coverm_current/profiles_full_recompute/` |
 | family-member mapping cohort (§1.4/§2.5) | **551** (complete) | `M/06_darkmatter/darkfam_basis_clean/results/coverm/` |
 | compartment split (canonical / profiled) | 117 / 166 / 268 · 116 / 165 / 267 (Surface / Deep / root-adjacent) | `M/metadata/sample_metadata.tsv` |
-| **sampled locations**; site-paired test set | **61** sampled locations = **59** of the 60 numbered transect sites (site 56 unsampled) + 2 named locations (labels 62, 64; trip 1; 4 samples); **60** = transect design count; 45 Surface+Deep sampled; **45** both profiled (44 before the `51Sr1` profile repair) | `M/metadata/sample_metadata.tsv` (recounted 2026-11-04) |
+| **sampled locations**; site-paired test set | **61** sampled locations = **59** of the 60 numbered transect sites (site 56 unsampled) + 2 named locations (labels 62, 64; trip 1; 4 samples); **60** = transect design count; 45 Surface+Deep sampled; **45** both profiled (44 before the `51Sr1` profile repair) | `M/metadata/sample_metadata.tsv` |
 | XRF chemistry subset / climate axes | **250** / **455** profiled samples (248 / 453 on the 548 cohort, superseded) | `M/metadata/` |
 
 Footnotes: gene prediction ran on 552 assembly files (a Methods-level basis only). Three canonical samples
-lack genome profiles (51Sr1, F13PRr1, F5Dr1); the family-member mapping covers all 551 (F13PRr1 landed
-2026-08-14, matrix refreshed — every §1.4 digit unchanged).
-⚠ **60 is the transect DESIGN count; 61 is what the 551 samples cover** (recounted from `sample_metadata.tsv`
-2026-11-04; companion papers: 60 primary sites on a 1,043 km transect plus 10 named locations; the data descriptor
+lack genome profiles (51Sr1, F13PRr1, F5Dr1); the family-member mapping covers all 551 (F13PRr1 landed,
+matrix refreshed — every §1.4 digit unchanged).
+⚠ **60 is the transect DESIGN count; 61 is what the 551 samples cover** (recounted from `sample_metadata.tsv`;
+companion papers: 60 primary sites on a 1,043 km transect plus 10 named locations; the data descriptor
 matches identifiers 61–64 to named locations by coordinates). Of our 61 sampled locations, 59 are numbered transect
 sites (site 56 has no sample) and 2 are named locations under trip-1 labels 62 and 64 (4 samples, used in every analysis).
 Paper wording: "59 core sites and two auxiliary locations" / "61 locations" for the data; "60 numbered sites" only for the design.
 Expeditions: 17–20 Mar 2023 · 14 Jul 2023 (heat-truncated to 8 sites → only 37 samples) ·
 17–21 Feb 2024 · 19–21 Aug 2024 · 12–15 Oct 2025 (31 months).
-Median unmapped read fraction ~51%, balanced between Surface and Deep (§2.3/M.10) → paired compartment
+Median unmapped read fraction ~51%, balanced between Surface and Deep (§2.3) → paired compartment
 contrasts are unbiased; root-adjacent comparisons use the mapped denominator.
 "Detected" = relative abundance > 0, i.e. ≥10% genome breadth — CoverM's never-passed
-`--min-covered-fraction` default, defined once in **M.5** (inherited, not chosen).
+`--min-covered-fraction` default, defined once in Supplementary Methods (inherited, not chosen).
 
 ## §1.1 Catalogue and taxonomy
 
 Basis: `M/05_refine/` (DAS_Tool 1.1.7-refined → dRep 3.6.2 ANI95). ⚠ **Taxonomy has a different
 basis:** the R232 census comes from `M/rebuild_20260729/coassembly_novelty/legacy_taxonomic_screen_r232/`
-(GTDB-Tk **2.7.2** / **r232**, 2026-07-31), **not** from `_gtdbtk_refined/`, which is the superseded
+(GTDB-Tk **2.7.2** / **r232**), **not** from `_gtdbtk_refined/`, which is the superseded
 GTDB-Tk 2.4.1 / **r226** run. Rows below marked `_gtdbtk_refined/` for taxonomy are read from the R232
-screen; path corrected 2026-08-17 (`CORRECTIONS.md`).
+screen; path corrected (`CORRECTIONS.md`).
 
 | number | value | source |
 |---|---|---|
@@ -71,7 +71,7 @@ screen; path corrected 2026-08-17 (`CORRECTIONS.md`).
 | GTDB r232 species representatives in those classes | **21** (`c__SW-10-69-26`) · **197** (`c__E2`) — write "species representatives in GTDB r232", never "genomes worldwide" | `M/rebuild_20260729/references/gtdbtk_r232/taxonomy/ar53_taxonomy_r232_reps.tsv` |
 
 Footnotes: HQ+MQ filter = completeness ≥50, contamination ≤10 *inclusive* — two bins sit at exactly 10.0
-(pass ≤10, fail strict MIMAG <10); state the inclusive rule in Methods M.2/M.3. One filter-passing bin was
+(pass ≤10, fail strict MIMAG <10); state the inclusive rule in Supplementary Methods. One filter-passing bin was
 dropped inside dRep (`25PRr2__self_SemiBin_2_sub`), so 12,433 is the count `Cdb.csv` membership analyses
 see. The low-MSA candidate is `48Sr2__single_SemiBin_167_sub` (46.49% MSA).
 
@@ -102,7 +102,7 @@ comparison; MMseqs misses remote homology → the structure layer is that check)
 Basis: `M/04_structure/00_structure_clean/` — 3Di triage of the ≥100 aa genome-resolved dark
 (`03_search/`), structural clustering (`04_cluster/`), ESMFold + full-coordinate validation
 (`05_validate/`). References: AFDB v6 / UniProt 2025_03 (241,070,489) + PDB release 250101 (324,204),
-both stages. Query-normalised TM only (the alignment-normalised score has an audited normalisation defect; PI review round 2). The control miss rate (3.35 %) is stated wherever a structural-novelty claim is made; the current paper makes none, so raw matched/unmatched counts stand as description (rule retired 2026-11-04).
+both stages. Query-normalised TM only (the alignment-normalised score has an audited normalisation defect; PI review round 2). The control miss rate (3.35 %) is stated wherever a structural-novelty claim is made; the current paper makes none, so raw matched/unmatched counts stand as description (rule retired).
 
 | number | value | source |
 |---|---|---|
@@ -115,8 +115,8 @@ both stages. Query-normalised TM only (the alignment-normalised score has an aud
 | confidence-qualified models **Q** (≥100 aa, pLDDT ≥0.70) | **2,838** of 17,221 (16.5%) | `05_validate/per_rep_structures.tsv` |
 | **K** dual no-hit, query-normalised TM <0.5 | **1,031 = 36.3%** (95% CI 34.6–38.1) | `05_validate/summary_05c.json` |
 | control floor, query-normalised | **101/3,013 = 3.35%** (95% CI 2.77–4.06) | `05_validate/per_control_structures.tsv` |
-| candidate rate vs its floor | **6.6×** (CI 5.0–9.1) standardised on model confidence, **8.1×** (CI 6.0–11.5) on confidence × length. Crude 10.8× is superseded: controls average pLDDT 0.867 vs 0.775 and their error rate falls 5.49→1.53 % across that range | `05_validate/stratified_floor.tsv` (2026-09-17) |
-| dual no-hit, alignment-normalised TM (sensitivity) | **95 = 3.35%**; floor 68/3,013 = 2.26%. ⚠ **NOT a positive result**: standardised on confidence × length it is 1.38× with CI 0.87–2.41, crossing 1. The shipped "1.5×, p = 0.011" is superseded and must not be quoted | `05_validate/stratified_floor.tsv` (2026-09-17) |
+| candidate rate vs its floor | **6.6×** (CI 5.0–9.1) standardised on model confidence, **8.1×** (CI 6.0–11.5) on confidence × length. Crude 10.8× is superseded: controls average pLDDT 0.867 vs 0.775 and their error rate falls 5.49→1.53 % across that range | `05_validate/stratified_floor.tsv` |
+| dual no-hit, alignment-normalised TM (sensitivity) | **95 = 3.35%**; floor 68/3,013 = 2.26%. ⚠ **NOT a positive result**: standardised on confidence × length it is 1.38× with CI 0.87–2.41, crossing 1. The shipped "1.5×, p = 0.011" is superseded and must not be quoted | `05_validate/stratified_floor.tsv` |
 | locally familiar vs fully covered (of Q) | 96.7% have a matching aligned region; 63.7% covered end-to-end | `05_validate/per_rep_structures.tsv` |
 | member proteins in the K families | 4,880 | `05_validate/fam_reps.tsv` |
 | **Pfam-A 38.2 on the K members** (basis `M/04_structure/pfam_candidates_clean/`) | **427 of 4,880 (8.75%)** with ≥1 domain; **144 of 1,031 families (14.0%)**; hits cover median **0.25** of the chain, **89.5%** leave ≥80 aa unmatched (gap median **159 aa**). Q-not-K (1,807): 5.59% / 0.56 / 41.6%; controls (3,013): 90.67% / 0.885 / 17.5% | `results/set_summary.tsv` |
@@ -144,14 +144,14 @@ admission ≥3 diverged members, ≥3 samples, ≥2 sites. Mapping cohort: 551 (
 | **frame-shifted null arm** (same dark CDS read in the +1 frame, stop codons masked; seeded 10,000-family subset) | Superseded (PI rerun, see PI October analyses): median **1.087** (IQR 0.901–1.326; 37.7% <1; n 9,148) vs the same families in the true frame **0.427** (IQR 0.295–0.580; 97.0% <1; n 9,182; full arm 0.425); paired null − true **+0.655**, null higher in **92.4%** of 9,029 families; stop codons masked 2.0% (+1 frame) vs 0.7% (true) | `results/selection/dnds_null_frame1.tsv`, `dnds_dark_subset.tsv` |
 | prevalence / abundance | median **98/551** · 4 single-sample · median peak **99 TPM** | `results/fam_{presence,abundance}.tsv` |
 | persistence | **79.4%** all-5 expeditions (94.8% ≥4) · 28.9% re-assembled all-5 | `results/fam_presence.tsv` + `fam_recurrence.tsv` |
-| persistence, length-stratified (presence rule favours short genes) | families ≥250 aa: median 55/551, **67.1%** all-5 · <60 aa: median 201/551, 89.7% all-5 | `results/fam_presence.tsv` × `darkmatter_clean/06_dark_lengths/` (CORRECTIONS 2026-08-17) |
+| persistence, length-stratified (presence rule favours short genes) | families ≥250 aa: median 55/551, **67.1%** all-5 · <60 aa: median 201/551, 89.7% all-5 | `results/fam_presence.tsv` × `darkmatter_clean/06_dark_lengths/` (`CORRECTIONS.md`) |
 | phylum attribution (**R232**) | **97.9%** single-phylum of 78,727 attributable (74%); Actinomycetota 32% / Thermoplasmatota 19% (denominator = all attributable) | `results/fam_phylum.tsv` |
 | threshold robustness | ≥3-member clusters 108,826 (50%) → 130,843 (30%) | robustness log |
 
 ## R2 cultivation control (cultured genomes of the same basin)
 
-Basis: `M/06_darkmatter/cultured_comparison_clean/` (promoted 2026-09-20 from `alelopezv/eqmags_poc/05_rakpr_overlap`;
-rerun on all **722** RAK-PR genomes 2026-09-21, jobs 52196463–52196465). Cultured genomes = 722 (all Bacteria), all
+Basis: `M/06_darkmatter/cultured_comparison_clean/` (promoted from `alelopezv/eqmags_poc/05_rakpr_overlap`;
+rerun on all **722** RAK-PR genomes). Cultured genomes = 722 (all Bacteria), all
 with Bakta proteomes (651 in `eqmgc/results/annotation/bakta`, 71 in `EmptyQuarter_Data/cultures/annotation/thermophilic/bakta`);
 3,024,784 proteins; median 2 contigs (49% single-contig). Darkness on the cultured side is per protein (Bakta), on the
 catalogue side per 90/80 cluster representative; both by the identical UniRef50 2026_01 rule, all hit tables from the
@@ -171,11 +171,11 @@ rerun (`tmp/uniref_hits/`).
 | **pair anatomy** (step3_06; reciprocal best hits ≥50% id, ≥50% cov both ways; 23 pairs, best-ANI culture) | Superseded (PI rerun, see PI October analyses): shared proteins median **2,935** per pair (pooled 69,207 of 87,381 MAG / 85,949 cultured); shared-pair identity median **99.7%**; **annotated MAG proteins with a partner 80.3%** (median 84.7) vs **dark 15.7%** (median 14.5); from the culture side 81.2% vs 23.6%; dark < annotated in **23 of 23** pairs, both directions; on complete calls ≥100 aa 88.9% vs 15.7% (n 65,450 vs 166) | `results/pair_anatomy/` |
 | pair anatomy, unique remainders | MAG-unique 18,174: median **137 aa** (shared 268), 45% partial, 51% within 200 bp of a contig end, 7% dark · culture-unique 16,742: median **210 aa**, 4.5% dark, 24% Bakta hypothetical; top products lipoprotein, phage protein, transposase, IS3, histidine kinase | same |
 
-Superseded (651-proteome run, 2026-09-20): 1.71% / 0.99% / 16 of 23, p 0.042 / 37.8% / 3,988 / 46.5% vs 0.16% / 60 aa.
+Superseded (651-proteome run): 1.71% / 0.99% / 16 of 23, p 0.042 / 37.8% / 3,988 / 46.5% vs 0.16% / 60 aa.
 
 ## R3 lineage darkness (per-genome dark fraction)
 
-Basis: `M/06_darkmatter/lineage_darkness_clean/` (promoted 2026-09-20 from `eqmags_poc/01_dark_by_lineage` round two +
+Basis: `M/06_darkmatter/lineage_darkness_clean/` (promoted from `eqmags_poc/01_dark_by_lineage` round two +
 `03_genome_size_function`; reproduced byte-identical). Native key: protein instance → winner contig → 90/80 cluster →
 dark call; n = 5,438. Dark fraction here is per **protein instance on the representative's contigs**, a third basis
 distinct from 9.89% (cluster reps, 37,949-bin union) and 15.6% (cluster reps, whole catalogue).
@@ -207,7 +207,7 @@ Basis: same folder. Class counts in §1.1 table above.
 | **matched null vs bacteria** (caliper 0.5) | **237 of 237**; **0.310 vs 0.069**, **4.5x**; darker in **237/237**; worst residual SMD 0.05 | same |
 | matching covariates | completeness, contamination, log corrected size, log N50, log mean abundance, prevalence; 1:1 nearest neighbour without replacement | same |
 | composition | species **4.4%** · abundance **0.8%** (median of per-sample shares, 549 samples) · dark families **19.8%** of 77,069 single-phylum · dark proteins **15.2%** · enrichment **4.6** (families) / **4.0** (proteins); Actinomycetota 30.0 / 52.8 / 32.8 / 21.5, enr 1.1 / 0.7 | `results/v2_dark_composition_by_phylum.tsv` |
-| class tree | FastTree LG+gamma on the **r232** GTDB-Tk ar53 alignment, **1,914** taxa (237 desert + 1,647 r232 Thermoplasmatota reps + 30 outgroup); display only. The earlier tree on the r226 alignment (1,525 taxa) is kept in `results/thermo_tree_r226/` | `results/thermo_tree.nwk` (job 52210624) |
+| class tree | FastTree LG+gamma on the **r232** GTDB-Tk ar53 alignment, **1,914** taxa (237 desert + 1,647 r232 Thermoplasmatota reps + 30 outgroup); display only. The earlier tree on the r226 alignment (1,525 taxa) is kept in `results/thermo_tree_r226/` | `results/thermo_tree.nwk` |
 | occurrence (550 usable samples) | detected in **482 of 550**; median **21** of 237 reps per sample; summed share median **0.38%** of reads (0.3823) | `M/06_darkmatter/natcomms_20261020/results/ecology_run.json` |
 | depth (visit-matched design) | **37 sites / 69 site–visit pairs**; subsurface higher at **36 of 37** sites (34 on mapped reads); median **+0.46 pp** (95% site bootstrap 0.33–0.86); Holm p **4.07e-10** · root-adjacent vs subsurface lower at **30 of 48** sites, **−0.23 pp**, adjusted p **0.0148** | `M/06_darkmatter/natcomms_20261020/results/ecology_summary.tsv` (rows Deep−Surface, Root−Deep); 30/48 counted from `ecology_site_contrasts.tsv` |
 | clean absences in the 237 (median completeness 85.4) | mcrABG **0** (also 0 in all 5,438: no methanogen recovered) · amoABC **0** (archaea overall 55/591) · rhodopsin bop/hop/sop **0** (Halobacteriota 51/269) · nifHDK 0 (all archaea 0) · photolyase **5** · ectoine ectC **1** · hydrogenase K06281 17 · coxL K03520 12 · trehalose otsAB 30 | `results/v2_thermo_ecology_by_rep.tsv` |
@@ -257,20 +257,20 @@ abundance over the 550-sample genome-mapping cohort (`results/v551/`; 18.36 % me
 | 1l vs 1h proteins | 1,124 vs 445 | `classify/` |
 | coxL form calls (of 4,727 proteins) | form I **1,901** · **ambiguous 2,815 (60%)** · form II/other 11 — so 1,170 species is a floor | `classify/coxL_class.tsv` |
 | guild abundance | median **18.4%** whole (IQR 12.8–25.6) / **43.9%** of mapped; CO 11% vs H₂ 9% | `README.md` |
-| energetics / sink | ΔG ≈ −200 / −230 kJ mol⁻¹; ~0.01 Tg H₂ yr⁻¹ (<1% global soil sink) | Supp Note 1 derivation |
+| energetics / sink | ΔG ≈ −200 / −230 kJ mol⁻¹; ~0.01 Tg H₂ yr⁻¹ (<1% global soil sink) | Supplementary Methods |
 
 ## §2.3 Radiation, desiccation, salt
 
 Basis: `M/06_metabolism/uv_survival_clean/` + `M/06_metabolism/osmolyte_clean/` on 5,438 reps / `rep_ko_v2`;
 compartment tests on the 45 site-paired subset; gradient tests on the 550 cohort (salt axes n = 250, climate axes n = 455;
-`osmolyte_clean/results/v551/gradient_tests.tsv`). Full grids = Supplementary Tables S3–S4.
+`osmolyte_clean/results/v551/gradient_tests.tsv`).
 
 | number | value | source |
 |---|---|---|
 | within-phylum photolyase control (**R232**) | replicates in **3** phyla: Actinomycetota p=0.0014 · Pseudomonadota p=0.020 · Bacillota p=0.021. **Bacteroidota p=0.30 (not significant)** — it gained 107 reps in the r226→R232 `Bacteroidota_A` merge | `uv_survival_clean/results/within_phylum_tests.tsv` |
 | repair floor (% of species) | BER 99.6 · NER 99.5 · oxidative 93.5 · SOS 90.1 · NHEJ 74.5 · MMR 57.7 · carotenoid 54.4 · photolyase 17.9 | `uv_survival_clean/README.md` |
 | compartment (mapped, 45 sites) | photolyase 25.0 vs 12.3 · carotenoid 70.7 vs 60.9 · NHEJ 79.7 vs 85.6 · unmapped 54.4 vs 53.7 (p 0.47) | `uv_survival_clean/results/v551/compartment_tests.tsv` |
-| compartment (whole-community bound) | photolyase 11.1 vs 4.9 · carotenoid 31.1 vs 28.8 | Supp Table S4 |
+| compartment (whole-community bound) | photolyase 11.1 vs 4.9 · carotenoid 31.1 vs 28.8 | not in the paper |
 | ecotype test | null across 324/327 spanning species (all p≥0.18) → species sorting | `uv_survival_clean/README.md` |
 | osmolyte census (% of species) | any 79.5 · trehalose-any 75.4 (otsAB 66.3) · ectoine 16.5 · GG 3.6 · MG 2.8 | `osmolyte_clean/README.md` |
 | salt = turnover | Halobacteriota vs S ρ +0.456 (p 3.0e-14) · Cl +0.392 · proxy +0.316 (n=250, geography-partialled; CLR/detection-robust; `results/v551/salt_turnover.tsv`) | `osmolyte_clean/README.md` |
@@ -300,7 +300,7 @@ pangenome content (one rep per species); salinity-proxy association attenuates g
 
 ## Contamination control (blanks and the two reagent contaminants)
 
-Basis: `M/06_darkmatter/contamination_clean/` (promoted 2026-09-20 from `eqmags_poc/07_contamination_check`, byte-identical
+Basis: `M/06_darkmatter/contamination_clean/` (promoted from `eqmags_poc/07_contamination_check`, byte-identical
 rerun; blanks profiled with the paper's own CoverM 0.7.0 invocation and the prebuilt 5,438 index, 10% breadth gate).
 
 | number | value | source |
@@ -313,11 +313,11 @@ rerun; blanks profiled with the paper's own CoverM 0.7.0 invocation and the preb
 | *C. acnes* representative in soil | **290/550** (52.7%); trips 67 / 35 / 47 / 60 / 29%; DNA rho **−0.47**; not on the pathogen panel | same |
 | pathogen census | strict 2 of 5,438 (0.04%); suffix-blind **5** (0.09%) | `results/pathogen_census.tsv` |
 | ⚠ vector sequence inside the catalogue | **10** representatives carry contigs matching SNTC plasmid contigs; strongest `T5PRr1__self_SemiBin_614` (*Mixta alhagi*) 3,173 bp at 99.94% | `results/control_contig_hits.tsv`, `results/identify/SNTC_contigs_vs_reps.paf` |
-| effect on the resistome census (checked 2026-09-20) | AMR hits on SNTC-matching contigs: **2** (both aph(3')-Ia, aminoglycoside; T5PRr1 coordinate-confirmed, V40PRr2 same contig only) → aminoglycoside 649 → 647 species, **11.9% unchanged at one decimal**; β-lactam 24.6, rifamycin 7.2, phenicol 5.02, any-AMR 37.4 unchanged. Wider: aph(3')-Ia occurs in **7** species, 5 on an identical 7,838 bp contig at 100% identity (plasmid-like); blaTEM-116 in 2 species at 100%; removing all 7 aph(3')-Ia gives **11.8%**. catA hits (10 species, 53–85% identity) are native | `resistome_clean/results/amrfinder/*.tsv` × the PAF |
+| effect on the resistome census | AMR hits on SNTC-matching contigs: **2** (both aph(3')-Ia, aminoglycoside; T5PRr1 coordinate-confirmed, V40PRr2 same contig only) → aminoglycoside 649 → 647 species, **11.9% unchanged at one decimal**; β-lactam 24.6, rifamycin 7.2, phenicol 5.02, any-AMR 37.4 unchanged. Wider: aph(3')-Ia occurs in **7** species, 5 on an identical 7,838 bp contig at 100% identity (plasmid-like); blaTEM-116 in 2 species at 100%; removing all 7 aph(3')-Ia gives **11.8%**. catA hits (10 species, 53–85% identity) are native | `resistome_clean/results/amrfinder/*.tsv` × the PAF |
 
 ## R7 differential function by compartment
 
-Basis: `M/06_metabolism/differential_function_clean/` (promoted 2026-09-20 from `eqmags_poc/04_differential_function`,
+Basis: `M/06_metabolism/differential_function_clean/` (promoted from `eqmags_poc/04_differential_function`,
 byte-identical rerun; method review in its README). Carriage = share of the MAPPED community encoding a feature
 (549 samples, 5,438 reps; mapped fraction mean 47.8%, root-adjacent 50.9 vs subsurface 45.3 vs surface 44.3).
 Modules = 282 DRAM KEGG step-form modules present at ≥2/3 of steps; KOs = 4,127 at 5–95% prevalence. Contrasts
@@ -352,8 +352,8 @@ climate 456).
 
 | number | value | source |
 |---|---|---|
-| community structure (PERMANOVA, 547 samples / 105,977 families at prev≥5) | geochem R² **0.132** · geochem beyond space **0.089** · beyond space + compartment 0.092 · climate beyond space 0.030 · compartment 0.044 · space 0.079 (all p=0.001). Corrected 2026-09-17: the block now includes S, Cl and Na, which carry the family-level signal; the old 0.123 / 0.080 omitted them and is superseded | `results/permanova_blocks.tsv` |
-| variance partitioning (XRF cohort, n=251) | geochem unique R² **0.106** · space 0.055 · compartment 0.057 (p=0.002). ⚠ The two-block `varpart.tsv` cited by M.7/M.13 never partitioned the environmental blocks; that claim is withdrawn | `results/varpart.tsv` (2026-09-17) |
+| community structure (PERMANOVA, 547 samples / 105,977 families at prev≥5) | geochem R² **0.132** · geochem beyond space **0.089** · beyond space + compartment 0.092 · climate beyond space 0.030 · compartment 0.044 · space 0.079 (all p=0.001). Corrected: the block now includes S, Cl and Na, which carry the family-level signal; the old 0.123 / 0.080 omitted them and is superseded | `results/permanova_blocks.tsv` |
+| variance partitioning (XRF cohort, n=251) | geochem unique R² **0.106** · space 0.055 · compartment 0.057 (p=0.002). ⚠ The earlier two-block `varpart.tsv` never partitioned the environmental blocks; that claim is withdrawn | `results/varpart.tsv` |
 | vanadium block | null (R² 0.003, p=0.78; within-site p 0.88) | `results/permanova_blocks.tsv` |
 | permutations restricted within site (59 sites) | every environmental block keeps p ≤ 0.002 (geochem 0.002, all others 0.001); space itself is not testable within site (p 1.0) | `results/permanova_blocks.tsv` col `p_within_site` |
 | sequencing depth as a block / covariate | log10 bases R² **0.011**; geochem beyond space+depth **0.089** (vs 0.089 beyond space); climate beyond space+depth 0.030; aridity beyond space 0.006 → 0.006 with depth | same; depth table `results/sample_depth.tsv` (573 fastp reports) |
@@ -377,21 +377,21 @@ contrast retained); EC-decode layers deferred to the dark-matter-annotator sibli
 Basis: `M/06_darkmatter/specificity_clean/` — the 106,042-family universe, queried in ONE DIAMOND pass
 together with the 106,042 length/size-matched annotated control families (212,084 seqs), so every
 catalogue carries a known-protein absence floor. Rule: `diamond blastp --sensitive --evalue 1e-3 -k 1`,
-v2.0.15. **All numbers are dark/control pairs.** Jobs 50594992 · 50594993 · 50613399 · 50613400 · 50618838.
-**June's 21.4% (5,011/23,382) is DEAD** — superseded object; the abstract's "pending SPIRE" hedge is CLOSED.
+v2.0.15. **All numbers are dark/control pairs.**
+Superseded: June's 21.4 % (5,011/23,382).
 
 | number | value (dark / matched control) | source |
 |---|---|---|
-| **HEADLINE — absent from every named reference** (MGnify90 ∪ GEM ∪ deserts ∪ SPIRE ∪ SMAG, 1.387 G seqs; decision A11 2026-09-27) | **26.83% (28,446) / 0.36% (385)** — 75-fold. Superseded: 28.74% (30,479) / 0.41% (435) on the 1.258 G union without SMAG (`results/union_specificity_summary.tsv`) | `results/union_specificity_with_smag_summary.tsv` |
+| **HEADLINE — absent from every named reference** (MGnify90 ∪ GEM ∪ deserts ∪ SPIRE ∪ SMAG, 1.387 G seqs; SMAG in the union, decision A11) | **26.83% (28,446) / 0.36% (385)** — 75-fold. Superseded: 28.74% (30,479) / 0.41% (435) on the 1.258 G union without SMAG (`results/union_specificity_summary.tsv`) | `results/union_specificity_with_smag_summary.tsv` |
 | per catalogue, % absent | mgnify90 (717,738,164) 52.68/1.36 · gem (122,978,191) 64.38/2.97 · spire (269,496,580) 39.90/0.98 · deserts_combined (147,531,178) 42.60/2.07 | `results/{specificity,desert_specificity}_summary.tsv` |
-| **SMAG** (Ma 2023; 40,039 genomes per Supplementary Data 2, Zenodo 8223844; Pyrodigal -p meta here; 129,550,340 proteins; DIAMOND 2.0.15 same rule) | absent dark **40.47%** (42,920) / control 1.57% (1,660) · size-only expectation 68.16 / 3.20 → gap **+27.69** / +1.63 points (desert set +24.33, SPIRE +21.30, GEM +4.27) · union with SMAG: dark **26.83%** (28,446) / control 0.36% (385); genome catalogues only (GEM+SPIRE+SMAG) 33.53 / 0.66 · SMAG JOINS the headline union (A11, 2026-09-27) · depth check (spec_5, MGnify90 2026_07) on the with-SMAG set: dark gain a hit 1,546/28,446 = **5.43%**, control residual resolved 138/385 = **35.8%**, dark still unmatched 26,900 = **25.37%** of 106,042, control 247 = 0.23% (old set: 5.8 / 34.3 / 27.08 / 0.27) | `results/smag_specificity_summary.tsv`, `smag_content_vs_depth.tsv`, `union_specificity_with_smag_summary.tsv`; db `/ibex/user/velazqal/eqmags_31/smag/smag_db.dmnd` (md5 213ca2a1…) |
+| **SMAG** (Ma 2023; 40,039 genomes per Supplementary Data 2, Zenodo 8223844; Pyrodigal -p meta here; 129,550,340 proteins; DIAMOND 2.0.15 same rule) | absent dark **40.47%** (42,920) / control 1.57% (1,660) · size-only expectation 68.16 / 3.20 → gap **+27.69** / +1.63 points (desert set +24.33, SPIRE +21.30, GEM +4.27) · union with SMAG: dark **26.83%** (28,446) / control 0.36% (385); genome catalogues only (GEM+SPIRE+SMAG) 33.53 / 0.66 · SMAG in the headline union (decision A11) · depth check (spec_5, MGnify90 2026_07) on the with-SMAG set: dark gain a hit 1,546/28,446 = **5.43%**, control residual resolved 138/385 = **35.8%**, dark still unmatched 26,900 = **25.37%** of 106,042, control 247 = 0.23% (old set: 5.8 / 34.3 / 27.08 / 0.27) | `results/smag_specificity_summary.tsv`, `smag_content_vs_depth.tsv`, `union_specificity_with_smag_summary.tsv`; db `/ibex/user/velazqal/eqmags_31/smag/smag_db.dmnd` (md5 213ca2a1…) |
 | per desert study, % absent | atacama (6,193,359) 95.61/43.04 · desert_autotroph (7,200,701) 72.81/10.48 · arid (30,569,562) 52.59/3.91 · antarctic_colddesert (49,206,550) 67.55/8.67 · mojave (54,361,006) 62.54/6.16 | `results/desert_specificity_summary.tsv` |
 | known **genome** space only (GEM ∪ SPIRE, 392.5M) | 39.10 / 0.89 | `results/union_specificity_summary.tsv` |
 | **content beyond depth** — gap vs a size-matched random MGnify90 slice (expected − observed, pts) | deserts_combined **+24.33** (42.60 obs / 66.93 exp) · spire **+21.30** · arid **+28.38** · gem +4.27; control gaps +0.93 / +1.23 / +2.35 / +0.32 | `results/content_vs_depth.tsv` |
 | rarefaction **self-validation** (licenses the above) | mgnify90 at p=1: 52.68 observed vs 52.53 expected = **0.15 pt** | `results/rarefaction_curve.tsv` |
 | **depth robustness** — vs complete MGnify90 **2026_07** (1,661,142,385 seqs, MMseqs2 `-s 7.5 -e 1e-3`) | 1,760 of 30,479 dark gain a hit (5.8%) → 27.08% still unmatched; control 149 of 435 (34.3%) → 0.27% — **superseded by 25.37 / 5.43 / 35.8 on the with-SMAG set** (SMAG row above) | `results/depth_robustness_summary.tsv` |
 | e-value/DB-size confound, measured | 2,544 families (2.40%) hit only because the desert DBs were searched split rather than concatenated | README |
-| occupancy of the reference-absent set (length-stratified; on the with-SMAG absent set, 28,446 vs 77,596) | median **37 of 61 location labels** (60 sites, see cohorts footnote) vs 38 for families with a hit; holds in all five length strata (44/50 · 38/40 · 34/36 · 31/32 · 27/27). Superseded (30,479 set): 33/36 and 26/27 in the third and fifth strata | `results/b6_absence_occupancy_by_length_with_smag.tsv` |
+| occupancy of the reference-absent set (length-stratified; on the with-SMAG absent set, 28,446 vs 77,596) | median **37 of 61 sampled locations** vs 38 for families with a hit; holds in all five length strata (44/50 · 38/40 · 34/36 · 31/32 · 27/27). Superseded (30,479 set): 33/36 and 26/27 in the third and fifth strata | `results/b6_absence_occupancy_by_length_with_smag.tsv` |
 
 ⚠ **Get the gap's sign right.** Gap = expected − observed. A **positive** gap means observed absence is
 *below* the size-matched expectation, so the catalogue leaves **less** of the dark proteome unexplained
@@ -399,14 +399,14 @@ than its size alone predicts (deserts_combined 42.60 observed vs 66.93 expected 
 is the reverse (atacama 95.61 vs 90.94 → −4.67). **Never write "a positive gap explains more absence"** —
 that states the opposite of the result.
 ⚠ **Do NOT union the depth leg with the DIAMOND absences** — different tool (MMseqs2) and release. It is a
-robustness check; **26.83% is the quotable headline** (SMAG in the union, 2026-09-27), 25.37% is its robustness figure.
+robustness check; **26.83% is the quotable headline** (SMAG in the union, decision A11), 25.37% is its robustness figure.
 ⚠ **atacama's gap is not interpretable**: its *control* gap is −29.97 because a single 35-sample study is a
 narrow, redundant slice that loses to a random draw even for conserved proteins. Quote the gap for the
-large, broad catalogues only. See CORRECTIONS 2026-08-17.
+large, broad catalogues only. See `CORRECTIONS.md`.
 
 ## PI October analyses (P4 rewrite)
 
-Basis: here **P = `reproducibility/darkmatter/` of this repo** (not the header's sites path); IBEX folders
+Basis: **D = `reproducibility/darkmatter/` of this repo**; IBEX folders
 `M/06_darkmatter/p6_hypotheses_clean/`, `M/06_darkmatter/p7_analyses_clean/`, `M/06_darkmatter/natcomms_20261020/`,
 `M/06_darkmatter/heat_stress_20261016/`. Machine mirror: `reproducibility/verify.py` / `claims.tsv` (PI-owned).
 
@@ -416,17 +416,17 @@ Basis: here **P = `reproducibility/darkmatter/` of this repo** (not the header's
 | flanking-orthologue recurrence | **353** families; excess 31.75 pp (K) vs 25.67 pp (Q∖K); MH difference 0.035, p 0.41 | `M/06_darkmatter/p7_analyses_clean/h2_context/RESULTS.md` |
 | matched-depth SMAG vs GEM | 1,500 SMAG / 2,055 GEM genomes, 4,210,592 proteins each; dark hit rate **28.35 vs 9.81%** = **+18.54 pp** (GEM draws 16.83, 16.91); control +3.10 | `M/06_darkmatter/p7_analyses_clean/h3_references/results/matched_full_census_summary.tsv` |
 | crop (confident-region) structural search | **1,807** of 2,838 matched initially; **964** whole-chain-unmatched in the paired PDB run; **714 (74.07%)** recover a crop match | `M/06_darkmatter/p7_analyses_clean/h4_structure/results/v7_stratum_census.tsv` |
-| culture DNA-level support | **516 of 1,105** dark-unshared calls DNA-supported; protein-or-nucleotide support **752 of 1,341 dark (56.1 %)** vs **70,354 of 81,533 UniRef50-matched (86.3 %)**; **47** admitted families intersect the culture comparison | `P/culture_nucleotide_cigar/summary.json`, `P/culture_family_membership/summary.json`; paper Table S2 |
-| culture pairs, *E. coli* representative excluded | **22** pairs; cultured lower in **18 of 22**; median **−0.36 pp**; Wilcoxon p **0.0066**; reciprocal partner **80.1%** annotated vs **15.8%** dark | `P/round1_sensitivity.json` (block `exclude_ecoli`) |
-| AntiFam / opposite-strand screens | **3,385** dark proteins flagged, **141** admitted members; 56 AntiFam + 46 shadow families, disjoint, union **102** | `P/antifam/summary.json`, `P/shadow_overlap/family_flags.tsv` |
-| visit-bundle permutation, all-five-expedition detection | observed **79.4%**; expected 80.5% (p 0.11); label null 82.7% (p 0.002) | `P/round5_extensions/results/temporal_visits_summary.json` |
-| PICRUSt2 Jaccard, shared KOs | **0.634** | `P/round5_extensions/RESULTS.md` |
-| frame-shift null (PI rerun) | median **1.086**, n 9,029 paired | `P/current_table_checks.json` |
-| plant-root family sets (PI rerun after round-4 ecology fixes, 547 samples) | **101,897** tested; **20,136** root-enriched / **41,046** root-depleted; shares Actinomycetota 16.6%, Pseudomonadota 19.1%; persistence 86.3 / 89.9% | `P/round4_corrections/results/compartment_families_summary.tsv` |
+| culture DNA-level support | **516 of 1,105** dark-unshared calls DNA-supported; protein-or-nucleotide support **752 of 1,341 dark (56.1 %)** vs **70,354 of 81,533 UniRef50-matched (86.3 %)**; **47** admitted families intersect the culture comparison | `D/culture_nucleotide_cigar/summary.json`, `D/culture_family_membership/summary.json`; paper Table S2 |
+| culture pairs, *E. coli* representative excluded | **22** pairs; cultured lower in **18 of 22**; median **−0.36 pp**; Wilcoxon p **0.0066**; reciprocal partner **80.1%** annotated vs **15.8%** dark | `D/round1_sensitivity.json` (block `exclude_ecoli`) |
+| AntiFam / opposite-strand screens | **3,385** dark proteins flagged, **141** admitted members; 56 AntiFam + 46 shadow families, disjoint, union **102** | `D/antifam/summary.json`, `D/shadow_overlap/family_flags.tsv` |
+| visit-bundle permutation, all-five-expedition detection | observed **79.4%**; expected 80.5% (p 0.11); label null 82.7% (p 0.002) | `D/round5_extensions/results/temporal_visits_summary.json` |
+| PICRUSt2 Jaccard, shared KOs | **0.634** | `D/round5_extensions/RESULTS.md` |
+| frame-shift null (PI rerun) | median **1.086**, n 9,029 paired | `D/current_table_checks.json` |
+| plant-root family sets (PI rerun after round-4 ecology fixes, 547 samples) | **101,897** tested; **20,136** root-enriched / **41,046** root-depleted; shares Actinomycetota 16.6%, Pseudomonadota 19.1%; persistence 86.3 / 89.9% | `D/round4_corrections/results/compartment_families_summary.tsv` |
 | contaminant exclusion | 12 flagged representatives (10 vector-contig + 2 SNTC) hold 42,831 protein / 1,792 dark instances; per-genome dark median **6.31 → 6.34%** | `M/06_darkmatter/lineage_darkness_clean/results/v2_rep_dark.tsv` × `M/06_darkmatter/contamination_clean/results/control_contig_hits.tsv` |
 | chaperone-neighbourhood families (Thermoplasmatota) | **5 of 2,630** at q < 0.05; GrpE 16 of 18 (q 3.47e-9); DnaJ/GrpE 14 of 18 (q 1.19e-5); genus-aggregated q = 1 | `M/06_darkmatter/heat_stress_20261016/RESULTS.md` |
-| heliorhodopsins (Saccharimonadia) | 65 → **45** lysine-bearing; **43** read-supported; pLDDT 93.13; TM 0.865; 22 desert vs 10 GEM / 2 SMAG sequences, equal draws of ten add a mean **7.33** clusters (GEM 0) | `P/family_followup_20261015/results/f3_comparison/`, `read_support/loci.tsv`, `structure_audit/structures.tsv`; paper Note S5 |
-| CPF photolyase family | **914** genes in **775** MAGs; **+8.47 pp** (Holm 0.0013) | `P/family_followup_20261015/results/ecology/median_ecology_tests.tsv`, `P/family_discovery_20261015/root_audit/f1_full/summary.json` |
+| heliorhodopsins (Saccharimonadia) | 65 → **45** lysine-bearing; **43** read-supported; pLDDT 93.13; TM 0.865; 22 desert vs 10 GEM / 2 SMAG sequences, equal draws of ten add a mean **7.33** clusters (GEM 0) | `D/family_followup_20261015/results/f3_comparison/`, `read_support/loci.tsv`, `structure_audit/structures.tsv`; paper Note S5 |
+| CPF photolyase family | **914** genes in **775** MAGs; **+8.47 pp** (Holm 0.0013) | `D/family_followup_20261015/results/ecology/median_ecology_tests.tsv`, `D/family_discovery_20261015/root_audit/f1_full/summary.json` |
 | EctC / EctABC | **616** loci in 608 MAGs; +0.56 pp (Holm 0.389) | same ecology table; `claims.tsv` `family.ect.ABC` |
 
 Footnotes: crops — 1,807 is printed; 964 = 1,031 − 67 and 714 = 775 − 61 are derived from `v7_stratum_census.tsv` cells.
@@ -436,7 +436,7 @@ Plant-root sets — our 102,005 / 19,818 / 40,495 / 16.8 / 19.2 / 86.8 / 89.8 (�
 
 ---
 
-## Shared inputs  (intermediate artifact still in use)
+## Shared inputs
 
 - HQ+MQ union = **37,949** bins: **16,333** single_sample (pretrained; 4,030 HQ + 12,303 MQ) + **21,616**
   self_supervised (SemiBin2; 4,507 HQ + 17,109 MQ). Sources: `M/results/checkm2_single_sample_full.tsv` ·
@@ -465,9 +465,6 @@ Plant-root sets — our 102,005 / 19,818 / 40,495 / 16.8 / 19.2 / 86.8 / 89.8 (�
 | frame-shift null **1.087** (n 9,148) | **1.086** (n 9,029) (PI October) | dN/dS null |
 | plant-root sets **102,005 / 19,818 / 40,495**; 16.8 / 19.2%; 86.8 / 89.8% | **101,897 / 20,136 / 41,046**; 16.6 / 19.1%; 86.3 / 89.9% (PI October) | plant-root families |
 
-_Uniform `number | value | source` tables throughout, cohorts at the top, dates/status words removed (time lives in
-CORRECTIONS), every paper section listed._
-
 ## 2026-10-13 current review overlay
 
 This overlay supersedes conflicting older prose. The frozen source bindings and independently rechecked values are in `reproducibility/darkmatter/current_claims.tsv` (49revisionclaims); the full change rationale is in `notes/CORRECTIONS.md` and the three review/response pairs.
@@ -484,6 +481,5 @@ This overlay supersedes conflicting older prose. The frozen source bindings and 
 | Structural no-row counts | 22dark/66control; conditional local failures73/2,816vs2/2,947 |
 | Gated local structural matches | 797of1,031query-thresholdfailures have>=100alignedresiduesand>=50%querycoverage |
 | Thermoplasmatota family enrichment | 4.551874,reported4.6-fold |
-| Locations | 61 sampled locations = 59 of the 60 numbered transect sites (site 56 unsampled) + 2 named locations under first-expedition labels 62 and 64 (4 samples); 60 = the transect design count (companion papers' "60 primary sites"). Verified from `M/metadata/sample_metadata.tsv` 2026-11-04 |
 
 Historical pooled structural-floor equivalence, accessory-content inference from protein no-hits, and the assertion that rRNA/tRNA was unassessed are superseded. Environmental results are exploratory supplementary context. Submission remains blocked on documented provenance/access/deposition gaps.
