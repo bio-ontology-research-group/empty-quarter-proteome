@@ -31,17 +31,17 @@ the union to get the genome-resolved numbers.
 | genome-mapping cohort (§2.1–2.4 abundance) | **550** usable of 551 canonical (`F5Dr1`, 1,232 read pairs, maps no read; `51Sr1` and `F13PRr1` profiles repaired 2026-09) | `M/rebuild_20260729/picrust2_current_20260803/coverm_current/profiles_full_recompute/` |
 | family-member mapping cohort (§1.4/§2.5) | **551** (complete) | `M/06_darkmatter/darkfam_basis_clean/results/coverm/` |
 | compartment split (canonical / profiled) | 117 / 166 / 268 · 116 / 165 / 267 (Surface / Deep / root-adjacent) | `M/metadata/sample_metadata.tsv` |
-| **sites**; site-paired test set | **60** sites (61 numeric labels); 45 Surface+Deep sampled; **45** both profiled (44 before the `51Sr1` profile repair) | `M/metadata/sample_metadata.tsv` |
+| **sampled locations**; site-paired test set | **61** sampled locations = **59** of the 60 numbered transect sites (site 56 unsampled) + 2 named locations (labels 62, 64; trip 1; 4 samples); **60** = transect design count; 45 Surface+Deep sampled; **45** both profiled (44 before the `51Sr1` profile repair) | `M/metadata/sample_metadata.tsv` (recounted 2026-11-04) |
 | XRF chemistry subset / climate axes | **250** / **455** profiled samples (248 / 453 on the 548 cohort, superseded) | `M/metadata/` |
 
 Footnotes: gene prediction ran on 552 assembly files (a Methods-level basis only). Three canonical samples
 lack genome profiles (51Sr1, F13PRr1, F5Dr1); the family-member mapping covers all 551 (F13PRr1 landed
 2026-08-14, matrix refreshed — every §1.4 digit unchanged).
-⚠ **60 is the site count; 61 is a count of field-notebook LABELS** (settled 2026-08-17 against the two
-companion 16S papers — both say 60 primary sites on a 1,043 km transect, plus 10 named locations; the
-data descriptor shows identifiers 61–64 are trip1-only aliases of *named* locations). Of our 61 labels,
-59 are numbered transect sites (56 absent) and 2 are aliases (62, 64; trip1 only; 4 samples).
-**Do not "correct" 60 to 61** — that was attempted and reverted (CORRECTIONS 2026-08-17).
+⚠ **60 is the transect DESIGN count; 61 is what the 551 samples cover** (recounted from `sample_metadata.tsv`
+2026-11-04; companion papers: 60 primary sites on a 1,043 km transect plus 10 named locations; the data descriptor
+matches identifiers 61–64 to named locations by coordinates). Of our 61 sampled locations, 59 are numbered transect
+sites (site 56 has no sample) and 2 are named locations under trip-1 labels 62 and 64 (4 samples, used in every analysis).
+Paper wording: "59 core sites and two auxiliary locations" / "61 locations" for the data; "60 numbered sites" only for the design.
 Expeditions: 17–20 Mar 2023 · 14 Jul 2023 (heat-truncated to 8 sites → only 37 samples) ·
 17–21 Feb 2024 · 19–21 Aug 2024 · 12–15 Oct 2025 (31 months).
 Median unmapped read fraction ~51%, balanced between Surface and Deep (§2.3/M.10) → paired compartment
@@ -484,6 +484,6 @@ This overlay supersedes conflicting older prose. The frozen source bindings and 
 | Structural no-row counts | 22dark/66control; conditional local failures73/2,816vs2/2,947 |
 | Gated local structural matches | 797of1,031query-thresholdfailures have>=100alignedresiduesand>=50%querycoverage |
 | Thermoplasmatota family enrichment | 4.551874,reported4.6-fold |
-| Locations | 61sampledlocations:59core+2auxiliary |
+| Locations | 61 sampled locations = 59 of the 60 numbered transect sites (site 56 unsampled) + 2 named locations under first-expedition labels 62 and 64 (4 samples); 60 = the transect design count (companion papers' "60 primary sites"). Verified from `M/metadata/sample_metadata.tsv` 2026-11-04 |
 
 Historical pooled structural-floor equivalence, accessory-content inference from protein no-hits, and the assertion that rRNA/tRNA was unassessed are superseded. Environmental results are exploratory supplementary context. Submission remains blocked on documented provenance/access/deposition gaps.

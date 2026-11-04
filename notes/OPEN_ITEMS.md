@@ -14,13 +14,6 @@ Rule: nothing unregistered enters the paper. M = main.tex line, S = supplementar
 | A5 | Microflora Danica beside SMAG (`singleton2026danica`) | yes | Intro M34 |
 | A6 | Length clause: 76 % of dark representatives under 100 aa; 67.1 % of families ≥250 aa in all five expeditions | yes | M113, S898 |
 | A7 | Structural floor beside raw counts: 1,031 of 2,838 (36.3 %) vs 101 of 3,013 (3.35 %) | yes; ratio waits on B4 | M213, S906 |
-| A8 | Adopt his reruns: frame null 1.086 (n 9,029); root sets 20,136 / 41,046 | yes; mine to superseded | registry |
-| A9 | 22 culture pairs (E. coli excluded) as the basis | yes | registry, S588–591 |
-| A10 | "61 locations" → "60 sites" (settled with the companion papers 2026-08-17) | yes | M40, M46, M121, M176, M202, S408–417 |
-| A11 | `tawfiq2026companion`, `rubalkhali_datapaper` instead of "in preparation" | yes if the bib entries are hers | S415 |
-| A12 | Workbench STATUS lines in specificity_clean, uv_survival_clean, osmolyte_clean | yes (rob/ path, her word) | workbench |
-| A13 | `setfacl` traverse on `/ibex/user/velazqal` for the PI (SMAG db) | yes; else 54 GB copy | B2 verification |
-| A14 | One-line list to the PI: S380 path missing; natcomms_20261020 README/sbatch; "102 flagged", "6.31 → 6.34" without result file | yes | package |
 | A15 | Remove 18 orphan figures, supplementary.tex, main_v1.tex from Overleaf | no, until submission | Overleaf |
 | A16 | Title: his 20 Oct atlas, his 15 Oct archaea, or hers | his 15 Oct archaea title | title |
 | A17 | XRF units and instrument (blocked since September) | answer in one line | Methods S440 |

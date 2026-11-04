@@ -804,3 +804,13 @@ visit-bundle null 80.5 %, Jaccard 0.634, frame null 1.086, plant-root sets 20,13
 6.31 → 6.34 %, chaperone families, heliorhodopsins, CPF, EctC; visit-matched ecology 482/550, 36 of 37 sites,
 +0.46 pp (`06_darkmatter/natcomms_20261020`). Superseded in place: 481/549, 40 of 45, 23 pairs, 1.087,
 102,005/19,818/40,495. Occupancy wording: 61 location labels, 60 sites.
+
+### 2026-11-04 — consistency items A8–A12 closed (Alejandra)
+
+A8, A9: the PI's reruns (frame null 1.086; plant-root sets 20,136/41,046; 22 culture pairs) confirmed as the current basis;
+no text change. A10, recounted from `sample_metadata.tsv`: the 551 samples cover **59 of the 60 numbered transect sites**
+(site 56 unsampled) plus **two named locations** (labels 62, 64; 4 samples) = **61 sampled locations**; 60 is the transect
+design count. The PI's wording ("59 core sites and two auxiliary locations", "61 locations") is exact and stays; the
+Supplementary Methods sentence now states the breakdown; the registry cohort row and footnote corrected. A11: the companion 16S survey and the field-data descriptor cited by key (`tawfiq2026companion`,
+`rubalkhali_datapaper`) instead of "manuscripts in preparation". A12: STATUS lines in `specificity_clean`,
+`uv_survival_clean`, `osmolyte_clean` now say registered/promoted. A13 (SMAG db access) and A14 (note to the PI) dropped.
