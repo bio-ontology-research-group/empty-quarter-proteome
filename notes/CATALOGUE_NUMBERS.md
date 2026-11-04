@@ -102,7 +102,7 @@ comparison; MMseqs misses remote homology → the structure layer is that check)
 Basis: `M/04_structure/00_structure_clean/` — 3Di triage of the ≥100 aa genome-resolved dark
 (`03_search/`), structural clustering (`04_cluster/`), ESMFold + full-coordinate validation
 (`05_validate/`). References: AFDB v6 / UniProt 2025_03 (241,070,489) + PDB release 250101 (324,204),
-both stages. Report both TM normalisations with the control floor — never a raw fold count.
+both stages. Query-normalised TM only (the alignment-normalised score has an audited normalisation defect; PI review round 2). The control miss rate (3.35 %) is stated wherever a structural-novelty claim is made; the current paper makes none, so raw matched/unmatched counts stand as description (rule retired 2026-11-04).
 
 | number | value | source |
 |---|---|---|

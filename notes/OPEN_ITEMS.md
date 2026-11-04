@@ -7,13 +7,6 @@ Rule: nothing unregistered enters the paper. M = main.tex line, S = supplementar
 | # | item | recommendation | bears on |
 |---|---|---|---|
 | A0 | Section existence: his five sections vs the eight of 2026-09-20 (censuses to Note S3 and P3; R3, R8 into notes) | accept his five | structure, PAPER_STRUCTURE |
-| A1 | Restore the matched-null sentence: 0.308 vs 0.048 (218 pairs, 6.5×), 0.310 vs 0.069 (237 pairs, 4.5×) | yes, no causal wording | M73 |
-| A2 | Known relatives: 0 of 237 at species rank; best AAI median 64.8 % vs same-genus 75.4 %; nearest desert 73.1 %; skani step | yes | M75, S650 |
-| A3 | Maeke clause: rarity and reference composition, not genome quality (3.9 % vs 22.5 %) | yes | M107 |
-| A4 | Precedent sentence: Zhou 2019, Sheridan 2022, Finstad 2017 | yes | M85 or M111 |
-| A5 | Microflora Danica beside SMAG (`singleton2026danica`) | yes | Intro M34 |
-| A6 | Length clause: 76 % of dark representatives under 100 aa; 67.1 % of families ≥250 aa in all five expeditions | yes | M113, S898 |
-| A7 | Structural floor beside raw counts: 1,031 of 2,838 (36.3 %) vs 101 of 3,013 (3.35 %) | yes; ratio waits on B4 | M213, S906 |
 | A15 | Remove 18 orphan figures, supplementary.tex, main_v1.tex from Overleaf | no, until submission | Overleaf |
 | A16 | Title: his 20 Oct atlas, his 15 Oct archaea, or hers | his 15 Oct archaea title | title |
 | A17 | XRF units and instrument (blocked since September) | answer in one line | Methods S440 |

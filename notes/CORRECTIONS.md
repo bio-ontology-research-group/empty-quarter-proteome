@@ -814,3 +814,11 @@ design count. The PI's wording ("59 core sites and two auxiliary locations", "61
 Supplementary Methods sentence now states the breakdown; the registry cohort row and footnote corrected. A11: the companion 16S survey and the field-data descriptor cited by key (`tawfiq2026companion`,
 `rubalkhali_datapaper`) instead of "manuscripts in preparation". A12: STATUS lines in `specificity_clean`,
 `uv_survival_clean`, `osmolyte_clean` now say registered/promoted. A13 (SMAG db access) and A14 (note to the PI) dropped.
+
+Same day, restorations A1–A5 written into the PI's text (main.tex only): matched-null medians and folds (R4 rows) after the
+matched-comparison sentence; known relatives of the 237 (0 within the species radius, AAI 64.8 % vs 75.4 % congeneric,
+nearest desert 73.1 %) opening the reference-relationship paragraph; Maeke clause (rarity and reference composition, not
+genome quality); one precedent sentence (Zhou 2019, Sheridan 2022, Finstad 2017) closing the metabolism paragraph;
+`singleton2026danica` beside SMAG in the Introduction. A6 dropped: recurrence does not test coding status and the PI's
+limits paragraph already carries the partial-gene and frame-dependence argument. A7 dropped and the §1.3 rules retired
+(query-normalised TM only; control miss rate only beside a novelty claim, of which the paper makes none).
