@@ -826,3 +826,12 @@ SMAG joins the reference union in the paper (registry headline since 2026-09-27)
 **5.4 / 35.8 / 25.37**; Supplementary Methods gains the SMAG database sentence (129,550,340 proteins, 40,039 genomes,
 Zenodo 8223844). XRF Methods sentence rewritten to the data descriptor's documented facts (Olympus Vanta handheld, Fast
 Mode, helium/8 mm on trip 5; units undocumented, consistent with weight percent; zero = not reported positive).
+
+### 2026-11-05 — GUNC screen found; culture recount
+
+GUNC (1.1.1, ProGenomes 3; PI run) covered all 12,434 HQ+MQ bins, not only the ten order-gap candidates: of the 5,438
+representatives 4,319 pass, 837 flagged, 282 unscored (registry §1.1). The Methods sentence "catalogue-wide chimerism
+assessment remains outstanding" replaced by the screen's counts; chimerism removed from the Discussion's list of further
+checks. Diagnostic kept in the registry only: no Thermoplasmatota representative is flagged; flagged and passing genomes
+have the same median dark fraction. "26 of 166 complete dark calls" is identical on the 22-pair and 23-pair bases
+(the excluded pair holds none); registered under the 22-pair row.
