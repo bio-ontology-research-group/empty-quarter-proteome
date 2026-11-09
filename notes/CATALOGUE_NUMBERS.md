@@ -43,7 +43,7 @@ matches identifiers 61–64 to named locations by coordinates). Of our 61 sample
 sites (site 56 has no sample) and 2 are named locations under trip-1 labels 62 and 64 (4 samples, used in every analysis).
 Paper wording: "59 core sites and two auxiliary locations" / "61 locations" for the data; "60 numbered sites" only for the design.
 Expeditions: 17–20 Mar 2023 · 14 Jul 2023 (heat-truncated to 8 sites → only 37 samples) ·
-17–21 Feb 2024 · 19–21 Aug 2024 · 12–15 Oct 2025 (31 months).
+17–21 Feb 2024 · 29–31 Aug 2024 (corrected from 19–21 against the data descriptor's environmental table) · 12–15 Oct 2025 (31 months).
 Median unmapped read fraction ~51%, balanced between Surface and Deep (§2.3) → paired compartment
 contrasts are unbiased; root-adjacent comparisons use the mapped denominator.
 "Detected" = relative abundance > 0, i.e. ≥10% genome breadth — CoverM's never-passed
