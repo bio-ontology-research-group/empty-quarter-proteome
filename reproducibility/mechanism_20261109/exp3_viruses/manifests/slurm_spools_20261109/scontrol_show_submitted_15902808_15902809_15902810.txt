@@ -1,0 +1,89 @@
+JobId=15902808 JobName=exp3_val_ref
+   UserId=hohndor(135466) GroupId=g-hohndor(1135466) MCS_label=N/A
+   Priority=1 Nice=0 Account=k10018 QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:01:35 TimeLimit=04:00:00 TimeMin=N/A
+   SubmitTime=2026-11-09T20:17:40 EligibleTime=2026-11-09T20:17:40
+   AccrueTime=2026-11-09T20:17:40
+   StartTime=2026-11-09T20:18:03 EndTime=2026-11-10T00:18:03 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-09T20:18:03 Scheduler=Main
+   Partition=workq AllocNode:Sid=login2:588917
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=nid00066
+   BatchHost=nid00066
+   StepMgrEnabled=Yes
+   NumNodes=1 NumCPUs=384 NumTasks=1 CPUs/Task=16 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=16,mem=350G,node=1,billing=16
+   AllocTRES=cpu=384,mem=350G,node=1,billing=384
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=16 MinMemoryNode=350G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NODE Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/sbatch_stage4_validate_ref.sh
+   SubmitLine=sbatch /scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/sbatch_stage4_validate_ref.sh
+   WorkDir=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses
+   StdErr=
+   StdIn=/dev/null
+   StdOut=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/logs/validate_ref_15902808.log
+   TresPerTask=cpu=16
+   ResvPorts=20000-32767
+
+JobId=15902809 ArrayJobId=15902809 ArrayTaskId=0-13 JobName=exp3_st4_map
+   UserId=hohndor(135466) GroupId=g-hohndor(1135466) MCS_label=N/A
+   Priority=1 Nice=0 Account=k10018 QOS=normal
+   JobState=PENDING Reason=Dependency Dependency=afterok:15902808(unfulfilled)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=04:00:00 TimeMin=N/A
+   SubmitTime=2026-11-09T20:17:40 EligibleTime=Unknown
+   AccrueTime=Unknown
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-09T20:17:40 Scheduler=Main
+   Partition=workq AllocNode:Sid=login2:588917
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   StepMgrEnabled=Yes
+   NumNodes=1-1 NumCPUs=32 NumTasks=1 CPUs/Task=32 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=32,mem=350G,node=1,billing=32
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=32 MinMemoryNode=350G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NODE Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/sbatch_stage4_map_array.sh
+   SubmitLine=sbatch --dependency=afterok:15902808 /scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/sbatch_stage4_map_array.sh
+   WorkDir=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses
+   StdErr=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/logs/stage4_map_15902809_4294967294.err
+   StdIn=/dev/null
+   StdOut=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/logs/stage4_map_15902809_4294967294.log
+   TresPerTask=cpu=32
+
+JobId=15902810 JobName=exp3_st4_aggr
+   UserId=hohndor(135466) GroupId=g-hohndor(1135466) MCS_label=N/A
+   Priority=1 Nice=0 Account=k10018 QOS=normal
+   JobState=PENDING Reason=Dependency Dependency=afterok:15902809_*(unfulfilled)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:00 TimeLimit=02:00:00 TimeMin=N/A
+   SubmitTime=2026-11-09T20:17:40 EligibleTime=Unknown
+   AccrueTime=Unknown
+   StartTime=Unknown EndTime=Unknown Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-11-09T20:17:40 Scheduler=Main
+   Partition=workq AllocNode:Sid=login2:588917
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=
+   StepMgrEnabled=Yes
+   NumNodes=1-1 NumCPUs=4 NumTasks=1 CPUs/Task=4 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=4,mem=32G,node=1,billing=4
+   AllocTRES=(null)
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=4 MinMemoryNode=32G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=NO Exclusive=NODE Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/sbatch_stage4_aggregate.sh
+   SubmitLine=sbatch --dependency=afterok:15902809 /scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/sbatch_stage4_aggregate.sh
+   WorkDir=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses
+   StdErr=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/logs/stage4_aggr_15902810.err
+   StdIn=/dev/null
+   StdOut=/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/logs/stage4_aggr_15902810.log
+   TresPerTask=cpu=4
+

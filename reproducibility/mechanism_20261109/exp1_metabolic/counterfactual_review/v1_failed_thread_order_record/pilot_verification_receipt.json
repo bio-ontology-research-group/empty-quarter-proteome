@@ -1,0 +1,86 @@
+{
+  "mode": "pilot",
+  "elapsed_s": 6.571,
+  "code_v2_sha256": {
+    "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+    "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+    "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+  },
+  "input_sha256": {
+    "exp1_stage4_supported_candidate_deficiencies_instances.tsv": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+    "exp1_full484_per_solution_ledger.tsv": "14f7cf5d7ffca599b99e12210ae11bdd8dbde77ae441eb1edcf37d338f049e43",
+    "exp1_full484_withdrawal_knockout_fva.tsv.gz": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+    "exp1_candidate_reaction_pool.pkl": "e5745ed38e602d7d5802d3464951c785d79b2ee7dc926725c4c4f6f64222a66a"
+  },
+  "synthetic_toy_checks": {
+    "toy_lp_coupled_interval": [
+      9.5,
+      10.0
+    ],
+    "toy_infeasible_lp_status": "infeasible",
+    "toy_nan_primary_floor_status": "unknown_unverified_primary_growth_floor",
+    "toy_mismatch_primary_status": "unverified_primary_g0_mismatch_vs_solution_ledger",
+    "union_qc_classes": {
+      "pass": "mathematical_union_passed_declared_numerical_and_closed_uptake_egc_checks",
+      "cycle_fail": "mathematical_union_failed_closed_uptake_atp_cycle_check",
+      "unknown_egc": "mathematical_union_unknown_closed_uptake_egc_check__unknown_timeout"
+    },
+    "withdrawal_partial_union_class": "primary_growth_lost_lt_1e-4__partial_subthreshold_union_growth_1e-4_to_0.005",
+    "withdrawal_threshold_restoration_disposition": "restored_primary_growth_above_declared_threshold_0.99_min_growth",
+    "withdrawal_retained_addback_disposition": "not_applicable_primary_growth_retained_ge_1e-4",
+    "ko_unperformed_status": "not_performed_in_executed_code_v2",
+    "all_toy_assertions_passed": true
+  },
+  "pilot_case_qc": {
+    "genome": "1PRr2__self_SemiBin_81",
+    "scenario_id": "S3_anoxic_desert_oa_aa",
+    "redox_regime": "anoxic",
+    "biomass_recipe_id": "B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420",
+    "n_accepted_solutions": 1,
+    "n_primary_added_rxns": 90,
+    "n_union_added_rxns": 90,
+    "n_extra_union_rxns_beyond_primary": 0,
+    "primary_identity_matches_wkf": true,
+    "ledger_sol0_total_cost": 6069.97651,
+    "ledger_sol0_verified_growth": 0.0140985555191381,
+    "wkf_baseline_growth": 0.0140985555191381,
+    "reconstructed_primary_fba_status": "optimal",
+    "reconstructed_primary_g0": 0.014098555519138174,
+    "primary_g0_abs_diff_vs_ledger": 7.45931094670027e-17,
+    "primary_g0_abs_diff_vs_wkf": 7.45931094670027e-17,
+    "primary_fba_max_residual": 6.547967192332277e-13,
+    "primary_fba_max_bound_viol": 0.0,
+    "primary_egc_check_status": "evaluated_optimal",
+    "primary_has_spurious_atp_cycle": false,
+    "primary_closed_uptake_atp_dissipation_flux": -0.0,
+    "primary_cycle_qc_status": "passed_closed_uptake_egc_check",
+    "primary_reconstruction_verified": true,
+    "primary_verification_status": "verified_primary_reconstruction",
+    "union_fba_status": "optimal",
+    "union_fba_growth": 0.014098555519138174,
+    "union_fba_max_residual": 6.547967192332277e-13,
+    "union_fba_max_bound_viol": 0.0,
+    "union_egc_check_status": "evaluated_optimal",
+    "union_has_spurious_atp_cycle": false,
+    "union_closed_uptake_atp_dissipation_flux": -0.0,
+    "union_cycle_qc_status": "passed_closed_uptake_egc_check",
+    "union_cycle_qc_passed": true,
+    "union_network_qc_class": "mathematical_union_passed_declared_numerical_and_closed_uptake_egc_checks",
+    "n_candidate_deficiency_instances": 45,
+    "n_fva_both_optimal_and_ordered": 45,
+    "n_fva_strictly_nonzero_1e-6": 45,
+    "n_fva_strictly_nonzero_1e-12": 45,
+    "n_top30_checked_against_orig_wkf": 11,
+    "max_top30_abs_diff_vs_orig_wkf": 9.6710833785707e-17,
+    "genome_archive_path": "/project/k10018/work/eq-annot-20261030/results/c11_gapseq/out/1PRr2__self_SemiBin_81.tar.gz",
+    "genome_archive_sha256": "956e876b8128f25ad2c662e9a780d0b3b1ec83413a0d41d210faed8fc827dcb7",
+    "elapsed_s": 1.074
+  },
+  "pilot_expected_targets": 45,
+  "pilot_accounted_targets": 45,
+  "pilot_fva_interval_class_counts": {
+    "strictly_positive_gt_1e-6": 41,
+    "strictly_negative_lt_-1e-6": 4
+  },
+  "pilot_passed_all_gates": true
+}

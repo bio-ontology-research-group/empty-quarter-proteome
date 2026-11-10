@@ -1,12 +1,17 @@
 # Reproducibility
 
-Every tracked number and figure in the public manuscript snapshot (`../manuscript/main.tex`) is regenerated and
-checked from this folder against curated result tables in `../results/` and compact checksum-frozen inputs here.
+The active reframed manuscript (`../manuscript/main.tex` and `../manuscript/supplementary_notes.tex`) and its four main figures (`fig_archaeal_ecology_reframed.pdf`, `fig_dark_credibility_reframed.pdf`, `fig_export_accessory_reframed.pdf`, `fig_structural_mechanistic_reframed.pdf`) are regenerated and verified from [`reframed_20261108/`](reframed_20261108/README.md):
+
+```bash
+bash reproducibility/reframed_20261108/run_reframed.sh
+```
+
+Historical catalogue figures and numbers (now reported in `../manuscript/supplementary_notes.tex`) remain tracked and reproducible from the historical scripts in this folder against curated result tables in `../results/` and compact checksum-frozen inputs here.
 The private `../paper/` submodule is optional and, when present, can be synchronized into the public snapshot with
 `sync_manuscript_snapshot.sh`. Historical cluster-scale claims are closed through checksum-pinned
-claim/value/source ledgers; no workstation workbench symlink is needed. The verifier also rejects a curated list
+claim/value/source ledgers; no workstation workbench symlink is needed. The historical verifier (`verify.py`) also rejects a curated list
 of superseded or unbounded exact phrases and bounded-pattern violations throughout active manuscript, RQ, result
-and scope documents. This is a regression guard, not a semantic checker.
+and scope documents; note that its required-substring list targets the October 2026 atlas version of `main.tex` prior to moving the general catalogue inventory and benchmark prose to `supplementary_notes.tex`.
 
 ## Run it
 

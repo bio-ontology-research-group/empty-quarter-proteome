@@ -1,0 +1,65 @@
+{
+  "job": "53865844",
+  "mode": "pilot",
+  "sample": "F34PRr2",
+  "target_genome": "34PRr3__single_SemiBin_77",
+  "reference": "/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/picrust2_current_20260803/coverm_current/prepared/reps.mmi",
+  "reference_size": 61912885330,
+  "source_control": {
+    "sample": "F34PRr2",
+    "genome": "34PRr3__single_SemiBin_77",
+    "domain": "Thermoplasmatota",
+    "season": "winter",
+    "bed": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/Thermoplasmatota.bed",
+    "full_reads": 155568036,
+    "R1": "/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/processed_reads/F34PRr2_R1.fastq.gz",
+    "R2": "/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/processed_reads/F34PRr2_R2.fastq.gz",
+    "R1_sha256_prior": "bd390cc546f5a439da2d2d027770dc5aaf233bf77845e3d2a44e650953dd067c",
+    "R2_sha256_prior": "644c7cb7065af3119e7f31d4a1821b1319ffbceb1a7cc5595cdeef62dd512d4a",
+    "R1_bytes": 5480899212,
+    "R1_accessible": true,
+    "R2_bytes": 5563724556,
+    "R2_accessible": true
+  },
+  "selection": "first5Mpairedrecords technical pilot only",
+  "filter": "MAPQ>=30, baseQ>=20, NM/aligned_query_length<=0.05, flags3844excluded, perposition one observation per template",
+  "R1_stat": {
+    "bytes": 5480899212,
+    "mtime_ns": 1764503705087262544
+  },
+  "R1_pilot_records": 5000000,
+  "R1_pilot_uncompressed_sha256": "ec86de61eaadfc9affa50c9051e8a2a72fd430b46778a0c9b7f005f09ccf6af1",
+  "R2_stat": {
+    "bytes": 5563724556,
+    "mtime_ns": 1764503705088262567
+  },
+  "R2_pilot_records": 5000000,
+  "R2_pilot_uncompressed_sha256": "ab7b72cc75056205f6c62ffcbe5dbe56504d74c32511e2696b59bd2107708b5a",
+  "mapping_command": [
+    "/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/minimap2",
+    "-ax",
+    "sr",
+    "-t",
+    "12",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/picrust2_current_20260803/coverm_current/prepared/reps.mmi",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/pilot/F34PRr2/tmp/R1.fq",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/pilot/F34PRr2/tmp/R2.fq"
+  ],
+  "regional_filter_command": [
+    "/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/samtools",
+    "view",
+    "-b",
+    "-q",
+    "30",
+    "-F",
+    "3844",
+    "-L",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/Thermoplasmatota.bed",
+    "-o",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/pilot/F34PRr2/tmp/regional.unsorted.bam",
+    "-"
+  ],
+  "samtools_version": "samtools 1.23.1",
+  "pysam_version": "0.24.0",
+  "regional_bam_sha256": "f80a22f969cda0fd41850230c5b1d73eea8a3a9c529bf9bafee223447a8efc63"
+}

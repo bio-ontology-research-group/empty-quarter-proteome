@@ -1,0 +1,210 @@
+{
+  "eligible_primary": {
+    "cohort": "screen_positive_eligible_primary",
+    "outcome_column": "primary_DETECTEDLINK",
+    "phylum_reference_lexicographic": "p__Halobacteriota",
+    "raw_matrix_rows": 144,
+    "complete_case_rows_no_imputation": 58,
+    "raw_known_outcomes": 144,
+    "raw_detected_link_events": 4,
+    "complete_case_detected_link_events": 1,
+    "complete_case_non_events": 57,
+    "n_parameters_including_intercept": 9,
+    "n_slope_predictors": 8,
+    "events_per_slope_predictor_heuristic": 0.125,
+    "EPV_boundary": "EPV<10 is a limited-power heuristic, not mathematical non-estimability",
+    "design_matrix_rank": 5,
+    "rank_deficient": true,
+    "singular_values": [
+      29.230370095420906,
+      3.9909667652445457,
+      2.5479201191594596,
+      1.7047706340727642,
+      0.7505999893458583,
+      4.774121076307838e-16,
+      1.197438652764469e-16,
+      8.918759220952903e-17,
+      7.528595312099227e-17
+    ],
+    "condition_number": 3.882579536244257e+17,
+    "constant_predictors_no_contrast": [
+      "phylum_p__Methanobacteriota",
+      "phylum_p__Nanohalarchaeota",
+      "phylum_p__Thermoplasmatota",
+      "phylum_p__Thermoproteota"
+    ],
+    "missingness_by_raw_column": {
+      "outcome_DETECTEDLINK": 0,
+      "Intercept": 0,
+      "phylum_p__Methanobacteriota": 0,
+      "phylum_p__Nanohalarchaeota": 0,
+      "phylum_p__Thermoplasmatota": 0,
+      "phylum_p__Thermoproteota": 0,
+      "canonical_completeness_frac": 0,
+      "log_valid_spacers_plus1_detection_covariate": 0,
+      "lead1_22PRr1::22PRr1_2531955_3": 86,
+      "lead2_V60PRr2::V60PRr2_1314979_4": 86
+    },
+    "separation_LP": {
+      "status": "quasi_complete_separation_LP_witness",
+      "complete": false,
+      "quasi_complete": true,
+      "minimum_signed_margin": -0.0,
+      "maximum_signed_margin": 20000.0,
+      "witness_max_abs_coefficient": 10000.0
+    },
+    "binary_lead_diagnostics": {
+      "lead1_22PRr1::22PRr1_2531955_3": {
+        "status": "quasi_complete_separation",
+        "complete": false,
+        "quasi_complete": true,
+        "contingency": {
+          "x0_y0": 53,
+          "x0_y1": 1,
+          "x1_y0": 4,
+          "x1_y1": 0
+        }
+      },
+      "lead2_V60PRr2::V60PRr2_1314979_4": {
+        "status": "quasi_complete_separation",
+        "complete": false,
+        "quasi_complete": true,
+        "contingency": {
+          "x0_y0": 50,
+          "x0_y1": 1,
+          "x1_y0": 7,
+          "x1_y1": 0
+        }
+      }
+    },
+    "finite_MLE_diagnostic": "no_finite_unique_MLE_if_LP_witness_and_full_rank",
+    "model_fit_performed": false,
+    "limited_power_warning": "Few events restrict power even when algebraic rank and separation do not prove non-estimability",
+    "CRISPR_covariate_boundary": "Spacer counts are detection-opportunity covariates, not independent mechanistic evidence; Cas/spacer presence is circular for CRISPR-derived DETECTEDLINK",
+    "raw_matrix_sha256": "e4dbf1ad9bb2c0857b24e76054972d399ee9af87f5434eae223dc6d0288a2b04",
+    "raw_matrix_columns": [
+      "genome",
+      "outcome_DETECTEDLINK",
+      "canonical_phylum",
+      "Intercept",
+      "phylum_p__Methanobacteriota",
+      "phylum_p__Nanohalarchaeota",
+      "phylum_p__Thermoplasmatota",
+      "phylum_p__Thermoproteota",
+      "canonical_completeness_frac",
+      "log_valid_spacers_plus1_detection_covariate",
+      "lead1_22PRr1::22PRr1_2531955_3",
+      "lead2_V60PRr2::V60PRr2_1314979_4"
+    ]
+  },
+  "full591_diagnostic_only": {
+    "cohort": "full_591_diagnostic",
+    "outcome_column": "primary_DETECTEDLINK",
+    "phylum_reference_lexicographic": "p__Aenigmatarchaeota",
+    "raw_matrix_rows": 591,
+    "complete_case_rows_no_imputation": 58,
+    "raw_known_outcomes": 144,
+    "raw_detected_link_events": 4,
+    "complete_case_detected_link_events": 1,
+    "complete_case_non_events": 57,
+    "n_parameters_including_intercept": 12,
+    "n_slope_predictors": 11,
+    "events_per_slope_predictor_heuristic": 0.09090909090909091,
+    "EPV_boundary": "EPV<10 is a limited-power heuristic, not mathematical non-estimability",
+    "design_matrix_rank": 5,
+    "rank_deficient": true,
+    "singular_values": [
+      29.230370095420913,
+      3.9909667652445453,
+      2.547920119159461,
+      1.704770634072764,
+      0.7505999893458584,
+      3.553202954400562e-16,
+      2.9791260983239814e-16,
+      7.225320707984265e-17,
+      3.994936085551849e-17,
+      2.0604830442124626e-17,
+      9.524247514042792e-32,
+      1.6536902965106748e-33
+    ],
+    "condition_number": 1.7675843026410493e+34,
+    "constant_predictors_no_contrast": [
+      "phylum_p__EX4484-52",
+      "phylum_p__Halobacteriota",
+      "phylum_p__Methanobacteriota",
+      "phylum_p__Nanobdellota",
+      "phylum_p__Nanohalarchaeota",
+      "phylum_p__Thermoplasmatota",
+      "phylum_p__Thermoproteota"
+    ],
+    "missingness_by_raw_column": {
+      "outcome_DETECTEDLINK": 447,
+      "Intercept": 0,
+      "phylum_p__EX4484-52": 0,
+      "phylum_p__Halobacteriota": 0,
+      "phylum_p__Methanobacteriota": 0,
+      "phylum_p__Nanobdellota": 0,
+      "phylum_p__Nanohalarchaeota": 0,
+      "phylum_p__Thermoplasmatota": 0,
+      "phylum_p__Thermoproteota": 0,
+      "canonical_completeness_frac": 0,
+      "log_valid_spacers_plus1_detection_covariate": 0,
+      "lead1_22PRr1::22PRr1_2531955_3": 354,
+      "lead2_V60PRr2::V60PRr2_1314979_4": 354
+    },
+    "separation_LP": {
+      "status": "quasi_complete_separation_LP_witness",
+      "complete": false,
+      "quasi_complete": true,
+      "minimum_signed_margin": -0.0,
+      "maximum_signed_margin": 20000.0,
+      "witness_max_abs_coefficient": 10000.0
+    },
+    "binary_lead_diagnostics": {
+      "lead1_22PRr1::22PRr1_2531955_3": {
+        "status": "quasi_complete_separation",
+        "complete": false,
+        "quasi_complete": true,
+        "contingency": {
+          "x0_y0": 53,
+          "x0_y1": 1,
+          "x1_y0": 4,
+          "x1_y1": 0
+        }
+      },
+      "lead2_V60PRr2::V60PRr2_1314979_4": {
+        "status": "quasi_complete_separation",
+        "complete": false,
+        "quasi_complete": true,
+        "contingency": {
+          "x0_y0": 50,
+          "x0_y1": 1,
+          "x1_y0": 7,
+          "x1_y1": 0
+        }
+      }
+    },
+    "finite_MLE_diagnostic": "no_finite_unique_MLE_if_LP_witness_and_full_rank",
+    "model_fit_performed": false,
+    "limited_power_warning": "Few events restrict power even when algebraic rank and separation do not prove non-estimability",
+    "CRISPR_covariate_boundary": "Spacer counts are detection-opportunity covariates, not independent mechanistic evidence; Cas/spacer presence is circular for CRISPR-derived DETECTEDLINK",
+    "raw_matrix_sha256": "3a7c146dacda71b39f53022942609de406f8da2866e87e54043a9353aa972290",
+    "raw_matrix_columns": [
+      "genome",
+      "outcome_DETECTEDLINK",
+      "canonical_phylum",
+      "Intercept",
+      "phylum_p__EX4484-52",
+      "phylum_p__Halobacteriota",
+      "phylum_p__Methanobacteriota",
+      "phylum_p__Nanobdellota",
+      "phylum_p__Nanohalarchaeota",
+      "phylum_p__Thermoplasmatota",
+      "phylum_p__Thermoproteota",
+      "canonical_completeness_frac",
+      "log_valid_spacers_plus1_detection_covariate",
+      "lead1_22PRr1::22PRr1_2531955_3",
+      "lead2_V60PRr2::V60PRr2_1314979_4"
+    ]
+  }
+}

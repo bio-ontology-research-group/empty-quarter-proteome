@@ -21,26 +21,26 @@ base='06_darkmatter/darkfam_basis_clean/results/selection/'
 d=frame(base+'dnds.tsv');n=frame(base+'dnds_null_frame1.tsv');r=frame(base+'dnds_dark_subset.tsv')
 fig,axes=plt.subplots(3,2,figsize=(7.2,8.8),layout='constrained')
 ax=axes[0,0]
-for arm,label,c in [('dark','Dark (97,200)',teal),('ctrl','Annotated (95,647)',grey)]:ecdf(ax,d.loc[d['set']==arm,'median_dNdS'],label,c)
+for arm,label,c in [('dark','Dark (97,200)',teal),('ctrl','Control (95,647)',grey)]:ecdf(ax,d.loc[d['set']==arm,'median_dNdS'],label,c)
 ax.axvline(1,c='.6',ls=':',lw=.8);ax.set(xlim=(0,2),xlabel='Family median dN/dS',ylabel='Cumulative fraction');ax.legend(frameon=False,fontsize=7);tag(ax,'a','Family dN/dS')
 ax=axes[0,1];ecdf(ax,r['median_dNdS'],'Annotated frame (9,182)',teal);ecdf(ax,n['median_dNdS'],'Shifted frame (9,148)',orange);ax.set(xlim=(0,3),xlabel='Family median dN/dS',ylabel='Cumulative fraction');ax.legend(frameon=False,fontsize=7);tag(ax,'b','Frame-specific calibration')
 ax=axes[1,0]
 stats=json.loads((Path(__file__).parent/'selection_estimands/summary.json').read_text())['strata']
 y=np.array([r['difference'] for r in stats]);lo=np.array([r['bootstrap_low'] for r in stats]);hi=np.array([r['bootstrap_high'] for r in stats])
 ax.errorbar(range(5),y,yerr=[y-lo,hi-y],fmt='o',c=teal,capsize=3);ax.axhline(0,c='.6',lw=.8)
-ax.set(xticks=range(5),xticklabels=['0–0.1','0.1–0.25','0.25–0.5','0.5–1','1–2'],xlabel='Mean synonymous divergence stratum',ylabel='Dark − annotated median dN/dS');ax.tick_params(axis='x',labelsize=6)
+ax.set(xticks=range(5),xticklabels=['0–0.1','0.1–0.25','0.25–0.5','0.5–1','1–2'],xlabel='Mean synonymous divergence stratum',ylabel='Dark − control median dN/dS');ax.tick_params(axis='x',labelsize=6)
 for i,r in enumerate(stats):ax.text(i,.35,str(r['dark_n'])+' /\n'+str(r['control_n']),ha='center',fontsize=8.5)
 ax.set(xlim=(-.6,4.6),ylim=(-.07,.43));tag(ax,'c','Stratum effects with 95% intervals')
 p=frame('06_darkmatter/cultured_comparison_clean/results/pair_anatomy/pair_anatomy_per_pair.tsv');p=p[p['mag_rep']!='V42PRr2__single_SemiBin_33'];ax=axes[1,1]
 for _,row in p.iterrows():ax.plot([0,1],[float(row['mag_annot_with_partner_pct']),float(row['mag_dark_with_partner_pct'])],color=grey,alpha=.55,lw=.7)
 ax.scatter(np.zeros(len(p)),p['mag_annot_with_partner_pct'].astype(float),s=12,c=grey);ax.scatter(np.ones(len(p)),p['mag_dark_with_partner_pct'].astype(float),s=12,c=teal)
-ax.set(xticks=[0,1],xticklabels=['Annotated','Dark'],ylabel='MAG proteins with reciprocal hit (%)',ylim=(-3,103),xlim=(-.25,1.25));tag(ax,'d','Protein sharing in 22 genome pairs')
+ax.set(xticks=[0,1],xticklabels=['Control','Dark'],ylabel='MAG proteins with reciprocal hit (%)',ylim=(-3,103),xlim=(-.25,1.25));tag(ax,'d','Protein sharing in 22 genome pairs')
 calls=pd.read_csv(Path(__file__).parent/'culture_nucleotide_cigar/per_gene.tsv',sep='\t');calls=calls[calls.eligible==1]
 ax=axes[2,0]
 for i,dark in enumerate([0,1]):
  for j,shared in enumerate([0,1]):
   g=calls[(calls.dark==dark)&(calls.protein_shared==shared)];x=i*3+j;ax.bar(x,100*g.dna_supported.mean(),color=teal if dark else grey);ax.text(x,100*g.dna_supported.mean()+2,f'{g.dna_supported.sum():,} /\n{len(g):,}',ha='center',fontsize=8.5)
-ax.set(xticks=[0,1,3,4],xticklabels=['Unshared','Shared','Unshared','Shared'],ylabel='DNA-supported calls (%)',ylim=(0,120),xlabel='Annotated                          Dark');ax.tick_params(axis='x',labelsize=7.5);tag(ax,'e','Base-level nucleotide support')
+ax.set(xticks=[0,1,3,4],xticklabels=['Unshared','Shared','Unshared','Shared'],ylabel='DNA-supported calls (%)',ylim=(0,120),xlabel='Control                              Dark');ax.tick_params(axis='x',labelsize=7.5);tag(ax,'e','Base-level nucleotide support')
 ax=axes[2,1];v=calls[calls.protein_shared==1].groupby('rep').dna_supported.mean().sort_values();ax.plot(range(1,len(v)+1),100*v,'o',c=grey,ms=3);ax.axhline(90,c=orange,ls=':',lw=.8);ax.set(xlabel='Genome pair (sorted)',ylabel='Protein-shared calls with DNA support (%)',ylim=(0,103));tag(ax,'f','Per-pair positive-control recovery');save(fig,'fig_dark_current')
 lin=frame('06_darkmatter/lineage_darkness_clean/results/v2_reps.tsv');lin['dark_fraction']=lin['dark_fraction'].astype(float)
 fig,axes=plt.subplots(1,3,figsize=(7.4,3.2),layout='constrained');ax=axes[0]
@@ -74,7 +74,7 @@ ref=frame('06_reference_bias/refbias_clean/results/per_sample_comparison.tsv');d
 fig,axes=plt.subplots(1,3,figsize=(7.5,3.1),layout='constrained')
 ax=axes[0];ax.boxplot([ref.recall_of_mag.astype(float),ref.spearman_shared.astype(float)],tick_labels=['Recall','Rank correlation'],showfliers=False);ax.set(ylabel='Recall or rank correlation',ylim=(0,1));ax.tick_params(axis='x',labelsize=6);tag(ax,'a','448 paired profiles')
 ax=axes[1]
-for prefix,c,label in [('dark',teal,'Dark'),('ctrl',grey,'Annotated')]:ax.scatter(dep[prefix+'_exp_size_only'].astype(float),dep[prefix+'_obs'].astype(float),s=18,c=c,label=label)
+for prefix,c,label in [('dark',teal,'Dark'),('ctrl',grey,'Control')]:ax.scatter(dep[prefix+'_exp_size_only'].astype(float),dep[prefix+'_obs'].astype(float),s=18,c=c,label=label)
 ax.plot([0,100],[0,100],c='.6',lw=.7);ax.set(xlabel='Analytical expected absence (%)',ylabel='Observed absence (%)',xlim=(0,100),ylim=(0,100));ax.legend(frameon=False,fontsize=7);tag(ax,'b','Catalogue composition')
 ax=axes[2]
 for col,c,label in [('median_sites_absent',teal,'No catalogue hit'),('median_sites_has_hit',grey,'Catalogue hit')]:ax.plot(range(len(occ)),occ[col].astype(float),'o-',c=c,label=label)

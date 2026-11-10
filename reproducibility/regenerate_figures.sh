@@ -72,4 +72,26 @@ if [[ $miss -eq 0 ]]; then
 fi
 python3 "$HERE/darkmatter/round7_figures/make_structure.py" || rc=1
 python3 "$HERE/darkmatter/family_followup_20261015/plot_family.py" || rc=1
+python3 "$HERE/darkmatter/natcomms_20261020/scripts/plot_atlas.py" \
+  --out "$HERE/../manuscript/figures" || rc=1
+
+if [[ -f "$HERE/reframed_20261108/plot_proteome_reframed.py" ]]; then
+  echo "== generating reframed manuscript figures =="
+  python3 "$HERE/reframed_20261108/plot_proteome_reframed.py" \
+    --out "$REPO/manuscript/figures" \
+    --panel-dir "$HERE/reframed_20261108/panel_data" \
+    --comp-res "$HERE/reframed_20261108/inputs/compute_results" \
+    --repro-dm "$REPO/reproducibility/darkmatter" \
+    --arch-res "$REPO/reproducibility/integration_20261108/results" || rc=1
+  cp -f "$REPO/manuscript/figures/"*_reframed.* "$REPO/figures/" 2>/dev/null || true
+fi
+
+if [[ -f "$HERE/integration_20261110/surface_figure/build_surface_figure.py" ]]; then
+  echo "== generating surface modules manuscript figure =="
+  python3 "$HERE/integration_20261110/surface_figure/build_surface_figure.py" || rc=1
+  for name in fig_surface_modules fig_surface_modules_all_loci; do
+    cp -f "$HERE/integration_20261110/surface_figure/$name.pdf" "$REPO/manuscript/figures/" || rc=1
+    cp -f "$HERE/integration_20261110/surface_figure/$name.pdf" "$REPO/figures/" || rc=1
+  done
+fi
 exit $rc

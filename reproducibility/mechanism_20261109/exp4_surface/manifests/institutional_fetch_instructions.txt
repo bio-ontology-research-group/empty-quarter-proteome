@@ -1,0 +1,136 @@
+===============================================================================
+Experiment 4 (`exp4_surface`): Institutional Data Access & Fetch Instructions
+===============================================================================
+
+In accordance with package guidance (AGENTS.md), large bulk datasets (raw assemblies,
+full Foldseek databases, ColabFold/ESMFold PDB prediction archives, and full shard
+pickles) remain on institutional research storage and are not committed to git.
+
+This reproducibility package contains all deterministic code, tests, and compact
+evidence tables (checksummed in `manifests/sha256_manifest.tsv`).
+
+-------------------------------------------------------------------------------
+1. Authoritative Upstream Research Storage (Shaheen III Supercomputer)
+-------------------------------------------------------------------------------
+
+Project Directory:
+    /scratch/project/k10018/eq-mechanism-20261109/exp4_surface/
+
+Verified Components on Shaheen III:
+- Serialized Shard Bundles (Shards 0..16, 1,460 families):
+    Path: /scratch/project/k10018/eq-mechanism-20261109/exp4_surface/results/shard_inputs/shard_*.pkl
+    Hashes: Recorded in manifests/upstream_shard_bundles.sha256
+- Authoritative Verified Candidate Member Loci (41,494 loci, exact coordinates):
+    Path: /scratch/project/k10018/eq-mechanism-20261109/exp4_surface/inputs/task_a_stage1b_all_candidate_member_loci_verified.tsv.gz
+    SHA256: 263673dc9a7213997d5ad0e97353b4b238cc3a4152ab0da68a5783fe571a6dca
+- Curated Reference Panel:
+    17 Curated sequence references: inputs/curated_role_reference_panel.tsv & .faa
+    11 Active single-chain PDB structures: inputs/pdb_chains/*.pdb
+- Complete Family MSAs and Trees (29 completed families):
+    Path: /scratch/project/k10018/eq-mechanism-20261109/exp4_surface/results/family_msas_and_trees/
+- Complete Production Evaluation (1,460 families):
+    Path: /scratch/project/k10018/eq-mechanism-20261109/exp4_surface/results/followup_v2_review/exp4_surface_family_evaluation_v2_audited.tsv
+    SHA256: 6fb327558235c86af967cf4ba3d7dd67ad419acf4cb051bf4888c962b9e2d62d
+- Frozen 1460 Family Universe Input:
+    Package Path: compact_evidence/frozen_family_universe.tsv
+    SHA256: 3af98e585b79ce005fda1a764b6e5d093ebc8b037aba7f0599f809b56c410e13
+    Cluster Path: /scratch/project/k10018/eq-mechanism-20261109/exp4_surface/provenance/frozen_family_universe.tsv
+- Raw Slurm Execution Logs, Manifest & Scheduler Provenance:
+    Cluster Path: /scratch/project/k10018/eq-mechanism-20261109/exp4_surface/logs/
+    Log SHA Manifest: manifests/remote_slurm_log_manifest.tsv (100 owned logs,
+    observed at 2026-11-09T13:53:34Z, distinguishing 84 clean execution logs
+    from 16 failed diagnostic iterations; no pre-launch freeze claimed)
+    Receipts: manifests/slurm_execution_receipts.tsv
+    Raw sacct records: manifests/raw_slurm_execution_records.tsv
+    All 11 job receipts and 42 raw task records verified for user `hohndor` under `k10018`.
+- Code Freeze & Provenance Limits:
+    Exact at-launch code freezes and checksums for earlier cluster jobs
+    (15872818, 15873659, 15873660, 15890701, and earlier followup iterations)
+    were not recorded or frozen at submission time and are missing/unavailable.
+    The single remote file hash observed on the Shaheen branch for
+    `exp4_followup_targeted_audit.py` (SHA256: 3c0b2b988b8c92c93f5d08432d780785735aee508ce052a4453c1a887c1d3f21,
+    observed at 2026-11-09T16:42:41+03:00) reflects the branch state following
+    job 15892964. Because jobs 15892410 through 15892964 involved incremental code changes
+    (such as member audit additions, coordinate joins, and independent replay),
+    that single observed hash cannot be projected onto earlier job executions.
+    Prior job-specific at-launch code hashes remain unavailable unless proven by an
+    immutable job artifact.
+    The packaged code in `code/exp4_followup_targeted_audit.py` has SHA256
+    `92bcd0ae9f95236f42115a8bf5b2e645b87f4bba8684b79ec5636663511e5563`, reflecting
+    the subsequent integration of root-reviewed lead interpretations.
+    Immutable scientific output hashes, packaged current code hashes, observed branch
+    hashes, and missing at-launch provenance are kept strictly separated.
+
+-------------------------------------------------------------------------------
+2. Historical Storage Provenance (IBEX Cluster)
+-------------------------------------------------------------------------------
+
+Institutional Project Root:
+    /ibex/scratch/projects/c2014/
+
+Status Note:
+    Historical raw metagenomic reads, contig assemblies, and initial prodigal
+    gene calls reside under `/ibex/scratch/projects/c2014/`. Specific historical
+    catalogue subpaths not directly verified during the Shaheen III reanalysis
+    campaign are retained as unverified historical institutional provenance.
+
+-------------------------------------------------------------------------------
+3. Retrieval & Reanalysis Procedures
+-------------------------------------------------------------------------------
+
+A. Lightweight Frozen-Output Verification (Local, ~2 seconds):
+   Does NOT require cluster access, bulk databases, or GPU.
+   Recomputes full-universe genus-dereplicated joint BH-FDR (8,760 tests) and
+   primary joint BH-FDR directly from raw p-values in the 1,460-family evaluation
+   table, verifies model availability partitions, and validates 47 candidate dossiers.
+   Run:
+       uv run python verify_frozen_outputs.py
+       uv run pytest tests/test_exp4_surface.py
+
+B. Full Upstream Reanalysis (Shaheen III Slurm Cluster):
+   Requires access to the `k10018` Shaheen project allocation, the `mapping`
+   conda environment, Singularity ce/4.3.2, and Foldseek/DIAMOND containers.
+
+   Historical Root Immutability Contract:
+   Historical results under `/scratch/project/k10018/eq-mechanism-20261109/exp4_surface`
+   are frozen evidence. Entrypoint wrappers strictly refuse execution in the historical root
+   (canonicalized via `realpath -m`, rejecting trailing slashes, intermediate dots, and symlinks)
+   and refuse pre-existing outputs / .done markers to prevent silent skipping or overwriting.
+   Reanalysis is conducted from frozen shard inputs and actual upstream dependencies; exact
+   staging is necessary. Reanalysis requires an explicit fresh, empty EQ_EXP4_ROOT directory.
+
+   Execution Procedure:
+   1. Stage package code, tests, and manifests from local machine (lc-dell):
+      # Use exact fresh path with timestamp/unique suffix to prevent collisions:
+      export EQ_REMOTE_ROOT="/scratch/project/k10018/hohndor/reanalysis_$(date +%Y%m%d_%H%M%S)_exp4_surface"
+
+      # Explicitly create remote root and logs/ directory before rsync/sbatch (Slurm requires logs/ to exist beforehand):
+      ssh -J ws-ts shaheen "mkdir -p '${EQ_REMOTE_ROOT}/logs'"
+
+      # Stage package code, tests, and manifests:
+      rsync -avz -e 'ssh -J ws-ts' \
+        /home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp4_surface/ \
+        shaheen:${EQ_REMOTE_ROOT}/
+
+   2. Execute staging preflight via Slurm compute allocation (avoids heavy login node I/O):
+      ssh shaheen
+      # Use the exact fresh path created above (avoid wildcard cd reanalysis_* which fails if multiple runs exist):
+      cd "${EQ_REMOTE_ROOT}" # Or exact /scratch/project/k10018/hohndor/reanalysis_<TIMESTAMP>_exp4_surface
+      export EQ_EXP4_ROOT="$PWD"
+
+      # Submit staging preflight job (stages inputs from historical root and verifies SHA256)
+      STAGE_JOB=$(sbatch --export=ALL,EQ_EXP4_ROOT="$EQ_EXP4_ROOT" code/sbatch_exp4_stage_preflight.sh | awk '{print $4}')
+
+      The preflight stages immutable assets from the historical root:
+      - inputs/task_a_stage1b_all_candidate_member_loci_verified.tsv.gz
+      - inputs/curated_role_reference_panel.*
+      - inputs/pdb_chains/*.pdb
+      - results/shard_inputs/shard_*.pkl (0..16)
+      - provenance/frozen_family_universe.tsv
+      and verifies shard pickles against the staged relative manifest:
+      sha256sum -c "$EQ_EXP4_ROOT/manifests/upstream_shard_bundles.sha256"
+
+   3. Submit dependency-chained reanalysis:
+      ARRAY_JOB=$(sbatch --dependency=afterok:${STAGE_JOB} --export=ALL,EQ_EXP4_ROOT="$EQ_EXP4_ROOT" code/sbatch_exp4_array.sh | awk '{print $4}')
+      COLLECT_JOB=$(sbatch --dependency=afterok:${ARRAY_JOB} --export=ALL,EQ_EXP4_ROOT="$EQ_EXP4_ROOT" code/sbatch_exp4_collect.sh | awk '{print $4}')
+      sbatch --dependency=afterok:${COLLECT_JOB} --export=ALL,EQ_EXP4_ROOT="$EQ_EXP4_ROOT" code/sbatch_exp4_followup_audit.sh

@@ -1,0 +1,181 @@
+{
+  "stage": "stage4_v4_independent_audit_and_compact_input_extraction",
+  "timestamp_UTC": "2026-11-09 15:39:13",
+  "elapsed_seconds": 5.084913969039917,
+  "slurm_job_id": "15894666",
+  "hostname": "nid00037",
+  "production_v4_job_id_preserved": "15894468",
+  "source_inputs_verified": {
+    "metadata": {
+      "path": "/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/metadata.tsv",
+      "sha256": "0d7b97c4a8b28d8b8a45cf9a986310594707f023ab6ec149735453212b2844ee",
+      "rows": 441
+    },
+    "mag_abundance_full": {
+      "path": "/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/mag_abundance.tsv.gz",
+      "sha256": "4915c95b5a72dbef5490df1db8b9e88f4cf0c9390de081f82386addf2a1a635c",
+      "total_entity_rows": 5005,
+      "total_sample_cols": 441
+    },
+    "viral_tpm_full": {
+      "path": "/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/viral_tpm.tsv.gz",
+      "sha256": "eaec54b7506ca9e3fc41376e566193f94d3bd2814c3814c6b2546c798276685b",
+      "total_entity_rows": 18322,
+      "total_sample_cols": 441
+    },
+    "field_map": {
+      "path": "/scratch/project/k10018/eq-ecology-mag-20261105/results/rund_20261106/matched_profiles.tsv",
+      "sha256": "338d153090e2a9be9d5994af1b0d80a66806cbad7469c9e4169dbb6f67ece382",
+      "rows": 442
+    }
+  },
+  "compact_archived_inputs": {
+    "mag_abundance_arch591_441samples": {
+      "file": "mag_abundance_arch591_441samples.tsv.gz",
+      "sha256": "f4f81588d18d6e0ccfbcfcb129453879bb84690afd21d7dea37726fd7001485a",
+      "bytes": 195423,
+      "n_canonical_arch_mag_rows": 580,
+      "n_missing_canonical_arch_mags": 11,
+      "n_shared_samples": 441,
+      "extraction_rule": "Exact subset of all 591 canonical archaeal MAG IDs from partition table across all 441 shared metadata/matrix samples; no transformation or imputation."
+    },
+    "viral_tpm_candidate_targets_441samples": {
+      "file": "viral_tpm_candidate_targets_441samples.tsv.gz",
+      "sha256": "06a0cc03317ea6959dd6d462caffa3bc17c1805281788e6bba7fd9f2860db876",
+      "bytes": 43595,
+      "n_candidate_viral_rows_present": 61,
+      "n_stage3_distinct_viral_keys_queried": 1839,
+      "n_shared_samples": 441,
+      "extraction_rule": "Exact subset of all stage3 ledger votu_id/target_id keys present in viral_tpm.tsv.gz across all 441 shared samples; absent catalog targets remain absent (never zero-filled)."
+    }
+  },
+  "independent_audit_selected47_files": {
+    "raw_site_observations_long": {
+      "file": "stage4_v4_independent_audit_selected47_raw_site_observations.tsv",
+      "sha256": "d67c2a7ad9769b5dfa099f91e80e3536c51adeac2b8163b221a2a6b2033b5c76",
+      "bytes": 228370,
+      "rows": 282,
+      "n_pairs": 6,
+      "n_primary_pairs": 5,
+      "n_provisional_only_pairs": 1,
+      "n_sites": 47
+    },
+    "selected47_wide_matrix": {
+      "file": "stage4_v4_independent_audit_selected47_wide_matrix.tsv",
+      "sha256": "be01781e19b701d6a3fde1e65ea9492b13e6b115b95df484cb45f1dd9bd36ed5",
+      "bytes": 7508,
+      "rows": 47,
+      "cols": 27
+    }
+  },
+  "exact_replay_verification": {
+    "host_abundance_metrics_exact_match": true,
+    "matched_alternative_controls_exact_match": true,
+    "environment_matched_abundance_exact_match": true,
+    "candidate_control_correlation_differences_exact_match": true,
+    "pair_level_replay_results": [
+      {
+        "pair_order": 1,
+        "candidate_host_mag": "41PRr2__single_SemiBin_236",
+        "matched_alternative_mag": "60PRr1__single_SemiBin_79",
+        "target_id": "V60PRr2::V60PRr2_715976",
+        "votu_id": "V60PRr2::V60PRr2_715976",
+        "matched_abundance_key": "V60PRr2::V60PRr2_715976",
+        "is_primary_pair": true,
+        "candidate_observed_rho": 0.25415577869613154,
+        "candidate_field_stratified_pvalue": 0.1692,
+        "candidate_n_extreme": 1691,
+        "candidate_status": "exploratory_permutation_performed",
+        "control_observed_rho": null,
+        "control_field_stratified_pvalue": null,
+        "control_n_extreme": null,
+        "control_status": "non_estimable_zero_variance_or_insufficient_sites"
+      },
+      {
+        "pair_order": 2,
+        "candidate_host_mag": "41PRr2__single_SemiBin_97",
+        "matched_alternative_mag": "54PRr2__single_SemiBin_131_sub",
+        "target_id": "55Dr2::55Dr2_75333",
+        "votu_id": "55Dr2::55Dr2_75333",
+        "matched_abundance_key": null,
+        "is_primary_pair": true,
+        "candidate_observed_rho": null,
+        "candidate_field_stratified_pvalue": null,
+        "candidate_n_extreme": null,
+        "candidate_status": "non_estimable_missing_host_or_viral_catalog_row_not_zero",
+        "control_observed_rho": null,
+        "control_field_stratified_pvalue": null,
+        "control_n_extreme": null,
+        "control_status": "non_estimable_missing_host_or_viral_catalog_row_not_zero"
+      },
+      {
+        "pair_order": 3,
+        "candidate_host_mag": "41PRr2__single_SemiBin_97",
+        "matched_alternative_mag": "54PRr2__single_SemiBin_131_sub",
+        "target_id": "9Sr2::9Sr2_284237",
+        "votu_id": "9Sr2::9Sr2_284237",
+        "matched_abundance_key": "9Sr2::9Sr2_284237",
+        "is_primary_pair": true,
+        "candidate_observed_rho": 0.3347580880891416,
+        "candidate_field_stratified_pvalue": 0.0831,
+        "candidate_n_extreme": 830,
+        "candidate_status": "exploratory_permutation_performed",
+        "control_observed_rho": 0.48310328782590084,
+        "control_field_stratified_pvalue": 0.0114,
+        "control_n_extreme": 113,
+        "control_status": "exploratory_permutation_performed"
+      },
+      {
+        "pair_order": 4,
+        "candidate_host_mag": "43PRr3__self_SemiBin_469",
+        "matched_alternative_mag": "V54PRr1__single_SemiBin_45",
+        "target_id": "44Dr2::44Dr2_4002037",
+        "votu_id": "44Dr2::44Dr2_4002037",
+        "matched_abundance_key": null,
+        "is_primary_pair": false,
+        "candidate_observed_rho": null,
+        "candidate_field_stratified_pvalue": null,
+        "candidate_n_extreme": null,
+        "candidate_status": "non_estimable_missing_host_or_viral_catalog_row_not_zero",
+        "control_observed_rho": null,
+        "control_field_stratified_pvalue": null,
+        "control_n_extreme": null,
+        "control_status": "non_estimable_missing_host_or_viral_catalog_row_not_zero"
+      },
+      {
+        "pair_order": 5,
+        "candidate_host_mag": "S49Dr1__self_SemiBin_1106",
+        "matched_alternative_mag": "V48Dr1__self_SemiBin_2681",
+        "target_id": "48Sr2::48Sr2_190170",
+        "votu_id": "48Sr2::48Sr2_190170",
+        "matched_abundance_key": "48Sr2::48Sr2_190170",
+        "is_primary_pair": true,
+        "candidate_observed_rho": null,
+        "candidate_field_stratified_pvalue": null,
+        "candidate_n_extreme": null,
+        "candidate_status": "non_estimable_zero_variance_or_insufficient_sites",
+        "control_observed_rho": null,
+        "control_field_stratified_pvalue": null,
+        "control_n_extreme": null,
+        "control_status": "non_estimable_zero_variance_or_insufficient_sites"
+      },
+      {
+        "pair_order": 6,
+        "candidate_host_mag": "V48Dr1__self_SemiBin_3215",
+        "matched_alternative_mag": "V45Dr1__self_SemiBin_1192_sub",
+        "target_id": "coasm_48_PR::k127_4172870",
+        "votu_id": "coasm_48_PR::k127_4172870",
+        "matched_abundance_key": null,
+        "is_primary_pair": true,
+        "candidate_observed_rho": null,
+        "candidate_field_stratified_pvalue": null,
+        "candidate_n_extreme": null,
+        "candidate_status": "non_estimable_missing_host_or_viral_catalog_row_not_zero",
+        "control_observed_rho": null,
+        "control_field_stratified_pvalue": null,
+        "control_n_extreme": null,
+        "control_status": "non_estimable_missing_host_or_viral_catalog_row_not_zero"
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/stage4_statistical_audit_v4.py", line 1000, in <module>
+    main()
+  File "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/stage4_statistical_audit_v4.py", line 937, in main
+    group_counts, selected, selection = select_primary_environment_design(metadata, field_map, set(shared_samples))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/stage4_statistical_audit_v4.py", line 607, in select_primary_environment_design
+    raise ValueError("Metadata and audited field map disagree on site/trip/compartment")
+ValueError: Metadata and audited field map disagree on site/trip/compartment

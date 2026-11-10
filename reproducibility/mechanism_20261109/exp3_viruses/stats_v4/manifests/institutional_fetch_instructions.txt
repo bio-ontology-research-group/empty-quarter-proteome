@@ -1,0 +1,114 @@
+===============================================================================
+Experiment 3 (`exp3_viruses/stats_v4`): Institutional Data Access & Provenance
+===============================================================================
+
+This subdirectory packages the completed Stage 4 v4 viral statistical audit
+(Shaheen III Slurm job `15894468`) and its compact independent audit extraction
+(Shaheen III Slurm job `15894666`).
+
+Scope Ownership:
+- This module (`stats_v4/`) owns ONLY the Stage 4 v4 viral statistical audit,
+  its compact inputs, independent 47-site raw observation audit tables, tests,
+  and provenance manifests.
+- Competitive read mapping, combined reference index validation, and sequence
+  hallmark followups belong to the sibling viral mapping workflow.
+- Earlier Stage 4 v3 outputs remain preserved in the working branch as an
+  invalid-inference baseline (exploratory descriptives only; superseded by v4).
+
+-------------------------------------------------------------------------------
+1. Full Source Abundance Matrices on Institutional Storage (Shaheen III)
+-------------------------------------------------------------------------------
+
+The two full multi-thousand-row abundance matrices reside on Shaheen III
+project storage (`/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/`):
+
+1. Full MAG Abundance Matrix (5,005 MAGs x 441 samples, 3.5 MB gzip):
+   - Path: `/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/mag_abundance.tsv.gz`
+   - SHA256: `4915c95b5a72dbef5490df1db8b9e88f4cf0c9390de081f82386addf2a1a635c`
+   - Compact Archived Subset in Package:
+     `inputs/mag_abundance_arch591_441samples.tsv.gz`
+     (SHA256: `f4f81588d18d6e0ccfbcfcb129453879bb84690afd21d7dea37726fd7001485a`,
+     195,423 bytes; contains all 580 observed rows of the 591 canonical archaeal
+     MAGs across all 441 shared samples, while the 11 canonical archaeal MAGs
+     absent from the full matrix remain absent and are recorded as
+     `missing_matrix_row_not_zero`, never zero-filled).
+
+2. Full Viral TPM Matrix (18,322 viral contigs/vOTUs x 441 samples, 11 MB gzip):
+   - Path: `/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/viral_tpm.tsv.gz`
+   - SHA256: `eaec54b7506ca9e3fc41376e566193f94d3bd2814c3814c6b2546c798276685b`
+   - Compact Archived Subset in Package:
+     `inputs/viral_tpm_candidate_targets_441samples.tsv.gz`
+     (SHA256: `06a0cc03317ea6959dd6d462caffa3bc17c1805281788e6bba7fd9f2860db876`,
+     43,595 bytes; contains all 61 viral rows present in `viral_tpm.tsv.gz` out of
+     the 1,839 distinct viral keys in the 2,121-row Stage 3 ledger across all 441
+     shared samples; candidate targets absent from the historical vOTU catalog
+     remain absent and non-estimable, never zero-filled).
+
+Retrieval of Full Matrices from Shaheen III (if needed):
+```bash
+rsync -avz -e "ssh -J ws-ts" \
+  shaheen:/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/mag_abundance.tsv.gz \
+  shaheen:/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/viral_tpm.tsv.gz \
+  ./
+sha256sum mag_abundance.tsv.gz viral_tpm.tsv.gz
+```
+
+-------------------------------------------------------------------------------
+2. Archived Exact Inputs Included Directly in `stats_v4/`
+-------------------------------------------------------------------------------
+
+All other inputs required by `code/stage4_statistical_audit_v4.py` are archived
+directly in `inputs/` and `results/` with byte-exact SHA256 verification:
+
+- `inputs/metadata.tsv`
+  SHA256: `0d7b97c4a8b28d8b8a45cf9a986310594707f023ab6ec149735453212b2844ee`
+  Source: `/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/metadata.tsv`
+- `inputs/matched_profiles.tsv`
+  SHA256: `338d153090e2a9be9d5994af1b0d80a66806cbad7469c9e4169dbb6f67ece382`
+  Source: `/scratch/project/k10018/eq-ecology-mag-20261105/results/rund_20261106/matched_profiles.tsv`
+- `inputs/taxonomy_reconciliation_all5438.tsv.gz`
+  SHA256: `1bcbdbedec9b16e9f901a989778a5f831d2f475ef4c0c3e559a47568c2f9c5a4`
+  Source: `/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/taxonomy_reconciliation_all5438.tsv.gz`
+- `inputs/taxonomy_reconciliation_thermo237.tsv`
+  SHA256: `13214500eea0fc3516b3262a21044344f550c87d4fa7ff3869fc9d958f9aaee8`
+  Source: `/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/taxonomy_reconciliation_thermo237.tsv`
+- `inputs/exp4_47_member_evidence.tsv`
+  SHA256: `5a1fc7984d400dbe05cd74fb444351d0c35c0b373277fe0f524396acc4a02fce`
+  Source: `/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/exp4_47_member_evidence.tsv`
+- `inputs/task_a_stage1b_all_candidate_member_loci_verified.tsv.gz`
+  SHA256: `263673dc9a7213997d5ad0e97353b4b238cc3a4152ab0da68a5783fe571a6dca`
+  Source: `/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/task_a_stage1b_all_candidate_member_loci_verified.tsv.gz`
+- `inputs/stage1_summary.json`
+  SHA256: `9eafab23bb2c61ded74f217c91eeac8c639e555ccb1393bc4c3f1ce72c2aac02`
+  Source: `/scratch/project/k10018/eq-science-20261108/results/stage1_summary.json`
+- `inputs/stage1b_summary.json`
+  SHA256: `4f69536f225724d9475140be8f11e24911b763c49669b911f052f276edb64fc0`
+  Source: `/scratch/project/k10018/eq-science-20261108/results/stage1b_summary.json`
+- `results/stage1_mag_screening_status.tsv`
+  SHA256: `3a321a88048df6390f68e52aba92446266d84d0a07498c7832b2e2c1caded4fe`
+- `results/stage3_all591_archaeal_mag_host_evidence_v2.tsv`
+  SHA256: `f5a744c70e7b234f2222346cc638e8b49a55078a444e450e46a50f90a7c7db1f`
+- `results/stage3_archaeal_virus_host_pairs_all_tiers_v2.tsv`
+  SHA256: `43cca6029736b7334d0755c5cdf97ca969994d064d570208cf1c5c6f52b5fbca`
+- `results/stage4_v4_root_disposition_41Sr3.json`
+  SHA256: `c36c9e8f7ff2d76046d679a9f20edbec973b5944d13d9864116374744eb37b1d`
+- `results/stage4_v4_provisional_disposition_second_thermo.json`
+  SHA256: `6b5580ae87c9f9a45d7abeb52ca729766c3224205bc6b1d45ff150c9a7554a21`
+
+-------------------------------------------------------------------------------
+3. Verification & Reanalysis Commands
+-------------------------------------------------------------------------------
+
+A. Local Lightweight Frozen-Output & Independent Replay Verification (~3 seconds):
+```bash
+cd /home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp3_viruses/stats_v4
+uv run python verify_stats_v4.py
+uv run pytest -q tests/test_stage4_statistical_audit_v4.py tests/test_stats_v4_package_and_independent_audit.py
+```
+
+B. Full Upstream Cluster Execution on Shaheen III (Slurm `k10018` / `workq`):
+```bash
+ssh -J ws-ts shaheen
+cd /scratch/project/k10018/eq-mechanism-20261109/exp3_viruses
+sbatch code/sbatch_stage4_statistical_audit_v4.sh
+```

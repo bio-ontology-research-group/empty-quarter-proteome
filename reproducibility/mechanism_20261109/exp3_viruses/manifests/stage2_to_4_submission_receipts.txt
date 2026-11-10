@@ -1,0 +1,46 @@
+timestamp=2026-11-09T23:45:00+03:00
+cluster=KAUST Shaheen III (Cray EX)
+project=k10018
+partition=workq
+
+# Stage 0 & Stage 1 Foundations
+stage0_prep_job_id=15871620 (COMPLETED, STAGE0_DONE verified, all 591 archaeal MAG hashes verified)
+stage1_pilot_job_id=15872996 (COMPLETED, STAGE1_PILOT_DONE verified)
+stage1_array_job_id=15873106 (COMPLETED, tasks 1-13)
+stage1_collect_job_id=15873124 (COMPLETED, STAGE1_COLLECT_DONE verified, 1.78 MB spacers TSV)
+
+# Stage 2 Search & Verification Execution
+stage2_catalog_job_id=15892214 (COMPLETED, 6/6 catalog pools searched)
+stage2_asm_array_job_id=15892215 (COMPLETED, tasks 0-7 across 169 cohort assemblies)
+stage2_collector_job_id=15893053 (COMPLETED in 8m00s on nid00104, STAGE2_DONE verified)
+stage2_standalone_receipt_audit_job_id=15893053 (PASSED 175/175 receipts with corrected streaming validator)
+stage2_target_sequence_collision_audit=PASSED (144 multi-pool targets audited, 0 sequence collisions, 100% identical duplicates across pools)
+
+# Stage 3 Host Ledger & Evidence Review
+stage3_baseline_job_id=15893054 (COMPLETED, baseline preserved)
+stage3_v2_execution=COMPLETED (stage3_host_link_ledger_v2.py, STAGE3_V2_DONE verified)
+stage3_v2_tier1_pairs=7 rows (6 unique host-sequence pairs, 5 unique host MAGs)
+stage3_v2_thermoplasmatota_audit=PASSED (41PRr2__single_SemiBin_236 vs V60PRr2::V60PRr2_715976: 6 strict / 4 exact unique 32bp spacers across 7 distinct non-overlapping protospacer loci spanning 19.3 kb)
+stage3_v2_cellular_dominance_audit=41Sr3::41Sr3_56779 (196 kb contig, 179 genes, 1 viral recombinase at 37 kb, 70 host genes, spacer at 189 kb; classified as unresolved_virality_pending_boundary_review in individual evidence review)
+
+# Stage 4 Matrix Orientation & Estimability Repair
+stage4_baseline_job_id=15893055 (COMPLETED, baseline preserved with disclosed matrix orientation bug)
+stage4_v2_execution=COMPLETED (stage4_downstream_mechanism_v2.py, STAGE4_V2_DONE verified)
+stage4_v2_sample_intersection=441 / 441 shared samples (100% complete_exact_sample_match after transposing samples-as-rows matrices)
+stage4_v2_host_prevalence=580 / 591 MAGs observed positive across 441 samples
+stage4_v2_cooccurrence=27 pairs evaluated across 441 samples; site/campaign-blocked permutation design
+stage4_v2_defense_surface_estimability=non_estimable_insufficient_positive_events_and_circularity (447/591 zero-spacer MAGs lack detection opportunity; testing CRISPR presence against CRISPR-derived links is circular; rank deficient for regression)
+
+# Stage 4 Unified Competitive FASTQ Mapping & Sequence/Host Provenance Pipeline
+stage4_competitive_ref_build_job_id=15893933 (COMPLETED in 02:53:32 on nid00026, ExitCode=0:0; 5,438 canonical MAGs + full votu/all_viruses/plasmids/coasm catalogs + decoys + matched targets; 25.5 GB FASTA + 6 .bt2l indices + completed JSON receipt + REFERENCE_BUILD_DONE touch sentinel)
+stage4_sequence_domain_followup_job_id=15894662 (COMPLETED in 00:02:07 on nid00193, ExitCode=0:0; Pfam-A sequence-domain HMM annotation on 262 unannotated ORFs across 5 primary targets + existing-model Foldseek audit)
+stage4_host_array_contig_extract_job_id=15898645 (COMPLETED in 00:01:07 on nid00188, ExitCode=0:0; bounded host-array contig provenance extraction across all 6 Stage 4 host MAGs and 8 array-bearing contigs)
+stage4_validate_competitive_ref_v1_superseded_job_id=15894659 (FAILED in 00:00:32 on nid00026, ExitCode=1:0; failed because line 229 required st_size > 0 on zero-byte touch sentinel REFERENCE_BUILD_DONE; stranded dependents 15894660 and 15894661 cancelled)
+stage4_validate_competitive_ref_v2_superseded_job_id=15902808 (FAILED in 00:12:26 on nid00066, ExitCode=1:0; passed sentinel, crosswalk, FAI, and 25.5 GB reference scan, then failed at line 285 with KeyError: 'target_length' because load_boundary_candidates omitted target_length from records.append; stranded dependents 15902809 and 15902810 cancelled)
+stage4_validate_competitive_ref_job_id=15905724 (COMPLETED in 00:17:36 on nid01239, ExitCode=0:0; verified REFERENCE_BUILD_DONE, target_length=67924, source hashes/counts, 5,438 MAG contig/base totals, crosswalk representative_header schema, 6 Bowtie2 index files, and raw-oriented vs canonical SHA resolution)
+stage4_competitive_map_array_job_id=15905725 (13 of 14 tasks 0 and 2-13 COMPLETED 0:0; task 1 V60PRr2 completed Bowtie2/samtools/focal evaluation then failed in unpatched inStrain 1.9.1 SNVprofile.py due to scaf_mm.split('::') on namespaced header; archived at inStrain_source_primary_6b19afac4f46beca.failed_unpatched_15905725_1)
+stage4_recover_v60prr2_pre_reconciliation_superseded_job_id=15910426 (FAILED in 00:15:35 on nid00060, ExitCode=1:0; completed patched inStrain 1.9.1 profile then failed at pre-reconciliation parser check on 22 exported vs 24 summary variants; archived at inStrain_source_primary_6b19afac4f46beca.prior_completed_1794256081_811309)
+stage4_recover_v60prr2_job_id=15910797 (COMPLETED in 00:11:15 on nid00034, ExitCode=0:0; verified existing V60PRr2 BAMs/coverage without remapping, ran patched inStrain 1.9.1 source_primary profile, reconciled 24 summary vs 22 exported + 2 cryptic variants, receipt SHA 2c00a7c260d31fd03682e04216dfbedc328d862ca4fc574c3c65d27ab62ef498)
+stage4_competitive_aggregate_job_id=15905726 (COMPLETED in 00:02:07 on nid00019, ExitCode=0:0; fail-closed aggregation across all 14 cryptographically receipted sample competitive mapping outputs: 224 evaluations, 98 pair-sample rows, 42 boundary intervals, 1 qualifying primary viral target V60PRr2::V60PRr2_715976 in V60PRr2; summary SHA 558eab32f5dbc43279f77eae2eee868acc3f904a27e05c7aa2c799cd714222a6)
+stage4_posthoc_followup_v1_superseded_job_id=15910427 (FAILED in 00:03:07 on nid00081, ExitCode=1:0; completed relaxed sensitivity inStrain profile then failed on int('17.0') in stage4_host_array_provenance_audit.py line 533; fixed via _strict_int_from_tsv)
+stage4_posthoc_followup_job_id=15910957 (COMPLETED in 00:03:08 on nid00019, ExitCode=0:0; relaxed sensitivity inStrain profile --min_read_ani 0.92 --min_cov 5 receipt SHA 8e8dd2cdd152e9b37cb647528339a4e9e198e8f4a2f09a10f2ec90fd88d5c4f3 + 6-host/8-contig sample coverage integration)

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-11-09T15:38:03Z",
+  "job_ref_build": "15893933",
+  "job_validate_ref": "15894659",
+  "job_map_array": "15894660",
+  "job_aggregate": "15894661",
+  "job_sequence_followup": "15894662",
+  "dependencies": {
+    "validate_ref": "afterok:15893933",
+    "map_array": "afterok:15894659",
+    "aggregate": "afterok:15894660",
+    "sequence_followup": "afterok:15894661"
+  },
+  "resource_requests": {
+    "validate_ref": {"cpus": 16, "mem": "350G", "time": "04:00:00", "partition": "workq"},
+    "map_array": {"cpus": 32, "mem": "350G", "time": "04:00:00", "array": "0-13", "partition": "workq"},
+    "aggregate": {"cpus": 4, "mem": "32G", "time": "02:00:00", "partition": "workq"},
+    "sequence_followup": {"cpus": 16, "mem": "64G", "time": "04:00:00", "partition": "workq"}
+  },
+  "samples": [
+    "41PRr2", "V60PRr2", "55Dr2", "9Sr2", "55Sr3",
+    "S49Dr1", "48Sr2", "F48Sr2", "V48Dr1", "S48PRr1",
+    "41Sr3", "10Dr2", "43PRr3", "44Dr2"
+  ],
+  "snapshot_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/version_snapshots/pi_viral_repair_20261109",
+  "code_hashes_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/pi_viral_repair_code_hashes.tsv",
+  "status": "repaired_pipeline_submitted"
+}

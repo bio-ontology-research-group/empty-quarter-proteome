@@ -1,0 +1,221 @@
+{
+  "study": "Karaoz et al. Nat Commun 17:10740 (13 Oct 2026) DOI:10.1038/s41467-026-78137-0",
+  "stage": "stage1_v2_homology_eligibility_corrected",
+  "dereplication_note": "2,321 genomes in Blodgett_MAGs.tar.gz are 99% ANI dereplicated representatives, not necessarily 95% ANI species representatives.",
+  "translation_correction_applied": {
+    "consistent_calling_and_translation_table": true,
+    "internal_stops_preserved_never_stripped": true,
+    "calling_checkpoint_reused_with_verified_sha256": true,
+    "v1_affected_table4_orfs_count": 45,
+    "v1_affected_mags_count": 10,
+    "orf_calling_counts_by_mode": {
+      "meta_table_11": 273840,
+      "meta_table_4": 76,
+      "trained_single_table_11_on_t4_contig": 90
+    },
+    "invalid_sequences_logged": 0
+  },
+  "counts": {
+    "total_derep_mags": 2321,
+    "total_gtdbtk_bins": 4885,
+    "alias_collisions": 0,
+    "derep_archaeal_mags": 113,
+    "derep_thermoplasmatota_mags": 38,
+    "tier1_shared_E2_family_genus_JACPAO01": 1,
+    "tier2_shared_E2_class_UBA9212": 1,
+    "tier2_shared_Thermoplasmata_order_family_RBG-16-68-12": 36,
+    "tier3_non_Thermoplasmatota_archaea_outgroup": 75,
+    "predicted_orfs_in_113_archaeal_mags_v2": 274006,
+    "emsl50964_total_valid_detected_proteins": 122370,
+    "emsl50964_proteins_linked_to_archaeal_mags": 333,
+    "emsl50964_proteins_linked_to_thermoplasmatota_mags": 78,
+    "total_verified_query_families": 1514,
+    "total_verified_query_sequences": 11594
+  },
+  "homology_summary_vs_karaoz_arch113": {
+    "candidate_route_a1_gapfill_dark_eligible": {
+      "strict_full_length_homolog_pairs": 7,
+      "strict_distinct_families": 6,
+      "strict_in_thermoplasmatota_mags": 7,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 31,
+      "rejected_short_or_partial_domain_only": 23
+    },
+    "candidate_route_a2_exported_dark_eligible": {
+      "strict_full_length_homolog_pairs": 104,
+      "strict_distinct_families": 78,
+      "strict_in_thermoplasmatota_mags": 104,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 277,
+      "rejected_short_or_partial_domain_only": 419
+    },
+    "control_known_function_exported_background_panel": {
+      "strict_full_length_homolog_pairs": 903,
+      "strict_distinct_families": 68,
+      "strict_in_thermoplasmatota_mags": 449,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 1474,
+      "rejected_short_or_partial_domain_only": 1942
+    },
+    "control_non_exported_dark_verified_soluble_background_panel": {
+      "strict_full_length_homolog_pairs": 98,
+      "strict_distinct_families": 17,
+      "strict_in_thermoplasmatota_mags": 33,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 270,
+      "rejected_short_or_partial_domain_only": 68
+    },
+    "lead_1_partner_archaellum_pilj_like": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_in_thermoplasmatota_mags": 0,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 1,
+      "rejected_short_or_partial_domain_only": 0
+    },
+    "lead_1_partner_pf04964_pilj_like": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_in_thermoplasmatota_mags": 0,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 0,
+      "rejected_short_or_partial_domain_only": 0
+    },
+    "lead_2_partner_slayer_csg_family1": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_in_thermoplasmatota_mags": 0,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 0,
+      "rejected_short_or_partial_domain_only": 0
+    },
+    "lead_2_partner_slayer_csg_family2": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_in_thermoplasmatota_mags": 0,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 0,
+      "rejected_short_or_partial_domain_only": 0
+    },
+    "lead_2_partner_slayer_csg_family3": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_in_thermoplasmatota_mags": 0,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 0,
+      "rejected_short_or_partial_domain_only": 0
+    },
+    "positive_control_conserved_nondark_thermoplasmatota": {
+      "strict_full_length_homolog_pairs": 1017,
+      "strict_distinct_families": 35,
+      "strict_in_thermoplasmatota_mags": 550,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 858,
+      "rejected_short_or_partial_domain_only": 452
+    },
+    "primary_lead_1_pilj_archaellum_context": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_in_thermoplasmatota_mags": 0,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 1,
+      "rejected_short_or_partial_domain_only": 0
+    },
+    "primary_lead_2_slayer_coat_context": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_in_thermoplasmatota_mags": 0,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 0,
+      "rejected_short_or_partial_domain_only": 0
+    },
+    "prior_heat_stress_candidate_example": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_in_thermoplasmatota_mags": 0,
+      "strict_also_detected_in_emsl50964": 0,
+      "moderate_bidirectional_homolog_pairs": 0,
+      "rejected_short_or_partial_domain_only": 0
+    }
+  },
+  "homology_summary_vs_emsl50964_detected": {
+    "candidate_route_a1_gapfill_dark_eligible": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 1
+    },
+    "candidate_route_a2_exported_dark_eligible": {
+      "strict_full_length_homolog_pairs": 1,
+      "strict_distinct_families": 1,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 47
+    },
+    "control_known_function_exported_background_panel": {
+      "strict_full_length_homolog_pairs": 150,
+      "strict_distinct_families": 34,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 2710
+    },
+    "control_non_exported_dark_verified_soluble_background_panel": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 1
+    },
+    "lead_1_partner_archaellum_pilj_like": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 0
+    },
+    "lead_1_partner_pf04964_pilj_like": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 0
+    },
+    "lead_2_partner_slayer_csg_family1": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 0
+    },
+    "lead_2_partner_slayer_csg_family2": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 0
+    },
+    "lead_2_partner_slayer_csg_family3": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 0
+    },
+    "positive_control_conserved_nondark_thermoplasmatota": {
+      "strict_full_length_homolog_pairs": 197,
+      "strict_distinct_families": 16,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 521
+    },
+    "primary_lead_1_pilj_archaellum_context": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 0
+    },
+    "primary_lead_2_slayer_coat_context": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 0
+    },
+    "prior_heat_stress_candidate_example": {
+      "strict_full_length_homolog_pairs": 0,
+      "strict_distinct_families": 0,
+      "strict_linked_to_thermoplasmatota_mags": 0,
+      "moderate_bidirectional_homolog_pairs": 0
+    }
+  }
+}

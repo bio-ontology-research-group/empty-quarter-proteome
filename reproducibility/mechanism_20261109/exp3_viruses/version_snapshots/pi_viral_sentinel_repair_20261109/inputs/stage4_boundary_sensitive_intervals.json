@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "source_disposition_sha256": "6b5580ae87c9f9a45d7abeb52ca729766c3224205bc6b1d45ff150c9a7554a21",
+  "candidates": [
+    {
+      "host_mag": "43PRr3__self_SemiBin_469",
+      "host_phylum": "p__Thermoplasmatota",
+      "host_sample": "43PRr3",
+      "target_id": "44Dr2::44Dr2_4002037",
+      "target_seq_sha256": "6293eefbf49a4cf8cb58cb6aa2c6dd877e3e81450917bd018483580bf3028bb1",
+      "target_length": 67924,
+      "virus_samples": ["44Dr2"],
+      "disposition": "boundary_sensitive_provisional_not_primary_host_link",
+      "catalog_viral_interval": [1, 34828],
+      "fresh_checkv_viral_interval": [1, 43323],
+      "fresh_checkv_host_interval": [43324, 67924],
+      "nested_competitor_ids": ["44Dr2::44Dr2_4002037|provirus_1_34828"],
+      "intervals": [
+        {"name": "catalog_viral_core", "start": 1, "end": 34828, "interpretation": "catalog viral core; nested competitor makes MAPQ-filtered low coverage non-absence"},
+        {"name": "disputed_checkv_extension", "start": 34829, "end": 43323, "interpretation": "outside catalog viral core but inside longer CheckV viral interval; boundary-sensitive"},
+        {"name": "checkv_host_flank", "start": 43324, "end": 67924, "interpretation": "CheckV host interval; not viral evidence"}
+      ]
+    }
+  ]
+}

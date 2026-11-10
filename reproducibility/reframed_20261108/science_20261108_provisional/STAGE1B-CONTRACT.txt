@@ -1,0 +1,57 @@
+# Stage 1b -> Stage 3 Output Contract (`STAGE1B-CONTRACT.txt`)
+Date: 2026-11-09 (updated for `stage1b-final-review.txt` and `external-signalp-final-checks.txt`)
+Owner: Stage 1 / Stage 1b / Stage 2 / Stage 4 compute worker
+Stage 1b Slurm Job ID on Shaheen: `15867543` (`eq_sci_stg1b`, **COMPLETED** at `2026-11-09T02:06:09+03:00`, ExitCode `0:0`; all verified tables are live on Shaheen and synced locally).
+
+All Stage 1b verified outputs are written under:
+- Remote Shaheen: `/scratch/project/k10018/eq-science-20261108/results/`
+- Local mirror: `/home/leechuck/Documents/papers/empty-quarter/science-20261108/results/`
+
+## Strict Provenance & Consumption Rules for Stage 3 (`stage1b-final-review.txt`)
+1. **Never fall back to Stage 1 provisional promotion Booleans**: Stage 3 MUST consume the Stage 1b verified outputs (`final_candidate_promotion_eligible == True` and `verified_complete_interior_member == True`).
+2. **All supporting member loci verified against `genome_manifest.tsv` refined FASTAs**:
+   - Every one of the 237 authoritative refined Thermoplasmatota MAG FASTAs (`inputs/thermo237_refined_mags.tar.gz`) is verified against `inputs/genome_manifest.tsv` for exact SHA-256, contig count, base count, and zero duplicate contig IDs (`provenance_status == 'verified_exact_match_genome_manifest'`).
+   - All supporting member loci across all Route A1 and Route A2 candidate families are verified against these refined contigs (`task_a_stage1b_all_candidate_member_loci_verified.tsv.gz`), checking integer coordinates, bounds, strand, admissible Table 11 start codon (`has_admissible_start_codon`), terminal stop codon (`has_terminal_stop_codon`), zero internal stops (`n_internal_stops_translated == 0` and `n_internal_stops_in_candidate == 0`, never deleting internal `*`), and exact AA translation match.
+   - Family recurrence counts (`n_verified_complete_interior_member_loci`, `n_verified_complete_interior_genomes`, `n_verified_independent_genus_blocks`) are computed **exclusively** from member loci with `verified_complete_interior_member == True`.
+3. **Representative-own (`rep_own_*`) vs Family-member (`family_*`) evidence strictly separated**:
+   - `rep_own_*` columns report raw structural/profile/domain evidence joined strictly by exact protein ID to `actual_representative_gene` (`actual_representative_cat_id`).
+   - Explicit per-source pLDDT scale (`rep_own_plddt_source_scale == '0_to_1'`) is enforced with bounded range checks.
+   - `rep_has_qualified_pdb_structural_support` requires a qualified model on `actual_representative_gene` (`rep_coord_aa_length >= 100`, `plddt_0to1 >= 0.70`, `rep_own_model_length_matches_cds == True`) AND a Foldseek PDB hit with `rep_own_pdb_qtmscore >= 0.50` and `rep_own_pdb_qcov >= 0.50`.
+   - AFDB E-value alone does NOT count as whole-fold structural support (`rep_own_afdb_qtmscore_status == 'unavailable_in_c9_afdb_table'`).
+   - Family-aggregate / other-member evidence (`family_struct_model_member_id`, `family_pdb_match_member_id`, `family_hhsearch_member_id`, `family_interpro_rep_member_id`, `family_interpro_anymember_bits`, `family_c6_contributing_genes`) is stored in separate `family_*` columns with explicit contributing member IDs and is never relabelled `rep_own_*`.
+
+## 1. All-Member Locus Verification Table (`task_a_stage1b_all_candidate_member_loci_verified.tsv.gz`)
+- **Path**: `${EQ_SCIENCE_OUT}/results/task_a_stage1b_all_candidate_member_loci_verified.tsv.gz`
+- **Granularity**: Every member gene across all Route A1 and Route A2 candidate families in the 237 EQ Thermoplasmatota genomes.
+- **Columns**:
+  `family_id`, `gene`, `cat_id`, `genome`, `contig`, `start`, `end`, `strand`, `partial`, `length`, `contig_edge_status`, `tax_order`, `tax_genus`, `genus_singleton_block`, `checkm_completeness`, `contamination`, `refined_contig_present`, `refined_contig_bp_len`, `locus_within_contig_bounds`, `has_admissible_start_codon`, `cds_translation_exact_match`, `n_internal_stops_translated`, `n_internal_stops_in_candidate`, `has_terminal_stop_codon`, `verification_status`, `final_promotion_gate_pass`, `verified_complete_interior_member`.
+
+## 2. Verified Route A1 Family Ranking (`task_a_stage1b_route1_gapfill_family_ranking_verified.tsv`)
+- **Path**: `${EQ_SCIENCE_OUT}/results/task_a_stage1b_route1_gapfill_family_ranking_verified.tsv`
+- **Key Columns**:
+  - `selection_route`, `family_id`, `candidate_role`, `inherited_catalogue_dark`
+  - `actual_representative_gene`, `actual_representative_cat_id`, `actual_representative_genome`, `rep_coord_aa_length`
+  - `rep_verification_status`, `rep_has_admissible_start_codon`, `rep_has_terminal_stop_codon`, `rep_final_promotion_gate_pass`, `rep_contig_edge_status`
+  - `n_proposal_rows`, `n_distinct_proposal_genes`, `n_total_family_member_loci`, `n_verified_complete_interior_member_loci`, `n_verified_complete_interior_genomes`, `n_verified_independent_genus_blocks`
+  - `rep_own_signalp_class`, `rep_own_sp_any`, `rep_own_tmbed_S`, `rep_own_tm_helices`, `rep_own_tm_beta`, `rep_own_subthreshold_bitscore`
+  - `rep_own_colabfold_plddt_0to1`, `rep_own_esmfold_plddt_0to1`, `rep_own_plddt_source_scale`, `rep_own_model_length`, `rep_own_model_length_matches_cds`, `rep_own_model_qualified_ge100_plddt070`
+  - `rep_own_pdb_target`, `rep_own_pdb_qtmscore`, `rep_own_pdb_qcov`, `rep_has_qualified_pdb_structural_support`
+  - `rep_own_afdb_target`, `rep_own_afdb_evalue`, `rep_own_afdb_qcov`, `rep_own_afdb_qtmscore_status`
+  - `rep_own_hhsearch_pfam`, `rep_own_hhsearch_pfam_prob`, `rep_own_hhsearch_pdb_desc`, `rep_own_interpro_bits`, `rep_own_tcdb_hit`, `rep_own_merops_hit`, `rep_own_cazy_hit`, `rep_has_own_profile_domain_evidence`
+  - `family_struct_model_member_id`, `family_pdb_match_member_id`, `family_pdb_match_target`, `family_pdb_match_qtmscore`, `family_pdb_match_qcov`, `family_hhsearch_member_id`, `family_hhsearch_pfam`, `family_hhsearch_pfam_prob`, `family_interpro_rep_member_id`, `family_interpro_anymember_bits`, `family_c6_contributing_genes`
+  - `flanking_context_proposed_reactions`, `flanking_context_proposed_pathways`, `rep_flanking_context_max_score`, `rep_flanking_genes_pm5_summary`
+  - `final_candidate_promotion_eligible`
+
+## 3. Verified Route A2 Independent Exported-Dark Family Ranking (`task_a_stage1b_route2_exported_dark_family_ranking_verified.tsv`)
+- **Path**: `${EQ_SCIENCE_OUT}/results/task_a_stage1b_route2_exported_dark_family_ranking_verified.tsv`
+- **Key Columns**:
+  - `selection_route`, `family_id`, `candidate_role`, `actual_representative_gene`, `actual_representative_cat_id`, `actual_representative_genome`, `rep_coord_aa_length`
+  - `rep_verification_status`, `rep_has_admissible_start_codon`, `rep_has_terminal_stop_codon`, `rep_final_promotion_gate_pass`, `rep_contig_edge_status`
+  - `n_total_family_member_loci`, `n_verified_complete_interior_member_loci`, `n_verified_complete_interior_genomes`, `n_verified_independent_genus_blocks`, `frac_verified_complete_interior_loci`
+  - `frac_exported_sp_or_S`, `frac_sp_any`, `frac_tmbed_S`
+  - All `rep_own_*` and `family_*` evidence columns identical to Route A1 above
+  - `own_protein_evidence_category`, `own_protein_s_layer_and_repeat_audit`, `flanking_context_hypothesis_only`, `final_candidate_promotion_eligible`
+
+## 4. Authoritative Refined Genome FASTA Hash Manifest (`task_a_stage1b_refined_genome_fasta_hashes.tsv`)
+- **Path**: `${EQ_SCIENCE_OUT}/results/task_a_stage1b_refined_genome_fasta_hashes.tsv`
+- **Columns**: `genome`, `computed_sha256`, `manifest_expected_sha256`, `sha256_matches_manifest`, `n_refined_contigs`, `manifest_expected_contigs`, `contigs_match_manifest`, `total_refined_bp`, `manifest_expected_bp`, `bp_matches_manifest`, `provenance_status`, `refined_archive_member`, `shaheen_catalog_storage`, `shaheen_catalog_n_contigs`, `shaheen_catalog_contigs_match_refined`.

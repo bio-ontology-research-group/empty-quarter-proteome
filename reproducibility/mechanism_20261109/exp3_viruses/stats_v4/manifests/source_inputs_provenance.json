@@ -1,0 +1,137 @@
+{
+  "module": "exp3_viruses/stats_v4",
+  "production_slurm_job_id": "15894468",
+  "extraction_slurm_job_id": "15894666",
+  "executed_code": {
+    "stage4_statistical_audit_v4.py": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/stage4_statistical_audit_v4.py",
+      "package_path": "code/stage4_statistical_audit_v4.py",
+      "sha256": "f2f17db56a68b195326b492951df00ff4fd0a466b621ac4a792b28d2f083e63a",
+      "bytes": 71171
+    },
+    "sbatch_stage4_statistical_audit_v4.sh": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/sbatch_stage4_statistical_audit_v4.sh",
+      "package_path": "code/sbatch_stage4_statistical_audit_v4.sh",
+      "sha256": "1c49c0f1b6b7b3097d2f57b3cc202f76cf0f7eec8f8a9c7e112ae4302ca5b820",
+      "bytes": 1641
+    },
+    "test_stage4_statistical_audit_v4.py": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/tests/test_stage4_statistical_audit_v4.py",
+      "package_path": "tests/test_stage4_statistical_audit_v4.py",
+      "sha256": "035c947dcf97e9609369beb6e01e78335a7bd5a6f80472895076113ec2d708be",
+      "bytes": 19413
+    }
+  },
+  "inputs": {
+    "metadata": {
+      "shaheen_path": "/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/metadata.tsv",
+      "package_path": "inputs/metadata.tsv",
+      "sha256": "0d7b97c4a8b28d8b8a45cf9a986310594707f023ab6ec149735453212b2844ee",
+      "archived_in_package": true
+    },
+    "field_map": {
+      "shaheen_path": "/scratch/project/k10018/eq-ecology-mag-20261105/results/rund_20261106/matched_profiles.tsv",
+      "package_path": "inputs/matched_profiles.tsv",
+      "sha256": "338d153090e2a9be9d5994af1b0d80a66806cbad7469c9e4169dbb6f67ece382",
+      "archived_in_package": true
+    },
+    "mag_abundance_full_source": {
+      "shaheen_path": "/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/mag_abundance.tsv.gz",
+      "sha256": "4915c95b5a72dbef5490df1db8b9e88f4cf0c9390de081f82386addf2a1a635c",
+      "total_rows": 5005,
+      "total_sample_cols": 441,
+      "archived_in_package": false,
+      "compact_package_subset": {
+        "package_path": "inputs/mag_abundance_arch591_441samples.tsv.gz",
+        "sha256": "f4f81588d18d6e0ccfbcfcb129453879bb84690afd21d7dea37726fd7001485a",
+        "bytes": 195423,
+        "observed_arch591_rows": 580,
+        "missing_arch591_rows_retained_as_NA": 11,
+        "sample_cols": 441,
+        "extraction_job_id": "15894666"
+      }
+    },
+    "viral_tpm_full_source": {
+      "shaheen_path": "/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/viral_tpm.tsv.gz",
+      "sha256": "eaec54b7506ca9e3fc41376e566193f94d3bd2814c3814c6b2546c798276685b",
+      "total_rows": 18322,
+      "total_sample_cols": 441,
+      "archived_in_package": false,
+      "compact_package_subset": {
+        "package_path": "inputs/viral_tpm_candidate_targets_441samples.tsv.gz",
+        "sha256": "06a0cc03317ea6959dd6d462caffa3bc17c1805281788e6bba7fd9f2860db876",
+        "bytes": 43595,
+        "observed_stage3_viral_rows": 61,
+        "queried_stage3_viral_keys": 1839,
+        "sample_cols": 441,
+        "extraction_job_id": "15894666"
+      }
+    },
+    "taxonomy_all5438": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/taxonomy_reconciliation_all5438.tsv.gz",
+      "package_path": "inputs/taxonomy_reconciliation_all5438.tsv.gz",
+      "sha256": "1bcbdbedec9b16e9f901a989778a5f831d2f475ef4c0c3e559a47568c2f9c5a4",
+      "archived_in_package": true
+    },
+    "taxonomy_thermo237": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/taxonomy_reconciliation_thermo237.tsv",
+      "package_path": "inputs/taxonomy_reconciliation_thermo237.tsv",
+      "sha256": "13214500eea0fc3516b3262a21044344f550c87d4fa7ff3869fc9d958f9aaee8",
+      "archived_in_package": true
+    },
+    "screening_stage1": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage1_mag_screening_status.tsv",
+      "package_path": "results/stage1_mag_screening_status.tsv",
+      "sha256": "3a321a88048df6390f68e52aba92446266d84d0a07498c7832b2e2c1caded4fe",
+      "archived_in_package": true
+    },
+    "evidence_stage3": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage3_all591_archaeal_mag_host_evidence_v2.tsv",
+      "package_path": "results/stage3_all591_archaeal_mag_host_evidence_v2.tsv",
+      "sha256": "f5a744c70e7b234f2222346cc638e8b49a55078a444e450e46a50f90a7c7db1f",
+      "archived_in_package": true
+    },
+    "pairs_stage3": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage3_archaeal_virus_host_pairs_all_tiers_v2.tsv",
+      "package_path": "results/stage3_archaeal_virus_host_pairs_all_tiers_v2.tsv",
+      "sha256": "43cca6029736b7334d0755c5cdf97ca969994d064d570208cf1c5c6f52b5fbca",
+      "archived_in_package": true
+    },
+    "protein_members_47": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/exp4_47_member_evidence.tsv",
+      "package_path": "inputs/exp4_47_member_evidence.tsv",
+      "sha256": "5a1fc7984d400dbe05cd74fb444351d0c35c0b373277fe0f524396acc4a02fce",
+      "archived_in_package": true
+    },
+    "full_loci_stage1b": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/task_a_stage1b_all_candidate_member_loci_verified.tsv.gz",
+      "package_path": "inputs/task_a_stage1b_all_candidate_member_loci_verified.tsv.gz",
+      "sha256": "263673dc9a7213997d5ad0e97353b4b238cc3a4152ab0da68a5783fe571a6dca",
+      "archived_in_package": true
+    },
+    "stage1_summary": {
+      "shaheen_path": "/scratch/project/k10018/eq-science-20261108/results/stage1_summary.json",
+      "package_path": "inputs/stage1_summary.json",
+      "sha256": "9eafab23bb2c61ded74f217c91eeac8c639e555ccb1393bc4c3f1ce72c2aac02",
+      "archived_in_package": true
+    },
+    "stage1b_summary": {
+      "shaheen_path": "/scratch/project/k10018/eq-science-20261108/results/stage1b_summary.json",
+      "package_path": "inputs/stage1b_summary.json",
+      "sha256": "4f69536f225724d9475140be8f11e24911b763c49669b911f052f276edb64fc0",
+      "archived_in_package": true
+    },
+    "root_disposition_41Sr3": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_v4_root_disposition_41Sr3.json",
+      "package_path": "results/stage4_v4_root_disposition_41Sr3.json",
+      "sha256": "c36c9e8f7ff2d76046d679a9f20edbec973b5944d13d9864116374744eb37b1d",
+      "archived_in_package": true
+    },
+    "provisional_disposition_second_thermo": {
+      "shaheen_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_v4_provisional_disposition_second_thermo.json",
+      "package_path": "results/stage4_v4_provisional_disposition_second_thermo.json",
+      "sha256": "6b5580ae87c9f9a45d7abeb52ca729766c3224205bc6b1d45ff150c9a7554a21",
+      "archived_in_package": true
+    }
+  }
+}

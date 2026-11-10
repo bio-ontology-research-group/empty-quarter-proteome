@@ -1,0 +1,31 @@
+{
+  "job": "53865484",
+  "eligible_species_site_compartment_pairs": 20911,
+  "pilot_pairs": [
+    {
+      "genome": "34PRr3__single_SemiBin_77",
+      "site": "34",
+      "compartment": "PlantRoot",
+      "domain": "Thermoplasmatota",
+      "winter_sample": "F34PRr2",
+      "hot_sample": "S34PRr1",
+      "winter_raw_pct": 0.09855228,
+      "hot_raw_pct": 0.2054875,
+      "minimum_raw_pct": 0.09855228
+    },
+    {
+      "genome": "S43PRr1__single_SemiBin_52",
+      "site": "14",
+      "compartment": "PlantRoot",
+      "domain": "Bacteria",
+      "winter_sample": "F14PRr2",
+      "hot_sample": "S14PRr1",
+      "winter_raw_pct": 5.845989,
+      "hot_raw_pct": 10.219169,
+      "minimum_raw_pct": 5.845989
+    }
+  ],
+  "selection": "highest minimum raw relative abundance across a matched August/February pair, separately Thermoplasmatota and Bacteria; HSP20 strict carrier",
+  "pilot": "first5000000pairedrecords, technical coverage gate only, no seasonal inference from read prefix",
+  "full_gate": "at least5xprojected full depth and at least0.5 observed pilot breadth for marker and background; real full-depth gate >=5xmedian and>=.9breadth; expand site replication only if feasible"
+}

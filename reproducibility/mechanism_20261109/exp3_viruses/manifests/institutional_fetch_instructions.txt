@@ -1,0 +1,68 @@
+Institutional Fetch and Research Storage Instructions — Experiment 3 Archaeal-Viral CRISPR & Competitive Mapping
+Empty Quarter Microbiome Project — Mechanism 20261109
+Package: /home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp3_viruses
+
+1. POLICY & PRINCIPLES
+Per project policy and Robert Hoehndorf's explicit instructions:
+- Bulk datasets, raw paired-end metagenomic FASTQ reads, full MAG/assembly archives,
+  multi-gigabyte Bowtie2 indices, and raw/filtered BAM alignments remain on institutional
+  research storage (IBEX and Shaheen III).
+- Do not commit large binary/compressed archives (>50 MB), raw FASTQ/BAM files, or bulk
+  BLAST tabular dumps to GitHub.
+- This reproducibility package commits:
+  * Complete production source code, shared fail-closed contracts, and Slurm submission scripts (`code/`).
+  * Full unit and integration test suite (`tests/`, 51 tests including actual `samtools` BAM/coverage/depth verification).
+  * Compact frozen accepted result tables, target collision v2 audits, sequence-domain annotation results,
+    and root-reviewed candidate dispositions (`compact_evidence/`, `inputs/`).
+  * Deterministic SHA-256 checksums, code snapshots, Slurm execution receipts, and standalone verification (`manifests/`, `version_snapshots/`, `verify_frozen_outputs.py`).
+- Lightweight frozen-output verification runs locally using `uv run pytest` and
+  `uv run python verify_frozen_outputs.py` WITHOUT needing to fetch multi-gigabyte raw inputs or trigger heavy compute.
+- Full upstream reanalysis (reference building, post-build archive streaming validation, and competitive read mapping)
+  requires an authorized Slurm allocation on KAUST Shaheen III (`k10018` project, `workq` partition).
+
+2. INSTITUTIONAL STORAGE LOCATIONS
+
+A. Original Upstream Source Data (IBEX)
+   - Host: ilogin.ibex.kaust.edu.sa
+   - Primary group workspace: /ibex/scratch/projects/c2014/
+
+B. Production Supercomputer Execution Environment (Shaheen III)
+   - Host: shaheen.hpc.kaust.edu.sa (HPE Cray EX / AMD EPYC 9654 "Genoa", 384 logical CPUs, RealMemory=370000 MB per workq node)
+   - Project workspace:
+     /scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/
+   - Canonical 5,438 MAG archive & viral/plasmid catalogs on Shaheen:
+     /project/k10018/empty-quarter/data/mobilome/tars/refined_bins_all.tar
+     /project/k10018/empty-quarter/data/mobilome/catalogues/votu_vclust_1.3.1_ani95_af85/votu_reps.fna
+     /project/k10018/empty-quarter/data/mobilome/mobilome_inputs/all_viruses.fna
+     /project/k10018/empty-quarter/data/mobilome/mobilome_inputs/all_plasmids.fna
+     /scratch/project/k10018/work/mobilome_hyp_20261104/e4/derep40/coasm_viruses.fna
+   - Paired-end FASTQ reads for the 14 mapped samples:
+     /project/k10018/empty-quarter/data/reads/fastq/{SAMPLE}_R1.fastq.gz
+     /project/k10018/empty-quarter/data/reads/fastq/{SAMPLE}_R2.fastq.gz
+   - Existing structural model inventories audited for exact-sequence match:
+     /project/k10018/work/eq-annot-20261030/results/c10_structclust/colabfold/members.tsv.gz
+     /project/k10018/work/eq-annot-20261030/results/c10_structclust/esmfold/members.tsv.gz
+   - Conda & Singularity Containers on Shaheen:
+     Environment: /project/k10018/sw/envs/mapping (Bowtie2, samtools, Python 3.11)
+     Containers:
+       /project/k10018/sw/images/mobilome/blast.sif
+       /project/k10018/sw/images/eq-annot/hmmer.sif (SHA256: 256ba43741bd16715272fe29675be111c2d2665de754b73b9e2956ff21812764)
+       /project/k10018/sw/images/eq-annot/instrain.sif
+       /project/k10018/sw/images/eq-annot/foldseek.sif
+     Pfam-A HMM database:
+       /project/k10018/sw/db/pfam-ibex/pfam/Pfam-A.hmm (SHA256: a78a42d6faf265b6bfca59e8f062d06fae6083ce2c6e335d7b381f20b82b7903)
+
+3. RETRIEVAL COMMANDS FOR BULKY ARTIFACTS (HPC / WORKSTATION ONLY)
+
+# Retrieve post-build reference validation receipt and crosswalk (~778 MB TSV) once Job 15894659 completes:
+rsync -avz -e 'ssh -Jws-ts' \
+  shaheen:/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_reference/stage4_reference_validation_receipt.json \
+  ./compact_evidence/
+
+# Retrieve aggregated 14-sample competitive mapping summary tables once Job 15894661 completes:
+rsync -avz -e 'ssh -Jws-ts' \
+  shaheen:/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping_all_pairs_summary.tsv \
+  shaheen:/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping_all_boundary_intervals.tsv \
+  shaheen:/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping_all_contigs_evaluation.tsv \
+  shaheen:/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping_all_pairs_summary.json \
+  ./compact_evidence/

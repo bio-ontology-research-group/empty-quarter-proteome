@@ -1,0 +1,97 @@
+{
+  "branch": "exp1_metabolic",
+  "cluster": "shaheen",
+  "remote_root": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic",
+  "local_root": "/home/leechuck/Documents/papers/empty-quarter/mechanism-20261109/exp1_metabolic",
+  "submitted_at_utc": "2026-11-09T09:27:00Z",
+  "candidate_pool_scope": "observed_cohort_538_sbml_union_pool_not_full_modelseed_db",
+  "unit_and_integration_tests": {
+    "test_file": "tests/test_exp1_metabolic.py",
+    "total_tests": 13,
+    "local_result": "13 passed in 0.66s",
+    "shaheen_result": "13 passed in 1.68s (/project/k10018/sw/envs/mapping)"
+  },
+  "scientific_status_note": "No scientific results claimed yet; full downstream execution (Stages 3-4) is strictly gated by the Stage 2 Pilot24 scientific QC gate.",
+  "pilot_composition": {
+    "n_total_pilot_and_controls": 31,
+    "n_eq_pilot_primary": 24,
+    "n_external_hq_masking_controls": 7,
+    "hq_selection_note": "7 eligible HQ external comparator genomes selected out of 8 candidates based on strict completeness/contamination criteria."
+  },
+  "prior_runs": [
+    {
+      "job_id": "15873120",
+      "stage": "Stage 2 Pilot24",
+      "execution_state": "FAILED",
+      "exit_code": "2:0",
+      "elapsed": "00:27:57",
+      "failure_diagnosis": "validate_pilot24_scientific_gate raised RuntimeError because 1) solver_status 'infeasible' (MILP proven infeasibility, 72/620 rows) was omitted from the clean status set (causing solver_clean_completion_rate to calculate as 0.8806 < 0.95 instead of 0.9968 >= 0.95), and 2) DESERT_OA_AA_ADDITIONS lacked gapseq amino acids causing S3/S4 desert medium to be infeasible and leaving rxn_freq_df unpopulated when cross-referencing only S3/S4.",
+      "preserved_logs": [
+        "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/provenance/exp1_st2_pilot24_15873120.out",
+        "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/provenance/exp1_st2_pilot24_15873120.err"
+      ]
+    }
+  ],
+  "slurm_jobs": [
+    {
+      "stage": "Stage 1: 538/484 Inventory, Frozen 247 External Manifest Verification, Deterministic Pool Aggregation + Conflict/Balance Audit, Methanosarcina Biomass Template Audit, and Pilot24 + 7 HQ Masking Selection",
+      "job_id": "15873119",
+      "job_name": "exp1_st1_qc",
+      "script": "code/sbatch_exp1_stage1_inventory_and_qc.sh",
+      "dependency": "none",
+      "partition": "workq",
+      "cpus_per_task": 192,
+      "time_limit": "00:45:00",
+      "execution_state": "COMPLETED",
+      "exit_code": "0:0",
+      "elapsed": "00:00:21",
+      "node": "nid00382"
+    },
+    {
+      "stage": "Stage 2: Pilot24 EQ MAGs + 7 HQ Masking Reference Genomes Exact Binary MILP Ensembles (>=20 target solutions), Oxic/Anoxic Scenarios S1..S6, Biomass Perturbations B0..B4, Withdrawal/Add-Back/KO/FVA, GPR Masking Controls (10%, 20%, 30%), and Pilot24 Scientific QC Gate",
+      "job_id": "15873653",
+      "job_name": "exp1_st2_pilot24",
+      "script": "code/sbatch_exp1_stage2_pilot24.sh",
+      "dependency": "none",
+      "partition": "workq",
+      "cpus_per_task": 192,
+      "time_limit": "02:00:00",
+      "execution_state": "RUNNING",
+      "node": "nid00019"
+    },
+    {
+      "stage": "Stage 3 Array: Full 484-Genome (237 EQ + 247 Frozen Deduplicated External) Exact Binary MILP Ensembles, Scenarios S1..S6, Biomass Perturbations B0..B4, and Withdrawal/Add-Back/KO/FVA",
+      "job_id": "15873654",
+      "array_spec": "0-7",
+      "job_name": "exp1_st3_arr",
+      "script": "code/sbatch_exp1_stage3_array.sh",
+      "dependency": "afterok:15873653",
+      "partition": "workq",
+      "cpus_per_task": 192,
+      "time_limit": "04:00:00",
+      "execution_state": "PENDING"
+    },
+    {
+      "stage": "Stage 3 Collector: Full 484-Genome Aggregation, Cardinality Verification, Quality-Conditioned & Lineage-Matched Comparisons (Canonical vs Legacy GTDB), and Stage 4 Supported Candidate Deficiency Manifest Generation",
+      "job_id": "15873655",
+      "job_name": "exp1_st3_col",
+      "script": "code/sbatch_exp1_stage3_collect.sh",
+      "dependency": "afterok:15873654",
+      "partition": "workq",
+      "cpus_per_task": 64,
+      "time_limit": "01:00:00",
+      "execution_state": "PENDING"
+    },
+    {
+      "stage": "Stage 4: Candidate-Conditioned Missing-Enzyme & Transporter Verification across Curated Archaeal Reaction Reference Sequences, 237 Refined MAG Contigs (diamond blastx + contig-edge coordinates), Raw Sample Metagenomic Assemblies, and Pathway-Hole Synteny Dark Candidates",
+      "job_id": "15873656",
+      "job_name": "exp1_st4_def",
+      "script": "code/sbatch_exp1_stage4_deficiency_search.sh",
+      "dependency": "afterok:15873655",
+      "partition": "workq",
+      "cpus_per_task": 192,
+      "time_limit": "02:00:00",
+      "execution_state": "PENDING"
+    }
+  ]
+}

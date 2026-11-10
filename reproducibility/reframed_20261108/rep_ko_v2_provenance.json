@@ -1,0 +1,39 @@
+{
+  "figure_panel": "Figure 1c (encoded metabolic modules and transporter sets across 237 Thermoplasmatota species representatives)",
+  "downstream_summary_artifact": "reproducibility/darkmatter/round4_corrections/inputs/v2_thermo_metabolism_summary.tsv.gz",
+  "downstream_summary_sha256": "ebd28d0324e15bb4ab745ebe1430ab96154b66109112c7835bc92a0a8789c930",
+  "generating_script": "reproducibility/darkmatter/upstream_code/06_darkmatter/lineage_darkness_clean/scripts/v2_thermo_metabolism.py",
+  "generating_script_sha256": "c56ae24d8c5dcf6fb42050c23507fa3824d52ca5b28e0a93ef3fe4c863831fb3",
+  "upstream_ko_table": "/ibex/scratch/projects/c2014/rob/metagenomics/04_functional/repko_clean/results/rep_ko_v2.tsv",
+  "upstream_ko_table_pipeline": {
+    "readme": "reproducibility/darkmatter/upstream_code/04_functional/repko_clean/README.md",
+    "scripts": [
+      "reproducibility/darkmatter/upstream_code/04_functional/repko_clean/scripts/repko_1_annotate.sh",
+      "reproducibility/darkmatter/upstream_code/04_functional/repko_clean/scripts/repko_1a_bakta.sh",
+      "reproducibility/darkmatter/upstream_code/04_functional/repko_clean/scripts/repko_1b_eggnog.sh",
+      "reproducibility/darkmatter/upstream_code/04_functional/repko_clean/scripts/repko_2_submap.py",
+      "reproducibility/darkmatter/upstream_code/04_functional/repko_clean/scripts/repko_3_build.py"
+    ],
+    "bakta_db": "/ibex/reference/KSL/bakta/6.0/db",
+    "eggnog_mapper_db": "/ibex/reference/KSL/eggnog-mapper/2.1.12",
+    "n_representatives": 5438,
+    "n_unannotated": 0,
+    "reconciliation_breakdown": {
+      "contig_identical_raw_bins": 4304,
+      "contig_subset_sub_bins_remapped_via_repko_2_submap": 1010,
+      "newly_annotated_promoted_or_parent_raw_bins_via_repko_1_annotate": 124
+    }
+  },
+  "relationship_to_named_protein_products": {
+    "EQ-PROT-BAKTA-v1.0.0": {
+      "proteins_total": 19186792,
+      "relationship": "Separate canonical release Bakta protein product across the 5,438 species representatives. Figure 1c was NOT computed from the EQ-PROT-BAKTA-v1.0.0 release FASTA; it was computed from 04_functional/repko_clean/results/rep_ko_v2.tsv (built from per-sample Bakta 6.0 + eggNOG-mapper 2.1.12 annotations reconciled to post-refinement representative contigs)."
+    },
+    "EQ-PROT-PYRODIGAL-REP-v1.0.0": {
+      "proteins_total": 20451986,
+      "labelled_proteins_total": 20216302,
+      "unlabelled_proteins_total": 235684,
+      "relationship": "Separate Pyrodigal v3.x representative-genome protein product used for sequence-dark reconciliation (per_genome_reconciliation.tsv), OrthoFinder orthogroups, and SignalP 6.0 / TMHMM predictions in Figures 2a and 3a,b."
+    }
+  }
+}

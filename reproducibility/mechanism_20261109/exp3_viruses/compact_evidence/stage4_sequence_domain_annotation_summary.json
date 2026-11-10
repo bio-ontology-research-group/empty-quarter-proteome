@@ -1,0 +1,98 @@
+{
+  "candidate_selection": {
+    "all_unannotated_orfs_no_truncation": true,
+    "credible_targets": {
+      "48Sr2::48Sr2_190170": "ca78a3b6ce5eca9cb6608e7bd98477ff1c6b486ee21ba2ace1d45437ece707f1",
+      "55Dr2::55Dr2_75333": "2ce44dd790f5df57a12c34f48e8f2dac2cd0763b3708db89a3564137613e7d31",
+      "9Sr2::9Sr2_284237": "96ff8fd33cdd8a3b3dd1db91ba5645a14797b63723f26e1f5ff2d1be838ef32d",
+      "V60PRr2::V60PRr2_715976": "6b19afac4f46beca045911d44ba029c9ca73519ba02aea9ece23b27ee2284cee",
+      "coasm_48_PR::k127_4172870": "539fdb93c828be5fbdb780dfe3187da1b59659723d00e76a0256523809e785a9"
+    },
+    "extracted_ids_sha256": "d484914b08e4303155aa90d42e6d8570274e4ddba4dc36a46868cf057d1286d2",
+    "genes_per_target": {
+      "48Sr2::48Sr2_190170": 35,
+      "55Dr2::55Dr2_75333": 61,
+      "9Sr2::9Sr2_284237": 61,
+      "V60PRr2::V60PRr2_715976": 45,
+      "coasm_48_PR::k127_4172870": 60
+    },
+    "n_candidate_orfs": 262,
+    "n_candidate_proteins_extracted": 262
+  },
+  "elapsed_seconds": 122.41738891601562,
+  "methodology_distinction": {
+    "foldseek_structural_screen_status": "not_performed_no_exact_sequence_matched_existing_models",
+    "is_structural_coordinate_search": false,
+    "no_new_structure_predictions": true,
+    "pfam_search_type": "sequence_profile_hmm_domain_annotation"
+  },
+  "pfam_results": {
+    "n_hits": 325,
+    "n_unique_proteins_with_hits": 80,
+    "results_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_sequence_domain_annotation_results.tsv",
+    "results_sha256": "ed3483edb8d8a74283d7846e714e22c75793c9c70c8a4042415fb2fc0465e354"
+  },
+  "schema_version": 3,
+  "script_sha256": "8fb33e18af4dc6b165acc7a1b932c1ff5ec3cf1f09e1b4d2bdcac1c25a3abbd9",
+  "stage": "stage4_sequence_domain_annotation_and_existing_model_structural_followup",
+  "status": "sequence_domain_annotation_completed_verified",
+  "structural_followup": {
+    "candidate_model_audit_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_existing_structural_model_exact_sequence_audit.tsv",
+    "candidate_model_audit_sha256": "6e04564126e2f3fd83d9698e4c5256a8f0f1c7b24d6dd2b3041d9a1d087c2fe0",
+    "exact_models": [],
+    "foldseek_results_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_existing_model_foldseek_results.tsv",
+    "foldseek_results_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "foldseek_runs": [],
+    "model_inventory_provenance": {
+      "ColabFold_AF2": {
+        "candidate_inventory_entries": 0,
+        "db_lookup_sha256": "5207b5e1b0debb465ddd5457e0992529859670778e82bb504de2d6237a312c75",
+        "db_prefix": "/project/k10018/work/eq-annot-20261030/results/c10_structclust/colabfold/db/all",
+        "members_path": "/project/k10018/work/eq-annot-20261030/results/c10_structclust/colabfold/members.tsv.gz",
+        "members_sha256": "cac39a6faecf229df9ddd1d3513cdadf88d517156ef531fd93c1a1478a11a9a0"
+      },
+      "ESMFold": {
+        "candidate_inventory_entries": 0,
+        "db_lookup_sha256": "a665aec4e7a995af75c825c403bdc70bd4dad5d9e6a7f9493f20194802ac2f09",
+        "db_prefix": "/project/k10018/work/eq-annot-20261030/results/c10_structclust/esmfold/db/all",
+        "members_path": "/project/k10018/work/eq-annot-20261030/results/c10_structclust/esmfold/members.tsv.gz",
+        "members_sha256": "1486861718696ed28ed42e9b14b6b55b8558c828035d005ba4576204a8ba0a7a"
+      }
+    },
+    "n_exact_sequence_matched_models": 0,
+    "status": "not_performed_no_exact_sequence_matched_existing_models"
+  },
+  "timestamp_utc": "2026-11-09T15:41:26Z",
+  "tool_provenance": {
+    "command": [
+      "singularity",
+      "exec",
+      "-B",
+      "/project",
+      "-B",
+      "/scratch",
+      "/project/k10018/sw/images/eq-annot/hmmer.sif",
+      "hmmscan",
+      "--cpu",
+      "16",
+      "-E",
+      "0.001",
+      "--domtblout",
+      "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_unannotated_proteins_pfam_domtbl.txt",
+      "--tblout",
+      "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_unannotated_proteins_pfam_tbl.txt",
+      "/project/k10018/sw/db/pfam-ibex/pfam/Pfam-A.hmm",
+      "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_unannotated_viral_candidates.faa"
+    ],
+    "evalue_cutoff": 0.001,
+    "hmmer_container": "/project/k10018/sw/images/eq-annot/hmmer.sif",
+    "hmmer_container_sha256": "256ba43741bd16715272fe29675be111c2d2665de754b73b9e2956ff21812764",
+    "hmmer_version": "# HMMER 3.4 (Aug 2023); http://hmmer.org/",
+    "pfam": {
+      "declared_release": "not_declared_in_database",
+      "hmm_format_header": "HMMER3/f [3.3 | Nov 2019]"
+    },
+    "pfam_db": "/project/k10018/sw/db/pfam-ibex/pfam/Pfam-A.hmm",
+    "pfam_db_sha256": "a78a42d6faf265b6bfca59e8f062d06fae6083ce2c6e335d7b381f20b82b7903"
+  }
+}

@@ -1,0 +1,86 @@
+# EXPERIMENT 1 COUNTERFACTUAL CLOSURE (v2) AND POST-HOC 244-STRATA REPAIR (v2p1) REPORT
+Date: 2026-11-09
+Owned Package Directory: `/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic/counterfactual_review/`
+Owned Shaheen Directory: `/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/counterfactual_closure_v2/`
+Owned Audit Directory: `/home/leechuck/Documents/papers/empty-quarter/mechanism-20261109/review-20261109/counterfactual-audit/`
+
+================================================================================
+1. EXECUTIVE SUMMARY & PROVENANCE CHAIN (`v1` -> `v2` -> `v2p1`)
+================================================================================
+
+1. **Preserved `v1` Failed Thread-Order Record (`15897611`, `15897849`, `15897850`, `15898403`, `15898605`)**:
+   - In `15897849`, all `306 / 306` unique `(genome, scenario_id, B2)` cases verified primary baseline growth (`max |g0 - ledger_g0| = 9.89e-17`), but all `13,750 / 13,750` FVA min/max solves returned `fva_min_status = "numerical_error"` and `fva_max_status = "numerical_error"` (`raw_status = 4`). Note that the original `v1` instance table did not persist the raw solver `res.message` string per row; the subsequent thread-order diagnostic (`EXP1-FVA-THREAD-ORDER-DIAGNOSIS.txt`) reproduced the exact `raw_status = 4` failure and its solver message `"(HiGHS Status 0: Not Set)"`, showing that each spawned worker process first ran frozen `code_v2` `detect_closed_uptake_egc` / `solve_fba_highs` with default options (initializing HiGHS's process-global scheduler to hardware threads) before calling `solve_verified_linear_objective_highs` with `options={"threads": 1}`.
+   - All `v1` scripts, outputs, and Slurm logs are preserved untouched in `counterfactual_review/v1_failed_thread_order_record/` locally and `/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/counterfactual_closure/` on Shaheen.
+
+2. **Executed `v2` Single-Thread Worker-Initialization Run (`15901595`, `15901928`, `15901929`)**:
+   - **Executed `v2` scripts (preserved untouched)**:
+     * `counterfactual_closure_engine.py`: `a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4`
+     * `run_targeted_candidate_fva_closure.py`: `180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9`
+   - **Fix**: `_init_worker()` calls `initialize_highs_single_thread_scheduler()` (`options={"threads": 1}`) as the very first HiGHS call in every spawned worker process before importing or calling any frozen `code_v2` function, and `v2` persists `fva_min_message` and `fva_max_message` on every instance row.
+   - **2-Genome Spawned-Pool Pilot (`15901595`, `exp1_cf2_pilot`, `COMPLETED 0:0`, `00:00:55`)**:
+     * Replicated the uninitialized `default -> threads=1` failure (`status = 4`, `"(HiGHS Status 0: Not Set)"`) and verified the `threads=1 -> default -> threads=1` fix (`status = 0`) in fresh spawned subprocesses.
+     * Executed a 2-worker spawned pool across the first 2 genomes (`1PRr2__self_SemiBin_81` and `25PRr1__self_SemiBin_1693`, `7` cases, `307` candidate instances), achieving `307 / 307` (`100%`) optimal FVA intervals (`max_top30_abs_diff_vs_orig_wkf = 9.671e-17`).
+   - **8-Shard Parallel Array (`15901928_0..7`, `exp1_cf2_fva_arr`, `COMPLETED 0:0`, `00:00:49..00:00:50`) & Initial Collector (`15901929`, `exp1_cf2_collect`, `COMPLETED 0:0`, `00:00:46`)**:
+     * Verified all `306 / 306` primary reconstructions and solved all `13,750 / 13,750` (`100%`) candidate FVA intervals to optimality (`0` failed/unknown).
+     * Root independently audited and accepted the recorded numerical diagnostics and accounting scope (`13,750` instance numerics, `306` reconstructed cases, `3,369` overlapping top-30 matches with `max_diff = 1.725e-13`, and all `692,922` corrected counterfactual records) in `review-20261109/counterfactual-closure-v2-root/root_independent_counterfactual_v2_audit.json` (which notes that recorded numerical diagnostics and hashes were checked without independently replaying all full sparse-flux witnesses).
+
+3. **Post-Hoc `v2p1` 244-Strata 4-Key Collector Repair (`repair_244_strata_summary_posthoc_v2p1.py`)**:
+   - **Issue (`EXP1-STRATA-POSTHOC-REPAIR.txt`)**: In initial collector `15901929`, `build_candidate_fva_summaries()` indexed `cand_inst_df` by the 2-column key `(scenario_id, rxn_id)` instead of the full 4-column stratum key `(scenario_id, rxn_id, biomass_sensitivity_classification, followup_selection_tier)`. Because `R_rxn02322_c0` appears in two `biomass_sensitivity_classification` groups (`biomass_assumption_sensitive__vanishes_when_specialized_lipids_or_homospermidine_omitted` and `biomass_assumption_sensitive__vanishes_in_core_skeleton_perturbation`) across `S3`, `S4`, `S5`, and `S6` (`8` rows totaling `306` instances: `S3` = `75 + 5 = 80`; `S4` = `62 + 2 = 64`; `S5` = `77 + 4 = 81`; `S6` = `79 + 2 = 81`), the 2-key lookup repeated the full reaction-condition counts across those 8 rows (`sum(n_instances_in_stratum) = 14,056` instead of `13,750`).
+   - **Post-hoc repair (`repair_244_strata_summary_posthoc_v2p1.py`, SHA-256 `906fbe3c1e678582a9c2e1b47994811748d127d7e5373890f72f1d4b44579b68`)**:
+     * Preserves `counterfactual_closure_engine.py` (`a399da...`) and `run_targeted_candidate_fva_closure.py` (`180bdc...`) untouched so the exact code executed on `15901595`, `15901928`, and `15901929` is never overwritten.
+     * Preserves the initial `15901929` 2-key strata file (`9be0e6bed967a313497316c53c4870c3d900f20f4801536937e84e27e711a010`) and initial summary JSON (`40483c84b63ee3cb6a278d9bcb3d6b2fbfd7108ddb760abb2110f9640a2cebf9`) in `v2_initial_collector_15901929_record/`.
+     * Leaves all 5 other Root-accepted output files byte-for-byte untouched and regenerates `exp1_targeted_candidate_fva_244_strata_summary.tsv` (`60192ac693d2b5b0d576005b9ca6a79e08503013f99309cc595ec304a6031382`) and `exp1_counterfactual_closure_summary.json` (`c4c9b9ad6e6c5b69b9a0d08c2726747aef43d77a4e4935ddbf9157dc43e4d44c`) using the full 4-key partition (`sum(n_instances_in_stratum) == sum(n_hq_eq_genomes_requiring) == 13,750`, with exact row-wise equality across all `244` rows).
+
+================================================================================
+2. KEY NUMERICAL RESULTS & SCIENTIFIC INTERPRETATION BOUNDARIES
+================================================================================
+
+1. **Complete `3,872`-Case Counterfactual Protocol Ledger vs `306`-Case Targeted Candidate FVA Universe**:
+   - **Full Counterfactual Protocol Ledger (`exp1_counterfactual_complete_3872_case_ledger.tsv`)**: `484` unique genomes × `4` rich nutrient scenarios (`S3_anoxic_desert_oa_aa`, `S4_oxic_desert_oa_aa`, `S5_anoxic_defined_aa_precursors`, `S6_oxic_defined_aa_precursors`) × `2` biomass recipes (`B0_methanosarcina_template_baseline`, `B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420`) = `3,872` scheduled counterfactual cases (`3,863` evaluated feasible baseline cases + `9` non-evaluable cases: `8` `fba_verification_failed` and `1` `timeout_no_incumbent`).
+   - **Targeted Candidate FVA Universe (`exp1_targeted_candidate_fva_306_cases_union_qc.tsv`)**: `306` feasible `(genome, scenario_id, B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420)` cases across the `81` candidate EQ MAGs in `{S3, S4, S5, S6}` that have supported candidate deficiencies (`13,750` total `(genome, scenario_id, B2, rxn_id)` instances).
+   - **Candidate EQ MAG Quality Qualification (`review-20261109/exp1_candidate_selection_quality_qualification.json`)**: The `81` candidate EQ MAGs were selected using CheckM2 numeric thresholds `completeness >= 85%` and `contamination <= 5%` (`exp1_metabolic/code/stage3_collect_and_summarize_v4.py:634-652`; observed completeness range `85.39%..100.00%`, contamination range `0.00%..4.94%`), of which `59` also meet `completeness >= 90%` and `contamination <= 5%` and the remaining `22` have `85% <= completeness < 90%`. Preserved legacy `n_hq_eq_*` column names do not establish formal MIMAG high-quality status.
+
+2. **Targeted Candidate FVA across All `13,750` Instances (`exp1_targeted_candidate_fva_13750_instances.tsv.gz`)**:
+   - `306 / 306` unique `(genome, scenario_id, B2)` cases verified primary baseline growth (`max |g0 - ledger_g0| = 9.89e-17`, `max |g0 - wkf_g0| = 9.89e-17`) and passed closed-uptake EGC checks on the mathematical union network (`union_egc_check_status = "evaluated_optimal"`, `has_spurious_atp_cycle = False`).
+   - `13,750 / 13,750` (`100.00%`) instances achieved optimal and ordered FVA intervals (`0` failed/unknown; `max_fva_min_residual = 1.18e-10`, `max_fva_max_residual = 2.42e-10`).
+   - `3,369` instances overlapped the original alphabetical top-30 FVA cap (`max_top30_abs_diff_vs_orig_wkf = 1.725e-13`), and `10,381` instances beyond rank 30 were newly evaluated.
+   - Interval classification across the `13,750` instances:
+     * `strictly_positive_gt_1e-6`: `12,786` (`92.989%`)
+     * `strictly_negative_lt_-1e-6`: `947` (`6.887%`)
+     * `strictly_positive_trace_1e-12_to_1e-6`: `17` (`0.124%` — all `17` belong to `R_rxn01603_c0`, `7,8-dihydropteroate:L-glutamate ligase (ADP-forming)`, with `fva_min_flux_at_95pct_opt` in `8.924972e-7 .. 9.946032e-7`)
+     * `spans_zero_contains_zero_flux`: `0` (`0.000%`)
+     * `locked_zero_within_1e-12`: `0` (`0.000%`)
+   - Across all `63` distinct candidate reactions (`exp1_targeted_candidate_fva_63_reactions_summary.tsv`) and all `244` 4-key strata (`exp1_targeted_candidate_fva_244_strata_summary.tsv`), `100%` of instances (`13,750 / 13,750`) are accounted for and optimal.
+
+3. **Corrected `692,922`-Row Counterfactual Table (`exp1_full484_counterfactual_wkf_corrected_v2.tsv.gz`)**:
+   - **Withdrawals (`94,612` rows)**:
+     * `71,206` `required_in_primary_and_sampled_ensemble_union_lt_1e-4`
+     * `12,414` `primary_growth_lost_lt_1e-4__above_model_min_growth_union_bypass_ge_0.01_relaxed_union`
+     * `8,308` `primary_growth_retained_above_model_min_growth_ge_0.01_non_essential_or_stimulatory`
+     * `2,425` `primary_growth_retained_ge_1e-4_below_model_min_growth_lt_0.01`
+     * `205` `primary_growth_lost_lt_1e-4__partial_subthreshold_union_growth_1e-4_to_0.005` (separated from stimulatory uptake)
+     * `54` `primary_growth_lost_lt_1e-4__below_model_min_growth_union_0.005_to_0.01`
+     * Addback dispositions: `83,879` `restored_primary_growth_above_declared_threshold_0.99_min_growth` and `10,733` `not_applicable_primary_growth_retained_ge_1e-4`.
+   - **Knockouts (`598,310` rows)**:
+     * Unperformed primary-KO and addback fields are `NaN`/`None` with status `"not_performed_in_executed_code_v2"` (`0` non-NaN rows).
+     * FVA measurement sources: `472,039` `not_assayed_outside_top30_non_candidate_rxn`, `112,521` `original_executed_top30_fva`, `10,381` `verified_targeted_candidate_fva_closure_beyond_top30`, and `3,369` `original_top30_and_verified_targeted_candidate_fva_closure`.
+
+4. **Scientific Interpretation Limit**:
+   - All `13,750` candidate FVA intervals represent selected reaction flux requirements within relaxed ensemble-union networks constrained to `>= 95%` of the primary-model optimum (`0.95 * g0`); they do NOT establish physiological essentiality in vivo or novel biochemical function.
+
+================================================================================
+3. SHA-256 DIGESTS OF FINAL DELIVERABLES
+================================================================================
+
+- `counterfactual_closure_engine.py` (executed v2): `a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4`
+- `run_targeted_candidate_fva_closure.py` (executed v2): `180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9`
+- `repair_244_strata_summary_posthoc_v2p1.py` (posthoc v2p1): `906fbe3c1e678582a9c2e1b47994811748d127d7e5373890f72f1d4b44579b68`
+- `exp1_targeted_candidate_fva_306_cases_union_qc.tsv`: `e20ddc61260e05e5bdfbeade566b867bcfccd48f5cabc81194ab57548781e228`
+- `exp1_targeted_candidate_fva_13750_instances.tsv.gz`: `afa12bfa8b9c188e6298692ee6dc15604dd1786ecd4f8d153ddbd8c1586a69c1`
+- `exp1_targeted_candidate_fva_63_reactions_summary.tsv`: `e562777802d0a5f5623e3c5538780eaea2f74b5207009d642906b0f4edfb746e`
+- `exp1_targeted_candidate_fva_244_strata_summary.tsv` (repaired 4-key): `60192ac693d2b5b0d576005b9ca6a79e08503013f99309cc595ec304a6031382`
+- `exp1_counterfactual_complete_3872_case_ledger.tsv`: `5db32419b2b803346022d093d3b2a94067e620179bdd989b3216bcd2137d44fe`
+- `exp1_full484_counterfactual_wkf_corrected_v2.tsv.gz`: `2a3b203a2567bca7ce5c61f0166ebbde8ba76ac4ae566721a17561d809bbabdd`
+- `exp1_counterfactual_closure_summary.json` (updated v2p1): `c4c9b9ad6e6c5b69b9a0d08c2726747aef43d77a4e4935ddbf9157dc43e4d44c`
+- `v2_initial_collector_15901929_record/exp1_targeted_candidate_fva_244_strata_summary_v2_2key_15901929.tsv`: `9be0e6bed967a313497316c53c4870c3d900f20f4801536937e84e27e711a010`
+- `v2_initial_collector_15901929_record/exp1_counterfactual_closure_summary_v2_15901929.json`: `40483c84b63ee3cb6a278d9bcb3d6b2fbfd7108ddb760abb2110f9640a2cebf9`

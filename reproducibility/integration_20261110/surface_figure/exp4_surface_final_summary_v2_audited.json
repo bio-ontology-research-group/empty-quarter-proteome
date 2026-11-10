@@ -1,0 +1,145 @@
+{
+  "audit_version": "v2_followup_targeted_audit_20261109_revised_claim_boundaries",
+  "n_families_total": 1460,
+  "n_tests_total": 8760,
+  "full_universe_genus_joint_fdr": {
+    "n_tests": 8760,
+    "missing_p_treated_as_one": true,
+    "min_genus_joint_q": 1.0,
+    "n_genus_joint_significant_q_le_0_10": 0,
+    "n_genus_joint_significant_q_le_0_05": 0
+  },
+  "coordinate_audit_summary": {
+    "source_locus_table": "inputs/task_a_stage1b_all_candidate_member_loci_verified.tsv.gz",
+    "source_locus_sha256": "263673dc9a7213997d5ad0e97353b4b238cc3a4152ab0da68a5783fe571a6dca",
+    "independent_lead_pairs_tsv": "compact_evidence/exp4_lead_flank_coordinates_independent.tsv",
+    "lead1_pairs_recovered": 13,
+    "lead1_all_immediate_adjacent": true,
+    "lead1_all_same_strand": true,
+    "lead1_gap_bp_range": [
+      -4,
+      37
+    ],
+    "lead1_genus_blocks": 6,
+    "lead2_pairs_recovered": 11,
+    "lead2_all_immediate_adjacent": true,
+    "lead2_all_same_strand": true,
+    "lead2_gap_bp_range": [
+      -4,
+      6
+    ],
+    "lead2_genus_blocks": 5,
+    "total_lead_pairs_recovered": 24,
+    "total_flank_pairs_with_both_coordinates": 346,
+    "interpretation": "strengthens conserved local syntenic module hypothesis; does not prove cotranscription, exact biochemical function, desert adaptation, or independent genus significance; does not alter primary p-values (post-screen targeted audit)"
+  },
+  "model_availability_partition_global": {
+    "exact_sequence_hash_match": 565,
+    "missing_prediction_not_negative": 802,
+    "invalid_sequence_mismatch": 93,
+    "sum_partition": 1460,
+    "partition_valid": true
+  },
+  "model_availability_by_cohort": {
+    "candidate_route_a1_gapfill_dark_eligible": {
+      "n_families": 28,
+      "exact": 25,
+      "missing": 0,
+      "mismatch": 3
+    },
+    "candidate_route_a2_exported_dark_eligible": {
+      "n_families": 1190,
+      "exact": 504,
+      "missing": 601,
+      "mismatch": 85
+    },
+    "control_known_function_exported_background_panel": {
+      "n_families": 120,
+      "exact": 9,
+      "missing": 111,
+      "mismatch": 0
+    },
+    "control_non_exported_dark_verified_soluble_background_panel": {
+      "n_families": 120,
+      "exact": 27,
+      "missing": 88,
+      "mismatch": 5
+    },
+    "prior_heat_stress_candidate_example": {
+      "n_families": 2,
+      "exact": 0,
+      "missing": 2,
+      "mismatch": 0
+    }
+  },
+  "lead_1_audit_summary": {
+    "family_id": "22PRr1::22PRr1_2531955_3",
+    "guild": "surface_assembly_pilin_archaellin",
+    "seed_gene": "22PRr1__self_SemiBin_358_sub::22PRr1_2531955_3",
+    "seed_is_verified_interior": false,
+    "seed_model_verification_status": "exact_sequence_hash_match",
+    "verified_interior_representative": "1PRr2__self_SemiBin_81::1PRr2_468829_3",
+    "representative_model_status": "no_model_available",
+    "primary_joint_q": 0.0020607928422699,
+    "primary_significant_at_0_10": true,
+    "primary_significant_at_0_05": true,
+    "genus_raw_p": 0.0419246646026831,
+    "genus_joint_q": 1.0,
+    "genus_significant_at_0_10": false,
+    "genus_significant_at_0_05": false,
+    "n_observed_flanking_loci": 13,
+    "n_context_genus_blocks": 6,
+    "n_genus_derep_retained_loci": 5,
+    "n_genus_derep_retained_genus_blocks": 5,
+    "structural_fold_status": "no_qualifying_fold_match_to_tested_panel(max_qtm=0.2898_to_8RH5_ArlB;5O4U_FlaB0=0.2729)",
+    "partner_provenance": "conserved_adjacency_to_dark_family_F37Dr2_with_bacterial_PilJ_PF04964_match_not_known_archaeal_machinery",
+    "local_neighbourhood_scope": "core_archaeal_pilin_machinery_unannotated_in_surveyed_plusminus5_window;genome_wide_status_undetermined;all_13_context_pairs_verified_adjacent_cooriented_gaps_-4_to_37bp",
+    "disposition": "uncertain_insufficient_evidence"
+  },
+  "lead_2_audit_summary": {
+    "family_id": "V60PRr2::V60PRr2_1314979_4",
+    "guild": "cell_coat_or_envelope",
+    "seed_gene": "V60PRr2__self_SemiBin_84::V60PRr2_1314979_4",
+    "seed_is_verified_interior": false,
+    "seed_model_verification_status": "exact_sequence_hash_match",
+    "verified_interior_representative": "V47PRr1__self_SemiBin_699_sub::V47PRr1_105096_18",
+    "representative_model_status": "no_model_available",
+    "primary_joint_q": 0.0003505885089924,
+    "primary_significant_at_0_10": true,
+    "primary_significant_at_0_05": true,
+    "genus_raw_p": 0.0002175426383571,
+    "genus_joint_q": 1.0,
+    "genus_significant_at_0_10": false,
+    "genus_significant_at_0_05": false,
+    "n_observed_flanking_loci": 11,
+    "n_context_genus_blocks": 5,
+    "n_genus_derep_retained_loci": 4,
+    "n_genus_derep_retained_genus_blocks": 4,
+    "structural_fold_status": "no_qualifying_fold_match_to_tested_panel;no_alignment_to_positive_S_layer_7PTR;competing_matches_to_3J9X(0.2141)_and_8CE8_E(0.2395)",
+    "partner_provenance": "flanking_partner_with_Pfam_PF18204_PF10731_csg_7PTP_D_match_not_genus_replicated_under_FDR;does_not_confer_function_to_candidate",
+    "local_neighbourhood_scope": "surveyed_plusminus5_window;all_11_context_pairs_verified_adjacent_cooriented_gaps_-4_to_6bp;does_not_confer_S_layer_function_to_candidate",
+    "disposition": "uncertain_insufficient_evidence"
+  },
+  "deep_dive_dossiers_summary": {
+    "n_dossiers_evaluated": 47,
+    "n_members_audited_total": 428,
+    "n_members_verified_interior": 326,
+    "n_members_with_exact_sequence_model": 32,
+    "n_verified_interior_members_with_exact_model": 27,
+    "n_families_with_completed_msa": 29,
+    "n_families_with_deferred_msa": 18,
+    "n_families_with_zero_aligned_when_deferred": 18,
+    "disposition_counts": {
+      "uncertain_insufficient_evidence": 38,
+      "exploratory_fold_or_motif_candidate_no_operon_convergence": 9
+    }
+  },
+  "output_files": {
+    "eval_audited_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp4_surface/results/followup_v2_review/exp4_surface_family_evaluation_v2_audited.tsv",
+    "neighbourhood_audited_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp4_surface/results/followup_v2_review/exp4_surface_neighbourhood_panels_v2_audited.tsv",
+    "member_evidence_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp4_surface/results/followup_v2_review/exp4_47_member_evidence.tsv",
+    "flank_evidence_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp4_surface/results/followup_v2_review/exp4_47_flank_evidence.tsv",
+    "dossiers_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp4_surface/results/followup_v2_review/exp4_47_candidate_dossiers.tsv",
+    "cohort_audited_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp4_surface/results/followup_v2_review/exp4_cohort_architecture_and_role_comparison_v2_audited.tsv"
+  }
+}

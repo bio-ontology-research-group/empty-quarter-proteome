@@ -1,0 +1,262 @@
+{
+  "total_genomes": 484,
+  "cohort_counts": {
+    "EQ_MAG": 237,
+    "GTDB_r232_rep": 218,
+    "MGnify": 29
+  },
+  "usable_counts": {
+    "checkm_v1_usable_total": 218,
+    "checkm_v1_usable_by_source": {
+      "EQ_MAG": 0,
+      "GTDB_r232_rep": 218,
+      "MGnify": 0
+    },
+    "checkm2_method_family_compatible_total": 455,
+    "checkm2_method_family_compatible_by_source": {
+      "EQ_MAG": 237,
+      "GTDB_r232_rep": 218,
+      "MGnify": 0
+    },
+    "checkm2_shared_order_stratum_usable_total": 293,
+    "checkm2_shared_order_stratum_usable_by_cohort": {
+      "EQ_desert": 234,
+      "external_comparator": 59
+    },
+    "reported_quality_present_total": 266,
+    "formal_mimag_known_total": 218
+  },
+  "gtdb_join": {
+    "target_count": 218,
+    "matched_count": 218,
+    "taxonomy_mismatches": 0,
+    "official_mimag_counts": {
+      "high": 24,
+      "medium": 194,
+      "low": 0
+    },
+    "numeric_comp90_cont5_counts": {
+      "checkm_v1": 108,
+      "checkm2": 82
+    }
+  },
+  "taxonomy_verification_summary": {
+    "EQ_MAG": {
+      "comparison_type": "inventory_only_no_independent_source",
+      "independently_verified": 0,
+      "unverified_copied_inventory": 237
+    },
+    "GTDB_r232_rep": {
+      "comparison_type": "official_gtdb_r232_release_metadata",
+      "exact_full_string_matches": 218,
+      "order_matches": 218,
+      "mismatches": 0
+    },
+    "MGnify": {
+      "comparison_type": "gtdbtk_v2.7.2_r232_classify_wf_rerun",
+      "exact_full_string_matches": 21,
+      "order_matches": 29,
+      "genus_or_species_differences": 8,
+      "order_mismatches": 0
+    }
+  },
+  "mgnify_provenance": {
+    "total_mgnify": 29,
+    "verified_exact_version_and_identity": 0,
+    "ncbi_accession_match_status_counts": {
+      "no_ncbi_accession": 9,
+      "unversioned_no_gtdb_r232_match": 13,
+      "unversioned_candidate_only": 7
+    },
+    "candidate_matches": [
+      {
+        "genome": "MGYG000479240",
+        "reported_ncbi_accession": "GCA_013329505",
+        "match_status": "unversioned_candidate_only",
+        "candidate_gtdb_r232_accessions": [
+          "GB_GCA_013329505.1"
+        ],
+        "mgnify_reported_completeness": 76.49,
+        "mgnify_reported_contamination": 1.12
+      },
+      {
+        "genome": "MGYG000510876",
+        "reported_ncbi_accession": "GCA_014894715",
+        "match_status": "unversioned_candidate_only",
+        "candidate_gtdb_r232_accessions": [
+          "GB_GCA_014894715.1"
+        ],
+        "mgnify_reported_completeness": 97.69,
+        "mgnify_reported_contamination": 1.44
+      },
+      {
+        "genome": "MGYG000520722",
+        "reported_ncbi_accession": "GCA_002254885",
+        "match_status": "unversioned_candidate_only",
+        "candidate_gtdb_r232_accessions": [
+          "GB_GCA_002254885.1"
+        ],
+        "mgnify_reported_completeness": 72.91,
+        "mgnify_reported_contamination": 0.1
+      },
+      {
+        "genome": "MGYG000522084",
+        "reported_ncbi_accession": "GCA_011043315",
+        "match_status": "unversioned_candidate_only",
+        "candidate_gtdb_r232_accessions": [
+          "GB_GCA_011043315.1"
+        ],
+        "mgnify_reported_completeness": 82.13,
+        "mgnify_reported_contamination": 0.38
+      },
+      {
+        "genome": "MGYG000523080",
+        "reported_ncbi_accession": "GCA_021158325",
+        "match_status": "unversioned_candidate_only",
+        "candidate_gtdb_r232_accessions": [
+          "GB_GCA_021158325.1"
+        ],
+        "mgnify_reported_completeness": 94.33,
+        "mgnify_reported_contamination": 4.18
+      },
+      {
+        "genome": "MGYG000524847",
+        "reported_ncbi_accession": "GCA_036448395",
+        "match_status": "unversioned_candidate_only",
+        "candidate_gtdb_r232_accessions": [
+          "GB_GCA_036448395.1"
+        ],
+        "mgnify_reported_completeness": 82.79,
+        "mgnify_reported_contamination": 0.33
+      },
+      {
+        "genome": "MGYG000524957",
+        "reported_ncbi_accession": "GCA_036479795",
+        "match_status": "unversioned_candidate_only",
+        "candidate_gtdb_r232_accessions": [
+          "GB_GCA_036479795.1"
+        ],
+        "mgnify_reported_completeness": 59.81,
+        "mgnify_reported_contamination": 0.54
+      }
+    ]
+  },
+  "order_breakdown": {
+    "EQ_desert": {
+      "o__JACQPN01": 153,
+      "o__JACPAO01": 51,
+      "o__SW-10-69-26": 30,
+      "o__RBG-16-68-12": 1,
+      "o__": 2
+    },
+    "external_comparator": {
+      "o__DHVEG-1": 131,
+      "o__UBA202": 46,
+      "o__GCA-002838935": 1,
+      "o__SW-10-69-26": 6,
+      "o__UBA9212": 2,
+      "o__JACPAO01": 45,
+      "o__JACQPN01": 16
+    }
+  },
+  "shared_order_counts": {
+    "EQ_desert": 234,
+    "external_comparator": 67,
+    "total": 301
+  },
+  "quality_metrics": {
+    "EQ_desert": {
+      "checkm2_completeness": {
+        "n": 237,
+        "mean": 81.63,
+        "std": 13.3,
+        "min": 51.11,
+        "median": 85.42,
+        "max": 100.0
+      },
+      "checkm2_contamination": {
+        "n": 237,
+        "mean": 4.34,
+        "std": 2.16,
+        "min": 0.0,
+        "median": 4.2,
+        "max": 9.86
+      }
+    },
+    "GTDB_r232_rep": {
+      "checkm_completeness": {
+        "n": 218,
+        "mean": 88.1,
+        "std": 8.7,
+        "min": 57.07,
+        "median": 90.63,
+        "max": 99.62
+      },
+      "checkm_contamination": {
+        "n": 218,
+        "mean": 2.19,
+        "std": 1.56,
+        "min": 0.0,
+        "median": 2.0,
+        "max": 8.8
+      },
+      "checkm2_completeness": {
+        "n": 218,
+        "mean": 86.0,
+        "std": 9.02,
+        "min": 56.41,
+        "median": 88.05,
+        "max": 100.0
+      },
+      "checkm2_contamination": {
+        "n": 218,
+        "mean": 1.15,
+        "std": 1.15,
+        "min": 0.0,
+        "median": 0.74,
+        "max": 5.57
+      }
+    },
+    "MGnify": {
+      "reported_quality_completeness": {
+        "n": 29,
+        "mean": 76.35,
+        "std": 14.69,
+        "min": 54.97,
+        "median": 75.87,
+        "max": 99.6
+      },
+      "reported_quality_contamination": {
+        "n": 29,
+        "mean": 1.12,
+        "std": 1.18,
+        "min": 0.02,
+        "median": 0.74,
+        "max": 4.39
+      }
+    }
+  },
+  "file_receipts": {
+    "inventory": {
+      "path": "/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic/compact_evidence/exp1_model_inventory_and_qc_484.tsv",
+      "sha256": "044014df6aa1f7bf9b5d4fcaea3a2daea0ef62f3dfcb3c79ef08e54b0347eb2b"
+    },
+    "gtdb_r232": {
+      "path": "mechanism-20261109/review-20261109/gtdb-r232-source/ar53_metadata_r232.tsv.gz",
+      "sha256": "d6ddc0f95d269a6e31af8329e0c3c2af0d90d5dad48f5b3e9d820f340951d8c3",
+      "md5": "0f51fe6f01b4ccbf0d9bab6c07df87af"
+    },
+    "checkm2_refined": {
+      "path": "/home/leechuck/Public/software/empty-quarter-paper-repos/data-paper/evidence/mag-catalogue-20261024/source/checkm2_refined_quality_report.tsv",
+      "sha256": "9cbea621317ed8cd0d780d569b9c8fa2d560ddc9957c2659ba3b13bb2dfdcfe0"
+    },
+    "mgnify_comparators": {
+      "path": "science-20261108/inputs/v2_thermo_relatives_comparators.tsv",
+      "sha256": "fa9eacde99aba982756a16903818125b371e2b5dc94afb9ad358c5ab3a999bb6"
+    },
+    "mgnify_gtdbtk": {
+      "path": "science-20261108/inputs/v2_thermo_relatives_gtdbtk_mgnify.tsv",
+      "sha256": "d411d7b1205736bc4a5e3c524b244fc1fe642e99fc628b450a134ad1f93cfe51"
+    }
+  }
+}

@@ -1,0 +1,390 @@
+{
+  "recovery_execution": {
+    "commands_executed_in_recovery": [
+      {
+        "command": [
+          "samtools",
+          "faidx",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_reference/unified_competitive_reference.fna",
+          "VIRUS_TARGET__55Dr2::55Dr2_75333"
+        ],
+        "description": "extract exact reference VIRUS_TARGET__55Dr2::55Dr2_75333",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "faidx",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_reference/unified_competitive_reference.fna",
+          "VIRUS_TARGET__coasm_48_PR::k127_4172870"
+        ],
+        "description": "extract exact reference VIRUS_TARGET__coasm_48_PR::k127_4172870",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "faidx",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_reference/unified_competitive_reference.fna",
+          "VIRUS_TARGET__44Dr2::44Dr2_4002037"
+        ],
+        "description": "extract exact reference VIRUS_TARGET__44Dr2::44Dr2_4002037",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "faidx",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_reference/unified_competitive_reference.fna",
+          "VIRUS_TARGET__V60PRr2::V60PRr2_715976"
+        ],
+        "description": "extract exact reference VIRUS_TARGET__V60PRr2::V60PRr2_715976",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "faidx",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_reference/unified_competitive_reference.fna",
+          "VIRUS_TARGET__9Sr2::9Sr2_284237"
+        ],
+        "description": "extract exact reference VIRUS_TARGET__9Sr2::9Sr2_284237",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "faidx",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_reference/unified_competitive_reference.fna",
+          "VIRUS_TARGET__48Sr2::48Sr2_190170"
+        ],
+        "description": "extract exact reference VIRUS_TARGET__48Sr2::48Sr2_190170",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "faidx",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_reference/unified_competitive_reference.fna",
+          "VIRUS_TARGET__41Sr3::41Sr3_56779"
+        ],
+        "description": "extract exact reference VIRUS_TARGET__41Sr3::41Sr3_56779",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "quickcheck",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_raw.bam"
+        ],
+        "description": "quickcheck existing raw BAM",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "quickcheck",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam"
+        ],
+        "description": "quickcheck existing filtered BAM",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "view",
+          "-c",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_raw.bam"
+        ],
+        "description": "count all raw records",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "view",
+          "-c",
+          "-F",
+          "2820",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_raw.bam"
+        ],
+        "description": "count primary mapped raw records",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "view",
+          "-c",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam"
+        ],
+        "description": "count filtered records",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "view",
+          "-H",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam"
+        ],
+        "description": "read filtered BAM header",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "depth",
+          "-a",
+          "-d",
+          "0",
+          "-Q",
+          "20",
+          "-r",
+          "VIRUS_TARGET__44Dr2::44Dr2_4002037:1-34828",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam"
+        ],
+        "description": "boundary interval depth VIRUS_TARGET__44Dr2::44Dr2_4002037:1-34828",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "view",
+          "-c",
+          "-q",
+          "20",
+          "-F",
+          "3844",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam",
+          "VIRUS_TARGET__44Dr2::44Dr2_4002037:1-34828"
+        ],
+        "description": "boundary interval reads VIRUS_TARGET__44Dr2::44Dr2_4002037:1-34828",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "depth",
+          "-a",
+          "-d",
+          "0",
+          "-Q",
+          "20",
+          "-r",
+          "VIRUS_TARGET__44Dr2::44Dr2_4002037:34829-43323",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam"
+        ],
+        "description": "boundary interval depth VIRUS_TARGET__44Dr2::44Dr2_4002037:34829-43323",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "view",
+          "-c",
+          "-q",
+          "20",
+          "-F",
+          "3844",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam",
+          "VIRUS_TARGET__44Dr2::44Dr2_4002037:34829-43323"
+        ],
+        "description": "boundary interval reads VIRUS_TARGET__44Dr2::44Dr2_4002037:34829-43323",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "depth",
+          "-a",
+          "-d",
+          "0",
+          "-Q",
+          "20",
+          "-r",
+          "VIRUS_TARGET__44Dr2::44Dr2_4002037:43324-67924",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam"
+        ],
+        "description": "boundary interval depth VIRUS_TARGET__44Dr2::44Dr2_4002037:43324-67924",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "samtools",
+          "view",
+          "-c",
+          "-q",
+          "20",
+          "-F",
+          "3844",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam",
+          "VIRUS_TARGET__44Dr2::44Dr2_4002037:43324-67924"
+        ],
+        "description": "boundary interval reads VIRUS_TARGET__44Dr2::44Dr2_4002037:43324-67924",
+        "returncode": 0
+      },
+      {
+        "command": [
+          "/sw/ex113genoa/singularity/ce/4.3.2/bin/singularity",
+          "exec",
+          "-B",
+          "/project",
+          "-B",
+          "/scratch",
+          "-B",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/instrain_191_overlay/SNVprofile.py:/usr/local/lib/python3.8/site-packages/inStrain/SNVprofile.py:ro",
+          "/project/k10018/sw/images/eq-annot/instrain.sif",
+          "inStrain",
+          "profile",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/V60PRr2_mapq20.bam",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/focal_6b19afac4f46beca.fna",
+          "-o",
+          "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/inStrain_source_primary_6b19afac4f46beca",
+          "-p",
+          "32",
+          "--min_mapq",
+          "19",
+          "--min_read_ani",
+          "0.95"
+        ],
+        "description": "inStrain source_primary profile 6b19afac4f46beca045911d44ba029c9ca73519ba02aea9ece23b27ee2284cee (with namespaced-header rsplit overlay)",
+        "returncode": 0
+      }
+    ],
+    "hostname": "nid00034",
+    "instrain_namespaced_header_overlay": {
+      "container_runtime_verified": true,
+      "container_target_file": "/usr/local/lib/python3.8/site-packages/inStrain/SNVprofile.py",
+      "original_snvprofile_py_sha256": "a2ec6c7d3671185210e6fcac987fb2bec471b6fc6a83765e1ebe2233f129c55e",
+      "overlay_manifest_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/instrain_191_overlay/instrain_191_namespaced_header_overlay_manifest.json",
+      "overlay_manifest_sha256": "94fb103001ce4cc1a7fb6e1130ab3207c23def7e73d8fc03a4185d7f3c63bfc9",
+      "patch_diff_sha256": "963cc11e71b505b0cf024bed5311df829ae6a97f14eec8bb02a22f60a23c009a",
+      "patched_snvprofile_py_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/instrain_191_overlay/SNVprofile.py",
+      "patched_snvprofile_py_sha256": "f65ac08f1997f6a15b38902aee44afba75de7a6384b3539d66c362ec94d74bcd",
+      "singularity_bind_arg": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/instrain_191_overlay/SNVprofile.py:/usr/local/lib/python3.8/site-packages/inStrain/SNVprofile.py:ro",
+      "tool_version": "1.9.1"
+    },
+    "preserved_failed_attempts": [
+      {
+        "failure_reason": "inStrain 1.9.1 SNVprofile.py _load_special line 766 `scaff, mm = thing.split('::')` raised `ValueError: too many values to unpack (expected 2)` during Step 4 `profile_genome_wide` on namespaced reference header `VIRUS_TARGET__V60PRr2::V60PRr2_715976`.",
+        "original_profile_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/inStrain_source_primary_6b19afac4f46beca",
+        "preserved_failed_profile_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/inStrain_source_primary_6b19afac4f46beca.failed_15905725_1_unpatched_split_bug",
+        "preserved_file_sha256": {
+          "log/log.log": "e46bf425c97b8caa69c099f5bddaf06753051ecfa3bbfae5564a259fb1d8db96",
+          "output/inStrain_source_primary_6b19afac4f46beca_SNVs.tsv": "1f38f4513d820854aeb3fe15ee15e3fde9a31b10837a6128cff3d5c6ce45d1e3",
+          "output/inStrain_source_primary_6b19afac4f46beca_linkage.tsv": "6e19bf0f488bbc2f26c81b9ab401aff0429bbb77f3c9ef990a1359c8656275c8",
+          "output/inStrain_source_primary_6b19afac4f46beca_mapping_info.tsv": "b139c24e843fa4dd9a8b1dacdbe7b2eb5730d036a8e0d31bc5049cdbf3b07167",
+          "output/inStrain_source_primary_6b19afac4f46beca_scaffold_info.tsv": "ab82da2ce04ab22c00e1ab969468f492bb95ed1e31e112d459e140ac2c518e0e",
+          "raw_data/Rdic.json": "fe1f94c13506e52c73c3696fba8d431203774a8149e2f3890e443d097b886c2c",
+          "raw_data/_README.txt": "cab4e4d394cdf18fc95a4ada66522b22076efd197efbecbba7d2a7d18b4b0e2e",
+          "raw_data/attributes.tsv": "d59a58d8e31cdad84c9f655ba485fe6385e103f9b869a8afd6348734ec1cf17e",
+          "raw_data/bin2length.json": "cab89e71e60eb987b024b9230e3d8af1c097563674d1cd47829082143ce42ae3",
+          "raw_data/clonT.hd5": "0bff5429ac6f6c620e7214ca8a568a9a4cd96b15bba2185eafce05065d73ddff",
+          "raw_data/clonTR.hd5": "58eea79fef298d4772c54935f4c3cc7aff413ecd565d0e0637e86dd4bba290c9",
+          "raw_data/covT.hd5": "9fe6a55a9e942df15aba591a4afa5c0b9fc110108a79519c8648561b6217bbcd",
+          "raw_data/cumulative_scaffold_table.csv.gz": "0b9cdf65e3cad319eba314b92cfaf84028aa186094d70d6196783bb5b00ca181",
+          "raw_data/cumulative_snv_table.csv.gz": "272e1120e86b26e818e6b1ac72c37c82c5c8d5964702906e73267c8586e0f66b",
+          "raw_data/mapping_info.csv.gz": "ad1d53db5976d74786d3ab1a09942fed187868529e28ced552cfc334c262f29f",
+          "raw_data/raw_linkage_table.csv.gz": "ef35b4fd73246220f8b05a2edae8fd186f0265fbeebc5e5bcb1c93eaa5996900",
+          "raw_data/raw_snp_table.csv.gz": "cf6df470386f9ea09bff469c55b7a45e46c9aacd916ddaf2117576b4f2d25634",
+          "raw_data/scaffold2bin.json": "5ef3bd5816601c39571e84c20fd84ed49c74ec7637abe392a716205a16c66a99",
+          "raw_data/scaffold2length.json": "8e10dd22e3714f8d3f05262b11f6bff2add9480577a6550767277edb31264393",
+          "raw_data/scaffold_2_mm_2_read_2_snvs.pickle": "bfce13fc2f13ad950016bb48ccbbbd04ce13be07c748476dde1f940fcdfa0d52",
+          "raw_data/scaffold_list.txt": "a99552fd358f2072014df98a894f02eddb311dcb25c2abfd858a1b8e51cddb98"
+        },
+        "source_slurm_job_id": "15905725_1"
+      },
+      {
+        "failure_reason": "Patched inStrain 1.9.1 profile completed (`..:: inStrain profile finished ::..`), but pre-reconciliation posthoc qualification failed with `ValueError: SNVs.tsv non-cryptic row count (22) for VIRUS_TARGET__V60PRr2::V60PRr2_715976 does not match scaffold_info divergent_site_count (24)` before raw cumulative variant reconciliation (22 non-cryptic exported + 2 cryptic excluded = 24 summary sites).",
+        "original_profile_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/inStrain_source_primary_6b19afac4f46beca",
+        "preserved_failed_profile_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_competitive_mapping/V60PRr2/inStrain_source_primary_6b19afac4f46beca.prior_completed_1794256081_811309",
+        "preserved_file_sha256": {
+          "figures/inStrain_source_primary_6b19afac4f46beca_CoverageAndBreadth_vs_readMismatch.pdf": "8c22a31a8e3a58b97c75051e59dfb3eeff81b4a8dc8db3b9cf6000f34e2dd4a4",
+          "figures/inStrain_source_primary_6b19afac4f46beca_LinkageDecay_plot.pdf": "a578596b4e331576533c24ecb603cc987a7d0f1a6ea26f9d4d6323e89246fa07",
+          "figures/inStrain_source_primary_6b19afac4f46beca_MajorAllele_frequency_plot.pdf": "df47b4b153d693877dbaefa051d4a4c0ab4b44c803cc22d1de7d7553c5cee4b7",
+          "figures/inStrain_source_primary_6b19afac4f46beca_ReadFiltering_plot.pdf": "c98a6cff57ca5de2b7cf67f7c5013efb2f96a2b4d7876aa2d590d95da48c7d62",
+          "figures/inStrain_source_primary_6b19afac4f46beca_ScaffoldInspection_plot.pdf": "2008b4908a4ea292e6c4a6a03b7bfc25464cbffd2b3539277c9ca31cef1544cf",
+          "figures/inStrain_source_primary_6b19afac4f46beca_genomeWide_microdiveristy_metrics.pdf": "17556e612d84f36953fb7ae0b50e76e8370be01118b3fe0ff042cc4910b528ac",
+          "figures/inStrain_source_primary_6b19afac4f46beca_readANI_distribution.pdf": "0e93dcf00efdff3651beb4b6f8f9c4c1f8b2e13a4958f3ed7fb2432f1cdfe865",
+          "log/log.log": "985f256e7c533aa5d149ccefb503c9a82d365faefc53d548858341ce353d499e",
+          "output/inStrain_source_primary_6b19afac4f46beca_SNVs.tsv": "1f38f4513d820854aeb3fe15ee15e3fde9a31b10837a6128cff3d5c6ce45d1e3",
+          "output/inStrain_source_primary_6b19afac4f46beca_genome_info.tsv": "96da457931107daff38957dc83ac13ee5abdf9facfec04ff44f697101a9ae682",
+          "output/inStrain_source_primary_6b19afac4f46beca_linkage.tsv": "f49b103d91ff2572afc889cc8d64dd1fc168bcaef03c2b3988b876f1c76530ec",
+          "output/inStrain_source_primary_6b19afac4f46beca_mapping_info.tsv": "6de471313a43e0c1e191e20aef27ee4bcd857fd680587c6735cc18d930aac43c",
+          "output/inStrain_source_primary_6b19afac4f46beca_scaffold_info.tsv": "4e25544b1153995d8ea808a4bdf6b6480526211f2b235c4dfe00bf050b083fe4",
+          "raw_data/Rdic.json": "fe1f94c13506e52c73c3696fba8d431203774a8149e2f3890e443d097b886c2c",
+          "raw_data/_README.txt": "cab4e4d394cdf18fc95a4ada66522b22076efd197efbecbba7d2a7d18b4b0e2e",
+          "raw_data/attributes.tsv": "174220ce42e9823ac40bfaf66287f18cb02b25a2f591792e29342325ed3d00bf",
+          "raw_data/bin2length.json": "cab89e71e60eb987b024b9230e3d8af1c097563674d1cd47829082143ce42ae3",
+          "raw_data/clonT.hd5": "0bff5429ac6f6c620e7214ca8a568a9a4cd96b15bba2185eafce05065d73ddff",
+          "raw_data/clonTR.hd5": "92e07f19fa765684aec5ca1c979ee01366c23f846ec5045215fb3e8626b4892d",
+          "raw_data/covT.hd5": "9fe6a55a9e942df15aba591a4afa5c0b9fc110108a79519c8648561b6217bbcd",
+          "raw_data/cumulative_scaffold_table.csv.gz": "cc6e6950c902e62e30a1589fdc594421dfcf653a58b20d8339ceff60fcf255bd",
+          "raw_data/cumulative_snv_table.csv.gz": "1ff77e56591bcaf4d7db4cc4e420801166535d93cdd961619e189f897976beaf",
+          "raw_data/genome_level_info.csv.gz": "fca455cde9ea67902539f20987544b178f71fda5330354df301e4e642bc79840",
+          "raw_data/mapping_info.csv.gz": "6ee0c567e47d28dc32487d2c5d5f23fac501ec50a1e9e169a0ddc4d2e58d3db9",
+          "raw_data/raw_linkage_table.csv.gz": "09e0ad4f2d8257a9eb3e7daf0f338d4741c907b81bb4626d54cc45e22bd5163e",
+          "raw_data/raw_snp_table.csv.gz": "b7af83c980fdf3c507beafa37bba7716b114ab7c7fb52e4662f822e80c645e3d",
+          "raw_data/scaffold2bin.json": "5ef3bd5816601c39571e84c20fd84ed49c74ec7637abe392a716205a16c66a99",
+          "raw_data/scaffold2length.json": "8e10dd22e3714f8d3f05262b11f6bff2add9480577a6550767277edb31264393",
+          "raw_data/scaffold_2_mm_2_read_2_snvs.pickle": "bfce13fc2f13ad950016bb48ccbbbd04ce13be07c748476dde1f940fcdfa0d52",
+          "raw_data/scaffold_list.txt": "a99552fd358f2072014df98a894f02eddb311dcb25c2abfd858a1b8e51cddb98"
+        },
+        "slurm_stderr_log": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/logs/stage4_recover_v60prr2_15910426.err",
+        "slurm_stderr_log_sha256": "0b3152091972dd407b91d2d338cd4bb8e7438ef1ba7c11c1d215d6c6fa0f705c",
+        "slurm_stdout_log": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/logs/stage4_recover_v60prr2_15910426.log",
+        "slurm_stdout_log_sha256": "80bfb99a8c3e19b32d65579b34a70249e831277fffce7d2e230a2c5346e9cd7c",
+        "source_slurm_job_id": "15910426"
+      }
+    ],
+    "rebuilt_reference": false,
+    "recovery_script_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/stage4_recover_v60prr2_competitive_mapping.py",
+    "recovery_script_sha256": "f288527697a0653a8e4b558dc05fcf52581f28455ff8342da312026ddfcfaa37",
+    "remapped_fastqs": false,
+    "slurm_job_id": "15910797",
+    "verified_existing_bams_and_coverage": true
+  },
+  "sample": "V60PRr2",
+  "schema_version": 1,
+  "source_mapping_job": {
+    "alignment_bowtie2_stderr_sha256": "a97cfa5b6af89f265786542e95c2580420138c12e4cdddbd9a9ff49f6a7772a1",
+    "alignment_samtools_sort_stderr_sha256": "37e43658739164bb4b4ccde9112e4e3165a387a3d48245ef240e350a467ed65b",
+    "alignment_samtools_view_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "completed_stages_in_source_job": [
+      "Preflight reference/index/crosswalk/build-receipt hash verification",
+      "Bowtie2 --very-sensitive alignment streamed to sorted V60PRr2_raw.bam + .bai",
+      "samtools quickcheck on V60PRr2_raw.bam",
+      "MAPQ>=20 and flag 3844 filtering to V60PRr2_mapq20.bam + .bai",
+      "samtools quickcheck on V60PRr2_mapq20.bam",
+      "Full 3,173,693-contig samtools coverage to V60PRr2_filtered_coverage.tsv",
+      "Boundary interval depth/read evaluations and V60PRr2_focal_targets_evaluation.tsv generation",
+      "samtools faidx extraction of focal_6b19afac4f46beca.fna",
+      "inStrain profile Step 1 (Filter reads) and Step 2 (Profile scaffolds)"
+    ],
+    "elapsed": "01:11:23",
+    "exit_code": "1:0",
+    "failed_stage_in_source_job": "inStrain profile Step 4 (profile_genome_wide): SNVprofile.py line 766 `scaff, mm = thing.split('::')` raised `ValueError: too many values to unpack (expected 2)` on namespaced reference contig `VIRUS_TARGET__V60PRr2::V60PRr2_715976`.",
+    "original_common_script_sha256": "919ab5e68bba8d6a015dc7ddbd3adcc29380b3fa11961c1dd6e9988d758720b8",
+    "original_mapping_script_path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/stage4_map_sample_competitive.py",
+    "original_mapping_script_sha256": "6f632e0792750cb81471ab3614734caccff45239d1a3656ab7bda366a58686da",
+    "original_slurm_stderr_log": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/logs/stage4_map_15905725_1.err",
+    "original_slurm_stderr_log_sha256": "527899af239af6f35673b6f1112744727cf98185cd34e9ad47414da308c9a283",
+    "original_slurm_stdout_log": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/logs/stage4_map_15905725_1.log",
+    "original_slurm_stdout_log_sha256": "6e9944393473abb8b9278488326d0946812472ba00f2eee2e6067d4146e5bd8b",
+    "slurm_array_job_id": "15905725",
+    "slurm_array_task_id": "1",
+    "slurm_job_id": "15905725_1",
+    "state": "FAILED"
+  },
+  "status": "completed_verified_v60prr2_instrain_recovery",
+  "timestamp_utc": "2026-11-09T20:28:48Z",
+  "verified_artifact_sha256": {
+    "coverage_tsv_sha256": "9170763b8ebcbb9b9be5fe1bb56b832c7828647a30650c7c102c5b93b3527881",
+    "filtered_bai_sha256": "45973201d36d02e795b87ba6c8b1126d418ae5d77c8ffee92aefa68a20fa791a",
+    "filtered_bam_sha256": "4970176ac44235629e3bfabb6b16415984b4ce785a40a9feb88ca803db8219e1",
+    "focal_evaluation_tsv_sha256": "ae30d3e3d0583d84b8065f50d5ce24474d88c6f45ad55801693f8c750db1768c",
+    "raw_bai_sha256": "f4fb072a628d1eb36713202e0c5a924f0b2231427c7aab85630a8780dd8c07e0",
+    "raw_bam_sha256": "13670d613d5e3cc00eb1580a0c230978bd0ed00ee27bd828a363332d630a53ce"
+  }
+}

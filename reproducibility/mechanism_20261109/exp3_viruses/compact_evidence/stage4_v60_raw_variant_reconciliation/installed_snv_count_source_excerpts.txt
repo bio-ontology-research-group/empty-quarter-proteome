@@ -1,0 +1,70 @@
+    rcounts = [item2counts[i] if i in item2counts else 0 for i in [0,1,2,3]]
+
+    return calculate_clonality(rcounts)
+
+def calc_snps(Odb, mm, null_model, min_freq=0.05):
+    '''
+    Calculate the number of reference SNPs, bi-allelic SNPs, multi-allelic SNPs (>2), total SNPs, consensus_SNPs, and poplation_SNPs
+
+    Vocabulary:
+
+    SNS_count = (number of substitutions) (allele_count = 1 and ref != con)
+    SNV_count = number of SNVs (allele_count > 1)
+
+    con_snps = con != ref and allele count > 0
+    pop_snps = confusing
+    '''
+    if len(Odb) == 0:
+        return [0, 0, 0, 0, 0]
+
+    db = Odb[Odb['mm'] <= mm].sort_values('mm').drop_duplicates(subset=['position'], keep='last')
+
+    SNS_count = len(db[(db['allele_count'] == 1)])
+    SNV_count = len(db[db['allele_count'] > 1])
+
+    con_snps = len(db[db['class'].isin(['SNS', 'con_SNV', 'pop_SNV'])])
+    pop_snps = len(db[db['class'].isin(['SNS', 'pop_SNV'])])
+
+    return [SNS_count, SNV_count, len(db), con_snps, pop_snps]
+
+def generate_snp_table(Stable, scaffold, p2c):
+    '''
+    Make a dataframe and parse it a little bit
+    '''
+    SNPTable = pd.DataFrame(Stable)
+    if len(SNPTable) > 0:
+        SNPTable['scaffold'] = scaffold
+
+        # Add cryptic SNPs
+        SNPTable.loc[:,'cryptic'] = SNPTable['position'].map(p2c)
+        SNPTable.loc[:,'cryptic'] = SNPTable['cryptic'].fillna(False)
+
+        # Calc base coverage
+        SNPTable.loc[:,'position_coverage'] = [sum([a,c,t,g]) for a,c,t,g in zip(SNPTable['A'],SNPTable['C'],SNPTable['T'],SNPTable['G'])]
+
+    del Stable
+    return SNPTable
+    table = defaultdict(list)
+    for mm in sorted(list(covT.keys())):
+
+        covs = mm_counts_to_counts_shrunk(covT, mm, fill_zeros=int(lengt))
+
+        if len(covs) == 0:
+            covs = pd.Series([0]*lengt)
+
+        nonzeros = np.count_nonzero(covs)
+
+        # Get clonalities
+        clons = get_basewise_clons(clonT, mm)
+        Rclons = get_basewise_clons(clonTR, mm)
+
+        counted_bases = len(clons)
+        rarefied_bases = len(Rclons)
+        SNS_count, SNV_count, div_site_count, con_snps, pop_snps = \
+                    inStrain.profile.snv_utilities.calc_snps(
+                                        SNPTable, mm, null_model,
+                                        min_freq=min_freq)
+
+        assert len(covs) == lengt, [covs, lengt, mm]
+
+        # fill in all coverage information

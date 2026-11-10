@@ -1,0 +1,67 @@
+genomes: desert 237, GTDB r232 reps 218, MGnify 83
+skani pairs reported (ANI >= ~80 %, AF >= 15 %): 226
+AAI genome pairs with >= 1 RBH: 144453; with >= 100 RBH: 144452
+MGnify duplicates of a GTDB rep: 54 (same assembly 41, skani >= 99.9 % 54, skani-only 13); distinct MGnify comparators 29
+
+Known relatives of the 237 desert Thermoplasmatota species representatives
+Comparators: 218 GTDB r232 species reps (c__SW-10-69-26 + c__E2) and 83 MGnify genomes in the same two classes. SMAG not used (Zenodo 8223844 is one split archive).
+AAI is reciprocal-best-hit AAI (Pyrodigal + DIAMOND); nearest calls need >= 100 RBH pairs. AAI >= 65 % is a genus-level heuristic, not a GTDB criterion.
+
+metric                                                           all        SW        E2     Tpl
+any_skani_hit_to_comparator (ANI>=~80)                             3         3         0       0
+ANI>=95_to_comparator                                              0         0         0       0
+ANI>=95_and_AF>=50_to_comparator                                   0         0         0       0
+AAI>=65_to_comparator (genus-level heuristic)                    111        87        24       0
+AAI>=65_to_GTDB_r232_rep                                         108        87        21       0
+AAI>=65_to_MGnify                                                 15         0        15       0
+nearest_by_AAI_is_MGnify                                           8         0         8       0
+best_AAI_q25                                                  58.763    57.656    61.609  48.678
+best_AAI_median                                               64.774    64.794    64.185  48.678
+best_AAI_q75                                                  66.392    66.172    67.731  48.678
+best_AAI_max                                                  80.041    80.041    76.964  48.678
+median_AAI_to_nearest_other_desert_rep                        73.135    74.641     69.16  49.531
+best_AAI_bin_<50                                                   1         0         0       1
+best_AAI_bin_50-55                                                 6         6         0       0
+best_AAI_bin_55-60                                                62        55         7       0
+best_AAI_bin_60-65                                                57        37        20       0
+best_AAI_bin_65-70                                                87        71        16       0
+best_AAI_bin_70-80                                                23        15         8       0
+best_AAI_bin_80-95                                                 1         1         0       0
+best_AAI_bin_>=95                                                  0         0         0       0
+
+SW-10-69-26 reps whose nearest comparator by AAI is GCA_003009755.1 (Atacama halite): 4 / 185; AAI to it min 45.077, median 47.283, max 74.88.
+  of the 30 SW-10-69-26 reps placed in o__SW-10-69-26 (the type genome's order), 4 have it as nearest; AAI to it median 58.425 (min 51.16 max 74.88). Other orders: JACQPN01 153; none 2
+  desert reps with an r232 genus: 102 / 237; with a family: 228; nearest-by-AAI comparator in the same r232 family: 227 / 228; median RBH fraction to nearest 0.4691
+  most frequent nearest comparators of the SW-10-69-26 reps: GCA_035540375.1 (DATLGO01;s__DATLGO01 sp035540375) 54; GCA_035687045.1 (JAJPHT01;s__JAJPHT01 sp035687045) 41; GCA_021325135.1 (JAJPHT01;s__JAJPHT01 sp021325135) 23; GCA_035553595.1 (DATMKA01;s__DATMKA01 sp035553595) 13; GCA_036003985.1 (JAIVGT01;s__JAIVGT01 sp036003985) 7
+  most frequent nearest comparators of the E2 reps: GCA_035292455.1 (DATDQC01;s__DATDQC01 sp035292455) 12; GCA_016180755.1 (JACPAO01;s__JACPAO01 sp016180755) 7; GCA_019347805.1 (JAHWKR01;s__JAHWKR01 sp019347805) 7; GCA_028289805.1 (JANQNI01;s__JANQNI01 sp028289805) 4; MGYG000503918 (JAHFTW01;s__) 4
+  AAI >= 68.33 (same-family q95 on this pipeline, a stricter genus-level cut): all_237 35, SW-10-69-26 23, E2 12, Thermoplasmata 0
+  highest AAI pairs: 
+    S54PRr1__self_SemiBin_338 -> GCA_964464425.1 AAI 80.04 (1931 RBH): d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__SW-10-69-26;f__SW-10-69-26;g__CAYXGD01;s__ | d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__SW-10-69-26;f__SW-10-69-26;g__CAYXGD01;s__CAYXGD01 sp964464425 | GTDB_r232_rep nan
+    59PRr1__single_SemiBin_130 -> GCA_964492585.1 AAI 79.90 (1931 RBH): d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__SW-10-69-26;f__SW-10-69-26;g__CAYXGD01;s__ | d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__SW-10-69-26;f__SW-10-69-26;g__CAYXGD01;s__CAYXGD01 sp964492585 | GTDB_r232_rep nan
+    54PRr2__self_SemiBin_315 -> GCA_964492585.1 AAI 79.60 (2115 RBH): d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__SW-10-69-26;f__SW-10-69-26;g__CAYXGD01;s__ | d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__SW-10-69-26;f__SW-10-69-26;g__CAYXGD01;s__CAYXGD01 sp964492585 | GTDB_r232_rep nan
+  The single Thermoplasmata rep (o__RBG-16-68-12) has no same-class comparator in this set; its best AAI is a between-class value, not evidence of no relative.
+
+GTDB r232 reps (all, n=218): nearest species rep (desert or GTDB, >= 100 RBH) is a desert rep for 28; desert AND AAI >= 65: 19; any desert rep at AAI >= 65: 40
+GTDB r232 reps (SW-10-69-26, n=21): nearest species rep (desert or GTDB, >= 100 RBH) is a desert rep for 16; desert AND AAI >= 65: 12; any desert rep at AAI >= 65: 16
+GTDB r232 reps (E2, n=197): nearest species rep (desert or GTDB, >= 100 RBH) is a desert rep for 12; desert AND AAI >= 65: 7; any desert rep at AAI >= 65: 24
+
+AAI calibration on this pipeline, GTDB r232 rep pairs by lowest shared rank (median; q05-q95; share >= 65):
+  same_genus       n=540    75.403  q05 63.11 q95 86.98; frac>=65 0.824
+  same_family      n=6202   61.802  q05 57.25 q95 68.33; frac>=65 0.210
+  same_order       n=1725   55.702  q05 47.86 q95 59.74; frac>=65 0.000
+  same_class       n=11049  46.95  q05 45.03 q95 52.53; frac>=65 0.000
+  different_class  n=4137   45.702  q05 43.76 q95 47.31; frac>=65 0.000
+
+MGnify genomes at GTDB r232 (GTDB-Tk 2.7.2): E2 73; SW-10-69-26 10
+  class changed vs catalogue lineage: 0; same NCBI assembly as a GTDB r232 rep: 41 / 83
+  biomes: Environmental:Aquatic:Marine:Sediment 60; Environmental:Terrestrial:Soil 19; Environmental:Aquatic:Marine 4
+  MGnify duplicates of GTDB reps excluded from nearest calls: 54; distinct: 29
+  biome of the nearest comparator of the 237 (GTDB reps take the biome of their MGnify twin): Environmental:Terrestrial:Soil 142; no biome (GTDB only) 92; Environmental:Aquatic:Marine:Sediment 3
+  catalogues: marine-sediment-v1-0 60; soil-v1-0 19; marine-v2-0 4
+
+Cross-check against the GTDB-Tk r232 classification of the 237 (closest reference over ALL r232):
+  reps with a GTDB-Tk closest reference (ANI screen): 0 / 237
+  desert reps with any skani hit (ANI >= ~80 %) to a comparator:
+    59PRr1__single_SemiBin_130 -> GCA_964492585.1 (GTDB_r232_rep) ANI 84.23 AF 16.5/14.1 d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__SW-10-69-26;f__SW-10-69-26;g__CAYXGD01;s__CAYXGD01 sp964492585
+    S54PRr1__self_SemiBin_338 -> GCA_964492585.1 (GTDB_r232_rep) ANI 85.25 AF 16.2/17.6 d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__SW-10-69-26;f__SW-10-69-26;g__CAYXGD01;s__CAYXGD01 sp964492585
+    V45Dr1__self_SemiBin_5038 -> GCA_964505085.1 (GTDB_r232_rep) ANI 84.60 AF 14.4/16.8 d__Archaea;p__Thermoplasmatota;c__SW-10-69-26;o__JACQPN01;f__CAZDGP01;g__CAZDGP01;s__CAZDGP01 sp964505085

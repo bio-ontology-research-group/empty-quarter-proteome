@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "stage": "stage4_raw_vs_mapq20_focal_coverage",
+  "status": "completed_verified",
+  "submitted_at_local": "2026-11-09T21:54:12+03:00",
+  "completed_at_local": "2026-11-09T23:30:09+03:00",
+  "job_id": "15910231",
+  "job_name": "exp3_raw_cov_qc",
+  "partition": "workq",
+  "account": "k10018",
+  "nodelist": "nid00021",
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed_hms": "00:01:15",
+  "start_local": "2026-11-09T23:28:54",
+  "end_local": "2026-11-09T23:30:09",
+  "initial_dependency": "afterok:15905725",
+  "resolved_dependency_after_v60prr2_recovery": "afterok:15910797",
+  "upstream_jobs": {
+    "reference_validation_job_id": "15905724",
+    "mapping_array_job_id": "15905725",
+    "v60prr2_instrain_recovery_job_id": "15910797",
+    "aggregation_job_id_sibling_untouched": "15905726",
+    "posthoc_job_id_sibling_untouched": "15910427"
+  },
+  "resources": {
+    "nodes": 1,
+    "ntasks": 1,
+    "cpus_per_task": 16,
+    "mem": "64G",
+    "time": "01:00:00"
+  },
+  "shaheen_root": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses",
+  "owned_scripts": {
+    "code/stage4_raw_vs_mapq20_focal_coverage.py": "5321fdecbdac24088f0fcc8baefdbcbf5f8a787877ffc877d956e925d5e576ce",
+    "code/sbatch_stage4_raw_vs_mapq20.sh": "000f84fb80f05e13b787b780ebc05402e45eb7c62326762d10934aba5c5182f3",
+    "tests/test_stage4_raw_vs_mapq20.py": "b1647eb4c7c92a707eb0812095b3c4602eb3a8130fc38971a9ca928ca6ca7d59"
+  },
+  "shared_read_only_dependencies": {
+    "code/stage4_competitive_common.py": "919ab5e68bba8d6a015dc7ddbd3adcc29380b3fa11961c1dd6e9988d758720b8",
+    "code/stage4_map_sample_competitive.py": "6f632e0792750cb81471ab3614734caccff45239d1a3656ab7bda366a58686da",
+    "results/stage3_tier1_pairs_individual_evidence_audit.tsv": "7731a0290b2cabf6b4cdbb69356a5b6230591f46dc7110a09d3431609c29db87",
+    "inputs/stage4_boundary_sensitive_intervals.json": "1684790de7cf02ddc3698d832e56567e81d89d12801c497937da1331d020edd8",
+    "results/stage2_target_viral_identity_table.tsv": "d1cf684441d4684c0baa8c854652b0353012de1ec5f4dbcbec6114b5d898f36d",
+    "provenance/stage4_competitive_pipeline_submission.json": "7c713d5246098ca4a04a2ed372961a910523179beeb0dd253b635d71b6ef3075",
+    "results/stage4_competitive_reference/stage4_reference_validation_receipt.json": "589d5a28598ea36f5237f198f687dc6bc9cbf02434c0717956419625eece758f"
+  },
+  "outputs": {
+    "results/stage4_raw_vs_mapq20/stage4_raw_vs_mapq20_focal_coverage_98rows.tsv": "9f664514214bbfc933f22d92c6fb9be0d76e8004ae4d8ba1c319d2ffa46ff297",
+    "results/stage4_raw_vs_mapq20/stage4_raw_vs_mapq20_samtools_raw_tabular_98rows.tsv": "5448476368315ee11581b7c1859ddf9d597ca400e8e4ce218f31179140bc2ff2",
+    "results/stage4_raw_vs_mapq20/stage4_raw_vs_mapq20_samtools_filtered_tabular_98rows.tsv": "71aa660e9acfac10818e49b446625e671d9522b01c5cef55b5ba63fe5f1ee3a3",
+    "results/stage4_raw_vs_mapq20/stage4_raw_vs_mapq20_target_summary.tsv": "8f78b14deb1520e991211037758b72bbae2a3690d17159b29252d608a9eb1cb5",
+    "results/stage4_raw_vs_mapq20/stage4_raw_vs_mapq20_sample_summary.tsv": "bf4bf51df44215cb9347341d4a8337dc727da82ad9028e1d062f11ced9f9eee1",
+    "results/stage4_raw_vs_mapq20/stage4_raw_vs_mapq20_summary.json": "e8924a5b3f1ec3c4489ffcc1db9aa775af98275d1a5eab0753c034f814807cc4",
+    "results/stage4_raw_vs_mapq20/STAGE4_RAW_VS_MAPQ20_DONE": "0d0f566a1f6136210a8d81a838766474b1ee4bb4293eaed8eb933abd1b5a68f4"
+  },
+  "samples": [
+    "41PRr2",
+    "V60PRr2",
+    "55Dr2",
+    "9Sr2",
+    "55Sr3",
+    "S49Dr1",
+    "48Sr2",
+    "F48Sr2",
+    "V48Dr1",
+    "S48PRr1",
+    "41Sr3",
+    "10Dr2",
+    "43PRr3",
+    "44Dr2"
+  ]
+}

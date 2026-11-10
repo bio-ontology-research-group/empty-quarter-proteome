@@ -21,6 +21,19 @@ python3 "$HERE/verify.py" | tee "$HERE/.verify.log"
 verrc=${PIPESTATUS[0]}
 { echo "## Numbers (recompute vs paper)"; echo '```'; cat "$HERE/.verify.log"; echo '```'; echo; } >> "$REPORT"
 
+if [[ -f "$HERE/tests/test_manuscript_scoping.py" ]]; then
+  echo "== running manuscript scoping & include tests =="
+  python3 -m pytest -q "$HERE/tests/test_manuscript_scoping.py" || verrc=1
+fi
+if [[ -f "$HERE/reframed_20261108/test_proteome_reframed_figures.py" ]]; then
+  echo "== running reframed figure verification tests =="
+  python3 -m pytest -q "$HERE/reframed_20261108/test_proteome_reframed_figures.py" || verrc=1
+fi
+if [[ -f "$HERE/integration_20261110/surface_figure/test_surface_figure.py" ]]; then
+  echo "== running surface modules figure verification tests =="
+  python3 -m pytest -q "$HERE/integration_20261110/surface_figure/test_surface_figure.py" || verrc=1
+fi
+
 echo; echo "===================  3/4  manifest  ==================="
 python3 "$HERE/verify.py" --manifest > "$HERE/claims.tsv"
 echo "wrote $(wc -l < "$HERE/claims.tsv") lines to claims.tsv"

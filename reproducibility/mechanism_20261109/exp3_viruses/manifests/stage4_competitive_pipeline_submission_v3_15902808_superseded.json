@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-11-09T17:17:40Z",
+  "job_ref_build": "15893933",
+  "job_validate_ref": "15902808",
+  "job_map_array": "15902809",
+  "job_aggregate": "15902810",
+  "job_sequence_followup": "15894662",
+  "dependencies": {
+    "validate_ref": "satisfied_completed_15893933",
+    "map_array": "afterok:15902808",
+    "aggregate": "afterok:15902809",
+    "sequence_followup": "completed_independent_of_mapping_15894662"
+  },
+  "resource_requests": {
+    "validate_ref": {"cpus": 16, "mem": "350G", "time": "04:00:00", "partition": "workq"},
+    "map_array": {"cpus": 32, "mem": "350G", "time": "04:00:00", "array": "0-13", "partition": "workq"},
+    "aggregate": {"cpus": 4, "mem": "32G", "time": "02:00:00", "partition": "workq"},
+    "sequence_followup": {"cpus": 16, "mem": "64G", "time": "04:00:00", "partition": "workq"}
+  },
+  "samples": [
+    "41PRr2", "V60PRr2", "55Dr2", "9Sr2", "55Sr3",
+    "S49Dr1", "48Sr2", "F48Sr2", "V48Dr1", "S48PRr1",
+    "41Sr3", "10Dr2", "43PRr3", "44Dr2"
+  ],
+  "snapshot_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/version_snapshots/pi_viral_sentinel_repair_20261109",
+  "code_hashes_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/pi_viral_sentinel_repair_code_hashes.tsv",
+  "slurm_spools_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/slurm_spools_20261109",
+  "historical_chain_15894659": {
+    "job_ref_build": "15893933",
+    "job_validate_ref": "15894659",
+    "job_map_array_cancelled": "15894660",
+    "job_aggregate_cancelled": "15894661",
+    "job_sequence_followup_completed": "15894662",
+    "historical_snapshot_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/version_snapshots/pi_viral_repair_20261109",
+    "historical_code_hashes_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/pi_viral_repair_code_hashes.tsv",
+    "failure_reason": "Validator 15894659 failed at line 229 because touch-created 0-byte REFERENCE_BUILD_DONE sentinel was checked with st_size == 0; fixed in pi_viral_sentinel_repair_20261109 to check exists/is_file for sentinel while retaining all nonempty data/receipt/index checks."
+  },
+  "status": "repaired_sentinel_pipeline_submitted"
+}

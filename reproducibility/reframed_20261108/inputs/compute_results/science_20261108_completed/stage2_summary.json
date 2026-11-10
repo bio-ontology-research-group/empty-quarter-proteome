@@ -1,0 +1,36 @@
+{
+  "stage": "stage2_uniref50_harmonised",
+  "status": "completed",
+  "harmonisation_scope": "database_and_search_rule_harmonised_UniRef50_2026_01_not_gene_caller_mode_harmonised",
+  "gene_calling_provenance": {
+    "eq_237_genomes": "extracted in scripts/c7b_orthofinder.sbatch from eq-annot-20261030/inputs/proteomes.faa (representative MAG proteomes called in metagenomic mode -p meta)",
+    "external_247_dedup_comparators": "called in scripts/c7b_orthofinder.sbatch from eq-annot-20261030/inputs/thermo_comparators.tar using prodigal -p single -q (with fallback to prodigal -p meta -q), terminal * stripped",
+    "external_genomic_fasta_archive_on_ibex": "/ibex/scratch/projects/c2014/rob/metagenomics/eq-annot-20261030/inputs/thermo_comparators.tar (or /ibex/scratch/projects/c2014/rob/metagenomics/v2_thermo_relatives/)",
+    "confounding_warning": "Database and MMseqs2 search parameters are identical across all 484 genomes, but gene-calling mode differs (-p meta on EQ MAGs vs prodigal -p single on external comparators). Do not claim fully gene-call-harmonised darkness without recalling both cohorts under identical gene-caller settings."
+  },
+  "uniref50_metadata": {
+    "uniref50_version_path": "/project/k10018/sw/db/eq-c2/uniref50/uniref50.version",
+    "uniref50_version_sha256": "dd7488d1bc1e6e1385038a4b5fe864d645e8e91ebd90cd090e432e180c05c13f",
+    "uniref50_source_sha256": "3eb54cda0e2ada50e1ea5755f11ae96f89d50cb03dde78726e511159d9360506",
+    "uniref50_version_text": "UniProt Reference Clusters - UniRef50 Release: 2026_01, 28-Jan-2026 Number of clusters: 60,315,044 Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms. Distributed under the Creative Commons Attribution (CC BY 4.0) License.",
+    "thermo_proteomes_tar_sha256": "5d1ae7fd492ea515e7e3f85ca39d22ae0372d0ab41c9b7308b94aabb76225e8b"
+  },
+  "n_total_genomes_538": 538,
+  "n_deduplicated_genomes_484": 484,
+  "n_eq_genomes": 237,
+  "n_ext_dedup_genomes": 247,
+  "n_ext_dedup_genomes_quality_known_mgyg": 29,
+  "n_ext_dedup_genomes_quality_unknown_gtdb": 218,
+  "n_total_proteins_538": 1366437,
+  "n_proteins_with_e1e3_hit": 1010820,
+  "n_total_proteins_484_deduplicated": 1256181,
+  "n_eq237_proteins_all": 777177,
+  "n_eq237_proteins_complete_orfs": 584209,
+  "n_ext301_raw_proteins_all": 589260,
+  "n_ext247_dedup_proteins_all": 479004,
+  "n_ext247_dedup_proteins_complete_orfs": 411908,
+  "n_ext29_mgyg_quality_known_proteins_all": 47245,
+  "n_ext218_gtdb_quality_unknown_proteins_all": 431759,
+  "eq237_pct_primary_direct_dark_all": 30.425115514226487,
+  "eq237_pct_inherited_catalogue_dark_labelled": 30.9462131647049
+}

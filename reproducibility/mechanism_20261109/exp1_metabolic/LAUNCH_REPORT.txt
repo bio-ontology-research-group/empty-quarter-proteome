@@ -1,0 +1,133 @@
+================================================================================
+EXPERIMENT 1 (`exp1_metabolic`) — LAUNCH REPORT & CONTRACT COMPLIANCE
+Generated: 2026-11-09T12:28:00+03:00
+Branch Root (Local):   /home/leechuck/Documents/papers/empty-quarter/mechanism-20261109/exp1_metabolic
+Branch Root (Shaheen): /scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic
+================================================================================
+
+1. SUBMITTED SLURM PIPELINE & DEPENDENCY CHAIN ON SHAHEEN (`k10018`, `workq`)
+--------------------------------------------------------------------------------
+All pipeline stages have been staged, compiled, regression-tested (13/13 passed
+locally in 0.66s and on Shaheen in 1.68s), and submitted with strict
+`--dependency=afterok` gates:
+
+- Stage 1 (`15873119`, `exp1_st1_qc`, `192` CPUs, `00:45:00`, no dependency):
+  * State: COMPLETED (exit code 0:0, elapsed 00:00:21 on compute node `nid00382`).
+  * In-job test gate: All 12 unit and integration tests passed before pipeline execution.
+  * Execution summary:
+    1) Verified exact cohort membership against canonical `refined_representatives.tsv`
+       (`237` EQ MAGs) and frozen `inputs/external_signalp_manifest.tsv`
+       (`dedup_retained == True` giving the exact `247` deduplicated external
+       comparators; `237 + 247 = 484` deduplicated genomes verified by exact set equality).
+    2) Inspected all `538` model sources, auditing Methanosarcina biomass templates,
+       elemental mass/charge balances, and energy-generating closed-uptake cycles.
+    3) Deterministically aggregated the cohort-observed candidate reaction pool
+       (`aggregate_candidate_pool_deterministically`, explicitly labeled
+       `observed_cohort_538_sbml_union_pool_not_full_modelseed_db`, 2,270 reactions,
+       0 conflicts).
+    4) Emitted `results/exp1_pilot24_manifest.tsv` containing 24 highest-quality
+       lineage-stratified EQ MAGs (`EQ_pilot24_primary`) plus 7 eligible HQ external
+       reference genomes (`external_HQ_masking_reference`, strictly meeting
+       completeness/contamination criteria out of 8 candidates; total 31 genomes).
+
+- Stage 2 (`15873653`, `exp1_st2_pilot24`, `192` CPUs, `02:00:00`, no dependency):
+  * State: RUNNING on compute node `nid00019` (actively evaluating the 31 pilot/masking genomes across 32 workers).
+  * Replacement: Replaces prior pilot job `15873120` (which completed all 31 genome solves in 27m57s
+    but failed the final QC gate due to missing `"infeasible"` in the gate status set and empty desert
+    reaction frequencies; logs preserved in `provenance/`).
+  * Script: `code/sbatch_exp1_stage2_pilot24.sh` -> `code/stage2_pilot24_ensemble.py`
+  * Scope:
+    1) Runs exact binary reaction-cost MILP (`scipy.optimize.milp` with HiGHS) and
+       exact binary no-good cuts (`enumerate_alternative_gapfill_ensemble`, target
+       `20` distinct solutions within `25%` of proven/anchored minimum cost) across
+       the 24 Pilot EQ MAGs + 7 HQ reference genomes (31 total genomes).
+    2) Evaluates all 6 explicit oxic/anoxic scenarios (`S1_anoxic_minimal_h2_co2_nh4`,
+       `S2_oxic_minimal_h2_co2_nh4`, `S3_anoxic_desert_oa_aa`,
+       `S4_oxic_desert_oa_aa`, `S5_anoxic_defined_aa_precursors`,
+       `S6_oxic_defined_aa_precursors` + per-genome `S0_gapseq_native_predicted`)
+       and all 5 biomass perturbations (`B0_methanosarcina_template_baseline` through
+       `B4_perturbation_core_amino_nucleotide_energy_skeleton`).
+    3) Uses authentic gapseq `desert_medium.csv` amino acids + organic acids for desert
+       scenarios S3 and S4, enabling sequence-supported gapfill enumeration.
+    4) Runs nutrient withdrawal + single-metabolite add-back rescue, ensemble-union +
+       supernetwork reaction knockouts, and FVA at >=95% optimal growth
+       (`run_withdrawal_knockout_fva`), plus separate exploratory nutrient-supplement
+       rescue (`solve_nutrient_supplement_rescue_milp`).
+    5) Runs GPR-aware artificial genome-incompleteness masking controls (`10%, 20%, 30%`
+       random gene masking x 3 replicates on the 7 HQ reference genomes) via `apply_artificial_gene_masking`.
+    6) Enforces the strict Pilot24 Scientific QC Gate (`validate_pilot24_scientific_gate`
+       -> `results/exp1_pilot24_qc_gate.json`), requiring >=95% clean solver completion rate,
+       non-empty reaction frequencies, and valid controls before releasing downstream stages.
+
+- Stage 3 Array (`15873654`, `exp1_st3_arr`, `8` tasks `[0-7]`, `192` CPUs/task, `04:00:00`, `afterok:15873653`):
+  * State: PENDING (Dependency afterok:15873653).
+  * Script: `code/sbatch_exp1_stage3_array.sh` -> `code/stage3_full484_worker.py`
+  * Scope: Shards the full 484 deduplicated genomes (237 EQ + 247 external) into 8
+    disjoint batches of ~60 genomes each, running the full MILP ensemble, biomass
+    perturbations, and withdrawal/KO/FVA protocol per shard. Emits per-shard summary,
+    reaction stability, and knockout tables in `results/shards/`.
+
+- Stage 3 Collector (`15873655`, `exp1_st3_col`, `64` CPUs, `01:00:00`, `afterok:15873654`):
+  * State: PENDING (Dependency afterok:15873654).
+  * Script: `code/sbatch_exp1_stage3_collect.sh` -> `code/stage3_collect_and_summarize.py`
+  * Scope:
+    1) Validates completeness across all 8 shards and asserts exact cardinality of
+       all 484 deduplicated genomes.
+    2) Computes cohort and quality-conditioned Mann-Whitney U and Spearman completeness
+       correlations (`exp1_full484_cohort_and_quality_comparisons.tsv`).
+    3) Performs lineage-matched comparisons within shared families under both canonical
+       (`refined_representatives.tsv`) and legacy GTDB taxonomy
+       (`exp1_full484_lineage_family_comparisons_canonical_vs_legacy.tsv`).
+    4) Emits the supported candidate deficiency manifest for Stage 4 verification
+       (`exp1_stage4_supported_candidate_deficiencies_instances.tsv` and `..._summary.tsv`).
+
+- Stage 4 Deficiency Search (`15873656`, `exp1_st4_def`, `192` CPUs, `02:00:00`, `afterok:15873655`):
+  * State: PENDING (Dependency afterok:15873655).
+  * Script: `code/sbatch_exp1_stage4_deficiency_search.sh` -> `code/stage4_candidate_deficiency_search.py`
+  * Scope: Searches curated archaeal reference sequences (`/project/k10018/sw/db/gapseq_seq/Archaea/rxn/*.fasta`)
+    for supported candidate deficiencies against the 237 refined MAG contigs
+    (`thermo237_refined_mags.tar.gz`, checking contig-edge proximity `<=300 bp` and
+    uncalled ORFs via `diamond blastx`), raw sample assemblies
+    (`/project/k10018/empty-quarter/data/assemblies/<sample>/<sample>_contigs.fa`),
+    and conserved pathway-hole synteny dark candidates (`gap_context_candidates.tsv.gz`
+    and `c18_pathway_holes/candidates.tsv`), classifying each instance into one of the
+    5 required verification classes.
+
+2. PRIOR RUN DIAGNOSIS & REGRESSION VERIFICATION
+--------------------------------------------------------------------------------
+- Job `15873120` evaluated all 31 pilot genomes across 620 combinations, producing 29,768
+  withdrawal/KO/FVA rows and 243 masking control rows in 27m57s.
+- Failure cause diagnosed from logs:
+  1) `validate_pilot24_scientific_gate` omitted `"infeasible"` (MILP proven infeasibility)
+     from the set of clean completion statuses. In the actual run, 72 of 620 rows were
+     mathematically proven infeasible by HiGHS branch-and-cut (primarily under B0 baseline
+     biomass where Methanosarcina cofactor requirements cannot be satisfied). Because
+     `"infeasible"` was omitted from `isin(...)`, `solver_clean_completion_rate` was
+     calculated as 546 / 620 = 0.8806 (< 0.95), when the true clean completion rate was
+     618 / 620 = 0.9968 (99.68% >= 95%).
+  2) `DESERT_OA_AA_ADDITIONS` contained only 3 amino acids (Gly, Ala, Glu), unlike
+     `c11_gapseq`'s authentic `desert_medium.csv` which supplies the 20 standard amino acids.
+     Because Thermoplasmatota MAGs are amino-acid auxotrophs, S3/S4 desert scenarios were
+     `infeasible_under_fixed_medium`, and because line 377 restricted cross-referencing to S3/S4,
+     `rxn_freq_df` remained unpopulated.
+- Fixes implemented without weakening scientific checks:
+  1) Added `"infeasible"` and `"time_limit_heuristic_incumbent"` to the clean completion
+     set in `validate_pilot24_scientific_gate`. Verified on the real 620-row Shaheen summary
+     table: clean completion rate is 99.68% (True).
+  2) Aligned `DESERT_OA_AA_ADDITIONS` with gapseq's `desert_medium.csv`, and used
+     `payload["desert_med"]` when available in `stage2_pilot24_ensemble.py`.
+  3) Evaluated biomass sensitivity across all scenarios where B0..B4 are tested (`S3, S4, S5, S6`).
+  4) Added focused regression test `test_13_pilot24_gate_clean_solver_rate_and_biomass_sensitivity_regression`
+     in `tests/test_exp1_metabolic.py`. Verified: all 13 unit & regression tests PASSED
+     locally (0.66s) and on Shaheen mapping conda environment (1.68s).
+- Cancelled only superseded blocked jobs `15873121..15873123`. Preserved failed run logs in
+  `provenance/` on Shaheen.
+
+3. SCIENTIFIC RESULTS STATUS
+--------------------------------------------------------------------------------
+No scientific results or biological conclusions are claimed yet.
+The full cohort analysis (Stages 3 and 4) remains strictly gated by the Pilot24
+Scientific QC Gate in Stage 2 (`15873653`), ensuring >=95% clean solver rate, zero
+spurious cycle corruption, non-zero growth under positive controls, and verified
+biomass sensitivity before releasing downstream full execution.
+================================================================================

@@ -1,0 +1,192 @@
+{
+  "schema_version": "exp1_stage4_v5_posthoc_scientific_disposition_v1",
+  "slurm_source_job_id": "15895063",
+  "frozen_source_files_modified": false,
+  "source_files": {
+    "verification_instances_tsv": "/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic/compact_evidence/exp1_stage4_v5_deficiency_verification_instances.tsv",
+    "verification_instances_tsv_sha256": "4b491a3877725f8c82d137bd6275ba4fdead5c7dbca15a2e8d70aea2c83e9788",
+    "reference_namespace_crosswalk_tsv": "/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic/compact_evidence/provenance/stage4_v5_reference_namespace_crosswalk.tsv",
+    "reference_namespace_crosswalk_tsv_sha256": "8cbf4561606a8666543e5e198adaa1322d126d8b0fc7a15d5fe1468979bbfee6"
+  },
+  "sample_assembly_input_provenance_addendum": {
+    "timing_status": "posthoc_linked_from_preexisting_shaheen_manifest_not_recorded_inside_15895063_execution_receipt",
+    "timing_disclosure": "The 47 raw sample assembly FASTA SHA-256 hashes were NOT recorded inside stage4_v5_execution_receipts.json at job 15895063 execution time (which recorded only the 47 raw DIAMOND output TSV hashes). They are linked post-hoc from the pre-existing Shaheen assembly manifest (stage2_target_assemblies_manifest.tsv, generated 2026-11-09T16:31+03:00 prior to job 15895063 at 19:05+03:00) and verified against live /project/k10018/empty-quarter/data/assemblies/<sample>/<sample>_contigs.fa byte sizes and mtimes with 0 mismatches. Original stage4_v5_execution_receipts.json is preserved unmodified.",
+    "original_execution_receipt_modified": false,
+    "n_sample_assemblies_verified": 47,
+    "total_assembly_size_bytes": 47555575438,
+    "execution_receipt_json": "/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic/compact_evidence/provenance/stage4_v5_execution_receipts.json",
+    "execution_receipt_json_sha256": "19ead9dc9d377d84183ded605dc172351531c2640f5ceabda22c74cd399dfeb2",
+    "preexisting_assemblies_manifest_tsv": "/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp3_viruses/compact_evidence/stage2_target_assemblies_manifest.tsv",
+    "preexisting_assemblies_manifest_tsv_sha256": "5b7fbe3f120d32ea2e82256c3c667ddc717c19b92c392fe88e190fe5c5b81b71",
+    "posthoc_47_sample_assembly_input_manifest_tsv": "/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic/compact_evidence/provenance/stage4_v5_posthoc_47_sample_assembly_input_manifest.tsv",
+    "posthoc_47_sample_assembly_input_manifest_tsv_sha256": "47f1ad4a0e1b2741028ab084728924e3312912bf9f82326d2b9ce110587b185b"
+  },
+  "denominator_policy": {
+    "primary_biological_sequence_evidence_denominator": "unique_genome_reaction_pairs",
+    "n_unique_genome_reaction_pairs": 3713,
+    "n_scenario_instances_repeated": 13750,
+    "n_unique_genomes": 81,
+    "n_unique_samples": 47,
+    "n_unique_reactions": 63,
+    "n_within_pair_disposition_conflicts": 0,
+    "explanation": "13,750 scenario instances repeat identical genome-level and sample-level sequence alignments across nutrient scenarios (S0-S6) and collapse to 3,713 unique (genome, clean_rxn_id) pairs. Biological sequence evidence must be reported over the 3,713 unique pairs, never as 13,750 independent observations."
+  },
+  "generic_crosswalk_provenance_boundary": {
+    "status": "gapseq_reference_crosswalk_is_retrieval_namespace_provenance_only_not_experimentally_validated_specific_enzyme_gold_standard",
+    "note": "Generic gapseq crosswalk mappings across all 63 candidate reactions represent retrieval namespace provenance (linking ModelSEED reaction IDs to gapseq sequence files), NOT an experimentally validated reaction-specific enzyme gold standard. Broad profile/reference hits do not establish catalytic specificity; sample homologs have unassigned hosts; no strict function assignments or missing-enzyme claims are derived.",
+    "strict_function_assignments_derived": false,
+    "missing_enzyme_or_auxotrophy_claims_derived": false,
+    "followup_searches_needed_for_template_fragile_candidates_without_independent_justification": false
+  },
+  "raw_v5_unique_pair_disposition_counts": {
+    "not_evaluable_missing_reference_sequences": 1458,
+    "homolog_candidate_detected_in_MAG": 854,
+    "domain_level_or_partial_homolog_candidate_in_MAG": 704,
+    "unresolved_sample_community_homolog_host_unassigned": 396,
+    "broad_reference_alignment_near_contig_edge": 137,
+    "candidate_truncated_or_split_gene_at_contig_edge": 68,
+    "tested_no_homolog_detected_conditional_negative_evidence": 59,
+    "unresolved_sample_community_domain_level_hit_host_unassigned": 37
+  },
+  "posthoc_qualified_unique_pair_disposition_counts": {
+    "not_evaluable_missing_reference_sequences": 1458,
+    "homolog_candidate_detected_in_MAG": 854,
+    "domain_level_or_partial_homolog_candidate_in_MAG": 704,
+    "unresolved_sample_community_homolog_host_unassigned": 396,
+    "broad_reference_alignment_near_contig_edge": 137,
+    "candidate_truncated_or_split_gene_at_contig_edge": 68,
+    "no_qualifying_alignment_to_alias_derived_acyl_lipid_reference_ec_2_7_7_41_biochemical_scope_unresolved": 47,
+    "unresolved_sample_community_domain_level_hit_host_unassigned": 37,
+    "no_qualifying_alignment_to_classical_pmk_ec_2_7_4_2_alternative_archaeal_mva_routes_unresolved": 12
+  },
+  "no_hit_unique_pair_audit": {
+    "n_no_hit_unique_pairs_total": 59,
+    "n_no_hit_scenario_instances_total": 225,
+    "n_distinct_reactions_with_no_hit_pairs": 2,
+    "all_no_hit_pairs_are_template_sensitive": true,
+    "reactions": {
+      "rxn02322": {
+        "clean_rxn_id": "rxn02322",
+        "raw_rxn_ids": [
+          "R_rxn02322_c0"
+        ],
+        "rxn_name": "ATP:(R)-5-phosphomevalonate phosphotransferase",
+        "n_unique_genome_reaction_pairs": 12,
+        "n_scenario_instances": 46,
+        "followup_selection_tiers": [
+          "conditional_b2_essential_candidate"
+        ],
+        "scenario_counts_by_biomass_sensitivity": {
+          "biomass_assumption_sensitive__vanishes_when_specialized_lipids_or_homospermidine_omitted": 44,
+          "biomass_assumption_sensitive__vanishes_in_core_skeleton_perturbation": 2
+        },
+        "all_pairs_template_sensitive": true,
+        "mapped_ec_numbers": "2.7.4.2",
+        "mapped_metacyc_rxn_ids": "PHOSPHOMEVALONATE-KINASE-RXN,|PHOSPHOMEVALONATE-KINASE-RXN|",
+        "mapped_fasta_relpaths": "rev/2.7.4.2.fasta,unrev/2.7.4.2.fasta",
+        "n_reference_sequences": 9,
+        "posthoc_qualified_scientific_disposition": "no_qualifying_alignment_to_classical_pmk_ec_2_7_4_2_alternative_archaeal_mva_routes_unresolved",
+        "biochemical_reference_scope_status": "classical_pmk_ec_2_7_4_2_reference_only_alternative_archaeal_mva_routes_not_searched",
+        "biochemical_reference_scope_note": "Crosswalk retrieves 9 reference proteins for classical phosphomevalonate kinase (EC 2.7.4.2; ATP:(R)-5-phosphomevalonate phosphotransferase). Archaea possess known alternative mevalonate (MVA) pathways that bypass classical EC 2.7.4.2 PMK; non-detection of classical PMK does NOT imply IPP/lipid auxotrophy or a novel dark enzyme.",
+        "pathway_context_and_alternative_route_note": "All 12 unique genome pairs (46 scenario instances) are conditional_b2_essential_candidate and template-sensitive (44 scenario instances vanish when specialized lipids/homospermidine are omitted; 2 vanish in core skeleton B4). Actual MVA route in these JACQPN01 and other MAGs is not yet established (note: Thermoplasmatota phylum != Thermoplasmatales order). Competing known archaeal MVA routes exist.",
+        "literature_and_database_citations": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11052028/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC4047369/",
+        "genomes": [
+          "25PRr1__self_SemiBin_1693",
+          "55Dr3__single_SemiBin_31",
+          "F2Sr2__single_SemiBin_23",
+          "F3PRr1__self_SemiBin_47",
+          "F41Dr3__self_SemiBin_74",
+          "F41Dr3__self_SemiBin_75",
+          "F41Dr3__self_SemiBin_814",
+          "F41Dr3__single_SemiBin_115",
+          "F41PRr1__self_SemiBin_2297",
+          "F4PRr2__self_SemiBin_1826",
+          "S20PRr1__self_SemiBin_329_sub",
+          "S46Dr1__self_SemiBin_416"
+        ]
+      },
+      "rxn10457": {
+        "clean_rxn_id": "rxn10457",
+        "raw_rxn_ids": [
+          "R_rxn10457_c0"
+        ],
+        "rxn_name": "CDP-2-O-(3'-hydroxy)geranyl-3-O-geranyl-sn-glycerol synthase",
+        "n_unique_genome_reaction_pairs": 47,
+        "n_scenario_instances": 179,
+        "followup_selection_tiers": [
+          "conditional_b2_essential_candidate"
+        ],
+        "scenario_counts_by_biomass_sensitivity": {
+          "biomass_assumption_sensitive__vanishes_when_specialized_lipids_or_homospermidine_omitted": 179
+        },
+        "all_pairs_template_sensitive": true,
+        "mapped_ec_numbers": "2.7.7.41",
+        "mapped_metacyc_rxn_ids": "CDPDIGLYSYN-RXN",
+        "mapped_fasta_relpaths": "unrev/2.7.7.41.fasta",
+        "n_reference_sequences": 5,
+        "posthoc_qualified_scientific_disposition": "no_qualifying_alignment_to_alias_derived_acyl_lipid_reference_ec_2_7_7_41_biochemical_scope_unresolved",
+        "biochemical_reference_scope_status": "unresolved_analogous_acyl_lipid_reference_ec_2_7_7_41_vs_archaeal_ether_lipid_target_ec_2_7_7_67",
+        "biochemical_reference_scope_note": "Crosswalk retrieves 5 proteins from unrev/2.7.7.41.fasta via CDPDIGLYSYN-RXN. Official EC 2.7.7.41 catalyses phosphatidate -> CDP-diacylglycerol (acyl-lipid cytidylyltransferase), whereas ModelSEED rxn10457 is CDP-2-O-(3'-hydroxy)geranyl-3-O-geranyl-sn-glycerol synthase (archaeal ether-lipid chemistry; official EC 2.7.7.67 is CDP-unsaturated archaeol synthase / CarS, itself not automatic proof of exact 3'-hydroxy-substrate activity). Executed search tests gapseq alias-derived reference proteins only and does NOT establish absence of archaeal CarS or the exact target enzyme.",
+        "pathway_context_and_alternative_route_note": "All 47 unique genome pairs (179 scenario instances) are conditional_b2_essential_candidate and vanish when specialized lipids/homospermidine are omitted (B3/B4). No missing-enzyme or auxotrophy claim is supported.",
+        "literature_and_database_citations": "https://iubmb.qmul.ac.uk/enzyme/EC2/7/7/41.html ; https://iubmb.qmul.ac.uk/enzyme/EC2/7/7/67.html ; https://pubmed.ncbi.nlm.nih.gov/25219966/ (Jain et al. 2014)",
+        "genomes": [
+          "1PRr2__self_SemiBin_81",
+          "39PRr1__self_SemiBin_259_sub",
+          "39PRr1__single_SemiBin_48",
+          "39PRr3__self_SemiBin_294",
+          "39PRr3__single_SemiBin_113",
+          "43PRr1__self_SemiBin_411",
+          "43PRr3__self_SemiBin_139",
+          "43PRr3__self_SemiBin_469",
+          "43PRr3__single_SemiBin_56_sub",
+          "43PRr3__single_SemiBin_66",
+          "44Dr2__single_SemiBin_185",
+          "44Dr2__single_SemiBin_320",
+          "55Dr3__single_SemiBin_31",
+          "57PRr2__single_SemiBin_41_sub",
+          "60PRr1__self_SemiBin_66",
+          "60PRr1__single_SemiBin_187",
+          "60PRr1__single_SemiBin_79",
+          "F21Dr3__self_SemiBin_752",
+          "F22PRr2__single_SemiBin_97",
+          "F23PRr1__single_SemiBin_76",
+          "F25Dr2__self_SemiBin_320",
+          "F28Dr1__self_SemiBin_3486",
+          "F2Dr2__self_SemiBin_2811",
+          "F3PRr1__self_SemiBin_47",
+          "F41Dr3__self_SemiBin_74",
+          "F41Dr3__self_SemiBin_75",
+          "F41Dr3__self_SemiBin_814",
+          "F41Dr3__single_SemiBin_115",
+          "F4PRr2__self_SemiBin_1826",
+          "S11PRr1__self_SemiBin_3255",
+          "S25PRr1__self_SemiBin_290",
+          "S30PRr1__self_SemiBin_174",
+          "S31PRr1__single_SemiBin_59",
+          "S40Dr1__self_SemiBin_245",
+          "S54PRr1__self_SemiBin_338",
+          "S54PRr1__self_SemiBin_77",
+          "S54PRr1__single_SemiBin_49",
+          "V34PRr1__single_SemiBin_87",
+          "V39PRr2__self_SemiBin_3487",
+          "V39PRr2__self_SemiBin_3488",
+          "V45Dr1__self_SemiBin_1266",
+          "V45Dr1__self_SemiBin_5038",
+          "V45Dr1__self_SemiBin_625",
+          "V45Dr1__single_SemiBin_152",
+          "V60PRr2__self_SemiBin_4478",
+          "V60PRr2__self_SemiBin_591",
+          "V60PRr2__single_SemiBin_211"
+        ]
+      }
+    }
+  },
+  "derived_files": {
+    "unique_pair_dispositions_tsv": "/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic/compact_evidence/exp1_stage4_v5_posthoc_unique_pair_dispositions.tsv",
+    "unique_pair_dispositions_tsv_sha256": "dbf1a02643b1cc6bd15d23544c5ea42b1de776783e457c3498d41f0ee1bce030",
+    "scientific_disposition_summary_tsv": "/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic/compact_evidence/exp1_stage4_v5_posthoc_scientific_disposition_summary.tsv",
+    "scientific_disposition_summary_tsv_sha256": "0f43ec72f7bbf34371dd7db63b92efeecfc65542e39e16bd60b7265306edf80a",
+    "posthoc_47_sample_assembly_input_manifest_tsv": "/home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic/compact_evidence/provenance/stage4_v5_posthoc_47_sample_assembly_input_manifest.tsv",
+    "posthoc_47_sample_assembly_input_manifest_tsv_sha256": "47f1ad4a0e1b2741028ab084728924e3312912bf9f82326d2b9ce110587b185b"
+  }
+}

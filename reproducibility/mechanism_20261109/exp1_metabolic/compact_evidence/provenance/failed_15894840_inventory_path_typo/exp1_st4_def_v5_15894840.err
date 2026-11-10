@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/code/stage4_candidate_deficiency_search_v5.py", line 1795, in <module>
+    main()
+  File "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/code/stage4_candidate_deficiency_search_v5.py", line 1384, in main
+    inv_audit = verify_candidate_genomes_against_inventory(inst_df, args.inventory_tsv)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/code/stage4_candidate_deficiency_search_v5.py", line 1182, in verify_candidate_genomes_against_inventory
+    raise FileNotFoundError(f"Genome inventory TSV does not exist: {inventory_tsv}")
+FileNotFoundError: Genome inventory TSV does not exist: /scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_genome_inventory_and_qc.tsv

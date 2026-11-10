@@ -1,0 +1,16 @@
+# Tests of functional hypotheses for desert archaea
+
+These modules test metabolic, viral-interaction and cell-surface hypotheses for the unknown protein repertoire of Rub’ al-Khali Thermoplasmatota. They support the current manuscript’s Supplementary Note S8. Computational feasibility, conserved neighbourhoods and sequence matches do not establish biochemical function.
+
+- `shared_foundation/`: exact genome identifiers and provenance for 237 desert Thermoplasmatota and 247 external comparators.
+- `exp1_metabolic/`: 484 genomes and 12,580 evaluated genome–medium–biomass cases. The stored solution ledger distinguishes 10,578 verified feasible cases, 1,936 fixed-medium infeasible cases and 66 numerical unknowns. Reaction counts are minima among found valid solutions, not proven global optima. Seven reference genomes provide the masked-gene calibration: mean reaction recovery was 16.8%, while alternative reactions comprised 76.7% of newly induced additions. See `interpretation/` and the source ledgers for the averaging scheme, biomass sensitivity and limitations of flux replay.
+- `exp3_viruses/`: spacer screening of 591 archaeal representatives, including 144 with recovered spacers and 447 untested by spacer matching. The primary set contains five candidate pairs across four hosts, including Thermoplasmatota genome `41PRr2__single_SemiBin_236`. A second Thermoplasmatota candidate is boundary-sensitive and excluded from the primary set. These are historical-exposure candidates; host taxonomy remains conditional on MAG bin membership and active infection is unresolved.
+- `exp4_surface/`: 1,460 families tested against six role hypotheses (8,760 family-by-role tests), followed by detailed audits of 47 families. Of 428 loci, 326 passed complete-interior coding checks and 27 of those had exact-sequence models. Final dispositions were 38 families with insufficient evidence and nine with exploratory fold/motif hypotheses; none received a biochemical assignment. Two leads, `22PRr1::22PRr1_2531955_3` and `V60PRr2::V60PRr2_1314979_4`, have respectively 13 and 11 adjacent co-oriented gene pairs across six and five genus-or-singleton groups. Partner profiles motivate surface-related hypotheses; genus-restricted tests did not establish adjusted associations.
+
+The audited surface summary is `exp4_surface/compact_evidence/exp4_surface_final_summary_v2_audited.json`. Each module retains its source ledgers, verification code and institutional paths for bulk inputs. Historical and failed runs are explicitly distinguished from the final audited outputs.
+
+## Reproduction
+
+Run `bash reproducibility/mechanism_20261109/run_tests.sh` from the repository root. This verifies compact frozen outputs and analysis logic; it is not a rerun of the upstream cluster computations. Each module documents its upstream workflow and missing or inaccessible inputs.
+
+The independent expression-eligibility analysis is in `../expression_20261110/`. The surface-pair figure code and exact coordinates are in `../integration_20261110/surface_figure/`. The full 5,438-genome microTrait product and compact downstream analysis are distributed by the [data foundation package](https://github.com/bio-ontology-research-group/empty-quarter-ecology-data/tree/main/analysis/microtrait_20261110).

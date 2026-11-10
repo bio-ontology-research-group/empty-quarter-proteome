@@ -1,0 +1,50 @@
+{
+  "branch": "exp1_metabolic",
+  "timestamp_utc": "2026-11-09T13:32:00Z",
+  "engine": "exp1_sbml_highs_engine.py",
+  "code_version": "exp1_sbml_highs_engine_v2_exact_ledger",
+  "shaheen_code_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/code_v2",
+  "code_sha256": {
+    "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+    "sbatch_exp1_stage1_inventory_and_qc.sh": "49fadabd57db49053e670f9909353d020027e401e5603697dbfb8b6263088f28",
+    "sbatch_exp1_stage2_diagnostic_retry.sh": "6b0b173e818df02e7337f16f0bad25e3c27c0389d879a05ff94ad666613dc655",
+    "sbatch_exp1_stage2_focused_release_validation.sh": "dcd5b61d2388bf392bf8a454eaec54fb81f89bc48ab8e7bdcf4596b55cb4917a",
+    "sbatch_exp1_stage2_pilot24.sh": "8d64d2141d349ea33c256f765f5c1894eb439da81c46d8c31fb921edba6f60ae",
+    "sbatch_exp1_stage3_array.sh": "f149d52b44b7884f11eef096d53ad1fe38cb3e16285e00e162dd6470e0394ca3",
+    "sbatch_exp1_stage3_collect.sh": "b64bb403be465acdc18d40a3a642b8394af6c7f4daa88d607370033de34f367b",
+    "sbatch_exp1_stage4_deficiency_search.sh": "25334b9ad78f4811c0deff8a3d3c1839fc435e719791caf87b7199e5f9e43bba",
+    "sbatch_exp1_validate_four_witnesses.sh": "40da8090af07edc4087187c8992210e48dc11653e3602ecd0ada44a7d3e25391",
+    "stage1_inventory_and_qc.py": "aa806072b52f3ecf48446b2d73bf9ea6a2bade34b42c634f06c34e87463dbcd3",
+    "stage2_focused_diagnostic_retry.py": "301e6d1fb04a6f321feae5827bfc37a4de605b683201c45abe3f14493166f242",
+    "stage2_focused_release_validation.py": "bdf452c253faf583bbde95594e328b59df14dbf8015a2dddbb2083e67654c2cb",
+    "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+    "stage3_collect_and_summarize.py": "2ba9b7d7c85c30408ab01277727456029ce4113734048beaece036d0a9819102",
+    "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7",
+    "stage4_candidate_deficiency_search.py": "9ff8316e14a275d65f3b76a5876c9bebff5f318b7e9e2a3e595f3aff44a094bd",
+    "validate_four_changed_witnesses.py": "3668a092bee00efc77ee17c507f5f4030c48bbdf4e6364b16a34e91281988d1b"
+  },
+  "verification_receipts": {
+    "pytest_local_passed_tests": 29,
+    "pytest_shaheen_passed_tests": 29,
+    "slurm_witness_rebuild_job_id": "15892986",
+    "slurm_witness_rebuild_result": "all_4_witnesses_verified_sound_and_synthetic_negative_control_infeasible",
+    "root_focused_audit_cases": 80,
+    "root_focused_audit_ledger_rows": 551,
+    "root_focused_audit_accepted_rows": 539,
+    "root_focused_audit_max_residual": 3.5470293369144195e-11,
+    "root_focused_audit_max_bound_viol": 0.0,
+    "fail_closed_checks": {
+      "nan_default_for_missing_residual": true,
+      "nan_default_for_missing_bound_viol": true,
+      "explicit_cycle_qc_pass_required": true,
+      "empty_ledger_rejected": true,
+      "exact_task_keys_matched": true,
+      "exact_accepted_counts_matched": true
+    }
+  },
+  "frozen_inputs": {
+    "inventory_484_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_model_inventory_and_qc_484.tsv",
+    "candidate_pool_pkl": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_candidate_reaction_pool.pkl",
+    "candidate_pool_scope": "observed_cohort_538_sbml_union_pool_not_full_modelseed_db"
+  }
+}

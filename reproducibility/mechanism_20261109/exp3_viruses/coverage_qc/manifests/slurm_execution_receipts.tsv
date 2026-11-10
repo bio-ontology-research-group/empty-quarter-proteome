@@ -1,0 +1,5 @@
+job_id	job_name	pipeline_stage	partition	account	state	exit_code	elapsed_hms	start_local	end_local	nodelist	dependency_note
+15905724	exp3_val_ref	stage4_validate_competitive_reference	workq	k10018	COMPLETED	0:0	00:17:36	2026-11-09T20:38:01	2026-11-09T20:55:37	nid01239	upstream_reference_validation_gate_3173693_contigs
+15905725	exp3_st4_map	stage4_map_sample_competitive_array	workq	k10018	13_COMPLETED_1_FAILED_RECOVERED_IN_15910797	0:0_13tasks_1:0_task1_instrain	01:11:23	2026-11-09T20:55:41	2026-11-09T22:07:04	nid[00021,00026-00027,00034,00051-00052,00060,00066,00074,00076,00078,00080,00088-00089]	afterok:15905724; 13 tasks COMPLETED 0:0, task 1 (V60PRr2) failed at inStrain step 4 after producing BAMs/coverage and recovered in 15910797
+15910797	exp3_st4_rec_v60	stage4_v60prr2_instrain_recovery	workq	k10018	COMPLETED	0:0	00:11:15	2026-11-09T23:17:34	2026-11-09T23:28:49	nid00034	main_worker_75057_existing_bam_instrain_recovery_for_V60PRr2
+15910231	exp3_raw_cov_qc	stage4_raw_vs_mapq20_focal_coverage	workq	k10018	COMPLETED	0:0	00:01:15	2026-11-09T23:28:54	2026-11-09T23:30:09	nid00021	submitted_afterok:15905725_repointed_by_main_worker_to_afterok:15910797

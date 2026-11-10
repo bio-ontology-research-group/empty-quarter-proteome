@@ -1,0 +1,583 @@
+{
+  "closure_version": "v2_highs_thread1_worker_init",
+  "closure_timestamp_utc": "2026-11-09T17:14:46Z",
+  "elapsed_s": 20.545,
+  "executed_closure_code_sha256": {
+    "counterfactual_closure_engine.py": "a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4",
+    "run_targeted_candidate_fva_closure.py": "180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9"
+  },
+  "code_v2_sha256": {
+    "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+    "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+    "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+  },
+  "immutable_raw_wkf_sha256": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+  "complete_3872_case_ledger": {
+    "n_scheduled_cases_total": 3872,
+    "n_evaluated_feasible_cases": 3863,
+    "n_non_evaluable_cases": 9,
+    "disposition_counts": {
+      "evaluated_feasible_baseline": 3863,
+      "non_evaluable_unresolved_fba_verification_failed": 8,
+      "non_evaluable_unresolved_timeout_no_incumbent": 1
+    },
+    "non_evaluable_records": [
+      {
+        "genome": "49PRr1__self_SemiBin_566",
+        "cohort": "EQ_desert",
+        "canonical_family": "f__JAJPHT01",
+        "scenario_id": "S4_oxic_desert_oa_aa",
+        "biomass_recipe_id": "B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420",
+        "solver_status": "fba_verification_failed",
+        "n_solutions_attempted": 30,
+        "n_optimization_feasible_solutions": 0,
+        "n_cycle_qc_rejected_solutions": 0,
+        "n_distinct_valid_solutions": 0,
+        "fewer_than_target_reason": "fba_verification_failed",
+        "wkf_case_disposition": "non_evaluable_unresolved_fba_verification_failed"
+      },
+      {
+        "genome": "51Dr1__self_SemiBin_307",
+        "cohort": "EQ_desert",
+        "canonical_family": "f__JAJPHT01",
+        "scenario_id": "S4_oxic_desert_oa_aa",
+        "biomass_recipe_id": "B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420",
+        "solver_status": "fba_verification_failed",
+        "n_solutions_attempted": 30,
+        "n_optimization_feasible_solutions": 0,
+        "n_cycle_qc_rejected_solutions": 0,
+        "n_distinct_valid_solutions": 0,
+        "fewer_than_target_reason": "fba_verification_failed",
+        "wkf_case_disposition": "non_evaluable_unresolved_fba_verification_failed"
+      },
+      {
+        "genome": "59PRr1__single_SemiBin_134",
+        "cohort": "EQ_desert",
+        "canonical_family": "f__CAZDGP01",
+        "scenario_id": "S3_anoxic_desert_oa_aa",
+        "biomass_recipe_id": "B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420",
+        "solver_status": "fba_verification_failed",
+        "n_solutions_attempted": 30,
+        "n_optimization_feasible_solutions": 0,
+        "n_cycle_qc_rejected_solutions": 0,
+        "n_distinct_valid_solutions": 0,
+        "fewer_than_target_reason": "fba_verification_failed",
+        "wkf_case_disposition": "non_evaluable_unresolved_fba_verification_failed"
+      },
+      {
+        "genome": "59PRr1__single_SemiBin_134",
+        "cohort": "EQ_desert",
+        "canonical_family": "f__CAZDGP01",
+        "scenario_id": "S4_oxic_desert_oa_aa",
+        "biomass_recipe_id": "B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420",
+        "solver_status": "fba_verification_failed",
+        "n_solutions_attempted": 30,
+        "n_optimization_feasible_solutions": 0,
+        "n_cycle_qc_rejected_solutions": 0,
+        "n_distinct_valid_solutions": 0,
+        "fewer_than_target_reason": "fba_verification_failed",
+        "wkf_case_disposition": "non_evaluable_unresolved_fba_verification_failed"
+      },
+      {
+        "genome": "GCA_040390065.1",
+        "cohort": "external_comparator",
+        "canonical_family": "f__JAHFTW01",
+        "scenario_id": "S4_oxic_desert_oa_aa",
+        "biomass_recipe_id": "B0_methanosarcina_template_baseline",
+        "solver_status": "timeout_no_incumbent",
+        "n_solutions_attempted": 2,
+        "n_optimization_feasible_solutions": 0,
+        "n_cycle_qc_rejected_solutions": 0,
+        "n_distinct_valid_solutions": 0,
+        "fewer_than_target_reason": "timeout_no_incumbent",
+        "wkf_case_disposition": "non_evaluable_unresolved_timeout_no_incumbent"
+      },
+      {
+        "genome": "MGYG000522211",
+        "cohort": "external_comparator",
+        "canonical_family": "f__JdFR-43",
+        "scenario_id": "S3_anoxic_desert_oa_aa",
+        "biomass_recipe_id": "B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420",
+        "solver_status": "fba_verification_failed",
+        "n_solutions_attempted": 30,
+        "n_optimization_feasible_solutions": 0,
+        "n_cycle_qc_rejected_solutions": 0,
+        "n_distinct_valid_solutions": 0,
+        "fewer_than_target_reason": "fba_verification_failed",
+        "wkf_case_disposition": "non_evaluable_unresolved_fba_verification_failed"
+      },
+      {
+        "genome": "T4PRr3__self_SemiBin_1415",
+        "cohort": "EQ_desert",
+        "canonical_family": "f__JAJPHT01",
+        "scenario_id": "S4_oxic_desert_oa_aa",
+        "biomass_recipe_id": "B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420",
+        "solver_status": "fba_verification_failed",
+        "n_solutions_attempted": 30,
+        "n_optimization_feasible_solutions": 0,
+        "n_cycle_qc_rejected_solutions": 0,
+        "n_distinct_valid_solutions": 0,
+        "fewer_than_target_reason": "fba_verification_failed",
+        "wkf_case_disposition": "non_evaluable_unresolved_fba_verification_failed"
+      },
+      {
+        "genome": "V45Dr1__self_SemiBin_625",
+        "cohort": "EQ_desert",
+        "canonical_family": "f__JAJPHT01",
+        "scenario_id": "S4_oxic_desert_oa_aa",
+        "biomass_recipe_id": "B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420",
+        "solver_status": "fba_verification_failed",
+        "n_solutions_attempted": 30,
+        "n_optimization_feasible_solutions": 0,
+        "n_cycle_qc_rejected_solutions": 0,
+        "n_distinct_valid_solutions": 0,
+        "fewer_than_target_reason": "fba_verification_failed",
+        "wkf_case_disposition": "non_evaluable_unresolved_fba_verification_failed"
+      },
+      {
+        "genome": "V60PRr2__single_SemiBin_211",
+        "cohort": "EQ_desert",
+        "canonical_family": "f__JAJPHT01",
+        "scenario_id": "S4_oxic_desert_oa_aa",
+        "biomass_recipe_id": "B2_perturbation_omit_7_non_f420_template_cofactors_keep_f420",
+        "solver_status": "fba_verification_failed",
+        "n_solutions_attempted": 30,
+        "n_optimization_feasible_solutions": 0,
+        "n_cycle_qc_rejected_solutions": 0,
+        "n_distinct_valid_solutions": 0,
+        "fewer_than_target_reason": "fba_verification_failed",
+        "wkf_case_disposition": "non_evaluable_unresolved_fba_verification_failed"
+      }
+    ]
+  },
+  "corrected_wkf_v2_table": {
+    "total_rows": 692922,
+    "withdrawal_rows": 94612,
+    "knockout_rows": 598310,
+    "withdrawal_corrected_classification_counts": {
+      "required_in_primary_and_sampled_ensemble_union_lt_1e-4": 71206,
+      "primary_growth_lost_lt_1e-4__above_model_min_growth_union_bypass_ge_0.01_relaxed_union": 12414,
+      "primary_growth_retained_above_model_min_growth_ge_0.01_non_essential_or_stimulatory": 8308,
+      "primary_growth_retained_ge_1e-4_below_model_min_growth_lt_0.01": 2425,
+      "primary_growth_lost_lt_1e-4__partial_subthreshold_union_growth_1e-4_to_0.005": 205,
+      "primary_growth_lost_lt_1e-4__below_model_min_growth_union_0.005_to_0.01": 54
+    },
+    "withdrawal_addback_disposition_counts": {
+      "restored_primary_growth_above_declared_threshold_0.99_min_growth": 83879,
+      "not_applicable_primary_growth_retained_ge_1e-4": 10733
+    },
+    "knockout_corrected_classification_counts": {
+      "essential_in_sampled_ensemble_union_lt_1e-4": 405617,
+      "bypassable_in_sampled_ensemble_union_exceeds_primary_baseline_gt_g0_relaxed_union": 116246,
+      "bypassable_in_sampled_ensemble_union_near_baseline_95pct_g0_to_g0_relaxed_union": 74130,
+      "bypassable_in_sampled_ensemble_union_reduced_0.01_to_95pct_g0_relaxed_union": 1390,
+      "subthreshold_in_sampled_ensemble_union_1e-4_to_0.01_below_min_growth": 927
+    },
+    "knockout_fva_measurement_source_counts": {
+      "not_assayed_outside_top30_non_candidate_rxn": 472039,
+      "original_executed_top30_fva": 112521,
+      "verified_targeted_candidate_fva_closure_beyond_top30": 10381,
+      "original_top30_and_verified_targeted_candidate_fva_closure": 3369
+    },
+    "knockout_fva_interval_class_counts": {
+      "not_assayed_outside_top30_non_candidate_rxn": 472039,
+      "strictly_positive_gt_1e-6": 73670,
+      "spans_zero_contains_zero_flux": 37996,
+      "strictly_negative_lt_-1e-6": 14179,
+      "strictly_positive_trace_1e-12_to_1e-6": 391,
+      "strictly_negative_trace_-1e-6_to_-1e-12": 35
+    },
+    "knockout_non_nan_perturbed_growth_primary_count": 0,
+    "knockout_non_nan_addback_rescue_growth_count": 0,
+    "knockout_non_null_addback_rescues_growth_count": 0
+  },
+  "targeted_candidate_fva_closure": {
+    "n_unique_b2_cases_accounted": 306,
+    "n_primary_reconstructions_verified": 306,
+    "n_primary_reconstructions_unverified": 0,
+    "primary_verification_status_counts": {
+      "verified_primary_reconstruction": 306
+    },
+    "max_primary_g0_abs_diff_vs_ledger": 9.887923813067799e-17,
+    "max_primary_g0_abs_diff_vs_wkf": 9.887923813067799e-17,
+    "union_network_qc_class_counts_306_cases": {
+      "mathematical_union_passed_declared_numerical_and_closed_uptake_egc_checks": 306
+    },
+    "union_egc_status_counts_306_cases": {
+      "evaluated_optimal": 306
+    },
+    "n_candidate_instances_accounted": 13750,
+    "n_previously_assayed_in_top30": 3369,
+    "n_newly_evaluated_beyond_top30": 10381,
+    "n_fva_both_optimal_and_ordered": 13750,
+    "n_fva_failed_or_unknown": 0,
+    "fva_min_status_counts_13750": {
+      "optimal": 13750
+    },
+    "fva_max_status_counts_13750": {
+      "optimal": 13750
+    },
+    "max_fva_min_residual": 1.1788259257627942e-10,
+    "max_fva_max_residual": 2.4212254423616736e-10,
+    "max_fva_min_bound_viol": 3.410605131648481e-13,
+    "max_fva_max_bound_viol": 1.3642420526593924e-12,
+    "max_top30_abs_diff_vs_orig_wkf": 1.725009024511337e-13,
+    "fva_interval_class_counts_13750": {
+      "strictly_positive_gt_1e-6": 12786,
+      "strictly_negative_lt_-1e-6": 947,
+      "strictly_positive_trace_1e-12_to_1e-6": 17
+    },
+    "fva_strictly_nonzero_1e-6_counts": {
+      "True": 13733,
+      "False": 17
+    },
+    "fva_strictly_nonzero_1e-12_counts": {
+      "True": 13750
+    },
+    "crosstab_fva_interval_by_union_qc_class": {
+      "mathematical_union_passed_declared_numerical_and_closed_uptake_egc_checks": {
+        "strictly_negative_lt_-1e-6": 947,
+        "strictly_positive_gt_1e-6": 12786,
+        "strictly_positive_trace_1e-12_to_1e-6": 17
+      }
+    },
+    "crosstab_fva_interval_by_followup_tier": {
+      "conditional_b0_b2_essential_candidate": {
+        "strictly_negative_lt_-1e-6": 947,
+        "strictly_positive_gt_1e-6": 1981,
+        "strictly_positive_trace_1e-12_to_1e-6": 17
+      },
+      "conditional_b2_essential_candidate": {
+        "strictly_negative_lt_-1e-6": 0,
+        "strictly_positive_gt_1e-6": 10805,
+        "strictly_positive_trace_1e-12_to_1e-6": 0
+      }
+    },
+    "n_distinct_reactions": 63,
+    "n_reactions_all_targets_accounted": 63,
+    "n_reactions_100pct_optimal_fva": 63,
+    "n_strata": 244
+  },
+  "output_artifacts_sha256": {
+    "exp1_targeted_candidate_fva_306_cases_union_qc.tsv": "e20ddc61260e05e5bdfbeade566b867bcfccd48f5cabc81194ab57548781e228",
+    "exp1_targeted_candidate_fva_13750_instances.tsv.gz": "afa12bfa8b9c188e6298692ee6dc15604dd1786ecd4f8d153ddbd8c1586a69c1",
+    "exp1_targeted_candidate_fva_63_reactions_summary.tsv": "e562777802d0a5f5623e3c5538780eaea2f74b5207009d642906b0f4edfb746e",
+    "exp1_targeted_candidate_fva_244_strata_summary.tsv": "9be0e6bed967a313497316c53c4870c3d900f20f4801536937e84e27e711a010",
+    "exp1_counterfactual_complete_3872_case_ledger.tsv": "5db32419b2b803346022d093d3b2a94067e620179bdd989b3216bcd2137d44fe",
+    "exp1_full484_counterfactual_wkf_corrected_v2.tsv.gz": "2a3b203a2567bca7ce5c61f0166ebbde8ba76ac4ae566721a17561d809bbabdd"
+  },
+  "shard_metadata": [
+    {
+      "task_id": 0,
+      "num_tasks": 8,
+      "n_genomes": 11,
+      "n_cases_expected": 42,
+      "n_cases_accounted": 42,
+      "n_instances_expected": 1864,
+      "n_instances_accounted": 1864,
+      "n_primary_verified": 42,
+      "n_primary_unverified": 0,
+      "n_fva_both_optimal_and_ordered": 1864,
+      "n_fva_failed_or_unknown": 0,
+      "fva_min_status_counts": {
+        "optimal": 1864
+      },
+      "fva_max_status_counts": {
+        "optimal": 1864
+      },
+      "max_top30_abs_diff_vs_orig_wkf": 9.974659986866641e-17,
+      "cases_tsv_sha256": "ed556f5f861252132648e4b56580619227665b49a162764f10ad11cd027d5630",
+      "instances_tsv_gz_sha256": "312b18ecae26a0568a46fb50f73133795c55be5592fd3768e6536de4d4b2e80d",
+      "witnesses_jsonl_gz_sha256": "e1d99fb9342ebcea2579a9001c1e94d1248f58f772e933a227e0aa4dd8246b5c",
+      "executed_closure_code_sha256": {
+        "counterfactual_closure_engine.py": "a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4",
+        "run_targeted_candidate_fva_closure.py": "180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9"
+      },
+      "code_v2_sha256": {
+        "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+        "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+        "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+      },
+      "input_sha256": {
+        "exp1_stage4_supported_candidate_deficiencies_instances.tsv": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+        "exp1_full484_per_solution_ledger.tsv": "14f7cf5d7ffca599b99e12210ae11bdd8dbde77ae441eb1edcf37d338f049e43",
+        "exp1_full484_withdrawal_knockout_fva.tsv.gz": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+        "exp1_candidate_reaction_pool.pkl": "e5745ed38e602d7d5802d3464951c785d79b2ee7dc926725c4c4f6f64222a66a"
+      },
+      "elapsed_s": 14.094
+    },
+    {
+      "task_id": 1,
+      "num_tasks": 8,
+      "n_genomes": 10,
+      "n_cases_expected": 38,
+      "n_cases_accounted": 38,
+      "n_instances_expected": 1716,
+      "n_instances_accounted": 1716,
+      "n_primary_verified": 38,
+      "n_primary_unverified": 0,
+      "n_fva_both_optimal_and_ordered": 1716,
+      "n_fva_failed_or_unknown": 0,
+      "fva_min_status_counts": {
+        "optimal": 1716
+      },
+      "fva_max_status_counts": {
+        "optimal": 1716
+      },
+      "max_top30_abs_diff_vs_orig_wkf": 1.725009024511337e-13,
+      "cases_tsv_sha256": "04af5b262ba5e3e987d3d53a3b734b5da61bbc0320165cf21c2fc2dc5208a04e",
+      "instances_tsv_gz_sha256": "8d5d4329884a276bcd372e8a7c21bd8c5d3ed248a8b6e8bfad23bebb944dcbae",
+      "witnesses_jsonl_gz_sha256": "defb5025c2ad50bc8903d66cce4507eba07319a5b8494d92ebc87853dbd9610c",
+      "executed_closure_code_sha256": {
+        "counterfactual_closure_engine.py": "a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4",
+        "run_targeted_candidate_fva_closure.py": "180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9"
+      },
+      "code_v2_sha256": {
+        "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+        "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+        "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+      },
+      "input_sha256": {
+        "exp1_stage4_supported_candidate_deficiencies_instances.tsv": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+        "exp1_full484_per_solution_ledger.tsv": "14f7cf5d7ffca599b99e12210ae11bdd8dbde77ae441eb1edcf37d338f049e43",
+        "exp1_full484_withdrawal_knockout_fva.tsv.gz": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+        "exp1_candidate_reaction_pool.pkl": "e5745ed38e602d7d5802d3464951c785d79b2ee7dc926725c4c4f6f64222a66a"
+      },
+      "elapsed_s": 13.662
+    },
+    {
+      "task_id": 2,
+      "num_tasks": 8,
+      "n_genomes": 10,
+      "n_cases_expected": 38,
+      "n_cases_accounted": 38,
+      "n_instances_expected": 1747,
+      "n_instances_accounted": 1747,
+      "n_primary_verified": 38,
+      "n_primary_unverified": 0,
+      "n_fva_both_optimal_and_ordered": 1747,
+      "n_fva_failed_or_unknown": 0,
+      "fva_min_status_counts": {
+        "optimal": 1747
+      },
+      "fva_max_status_counts": {
+        "optimal": 1747
+      },
+      "max_top30_abs_diff_vs_orig_wkf": 1.995018733547127e-14,
+      "cases_tsv_sha256": "06bfbd2e6e7a8399d5d5c9f7b420bb5dc23492f7708359b02e0c7b8d9d4709b1",
+      "instances_tsv_gz_sha256": "7db8982661956d1031c0fa6be92ba99298e1c7e14f663fbc5c9455f1b52c0116",
+      "witnesses_jsonl_gz_sha256": "cbf4ed2e8b259c96226d86111bdf38fd112853ae44912c2cfcd9b563d1883a21",
+      "executed_closure_code_sha256": {
+        "counterfactual_closure_engine.py": "a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4",
+        "run_targeted_candidate_fva_closure.py": "180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9"
+      },
+      "code_v2_sha256": {
+        "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+        "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+        "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+      },
+      "input_sha256": {
+        "exp1_stage4_supported_candidate_deficiencies_instances.tsv": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+        "exp1_full484_per_solution_ledger.tsv": "14f7cf5d7ffca599b99e12210ae11bdd8dbde77ae441eb1edcf37d338f049e43",
+        "exp1_full484_withdrawal_knockout_fva.tsv.gz": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+        "exp1_candidate_reaction_pool.pkl": "e5745ed38e602d7d5802d3464951c785d79b2ee7dc926725c4c4f6f64222a66a"
+      },
+      "elapsed_s": 13.141
+    },
+    {
+      "task_id": 3,
+      "num_tasks": 8,
+      "n_genomes": 10,
+      "n_cases_expected": 35,
+      "n_cases_accounted": 35,
+      "n_instances_expected": 1619,
+      "n_instances_accounted": 1619,
+      "n_primary_verified": 35,
+      "n_primary_unverified": 0,
+      "n_fva_both_optimal_and_ordered": 1619,
+      "n_fva_failed_or_unknown": 0,
+      "fva_min_status_counts": {
+        "optimal": 1619
+      },
+      "fva_max_status_counts": {
+        "optimal": 1619
+      },
+      "max_top30_abs_diff_vs_orig_wkf": 9.974659986866641e-17,
+      "cases_tsv_sha256": "e21fa2721b9a30a41e163fdb956a5ca4b77093bf854401ec1e2bca127b90eb05",
+      "instances_tsv_gz_sha256": "fc5ffa4327b82a17ab0504344db08983f1b864453801466a94a65d28bbafe635",
+      "witnesses_jsonl_gz_sha256": "97012bb98342d527ef29f9c4a936e109d1fb13a6f24b3a27025a133cec4dcd56",
+      "executed_closure_code_sha256": {
+        "counterfactual_closure_engine.py": "a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4",
+        "run_targeted_candidate_fva_closure.py": "180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9"
+      },
+      "code_v2_sha256": {
+        "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+        "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+        "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+      },
+      "input_sha256": {
+        "exp1_stage4_supported_candidate_deficiencies_instances.tsv": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+        "exp1_full484_per_solution_ledger.tsv": "14f7cf5d7ffca599b99e12210ae11bdd8dbde77ae441eb1edcf37d338f049e43",
+        "exp1_full484_withdrawal_knockout_fva.tsv.gz": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+        "exp1_candidate_reaction_pool.pkl": "e5745ed38e602d7d5802d3464951c785d79b2ee7dc926725c4c4f6f64222a66a"
+      },
+      "elapsed_s": 13.008
+    },
+    {
+      "task_id": 4,
+      "num_tasks": 8,
+      "n_genomes": 10,
+      "n_cases_expected": 37,
+      "n_cases_accounted": 37,
+      "n_instances_expected": 1623,
+      "n_instances_accounted": 1623,
+      "n_primary_verified": 37,
+      "n_primary_unverified": 0,
+      "n_fva_both_optimal_and_ordered": 1623,
+      "n_fva_failed_or_unknown": 0,
+      "fva_min_status_counts": {
+        "optimal": 1623
+      },
+      "fva_max_status_counts": {
+        "optimal": 1623
+      },
+      "max_top30_abs_diff_vs_orig_wkf": 9.999054535747565e-17,
+      "cases_tsv_sha256": "49cf8cf1c0aaa3e281eb9dd0fce87a2410c31a8e27a1b8ab5c161d5af492614d",
+      "instances_tsv_gz_sha256": "89205727c5dcf99595f06d310b6880681565101473961ed1b9252372418ba924",
+      "witnesses_jsonl_gz_sha256": "8490425f48dc59165a963f685f01dc4c5b98e869372a25d4bc0345ed54835a54",
+      "executed_closure_code_sha256": {
+        "counterfactual_closure_engine.py": "a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4",
+        "run_targeted_candidate_fva_closure.py": "180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9"
+      },
+      "code_v2_sha256": {
+        "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+        "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+        "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+      },
+      "input_sha256": {
+        "exp1_stage4_supported_candidate_deficiencies_instances.tsv": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+        "exp1_full484_per_solution_ledger.tsv": "14f7cf5d7ffca599b99e12210ae11bdd8dbde77ae441eb1edcf37d338f049e43",
+        "exp1_full484_withdrawal_knockout_fva.tsv.gz": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+        "exp1_candidate_reaction_pool.pkl": "e5745ed38e602d7d5802d3464951c785d79b2ee7dc926725c4c4f6f64222a66a"
+      },
+      "elapsed_s": 12.931
+    },
+    {
+      "task_id": 5,
+      "num_tasks": 8,
+      "n_genomes": 10,
+      "n_cases_expected": 39,
+      "n_cases_accounted": 39,
+      "n_instances_expected": 1772,
+      "n_instances_accounted": 1772,
+      "n_primary_verified": 39,
+      "n_primary_unverified": 0,
+      "n_fva_both_optimal_and_ordered": 1772,
+      "n_fva_failed_or_unknown": 0,
+      "fva_min_status_counts": {
+        "optimal": 1772
+      },
+      "fva_max_status_counts": {
+        "optimal": 1772
+      },
+      "max_top30_abs_diff_vs_orig_wkf": 9.980080997729068e-17,
+      "cases_tsv_sha256": "b486179bd3563cb254903cbead18aa1530d3a9817193777f98530c51ab573c16",
+      "instances_tsv_gz_sha256": "34f4c5dbb98e65fbcd629ca782d80880959187bb203427dd787ad93182e605b8",
+      "witnesses_jsonl_gz_sha256": "7fc2172b3d327f50c528d7ca55663d9ad90d71336944a5e880d490a5496b5e3e",
+      "executed_closure_code_sha256": {
+        "counterfactual_closure_engine.py": "a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4",
+        "run_targeted_candidate_fva_closure.py": "180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9"
+      },
+      "code_v2_sha256": {
+        "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+        "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+        "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+      },
+      "input_sha256": {
+        "exp1_stage4_supported_candidate_deficiencies_instances.tsv": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+        "exp1_full484_per_solution_ledger.tsv": "14f7cf5d7ffca599b99e12210ae11bdd8dbde77ae441eb1edcf37d338f049e43",
+        "exp1_full484_withdrawal_knockout_fva.tsv.gz": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+        "exp1_candidate_reaction_pool.pkl": "e5745ed38e602d7d5802d3464951c785d79b2ee7dc926725c4c4f6f64222a66a"
+      },
+      "elapsed_s": 14.384
+    },
+    {
+      "task_id": 6,
+      "num_tasks": 8,
+      "n_genomes": 10,
+      "n_cases_expected": 40,
+      "n_cases_accounted": 40,
+      "n_instances_expected": 1772,
+      "n_instances_accounted": 1772,
+      "n_primary_verified": 40,
+      "n_primary_unverified": 0,
+      "n_fva_both_optimal_and_ordered": 1772,
+      "n_fva_failed_or_unknown": 0,
+      "fva_min_status_counts": {
+        "optimal": 1772
+      },
+      "fva_max_status_counts": {
+        "optimal": 1772
+      },
+      "max_top30_abs_diff_vs_orig_wkf": 1.7763568394002505e-15,
+      "cases_tsv_sha256": "a7ae0f9599260335325504945be2f36d9e6cb3f3587a667004dc56a924c96e9f",
+      "instances_tsv_gz_sha256": "b1fb077f220f18d6a5bb29f3227f1809f426816f4ef9f0018e8b60f3242dc48d",
+      "witnesses_jsonl_gz_sha256": "0dbd3e085651a597eca0a3e6de86c39ba093c40733132214c3be3e90d532a5c0",
+      "executed_closure_code_sha256": {
+        "counterfactual_closure_engine.py": "a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4",
+        "run_targeted_candidate_fva_closure.py": "180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9"
+      },
+      "code_v2_sha256": {
+        "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+        "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+        "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+      },
+      "input_sha256": {
+        "exp1_stage4_supported_candidate_deficiencies_instances.tsv": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+        "exp1_full484_per_solution_ledger.tsv": "14f7cf5d7ffca599b99e12210ae11bdd8dbde77ae441eb1edcf37d338f049e43",
+        "exp1_full484_withdrawal_knockout_fva.tsv.gz": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+        "exp1_candidate_reaction_pool.pkl": "e5745ed38e602d7d5802d3464951c785d79b2ee7dc926725c4c4f6f64222a66a"
+      },
+      "elapsed_s": 13.387
+    },
+    {
+      "task_id": 7,
+      "num_tasks": 8,
+      "n_genomes": 10,
+      "n_cases_expected": 37,
+      "n_cases_accounted": 37,
+      "n_instances_expected": 1637,
+      "n_instances_accounted": 1637,
+      "n_primary_verified": 37,
+      "n_primary_unverified": 0,
+      "n_fva_both_optimal_and_ordered": 1637,
+      "n_fva_failed_or_unknown": 0,
+      "fva_min_status_counts": {
+        "optimal": 1637
+      },
+      "fva_max_status_counts": {
+        "optimal": 1637
+      },
+      "max_top30_abs_diff_vs_orig_wkf": 9.999054535747565e-17,
+      "cases_tsv_sha256": "6e0c1c258152f4ae3e279a308f16024d7adcaeffac7bb40c79ac03b5dccc36fd",
+      "instances_tsv_gz_sha256": "2ad5836b971fd26a452bbf89881be69b4c62064eaf0b13422b2e465ef459afd5",
+      "witnesses_jsonl_gz_sha256": "8dc0d5a11ab8d5ae50b44d8e709f8ccf8857e6508c721feae991178678e35d4b",
+      "executed_closure_code_sha256": {
+        "counterfactual_closure_engine.py": "a399da3875be2d1d7f4671d8d2799112376ce340507218c30547dabeefc442e4",
+        "run_targeted_candidate_fva_closure.py": "180bdcee71cdd3445fb4f02db5394923be418ac3a1f0c2dc8c46f536c9fa80f9"
+      },
+      "code_v2_sha256": {
+        "exp1_sbml_highs_engine.py": "c4ef47caa6460d46db7915f42128bc0c9903bd42ae60fcdf75f8e0b0c3713547",
+        "stage2_pilot24_ensemble.py": "bdf6e6eb1d75a1ae774c18edc40523d189602b550d40bb32aaf7dc0f718b56ec",
+        "stage3_full484_worker.py": "273bd9355bec84a45806f1aef890074079d54fe22936df3a8dd4650be4d3fee7"
+      },
+      "input_sha256": {
+        "exp1_stage4_supported_candidate_deficiencies_instances.tsv": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+        "exp1_full484_per_solution_ledger.tsv": "14f7cf5d7ffca599b99e12210ae11bdd8dbde77ae441eb1edcf37d338f049e43",
+        "exp1_full484_withdrawal_knockout_fva.tsv.gz": "d6bbbdad2dbcea13ce10527667e6717a2c1cc23b85d2bd4a7271ec9a041c3266",
+        "exp1_candidate_reaction_pool.pkl": "e5745ed38e602d7d5802d3464951c785d79b2ee7dc926725c4c4f6f64222a66a"
+      },
+      "elapsed_s": 13.026
+    }
+  ]
+}

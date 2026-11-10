@@ -1,0 +1,62 @@
+Institutional Fetch and Research Storage Instructions — Experiment 1 Metabolic Modelling
+Empty Quarter Microbiome Project — Mechanism 20261109
+Package: /home/leechuck/Public/software/empty-quarter-proteome/reproducibility/mechanism_20261109/exp1_metabolic
+
+1. POLICY & PRINCIPLES
+Per project policy and Robert Hoehndorf's explicit instructions:
+- Bulk datasets, large model XML archives, raw genome tarballs, and heavy MILP ensemble
+  results remain on institutional research storage (IBEX and Shaheen III).
+- Do not commit large binary/compressed archives (>50 MB) or intermediate solver dumps to git.
+- The reproducibility package commits:
+  * Complete source code and Slurm submission scripts (`code/`).
+  * Full unit test suite (`tests/`).
+  * Compact frozen accepted result tables, manifests, and gate receipts (`compact_evidence/`, `manifests/`).
+  * Deterministic SHA-256 checksums and verification scripts (`verify_frozen_outputs.py`).
+- Lightweight frozen-output verification runs locally using `uv run pytest` and
+  `python3 verify_frozen_outputs.py` WITHOUT needing to fetch multi-gigabyte raw inputs.
+- Full upstream reanalysis requires an authorized Slurm allocation on the KAUST Shaheen III
+  supercomputer (`k10018` allocation).
+
+2. INSTITUTIONAL STORAGE LOCATIONS
+
+A. Historical & Upstream Source Data (IBEX)
+   - Host: ibex.hpc.kaust.edu.sa
+   - Base gapseq draft model archives:
+     /ibex/reference/gapseq/empty_quarter_2026/gapseq_output/
+   - High-quality external reference models (538 candidate genomes):
+     /ibex/reference/gapseq/empty_quarter_2026/high_quality_metabolic_models/
+
+B. Production Supercomputer Execution Environment (Shaheen III)
+   - Host: shaheen.hpc.kaust.edu.sa (Cray EX / AMD EPYC 9654 "Genoa" 96-core nodes)
+   - Project scratch workspace:
+     /scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/
+   - Input model archives on Shaheen:
+     /scratch/project/k10018/gapseq_output/
+     /scratch/project/k10018/high_quality_metabolic_models/
+   - Python / Solver Environment:
+     /project/k10018/sw/envs/mapping
+     * Python 3.10.16
+     * SciPy 1.15.1
+     * HiGHS v1.9.0 (highspy 1.9.0.post0)
+     * COBRApy 0.29.1
+     * NumPy 2.2.3, Pandas 2.2.3
+
+C. Durable Research Storage (DataWaha)
+   - BORG Archive: /datawaha/borg/empty-quarter/mechanism_20261109/exp1_metabolic/
+   - Encrypted / Sensitive Reference: /mnt/s_borg/hohndor/empty-quarter/
+
+3. RETRIEVAL COMMANDS FOR BULKY ARTIFACTS (OFFICE / HPC ONLY)
+
+To retrieve full raw outputs or candidate reaction pools for deep secondary analysis:
+
+# Candidate reaction pool (~765 KB pkl)
+rsync -avz shaheen:/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_candidate_reaction_pool.pkl ./compact_evidence/
+
+# Full 484 ensemble summary (~50 MB compressed)
+rsync -avz shaheen:/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_full484_ensemble_summary.tsv.gz ./compact_evidence/
+
+# Full 484 reaction stability & biomass sensitivity (~120 MB compressed)
+rsync -avz shaheen:/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_full484_reaction_stability_and_biomass_sensitivity.tsv.gz ./compact_evidence/
+
+# Full 484 per-solution ledger (~15 MB compressed)
+rsync -avz shaheen:/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_full484_per_solution_ledger.tsv ./compact_evidence/

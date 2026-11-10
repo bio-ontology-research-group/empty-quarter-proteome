@@ -1,0 +1,65 @@
+{
+  "job": "53866244",
+  "mode": "pilot",
+  "sample": "F14PRr2",
+  "target_genome": "S43PRr1__single_SemiBin_52",
+  "reference": "/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/picrust2_current_20260803/coverm_current/prepared/reps.mmi",
+  "reference_size": 61912885330,
+  "source_control": {
+    "sample": "F14PRr2",
+    "genome": "S43PRr1__single_SemiBin_52",
+    "domain": "Bacteria",
+    "season": "winter",
+    "bed": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/Bacteria.bed",
+    "full_reads": 189755536,
+    "R1": "/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/processed_reads/F14PRr2_R1.fastq.gz",
+    "R2": "/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/processed_reads/F14PRr2_R2.fastq.gz",
+    "R1_sha256_prior": "9afbeaa646150df3538b034cdf4834cae9b6828fe1e44d50c20ef750d22778b7",
+    "R2_sha256_prior": "9851031f79db4b4ce1fb0f65160dba23cf4c1b4f538c9686f530df427b4e54c0",
+    "R1_bytes": 6514227272,
+    "R1_accessible": true,
+    "R2_bytes": 6597072228,
+    "R2_accessible": true
+  },
+  "selection": "first5Mpairedrecords technical pilot only",
+  "filter": "MAPQ>=30, baseQ>=20, NM/aligned_query_length<=0.05, flags3844excluded, perposition one observation per template",
+  "R1_stat": {
+    "bytes": 6514227272,
+    "mtime_ns": 1764503407723321431
+  },
+  "R1_pilot_records": 5000000,
+  "R1_pilot_uncompressed_sha256": "80801c7bfcac53da8660ffa5172493d754c524b66f8998cccc8cd8951d68635e",
+  "R2_stat": {
+    "bytes": 6597072228,
+    "mtime_ns": 1764503407723321431
+  },
+  "R2_pilot_records": 5000000,
+  "R2_pilot_uncompressed_sha256": "88e90ac35bb1ec411919de009795dd599a8bae890a415acc83781dfdb5bf7231",
+  "mapping_command": [
+    "/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/minimap2",
+    "-ax",
+    "sr",
+    "-t",
+    "12",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/picrust2_current_20260803/coverm_current/prepared/reps.mmi",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/pilot/F14PRr2/tmp/R1.fq",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/pilot/F14PRr2/tmp/R2.fq"
+  ],
+  "regional_filter_command": [
+    "/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/samtools",
+    "view",
+    "-b",
+    "-q",
+    "30",
+    "-F",
+    "3844",
+    "-L",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/Bacteria.bed",
+    "-o",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/pilot/F14PRr2/tmp/regional.unsorted.bam",
+    "-"
+  ],
+  "samtools_version": "samtools 1.23.1",
+  "pysam_version": "0.24.0",
+  "regional_bam_sha256": "4acaa9a27d6a58b8347ed1266e8b22684d18926dd20ca45cd7d4efc5174e8690"
+}

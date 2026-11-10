@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "stage": "stage2_target_identity_collision_audit_v2",
+  "timestamp": "2026-11-09T14:31:59Z",
+  "elapsed_seconds": 32.37,
+  "inputs": {
+    "scored_alignments": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage2_all_spacer_alignments_scored.tsv",
+    "scored_alignments_sha256": "ac8c33baa55d54eb4708e61de30d5b1ee1861d3cbd38bd3a460215801634b27f",
+    "assemblies_manifest": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage2_target_assemblies_manifest.tsv",
+    "assemblies_manifest_sha256": "5b7fbe3f120d32ea2e82256c3c667ddc717c19b92c392fe88e190fe5c5b81b71",
+    "identity_table": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage2_target_viral_identity_table.tsv",
+    "identity_table_sha256": "d1cf684441d4684c0baa8c854652b0353012de1ec5f4dbcbec6114b5d898f36d"
+  },
+  "outputs": {
+    "audit_tsv_v2": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage2_target_identity_collision_audit_v2.tsv",
+    "audit_tsv_v2_sha256": "e1161126d6a753fb6d093eec56e262883d90bbde94e562f90e6c7f9c6a928a7b",
+    "summary_json_v2": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage2_target_identity_collision_summary_v2.json",
+    "summary_json_v2_sha256": "17cb1d6b3951194930c7c73da3600c8a44c0437e818cd149a65039c5574b1a86"
+  },
+  "metrics": {
+    "audit_version": "v2_repaired_source_extraction",
+    "timestamp": "2026-11-09T14:31:59Z",
+    "total_targets_evaluated": 1839,
+    "n_multi_pool_targets": 144,
+    "n_complete_source_coverage": 144,
+    "n_incomplete_source_coverage": 0,
+    "n_identical_duplicates": 144,
+    "n_sequence_collisions": 0,
+    "n_identity_table_mismatches": 0,
+    "n_within_source_repeated_headers": 0,
+    "within_source_conflicts": [],
+    "collision_free": true
+  }
+}

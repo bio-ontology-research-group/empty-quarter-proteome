@@ -1,0 +1,29 @@
+--- a/usr/local/lib/python3.8/site-packages/inStrain/SNVprofile.py
++++ b/usr/local/lib/python3.8/site-packages/inStrain/SNVprofile.py
+@@ -643,7 +643,7 @@
+         filename = self.get_location('raw_data') + os.path.basename(Adb.loc['covT', 'value'])
+         f = h5py.File(filename, 'r')
+         for thing in list(f.keys()):
+-            scaff, mm = thing.split('::')
++            scaff, mm = thing.rsplit('::', 1)
+             scaffs.add(scaff)
+         return scaffs
+ 
+@@ -763,7 +763,7 @@
+             scaff2mm = {}
+             f = h5py.File(location, 'r')
+             for thing in list(f.keys()):
+-                scaff, mm = thing.split('::')
++                scaff, mm = thing.rsplit('::', 1)
+                 if scaffolds != []:
+                     if scaff not in scaffolds:
+                         continue
+@@ -894,7 +894,7 @@
+     f = h5py.File(location, 'r')
+ 
+     for thing in list(f.keys()):
+-        scaff, pair, mm = thing.split('::')
++        scaff, pair, mm = thing.rsplit('::', 2)
+ 
+         if scaffolds != []:
+             if scaff not in scaffolds:

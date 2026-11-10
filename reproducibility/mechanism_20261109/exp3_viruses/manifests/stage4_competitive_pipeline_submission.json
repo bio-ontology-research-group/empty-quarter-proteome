@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-11-09T20:43:04Z",
+  "job_ref_build": "15893933",
+  "job_validate_ref": "15905724",
+  "job_map_array": "15905725",
+  "job_recover_v60prr2": "15910797",
+  "job_aggregate": "15905726",
+  "job_posthoc_followup": "15910957",
+  "job_sequence_followup": "15894662",
+  "dependencies": {
+    "validate_ref": "satisfied_completed_15893933",
+    "map_array": "afterok:15905724",
+    "recover_v60prr2": "completed_from_existing_bams_without_remapping_15910797",
+    "aggregate": "afterok:15910797",
+    "posthoc_followup": "afterok:15905726",
+    "sequence_followup": "completed_independent_of_mapping_15894662"
+  },
+  "resource_requests": {
+    "validate_ref": {"cpus": 16, "mem": "350G", "time": "04:00:00", "partition": "workq"},
+    "map_array": {"cpus": 32, "mem": "350G", "time": "04:00:00", "array": "0-13", "partition": "workq"},
+    "recover_v60prr2": {"cpus": 32, "mem": "120G", "time": "02:00:00", "partition": "workq"},
+    "aggregate": {"cpus": 4, "mem": "32G", "time": "02:00:00", "partition": "workq"},
+    "posthoc_followup": {"cpus": 32, "mem": "120G", "time": "02:00:00", "partition": "workq"},
+    "sequence_followup": {"cpus": 16, "mem": "64G", "time": "04:00:00", "partition": "workq"}
+  },
+  "samples": [
+    "41PRr2", "V60PRr2", "55Dr2", "9Sr2", "55Sr3",
+    "S49Dr1", "48Sr2", "F48Sr2", "V48Dr1", "S48PRr1",
+    "41Sr3", "10Dr2", "43PRr3", "44Dr2"
+  ],
+  "snapshot_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/version_snapshots/pi_viral_boundary_length_repair_20261109",
+  "code_hashes_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/pi_viral_boundary_length_repair_code_hashes.tsv",
+  "historical_chain_15894659": {
+    "job_ref_build": "15893933",
+    "job_validate_ref": "15894659",
+    "job_map_array_cancelled": "15894660",
+    "job_aggregate_cancelled": "15894661",
+    "job_sequence_followup_completed": "15894662",
+    "historical_snapshot_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/version_snapshots/pi_viral_repair_20261109",
+    "historical_code_hashes_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/pi_viral_repair_code_hashes.tsv",
+    "failure_reason": "Validator 15894659 failed at line 229 because touch-created 0-byte REFERENCE_BUILD_DONE sentinel was checked with st_size == 0."
+  },
+  "historical_chain_15902808": {
+    "job_ref_build": "15893933",
+    "job_validate_ref": "15902808",
+    "job_map_array_cancelled": "15902809",
+    "job_aggregate_cancelled": "15902810",
+    "job_sequence_followup_completed": "15894662",
+    "historical_snapshot_dir": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/version_snapshots/pi_viral_sentinel_repair_20261109",
+    "historical_code_hashes_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/provenance/pi_viral_sentinel_repair_code_hashes.tsv",
+    "failure_reason": "Validator 15902808 passed sentinel, crosswalk, FAI, and 25.5 GB reference scan, then failed at line 285 with KeyError: 'target_length' because load_boundary_candidates validated target_length=67924 in inputs/stage4_boundary_sensitive_intervals.json but omitted it from records.append; fixed in pi_viral_boundary_length_repair_20261109."
+  },
+  "v60prr2_recovery_and_posthoc_history": {
+    "failed_array_task_15905725_1": "Completed Bowtie2/samtools/focal evaluation (138.633x / 100.0% on VIRUS_TARGET__V60PRr2::V60PRr2_715976) then failed inside unpatched inStrain 1.9.1 SNVprofile.get_nonredundant_coverage_table due to scaf_mm.split('::') on namespaced header; archived at inStrain_source_primary_6b19afac4f46beca.failed_unpatched_15905725_1.",
+    "failed_recovery_attempt_15910426": "Completed patched inStrain 1.9.1 profile (output and raw_data written) then failed at post-run parser check (22 exported non-cryptic SNVs vs 24 unfiltered cumulative scaffold_info divergent_site_count before cryptic-site reconciliation); archived at inStrain_source_primary_6b19afac4f46beca.prior_completed_1794256081_811309.",
+    "completed_recovery_job_15910797": "Completed 0:0 in 00:11:15 on nid00034 with --skip-probe, verifying existing BAMs/coverage without remapping and reconciling 24 summary vs 22 exported + 2 cryptic variants (receipt SHA 2c00a7c260d31fd03682e04216dfbedc328d862ca4fc574c3c65d27ab62ef498).",
+    "completed_aggregate_job_15905726": "Completed 0:0 in 00:02:07 on nid00019 across all 14 sample receipts (summary SHA 558eab32f5dbc43279f77eae2eee868acc3f904a27e05c7aa2c799cd714222a6).",
+    "failed_posthoc_attempt_15910427": "Completed relaxed sensitivity inStrain profile (--min_read_ani 0.92, --min_cov 5) then failed in stage4_host_array_provenance_audit.py line 533 on int('17.0') from mixed-entity pandas TSV float string formatting of unique_mag_contigs; fixed via _strict_int_from_tsv.",
+    "completed_posthoc_job_15910957": "Completed 0:0 in 00:03:08 on nid00019, writing verified sensitivity profile receipt (SHA 8e8dd2cdd152e9b37cb647528339a4e9e198e8f4a2f09a10f2ec90fd88d5c4f3), posthoc inStrain summary, and integrated 6-host/8-contig sample coverage tables."
+  },
+  "status": "completed_verified_all_stages"
+}

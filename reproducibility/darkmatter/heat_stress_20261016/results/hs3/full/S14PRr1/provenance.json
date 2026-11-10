@@ -1,0 +1,61 @@
+{
+  "job": "53866488",
+  "mode": "full",
+  "sample": "S14PRr1",
+  "target_genome": "S43PRr1__single_SemiBin_52",
+  "reference": "/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/picrust2_current_20260803/coverm_current/prepared/reps.mmi",
+  "reference_size": 61912885330,
+  "source_control": {
+    "sample": "S14PRr1",
+    "genome": "S43PRr1__single_SemiBin_52",
+    "domain": "Bacteria",
+    "season": "hot",
+    "bed": "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/Bacteria.bed",
+    "full_reads": 207238870,
+    "R1": "/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/processed_reads/S14PRr1_R1.fastq.gz",
+    "R2": "/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/processed_reads/S14PRr1_R2.fastq.gz",
+    "R1_sha256_prior": "9721e1855b4699b45da933d098df3fc8dc0d00957f4aefb8b871077d436bf44f",
+    "R2_sha256_prior": "ebcdcea124f4c48707cb079730230aef6042eef4bfb0f7535276e66e0ba861a8",
+    "R1_bytes": 5161905023,
+    "R1_accessible": true,
+    "R2_bytes": 6808007299,
+    "R2_accessible": true
+  },
+  "selection": "all paired reads",
+  "filter": "MAPQ>=30, baseQ>=20, NM/aligned_query_length<=0.05, flags3844excluded, perposition one observation per template",
+  "R1_stat": {
+    "bytes": 5161905023,
+    "mtime_ns": 1764503594625681842
+  },
+  "R2_stat": {
+    "bytes": 6808007299,
+    "mtime_ns": 1764503594625681842
+  },
+  "mapping_command": [
+    "/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/minimap2",
+    "-ax",
+    "sr",
+    "-t",
+    "12",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/rebuild_20260729/picrust2_current_20260803/coverm_current/prepared/reps.mmi",
+    "/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/processed_reads/S14PRr1_R1.fastq.gz",
+    "/ibex/scratch/projects/c2014/EmptyQuarter_Data/soil/wgs_assemblies/processed_reads/S14PRr1_R2.fastq.gz"
+  ],
+  "regional_filter_command": [
+    "/ibex/scratch/projects/c2014/rob/miniconda3/envs/eco_probes/bin/samtools",
+    "view",
+    "-b",
+    "-q",
+    "30",
+    "-F",
+    "3844",
+    "-L",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/Bacteria.bed",
+    "-o",
+    "/ibex/scratch/projects/c2014/rob/metagenomics/06_darkmatter/heat_stress_20261016/results/hs3/full/S14PRr1/tmp/regional.unsorted.bam",
+    "-"
+  ],
+  "samtools_version": "samtools 1.23.1",
+  "pysam_version": "0.24.0",
+  "regional_bam_sha256": "d97ce2a69ccec9950ffdc91ef5f5d73c81f9d6eb6ee525c0010d2e0ffe9bc8ee"
+}

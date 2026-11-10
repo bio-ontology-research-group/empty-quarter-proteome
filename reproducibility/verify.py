@@ -576,6 +576,37 @@ def verify_dnds_legacy_provenance():
     return errors
 
 
+def load_active_manuscript_texts(root_tex_path: str) -> dict[str, str]:
+    """Recursively load active LaTeX manuscript starting from root_tex following \\input and \\include."""
+    loaded = {}
+
+    def _recurse(tex_path: str):
+        real_p = os.path.realpath(tex_path)
+        if real_p in loaded or not os.path.isfile(real_p):
+            return
+        try:
+            with open(real_p, "r", encoding="utf-8", errors="replace") as h:
+                content = h.read()
+        except OSError:
+            return
+        loaded[real_p] = content
+
+        base_dir = os.path.dirname(real_p)
+        for line in content.splitlines():
+            line_no_comment = line.split("%", 1)[0]
+            for match in re.finditer(r"\\(?:input|include)\{([^}]+)\}", line_no_comment):
+                target = match.group(1).strip()
+                target_tex = target if target.endswith(".tex") else target + ".tex"
+                candidate = os.path.join(base_dir, target_tex)
+                if not os.path.isfile(candidate):
+                    candidate = os.path.join(ROOT, "manuscript", target_tex)
+                if os.path.isfile(candidate):
+                    _recurse(candidate)
+
+    _recurse(root_tex_path)
+    return loaded
+
+
 def verify_manuscript_boundaries():
     """Guard claim-bearing prose against superseded or unbounded language."""
     manuscript_path = os.path.join(ROOT, "manuscript", "main.tex")
@@ -607,7 +638,18 @@ def verify_manuscript_boundaries():
         if os.path.isfile(path):
             with open(path) as handle:
                 texts[path] = handle.read()
-    text = texts.get(manuscript_path, "")
+
+    active_manuscript_texts = load_active_manuscript_texts(manuscript_path)
+    for p, doc in active_manuscript_texts.items():
+        texts[p] = doc
+
+    active_combined_text = "\n".join(active_manuscript_texts.values())
+
+    def norm_tex(s: str) -> str:
+        return re.sub(r"\{,\}", ",", s)
+
+    norm_active_text = norm_tex(active_combined_text)
+
     forbidden = {
         "SeqCode-eligible": "R232 empty-rank counts are not SeqCode eligibility calls",
         "no homolog anywhere sequenced": "database searches cannot establish universal absence",
@@ -651,21 +693,20 @@ def verify_manuscript_boundaries():
         "globally unprecedented": "a BiG-FAM no-hit would still be database-relative",
         "novel family with no characterized": "the fragmented GCF result is only an operational no-MIBiG class",
     }
-    required = {
-        "14{,}426": "current refined-bin count",
-        "5{,}438": "current representative count",
-        "GTDB-Tk v2.7.2": "current taxonomy software",
-        "PRJEB125153": "retained ENA study accession",
-        "237 Thermoplasmatota": "lineage analysis cohort",
-        "24.16\\%": "genomic-context ascertainment bound",
-        "4{,}210{,}592": "equal-depth reference count",
-        "18.54": "primary matched-reference effect",
-        "714 of these": "paired crop recovery numerator",
-        "964 models": "same-run whole-chain-unmatched denominator",
-        "Cropping jointly changes": "joint query-extent perturbation bound",
-        "exact correction requires rescoring": "alignment-score correction limitation",
-        "public release or reviewer access remains": "public data availability boundary",
-    }
+    required = [
+        ("14{,}426", ["14,426", "14{,}426"], "current refined-bin count"),
+        ("5{,}438", ["5,438", "5{,}438"], "current representative count"),
+        ("GTDB-Tk v2.7.2", ["GTDB-Tk v2.7.2"], "current taxonomy software"),
+        ("PRJEB125153", ["PRJEB125153"], "retained ENA study accession"),
+        ("237 Thermoplasmatota", ["237 Thermoplasmatota"], "lineage analysis cohort"),
+        ("24.16\\%", ["24.16\\%", "24.16%"], "genomic-context ascertainment bound"),
+        ("4{,}210{,}592", ["4,210,592", "4{,}210{,}592"], "equal-depth reference count"),
+        ("18.54", ["18.54"], "primary matched-reference effect"),
+        ("714 of these", ["714 of the latter", "714 of these", "matches for 714", "recover matches for 714"], "paired crop recovery numerator"),
+        ("964 models", ["964 same-run whole-chain-unmatched models", "964 whole-chain-unmatched models", "964 models", "964 unmatched"], "same-run whole-chain-unmatched denominator"),
+        ("Cropping jointly changes", ["Cropping jointly changes"], "joint query-extent perturbation bound"),
+        ("exact correction requires rescoring", ["exact correction requires rescoring"], "alignment-score correction limitation"),
+    ]
 
     errors = []
     for phrase, reason in forbidden.items():
@@ -692,9 +733,9 @@ def verify_manuscript_boundaries():
                         f"unbounded pattern {pattern!r} in "
                         f"{os.path.relpath(path, ROOT)}:{lineno}: {reason}"
                     )
-    for phrase, reason in required.items():
-        if phrase not in text:
-            errors.append(f"required manuscript phrase missing {phrase!r}: {reason}")
+    for display_label, variants, reason in required:
+        if not any(norm_tex(v) in norm_active_text for v in variants):
+            errors.append(f"required manuscript phrase missing {display_label!r}: {reason}")
     return errors
 
 

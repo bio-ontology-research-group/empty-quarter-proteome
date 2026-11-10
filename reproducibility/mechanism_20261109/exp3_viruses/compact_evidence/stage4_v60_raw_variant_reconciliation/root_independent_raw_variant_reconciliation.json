@@ -1,0 +1,134 @@
+{
+  "time": "2026-11-09T22:47:45.501980+03:00",
+  "status": "independent_actual_data_and_installed_source_reconciliation_passed",
+  "scope": "Reproduced16 mismatch-level cumulative summary counts and22 exported rows from raw cumulative data; does not certify final mapping recovery receipt or downstream sensitivity profiles",
+  "raw_snv_rows": 54,
+  "raw_scaffold_rows": 16,
+  "summary_counts_all_mm": [
+    {
+      "mm": 0,
+      "SNS_count": 0,
+      "SNV_count": 0,
+      "divergent_site_count": 0
+    },
+    {
+      "mm": 1,
+      "SNS_count": 0,
+      "SNV_count": 2,
+      "divergent_site_count": 2
+    },
+    {
+      "mm": 2,
+      "SNS_count": 0,
+      "SNV_count": 6,
+      "divergent_site_count": 6
+    },
+    {
+      "mm": 3,
+      "SNS_count": 0,
+      "SNV_count": 7,
+      "divergent_site_count": 7
+    },
+    {
+      "mm": 4,
+      "SNS_count": 0,
+      "SNV_count": 7,
+      "divergent_site_count": 7
+    },
+    {
+      "mm": 5,
+      "SNS_count": 0,
+      "SNV_count": 7,
+      "divergent_site_count": 7
+    },
+    {
+      "mm": 6,
+      "SNS_count": 0,
+      "SNV_count": 8,
+      "divergent_site_count": 8
+    },
+    {
+      "mm": 7,
+      "SNS_count": 0,
+      "SNV_count": 9,
+      "divergent_site_count": 9
+    },
+    {
+      "mm": 8,
+      "SNS_count": 0,
+      "SNV_count": 9,
+      "divergent_site_count": 9
+    },
+    {
+      "mm": 9,
+      "SNS_count": 0,
+      "SNV_count": 12,
+      "divergent_site_count": 12
+    },
+    {
+      "mm": 10,
+      "SNS_count": 0,
+      "SNV_count": 20,
+      "divergent_site_count": 20
+    },
+    {
+      "mm": 11,
+      "SNS_count": 0,
+      "SNV_count": 20,
+      "divergent_site_count": 20
+    },
+    {
+      "mm": 12,
+      "SNS_count": 0,
+      "SNV_count": 20,
+      "divergent_site_count": 20
+    },
+    {
+      "mm": 13,
+      "SNS_count": 0,
+      "SNV_count": 20,
+      "divergent_site_count": 20
+    },
+    {
+      "mm": 14,
+      "SNS_count": 0,
+      "SNV_count": 23,
+      "divergent_site_count": 23
+    },
+    {
+      "mm": 15,
+      "SNS_count": 0,
+      "SNV_count": 24,
+      "divergent_site_count": 24
+    }
+  ],
+  "summary_at_max_mm": {
+    "mm": 15,
+    "SNV_count": 24,
+    "SNS_count": 0,
+    "divergent_site_count": 24
+  },
+  "exported_noncryptic_rows_exactly_replayed": 22,
+  "excluded_cryptic_positions_zero_based": [
+    {
+      "position": 28678,
+      "mm": 6,
+      "cryptic": true,
+      "allele_count": 2
+    },
+    {
+      "position": 16646,
+      "mm": 9,
+      "cryptic": true,
+      "allele_count": 2
+    }
+  ],
+  "source_semantics": "calc_snps counts last cumulative record per position at mm<=threshold, without cryptic filter. SNVprofile.get_nonredundant_snv_table filters cryptic==False BEFORE sorting mm and keeping last per scaffold+position. Exported22 and summary24 are both reproducible with distinct meanings. Do not present24 as22 surviving sites.",
+  "quality_note": "Two exported calls are at zero-based38589 and38590 near reference end, depth5. Tool calls are conditional on filters and are not independent evidence of infection or recombination.",
+  "files_sha256": {
+    "exp3_v60_raw_variant_reconciliation/cumulative_scaffold_table.csv.gz": "cc6e6950c902e62e30a1589fdc594421dfcf653a58b20d8339ceff60fcf255bd",
+    "exp3_v60_raw_variant_reconciliation/cumulative_snv_table.csv.gz": "1ff77e56591bcaf4d7db4cc4e420801166535d93cdd961619e189f897976beaf",
+    "exp3_v60_raw_variant_reconciliation/installed_snv_count_source_excerpts.txt": "2c19e11231c7ff58a72cb52cfec513607a88d9ebe5275e0e77807a6003d15770",
+    "exp3_v60_actual_profile_semantics15910426.txt": "025374b38c46736b1cb44ebe1a65c48090c366c853a489f06b1c3654d0d6eb87"
+  }
+}

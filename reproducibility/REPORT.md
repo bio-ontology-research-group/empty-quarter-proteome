@@ -42,11 +42,21 @@ All 11 figures present.
   SYNC fig_picrust2_bias.pdf
   SYNC fig_darkmatter_global_specificity.pdf
 Figure 4 rebuilt from checksum-verified qTM inputs; pooled transition counts: [714, 167, 38, 0, 45]
+== generating reframed manuscript figures ==
+Successfully rendered 4 reframed figures and exported 14 panel tables.
+== generating surface modules manuscript figure ==
+Locus mapping TSV saved to /home/leechuck/Public/software/empty-quarter-proteome/reproducibility/integration_20261110/surface_figure/locus_id_mapping.tsv
+Main figure generated:
+  PDF: /home/leechuck/Public/software/empty-quarter-proteome/reproducibility/integration_20261110/surface_figure/fig_surface_modules.pdf
+  PNG: /home/leechuck/Public/software/empty-quarter-proteome/reproducibility/integration_20261110/surface_figure/fig_surface_modules.png
+Supplementary figure generated:
+  PDF: /home/leechuck/Public/software/empty-quarter-proteome/reproducibility/integration_20261110/surface_figure/fig_surface_modules_all_loci.pdf
+  PNG: /home/leechuck/Public/software/empty-quarter-proteome/reproducibility/integration_20261110/surface_figure/fig_surface_modules_all_loci.png
 ```
 
 ## Numbers (recompute vs paper)
 ```
-GATES: PASS (65 frozen artifacts; manuscript boundary language current)
+GATES: PASS (86 frozen artifacts; manuscript boundary language current)
 STATUS   ID                              PAPER      COMPUTED  DESCRIPTION
 ----------------------------------------------------------------------------------------------------
 PASS     scale.read_pairs                  573           573  paired-read sample universe
@@ -436,6 +446,6 @@ COMPUTE: 62 pass | FROZEN: 288 pass | TABLE sources: 6 present | PROVENANCE: 25 
 
 ## Manuscript build
 ```
-MANUSCRIPT: OK (36 pages; BibTeX resolved; public snapshot)
+MANUSCRIPT: OK (72 pages; BibTeX resolved; public snapshot)
 ```
 

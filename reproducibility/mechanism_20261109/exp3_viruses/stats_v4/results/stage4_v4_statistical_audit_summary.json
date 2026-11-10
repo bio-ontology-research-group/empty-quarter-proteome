@@ -1,0 +1,268 @@
+{
+  "stage": "stage4_statistical_audit_v4",
+  "timestamp_UTC": "2026-11-09 15:22:15",
+  "elapsed_seconds": 4.57542872428894,
+  "runtime_command": "code/stage4_statistical_audit_v4.py --exp3-root /scratch/project/k10018/eq-mechanism-20261109/exp3_viruses --field-map /scratch/project/k10018/eq-ecology-mag-20261105/results/rund_20261106/matched_profiles.tsv --root-disposition /scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_v4_root_disposition_41Sr3.json --provisional-disposition /scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_v4_provisional_disposition_second_thermo.json --stage1-summary /scratch/project/k10018/eq-science-20261108/results/stage1_summary.json --stage1b-summary /scratch/project/k10018/eq-science-20261108/results/stage1b_summary.json --n-perms 9999 --seed 20261109",
+  "slurm_job_id": "15894468",
+  "v3_disposition": "preserved_unchanged_invalid_inference_baseline_exploratory_descriptives_only_v4_supersedes_v3_p_and_q_values",
+  "input_files": {
+    "metadata": {
+      "path": "/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/metadata.tsv",
+      "sha256": "0d7b97c4a8b28d8b8a45cf9a986310594707f023ab6ec149735453212b2844ee"
+    },
+    "mag_abundance": {
+      "path": "/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/mag_abundance.tsv.gz",
+      "sha256": "4915c95b5a72dbef5490df1db8b9e88f4cf0c9390de081f82386addf2a1a635c"
+    },
+    "viral_tpm": {
+      "path": "/project/k10018/empty-quarter/data/mobilome/ecology_revision_20261020/inputs/viral_tpm.tsv.gz",
+      "sha256": "eaec54b7506ca9e3fc41376e566193f94d3bd2814c3814c6b2546c798276685b"
+    },
+    "taxonomy": {
+      "path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/taxonomy_reconciliation_all5438.tsv.gz",
+      "sha256": "1bcbdbedec9b16e9f901a989778a5f831d2f475ef4c0c3e559a47568c2f9c5a4"
+    },
+    "screening": {
+      "path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage1_mag_screening_status.tsv",
+      "sha256": "3a321a88048df6390f68e52aba92446266d84d0a07498c7832b2e2c1caded4fe"
+    },
+    "evidence": {
+      "path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage3_all591_archaeal_mag_host_evidence_v2.tsv",
+      "sha256": "f5a744c70e7b234f2222346cc638e8b49a55078a444e450e46a50f90a7c7db1f"
+    },
+    "pairs": {
+      "path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage3_archaeal_virus_host_pairs_all_tiers_v2.tsv",
+      "sha256": "43cca6029736b7334d0755c5cdf97ca969994d064d570208cf1c5c6f52b5fbca"
+    },
+    "protein_members": {
+      "path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/exp4_47_member_evidence.tsv",
+      "sha256": "5a1fc7984d400dbe05cd74fb444351d0c35c0b373277fe0f524396acc4a02fce"
+    },
+    "full_loci": {
+      "path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/inputs/task_a_stage1b_all_candidate_member_loci_verified.tsv.gz",
+      "sha256": "263673dc9a7213997d5ad0e97353b4b238cc3a4152ab0da68a5783fe571a6dca"
+    },
+    "stage1_summary": {
+      "path": "/scratch/project/k10018/eq-science-20261108/results/stage1_summary.json",
+      "sha256": "9eafab23bb2c61ded74f217c91eeac8c639e555ccb1393bc4c3f1ce72c2aac02"
+    },
+    "stage1b_summary": {
+      "path": "/scratch/project/k10018/eq-science-20261108/results/stage1b_summary.json",
+      "sha256": "4f69536f225724d9475140be8f11e24911b763c49669b911f052f276edb64fc0"
+    },
+    "field_map": {
+      "path": "/scratch/project/k10018/eq-ecology-mag-20261105/results/rund_20261106/matched_profiles.tsv",
+      "sha256": "338d153090e2a9be9d5994af1b0d80a66806cbad7469c9e4169dbb6f67ece382"
+    },
+    "root_disposition": {
+      "path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_v4_root_disposition_41Sr3.json",
+      "sha256": "c36c9e8f7ff2d76046d679a9f20edbec973b5944d13d9864116374744eb37b1d"
+    },
+    "provisional_disposition": {
+      "path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/results/stage4_v4_provisional_disposition_second_thermo.json",
+      "sha256": "6b5580ae87c9f9a45d7abeb52ca729766c3224205bc6b1d45ff150c9a7554a21"
+    }
+  },
+  "code": {
+    "path": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/code/stage4_statistical_audit_v4.py",
+    "sha256": "f2f17db56a68b195326b492951df00ff4fd0a466b621ac4a792b28d2f083e63a"
+  },
+  "candidate_counts_actual": {
+    "raw_rows": 2121,
+    "tier1_raw_rows": 8,
+    "alias_duplicate_rows": 1,
+    "unresolved_rows": 1,
+    "boundary_sensitive_provisional_rows": 1,
+    "primary_pairs": 5,
+    "primary_hosts": 4,
+    "provisional_pairs": 6,
+    "provisional_hosts": 5
+  },
+  "provisional_candidate_root_disposition": {
+    "host": "43PRr3__self_SemiBin_469",
+    "target": "44Dr2::44Dr2_4002037",
+    "target_sha256": "6293eefbf49a4cf8cb58cb6aa2c6dd877e3e81450917bd018483580bf3028bb1",
+    "disposition": "boundary_sensitive_provisional_not_primary_host_link",
+    "canonical_spacer_sequence": "AGGCGCCCCAGTGGAGGGGCTCAGGAGGATGA",
+    "spacer_target_interval_1based_inclusive": [
+      37670,
+      37701
+    ],
+    "catalog_viral_interval": [
+      1,
+      34828
+    ],
+    "fresh_checkv_viral_interval": [
+      1,
+      43323
+    ],
+    "fresh_checkv_host_interval": [
+      43324,
+      67924
+    ],
+    "interpretation": "One exact canonical-host spacer matches sequence outside the catalog viral core but inside the longer CheckV viral interval. Viral hallmarks occur in the shared core; they do not establish viral ownership of the matched extension. Preserve as boundary-sensitive provisional historical-exposure candidate, exclude primary host-specific viral association claims until interval identity is resolved. Noncanonical host spacer matches cannot be pooled as independent canonical host evidence."
+  },
+  "detection_counts_actual": {
+    "zero_spacers_untested_not_negative": 447,
+    "screen_positive_conditional_detection_cohort": 144,
+    "screen_positive_eligible": 144,
+    "primary_detected_hosts": 4,
+    "provisional_detected_hosts": 5
+  },
+  "family_tests_actual": {
+    "frozen_families": 47,
+    "assay_provenance": {
+      "status": "validated_independent_complete_original_family_assignment_scope",
+      "n_screened_genomes": 237,
+      "n_original_proteins_in_stage1_scope": 777177,
+      "n_candidate_member_locus_rows_complete_membership": 41494,
+      "n_exact_family_ids": 8776,
+      "n_final_promotion_gate_false_rows_retained_as_membership_evidence": 3184,
+      "stage1_summary": "/scratch/project/k10018/eq-science-20261108/results/stage1_summary.json",
+      "stage1b_summary": "/scratch/project/k10018/eq-science-20261108/results/stage1b_summary.json",
+      "absence_rule": "Only exact family IDs in this complete assignment table have known absence over the declared 237-genome universe; failed gates never become absence"
+    },
+    "full_locus_universe_genomes": 237,
+    "full_absence_universe_families": 44,
+    "dossier_only_nonestimable_absence_families": 3,
+    "rows_by_outcome_set": {
+      "primary": 47,
+      "provisional_sensitivity": 47
+    },
+    "estimable_tests_by_outcome_set": {
+      "primary": 44,
+      "provisional_sensitivity": 44
+    }
+  },
+  "design_matrix_actual": {
+    "eligible": {
+      "raw_matrix_rows": 144,
+      "complete_case_rows_no_imputation": 58,
+      "complete_case_detected_link_events": 1,
+      "design_matrix_rank": 5,
+      "n_parameters_including_intercept": 9,
+      "rank_deficient": true,
+      "constant_predictors_no_contrast": [
+        "phylum_p__Methanobacteriota",
+        "phylum_p__Nanohalarchaeota",
+        "phylum_p__Thermoplasmatota",
+        "phylum_p__Thermoproteota"
+      ],
+      "separation_LP": {
+        "status": "quasi_complete_separation_LP_witness",
+        "complete": false,
+        "quasi_complete": true,
+        "minimum_signed_margin": -0.0,
+        "maximum_signed_margin": 20000.0,
+        "witness_max_abs_coefficient": 10000.0
+      }
+    },
+    "full591_diagnostic": {
+      "raw_matrix_rows": 591,
+      "complete_case_rows_no_imputation": 58,
+      "complete_case_detected_link_events": 1,
+      "design_matrix_rank": 5,
+      "n_parameters_including_intercept": 12,
+      "rank_deficient": true
+    }
+  },
+  "matched_controls_actual": {
+    "candidate_hosts": 5,
+    "matched": 5,
+    "unmatched_NA": 0
+  },
+  "environment_design_actual": {
+    "selection": {
+      "rule": "before outcomes: largest distinct-site count among joint metadata/matrix-available trip x compartment groups; ties lexicographic trip then compartment",
+      "selected_trip": "trip5",
+      "selected_compartment": "PlantRoot",
+      "n_joint_metadata_samples": 441,
+      "n_joint_metadata_sites": 58,
+      "n_selected_samples": 47,
+      "n_selected_sites": 47,
+      "selected_sample_ids": [
+        "V1PRr1",
+        "V11PRr3",
+        "V12PRr1",
+        "V13PRr1",
+        "V14PRr1",
+        "V15PRr2",
+        "V16PRr1",
+        "V17PRr1",
+        "V18PRr2",
+        "V19PRr2",
+        "V2PRr1",
+        "V20PRr1",
+        "V22PRr2",
+        "V23PRr1",
+        "V24PRr1",
+        "V25PRr1",
+        "V27PRr2",
+        "V28PRr1",
+        "V29PRr2",
+        "V3PRr2",
+        "V30PRr1",
+        "V32PRr1",
+        "V33PRr1",
+        "V34PRr1",
+        "V35PRr2",
+        "V37PRr2",
+        "V38PRr3",
+        "V39PRr2",
+        "V4PRr1",
+        "V40PRr2",
+        "V42PRr2",
+        "V43PRr1",
+        "V44PRr1",
+        "V45PRr1",
+        "V47PRr1",
+        "V5PRr1",
+        "V51PRr2",
+        "V53PRr2",
+        "V54PRr1",
+        "V55PRr1",
+        "V57PRr2",
+        "V58PRr1",
+        "V6PRr1",
+        "V60PRr2",
+        "V7PRr2",
+        "V8PRr1",
+        "V9PRr1"
+      ],
+      "outcome_values_used_for_selection": false,
+      "compartment_crosswalk": "current Rund compartment_mag RootAdjacent is the audited synonym of metadata PlantRoot; site/trip require exact normalized matches"
+    },
+    "permutations": {
+      "n_sites_in_selected_design": 47,
+      "n_permutable_sites": 47,
+      "n_fixed_singleton_sites": 0,
+      "n_permutation_strata": 4,
+      "n_permutations": 9999,
+      "permutation_seed": 20261109,
+      "monte_carlo_p_resolution": 0.0001,
+      "within_field_permutation_space_log10": 40.243659032437364,
+      "permutation_space_plus_one_resolution_log10": -40.243659032437364,
+      "field_site_counts": {
+        "uruq": 28,
+        "seif": 11,
+        "megabarchans": 6,
+        "sigmoidal and hooked": 2
+      },
+      "exchangeability_boundary": "Only whole-site viral values permuted within audited dune-field strata; singleton strata fixed; residual within-field spatial autocorrelation remains uncontrolled"
+    },
+    "abundance_rows": 17,
+    "descriptive_candidate_alternative_difference_rows_no_pvalues": 6
+  },
+  "scientific_boundaries": [
+    "All v4 abundance and family tests are exploratory, not confirmatory or fully phylogeny/spatial controlled.",
+    "DETECTEDLINK is conditional on CRISPR screening and assay coverage; zero spacers and missing membership assays are not biological negatives.",
+    "Nonsignificant Fisher/permutation results do not establish absence of association or infection.",
+    "Separate historical MAG/vOTU catalogs are not joint competitive coverage; shared vOTU keys do not resolve independent exact viruses.",
+    "The second Thermoplasmatota candidate is boundary-sensitive provisional only: its exact spacer lies outside the catalog viral core but inside the longer CheckV interval; the whole 67,924-bp contig is not claimed viral.",
+    "The older site_landforms.tsv was not used; the current Rund matched_profiles dune-field map is exact-joined and checked against metadata.",
+    "Within-dune-field site permutation leaves residual within-field spatial autocorrelation uncontrolled; unblocked results are sensitivity only.",
+    "Candidate-minus-alternative rho differences are descriptive only: viral permutation is a joint-independence null, not a general equality-of-correlations or host-preference test.",
+    "The 237-genome family assay universe is supported by independent Stage 1/1b complete-assignment receipts; all 3,184 gate-failed member rows remain membership evidence and never become absences.",
+    "EPV is a power heuristic only; rank, constants and actual LP separation witnesses are reported separately; no overparameterized model was fit."
+  ]
+}

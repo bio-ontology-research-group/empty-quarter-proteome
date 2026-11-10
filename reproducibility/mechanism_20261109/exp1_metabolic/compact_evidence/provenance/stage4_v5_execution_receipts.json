@@ -1,0 +1,3412 @@
+{
+  "status": "completed_verified_search",
+  "output_version": "v5",
+  "script_path": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/code/stage4_candidate_deficiency_search_v5.py",
+  "script_sha256": "6c74803fb3255db4154f9b7c4744464807807d9d5662e4891866c7acbd751801",
+  "evidence_semantics_notes": {
+    "single_hsp_reference_coverage": "Computed as (abs(send - sstart) + 1) / slen for the single best-bitscore HSP, strictly bounded in (0, 1]. Gapped alignment_length is recorded separately and never divided by slen. Query is a DNA contig (qlen in bp), so coverage is reference protein span coverage, never query protein coverage.",
+    "selected_candidate_reference_unique": "Denotes that mapped reference sequences are not shared with another reaction among the 63 selected candidate reactions. Broad EC/MetaCyc crosswalks may include proteins with multiple substrate activities; this does not prove reaction-specific catalysis.",
+    "homolog_candidate_detected_in_MAG": "Interior contig hit with bitscore >= 50, pident >= 40, and single-HSP reference coverage >= 0.70. Uncalled vs annotation-miss status is unknown because hits are not intersected against called ORF coordinates."
+  },
+  "input_files": {
+    "instances_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_stage4_supported_candidate_deficiencies_instances.tsv",
+    "instances_tsv_sha256": "ea5e46dd1b0652534fe1586c9c057f90eaf41af45e12c37f7d61fa990013dd84",
+    "collector_summary_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_stage4_supported_candidate_deficiencies_summary.tsv",
+    "collector_summary_tsv_sha256": "1321aae68fc59794d2dfc0fa9adb2305fa8e913a4aaa3cc785b6472a24c24339",
+    "refined_mags_tar": "/scratch/project/k10018/eq-science-20261108/inputs/thermo237_refined_mags.tar.gz",
+    "refined_mags_tar_sha256": "298722e457d9a975e3521456cd3ee2a6337cab5a7e71623e7ecb200242624c8e",
+    "gap_context_tsv_gz": "/scratch/project/k10018/eq-archaeal-function-20261106/results/gap_context_candidates.tsv.gz",
+    "gap_context_tsv_gz_sha256": "31ad95cbbbb991d373d6086568ae33abcda62c4b227fb039b76cc5d2550b837b",
+    "c18_candidates_tsv": "/project/k10018/work/eq-annot-20261030/results/c18_pathway_holes/candidates.tsv",
+    "c18_candidates_tsv_sha256": "ce0a02e7c7dedf63d29b6cfe781e7f7cc13eb571c40a96e2534c992eccd4e6fe",
+    "c18_windows_tsv": "/project/k10018/work/eq-annot-20261030/results/c18_pathway_holes/windows.tsv",
+    "c18_windows_tsv_sha256": "f1d5dbdb5b6b841734d54e0693acc0ffaea4b6a13ba77459fee53fab8e3f79c2"
+  },
+  "gapseq_crosswalk_source_hashes": {
+    "meta_rea_pwy-gapseq.tbl": "d1dfb89db9cb715e5b149d4102ca4f282e8f30cb779419eca8c0f64cf5aab8e9",
+    "seed_Enzyme_Class_Reactions_Aliases_unique_edited.tsv": "80b72f2009bd1eae13bb49add4ce043c8b8772c44d5937617c09999270f52d77",
+    "seed_reactions_corrected.tsv": "ca162cde009c3a700739350b23fc7066109b4ac4baf7842debe46cce16ca2840",
+    "mnxref_seed-other.tsv": "f351412a220528ba55b3aa61b927a3b28281d627e7186c216b7140cc920eb16d",
+    "meta_rea.tbl": "e6ec61ffc0cd4352ad7d4c08eefa56c963516d7435003acb2c43e91b1dcc6c6b",
+    "meta_genes.csv": "ed241ea5de45d5c459a44a6dddbf49e2257d64fb089dbd4934b017a8fd885a7b",
+    "vmh_reactions.tsv": "7fc94bdee0ae42288b18dbabe64397843379118105ae87b9b17aad1d2b6c9f7f",
+    "SEED2VMH_translation_edited.csv": "f7df5ead0d44c1a88dd68b166699b659ab0bd606154cf99ae2cbd8c99fca356f",
+    "seed_pwy.tbl": "82e7ab6a8744d5479eee12d84c96d59c4ae11243088298f5a17df090c15f5874",
+    "corrections_seed_reactionDB.tsv": "7448aae0e76ddb66d46570e53eaea092abb31850b99a37e3bf627b84f262904e"
+  },
+  "target_and_query_universe_accounting": {
+    "n_candidate_instance_rows": 13750,
+    "n_collector_summary_strata_rows": 244,
+    "collector_summary_rows_explanation": "244 rows in exp1_stage4_supported_candidate_deficiencies_summary.tsv represent (scenario_id, rxn_id, biomass_sensitivity_classification, followup_selection_tier) strata across 63 distinct ModelSEED reactions, NOT 244 distinct reactions.",
+    "n_distinct_candidate_reactions": 63,
+    "n_distinct_candidate_genomes": 81,
+    "n_distinct_candidate_samples": 47,
+    "n_sample_assemblies_available": 47,
+    "inventory_verification": {
+      "inventory_verified": true,
+      "inventory_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_model_inventory_and_qc_484.tsv",
+      "inventory_sha256": "044014df6aa1f7bf9b5d4fcaea3a2daea0ef62f3dfcb3c79ef08e54b0347eb2b",
+      "n_candidate_genomes": 81,
+      "all_candidate_genomes_in_eq_desert_484": true,
+      "n_unique_orders": 5,
+      "n_unique_families": 9
+    },
+    "mag_archive_verification": {
+      "n_archive_mags_total": 237,
+      "n_candidate_mags_verified_in_archive": 81,
+      "n_raw_diamond_alignments": 329147,
+      "diamond_command": [
+        "diamond",
+        "blastx",
+        "--query",
+        "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/tmp/job_15895063/all_refined_mags.fna",
+        "--db",
+        "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/tmp/job_15895063/stage4_v5_target_rxns.dmnd",
+        "--out",
+        "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/provenance/raw_searches_v5/mag_contigs_vs_target_rxns.tsv",
+        "--outfmt",
+        "6",
+        "qseqid",
+        "sseqid",
+        "pident",
+        "length",
+        "qstart",
+        "qend",
+        "qlen",
+        "sstart",
+        "send",
+        "slen",
+        "evalue",
+        "bitscore",
+        "--evalue",
+        "1e-3",
+        "--max-target-seqs",
+        "0",
+        "--threads",
+        "128",
+        "--tmpdir",
+        "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/tmp/job_15895063"
+      ]
+    }
+  },
+  "reference_namespace_resolution_accounting": {
+    "n_reactions_with_reference_sequences_searched": 45,
+    "n_reactions_without_reference_sequences_unsearched": 18,
+    "reaction_resolution_status_counts": {
+      "resolved_selected_candidate_reference_unique": 25,
+      "resolved_shared_many_to_many_reference_set": 20,
+      "unresolved_putative_or_unindexed_in_gapseq_seq_db": 16,
+      "unresolved_mapped_keys_absent_from_archaea_seq_db": 2
+    },
+    "n_deduplicated_reference_sequences_total": 2715,
+    "deduplicated_reference_fasta_sha256": "afd2a46dbb98cf3bb3c79d8f08b905e82db451d1bd0a4c9d2dd9b246d18035f6",
+    "n_instances_searched": 8242,
+    "n_instances_unsearched_missing_reference": 5508
+  },
+  "disposition_instance_counts": {
+    "not_evaluable_missing_reference_sequences": 5508,
+    "homolog_candidate_detected_in_MAG": 3093,
+    "domain_level_or_partial_homolog_candidate_in_MAG": 2533,
+    "unresolved_sample_community_homolog_host_unassigned": 1500,
+    "broad_reference_alignment_near_contig_edge": 508,
+    "candidate_truncated_or_split_gene_at_contig_edge": 247,
+    "tested_no_homolog_detected_conditional_negative_evidence": 225,
+    "unresolved_sample_community_domain_level_hit_host_unassigned": 136
+  },
+  "output_files": {
+    "verification_instances_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_stage4_v5_deficiency_verification_instances.tsv",
+    "verification_instances_tsv_sha256": "4b491a3877725f8c82d137bd6275ba4fdead5c7dbca15a2e8d70aea2c83e9788",
+    "verification_summary_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/exp1_stage4_v5_deficiency_verification_summary.tsv",
+    "verification_summary_tsv_sha256": "10ff88c9099fa84ee29bd96fe5bf0802908d2dc33e6ff4d610eba0ce56c167b8",
+    "reference_namespace_crosswalk_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/provenance/stage4_v5_reference_namespace_crosswalk.tsv",
+    "reference_namespace_crosswalk_tsv_sha256": "8cbf4561606a8666543e5e198adaa1322d126d8b0fc7a15d5fe1468979bbfee6",
+    "reference_sequence_ownership_tsv": "/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/results/provenance/stage4_v5_reference_sequence_ownership.tsv",
+    "reference_sequence_ownership_tsv_sha256": "6fb31e7895068b3659d8a2fb59915da5aa55e0d4f5696c53527e3db9ea0d4739",
+    "mag_search_raw_tsv_sha256": "aceb54e8e46ca7d7e38d4069fb935ff12399ef931bc235e1512a229da535e40d",
+    "sample_search_tsv_hashes": {
+      "1PRr2": "08408da520199b3bfa47861438f8cfca61751a99ffb28429a3f36a01d69aa89f",
+      "25PRr1": "b0ea65db29318a7b2af56023f9493bc06b2b23e0f725decf160f0ade953b6a87",
+      "39PRr1": "2b48dff5374daea2f3e25d283893e04efa4c1d79b5d28aabcea2807777208fd2",
+      "39PRr3": "15a9d4067d022b88a500a652ce42882a4e56693686bac7382bc3699c786be7d0",
+      "41PRr3": "94f3829cb43d559d9e211ec30d8dea3db5da2dfe90abf5ad4bbedf51616ad145",
+      "41PRr2": "d7ace5e234e524970760497d5b74e2b7a1f376e80909a4a7d4a6a903d1893e41",
+      "43PRr1": "2717a56d86c34149a79f61e7889881e7a71635aa49bc530c2c59611822fe980e",
+      "43PRr3": "508e72459df0ce7bcc1957e28b0d592885d194cf3cf499b01b8c8681fd3ce498",
+      "48PRr1": "b876c6bc8c41acc14e020b85df0aeeac271c357d77c2266b0479e9ba6ea62f23",
+      "51Dr3": "e84b2ca395c7ef42989e2d22ddc3ea4c1ce850377f1af486a82e0d0340bc61f8",
+      "51Dr1": "c46b9b7ae234d577341a8de4ac4e891920372887273ac79807baef2cbd321b35",
+      "55Dr3": "2450e662ac552668fef61dd979c618a49b7bc0f08acb17902cd88e892138cbdd",
+      "51PRr2": "d66fc56a00bd6bfa48667cb6a6aa06faf2a65669e482441a7b8e86e35d478458",
+      "54PRr2": "7625f1747c9a0eebf66abc3bbc0f126b83a1e1b6a7972efa2b575fb987368866",
+      "57PRr2": "40ad1732b712308c318b17133c3067e4bf08ae900a191a20314d3cf078a7a4e6",
+      "44Dr2": "e896b1891c58f2f2c3cba368556e3c5877c707ef36807258c4fd30d32405b78a",
+      "58PRr3": "90a1bba27bb5d02989266ba41f98fec3ccf2959f4dd0804a7cc6cfb7fa019914",
+      "59PRr1": "511c921b0b2337edf52169b7db094eeb593b44748089f17a2f04cb42a58316da",
+      "F21Dr3": "3741bcd3b663a396d936fac53f9075ec8940f1aace2e1204dc384d7004170ae8",
+      "60PRr1": "36c22b450be848b224b24f325becd9c36ed73a6210e4a4cd3206633aa02f19f5",
+      "F22PRr2": "c7e8836b3cfc24a5b9e423a31f1d30b024a27665a5cc696dfdf79fce1748b0d0",
+      "F23PRr1": "b70b9d26e201f8aee4c88998a7f0e5f8e55903b8d2bc628a302647f8879b1b97",
+      "F25Dr2": "1e1132e1c96d750d64613078552293408b34360c8414f149b0060ecb817326db",
+      "F27Dr1": "97fa091c7ef66a04fa1059b01ab27c7965539fa9de1508d7bfa7cf3122615c99",
+      "F2Dr2": "fb0ed4f083d934a582767a91124656b9bcf6af234e2bbba8845a0259e150bf4c",
+      "F2Sr2": "9f87278ba6a1cb006f87895dda8959fc6616ca4e6f4b871eaea60dc4de8b3d9f",
+      "F33PRr1": "97210985f36db5a1cabe078ed18147dd1cd9a64a911e536ebafccbc4a50eccdb",
+      "F3PRr1": "dfa61e3bba78adfce208eae18d062cccab650dc8fc42da0b1360d85e5b047114",
+      "F28Dr1": "eb85d909960440b56a0175451047702604a0b859627788f336045b753f3de397",
+      "F41Dr3": "60c1c41190934329b9894ee4bf8051d54b83ff17852bf181122a36114178b6d0",
+      "F41PRr1": "44a0491eaa62f0f43027cf89b201a5fa83a55207e26cf680a707054d61f93b8a",
+      "S11PRr1": "394f5cfd917ecd585d83b4f52bc6a32bad852078d7e5d0bb296eaaa7b4680ab4",
+      "F4PRr2": "4267218cf69a66c1c06328e9938cc773c44c1c7c3b77b8e7c41b820af90cff76",
+      "S25PRr1": "eab1225ab6ed37b1aa5f252d125a1af6fab5ed1fb022a23871c8fc9c030c3ddd",
+      "S20PRr1": "c68566627b4b15ccb4a506976b4ad41a8e8a0e8a35ec6a02f5b3d210aa05cd4c",
+      "S30PRr1": "7096723e0dc7ad32c7dea3bb3982d6a90afedd6b4b8e86356108f7c665d167ca",
+      "S46Dr1": "39042bc56c27d2f5489977c2a6b8172c0fb056a85d59572baa6e348b97b7fd9a",
+      "S31PRr1": "e38ae226972a6d3b74bba910ea1f584c82634c28f65b4f49a1ad73980960ce00",
+      "S40Dr1": "97870cc5ea53c577a58b1ffdc6304406f8f09222278db8448cf547112e9fb3ad",
+      "S52PRr1": "1f38613d49e0f6010f89acc648c18e45b93f6ee090668f3a3ea108fff461c284",
+      "S54PRr1": "c4dcb8d2031daa3de383ded9f405e8a7f5f9efe374bb899c7bc2519dc0452125",
+      "V34PRr1": "c591dc497b89ca1c7dbc24061f39bb1b7c1557a6ad64c6d725dd00a08b46189d",
+      "V2PRr1": "3a6c2285de7ef37ad247f5f51e088300590692e1664b00cf7a7fe8ed63252670",
+      "V45Dr1": "ff756cf8612aa94b0071cea6cd7e69bae3c86b9d9ba945329ad4aa2d15493e06",
+      "V39PRr2": "496807d9cfe63b538c64590c2ba530c59fb7e13627da44447fedf3b042962093",
+      "V47PRr1": "189942474406834a7a57cb685b2c12a894d9f17d6a2bdd57a0c18af237996b57",
+      "V60PRr2": "5e20959b0e3f65205e607b6bfeb2d6afe406eca2046bb4d5089fa1980a2f49d8"
+    }
+  },
+  "ref_inventory": {
+    "rxn00015": {
+      "clean_rxn_id": "rxn00015",
+      "rxn_name": "putrescine:putrescine 4-aminobutyltransferase (ammonia-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "2.5.1.44-RXN",
+        "|2.5.1.44-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.5.1.44"
+      ],
+      "mapped_uniprot_ids": [
+        "O32323"
+      ],
+      "mapped_metacyc_pathways": [
+        "PWY-8149"
+      ],
+      "mapped_fasta_relpaths": [
+        "unrev/2.5.1.44.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "1b1bac23b12b4f3d94715ebcd5b4729a438c8afb1679bd49020324a394f764d0"
+      ],
+      "mapping_evidence_sources": [
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 1,
+      "n_reference_sequences": 1,
+      "n_raw_fasta_records": 1,
+      "gapseq_notes": ""
+    },
+    "rxn00119": {
+      "clean_rxn_id": "rxn00119",
+      "rxn_name": "ATP:UMP phosphotransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-11832",
+        "RXN-12002",
+        "RXN-7913",
+        "|RXN-12002|"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.4.13",
+        "2.7.4.14",
+        "2.7.4.22",
+        "2.7.4.25",
+        "2.7.4.4"
+      ],
+      "mapped_uniprot_ids": [
+        "O04905",
+        "P0A7E9",
+        "P15700",
+        "P30085"
+      ],
+      "mapped_metacyc_pathways": [
+        "PRPP-PWY",
+        "PWY-7176",
+        "PWY-7196",
+        "PWY-7197",
+        "PWY-7205",
+        "PWY-7208",
+        "PWY-7211",
+        "PWY0-162"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.4.22.fasta",
+        "rev/2.7.4.25.fasta",
+        "unrev/2.7.4.14.fasta",
+        "unrev/2.7.4.22.fasta",
+        "unrev/2.7.4.25.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "0bc5ca32c22198d06233711bb0828601c40f581cbd055ffb168a39b31a78cf72",
+        "71290381a23eb0f130d4f905cf3bbd5e6ee76c55dc707fe34109ac072fec0ac5",
+        "85e03e9f3412b19cb57e86373074b461757ea855cca2011ed092994d9f5e7c3f",
+        "e8919293de9b7c83db6147ea12eef6f52e70b6a988dbe52e3c06592aa0d14606",
+        "b1ef3304eb636b3edde5745d9d3ccde79a86adef3d6d0aa67e324cd8cf2e821b"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 5,
+      "n_reference_sequences": 209,
+      "n_raw_fasta_records": 244,
+      "gapseq_notes": "HB"
+    },
+    "rxn00300": {
+      "clean_rxn_id": "rxn00300",
+      "rxn_name": "GTP 7,8-8,9-dihydrolase (diphosphate-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "GTP-CYCLOHYDRO-II-RXN",
+        "|GTP-CYCLOHYDRO-II-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "3.5.4.25"
+      ],
+      "mapped_uniprot_ids": [
+        "O84736",
+        "P0A7I7",
+        "P38066",
+        "P47924",
+        "Q8RS38"
+      ],
+      "mapped_metacyc_pathways": [
+        "PWY-6168",
+        "PWY-7539",
+        "PWY-7991",
+        "RIBOSYN2-PWY"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/3.5.4.25.fasta",
+        "unrev/3.5.4.25.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "2c85d6a95073685321fb529abc731d3c5df7af1ac560b670bf0845e470803310",
+        "99cae9402468f2ec4a53e40c8de958574a2454445ec5a49f04237d34ba13acdf"
+      ],
+      "mapping_evidence_sources": [
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 29,
+      "n_raw_fasta_records": 32,
+      "gapseq_notes": "HB"
+    },
+    "rxn00710": {
+      "clean_rxn_id": "rxn00710",
+      "rxn_name": "orotidine-5'-phosphate carboxy-lyase (UMP-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "OROTPDECARB-RXN",
+        "|OROTPDECARB-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "4.1.1.23"
+      ],
+      "mapped_uniprot_ids": [
+        "P03962",
+        "P08244",
+        "P25971",
+        "Q42586"
+      ],
+      "mapped_metacyc_pathways": [
+        "PRPP-PWY",
+        "PWY-5686",
+        "PWY-7211",
+        "PWY-7790",
+        "PWY-7791",
+        "PWY0-162"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/4.1.1.23.fasta",
+        "unrev/4.1.1.23.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "3973daa42518fbac3bd1500c9ba86edbad3a0c04c87cdd755e1a4946a019ad62",
+        "34d041547494c8992e8fde880de5a72d39e2b688c8e4f3c3c083858e1db974e3"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 116,
+      "n_raw_fasta_records": 126,
+      "gapseq_notes": ""
+    },
+    "rxn00800": {
+      "clean_rxn_id": "rxn00800",
+      "rxn_name": "N6-(1,2-dicarboxyethyl)AMP AMP-lyase (fumarate-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn02937",
+        "rxn03136"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn02937,rxn03136",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "AICARSYN-RXN",
+        "AMPSYN-RXN",
+        "RXN-22497",
+        "|AMPSYN-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "4.3.2.2"
+      ],
+      "mapped_uniprot_ids": [
+        "P0AB89",
+        "P30566",
+        "Q05911",
+        "Q58339"
+      ],
+      "mapped_metacyc_pathways": [
+        "DENOVOPURINE2-PWY",
+        "IMPSYN-HIGH-HCO3",
+        "PRPP-PWY",
+        "PWY-6123",
+        "PWY-6124",
+        "PWY-6126",
+        "PWY-7219",
+        "PWY-7229",
+        "PWY-7234",
+        "PWY-8289",
+        "PWY-841",
+        "PWY66-409"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/4.3.2.2.fasta",
+        "rxn/AICARSYN-RXN.fasta",
+        "rxn/AMPSYN-RXN.fasta",
+        "unrev/4.3.2.2.fasta",
+        "rxn/Q58339.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "e8187032ac96ea647b3621308188dafdb4bffc3c63061f0c2e109703101a3ce1",
+        "62d6a0b32eef74c10bf73262fe19aa6a1d8d3b0c82e5ae3d1bf8b887d32e0491",
+        "849f61153daccb36a1fd909edab95fb27bcb92b848058960e42b4a485f61df58",
+        "a3cdbd3ee16f5ba70173bc5f91ea6ec8bffe3f9a50036c5915328391bfe3a943",
+        "d828635f8931fffc3b242e106866e40ca44ecc809a6e624b3e20c08721b07bc3"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 5,
+      "n_reference_sequences": 54,
+      "n_raw_fasta_records": 64,
+      "gapseq_notes": ""
+    },
+    "rxn00832": {
+      "clean_rxn_id": "rxn00832",
+      "rxn_name": "IMP 1,2-hydrolase (decyclizing)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "IMPCYCLOHYDROLASE-RXN",
+        "|IMPCYCLOHYDROLASE-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.1.2.3",
+        "3.5.4.10"
+      ],
+      "mapped_uniprot_ids": [
+        "P15639",
+        "P31939",
+        "P38009",
+        "P54113",
+        "Q58043"
+      ],
+      "mapped_metacyc_pathways": [
+        "DENOVOPURINE2-PWY",
+        "IMPSYN-HIGH-HCO3",
+        "PRPP-PWY",
+        "PWY-6123",
+        "PWY-6124",
+        "PWY-7234",
+        "PWY-841"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/3.5.4.10.fasta",
+        "unrev/2.1.2.3.fasta",
+        "unrev/3.5.4.10.fasta",
+        "rxn/IMPCYCLOHYDROLASE-RXN.fasta",
+        "rxn/Q58043.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "55fe403bc5ea6e22b3808c06e52eb8202c04af2387efaf0c4135eac9e9032b65",
+        "68cb7d54184ec67927fd0931012285b672581d2d4e0eda3ffaca4029b746e400",
+        "bd43cd4869359e1807332405222b2a52d503eaf6f90b78af513f62ed58ee4bb2",
+        "6a490c677a979b6fcc111ca894b3e146ab2d875ff2e65de4324caa8568ef06e3",
+        "052e63b1d078718fdc8f4b54abe19007eac6ce5dc2293c74be0398a7d5230cfb"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 5,
+      "n_reference_sequences": 50,
+      "n_raw_fasta_records": 86,
+      "gapseq_notes": ""
+    },
+    "rxn00838": {
+      "clean_rxn_id": "rxn00838",
+      "rxn_name": "IMP:L-aspartate ligase (GDP-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "ADENYLOSUCCINATE-SYNTHASE-RXN",
+        "|ADENYLOSUCCINATE-SYNTHASE-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "6.3.4.4"
+      ],
+      "mapped_uniprot_ids": [
+        "P0A7D4",
+        "P80210",
+        "Q96529"
+      ],
+      "mapped_metacyc_pathways": [
+        "DENOVOPURINE2-PWY",
+        "PRPP-PWY",
+        "PWY-6126",
+        "PWY-7219",
+        "PWY-7229",
+        "PWY-841",
+        "PWY66-409"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/6.3.4.4.fasta",
+        "unrev/6.3.4.4.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "24dcaa4ec37b66f13f880b855c13c68fb8b7c62403f8e746802c502dbc7c040b",
+        "12270fa9efb94e8ab9ab521708ce29ea75e5649854c2958ae8259aa22a6ef923"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 57,
+      "n_raw_fasta_records": 65,
+      "gapseq_notes": ""
+    },
+    "rxn01018": {
+      "clean_rxn_id": "rxn01018",
+      "rxn_name": "carbamoyl-phosphate:L-aspartate carbamoyltransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "ASPCARBTRANS-RXN",
+        "|ASPCARBTRANS-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.1.3.2"
+      ],
+      "mapped_uniprot_ids": [
+        "P05654",
+        "P07259",
+        "P0A786",
+        "P0A7F3",
+        "P27708",
+        "P49077",
+        "P96111"
+      ],
+      "mapped_metacyc_pathways": [
+        "PRPP-PWY",
+        "PWY-5686",
+        "PWY-7211",
+        "PWY-7790",
+        "PWY-7791",
+        "PWY0-162"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.1.3.2.fasta",
+        "unrev/2.1.3.2.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "022cb531579ab7add9e6066022aad25964ef19ec5e0aec3000e77d3960cc85e4",
+        "84917788c4e05efc95bf65e4f62a9f1193531a3ed2f781d17ec2fd8ff14e0ee8"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 73,
+      "n_raw_fasta_records": 83,
+      "gapseq_notes": "HB"
+    },
+    "rxn01213": {
+      "clean_rxn_id": "rxn01213",
+      "rxn_name": "GPPSYN-RXN",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn01466",
+        "rxn01486"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn01466,rxn01486",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "GPPSYN-RXN",
+        "|GPPSYN-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.5.1.1",
+        "2.5.1.10",
+        "2.5.1.29"
+      ],
+      "mapped_uniprot_ids": [
+        "D7PHZ5",
+        "O95749",
+        "P08524",
+        "P14324",
+        "P22939",
+        "P49350",
+        "P80042",
+        "Q09152",
+        "Q53479",
+        "Q58GE8",
+        "Q5HZ00",
+        "Q94ID7",
+        "Q9SBR3",
+        "Q9SBR4"
+      ],
+      "mapped_metacyc_pathways": [
+        "ALL-CHORISMATE-PWY",
+        "ERGOSTEROL-SYN-PWY",
+        "POLYISOPRENSYN-PWY",
+        "PWY-5121",
+        "PWY-5122",
+        "PWY-5123",
+        "PWY-5910",
+        "PWY-6146",
+        "PWY-6383",
+        "PWY-6404",
+        "PWY-6859",
+        "PWY-7102",
+        "PWY-7141",
+        "PWY-7156",
+        "PWY-7182",
+        "PWY-7392",
+        "PWY-7410",
+        "PWY-7659",
+        "PWY-7709",
+        "PWY-7736",
+        "PWY2OL-4",
+        "PWY66-5",
+        "UBISYN-PWY"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.5.1.1.fasta",
+        "rxn/GPPSYN-RXN.fasta",
+        "unrev/2.5.1.1.fasta",
+        "rev/2.5.1.10.fasta",
+        "unrev/2.5.1.10.fasta",
+        "rev/2.5.1.29.fasta",
+        "unrev/2.5.1.29.fasta",
+        "rxn/Q53479.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "130209c438233cc89bd187d6dada52ff7324a6fbe2dc67da710d4a3b2e25a557",
+        "ed83dd34fb07276e562d8bd8176c9f56f9068a03fe99695d1b4f592df1bb3bf7",
+        "31eddfc5fcf635f0d8d60f3283839a5aa31d82cc2a9cd88bce8079448ad0a722",
+        "130209c438233cc89bd187d6dada52ff7324a6fbe2dc67da710d4a3b2e25a557",
+        "32824325d1314687a4b244f5c375b3546b39d1db84a7fa6bf036412e2589c1bf",
+        "c65cf44254fc8eb02b5dc847221f537f8ff3578a22b29bcae8e45010d89a208f",
+        "0d39137b602ad8fbcaa16ca38dd49db72c2fc646cbfe82ceefdad2d366441974",
+        "e4b403400b72cebd42ee7fc8e4ed799b92a10fb56c17a1566086a9604290ac44"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 8,
+      "n_reference_sequences": 50,
+      "n_raw_fasta_records": 106,
+      "gapseq_notes": "HB"
+    },
+    "rxn01332": {
+      "clean_rxn_id": "rxn01332",
+      "rxn_name": "Phosphoenolpyruvate:D-erythrose-4-phosphate C-(1-carboxyvinyl)transferase (phosphate hydrolysing, 2-carboxy-2-oxoethyl-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "DAHPSYN-RXN",
+        "|DAHPSYN-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.5.1.54",
+        "4.1.2.15"
+      ],
+      "mapped_uniprot_ids": [
+        "P00887",
+        "P00888",
+        "P0AB91",
+        "P39912"
+      ],
+      "mapped_metacyc_pathways": [
+        "ALL-CHORISMATE-PWY",
+        "ARO-PWY",
+        "COMPLETE-ARO-PWY",
+        "PWY-6164",
+        "PWY-6628",
+        "PWY-6629",
+        "PWY-6630"
+      ],
+      "mapped_fasta_relpaths": [
+        "unrev/2.5.1.54.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "60df9c272c02ce855d11a26aef5510eb19cf073b889d22fe792441e3de9dd008"
+      ],
+      "mapping_evidence_sources": [
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 1,
+      "n_reference_sequences": 23,
+      "n_raw_fasta_records": 23,
+      "gapseq_notes": "HB"
+    },
+    "rxn01362": {
+      "clean_rxn_id": "rxn01362",
+      "rxn_name": "Orotidine-5'-phosphate:diphosphate phospho-alpha-D-ribosyl-transferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "OROPRIBTRANS-RXN",
+        "|OROPRIBTRANS-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.4.2.10"
+      ],
+      "mapped_uniprot_ids": [
+        "P0A7E3",
+        "P13298",
+        "P25972",
+        "P30402",
+        "Q42586"
+      ],
+      "mapped_metacyc_pathways": [
+        "PRPP-PWY",
+        "PWY-5686",
+        "PWY-7211",
+        "PWY-7790",
+        "PWY-7791",
+        "PWY0-162"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.4.2.10.fasta",
+        "unrev/2.4.2.10.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "069209ba10ba3a7c0fd270fa40a45d94c1815988dada54e1f30d46a14bce34eb",
+        "a919f18b85a8235aacdba703c11b02ce14831484aacb806d604e78cd6027be6b"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 118,
+      "n_raw_fasta_records": 133,
+      "gapseq_notes": "HB"
+    },
+    "rxn01466": {
+      "clean_rxn_id": "rxn01466",
+      "rxn_name": "Geranyl-diphosphate:isopentenyl-diphosphate geranyltrans-transferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn01213",
+        "rxn01486"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn01213,rxn01486",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "FPPSYN-RXN",
+        "|FPPSYN-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.5.1.1",
+        "2.5.1.10",
+        "2.5.1.29"
+      ],
+      "mapped_uniprot_ids": [
+        "O65004",
+        "O95749",
+        "P08524",
+        "P14324",
+        "P22939",
+        "P80042",
+        "P9WKH1",
+        "Q09152",
+        "Q43315",
+        "Q53479",
+        "Q5YJK5",
+        "Q94ID7"
+      ],
+      "mapped_metacyc_pathways": [
+        "ALL-CHORISMATE-PWY",
+        "ERGOSTEROL-SYN-PWY",
+        "POLYISOPRENSYN-PWY",
+        "PWY-5121",
+        "PWY-5123",
+        "PWY-5910",
+        "PWY-6146",
+        "PWY-6859",
+        "PWY-7102",
+        "PWY-7156",
+        "PWY-7392",
+        "PWY-7721",
+        "PWY-7736",
+        "PWY66-5",
+        "UBISYN-PWY"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.5.1.10.fasta",
+        "rxn/FPPSYN-RXN.fasta",
+        "rev/2.5.1.1.fasta",
+        "unrev/2.5.1.1.fasta",
+        "unrev/2.5.1.10.fasta",
+        "rev/2.5.1.29.fasta",
+        "unrev/2.5.1.29.fasta",
+        "rxn/Q53479.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "130209c438233cc89bd187d6dada52ff7324a6fbe2dc67da710d4a3b2e25a557",
+        "af596652678a0ec4937651169661dd38704e858686729c7e63855761d95a27a9",
+        "130209c438233cc89bd187d6dada52ff7324a6fbe2dc67da710d4a3b2e25a557",
+        "31eddfc5fcf635f0d8d60f3283839a5aa31d82cc2a9cd88bce8079448ad0a722",
+        "32824325d1314687a4b244f5c375b3546b39d1db84a7fa6bf036412e2589c1bf",
+        "c65cf44254fc8eb02b5dc847221f537f8ff3578a22b29bcae8e45010d89a208f",
+        "0d39137b602ad8fbcaa16ca38dd49db72c2fc646cbfe82ceefdad2d366441974",
+        "e4b403400b72cebd42ee7fc8e4ed799b92a10fb56c17a1566086a9604290ac44"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 8,
+      "n_reference_sequences": 50,
+      "n_raw_fasta_records": 104,
+      "gapseq_notes": "HB"
+    },
+    "rxn01486": {
+      "clean_rxn_id": "rxn01486",
+      "rxn_name": "trans,trans-Farnesyl-diphosphate:isopentenyl-diphosphate farnesyltranstransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn01213",
+        "rxn01466"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn01213,rxn01466",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "FARNESYLTRANSTRANSFERASE-RXN",
+        "|FARNESYLTRANSTRANSFERASE-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.5.1.29"
+      ],
+      "mapped_uniprot_ids": [
+        "A1C8C3",
+        "A2PZA5",
+        "C9K2Q3",
+        "O04046",
+        "O22043",
+        "O95749",
+        "P17060",
+        "P22873",
+        "P34802",
+        "P80042",
+        "Q12051",
+        "Q53479",
+        "Q94ID7",
+        "Q9C446",
+        "Q9LUD9",
+        "Q9SLG2",
+        "Q9SSU0"
+      ],
+      "mapped_metacyc_pathways": [
+        "PWY-5120",
+        "PWY-5121",
+        "PWY-5863",
+        "PWY-5910",
+        "PWY-6146",
+        "PWY-6659",
+        "PWY-6691",
+        "PWY-7392",
+        "PWY-7492",
+        "PWY-7517",
+        "PWY-7720",
+        "PWY-7721",
+        "PWY-7736"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.5.1.29.fasta",
+        "rxn/FARNESYLTRANSTRANSFERASE-RXN.fasta",
+        "unrev/2.5.1.29.fasta",
+        "rxn/Q53479.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "c65cf44254fc8eb02b5dc847221f537f8ff3578a22b29bcae8e45010d89a208f",
+        "af596652678a0ec4937651169661dd38704e858686729c7e63855761d95a27a9",
+        "0d39137b602ad8fbcaa16ca38dd49db72c2fc646cbfe82ceefdad2d366441974",
+        "e4b403400b72cebd42ee7fc8e4ed799b92a10fb56c17a1566086a9604290ac44"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 34,
+      "n_raw_fasta_records": 43,
+      "gapseq_notes": "HB"
+    },
+    "rxn01512": {
+      "clean_rxn_id": "rxn01512",
+      "rxn_name": "ATP:dTDP phosphotransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "CDPKIN-RXN",
+        "DADPKIN-RXN",
+        "DCDPKIN-RXN",
+        "DGDPKIN-RXN",
+        "DTDPKIN-RXN",
+        "DUDPKIN-RXN",
+        "GDPKIN-RXN",
+        "RXN-22499",
+        "UDPKIN-RXN",
+        "|DTDPKIN-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.4.6"
+      ],
+      "mapped_uniprot_ids": [
+        "P0A763",
+        "P15531",
+        "P22392",
+        "P36010",
+        "P39207",
+        "P61136",
+        "P69441"
+      ],
+      "mapped_metacyc_pathways": [
+        "DENOVOPURINE2-PWY",
+        "PPGPPMET-PWY",
+        "PRPP-PWY",
+        "PWY-6125",
+        "PWY-6126",
+        "PWY-6545",
+        "PWY-7176",
+        "PWY-7184",
+        "PWY-7187",
+        "PWY-7196",
+        "PWY-7197",
+        "PWY-7198",
+        "PWY-7200",
+        "PWY-7205",
+        "PWY-7208",
+        "PWY-7210",
+        "PWY-7211",
+        "PWY-7220",
+        "PWY-7221",
+        "PWY-7222",
+        "PWY-7224",
+        "PWY-7226",
+        "PWY-7227",
+        "PWY-7228",
+        "PWY-7229",
+        "PWY-8289",
+        "PWY-841",
+        "PWY0-162",
+        "PWY0-166",
+        "PWY66-409"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.4.6.fasta",
+        "rxn/DTDPKIN-RXN.fasta",
+        "unrev/2.7.4.6.fasta",
+        "rxn/P61136.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "7d707da30129909eae1409735077363253126cc10af7264b2898fb51932dc14f",
+        "116737630153e1bdf79beb96bd888c7d865ee9f0b5c8174eb6edcc631f829dba",
+        "2da9e8e2caf542c55f2ebbd248cde298a2696ac141e9a788209aafeb35807c65",
+        "a661224ae73438c25bd21011e1d052e074ef04c46ca9cb89273feccb394841fa"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 99,
+      "n_raw_fasta_records": 106,
+      "gapseq_notes": ""
+    },
+    "rxn01513": {
+      "clean_rxn_id": "rxn01513",
+      "rxn_name": "ATP:dTMP phosphotransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "DTMPKI-RXN",
+        "GMKALT-RXN",
+        "|DTMPKI-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.4.12",
+        "2.7.4.13",
+        "2.7.4.9"
+      ],
+      "mapped_uniprot_ids": [
+        "P00572",
+        "P0A720",
+        "P23919",
+        "P9WKE1"
+      ],
+      "mapped_metacyc_pathways": [
+        "PWY-6545",
+        "PWY-7184",
+        "PWY-7187",
+        "PWY-7197",
+        "PWY-7198",
+        "PWY-7200",
+        "PWY-7210",
+        "PWY-7211",
+        "PWY-7224",
+        "PWY0-166"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.4.9.fasta",
+        "unrev/2.7.4.9.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "73b698468f9adf863fc3db484e1d852a0d20122d7640135f6e4f68064393f58c",
+        "e4f4a73e9d4f1ebe484982b29be212128e9dd0f65774f5041ab7f5f0b964f0ee"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 179,
+      "n_raw_fasta_records": 198,
+      "gapseq_notes": "HB"
+    },
+    "rxn01603": {
+      "clean_rxn_id": "rxn01603",
+      "rxn_name": "7,8-dihydropteroate:L-glutamate ligase (ADP-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "DIHYDROFOLATESYNTH-RXN",
+        "FOLYLPOLYGLUTAMATESYNTH-RXN",
+        "FORMYLTHFGLUSYNTH-RXN",
+        "RXN0-2921",
+        "RXN2DNV-43",
+        "|DIHYDROFOLATESYNTH-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "6.3.2.12",
+        "6.3.2.17"
+      ],
+      "mapped_uniprot_ids": [
+        "F4JYE9",
+        "P08192",
+        "Q05932"
+      ],
+      "mapped_metacyc_pathways": [
+        "ALL-CHORISMATE-PWY",
+        "FOLATE-SYN-GS1",
+        "FOLSYN-PWY",
+        "PWY-2161",
+        "PWY-6612",
+        "PWY-6614",
+        "PWY2DNV-11"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/6.3.2.17.fasta",
+        "unrev/6.3.2.12.fasta",
+        "unrev/6.3.2.17.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "4857c6606cb5f44f84624643e72b4a9129e6340e8b645202878eef6632340e5f",
+        "28bdc9a0020429ce037ed460f0c93fa518c288dd37b342acfa86a23631bc58be",
+        "59dcbc8b9e6196fae6a23b58a14de3447f5bca2335589c41ae14c3be06f8f4ce"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 3,
+      "n_reference_sequences": 28,
+      "n_raw_fasta_records": 31,
+      "gapseq_notes": ""
+    },
+    "rxn01739": {
+      "clean_rxn_id": "rxn01739",
+      "rxn_name": "ATP:shikimate 3-phosphotransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn02212"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn02212",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "SHIKIMATE-KINASE-RXN",
+        "|SHIKIMATE-KINASE-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.1.71"
+      ],
+      "mapped_uniprot_ids": [
+        "P08566",
+        "P0A6D7",
+        "P0A6E1",
+        "P37944",
+        "Q58835",
+        "Q8GY88",
+        "Q9SJ05"
+      ],
+      "mapped_metacyc_pathways": [
+        "ALL-CHORISMATE-PWY",
+        "ARO-PWY",
+        "COMPLETE-ARO-PWY",
+        "PWY-6163",
+        "PWY-6165",
+        "PWY-6628",
+        "PWY-6629",
+        "PWY-6630"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.1.71.fasta",
+        "rxn/SHIKIMATE-KINASE-RXN.fasta",
+        "unrev/2.7.1.71.fasta",
+        "rxn/Q58835.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "cf4e4f23108c1e79b129ee82e5e02dc2e97b6d7f4881026324e631c93b39d6d0",
+        "11bb1354cc221d6133dc60d2d84028e9d320644f914a0d5d58e7ceb3fbc35b4b",
+        "bf791837c8ad3a0d4ea2083f226dae7de7e6aa3ff17958a94299ee19b3fcaf13",
+        "67bcfda8a0123fba2da56281f2db2076554e6d65c7610652643d26ed412fdee0"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 119,
+      "n_raw_fasta_records": 132,
+      "gapseq_notes": "HB"
+    },
+    "rxn01790": {
+      "clean_rxn_id": "rxn01790",
+      "rxn_name": "(R)-Pantoate:NADP+ 2-oxidoreductase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "2-DEHYDROPANTOATE-REDUCT-RXN",
+        "|2-DEHYDROPANTOATE-REDUCT-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "1.1.1.169"
+      ],
+      "mapped_uniprot_ids": [
+        "P05793",
+        "P0A9J4",
+        "Q5JGC2",
+        "Q5NF59"
+      ],
+      "mapped_metacyc_pathways": [
+        "PANTO-PWY",
+        "PANTOSYN-PWY",
+        "PWY-4221",
+        "PWY-6654"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/1.1.1.169.fasta",
+        "rxn/2-DEHYDROPANTOATE-REDUCT-RXN.fasta",
+        "unrev/1.1.1.169.fasta",
+        "rxn/Q5JGC2.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "14d0177d65fbc542fb830bac850af7cc6123f2173397ac02643e45b71ba022bb",
+        "e78b6140f1a5ba16dcd5aaf955f370b781d98b1df7f984e4077afaf502a1748f",
+        "3db00fd8d1477f0fe8e4a08f8b86d86a32f40769131248f2fe725a32cf938635",
+        "7fbe833f3efe15dfd4270c288bc326c1c8fb941649b293832c4af6429d4c3b03"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 80,
+      "n_raw_fasta_records": 87,
+      "gapseq_notes": ""
+    },
+    "rxn02155": {
+      "clean_rxn_id": "rxn02155",
+      "rxn_name": "ATP:nicotinamide-nucleotide adenylyltransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn02175"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn02175",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "2.7.7.1-RXN",
+        "NICONUCADENYLYLTRAN-RXN",
+        "|NICONUCADENYLYLTRAN-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.7.1",
+        "2.7.7.18"
+      ],
+      "mapped_uniprot_ids": [
+        "P0A752",
+        "P53204",
+        "Q06178",
+        "Q96T66",
+        "Q9BZQ4",
+        "Q9HAN9",
+        "Q9WXV2"
+      ],
+      "mapped_metacyc_pathways": [
+        "NAD-BIOSYNTHESIS-III",
+        "NADSYN-PWY",
+        "PWY-3502",
+        "PWY-5381",
+        "PWY-5653",
+        "PWY-7761",
+        "PWY-8277",
+        "PWY-8352",
+        "PWY0-781",
+        "PWY3O-4106",
+        "PWY3O-4107",
+        "PYRIDNUCSAL-PWY",
+        "PYRIDNUCSYN-PWY"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.7.1.fasta",
+        "rxn/2.7.7.1-RXN.fasta",
+        "unrev/5f260f4c963ce88086360269ee1d5fab.fasta",
+        "unrev/2.7.7.1.fasta",
+        "unrev/19b360959267ff522ea8e051be202592.fasta",
+        "unrev/98fa4bac18033b662ccca54622fa00e5.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "e0514c2ca85f8770add4ba858ab916889bc015bbcf277969466b91a23ab4d2e3",
+        "28ffc47e3415f7444534210a0612e5a7cf2676f9624ebbf18bef11360f70b11a",
+        "3c33ef49b8c36406009a15ebb82002c662b002e753c27c74953a2732005f977f",
+        "90fac8a1d1b9d1c5ecbbe18847a699511868e5cd5677d99757da3aebbb483099",
+        "3c33ef49b8c36406009a15ebb82002c662b002e753c27c74953a2732005f977f",
+        "52a7a18fbe9790a328dd18385675184d9cf7efdb668fe0d2a5269f7635e87997"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 6,
+      "n_reference_sequences": 86,
+      "n_raw_fasta_records": 103,
+      "gapseq_notes": ""
+    },
+    "rxn02175": {
+      "clean_rxn_id": "rxn02175",
+      "rxn_name": "ATP:pantetheine-4'-phosphate adenylyltransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn02155"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn02155",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "PANTEPADENYLYLTRAN-RXN",
+        "|PANTEPADENYLYLTRAN-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.7.3"
+      ],
+      "mapped_uniprot_ids": [
+        "P0A6I6",
+        "P53332",
+        "Q13057",
+        "Q9UYT0"
+      ],
+      "mapped_metacyc_pathways": [
+        "COA-PWY",
+        "COA-PWY-1",
+        "PANTOSYN-PWY",
+        "PWY-4221",
+        "PWY-7851",
+        "PWY-8342"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.7.3.fasta",
+        "rxn/PANTEPADENYLYLTRAN-RXN.fasta",
+        "unrev/2.7.7.3.fasta",
+        "rxn/Q9UYT0.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "999b748b8a73e92f60cb145d69b812cf774ff83152f6b1efb5645016e37f3973",
+        "16a55eb16fc6784290f3714f0fc7872bc1a5edb61f6519aca60fbdeb5bac0862",
+        "49285179b5f6c7941d02833ad18464620369e4f3aed6a83fe993fe62983d75a0",
+        "c2614d7d3b12aa2a4c69f71483e8fdd5e10dbd734340422674af7d6b0976c8be"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 80,
+      "n_raw_fasta_records": 94,
+      "gapseq_notes": ""
+    },
+    "rxn02212": {
+      "clean_rxn_id": "rxn02212",
+      "rxn_name": "2-Dehydro-3-deoxy-D-arabino-heptonate 7-phosphate phosphate-lyase (cyclyzing)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn01739"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn01739",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "3-DEHYDROQUINATE-SYNTHASE-RXN",
+        "|3-DEHYDROQUINATE-SYNTHASE-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "4.2.3.4"
+      ],
+      "mapped_uniprot_ids": [
+        "P07639",
+        "P08566"
+      ],
+      "mapped_metacyc_pathways": [
+        "ALL-CHORISMATE-PWY",
+        "ARO-PWY",
+        "COMPLETE-ARO-PWY",
+        "PWY-6164",
+        "PWY-6628",
+        "PWY-6629",
+        "PWY-6630"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/4.2.3.4.fasta",
+        "unrev/4.2.3.4.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "7ee3cbf01c22213f6c6182e8a0fe100eab27c76e0d815746fd5bab2ddacef805",
+        "0d9918863e5d8567c767c656934b43bdde3a9437fd3bf80ae9700d455e93a521"
+      ],
+      "mapping_evidence_sources": [
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 45,
+      "n_raw_fasta_records": 49,
+      "gapseq_notes": "HB"
+    },
+    "rxn02213": {
+      "clean_rxn_id": "rxn02213",
+      "rxn_name": "3-Dehydroquinate hydro-lyase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "3-DEHYDROQUINATE-DEHYDRATASE-RXN",
+        "|3-DEHYDROQUINATE-DEHYDRATASE-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "4.2.1.10"
+      ],
+      "mapped_uniprot_ids": [
+        "A4QB64",
+        "P05194",
+        "P08566",
+        "P46380",
+        "Q59087",
+        "Q5FTS6",
+        "Q6LXF7",
+        "Q9SQT8"
+      ],
+      "mapped_metacyc_pathways": [
+        "ALL-CHORISMATE-PWY",
+        "ARO-PWY",
+        "COMPLETE-ARO-PWY",
+        "PWY-2504",
+        "PWY-6163",
+        "PWY-6165",
+        "PWY-6416",
+        "PWY-6628",
+        "PWY-6629",
+        "PWY-6630",
+        "PWY-6707",
+        "PWY-6954",
+        "QUINATEDEG-PWY"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/4.2.1.10.fasta",
+        "rxn/3-DEHYDROQUINATE-DEHYDRATASE-RXN.fasta",
+        "unrev/4.2.1.10.fasta",
+        "rxn/Q6LXF7.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "b5728e19b6c27b06447d459e2066d357be9fb28ceac87117486623c398a8092d",
+        "756426f7281dd0bb3c875a2739fc7c4948eafc3712f5ba27b9713cd002326e8a",
+        "a46f8d439991aeb50a73002b6a3caae280a163cd4239b13780772bb6adf537fc",
+        "ed713a622b70708d241f3cf38889b3d99900e530ce775718fdfd424877655992"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 166,
+      "n_raw_fasta_records": 193,
+      "gapseq_notes": ""
+    },
+    "rxn02322": {
+      "clean_rxn_id": "rxn02322",
+      "rxn_name": "ATP:(R)-5-phosphomevalonate phosphotransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "PHOSPHOMEVALONATE-KINASE-RXN",
+        "|PHOSPHOMEVALONATE-KINASE-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.4.2"
+      ],
+      "mapped_uniprot_ids": [
+        "P24521",
+        "Q15126"
+      ],
+      "mapped_metacyc_pathways": [
+        "ERGOSTEROL-SYN-PWY",
+        "PWY-5910",
+        "PWY-6146",
+        "PWY-7391",
+        "PWY-922",
+        "PWY66-5"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.4.2.fasta",
+        "unrev/2.7.4.2.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "53c5eed6f61d30bf4160c4462de92e1e4c44e4c2f17a2e98a214ce8c4cd46e27",
+        "017a4f061a9828ee4ae4f5f48dd5b754fb918411ab0987e12413c3240a861516"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 9,
+      "n_raw_fasta_records": 10,
+      "gapseq_notes": "HB"
+    },
+    "rxn02341": {
+      "clean_rxn_id": "rxn02341",
+      "rxn_name": "N-[(R)-4'-Phosphopantothenoyl]-L-cysteine carboxy-lyase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "P-PANTOCYSDECARB-RXN",
+        "|P-PANTOCYSDECARB-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "4.1.1.36"
+      ],
+      "mapped_uniprot_ids": [
+        "P0ABQ0",
+        "P36024",
+        "P36076",
+        "Q08438",
+        "Q58323",
+        "Q96CD2"
+      ],
+      "mapped_metacyc_pathways": [
+        "COA-PWY",
+        "COA-PWY-1",
+        "PANTOSYN-PWY",
+        "PWY-4221",
+        "PWY-7851",
+        "PWY-8342"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/4.1.1.36.fasta",
+        "unrev/4.1.1.36.fasta",
+        "rxn/P-PANTOCYSDECARB-RXN.fasta",
+        "rxn/Q58323.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "488505b0e4f6ae61bcc1f7848c4cf4dea9d8d5b0a374cc863d2d25c301bb7ef8",
+        "7f98b6ddbc56ceedff451f0d724710bef1877463cfd6a629443ae0769a4f9092",
+        "4444324fa8d1176f76b984e21ace8b6293d975755da6971f4b7c9dda94bb35d4",
+        "78a44585533111b26d97e16ed4e473af02ff90b0c22f072b06b2250eaafc94c1"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 64,
+      "n_raw_fasta_records": 69,
+      "gapseq_notes": ""
+    },
+    "rxn02402": {
+      "clean_rxn_id": "rxn02402",
+      "rxn_name": "Nicotinate-nucleotide:pyrophosphate phosphoribosyltransferase (carboxylating)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "QUINOPRIBOTRANS-RXN",
+        "|QUINOPRIBOTRANS-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "2.4.2.19"
+      ],
+      "mapped_uniprot_ids": [
+        "P30011",
+        "P43619",
+        "Q15274",
+        "Q9SMB7",
+        "Q9SMC1",
+        "Q9X1X8"
+      ],
+      "mapped_metacyc_pathways": [
+        "NADSYN-PWY",
+        "PWY-3502",
+        "PWY-5316",
+        "PWY-5653",
+        "PWY-7342",
+        "PWY-8277",
+        "PWY-8352",
+        "PWY0-781",
+        "PYRIDNUCSYN-PWY"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.4.2.19.fasta",
+        "unrev/2.4.2.19.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "b9e7da9b83d1d3f443176bdaf240612714d45d8bd1ff01049b71902e4defc0fc",
+        "5842f379ef291aa67f6a9189cb3879350364f9236d72669f6c8ce94fd234ea9a"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 72,
+      "n_raw_fasta_records": 75,
+      "gapseq_notes": "HB"
+    },
+    "rxn02895": {
+      "clean_rxn_id": "rxn02895",
+      "rxn_name": "5-Phospho-D-ribosylamine:glycine ligase (ADP-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "GLYRIBONUCSYN-RXN",
+        "|GLYRIBONUCSYN-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "6.3.4.13"
+      ],
+      "mapped_uniprot_ids": [
+        "P07244",
+        "P15640",
+        "P22102"
+      ],
+      "mapped_metacyc_pathways": [
+        "DENOVOPURINE2-PWY",
+        "PRPP-PWY",
+        "PWY-6121",
+        "PWY-6122",
+        "PWY-6277",
+        "PWY-841"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/6.3.4.13.fasta",
+        "unrev/6.3.4.13.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "ca1dd58c23718197bafc005d6a685ba38778ac6d7b758057074aae3a2eab9336",
+        "803cf8b001e9937c66303a19afe5a875fdb169bb3df9131195d0df9afb93aa24"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 80,
+      "n_raw_fasta_records": 85,
+      "gapseq_notes": ""
+    },
+    "rxn02937": {
+      "clean_rxn_id": "rxn02937",
+      "rxn_name": "2-(Formamido)-N1-(5-phosphoribosyl)acetamidine cyclo-ligase (ADP-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn00800",
+        "rxn03084",
+        "rxn03136"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn00800,rxn03084,rxn03136",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "AIRS-RXN",
+        "|AIRS-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "6.3.3.1"
+      ],
+      "mapped_uniprot_ids": [
+        "P07244",
+        "P08178",
+        "P22102"
+      ],
+      "mapped_metacyc_pathways": [
+        "DENOVOPURINE2-PWY",
+        "PRPP-PWY",
+        "PWY-6121",
+        "PWY-6122",
+        "PWY-6277",
+        "PWY-841"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/6.3.3.1.fasta",
+        "unrev/6.3.3.1.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "44d04690dee50757411f31abccc4d5067e8f1fe1c75d857e8af05d29edb82518",
+        "6db7fe8ad36a1c67c256c2d1923f663dd780668421e95bc7d1fb9d646ee16bbf"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 69,
+      "n_raw_fasta_records": 77,
+      "gapseq_notes": ""
+    },
+    "rxn03084": {
+      "clean_rxn_id": "rxn03084",
+      "rxn_name": "5'-Phosphoribosylformylglycinamide:L-glutamine amido-ligase (ADP-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn02937"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn02937",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "FGAMSYN-RXN",
+        "|FGAMSYN-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "6.3.5.3"
+      ],
+      "mapped_uniprot_ids": [
+        "O15067",
+        "P12041",
+        "P12042",
+        "P12049",
+        "P15254",
+        "P38972"
+      ],
+      "mapped_metacyc_pathways": [
+        "DENOVOPURINE2-PWY",
+        "PRPP-PWY",
+        "PWY-6121",
+        "PWY-6122",
+        "PWY-6277",
+        "PWY-841"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/6.3.5.3.fasta",
+        "unrev/6.3.5.3.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "ec2883b5b1a0a8cf294d612c6572109524229ea2a2e173137d4a77d5a1290991",
+        "3fd9f813a05756860045b3b0772bc0f470161b2465ba30d2d4f857d077a52363"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 172,
+      "n_raw_fasta_records": 198,
+      "gapseq_notes": ""
+    },
+    "rxn03136": {
+      "clean_rxn_id": "rxn03136",
+      "rxn_name": "1-(5'-Phosphoribosyl)-5-amino-4-(N-succinocarboxamide)-imidazole AMP-lyase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn00800",
+        "rxn02937"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn00800,rxn02937",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "AICARSYN-RXN",
+        "AMPSYN-RXN",
+        "RXN-22497"
+      ],
+      "mapped_ec_numbers": [
+        "4.3.2.2"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "DENOVOPURINE2-PWY",
+        "IMPSYN-HIGH-HCO3",
+        "PRPP-PWY",
+        "PWY-6123",
+        "PWY-6124",
+        "PWY-6126",
+        "PWY-7219",
+        "PWY-7229",
+        "PWY-7234",
+        "PWY-8289",
+        "PWY-841",
+        "PWY66-409"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/4.3.2.2.fasta",
+        "rxn/AICARSYN-RXN.fasta",
+        "rxn/AMPSYN-RXN.fasta",
+        "unrev/4.3.2.2.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "e8187032ac96ea647b3621308188dafdb4bffc3c63061f0c2e109703101a3ce1",
+        "62d6a0b32eef74c10bf73262fe19aa6a1d8d3b0c82e5ae3d1bf8b887d32e0491",
+        "849f61153daccb36a1fd909edab95fb27bcb92b848058960e42b4a485f61df58",
+        "a3cdbd3ee16f5ba70173bc5f91ea6ec8bffe3f9a50036c5915328391bfe3a943"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 54,
+      "n_raw_fasta_records": 63,
+      "gapseq_notes": "HB"
+    },
+    "rxn03147": {
+      "clean_rxn_id": "rxn03147",
+      "rxn_name": "1-(5-Phosphoribosyl)-5-amino-4-carboxyimidazole:L-aspartate ligase (ADP-forming)",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "SAICARSYN-RXN"
+      ],
+      "mapped_ec_numbers": [
+        "6.3.2.6"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "DENOVOPURINE2-PWY",
+        "IMPSYN-HIGH-HCO3",
+        "PRPP-PWY",
+        "PWY-6123",
+        "PWY-6124",
+        "PWY-7234",
+        "PWY-841"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/6.3.2.6.fasta",
+        "unrev/6.3.2.6.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "90384b2bdbf96d0cc5bbd62d0cd17214e7d90a351dd3dd5375bc093956f07150",
+        "2bdf0f8a0206a73f874fa68e9e562e5261ca0a40f985c6ed3ec4560660143d3e"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_seed_other_rxn",
+        "seed_ec_aliases_edited",
+        "vmh_reactions_ec"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 71,
+      "n_raw_fasta_records": 84,
+      "gapseq_notes": "HB"
+    },
+    "rxn05039": {
+      "clean_rxn_id": "rxn05039",
+      "rxn_name": "R07280",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_mapped_keys_absent_from_archaea_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "mapped_metacyc_or_ec_keys_have_no_fasta_in_archaea_seq_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "RIBOPHOSPHAT-RXN",
+        "|RIBOPHOSPHAT-RXN|"
+      ],
+      "mapped_ec_numbers": [
+        "3.1.3.104"
+      ],
+      "mapped_uniprot_ids": [
+        "P0ADP0",
+        "P42962",
+        "P75809"
+      ],
+      "mapped_metacyc_pathways": [
+        "PWY-6167",
+        "PWY-6168",
+        "PWY-7991",
+        "RIBOSYN2-PWY"
+      ],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_genes_uniprot",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "mnxref_kegg_meta_rea_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": "HB"
+    },
+    "rxn10430": {
+      "clean_rxn_id": "rxn10430",
+      "rxn_name": "archaeatidylinositol N-acetylglucosaminyltransferase",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": "HB"
+    },
+    "rxn10431": {
+      "clean_rxn_id": "rxn10431",
+      "rxn_name": "N-acetylglucosaminylarchaeatidylinositol deacetylase",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10440": {
+      "clean_rxn_id": "rxn10440",
+      "rxn_name": "archaetidylserine decarboxylase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn10553"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn10553",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "PHOSPHASERDECARB-RXN"
+      ],
+      "mapped_ec_numbers": [
+        "4.1.1.65"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PHOSLIPSYN-PWY",
+        "PHOSLIPSYN2-PWY",
+        "PWY-5669",
+        "PWY-7509",
+        "PWY-8401"
+      ],
+      "mapped_fasta_relpaths": [
+        "unrev/4.1.1.65.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "ec2b38656e637d147d7ce0f2693f6567721aad54b68efc1894008b95609604ef"
+      ],
+      "mapping_evidence_sources": [
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 1,
+      "n_reference_sequences": 22,
+      "n_raw_fasta_records": 22,
+      "gapseq_notes": ""
+    },
+    "rxn10441": {
+      "clean_rxn_id": "rxn10441",
+      "rxn_name": "archaetidylglycerol hydrogenase",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10442": {
+      "clean_rxn_id": "rxn10442",
+      "rxn_name": "archaetidylinositol hydrogenase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn10444",
+        "rxn10556"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn10444,rxn10556",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-14399"
+      ],
+      "mapped_ec_numbers": [
+        "1.3.7.11"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PWY-6141",
+        "PWY-6146",
+        "PWY-6349",
+        "PWY-6350"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/1.3.7.11.fasta",
+        "rxn/RXN-14399.fasta",
+        "unrev/1.3.7.11.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "f8f2f7ec0f1200cab52ab3465eaac35d2237db2aaf349b5748b6ba543840a995",
+        "59b7f5a46ccc61e03f9f3b5349f3705864cebc3e4908c1f72830499a5f1d845f",
+        "7d6ca3464be0848adc428cdf3d5dd380997f6a82877220af1d800f2fa9a0fcaf"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 3,
+      "n_reference_sequences": 48,
+      "n_raw_fasta_records": 55,
+      "gapseq_notes": ""
+    },
+    "rxn10444": {
+      "clean_rxn_id": "rxn10444",
+      "rxn_name": "archaetidylserine hydrogenase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn10442",
+        "rxn10556"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn10442,rxn10556",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-14398"
+      ],
+      "mapped_ec_numbers": [
+        "1.3.1.101"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PWY-6141",
+        "PWY-6146"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/1.3.1.101.fasta",
+        "unrev/1.3.1.101.fasta",
+        "rxn/RXN-14398.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "034b7eb23fb5d818f704dd279a85de6ef4bb80dc95190328e9ecd21801d48732",
+        "854ee9ab88d6a98cecb8cfa072aac9645b3e587370ba369bd8b205c93dfe13c1",
+        "67ad7384c533540a2b7a0a104a4cf415640b8501c7c0b0df5551f06d296c1b46"
+      ],
+      "mapping_evidence_sources": [
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 3,
+      "n_reference_sequences": 6,
+      "n_raw_fasta_records": 8,
+      "gapseq_notes": ""
+    },
+    "rxn10454": {
+      "clean_rxn_id": "rxn10454",
+      "rxn_name": "CDP-alcohol phosphatidyltransferase (glycerol 1-phosphate)",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10455": {
+      "clean_rxn_id": "rxn10455",
+      "rxn_name": "CDP-alcohol phosphatidyltransferase (glycerol 1-phosphate) (hydroxy)",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10456": {
+      "clean_rxn_id": "rxn10456",
+      "rxn_name": "CDP-2,3-di-O-geranylgeranyl-sn-glycerol synthase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-14400",
+        "RXN-23122",
+        "RXN-23123",
+        "RXN-9995"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.7.67"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PWY-6141",
+        "PWY-6146",
+        "PWY-6349",
+        "PWY-6350",
+        "PWY-8365"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.7.67.fasta",
+        "rxn/RXN-23122.fasta",
+        "rxn/RXN-23123.fasta",
+        "unrev/2.7.7.67.fasta",
+        "rxn/RXN-9995.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "f7a8e2cf3ed48510e9f99e13038bf3ca6b2f7c32b016f54dc61076506deceee6",
+        "4f0b4808c2007b6e72aa098457ecf4f81eafdb32cb421d755ec9939890a76013",
+        "4f0b4808c2007b6e72aa098457ecf4f81eafdb32cb421d755ec9939890a76013",
+        "faf7df84c9a66c72e84af2e59529712404254fa88b868ae78418f40f70b904c2",
+        "61929fe23e97f623f0fc68f07e41212e303078071ec71c0a95b1df4703a51c5a"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 5,
+      "n_reference_sequences": 83,
+      "n_raw_fasta_records": 109,
+      "gapseq_notes": "HB"
+    },
+    "rxn10457": {
+      "clean_rxn_id": "rxn10457",
+      "rxn_name": "CDP-2-O-(3'-hydroxy)geranyl-3-O-geranyl-sn-glycerol synthase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "CDPDIGLYSYN-RXN"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.7.41"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PHOSLIPSYN-PWY",
+        "PHOSLIPSYN2-PWY",
+        "PWY-5667",
+        "PWY-5981",
+        "PWY-7817",
+        "PWY-8401",
+        "PWY0-1319",
+        "PWY4FS-7",
+        "PWY4FS-8"
+      ],
+      "mapped_fasta_relpaths": [
+        "unrev/2.7.7.41.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "e5b0ba44e48998c36ba595da10f48c19cb0bdd8e9a8e94f3682443c26dd98426"
+      ],
+      "mapping_evidence_sources": [
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 1,
+      "n_reference_sequences": 5,
+      "n_raw_fasta_records": 5,
+      "gapseq_notes": "HB"
+    },
+    "rxn10458": {
+      "clean_rxn_id": "rxn10458",
+      "rxn_name": "CDP-2,3-di-O-geranylgeranyl-sn-glyceroserine O-archaetidyltransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn10460"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn10460",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-14403",
+        "RXN-23126"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.8.39"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PWY-6350",
+        "PWY-8365"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.8.39.fasta",
+        "rxn/RXN-23126.fasta",
+        "unrev/2.7.8.39.fasta",
+        "rxn/RXN-14403.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "20a8d137c983350239011a0568ec0000c330deb77f6403d36a75406d4e60929a",
+        "3da5d39c2d62a538408b370217199a59696a5a6b5ae8d1cf86b3ec34f6890ea5",
+        "b8595fb5141da55dfe7bbe5afe1480f9b3eb2ffe8ad53bc00e96f23c281dc40e",
+        "a66734f7c73b4900c5faca55ba6c1c6b1e79378cc4c314ac8a893ed50afd34c3"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 35,
+      "n_raw_fasta_records": 41,
+      "gapseq_notes": ""
+    },
+    "rxn10459": {
+      "clean_rxn_id": "rxn10459",
+      "rxn_name": "CDP-2-O-(3'-hydroxy)geranyl-3-O-geranyl-sn-glyceroserine O-archaetidyltransferase",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_mapped_keys_absent_from_archaea_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "mapped_metacyc_or_ec_keys_have_no_fasta_in_archaea_seq_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [
+        "2.7.7.8"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10460": {
+      "clean_rxn_id": "rxn10460",
+      "rxn_name": "CDP-digeranyl-sn-glycero-myo-inositol 3-phosphatidyltransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn10458"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn10458",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-14403",
+        "RXN-23126"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.8.39"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PWY-6350",
+        "PWY-8365"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.8.39.fasta",
+        "rxn/RXN-23126.fasta",
+        "unrev/2.7.8.39.fasta",
+        "rxn/RXN-14403.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "20a8d137c983350239011a0568ec0000c330deb77f6403d36a75406d4e60929a",
+        "3da5d39c2d62a538408b370217199a59696a5a6b5ae8d1cf86b3ec34f6890ea5",
+        "b8595fb5141da55dfe7bbe5afe1480f9b3eb2ffe8ad53bc00e96f23c281dc40e",
+        "a66734f7c73b4900c5faca55ba6c1c6b1e79378cc4c314ac8a893ed50afd34c3"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 35,
+      "n_raw_fasta_records": 41,
+      "gapseq_notes": ""
+    },
+    "rxn10461": {
+      "clean_rxn_id": "rxn10461",
+      "rxn_name": "CDP-digeranyl-sn-glycero-myo-inositol 3-phosphatidyltransferase (3' hydroxy)",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10485": {
+      "clean_rxn_id": "rxn10485",
+      "rxn_name": "digeranylgeranylglyceryl phosphate synthase",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": "HB"
+    },
+    "rxn10486": {
+      "clean_rxn_id": "rxn10486",
+      "rxn_name": "2-O-(3'-hydroxy)geranyl-3-O-geranyl-sn-glycerol synthase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "2.5.1.42-RXN"
+      ],
+      "mapped_ec_numbers": [
+        "2.5.1.42"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PWY-6141",
+        "PWY-6146",
+        "PWY-6349",
+        "PWY-6350"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.5.1.42.fasta",
+        "rxn/2.5.1.42-RXN.fasta",
+        "unrev/2.5.1.42.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "6a7f9f69cee9704d1240e2d363c051be0786e77b21837dc280bb3470b148144c",
+        "84158467934440f706f94a33345cf5bdbcc334f8841131977700e3b7405c21de",
+        "5dcd6fe5b7418bf19e42ddd725dd8561bcdeada15455d5b12443efb0e49ee062"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 3,
+      "n_reference_sequences": 68,
+      "n_raw_fasta_records": 88,
+      "gapseq_notes": ""
+    },
+    "rxn10487": {
+      "clean_rxn_id": "rxn10487",
+      "rxn_name": "digeranyl-sn-glycerol-1-phospho-3'-sn-glycerol phosphatase",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10488": {
+      "clean_rxn_id": "rxn10488",
+      "rxn_name": "digeranyl-sn-glycerol-1-phospho-3'-sn-glycerol phosphatase (hydroxy)",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10498": {
+      "clean_rxn_id": "rxn10498",
+      "rxn_name": "dimethylallyltranstransferase (3-hydroxy)",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": "HB"
+    },
+    "rxn10503": {
+      "clean_rxn_id": "rxn10503",
+      "rxn_name": "diphosphomevalonate decarboxylase 2",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": "HB"
+    },
+    "rxn10523": {
+      "clean_rxn_id": "rxn10523",
+      "rxn_name": "farnesyltranstransferase (3-hyroxy)",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": "HB"
+    },
+    "rxn10525": {
+      "clean_rxn_id": "rxn10525",
+      "rxn_name": "gamma-F420-0:gamma-L-glutamate ligase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn10526"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn10526",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-8080",
+        "|RXN-8080|"
+      ],
+      "mapped_ec_numbers": [
+        "6.3.2.31"
+      ],
+      "mapped_uniprot_ids": [
+        "P9WP79",
+        "Q58178"
+      ],
+      "mapped_metacyc_pathways": [
+        "F420-3-BIOSYN-ARCHAEA",
+        "PWY-5199"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/6.3.2.31.fasta",
+        "unrev/6.3.2.31.fasta",
+        "rxn/RXN-8080.fasta",
+        "rxn/Q58178.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "aac15082805786ee83ac9800643ea8793cbd9abb015fcdf71efa2c8b1ce6423b",
+        "6d4070aec4efc4789fe0523f7c934216d3b9d594a3f6842ee325af905759957e",
+        "d61f5929f1a7ba5cdef5d399b23ba014b6d42dd32929772344515ee8fc9344b6",
+        "d61f5929f1a7ba5cdef5d399b23ba014b6d42dd32929772344515ee8fc9344b6"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "meta_genes_uniprot",
+        "mnxref_kegg_meta_rea_rxn"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 57,
+      "n_raw_fasta_records": 65,
+      "gapseq_notes": ""
+    },
+    "rxn10526": {
+      "clean_rxn_id": "rxn10526",
+      "rxn_name": "gamma-F420-1:gamma-L-glutamate ligase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn10525"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn10525",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-8081",
+        "|RXN-8081|"
+      ],
+      "mapped_ec_numbers": [
+        "6.3.2.34"
+      ],
+      "mapped_uniprot_ids": [
+        "P9WP79",
+        "Q58178"
+      ],
+      "mapped_metacyc_pathways": [
+        "F420-3-BIOSYN-ARCHAEA",
+        "PWY-5199"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/6.3.2.34.fasta",
+        "unrev/6.3.2.34.fasta",
+        "rxn/RXN-8081.fasta",
+        "rxn/Q58178.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "aac15082805786ee83ac9800643ea8793cbd9abb015fcdf71efa2c8b1ce6423b",
+        "0e0310efe11b08336461dbd00de11d3b186ce78fe4053d52f57be06fefb3310a",
+        "d61f5929f1a7ba5cdef5d399b23ba014b6d42dd32929772344515ee8fc9344b6",
+        "d61f5929f1a7ba5cdef5d399b23ba014b6d42dd32929772344515ee8fc9344b6"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "meta_genes_uniprot",
+        "mnxref_kegg_meta_rea_rxn"
+      ],
+      "n_mapped_fasta_files": 4,
+      "n_reference_sequences": 35,
+      "n_raw_fasta_records": 43,
+      "gapseq_notes": ""
+    },
+    "rxn10532": {
+      "clean_rxn_id": "rxn10532",
+      "rxn_name": "geranylgeranylglyceryl phosphate synthase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "2.5.1.41-RXN"
+      ],
+      "mapped_ec_numbers": [
+        "2.5.1.41"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PWY-6141",
+        "PWY-6146",
+        "PWY-6349",
+        "PWY-6350"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.5.1.41.fasta",
+        "unrev/2.5.1.41.fasta",
+        "rxn/2.5.1.41-RXN.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "f0799dc3620c373754d9753e53d115dd439a2eaafa66e2698addd9100d88ffa7",
+        "afff6866bb9d4614a1c3dd3bfd30ec710050ed7025d8d748a02d68904053b3a4",
+        "ba0368c8f5e2325a4e70477b74b35a96714c0e44cb196e78a4fdb937cbef82cb"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "all_reactions_tbl_name_md5",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 3,
+      "n_reference_sequences": 94,
+      "n_raw_fasta_records": 113,
+      "gapseq_notes": "HB"
+    },
+    "rxn10538": {
+      "clean_rxn_id": "rxn10538",
+      "rxn_name": "geranyltranstransferase (3-hydroxy)",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": "HB"
+    },
+    "rxn10553": {
+      "clean_rxn_id": "rxn10553",
+      "rxn_name": "hydroxyarchaetidylserine decarboxylase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn10440"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn10440",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "PHOSPHASERDECARB-RXN"
+      ],
+      "mapped_ec_numbers": [
+        "4.1.1.65"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PHOSLIPSYN-PWY",
+        "PHOSLIPSYN2-PWY",
+        "PWY-5669",
+        "PWY-7509",
+        "PWY-8401"
+      ],
+      "mapped_fasta_relpaths": [
+        "unrev/4.1.1.65.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "ec2b38656e637d147d7ce0f2693f6567721aad54b68efc1894008b95609604ef"
+      ],
+      "mapping_evidence_sources": [
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 1,
+      "n_reference_sequences": 22,
+      "n_raw_fasta_records": 22,
+      "gapseq_notes": ""
+    },
+    "rxn10554": {
+      "clean_rxn_id": "rxn10554",
+      "rxn_name": "hydroxyarchaetidylglycerol hydrogenase",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10555": {
+      "clean_rxn_id": "rxn10555",
+      "rxn_name": "hydroxyarchaetidylinositol hydrogenase",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": ""
+    },
+    "rxn10556": {
+      "clean_rxn_id": "rxn10556",
+      "rxn_name": "hydroxyarchaetidylserine hydrogenase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_shared_many_to_many_reference_set",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": true,
+      "shared_with_candidate_rxn_ids": [
+        "rxn10442",
+        "rxn10444"
+      ],
+      "shared_with_candidate_rxn_ids_csv": "rxn10442,rxn10444",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-14398"
+      ],
+      "mapped_ec_numbers": [
+        "1.3.1.101"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "PWY-6141",
+        "PWY-6146"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/1.3.1.101.fasta",
+        "unrev/1.3.1.101.fasta",
+        "rxn/RXN-14398.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "034b7eb23fb5d818f704dd279a85de6ef4bb80dc95190328e9ecd21801d48732",
+        "854ee9ab88d6a98cecb8cfa072aac9645b3e587370ba369bd8b205c93dfe13c1",
+        "67ad7384c533540a2b7a0a104a4cf415640b8501c7c0b0df5551f06d296c1b46"
+      ],
+      "mapping_evidence_sources": [
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 3,
+      "n_reference_sequences": 6,
+      "n_raw_fasta_records": 8,
+      "gapseq_notes": ""
+    },
+    "rxn16234": {
+      "clean_rxn_id": "rxn16234",
+      "rxn_name": "GTP:2-phospho-L-lactate guanylyltransferase",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": true,
+      "mapped_metacyc_rxn_ids": [
+        "RXN-21088"
+      ],
+      "mapped_ec_numbers": [
+        "2.7.7.68"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "F420-3-BIOSYN-ARCHAEA",
+        "PWY-8112"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.7.7.68.fasta",
+        "unrev/2.7.7.68.fasta",
+        "rxn/RXN-21088.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "4442f2394db03260ccac2c3e996667702d961218bd4b9bdc85bfda0160da5d2a",
+        "77de1fb4858b2435b1c3d8e7b6d2ddb334e1e972f23a6d61d4e2d57c1eaf9144",
+        "9d495d48a18dab0d480b1d840d291ac2a0341e11f6f8b9fd230f349786901122"
+      ],
+      "mapping_evidence_sources": [
+        "all_reactions_tbl_ec",
+        "all_reactions_tbl_file",
+        "all_reactions_tbl_metacyc_rxn",
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 3,
+      "n_reference_sequences": 79,
+      "n_raw_fasta_records": 96,
+      "gapseq_notes": ""
+    },
+    "rxn90047": {
+      "clean_rxn_id": "rxn90047",
+      "rxn_name": "L-lactate kinase",
+      "is_transport": false,
+      "reference_available": false,
+      "reference_resolution_status": "unresolved_putative_or_unindexed_in_gapseq_seq_db",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "no_ec_or_metacyc_key_with_sequences_in_gapseq_archaea_db",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [],
+      "mapped_ec_numbers": [],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [],
+      "mapped_fasta_relpaths": [],
+      "mapped_fasta_sha256s": [],
+      "mapping_evidence_sources": [],
+      "n_mapped_fasta_files": 0,
+      "n_reference_sequences": 0,
+      "n_raw_fasta_records": 0,
+      "gapseq_notes": "Gapseq new"
+    },
+    "rxn90051": {
+      "clean_rxn_id": "rxn90051",
+      "rxn_name": "R_rxn90051_c0",
+      "is_transport": false,
+      "reference_available": true,
+      "reference_resolution_status": "resolved_selected_candidate_reference_unique",
+      "reference_uniqueness_scope_note": "selected_candidate_reference_unique denotes non-sharing among the 63 selected candidate reactions only; broad EC/MetaCyc reference sets may span multiple substrate specificities and do not prove reaction-specific catalysis.",
+      "unavailability_reason": "",
+      "is_ambiguous_many_to_many_reference": false,
+      "shared_with_candidate_rxn_ids": [],
+      "shared_with_candidate_rxn_ids_csv": "",
+      "in_per_genome_all_reactions_tbl": false,
+      "mapped_metacyc_rxn_ids": [
+        "GLYCOGENSYN-RXN"
+      ],
+      "mapped_ec_numbers": [
+        "2.4.1.21"
+      ],
+      "mapped_uniprot_ids": [],
+      "mapped_metacyc_pathways": [
+        "GLYCOGENSYNTH-PWY",
+        "PWY-622"
+      ],
+      "mapped_fasta_relpaths": [
+        "rev/2.4.1.21.fasta",
+        "unrev/2.4.1.21.fasta"
+      ],
+      "mapped_fasta_sha256s": [
+        "f7e9ab35bcbf86a1cdb560321713acf43407139a5e04c5eb9a697db33dcc8f7f",
+        "d18c4e696266f0818d92e7c9e8997a4db99b8d406a344d665fa8d759b9d035b8"
+      ],
+      "mapping_evidence_sources": [
+        "meta_rea_pwy_gapseq_ec",
+        "meta_rea_pwy_gapseq_name_md5",
+        "meta_rea_pwy_gapseq_rxn",
+        "seed_ec_aliases_edited"
+      ],
+      "n_mapped_fasta_files": 2,
+      "n_reference_sequences": 14,
+      "n_raw_fasta_records": 15,
+      "gapseq_notes": "Gapseq new"
+    }
+  },
+  "elapsed_seconds": 222.15
+}

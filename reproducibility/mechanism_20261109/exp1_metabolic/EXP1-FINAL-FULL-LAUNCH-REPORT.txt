@@ -1,0 +1,119 @@
+================================================================================
+EXPERIMENT 1 (`exp1_metabolic`) — FINAL FULL 484 LAUNCH & ACCEPTANCE REPORT
+Generated: 2026-11-09T16:35:00+03:00
+Status: ACTIVE & RUNNING ON SHAHEEN
+================================================================================
+
+1. EXECUTIVE SUMMARY
+--------------------------------------------------------------------------------
+The authorized metabolic validation and full 484-genome MILP ensemble launch has
+been successfully executed and verified according to `EXP1-FRESH-HANDOFF.txt`,
+`EXP1-LEDGER-FINAL-ACCEPTANCE.txt`, and `EXP1-REPLAY-EXECUTION-CORRECTION.txt`.
+
+- Unit & Regression Tests: 29 of 29 tests pass both locally (1.88s, Python 3.10)
+  and on Shaheen (2.21s, Python 3.11 in `/project/k10018/sw/envs/mapping`),
+  including new narrow regressions test_28 (fail-closed ledger holes) and test_29
+  (reconstruct_and_verify_solution_witness + ground-truth controls).
+- Fail-Closed Ledger Fixes:
+  1) Replaced fail-open 0.0 defaults with math.nan for stoichiometric residual,
+     bound violations, and growth rate.
+  2) Required explicit cycle-QC pass (`passed_closed_uptake_egc_check`,
+     `passed_no_free_atp_flux`) with `spurious_atp_cycle == False`, plus documented
+     legitimate no-ATP case (`evaluated_no_atp_species`, `not_required_no_atp_species`).
+  3) Strictly rejected empty ledgers when summary has rows.
+  4) Enforced exact task key matching (genome, scenario_id, biomass_recipe_id) and
+     exact count matching between summary `n_distinct_valid_solutions` and ledger
+     `accepted_feasible` rows.
+- Root Independent Audit of Actual Focused Run (80 cases, 551 rows):
+  * All 539 accepted solution rows satisfy finite growth, residual <= 3.55e-11,
+    bound violations == 0.0, and 100% explicit cycle-QC pass.
+  * Verified locally and on Shaheen with `validate_focused_release_results`.
+- Slurm 4-Witness Rebuild & Validation (`Job 15892986`, exit 0, elapsed 1.49s):
+  * Reconstructed and verified the 4 historical changed cases under native medium S0
+    and biomass B0 using the authentic engine API (`reconstruct_and_verify_solution_witness`):
+    - 39PRr1__single_SemiBin_48: verified=True, growth=0.010008, max_res=1.61e-12
+    - 41PRr2__self_SemiBin_2049: verified=True, growth=0.010026, max_res=1.05e-12
+    - 41PRr3__self_SemiBin_1510_sub: verified=True, growth=0.010190, max_res=5.16e-12
+    - 41PRr3__self_SemiBin_55: verified=True, growth=0.062171, max_res=6.59e-13
+  * Synthetic known-impossible negative control verified sound: verified=False, growth=-0.0.
+- Live Slurm Production Pipeline:
+  * Full 484-genome Array: Job `15893066_[0-7]` RUNNING across all 8 Shaheen compute nodes.
+  * Collector: Job `15893074` PENDING with `--dependency=afterok:15893066`.
+  * Candidate Deficiency Search: Job `15893076` PENDING with `--dependency=afterok:15893074`.
+  * Prior comparative diagnostic pilot `15888118` PRESERVED and running.
+  * Obsolete held chain `15888119`, `15888120`, `15888121` CANCELLED cleanly after
+    replacement launch was verified and recorded.
+
+
+2. SLURM PIPELINE INVENTORY & JOB IDS
+--------------------------------------------------------------------------------
+Cluster: Shaheen III (`k10018`, `workq`, batch environment)
+Base Directory: `/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic`
+Code Directory: `/scratch/project/k10018/eq-mechanism-20261109/exp1_metabolic/code_v2` (FROZEN)
+
+Live Pipeline Jobs:
+- `15893066_[0-7]`: Stage 3 Array (8 nodes x 192 CPUs = 1,536 CPUs, time limit 04:00:00).
+  Partitioning 484 deduplicated genomes (237 EQ MAGs + 247 external comparators) into
+  8 shards (~61 genomes/shard) evaluating full 31-tuple scenario/biomass matrices,
+  exact binary MILP ensembles (>=20 solutions, 25% cost slack, 6s time limit),
+  withdrawal/knockout/FVA, and per-solution ledger emission.
+  State: RUNNING on nodes nid00720, nid00721, nid00722, nid00723, nid00724, nid00725, nid00726, nid00727.
+- `15893074`: Stage 3 Collector (64 CPUs, time limit 01:00:00).
+  Aggregates the 8 shard outputs, validates exact ID coverage across 484 genomes,
+  performs strict NA assignment on non-feasible outcomes, verifies per-solution ledger
+  exact keys and counts, computes descriptive unadjusted and lineage-matched EQ vs external
+  comparisons, and emits supported candidate deficiencies for Stage 4.
+  State: PENDING (Dependency: `afterok:15893066`).
+- `15893076`: Stage 4 Candidate Deficiency Search (192 CPUs, time limit 02:00:00).
+  Conducts candidate-conditioned sequence and synteny verification on supported
+  deficiencies across refined MAG assemblies and community context.
+  State: PENDING (Dependency: `afterok:15893074`).
+- `15888118`: Old Comparative Diagnostic Pilot (192 CPUs, time limit 02:00:00).
+  State: RUNNING (Preserved for comparative reference).
+
+Cancelled Obsolete Chain:
+- `15888119_[0-7]`: Cancelled after replacement array `15893066` recorded.
+- `15888120`: Cancelled after replacement collector `15893074` recorded.
+- `15888121`: Cancelled after replacement deficiency search `15893076` recorded.
+
+
+3. SCIENTIFIC VERIFICATION EVIDENCE
+--------------------------------------------------------------------------------
+1. Candidate Reaction Pool Semantics:
+   - Finite union pool: 2,270 reactions aggregated deterministically from the 538
+     cohort-observed gapseq draft models (`observed_cohort_538_sbml_union_pool_not_full_modelseed_db`).
+   - Native bounds preserved: No artificial 20-unit flux caps or relaxed bounds.
+   - Zero-bound exclusion: zero-width candidate reactions strictly excluded from
+     MILP binary selection.
+
+2. Four Changed Historical Cases (Old "Infeasible" -> Feasible Bounded Incumbents):
+   - In earlier pilot runs with numerical timeouts or legacy solver bounds, 4 cases were
+     marked "infeasible". Under HiGHS exact binary MILP and native medium bounds, valid
+     incumbents exist with verified growth >= 0.0100 and stoichiometric residual ~1e-12.
+   - Rebuild verification on Shaheen (`Job 15892986`):
+     * 39PRr1__single_SemiBin_48 (S0/B0, 170 rxns): verified=True, growth=0.010008, max_res=1.61e-12, cycle=passed
+     * 41PRr2__self_SemiBin_2049 (S0/B0, 197 rxns): verified=True, growth=0.010026, max_res=1.05e-12, cycle=passed
+     * 41PRr3__self_SemiBin_1510_sub (S0/B0, 165 rxns): verified=True, growth=0.010190, max_res=5.16e-12, cycle=passed
+     * 41PRr3__self_SemiBin_55 (S0/B0, 163 rxns): verified=True, growth=0.062171, max_res=6.59e-13, cycle=passed
+   - Proven fixed-medium cases: The 4 historical cases under fixed minimal medium S1 remained
+     strictly infeasible (`infeasible_under_fixed_medium`), confirming that the solver
+     accurately discriminates between medium-constrained infeasibility and solvable models.
+   - Ground-truth negative control: Synthetic known-impossible model verified strictly infeasible
+     (growth=-0.0, verified=False).
+
+3. Code and Run Manifest:
+   - Full code frozen under `provenance/EXP1-RUN-MANIFEST.json`.
+   - Code directory on Shaheen: `code_v2` is frozen and must not be mutated.
+
+
+4. COMPLIANCE WITH STRICT WORKER RULES
+--------------------------------------------------------------------------------
+- Sole metabolic worker: Maintained single worker ownership without restarting live Slurm jobs.
+- Local compute vs Shaheen: Model rebuilding and FBA solve executed via Slurm allocation (`workq`),
+  never on the login node.
+- No other branch / manuscript edits: Strictly zero changes outside `mechanism-20261109/exp1_metabolic/`
+  and `LAUNCH_STATUS.txt`.
+- Verification before deletion: Obsolete held jobs cancelled only after replacement chain was live
+  and recorded.
+- Python code executed through `uv`.
+================================================================================

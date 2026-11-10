@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "tool_name": "inStrain",
+  "tool_version": "1.9.1",
+  "container_sif_path": "/project/k10018/sw/images/eq-annot/instrain.sif",
+  "container_target_file": "/usr/local/lib/python3.8/site-packages/inStrain/SNVprofile.py",
+  "original_snvprofile_py_path": "code/instrain_191_overlay/SNVprofile.original.py",
+  "original_snvprofile_py_sha256": "a2ec6c7d3671185210e6fcac987fb2bec471b6fc6a83765e1ebe2233f129c55e",
+  "patched_snvprofile_py_path": "code/instrain_191_overlay/SNVprofile.py",
+  "patched_snvprofile_py_sha256": "f65ac08f1997f6a15b38902aee44afba75de7a6384b3539d66c362ec94d74bcd",
+  "patch_diff_path": "code/instrain_191_overlay/SNVprofile_namespaced_header_rsplit.patch",
+  "patch_diff_sha256": "963cc11e71b505b0cf024bed5311df829ae6a97f14eec8bb02a22f60a23c009a",
+  "singularity_bind_spec_template": "{patched_snvprofile_py_abs_path}:/usr/local/lib/python3.8/site-packages/inStrain/SNVprofile.py:ro",
+  "patched_locations": [
+    {
+      "line_1based": 646,
+      "function": "SNVprofile._get_covt_keys",
+      "serialization_counterpart_line_1based": 730,
+      "serialization_format": "{0}::{1}.format(scaff, mm)",
+      "original_line": "scaff, mm = thing.split('::')",
+      "patched_line": "scaff, mm = thing.rsplit('::', 1)",
+      "reason": "Preserve namespaced :: inside scaffold name when extracting covT scaffold keys (used by inStrain compare and genome_wide)."
+    },
+    {
+      "line_1based": 766,
+      "function": "SNVprofile._load_special",
+      "serialization_counterpart_line_1based": 730,
+      "serialization_format": "{0}::{1}.format(scaff, mm)",
+      "original_line": "scaff, mm = thing.split('::')",
+      "patched_line": "scaff, mm = thing.rsplit('::', 1)",
+      "reason": "Fix crash in Step 4 profile_genome_wide / Step 5 plots / compare when loading covT, snpsCounted, clonT, clonTR HDF5 datasets for scaffolds containing ::."
+    },
+    {
+      "line_1based": 897,
+      "function": "load_scaff2pair2mm2SNPs",
+      "serialization_counterpart_line_1based": 886,
+      "serialization_format": "{0}::{1}::{2}.format(scaff, pair, mm)",
+      "original_line": "scaff, pair, mm = thing.split('::')",
+      "patched_line": "scaff, pair, mm = thing.rsplit('::', 2)",
+      "reason": "Preserve namespaced :: inside scaffold name when loading pairwise SNP/coverage HDF5 datasets in inStrain compare."
+    }
+  ]
+}

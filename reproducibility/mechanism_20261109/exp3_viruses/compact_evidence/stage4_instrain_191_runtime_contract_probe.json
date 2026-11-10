@@ -1,0 +1,38 @@
+{
+  "compAB_positive_and_zero_overlap": {
+    "comparisons_table_sha256": "da56282ac6d5eace33c3436b653c88588bce353fab8db380ee5168f8020dbdbd",
+    "comparisons_table_tsv": "scaffold\tname1\tname2\tcoverage_overlap\tcompared_bases_count\tpercent_genome_compared\tlength\tconsensus_SNPs\tpopulation_SNPs\tpopANI\tconANI\nTINY_DISJOINT_REF\tsampleA_mapq20.bam\tsampleB_mapq20.bam\t0.0\t0\t0.0\t1000\t0\t0\t\t\nTINY_VIRUS_REF\tsampleA_mapq20.bam\tsampleB_mapq20.bam\t1.0\t790\t0.79\t1000\t2\t1\t0.99873417721519\t0.9974683544303796\n",
+    "log_has_compare_finished_banner": true,
+    "log_sha256": "71189b59c443f51a7acdb0b98b31b435dbd0f467a333fbfeb066a7b3ffd31574"
+  },
+  "container_path": "/project/k10018/sw/images/eq-annot/instrain.sif",
+  "inputs": {
+    "ref_fna_sha256": "84a41e27a59fa11bdb52bd82ca16c24b82254ca8869ca47d7be7c411bb1e04ba",
+    "sampleA_mapq20_bam_sha256": "86ec6f0f36fcb9597d72a06268b03279a39fd47cf8009424d372cba0093b47c1",
+    "sampleB_mapq20_bam_sha256": "85f8d3e4505e29b62500b204572b300cd6b7cdb5116e8f2563cacbe2cf7bbdf3"
+  },
+  "instrain_version": "inStrain version 1.9.1",
+  "probe_dir_on_shaheen": "/scratch/project/k10018/eq-mechanism-20261109/exp3_viruses/scratch_tmp/instrain_191_contract_probe",
+  "profA_zero_variants": {
+    "bam_loc_attribute": "bam_loc\tsampleA_mapq20.bam\tvalue\tLocation of .bam file",
+    "log_has_profile_finished_banner": true,
+    "log_sha256": "cc008b73e73b301ab13368eeabab64324845b24b53d5106e7e81716d2cbf0254",
+    "scaffold_info_sha256": "82fa0e1828974a7183fd42aca1e0ee76936bf9281408b1130dee38f3192282f7",
+    "scaffold_info_tsv": "scaffold\tlength\tcoverage\tbreadth\tnucl_diversity\tcoverage_median\tcoverage_std\tcoverage_SEM\tbreadth_minCov\tbreadth_expected\tnucl_diversity_median\tnucl_diversity_rarefied\tnucl_diversity_rarefied_median\tbreadth_rarefied\tconANI_reference\tpopANI_reference\tSNS_count\tSNV_count\tdivergent_site_count\tconsensus_divergent_sites\tpopulation_divergent_sites\nTINY_VIRUS_REF\t1000\t66.0\t0.79\t0.0\t60\t47.3962023795156\t1.4995494818940285\t0.79\t1.0\t0.0\t0.0\t0.0\t0.63\t1.0\t1.0\t0\t0\t0\t0\t0\nTINY_DISJOINT_REF\t1000\t18.0\t0.39\t0.0\t0\t25.242820761555155\t0.7986475053725753\t0.39\t0.9999998748809308\t0.0\t0.0\t0.0\t0.23\t1.0\t1.0\t0\t0\t0\t0\t0\n",
+    "snvs_tsv_bytes": 1,
+    "snvs_tsv_raw_repr": "'\\n'",
+    "snvs_tsv_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+  },
+  "profB_one_sns_one_snv": {
+    "bam_loc_attribute": "bam_loc\tsampleB_mapq20.bam\tvalue\tLocation of .bam file",
+    "log_has_profile_finished_banner": true,
+    "log_sha256": "1cfa895ed2119683e1fee2ced1af53aac9befeb72273fdf490d413532926efa0",
+    "scaffold_info_sha256": "cf5135a79bcfbfc55ca350de9d7bf1bb80990252e54f9f795965f27d907faf31",
+    "scaffold_info_tsv": "scaffold\tlength\tcoverage\tbreadth\tnucl_diversity\tcoverage_median\tcoverage_std\tcoverage_SEM\tbreadth_minCov\tbreadth_expected\tnucl_diversity_median\tnucl_diversity_rarefied\tnucl_diversity_rarefied_median\tbreadth_rarefied\tconANI_reference\tpopANI_reference\tSNS_count\tSNV_count\tdivergent_site_count\tpopulation_divergent_sites\tconsensus_divergent_sites\nTINY_DISJOINT_REF\t1000\t18.0\t0.39\t0.0\t0\t25.242820761555155\t0.7986475053725753\t0.39\t0.9999998748809308\t0.0\t0.0\t0.0\t0.23\t1.0\t1.0\t0\t0\t0\t0\t0\nTINY_VIRUS_REF\t1000\t66.0\t0.79\t0.000632911392405\t60\t47.3962023795156\t1.4995494818940285\t0.79\t1.0\t0.0\t0.0007936507936507\t0.0\t0.63\t0.9974683544303796\t0.99873417721519\t1\t1\t2\t1\t2\n",
+    "snvs_tsv": "scaffold\tposition\tposition_coverage\tallele_count\tref_base\tcon_base\tvar_base\tref_freq\tcon_freq\tvar_freq\tA\tC\tT\tG\tcryptic\tclass\nTINY_VIRUS_REF\t199\t90\t1\tA\tG\tA\t0.0\t1.0\t0.0\t0\t0\t0\t90\tFalse\tSNS\nTINY_VIRUS_REF\t399\t120\t2\tC\tA\tC\t0.5\t0.5\t0.5\t60\t60\t0\t0\tFalse\tcon_SNV\n",
+    "snvs_tsv_sha256": "26a806e7b5b63b8070b352a72848d1e32eea3d21c4e79f1afed9a4f91ae14592"
+  },
+  "schema_version": 1,
+  "singularity_version": "4.3.2",
+  "status": "completed_verified_instrain_1.9.1_runtime_contract_probe"
+}
