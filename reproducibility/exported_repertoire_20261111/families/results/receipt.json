@@ -1,0 +1,86 @@
+{
+ "status": "COMPLETE",
+ "seed": 20261110,
+ "draws": 2000,
+ "split_reps": 500,
+ "block": "named genus, else ANI95 group",
+ "eq_named_orders": [
+  "o__JACPAO01",
+  "o__JACQPN01",
+  "o__RBG-16-68-12",
+  "o__SW-10-69-26"
+ ],
+ "length_bins": [
+  0,
+  100,
+  150,
+  200,
+  250,
+  350,
+  500
+ ],
+ "focal_genome_bins": [
+  1,
+  2,
+  5,
+  10
+ ],
+ "focal_block_bins": [
+  1,
+  2,
+  3,
+  5,
+  10
+ ],
+ "checks": {
+  "n_genes": 3617011,
+  "n_genomes": 1957,
+  "genes_match_expected": true
+ },
+ "families": {
+  "id30_c80": {
+   "path": "/scratch/project/k10018/eq-protein-external-20261110/analysis2_families/clusters/families_id30_c80.tsv",
+   "sha256": "2fcc99daff261bac2fae3c35b919aa7ce5338a5091e88ade25a5b2de9c586484",
+   "n_rows": 3617011,
+   "n_families": 604476,
+   "every_gene_in_exactly_one_family": true,
+   "n_singleton_families": 392351
+  },
+  "id50_c80": {
+   "path": "/scratch/project/k10018/eq-protein-external-20261110/analysis2_families/clusters/families_id50_c80.tsv",
+   "sha256": "e14960389763efcb5921969a57782d36c30dd55e3122d90e52c0b6e564e33816",
+   "n_rows": 3617011,
+   "n_families": 891229,
+   "every_gene_in_exactly_one_family": true,
+   "n_singleton_families": 597394
+  }
+ },
+ "search": {
+  "status": "loaded",
+  "rows": 12586845,
+  "queries_with_hit": 668289,
+  "eq_queries": 772550,
+  "queries_at_max_seqs_cap": 104,
+  "file_sha256": "16bfed43d26936c8e90fb9c2b4d298b287f17da22fd94935d5fc3d435c9734e7"
+ },
+ "uniref50_selfhit_coverage_table": "ok (16790715 hit rows read)",
+ "inputs": {
+  "metadata/harmonized_genome_manifest.tsv": "9307d3d6448fd92395476498ba29c05f30527279f0d954c2bcf56ecb8bf543c7",
+  "source-metadata/ani_groups/ani_95_groups_1957.tsv": "42a043939ff6592e1f749ebaf0c6c39d064633c243221e5c30c160f21640785a",
+  "genecall/harmonized_gene_manifest.tsv.gz": "42bb4c45face3af262f33e4d1206d629d445eb7a511009330bd3724d153d672c",
+  "mmseqs/harmonized_uniref50_per_gene.tsv.gz": "3f5de1c1ea33cac5d7b4435f6c8f7bd5daa160a64fa52fff941c02fa6d75b49f",
+  "signalp/harmonized_signalp6_predictions.tsv.gz": "829d739c4384c13fe56ab5af7906b0354ac05efd1f6ff02dbcb9fe791bd64732",
+  "analysis1_export/export_comparison.py": "508c4e9a52492ffa0e587010e2797674579fbd68d21eeb893b03aafb12859c4d"
+ },
+ "python": "3.11.9",
+ "pandas": "3.0.6",
+ "numpy": "2.4.6",
+ "slurm_job_id_analysis": "15949331",
+ "slurm_job_id_cluster": "15948783",
+ "slurm_job_id_search": "15948834",
+ "mmseqs_version": "18.8cc5c",
+ "mmseqs_image": "/project/k10018/sw/images/eq-annot/mmseqs2.sif",
+ "mmseqs_image_sha256": "5b79474ef8045ec82715c357691386d9301b98448285293f94348e8b69dc1165",
+ "cluster_params": "mmseqs cluster --min-seq-id {0.30|0.50} -c 0.8 --cov-mode 0 -s 7.5 -e 1e-3 --cluster-mode 0 --cluster-reassign 1",
+ "search_params": "mmseqs search (EQ proteins vs external proteins) -s 7.5 -e 1e-5 --cov-mode 2 -c 0.5 --max-seqs 4000"
+}

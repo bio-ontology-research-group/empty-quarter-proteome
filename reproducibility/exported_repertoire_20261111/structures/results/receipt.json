@@ -1,0 +1,1082 @@
+{
+ "analysis": "analysis4_structures: mature-protein AlphaFold2 models, Foldseek search and neighbour-pair complexes for the 981 widespread exported dark families",
+ "date": "2026-11-11/12",
+ "status": "monomers, Foldseek and complexes complete; exceptions listed under not_done",
+ "inputs": {
+  "root": "/scratch/project/k10018/eq-protein-external-20261110 (Shaheen III)",
+  "sha256": {
+   "analysis2_families/clusters/families_id30_c80.tsv": "2fcc99daff261bac2fae3c35b919aa7ce5338a5091e88ade25a5b2de9c586484",
+   "analysis2_families/mmseqs_db/all": "fa783d45fefe71899a879c8b9632676f0111d732a9a8c6fdf4d6746765360420",
+   "analysis2_families/results/dark_exported_widespread_families_id30_c80.tsv": "8117a4291142e38701d009297be33a3fb602a49fc791f64749f825ce9cfe4092",
+   "analysis4_structures/results/alignments/alignment_summary_ownenv.json": "71a77fafebbe1eb5ca4bc5a3785ef141e440c31bea914b92ca96448999da2ce1",
+   "analysis4_structures/results/alignments/alignment_summary_own.json": "7597a996a9d561e9f9b55f37373ad95735b8248b3c3f06cca61ca77df105027a",
+   "analysis4_structures/results/alignments/complex_control_a3m_ownenv.tar": "4440c372f26fffddae7e18dbed0820d6857b5e00f090ba15f9ff93dacf824660",
+   "analysis4_structures/results/alignments/complex_control_a3m_own.tar": "de03890fe1097099dfcd803e80bfe151d2b3559a545b8fb8e1af1e3467e5c039",
+   "analysis4_structures/results/alignments/complex_real_a3m_ownenv.tar": "aafb6722d4dfa1969711e24cec424a09ea17e958aa87199961d53967cc468b35",
+   "analysis4_structures/results/alignments/complex_real_a3m_own.tar": "c2fdcf8346a235cd1ebbde21a0bd5777525cb83b09b0c64f321de6c85d941132",
+   "analysis4_structures/results/alignments/monomer_a3m_ownenv.tar": "56dbcc231620548129e06918a9e83ef65e520a0901b8046885b5a522fe725d4e",
+   "analysis4_structures/results/alignments/monomer_a3m_own.tar": "092e6730011a47843b2f65b9da4be9fd959cbdb0df439e9f82af23eb0c2d9ef7",
+   "analysis4_structures/results/alignments/monomer_alignment_depth_ownenv.tsv": "5afd6bdaff32a3029ff49f338b2661b716b04601ec34e00219dd2f8c546cb083",
+   "analysis4_structures/results/alignments/monomer_alignment_depth_own.tsv": "5514c7f86f9fbb5b18103efa56ee982e0bc890884797c222335647c9fc6e6fe3",
+   "analysis4_structures/results/alignments/pair_alignment_depth_ownenv.tsv": "307b956451bcd119dd82ac283a856a4637b90f2c5b7ce10f1568d08976a8d2ed",
+   "analysis4_structures/results/alignments/pair_alignment_depth_own.tsv": "c13331859b5688742017e83a3cebfa1ff1b666b2c8e6567f3f9330181994ba88",
+   "analysis4_structures/results/queries_pfam.domtbl": "4111bfbce3e5975b47fc78dc43993c8d1be3c1965c14a86d9e295c84095123b8",
+   "analysis4_structures/scripts/01_select.py": "1624404c11810e147b6ba19aab22ed940d0bdef9b642ec52f32e567ec6f93780",
+   "analysis4_structures/scripts/03_build_alignments.py": "fd09ff999244d2558763a4d6eec6b7396303d83dba0470d8d59682de6ab77571",
+   "analysis4_structures/scripts/sbatch_01_select.sh": "ce42499db8af2175800a258a77206d91fd484d3313602b59051f0516ba89968e",
+   "analysis4_structures/scripts/sbatch_02_search_align.sh": "fce41ff6dce15b4aa045c6d36126a1469e2d69ee32e372c904ecca907fe74313",
+   "analysis4_structures/scripts/sbatch_03_colabfold_search.sh": "8890cefc426365868ecdae412bc7d8fccf86aa9586153799b9e5081492a69fb0",
+   "analysis4_structures/scripts/sbatch_04_realign.sh": "4a2957cef4fa4c48d7969e96ea2676b9cdadb8783b0ecfe71018908364c89db3",
+   "analysis4_structures/scripts/sbatch_05_checksums.sh": "b7eb4dbaf3f626eb7cef2958bea277bd608ba91b45cdb63b8fce26df6b7b2531",
+   "analysis4_structures/work/step1/control_selection.tsv": "b2372ce870447529c4d96c30eabc7adbb33715c51cde17cba16ccffddc1cba85",
+   "analysis4_structures/work/step1/family_codes.tsv": "0595f853aeb915a7933b62b15024710e66ec4b5a28e66d982eb28e07bfb1f2bd",
+   "analysis4_structures/work/step1/family_stats.tsv": "9737848fa937bd3238e071582602b0c24094cf6319f1859c769fb6d6cd7e7607",
+   "analysis4_structures/work/step1/neighbour_family_pairs.tsv": "f0b0e61c12963f14c804a5e37eb9b4b41079614b2c7e8d2583019f6830b74436",
+   "analysis4_structures/work/step1/pairs.tsv": "c397a3a5047c6436408a8279b4f3a9dc1ec9b5fc14a389f128d96d7451a99d6a",
+   "analysis4_structures/work/step1/paper_modules_mapping.tsv": "11e89affe1b6dab66a3332fe3bcfe338016cb046f2ccc024d3a4c40661491336",
+   "analysis4_structures/work/step1/queries.faa": "e0081923379e41f7ebbbbdd433591f870a009b96c7b526f3f6bba021b667342d",
+   "analysis4_structures/work/step1/queries.tsv": "68d0a4f37bea578e3919e0ec938b1491bd2b1cecab3ed6797057079cfcb9ab9c",
+   "analysis4_structures/work/step1/representatives.tsv": "29464052cb0738fefccb395244b229083da37c156f0886fe16201d2435498a36",
+   "genecall/harmonized_gene_manifest.tsv.gz": "42bb4c45face3af262f33e4d1206d629d445eb7a511009330bd3724d153d672c",
+   "genecall/harmonized_proteins.faa": "4d44a4597d65c6f3a90cf572284c84820cb2fcb5ad982daa5ba0da0680d35ff3",
+   "metadata/harmonized_genome_manifest.tsv": "9307d3d6448fd92395476498ba29c05f30527279f0d954c2bcf56ecb8bf543c7",
+   "mmseqs/harmonized_uniref50_per_gene.tsv.gz": "3f5de1c1ea33cac5d7b4435f6c8f7bd5daa160a64fa52fff941c02fa6d75b49f",
+   "signalp/harmonized_signalp6_predictions.tsv.gz": "829d739c4384c13fe56ab5af7906b0354ac05efd1f6ff02dbcb9fe791bd64732",
+   "source-metadata/ani_groups/ani_95_groups_1957.tsv": "42a043939ff6592e1f749ebaf0c6c39d064633c243221e5c30c160f21640785a"
+  },
+  "alignments_and_scripts_final_sha256": {
+   "analysis4_structures/results/alignments/alignment_summary_ownenv.json": "71a77fafebbe1eb5ca4bc5a3785ef141e440c31bea914b92ca96448999da2ce1",
+   "analysis4_structures/results/alignments/alignment_summary_own.json": "7597a996a9d561e9f9b55f37373ad95735b8248b3c3f06cca61ca77df105027a",
+   "analysis4_structures/results/alignments/colabfold_search_uniref30_2302_envdb_202108_a3m.tar": "1ca0ae90fce7bda9721297edadd763eeba57aaa5c71789f3ca24e297e41437f5",
+   "analysis4_structures/results/alignments/complex_control_a3m_ownenv.tar": "4440c372f26fffddae7e18dbed0820d6857b5e00f090ba15f9ff93dacf824660",
+   "analysis4_structures/results/alignments/complex_control_a3m_own.tar": "de03890fe1097099dfcd803e80bfe151d2b3559a545b8fb8e1af1e3467e5c039",
+   "analysis4_structures/results/alignments/complex_real_a3m_ownenv.tar": "aafb6722d4dfa1969711e24cec424a09ea17e958aa87199961d53967cc468b35",
+   "analysis4_structures/results/alignments/complex_real_a3m_own.tar": "c2fdcf8346a235cd1ebbde21a0bd5777525cb83b09b0c64f321de6c85d941132",
+   "analysis4_structures/results/alignments/monomer_a3m_ownenv.tar": "56dbcc231620548129e06918a9e83ef65e520a0901b8046885b5a522fe725d4e",
+   "analysis4_structures/results/alignments/monomer_a3m_own.tar": "092e6730011a47843b2f65b9da4be9fd959cbdb0df439e9f82af23eb0c2d9ef7",
+   "analysis4_structures/results/alignments/monomer_alignment_depth_ownenv.tsv": "5afd6bdaff32a3029ff49f338b2661b716b04601ec34e00219dd2f8c546cb083",
+   "analysis4_structures/results/alignments/monomer_alignment_depth_own.tsv": "5514c7f86f9fbb5b18103efa56ee982e0bc890884797c222335647c9fc6e6fe3",
+   "analysis4_structures/results/alignments/pair_alignment_depth_ownenv.tsv": "307b956451bcd119dd82ac283a856a4637b90f2c5b7ce10f1568d08976a8d2ed",
+   "analysis4_structures/results/alignments/pair_alignment_depth_own.tsv": "c13331859b5688742017e83a3cebfa1ff1b666b2c8e6567f3f9330181994ba88",
+   "analysis4_structures/scripts/01_select.py": "1624404c11810e147b6ba19aab22ed940d0bdef9b642ec52f32e567ec6f93780",
+   "analysis4_structures/scripts/03_build_alignments.py": "fd09ff999244d2558763a4d6eec6b7396303d83dba0470d8d59682de6ab77571",
+   "analysis4_structures/scripts/sbatch_01_select.sh": "ce42499db8af2175800a258a77206d91fd484d3313602b59051f0516ba89968e",
+   "analysis4_structures/scripts/sbatch_02_search_align.sh": "fce41ff6dce15b4aa045c6d36126a1469e2d69ee32e372c904ecca907fe74313",
+   "analysis4_structures/scripts/sbatch_03_colabfold_search.sh": "8890cefc426365868ecdae412bc7d8fccf86aa9586153799b9e5081492a69fb0",
+   "analysis4_structures/scripts/sbatch_04_realign.sh": "4a2957cef4fa4c48d7969e96ea2676b9cdadb8783b0ecfe71018908364c89db3",
+   "analysis4_structures/scripts/sbatch_05_checksums.sh": "b7eb4dbaf3f626eb7cef2958bea277bd608ba91b45cdb63b8fce26df6b7b2531",
+   "analysis4_structures/scripts/sbatch_06_cleanup.sh": "e36b39d093d238c9c4dc6236c8d4c67c1525469bc227908f6e6b9026bb333ad9"
+  },
+  "orix_inputs_and_software_sha256": {
+   "inputs/tars/complex_control_a3m_own.tar": "de03890fe1097099dfcd803e80bfe151d2b3559a545b8fb8e1af1e3467e5c039",
+   "inputs/tars/complex_real_a3m_own.tar": "c2fdcf8346a235cd1ebbde21a0bd5777525cb83b09b0c64f321de6c85d941132",
+   "inputs/tars/monomer_a3m_own.tar": "092e6730011a47843b2f65b9da4be9fd959cbdb0df439e9f82af23eb0c2d9ef7",
+   "colabfold_data/params/params_model_1_multimer_v3.npz": "611da8fc7478928f68de12e8b226260ef1f4ce62bcc29b008572e52f4f212959",
+   "colabfold_data/params/params_model_1.npz": "f95e453e6a290ddf317ba1c9698d53fa110cf007ea979b0eae43e6ad38b4e364",
+   "colabfold_data/params/params_model_1_ptm.npz": "5e564f79af5bcd54ccef6e2a6bb0ff01015d01650ebc41d4575e35f0de9ecc84",
+   "colabfold_data/params/params_model_2_multimer_v3.npz": "51362b0844382ae0f5720c59b81dd13a43eea40fbf9995dd2573bdab88865378",
+   "colabfold_data/params/params_model_2.npz": "4da37ed3b71f08d935f913dfab0133977cd0d76ad37cd9333ff294d7fae43f87",
+   "colabfold_data/params/params_model_2_ptm.npz": "23645d9a82c4af2ed54cd48a7b3c1c2575dc6aa9fe931adb4d7203ca5f0dc398",
+   "colabfold_data/params/params_model_3_multimer_v3.npz": "46d9bcad288edc7ad5a6362ee8e5f84307a69712e00e6c36b1ef9daf96ebc9ce",
+   "colabfold_data/params/params_model_3.npz": "3cc4584dc0b0d1bdd1f7af14bd0692d00df3aa0e738d0d1b314821ad7eee4ffe",
+   "colabfold_data/params/params_model_3_ptm.npz": "b53a724294cdd46a45d530b306bced8e429ffee74a4f9a2a897551b30966c415",
+   "colabfold_data/params/params_model_4_multimer_v3.npz": "59bdabd2d69c07fe26b37882d544acbd1b9f89f196828f4220da49e0610b572c",
+   "colabfold_data/params/params_model_4.npz": "b0a78b7e18661abc6097a905f48505004e6e3993c5dc41fb6820acf56e9c1d12",
+   "colabfold_data/params/params_model_4_ptm.npz": "07d0e285ad1406ce3d91a2f6633a8ce9ee99155a53d24ee7783f8fd1e89f5d3a",
+   "colabfold_data/params/params_model_5_multimer_v3.npz": "917742be5a105d6b80f13f1f13f20459f27ec3fdcd34ea088b359f4502d6177f",
+   "colabfold_data/params/params_model_5.npz": "5d261ec6e18ba87784541f5ce113570018b3338df61ae577661b6232358d47e7",
+   "colabfold_data/params/params_model_5_ptm.npz": "2f8d0bd193e7d6e837958ba92acdc3f02b23b61bf841fa043fc076ee0e1996a5",
+   "/home/hohndor/pixi-envs/colabfold/pixi.lock": "e1c5ba4ba15c2d41651775890ec9e77490a659c8bef9ffeb2106a0eb89777b2a",
+   "/mnt/data/u/hohndor/eq-prostt5/bin/foldseek": "8dbef391f99ee06f4b22ae8b1ac2b051daa696218ea4a1f5362ac5ecfdfdd7eb",
+   "scripts/archive.sh": "bce22f9aae76cb04905bfae4ff9f9fd05b1b23ffc06d2f044ed3dfa4854bf431",
+   "scripts/collect_metrics.py": "a3d08466233cc0c4e07d8c50e7e7360aad144546971786587b0d275e166cd73b",
+   "scripts/extra_loop.sh": "774e2535777c605a660f29a99c2c7aba8b1128253f834f1b7c0b38003ae9a98a",
+   "scripts/fold_multi.sbatch": "88b973beadf8fde74fdaedf784b58e8b3dfc48066eb32816ef391a1536705672",
+   "scripts/fold.sbatch": "926a188239e3169c0a86ad52aaf21af71800a76cf31a59e1e06a2498ce1879a5",
+   "scripts/foldseek_run.sh": "1d36804a6b6288ce92ceb40575e9a81208ddc12724f8091b20aaeed2f15f1159",
+   "scripts/foldseek_search.sbatch": "deca75471dbfc156bfb34271f5b8e2a15a4b00cb50c180443a159c8e66d54f43",
+   "scripts/fold_worker_multi.sbatch": "7908c09adcc14e60ea19152c06a6aa9925f3093dd4bf488bfe43d2d902a6a8e3",
+   "scripts/fold_worker.sbatch": "cc6b18b67d7da8baae1f399c5db7fea773e58b0fbb8db29a53554f831671f763",
+   "scripts/offload_tail.py": "a0cc8aa271ef96845ea4cee0e3d78cc46c5a51c6f4671f123c640abaa05516e0",
+   "scripts/prep_shards.py": "dcbcbe6e56cb54cf790dc713ff0df0e06e69e0e5e7b220c5b0919d37150c0535",
+   "scripts/reduce_hits.sh": "558702dd1bcfc8634402bc5662c177129d638afb029fd511c7b8d8d3f70b4e13",
+   "scripts/reshard.py": "dd87dc8259f08c7ce590352f77b075b8777ac70f11e74b9497597b69b9715e43"
+  }
+ },
+ "software": {
+  "shaheen": {
+   "mmseqs2": "18.8cc5c (/project/k10018/sw/images/eq-annot/mmseqs2.sif)",
+   "colabfold_search": "ColabFold 1.5.5 with MMseqs2 15.6f452 (colabfold.sif)",
+   "hmmer": "hmmsearch from hmmer.sif, Pfam-A at /project/k10018/sw/db/pfam-ibex/pfam (--cut_ga)",
+   "python": "/project/k10018/sw/envs/mapping/bin/python (pandas 3.0.6, numpy 2.4.6, scipy 1.17.1)",
+   "databases": "own 3,617,011 proteins (analysis2_families/mmseqs_db/all); UniRef30 2302 and ColabFold envdb 202108 local copies under /project/k10018/sw/db/colabfold (depth comparison only, not used for the folded alignments)"
+  },
+  "orix": {
+   "colabfold": "1.5.5 (pixi env ~/pixi-envs/colabfold, jax 0.4.31, dm-haiku 0.0.16)",
+   "weights": "alphafold2_ptm (params_model_[1-5]_ptm) and alphafold2_multimer_v3 (downloaded 2026-11-11 from the ColabFold/AlphaFold parameter mirror to colabfold_data/params)",
+   "foldseek": "GPU build commit 8dc75c74ad0eddab73cfd905963d13bf74dc012b (/mnt/data/u/hohndor/eq-prostt5/bin/foldseek)",
+   "pdb_reference": "/mnt/data/u/hohndor/eq-current-references/pdb-current-20260802/padded/pdb_pad (Foldseek PDB, PDB_DATE 250101, 324,204 padded cluster representatives)",
+   "afdb_reference": "/mnt/data/u/hohndor/eq-current-references/afdb-v6-uniprot-2025-03/gpu_portable_8dc75c74/padded/afdb_pad (AFDB v6 / UniProt 2025_03, 241,070,489 entries, 3Di+AA only, no C-alpha)"
+  }
+ },
+ "parameters": {
+  "representative": "EQ member, complete interior ORF, modal SignalP class, cleavage site present, aa length nearest the EQ family median (ties: higher SP probability, gene id); tiers T2-T5 recorded; mature sequence = residues after the SignalP 6.0h cleavage site",
+  "alignment": "mmseqs search --num-iterations 3 -s 7.5 -e 1e-3 --e-profile 1e-3 --max-seqs 20000 -a; result2msa --msa-format-mode 6 --filter-msa 0; rows with query coverage >= 0.5; greedy 95 % redundancy filter; Neff = sum 1/(n rows >= 80 % identical); monomer a3m capped at 5000 rows; unpaired blocks capped at 2000 rows per chain",
+  "neighbours": "immediately adjacent genes (rank +-1, same contig); conserved if partner family adjacent in >= 50 % of focal loci with >= 1 neighbour, in >= 5 genomes and >= 3 blocks (named genus else ANI95 group); evaluated on all 1,957 genomes and on the 237 EQ genomes; within-2-genes same-strand reported separately",
+  "pairing": "real pairs: one adjacent gene pair per genome; controls: best hit of each chain per genome, paired depth capped at that of the matched real pair; ColabFold paired a3m convention with unpaired blocks",
+  "controls": "160 focal x non-adjacent family pairs (never within 10 genes of the focal family in any genome), same EQ genome, matched on partner length (+-20 %), co-occurring genomes and family size (factor 2), signal-peptide status; seed 20261111",
+  "monomer_prediction": "colabfold_batch --model-type alphafold2_ptm --num-models 5 --num-recycle 3 --num-seeds 1 --random-seed 20261111 --rank plddt, no templates, no relaxation; --recompile-padding 10 (30 for jobs from 387060 on); --max-msa 512:1024 for alignments with <= 1500 rows (no subsampling; sets *_shallow), default 512:5120 otherwise",
+  "complex_prediction": "colabfold_batch --model-type alphafold2_multimer_v3 --num-models 5 --num-recycle 3 --num-seeds 1 --random-seed 20261111 --rank multimer, recycle early stop tolerance default 0.5; --max-msa 508:1024 for alignments with <= 1500 rows, default 508:2048 otherwise (same rule for real and control pairs); total length <= 1800 residues",
+  "qualification": ">= 100 residues (mature chain) and mean C-alpha pLDDT >= 0.70 of the top-ranked model (0-1 scale)",
+  "crops": "centred 15-residue moving average of pLDDT >= 0.70; gaps <= 5 residues bridged if mean raw pLDDT >= 0.55; intervals >= 50 residues",
+  "foldseek_pdb": "--alignment-type 1 --gpu 1 --prefilter-mode 1 -e 10 -s 9.5 --max-seqs 1000; match = query-normalised TM-score >= 0.5 (whole chain or any crop)",
+  "foldseek_afdb": "--alignment-type 2 --sort-by-structure-bits 0 --gpu 1 -e 1e-3 -s 9.5 --max-seqs 50 --db-load-mode 2; match = any hit E < 1e-3",
+  "interface_metrics": "top-ranked model; interface residues = heavy atoms < 5 A of the other chain; interface PAE = mean inter-chain PAE over residue pairs with C-alpha < 8 A; strict support = ipTM, mean ipTM over 5 models and minimum ipTM over 5 models above the control 95th percentile and interface PAE below the control 5th percentile"
+ },
+ "seeds": {
+  "selection_and_controls": 20261111,
+  "alphafold": 20261111
+ },
+ "jobs": {
+  "shaheen": [
+   {
+    "job": 15955156,
+    "name": "eq_a4_select",
+    "state": "FAILED 1:0",
+    "note": "script bug (column named eq); fixed and rerun"
+   },
+   {
+    "job": 15955195,
+    "name": "eq_a4_select",
+    "state": "COMPLETED 0:0",
+    "elapsed": "00:01:14"
+   },
+   {
+    "job": 15955238,
+    "name": "eq_a4_align",
+    "state": "COMPLETED 0:0",
+    "elapsed": "00:07:28"
+   },
+   {
+    "job": 15955239,
+    "name": "eq_a4_cfsearch",
+    "state": "FAILED 2:0",
+    "elapsed": "01:12:02",
+    "note": "colabfold_search finished and wrote all 1,709 a3m; the non-zero exit came from a trailing 'ls | head' under pipefail in my script"
+   },
+   {
+    "job": 15955340,
+    "name": "eq_a4_realign (own, control depth cap)",
+    "state": "COMPLETED 0:0",
+    "elapsed": "00:02:56"
+   },
+   {
+    "job": 15955458,
+    "name": "eq_a4_realign (ownenv)",
+    "state": "COMPLETED 0:0",
+    "elapsed": "00:06:27"
+   },
+   {
+    "job": 15955472,
+    "name": "eq_a4_sha",
+    "state": "COMPLETED 0:0"
+   },
+   {
+    "job": 15957425,
+    "name": "eq_a4_clean",
+    "state": "FAILED 2:0",
+    "note": "tar of a non-existent file; nothing deleted; fixed and rerun"
+   },
+   {
+    "job": 15957456,
+    "name": "eq_a4_clean",
+    "state": "COMPLETED 0:0",
+    "elapsed": "00:01:48"
+   }
+  ],
+  "orix": [
+   {
+    "jobid": "386742_0",
+    "jobname": "eqdark_mono",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:55:52",
+    "gpus": 1,
+    "gpu_h": 1.9311111111,
+    "start": "2026-11-11T14:50:08",
+    "end": "2026-11-11T16:46:00"
+   },
+   {
+    "jobid": "386742_1",
+    "jobname": "eqdark_mono",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:54:22",
+    "gpus": 1,
+    "gpu_h": 1.9061111111,
+    "start": "2026-11-11T14:51:37",
+    "end": "2026-11-11T16:45:59"
+   },
+   {
+    "jobid": "386742_2",
+    "jobname": "eqdark_mono",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:52:48",
+    "gpus": 1,
+    "gpu_h": 1.88,
+    "start": "2026-11-11T14:53:12",
+    "end": "2026-11-11T16:46:00"
+   },
+   {
+    "jobid": "386742_3",
+    "jobname": "eqdark_mono",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "00:11:05",
+    "gpus": 1,
+    "gpu_h": 0.1847222222,
+    "start": "2026-11-11T14:54:44",
+    "end": "2026-11-11T15:05:49"
+   },
+   {
+    "jobid": "386781_0",
+    "jobname": "eqdark_monotail",
+    "partition": "freecycle-h200",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:40:51",
+    "gpus": 1,
+    "gpu_h": 1.6808333333,
+    "start": "2026-11-11T15:05:09",
+    "end": "2026-11-11T16:46:00"
+   },
+   {
+    "jobid": "386790_3",
+    "jobname": "eqdark_mono",
+    "partition": "freecycle-h200",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:31:06",
+    "gpus": 1,
+    "gpu_h": 1.5183333333,
+    "start": "2026-11-11T15:14:54",
+    "end": "2026-11-11T16:46:00"
+   },
+   {
+    "jobid": "386813",
+    "jobname": "eqdark_worker",
+    "partition": "freecycle-h200",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:24:19",
+    "gpus": 1,
+    "gpu_h": 1.4052777778,
+    "start": "2026-11-11T15:21:41",
+    "end": "2026-11-11T16:46:00"
+   },
+   {
+    "jobid": "386822",
+    "jobname": "eqdark_worker",
+    "partition": "freecycle-h100",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:29:53",
+    "gpus": 1,
+    "gpu_h": 1.4980555556,
+    "start": "2026-11-11T15:16:07",
+    "end": "2026-11-11T16:46:00"
+   },
+   {
+    "jobid": "386824",
+    "jobname": "eqdark_worker",
+    "partition": "batch-h100",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:23:14",
+    "gpus": 1,
+    "gpu_h": 1.3872222222,
+    "start": "2026-11-11T15:22:45",
+    "end": "2026-11-11T16:45:59"
+   },
+   {
+    "jobid": "386825",
+    "jobname": "eqdark_worker",
+    "partition": "batch-h100",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:23:14",
+    "gpus": 1,
+    "gpu_h": 1.3872222222,
+    "start": "2026-11-11T15:22:45",
+    "end": "2026-11-11T16:45:59"
+   },
+   {
+    "jobid": "386823",
+    "jobname": "eqdark_worker",
+    "partition": "freecycle-h100",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:23:16",
+    "gpus": 1,
+    "gpu_h": 1.3877777778,
+    "start": "2026-11-11T15:22:44",
+    "end": "2026-11-11T16:46:00"
+   },
+   {
+    "jobid": "386892",
+    "jobname": "eqdark_worker",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "00:12:39",
+    "gpus": 1,
+    "gpu_h": 0.2108333333,
+    "start": "2026-11-11T15:45:01",
+    "end": "2026-11-11T15:57:40"
+   },
+   {
+    "jobid": "386827",
+    "jobname": "eqdark_worker",
+    "partition": "freecycle-h100",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "00:32:42",
+    "gpus": 1,
+    "gpu_h": 0.545,
+    "start": "2026-11-11T16:13:17",
+    "end": "2026-11-11T16:45:59"
+   },
+   {
+    "jobid": "386925",
+    "jobname": "eqdark_worker",
+    "partition": "freecycle-h100",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "00:28:03",
+    "gpus": 1,
+    "gpu_h": 0.4675,
+    "start": "2026-11-11T16:17:57",
+    "end": "2026-11-11T16:46:00"
+   },
+   {
+    "jobid": "386828",
+    "jobname": "eqdark_worker",
+    "partition": "freecycle-h100",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "00:25:17",
+    "gpus": 1,
+    "gpu_h": 0.4213888889,
+    "start": "2026-11-11T16:20:42",
+    "end": "2026-11-11T16:45:59"
+   },
+   {
+    "jobid": "386829",
+    "jobname": "eqdark_worker",
+    "partition": "freecycle-h100",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "00:17:15",
+    "gpus": 1,
+    "gpu_h": 0.2875,
+    "start": "2026-11-11T16:28:45",
+    "end": "2026-11-11T16:46:00"
+   },
+   {
+    "jobid": "386991",
+    "jobname": "eqdark_wm",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "00:14:29",
+    "gpus": 1,
+    "gpu_h": 0.2413888889,
+    "start": "2026-11-11T16:49:16",
+    "end": "2026-11-11T17:03:45"
+   },
+   {
+    "jobid": "386992",
+    "jobname": "eqdark_wm",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "00:13:02",
+    "gpus": 1,
+    "gpu_h": 0.2172222222,
+    "start": "2026-11-11T16:50:43",
+    "end": "2026-11-11T17:03:45"
+   },
+   {
+    "jobid": "386993",
+    "jobname": "eqdark_wm",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "00:11:32",
+    "gpus": 1,
+    "gpu_h": 0.1922222222,
+    "start": "2026-11-11T16:52:13",
+    "end": "2026-11-11T17:03:45"
+   },
+   {
+    "jobid": "387060",
+    "jobname": "eqdark_wm",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "07:25:52",
+    "gpus": 1,
+    "gpu_h": 7.4311111111,
+    "start": "2026-11-11T17:04:11",
+    "end": "2026-11-12T00:30:03"
+   },
+   {
+    "jobid": "387079",
+    "jobname": "eqdark_wm",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "06:47:39",
+    "gpus": 1,
+    "gpu_h": 6.7941666667,
+    "start": "2026-11-11T17:11:42",
+    "end": "2026-11-11T23:59:21"
+   },
+   {
+    "jobid": "387080",
+    "jobname": "eqdark_wm",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "01:16:57",
+    "gpus": 1,
+    "gpu_h": 1.2825,
+    "start": "2026-11-11T17:13:12",
+    "end": "2026-11-11T18:30:09"
+   },
+   {
+    "jobid": "387277",
+    "jobname": "eqdark_wm_fs",
+    "partition": "pi-hohndor",
+    "state": "CANCELLED by 135466",
+    "exitcode": "0:0",
+    "elapsed": "05:58:29",
+    "gpus": 1,
+    "gpu_h": 5.9747222222,
+    "start": "2026-11-11T18:31:34",
+    "end": "2026-11-12T00:30:03"
+   },
+   {
+    "jobid": "387910",
+    "jobname": "eqdark_wm_last",
+    "partition": "pi-hohndor",
+    "state": "COMPLETED",
+    "exitcode": "0:0",
+    "elapsed": "00:21:05",
+    "gpus": 1,
+    "gpu_h": 0.3513888889,
+    "start": "2026-11-12T00:33:16",
+    "end": "2026-11-12T00:54:21"
+   }
+  ],
+  "orix_note": "all but the last ORIX job end as CANCELLED by the submitting user: array tasks and queue workers were cancelled deliberately when the layout was changed (yielding the reserved GPU to another job of the same user, removing the batch/freecycle workers after the low-utilisation warning, consolidating the tail). Completeness is verified from the per-shard SHARD_COMPLETE markers and score files (monomers 974/974, complexes 640/640), not from job states. 34 further submissions were cancelled before they started.",
+  "orix_gpu_hours_total": 40.6,
+  "orix_gpu_hours_by_partition": {
+   "batch-h100": 2.8,
+   "freecycle-h100": 4.6,
+   "freecycle-h200": 4.6,
+   "pi-hohndor": 28.6
+  },
+  "orix_gpu_hours_note": "from sacct elapsed x GPUs of the last run of each job; earlier segments of pre-empted freecycle workers are not included, so the total is a lower bound",
+  "orix_gpu_utilisation_per_log": [
+   {
+    "log": "monomer_386742_0_0",
+    "n_samples_30s": 232,
+    "mean_util_pct": 65.8
+   },
+   {
+    "log": "monomer_386742_1_0",
+    "n_samples_30s": 229,
+    "mean_util_pct": 66.2
+   },
+   {
+    "log": "monomer_386742_2_0",
+    "n_samples_30s": 226,
+    "mean_util_pct": 67.5
+   },
+   {
+    "log": "monomer_386742_3_0",
+    "n_samples_30s": 23,
+    "mean_util_pct": 58.8
+   },
+   {
+    "log": "monomer_386790_3_0",
+    "n_samples_30s": 5,
+    "mean_util_pct": 39.4
+   },
+   {
+    "log": "monomer_386790_3_1",
+    "n_samples_30s": 183,
+    "mean_util_pct": 68.2
+   },
+   {
+    "log": "monomer_tail_386781_0_0",
+    "n_samples_30s": 202,
+    "mean_util_pct": 61.7
+   },
+   {
+    "log": "wm_386991_0",
+    "n_samples_30s": 29,
+    "mean_util_pct": 88.0
+   },
+   {
+    "log": "wm_386992_0",
+    "n_samples_30s": 26,
+    "mean_util_pct": 81.8
+   },
+   {
+    "log": "wm_386993_0",
+    "n_samples_30s": 23,
+    "mean_util_pct": 85.6
+   },
+   {
+    "log": "wm_387060_0",
+    "n_samples_30s": 892,
+    "mean_util_pct": 94.5
+   },
+   {
+    "log": "wm_387079_0",
+    "n_samples_30s": 816,
+    "mean_util_pct": 95.5
+   },
+   {
+    "log": "wm_387080_0",
+    "n_samples_30s": 154,
+    "mean_util_pct": 92.7
+   },
+   {
+    "log": "wm_387277_0",
+    "n_samples_30s": 717,
+    "mean_util_pct": 94.0
+   },
+   {
+    "log": "wm_387910_0",
+    "n_samples_30s": 42,
+    "mean_util_pct": 84.7
+   },
+   {
+    "log": "worker_386813_0",
+    "n_samples_30s": 169,
+    "mean_util_pct": 53.5
+   },
+   {
+    "log": "worker_386822_0",
+    "n_samples_30s": 180,
+    "mean_util_pct": 55.8
+   },
+   {
+    "log": "worker_386823_0",
+    "n_samples_30s": 8,
+    "mean_util_pct": 42.5
+   },
+   {
+    "log": "worker_386823_1",
+    "n_samples_30s": 167,
+    "mean_util_pct": 58.3
+   },
+   {
+    "log": "worker_386824_0",
+    "n_samples_30s": 167,
+    "mean_util_pct": 52.0
+   },
+   {
+    "log": "worker_386825_0",
+    "n_samples_30s": 167,
+    "mean_util_pct": 51.3
+   },
+   {
+    "log": "worker_386827_0",
+    "n_samples_30s": 38,
+    "mean_util_pct": 44.8
+   },
+   {
+    "log": "worker_386827_1",
+    "n_samples_30s": 19,
+    "mean_util_pct": 51.6
+   },
+   {
+    "log": "worker_386827_2",
+    "n_samples_30s": 19,
+    "mean_util_pct": 51.7
+   },
+   {
+    "log": "worker_386827_3",
+    "n_samples_30s": 8,
+    "mean_util_pct": 45.4
+   },
+   {
+    "log": "worker_386827_4",
+    "n_samples_30s": 66,
+    "mean_util_pct": 51.4
+   },
+   {
+    "log": "worker_386828_0",
+    "n_samples_30s": 41,
+    "mean_util_pct": 56.3
+   },
+   {
+    "log": "worker_386828_1",
+    "n_samples_30s": 5,
+    "mean_util_pct": 36.6
+   },
+   {
+    "log": "worker_386828_2",
+    "n_samples_30s": 39,
+    "mean_util_pct": 57.7
+   },
+   {
+    "log": "worker_386828_3",
+    "n_samples_30s": 6,
+    "mean_util_pct": 36.8
+   },
+   {
+    "log": "worker_386828_4",
+    "n_samples_30s": 51,
+    "mean_util_pct": 62.5
+   },
+   {
+    "log": "worker_386829_0",
+    "n_samples_30s": 44,
+    "mean_util_pct": 50.9
+   },
+   {
+    "log": "worker_386829_1",
+    "n_samples_30s": 10,
+    "mean_util_pct": 52.4
+   },
+   {
+    "log": "worker_386829_2",
+    "n_samples_30s": 42,
+    "mean_util_pct": 53.1
+   },
+   {
+    "log": "worker_386829_3",
+    "n_samples_30s": 8,
+    "mean_util_pct": 49.4
+   },
+   {
+    "log": "worker_386829_4",
+    "n_samples_30s": 4,
+    "mean_util_pct": 36.2
+   },
+   {
+    "log": "worker_386829_5",
+    "n_samples_30s": 35,
+    "mean_util_pct": 64.7
+   },
+   {
+    "log": "worker_386892_0",
+    "n_samples_30s": 26,
+    "mean_util_pct": 54.9
+   },
+   {
+    "log": "worker_386925_0",
+    "n_samples_30s": 35,
+    "mean_util_pct": 52.0
+   },
+   {
+    "log": "worker_386925_1",
+    "n_samples_30s": 56,
+    "mean_util_pct": 65.1
+   }
+  ]
+ },
+ "results": {
+  "step1": {
+   "n_focal": 981,
+   "focal_with_conserved_adjacent_partner_all_genomes": 363,
+   "focal_with_conserved_adjacent_partner_eq_only": 365,
+   "focal_with_conserved_adjacent_partner_any": 386,
+   "pairs_conserved_adjacent_all_genomes": 468,
+   "pairs_conserved_adjacent_eq_only": 467,
+   "pairs_conserved_adjacent_any": 498,
+   "focal_with_conserved_within2_same_strand_any": 347,
+   "focal_with_within2_same_strand_but_not_adjacent_conserved": 43,
+   "pairs_conserved_within2_same_strand_any": 498,
+   "focal_with_tandem_same_family_ge5_genomes": 60,
+   "partner_class_eq_members_of_conserved_adjacent_pairs": {
+    "nondark_not_exported": 278,
+    "dark_exported": 85,
+    "dark_not_exported": 68,
+    "nondark_exported": 67
+   },
+   "n_real_pairs": 484,
+   "n_controls": 160,
+   "n_queries": 1709,
+   "n_usable_representatives_981": 973,
+   "representative_tiers_981": {
+    "T1_complete_interior_modalSP_cleavage": 968,
+    "T5_partial_ORF": 8,
+    "T2_complete_edge_modalSP_cleavage": 4,
+    "T3_complete_anySP_cleavage": 1
+   },
+   "seed": 20261111,
+   "controls_per_real_pair": 1
+  },
+  "summary": {
+   "monomer": {
+    "n_families": 981,
+    "n_usable_representative": 973,
+    "n_modelled": 972,
+    "not_modelled": {
+     "no_usable_representative_T5_partial_ORF": 8,
+     "longer_than_2500_residues": 1
+    },
+    "n_modelled_ge100_residues": 865,
+    "n_modelled_lt100_residues": 107,
+    "n_qualified": 823,
+    "n_qualified_model_1_only": 803,
+    "n_mean_plddt_ge070_any_length": 896,
+    "median_mean_plddt": 0.8826356086956522,
+    "median_ptm": 0.78,
+    "median_frac_res_ge70": 0.8706398591863549,
+    "n_ptm_ge05_among_ge100": 811,
+    "qualified_by_neff_own_ge100res": {
+     "<10": {
+      "n": 4,
+      "qualified": 3,
+      "fraction": 0.75,
+      "median_plddt": 0.843
+     },
+     "10-30": {
+      "n": 84,
+      "qualified": 68,
+      "fraction": 0.81,
+      "median_plddt": 0.837
+     },
+     "30-100": {
+      "n": 218,
+      "qualified": 200,
+      "fraction": 0.917,
+      "median_plddt": 0.886
+     },
+     "100-300": {
+      "n": 271,
+      "qualified": 266,
+      "fraction": 0.982,
+      "median_plddt": 0.892
+     },
+     ">=300": {
+      "n": 288,
+      "qualified": 286,
+      "fraction": 0.993,
+      "median_plddt": 0.888
+     }
+    },
+    "qualified_by_length": {
+     "100-149": {
+      "n": 166,
+      "qualified": 159
+     },
+     "150-249": {
+      "n": 284,
+      "qualified": 264
+     },
+     "250-399": {
+      "n": 262,
+      "qualified": 254
+     },
+     "400-699": {
+      "n": 132,
+      "qualified": 128
+     },
+     ">=700": {
+      "n": 21,
+      "qualified": 18
+     }
+    },
+    "qualified_by_signal_peptide_class": {
+     "LIPO": {
+      "n": 278,
+      "qualified": 277
+     },
+     "PILIN": {
+      "n": 3,
+      "qualified": 3
+     },
+     "SP": {
+      "n": 584,
+      "qualified": 543
+     }
+    },
+    "spearman_neff_own_vs_plddt_ge100res": [
+     0.16,
+     2.376195498113022e-06
+    ]
+   },
+   "alignment_depth_981": {
+    "n": 973,
+    "median_nr95_sequences_eq_only": 129.0,
+    "median_nr95_sequences_all_1957": 157.0,
+    "median_neff80_eq_only": 121.0,
+    "median_neff80_all_1957": 144.0,
+    "iqr_neff80_eq_only": [
+     45.0,
+     301.3511904761905
+    ],
+    "iqr_neff80_all_1957": [
+     54.0,
+     403.48333333333335
+    ],
+    "median_ratio_neff_all_over_eq": 1.1612993492383812,
+    "n_ratio_ge_1.5": 125,
+    "n_ratio_ge_2": 29,
+    "n_neff_lt30_eq_only": 158,
+    "n_neff_lt30_all_1957": 135,
+    "n_neff_ge100_eq_only": 539,
+    "n_neff_ge100_all_1957": 580,
+    "median_genomes_in_alignment": 113.0,
+    "external_database": "none in the folded alignments (own 3,617,011 proteins only)"
+   },
+   "foldseek_qualified_981": {
+    "n_qualified": 823,
+    "pdb_match_whole": 459,
+    "pdb_match_crop": 626,
+    "pdb_match_either": 640,
+    "afdb_match_E_lt_1e-3": 616,
+    "pdb_or_afdb": 772,
+    "neither": 51,
+    "pdb_only": 156,
+    "afdb_only": 132,
+    "pdb_fold_class_keyword_counts": {
+     "other_named": 363,
+     "no_pdb_match": 183,
+     "other_enzyme": 119,
+     "pilin_or_flagellin_like": 33,
+     "adhesin_Ig_or_beta_sandwich": 33,
+     "solute_binding_or_transport": 24,
+     "protease_or_peptidase": 23,
+     "glycosyl_hydrolase_or_transferase": 21,
+     "DUF_or_uncharacterised": 20,
+     "S-layer_or_cell_surface": 4
+    },
+    "afdb_class_keyword_counts": {
+     "uncharacterised_or_DUF": 225,
+     "no_afdb_match": 207,
+     "Ig-like_or_beta-sandwich_domain": 144,
+     "repeat_or_other_named": 114,
+     "protease_or_peptidase": 38,
+     "lipoprotein_named_only": 25,
+     "other_enzyme": 24,
+     "S-layer_or_cell-surface_anchor": 21,
+     "glycoside_hydrolase_or_carbohydrate_active": 18,
+     "solute_binding_or_transport": 4,
+     "pilin_or_archaellin": 3
+    },
+    "queries_at_pdb_max_seqs_cap_1000_whole": 2,
+    "note": "tables hold the five best hits per query (by qTM for PDB, by E-value for AFDB)"
+   },
+   "foldseek_not_qualified_981_exploratory": {
+    "n": 149,
+    "n_with_confident_region_crop": 60,
+    "pdb_match_crop": 51,
+    "pdb_match_whole": 76
+   },
+   "earlier_model_match": {
+    "source": "/home/leechuck/Documents/papers/empty-quarter/mechanism-20261109/exp4_surface/results/followup_v2_review/exp4_47_member_evidence.tsv",
+    "n_981_representatives_in_audit_table": 4,
+    "n_with_earlier_colabfold_model": 0,
+    "n_with_earlier_esmfold_model": 1,
+    "colabfold_pairs": [],
+    "esmfold_pairs": [
+     {
+      "family_rep": "S52PRr1__single_SemiBin_53::S52PRr1_715156_6",
+      "rep_gene": "62PRr2__self_SemiBin_169::62PRr2_1114592_4",
+      "earlier_esmfold_plddt_full_length": 0.7136,
+      "mean_plddt": 0.921753125
+     }
+    ],
+    "note": "the 9,644-model ColabFold rescue table is not on the laptop; no cohort-level change is computed"
+   },
+   "complex": {
+    "n_real_pairs_defined": 484,
+    "n_real_modelled": 478,
+    "n_control_defined": 160,
+    "n_control_modelled": 160,
+    "not_modelled_real": [
+     "R0073",
+     "R0210",
+     "R0236",
+     "R0238",
+     "R0267",
+     "R0280"
+    ],
+    "not_modelled_real_longer_than_1800_residues": [
+     "R0073",
+     "R0236",
+     "R0267",
+     "R0280"
+    ],
+    "not_modelled_real_numerical_failure_nan_models": [
+     "R0210",
+     "R0238"
+    ],
+    "real_by_msa_stratum": {
+     "complex_real_deep": {
+      "n": 195,
+      "above_ctrl_p95_iptm": 35,
+      "strict": 20
+     },
+     "complex_real_shallow": {
+      "n": 283,
+      "above_ctrl_p95_iptm": 61,
+      "strict": 44
+     }
+    },
+    "control_by_msa_stratum": {
+     "complex_control_deep": {
+      "n": 77,
+      "iptm_p95": 0.6360000000000001,
+      "iptm_ge_0.5": 7,
+      "strict": 0
+     },
+     "complex_control_shallow": {
+      "n": 83,
+      "iptm_p95": 0.42,
+      "iptm_ge_0.5": 2,
+      "strict": 1
+     }
+    },
+    "strict_by_partner_class": {
+     "dark_exported": 25,
+     "nondark_exported": 23,
+     "nondark_not_exported": 9,
+     "dark_not_exported": 7
+    },
+    "strict_by_partner_signalp": {
+     "SP": 41,
+     "OTHER": 15,
+     "LIPO": 7,
+     "PILIN": 1
+    },
+    "real_by_partner_signalp": {
+     "OTHER": 344,
+     "SP": 98,
+     "LIPO": 34,
+     "PILIN": 2
+    },
+    "strict_focal_families": 63,
+    "strict_median_paired_depth": 55.0,
+    "all_real_median_paired_depth": 35.0,
+    "control_thresholds": {
+     "iptm_p95": 0.52,
+     "iptm_p99": 0.7509999999999997,
+     "iptm_max": 0.81,
+     "iptm_mean_models_p95": 0.3205999999999998,
+     "iptm_min_models_p95": 0.24049999999999983,
+     "ranking_confidence_p95": 0.5075999999999995,
+     "interface_pae_p05": 11.04450974025974,
+     "min_interchain_pae_p05": 5.2715000000000005,
+     "n_ca_contacts_p95": 180.2999999999999
+    },
+    "median_iptm_real": 0.22,
+    "median_iptm_control": 0.21,
+    "mean_iptm_real": 0.3276778242677824,
+    "mean_iptm_control": 0.2453125,
+    "mannwhitney_real_gt_control_p": 0.0059621952368149565,
+    "matched_pairs_n": 160,
+    "matched_pairs_real_minus_control_median": 0.02500000000000001,
+    "matched_wilcoxon_p": 2.004450202310232e-06,
+    "real_above_ctrl_p95_iptm": 96,
+    "expected_if_null_5pct": 23.9,
+    "real_above_ctrl_p99_iptm": 48,
+    "real_above_ctrl_max_iptm": 27,
+    "real_strict_support_all_four_criteria": 64,
+    "control_strict_support_all_four_criteria": 1,
+    "real_iptm_ge_0.5": 100,
+    "control_iptm_ge_0.5": 9,
+    "real_iptm_ge_0.6": 82,
+    "control_iptm_ge_0.6": 6,
+    "real_iptm_ge_0.8": 35,
+    "control_iptm_ge_0.8": 2,
+    "above_p95_by_partner_class": {
+     "dark_exported": {
+      "size": 70,
+      "sum": 32
+     },
+     "dark_not_exported": {
+      "size": 69,
+      "sum": 13
+     },
+     "nondark_exported": {
+      "size": 64,
+      "sum": 30
+     },
+     "nondark_not_exported": {
+      "size": 275,
+      "sum": 21
+     }
+    },
+    "focal_families_with_pair_above_ctrl_p95": 92,
+    "paper_modules": [
+     {
+      "pair_id": "R0483",
+      "source": "paper_module_PilJ|forced_not_meeting_or_not_focal",
+      "focal_gene": "1PRr2__self_SemiBin_81::1PRr2_468829_3",
+      "partner_gene": "1PRr2__self_SemiBin_81::1PRr2_468829_2",
+      "len_A": 414,
+      "len_B": 148,
+      "n_paired_nr95": 196,
+      "iptm": 0.19,
+      "ptm": 0.63,
+      "iptm_all_models": "0.1900;0.1800;0.1700;0.1600;0.1500",
+      "interface_pae": 23.26004950495049,
+      "interface_plddt": 0.5850271186440679,
+      "n_ca_contacts_8A": 101.0,
+      "ctrl_percentile_iptm": 0.33125,
+      "above_ctrl_p95_iptm": false,
+      "strict_support": false
+     },
+     {
+      "pair_id": "R0484",
+      "source": "paper_module_envelope|forced_not_meeting_or_not_focal",
+      "focal_gene": "V47PRr1__self_SemiBin_699_sub::V47PRr1_105096_18",
+      "partner_gene": "V47PRr1__self_SemiBin_699_sub::V47PRr1_105096_19",
+      "len_A": 189,
+      "len_B": 89,
+      "n_paired_nr95": 69,
+      "iptm": 0.64,
+      "ptm": 0.6,
+      "iptm_all_models": "0.6400;0.6300;0.6300;0.6300;0.6300",
+      "interface_pae": 3.00122641509434,
+      "interface_plddt": 0.9096734375,
+      "n_ca_contacts_8A": 53.0,
+      "ctrl_percentile_iptm": 0.96875,
+      "above_ctrl_p95_iptm": true,
+      "strict_support": true
+     }
+    ]
+   }
+  }
+ },
+ "not_done": [
+  "8 focal families have only partial EQ ORFs (tier T5): no representative, not modelled",
+  "1 representative (M0601, 4,430 residues mature) exceeds the 2,500-residue limit: not modelled",
+  "4 real pairs longer than 1,800 residues in total (R0073, R0236, R0267, R0280) not modelled",
+  "2 real pairs (R0210, R0238) returned NaN scores (numerical failure in one process, 18:50-19:10 UTC, job 387079); not rerun",
+  "pairs conserved only within two genes on the same strand (reported in the neighbour table) were not predicted",
+  "no refolding with the UniRef30/envdb-augmented alignments: the augmentation adds a median of one sequence per family",
+  "cohort-level comparison with the earlier 9,644 ColabFold rescue models: the table is not on the laptop; only one representative matched an earlier (ESMFold) model by gene identifier",
+  "the paper's PilJ and envelope modules are not among the 981 focal families under the id30/c80 clustering as focal families; both pairs were forced into the complex set"
+ ],
+ "locations": {
+  "shaheen": "/scratch/project/k10018/eq-protein-external-20261110/analysis4_structures",
+  "orix": "/mnt/data/u/hohndor/eq-exported-dark-20261111 (archives/ holds the model tars)",
+  "laptop": "/home/leechuck/Documents/papers/empty-quarter/external-validation-20261110/analysis4_structures"
+ }
+}

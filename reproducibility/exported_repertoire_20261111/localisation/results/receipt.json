@@ -1,0 +1,251 @@
+{
+ "status": "COMPLETE",
+ "failed_checks": [],
+ "seed": 20261111,
+ "bootstrap_draws": 2000,
+ "block": "named genus, else ANI95 group (EQ genomes only)",
+ "checks": {
+  "pfam_models": 27481,
+  "pfam_models_with_clan": 13744,
+  "pfam_category_model_counts": {
+   "peptidase": 319,
+   "sbp": 58,
+   "adhesin_fold": 1080,
+   "pilin_archaellin": 34
+  },
+  "pfam_strict_hits_dropped_in_signal_region": 34,
+  "pfam_domtbl_rows": 1047371,
+  "pfam_strict_rows": 105659,
+  "pfam_relaxed_rows": 133184,
+  "merops_raw_rows": 73647,
+  "sortase_summary": {
+   "n_genomes": 237,
+   "genomes_with_archaeosortase_family_strict": 230,
+   "genomes_with_any_sortase_family_relaxed": 236,
+   "genomes_with_any_cterm_sorting_signal_protein_strict": 152,
+   "per_model_genomes": {
+    "n_sortase_8TM_EpsH": 20,
+    "n_sortase_Exosortase_EpsH": 211,
+    "n_sortase_exo_archaeo": 230,
+    "n_sortase_exosort_PGF_TRM": 202,
+    "n_proteins_IPTL-CTERM": 3,
+    "n_proteins_IPTL_CTERM": 3,
+    "n_proteins_LPXTG_anchor": 40,
+    "n_proteins_MYXO-CTERM": 3,
+    "n_proteins_PEP-CTERM": 7,
+    "n_proteins_PEP_exosort": 27,
+    "n_proteins_PGF-CTERM": 86,
+    "n_proteins_PGF_CTERM": 102,
+    "n_proteins_any_cterm_sorting_signal_strict": 152,
+    "n_proteins_PGF_pre_PGF_strict": 85
+   },
+   "per_model_proteins": {
+    "n_sortase_8TM_EpsH": 21,
+    "n_sortase_Exosortase_EpsH": 391,
+    "n_sortase_exo_archaeo": 478,
+    "n_sortase_exosort_PGF_TRM": 210,
+    "n_proteins_IPTL-CTERM": 8,
+    "n_proteins_IPTL_CTERM": 7,
+    "n_proteins_LPXTG_anchor": 46,
+    "n_proteins_MYXO-CTERM": 3,
+    "n_proteins_PEP-CTERM": 7,
+    "n_proteins_PEP_exosort": 32,
+    "n_proteins_PGF-CTERM": 117,
+    "n_proteins_PGF_CTERM": 138,
+    "n_proteins_any_cterm_sorting_signal_strict": 287,
+    "n_proteins_PGF_pre_PGF_strict": 114
+   },
+   "by_order_genomes_with_archaeosortase": {
+    "o__": "2/2",
+    "o__JACPAO01": "49/51",
+    "o__JACQPN01": "150/153",
+    "o__RBG-16-68-12": "1/1",
+    "o__SW-10-69-26": "28/30"
+   }
+  },
+  "n_dark_exported": [
+   28671,
+   28671
+  ],
+  "n_dark_exported_ge2": [
+   8006,
+   8006
+  ],
+  "n_dark_exported_widespread": [
+   981,
+   981
+  ],
+  "n_nondark_exported": [
+   13438,
+   13438
+  ],
+  "n_nondark_exported_ge2": [
+   5605,
+   5605
+  ],
+  "n_nondark_exported_widespread": [
+   1197,
+   1197
+  ],
+  "widespread_file_rows": 981,
+  "widespread_file_set_equals_recomputed": true,
+  "all_981_have_role": true,
+  "member_recount_matches_family_table": true,
+  "sp_recount_matches_family_table": true,
+  "all_exported_majority_sp": true,
+  "eq_protein_rows": [
+   142090,
+   142090
+  ],
+  "tmbed_coverage_sp_pos": [
+   133859,
+   133859
+  ],
+  "widespread_no_external": {
+   "cluster0_and_search0": 89,
+   "search0": 90,
+   "cluster0": 297
+  },
+  "mature_start_source_sp_pos": {
+   "signalp_cs": 133858,
+   "imputed_class_median": 1
+  },
+  "bootstrap_n_blocks": 154,
+  "bootstrap_draws": 2000,
+  "bootstrap_all_intervals_contain_point": true,
+  "bootstrap_n_intervals_not_containing_point": 0,
+  "spotcheck_10_all_match": true
+ },
+ "prep_info": {
+  "n_families_table": 204780,
+  "n_exported_families": {
+   "dark_exported": 28671,
+   "nondark_exported": 13438
+  },
+  "n_members": 182578,
+  "n_members_eq": 142090,
+  "n_eq_proteins_all": 772550,
+  "n_unique_eq_member_sequences": 141804,
+  "tmbed_entries_read": 1313614,
+  "tmbed_reused_unique_sequences": 121306,
+  "tmbed_sp_pos_unique_sequences": 133577,
+  "tmbed_todo_unique_sequences": 18474,
+  "tmbed_qc_sequences": 1500,
+  "tmbed_todo_residues": 7843511,
+  "tmbed_todo_max_len": 8666,
+  "tmbed_parts": 32
+ },
+ "features_info": {
+  "tmbed_reused_sequences": 121306,
+  "tmbed_new_sequences": 19974,
+  "tmbed_qc_n": 1500,
+  "tmbed_qc_identical_label_string": 1499,
+  "tmbed_qc_same_helix_count": 1500,
+  "tmbed_qc_same_signal_presence": 1500,
+  "tmbed_qc_mean_per_residue_identity": 1.0,
+  "tmbed_coverage_eq_members": [
+   140063,
+   142090
+  ],
+  "tmbed_coverage_sp_pos": [
+   133859,
+   133859
+  ],
+  "tmbed_source_counts_sp_pos": {
+   "reused_20261030": 115351,
+   "new_tmbed_1.0.2_cpu": 18508
+  },
+  "class_median_cs": {
+   "LIPO": 19,
+   "PILIN": 10,
+   "SP": 24,
+   "TAT": 32,
+   "TATLIPO": 26
+  },
+  "mature_start_source_counts_sp_pos": {
+   "signalp_cs": 133858,
+   "imputed_class_median": 1
+  },
+  "n_eq_feature_rows": 142090
+ },
+ "inputs_sha256": {
+  "genecall/harmonized_proteins.faa": "4d44a4597d65c6f3a90cf572284c84820cb2fcb5ad982daa5ba0da0680d35ff3",
+  "genecall/harmonized_gene_manifest.tsv.gz": "42bb4c45face3af262f33e4d1206d629d445eb7a511009330bd3724d153d672c",
+  "metadata/harmonized_genome_manifest.tsv": "9307d3d6448fd92395476498ba29c05f30527279f0d954c2bcf56ecb8bf543c7",
+  "mmseqs/harmonized_uniref50_per_gene.tsv.gz": "3f5de1c1ea33cac5d7b4435f6c8f7bd5daa160a64fa52fff941c02fa6d75b49f",
+  "signalp/harmonized_signalp6_predictions.tsv.gz": "829d739c4384c13fe56ab5af7906b0354ac05efd1f6ff02dbcb9fe791bd64732",
+  "source-metadata/ani_groups/ani_95_groups_1957.tsv": "42a043939ff6592e1f749ebaf0c6c39d064633c243221e5c30c160f21640785a",
+  "analysis2_families/clusters/families_id30_c80.tsv": "2fcc99daff261bac2fae3c35b919aa7ce5338a5091e88ade25a5b2de9c586484",
+  "analysis2_families/results/dark_exported_widespread_families_id30_c80.tsv": "8117a4291142e38701d009297be33a3fb602a49fc791f64749f825ce9cfe4092",
+  "analysis2_families/results/eq_family_table_id30_c80_all_genes.tsv.gz": "76d56942cfc5dd54ca3b0a425c379e36349d0cb05f08e057521380ed7f7bad17",
+  "analysis2_families/results/class_counts.tsv": "27000a9e612d8a7adf2dde610f81cc2266f2c03e061b85c97b7edd3baae8a51b"
+ },
+ "databases": {
+  "pfam": {
+   "path": "/project/k10018/sw/db/pfam-ibex/pfam/Pfam-A.hmm",
+   "n_models": 27481,
+   "sha256_recorded_in_stage_file": "a78a42d6faf265b6bfca59e8f062d06fae6083ce2c6e335d7b381f20b82b7903",
+   "note": "release not labelled in the file; newest model date 2025; Pfam-A.clans.tsv from EBI current_release (file dated 2026-09-18) used for clan names"
+  },
+  "pfam_clans": {
+   "path": "/project/k10018/sw/db/eq-localisation-20261111/Pfam-A.clans.tsv.gz",
+   "sha256": "69b2cfad70b4b0e201826b32d97a27bffa6f1cdf7b33d951a9e3a98fd020be20"
+  },
+  "tigrfam": "TIGRFAMs 15.0 (InterProScan 5.61-93.0 data dir), subset listed in results/sorting_models_used.tsv",
+  "dbcan": {
+   "path": "/project/k10018/sw/db/eq-localisation-20261111/dbCAN-HMMdb-V14.txt",
+   "sha256": "396c791fb13defab152864d8046687ef03b492937ec6f9bbab008bc77cbaa7a5"
+  },
+  "merops": {
+   "path": "/project/k10018/sw/db/eq-localisation-20261111/pepunit.lib",
+   "note": "EBI current_release, file dated 2023-02-22",
+   "sha256": "5deb3c49b2c8ec17b040d0afc26dcdcbc78481c400cdbdf77d2bd0c7ff9dcd74"
+  },
+  "tmbed_reused_predictions": "/project/k10018/work/eq-annot-20261030/results/sp_tm_analysis/tmbed/chunk_*.pred.gz (reused for byte-identical sequences only; run 2026-10-30 on a GPU system; TMbed version not recorded on Shaheen)",
+  "prot_t5": "Rostlab/prot_t5_xl_half_uniref50-enc (HF cache /project/k10018/sw/db/eq-localisation-20261111/hf_home)"
+ },
+ "tools": {
+  "tmbed": "1.0.2 (github BernhoferM/TMbed tag v1.0.2; env /project/k10018/sw/envs/tmbed; torch 2.15.0+cpu, transformers 4.46.3; CPU, out-format 0)",
+  "hmmer": "3.4 (hmmer.sif)",
+  "diamond": "2.2.8 (diamond.sif)",
+  "signalp": "6.0h fast, organism other (reused table)",
+  "python": "3.11.9",
+  "pandas": "3.0.6",
+  "numpy": "2.4.6"
+ },
+ "parameters": {
+  "hmmsearch": "default reporting thresholds, -Z = number of target sequences, --noali; cutoffs applied post hoc (see rules.txt)",
+  "diamond": "blastp --very-sensitive -e 1e-3 -k 5; post hoc best hit E<=1e-10, unit coverage>=0.5",
+  "cterm_tm_max_tail": 30,
+  "cterm_signal_max_distance_from_end": 10,
+  "st_rich_window": "30 aa, >=40% S/T",
+  "lowcomplexity": "12-aa windows with Shannon entropy <= 2.2 bits",
+  "pI": "Bjellqvist pK set"
+ },
+ "slurm_job_id_prep": "15955345",
+ "slurm_job_id_search_hmmer": "15955356 (Slurm state FAILED: HMMER outputs complete, only the MEROPS step failed)",
+ "slurm_job_id_merops": "15955359",
+ "slurm_job_id_tmbed_array": "15955347_[0-3]",
+ "superseded_jobs": "15955286 (first prep+search, failed on a bug), 15955346 (cancelled before useful output), 15955376 (combine, failed on job-id argument parsing), 15955382 (combine, complete; rerun after removing non-catalytic domains from the peptidase category)",
+ "slurm_job_id_combine": "15955383",
+ "slurm_final_states_verified_with_sacct": {
+  "15955345": "COMPLETED",
+  "15955347_[0-3]": "COMPLETED",
+  "15955356": "FAILED (HMMER outputs complete and used; MEROPS step failed)",
+  "15955359": "COMPLETED",
+  "15955383": "COMPLETED",
+  "15955286": "FAILED (superseded)",
+  "15955346": "CANCELLED (superseded)",
+  "15955376": "FAILED (superseded)",
+  "15955382": "COMPLETED (superseded)"
+ },
+ "added_under_/project/k10018/sw": [
+  "db/eq-localisation-20261111/{Pfam-A.clans.tsv.gz,pepunit.lib,dbCAN-HMMdb-V14.txt,hf_home (ProtT5 encoder, 2.3 GB)}",
+  "envs/tmbed (python 3.11, torch 2.15.0+cpu, transformers 4.46.3, TMbed 1.0.2; about 47k files)",
+  "logs/build_tmbed_env_20261111.log, logs/tmbed_download_20261111.log"
+ ],
+ "notes": [
+  "sbatch_02_search.sh was edited after job 15955356 to drop the failing MEROPS step (now sbatch_02b_merops.sh); the HMMER commands are unchanged.",
+  "Bootstrap intervals hold the family set and calls fixed and only reweight families by resampled EQ blocks; they are not full sampling intervals."
+ ]
+}

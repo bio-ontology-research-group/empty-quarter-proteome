@@ -1,0 +1,70 @@
+
+RULES (family level; EQ members only; 'SP+' = members with SignalP class != OTHER)
+
+Export route (route_call)
+  Plurality SignalP 6.0 class among SP+ EQ members: SP -> Sec_SPI, LIPO -> Sec_SPII_lipoprotein,
+  TAT -> Tat_SPI, TATLIPO -> Tat_SPII_lipoprotein, PILIN -> pilin_like_classIII.
+  route_agreement = fraction of SP+ EQ members with the plurality class. Exact ties -> route_call = tie.
+  External agreement: fraction of SP+ external members of the same family with the EQ plurality class
+  (ext_route_agreement_with_eq) and whether the external plurality class equals the EQ one.
+
+Mature region
+  Starts after the SignalP cleavage site; if SignalP reported no site, after the TMbed signal-peptide label;
+  if neither, after the median cleavage position of the SignalP class (mature_start_source records which).
+
+Topology (TMbed; labels reused from the 2026-10-30 run for byte-identical sequences, TMbed 1.0.2 CPU run
+  for the rest; evaluable = SP+ members with a TMbed prediction)
+  tm_helices_mature = TMbed helices whose midpoint lies in the mature region.
+  cterm_tm = exactly one mature helix and it ends <= 30 residues from the C-terminus
+             (evaluated only on members whose 3' end is complete according to the gene caller).
+  tm_helix_in_signal_region & no TMbed signal label = TMbed calls an N-terminal TM helix where SignalP calls
+             a cleavable signal peptide (possible uncleaved signal anchor / SignalP false positive).
+
+C-terminal sorting signals (HMMER 3.4 hmmsearch, full-length EQ proteins, model GA cutoff, else TC)
+  PGF-CTERM (TIGR04126, Pfam PGF-CTERM), PEF-CTERM (TIGR03024, Pfam PEF-CTERM_ARCH) and the other short
+  (<= 50 match states) *-CTERM / sorting-signal models listed in sorting_models_used.tsv; a hit counts only
+  if its alignment ends <= 10 residues from the C-terminus.
+  Archaeosortase family per genome: TIGR04125 (ArtA), TIGR04144 (ArtB), TIGR03762 (ArtC), TIGR04175 (ArtD),
+  TIGR04124 (ArtE), TIGR04293 (ArtF), TIGR04297, TIGR04178 (exosortase/archaeosortase family) and Pfam
+  Exosortase_EpsH, at the model GA cutoff, all proteins of each EQ genome.
+  Relaxed variant: domain i-Evalue < 1e-3.
+
+Anchor class (anchor_call; first rule that fires; 'majority' = fraction > 0.5 of evaluable members)
+  1 multi_TM                 majority of evaluable members have >= 2 mature TM helices
+  2 Cterm_sorting_signal     majority of C-complete SP+ members carry a C-terminal *-CTERM sorting-signal hit
+  3 Cterm_TM                 majority of C-complete evaluable members have cterm_tm
+  4 pilin_Nterm_hydrophobic  route_call = pilin_like_classIII
+  5 single_TM_not_Cterm      majority of evaluable members have exactly 1 mature TM helix
+  6 lipid_Nterm_lipobox      route_call is a lipoprotein route (SignalP LIPO/TATLIPO)
+  7 none_predicted           majority of evaluable members have 0 mature TM helices
+  8 unresolved               otherwise (including no evaluable member)
+
+Role class (role_class; first rule that fires)
+  1 pilin_like                          route_call = pilin_like_classIII
+  2 multipass_membrane_with_SP          anchor_call = multi_TM (possible SignalP false positive)
+  3 Cterm_anchored_surface              anchor_call in {Cterm_sorting_signal, Cterm_TM}
+  4 single_pass_membrane_with_SP        anchor_call = single_TM_not_Cterm
+  5 Nterm_signal_anchor_candidate       majority of evaluable members: TMbed gives no signal-peptide label AND
+                                        a TM helix in the SignalP signal region (SignalP/TMbed conflict)
+  6 lipoprotein_membrane_anchored       route lipoprotein (Sec or Tat), anchor_call = lipid_Nterm_lipobox
+  7 Tat_substrate_soluble               route_call = Tat_SPI, anchor_call = none_predicted
+  8 secreted_soluble                    route_call = Sec_SPI, anchor_call = none_predicted
+  9 unresolved                          otherwise (route tie, no topology, mixed evidence)
+
+Domain content (HMMER 3.4 hmmsearch on full-length EQ member proteins, Z = number of member proteins;
+  only hits whose envelope midpoint lies in the mature region are kept)
+  Pfam strict: sequence score >= GA1 and domain score >= GA2 (the Pfam gathering thresholds).
+  Pfam relaxed: domain i-Evalue < 1e-3 (includes the strict hits).
+  Overlapping hits on one protein are resolved greedily by domain score (envelope overlap > 50% of the
+  shorter hit is dropped) before listing 'top' Pfam families; category flags use all hits passing the cutoff.
+  dbCAN (HMMdb V14): domain i-Evalue < 1e-15 and HMM coverage > 0.35 (dbCAN defaults).
+  MEROPS pepunit (DIAMOND blastp --very-sensitive): best hit with E <= 1e-10 covering >= 50% of the
+  peptidase unit; MEROPS contains non-peptidase homologues, so a hit is homology to a peptidase family.
+  Domain categories (see domain_category_pfam.tsv for the Pfam families assigned to each):
+    peptidase          Pfam name/description matches a peptidase pattern, excluding inhibitors, propeptides,
+                       non-catalytic accessory domains (e.g. PPC, PepX_C), signal peptidases, S33 hydrolases
+    sbp                Pfam clans PBP, Periplas_BP, or SBP name patterns (ABC/TRAP/TTT substrate-binding)
+    adhesin_fold       Pfam clans E-set, Ig, Beta_propeller, Pec_lyase or PKD/Big/cadherin/CARDB name patterns
+                       (fold classes common in adhesins/S-layer proteins; not evidence of adhesion)
+    pilin_archaellin   Class_IIIsignal, archaeal flagellin/archaellin, pilin families, TIGR02537
+  Family flag *_maj: > 0.5 of EQ members carry the category (strict cutoffs); *_any: >= 1 member.
