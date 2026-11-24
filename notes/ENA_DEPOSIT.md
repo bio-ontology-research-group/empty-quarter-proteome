@@ -9,10 +9,12 @@ Scripts `code/ena_deposit/` (README there, one line per script). Work dir, not i
 ## Studies and release
 | study | accession | hold | note |
 |---|---|---|---|
-| RAK-16S (amplicon) | PRJEB106069 | 2026-11-25 | owns 445 of the 551 soil BioSamples |
-| RAK-PR (cultures) | PRJEB111735 | 2026-11-25 | |
-| **RAK-WGS (this deposit)** | **PRJEB125153** | **2026-11-25** | title "Rub' al-Khali Soil Shotgun Metagenomes" |
-| RAK umbrella | not yet | | PRJEB104209 cannot be converted; new umbrella "Rub' al-Khali Desert Microbiome" goes LAST, PI |
+| RAK-16S (amplicon) | PRJEB106069 | 2026-12-03 | owns 445 of the 551 soil BioSamples |
+| RAK-PR (cultures) | PRJEB111735 | 2026-12-03 | |
+| **RAK-WGS (this deposit)** | **PRJEB125153** | **2026-12-03** | title "Rub' al-Khali Soil Shotgun Metagenomes" |
+| RAK umbrella | PRJEB107792 | 2026-12-03 | existing umbrella (PI approved 2026-11-24); children PRJEB106069, PRJEB111735, PRJEB125153 linked by MODIFY 2026-11-24 (`06_link_umbrella.py link`); links show only after release |
+| (regular study) | PRJEB104209 | public | empty, not an umbrella; correct or suppress — PI |
+| (duplicate umbrella) | PRJEB106047 | 2027-01-01 | unused; cancel via ENA helpdesk (CANCEL is rejected on umbrellas) |
 
 ## Status (what is on ENA)
 | object | count | state | accessions |
@@ -21,7 +23,7 @@ Scripts `code/ena_deposit/` (README there, one line per script). Work dir, not i
 | reads | 554 runs, 6.60 TB | archived | `wgs_runs.tsv` (ERX/ERR) |
 | primary metagenome assemblies | 549 | submitted, private until release | `wgs_assemblies.tsv`, ERZ30552864–ERZ30555284 (final) |
 | binned metagenomes | 12,434 samples + assemblies | submitted, private until release | `wgs_bins.tsv`, ERZ30573912–ERZ30593965 (final) |
-| MAGs | 5,437 samples + assemblies | submitted, private until release; GCA assigned for 5,388 (49 awaiting ENA's next accession email) | `wgs_bins.tsv`: ERZ30595485–ERZ30606248, GCA_990079656–GCA_990090661 + contig / chromosome accessions (`gca_mag`, `sequence_acc_mag`) |
+| MAGs | 5,437 samples + assemblies | submitted, private until release; GCA assigned for all 5,437 (ENA's accession emails of 28 and 29 Oct) | `wgs_bins.tsv`: ERZ30595485–ERZ30606248, GCA_990079656–GCA_990100670 + contig / chromosome accessions (`gca_mag`, `sequence_acc_mag`) |
 | not deposited | 1,992 LQ bins; QC-rerun reads; protein catalogue, dark families, ESMFold models → Zenodo (later) | | |
 
 ## Decisions
@@ -63,8 +65,8 @@ Scripts `code/ena_deposit/` (README there, one line per script). Work dir, not i
 ## Pending decisions
 - Soil BioSample taxon: 256318 "metagenome" (current) vs 410658 "soil metagenome" (ENA's preference); one MODIFY pass over the 551, shared with RAK-16S — hers.
 - BioSample depth 40 mm vs "5–10 cm" in the Methods; Methods also to state two instruments, the 2×101 Nov-2025 batch, kit per batch, measured insert size — hers.
-- Umbrella study and aligned release of the three studies — PI.
-- Paper Data Availability text (PRJEB125153: reads, assemblies, bins, MAGs; release 2026-11-25) and the supplementary bin table (name, sample, run key, quality, ERS, ERZ/GCA) — hers.
+- After 2026-12-03: confirm the three children on the public PRJEB107792 record.
+- Paper Data Availability text (PRJEB125153: reads, assemblies, bins, MAGs; release 2026-12-03) and the supplementary bin table (name, sample, run key, quality, ERS, ERZ/GCA) — hers.
 - RAK-PR §5.2 cites PRJEB125153.
 
 ## Housekeeping after ENA processing

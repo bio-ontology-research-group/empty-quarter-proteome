@@ -27,9 +27,13 @@ SERVICES = {
     "prod": "https://www.ebi.ac.uk/ena/submit/drop-box/",
 }
 
-UMBRELLA = "PRJEB104209"          # public; owned by Webin-65194 (account study report, 2026-09-03)
-AMPLICON_STUDY = "PRJEB106069"    # private, hold 2026-11-25; owns the 445 reusable BioSamples
-RAKPR_STUDY = "PRJEB111735"       # private, hold 2026-11-01
+UMBRELLA = "PRJEB107792"          # private umbrella (UMBRELLA_PROJECT), chosen 2026-11-24; PRJEB104209 is a regular study
+AMPLICON_STUDY = "PRJEB106069"    # private, hold 2026-12-03; owns the 445 reusable BioSamples
+RAKPR_STUDY = "PRJEB111735"       # private, hold 2026-12-03
+REPORTS = {
+    "test": "https://wwwdev.ebi.ac.uk/ena/submit/report/",
+    "prod": "https://www.ebi.ac.uk/ena/submit/report/",
+}
 
 
 def password() -> str:
@@ -66,15 +70,37 @@ def fetch_record(kind: str, accession: str, pw: str, service: str = "prod") -> E
         return None
 
 
-def submission_xml(action: str, hold_until: str | None = None) -> str:
-    """SUBMISSION XML with one action (ADD | MODIFY) and an optional HOLD date (YYYY-MM-DD)."""
-    if action not in ("ADD", "MODIFY"):
-        sys.exit(f"ERROR: action must be ADD or MODIFY (got {action!r}).")
-    hold = f'\n      <ACTION>\n        <HOLD HoldUntilDate="{hold_until}"/>\n      </ACTION>' if hold_until else ""
+def submission_xml(action: str, hold_until: str | None = None, target: str | None = None) -> str:
+    """SUBMISSION XML with one action and an optional HOLD date (YYYY-MM-DD).
+
+    ADD | MODIFY: act on the XML parts sent alongside; HOLD gets `target` if given.
+    CANCEL: needs `target` (private objects only; propagates to linked experiments/analyses).
+    """
+    if action not in ("ADD", "MODIFY", "CANCEL"):
+        sys.exit(f"ERROR: action must be ADD, MODIFY or CANCEL (got {action!r}).")
+    if action == "CANCEL" and (not target or hold_until):
+        sys.exit("ERROR: CANCEL needs a target and no hold date.")
+    tgt = f' target="{target}"' if target else ""
+    main = f"<CANCEL{tgt}/>" if action == "CANCEL" else f"<{action}/>"
+    hold = (f'\n      <ACTION>\n        <HOLD{tgt} HoldUntilDate="{hold_until}"/>\n      </ACTION>'
+            if hold_until else "")
     return (
         "<SUBMISSION_SET>\n  <SUBMISSION>\n    <ACTIONS>\n      <ACTION>\n"
-        f"        <{action}/>\n      </ACTION>{hold}\n    </ACTIONS>\n  </SUBMISSION>\n</SUBMISSION_SET>\n"
+        f"        {main}\n      </ACTION>{hold}\n    </ACTIONS>\n  </SUBMISSION>\n</SUBMISSION_SET>\n"
     )
+
+
+def project_status(accession: str, pw: str, service: str) -> dict | None:
+    """Webin report for one project -> {releaseStatus, holdDate, firstPublic, ...} or None."""
+    import json
+    if service not in REPORTS:
+        sys.exit(f"ERROR: service must be one of {list(REPORTS)} (got {service!r}).")
+    rc, body = curl([REPORTS[service] + f"projects/{accession}?format=json"], pw)
+    if rc != 0 or not body.strip().startswith(("[", "{")):
+        return None
+    data = json.loads(body)
+    rows = data if isinstance(data, list) else [data]
+    return rows[0].get("report", rows[0]) if rows else None
 
 
 def submit(parts: dict[str, Path], pw: str, service: str, receipt_path: Path) -> tuple[bool, dict]:
